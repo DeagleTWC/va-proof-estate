@@ -1,0 +1,30 @@
+{
+  "site": "V.A. \u2014 The Proof Estate",
+  "release": "2.0",
+  "edition": "02",
+  "published": "2026-10-21",
+  "scope": "native V.A. only; no converted or derivative brands",
+  "mainFile": "index.html",
+  "mainFileSHA256": "1669bd3e6aebf40ffe69251496378ce952a087b598f81e01f69a631eebc90057",
+  "publicEvidenceStatus": "DECLARED",
+  "evidenceStatusVocabulary": [
+    "DECLARED",
+    "OBSERVED",
+    "INDEPENDENTLY REPRODUCED"
+  ],
+  "independentlyReproducedRunsAttached": 0,
+  "instrumentedPhysicalRunsAttached": 0,
+  "nativeRuntimeReceiptsAttached": 0,
+  "physicalProofCarrier": {
+    "required": [
+      "frozen apparatus ID and configuration",
+      "separate calibrated measurement chain",
+      "observed physical consequence and uncertainty",
+      "changed-condition measurement and explicit negative control",
+      "same-condition replay and independently retained reproduction"
+    ],
+    "availableHere": false
+  },
+  "claimCeiling": "This release documents public-safe formal, engineering, and testing requirements. No runtime or apparatus is connected. Original historical proof must be submitted as a separately identified source, never inferred from illustration.",
+  "custody": "FUNCTION MUST BE OPEN TO EXAMINATION. CONSTRUCTION NEED NOT BE OPEN TO RECONSTRUCTION."
+}
