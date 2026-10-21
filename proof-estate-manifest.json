@@ -1,11 +1,11 @@
 {
-  "site": "V.A. \u2014 The Proof Estate",
+  "site": "V.A. — The Proof Estate",
   "release": "2.0",
   "edition": "02",
   "published": "2026-10-21",
   "scope": "native V.A. only; no converted or derivative brands",
   "mainFile": "index.html",
-  "mainFileSHA256": "1669bd3e6aebf40ffe69251496378ce952a087b598f81e01f69a631eebc90057",
+  "mainFileSHA256": "c4d53bc5b0f38228c0c37d47db75187f8522418cb046295b8376fff39480b149",
   "publicEvidenceStatus": "DECLARED",
   "evidenceStatusVocabulary": [
     "DECLARED",
@@ -26,5 +26,19 @@
     "availableHere": false
   },
   "claimCeiling": "This release documents public-safe formal, engineering, and testing requirements. No runtime or apparatus is connected. Original historical proof must be submitted as a separately identified source, never inferred from illustration.",
-  "custody": "FUNCTION MUST BE OPEN TO EXAMINATION. CONSTRUCTION NEED NOT BE OPEN TO RECONSTRUCTION."
+  "custody": "FUNCTION MUST BE OPEN TO EXAMINATION. CONSTRUCTION NEED NOT BE OPEN TO RECONSTRUCTION.",
+  "socialPreview": {
+    "path": "social-card-1200x630.jpg",
+    "sizePixels": [
+      1200,
+      630
+    ],
+    "mimeType": "image/jpeg",
+    "sha256": "31eaf1bb45cd070b5ae027d925d757d02f401152a8bcc1d668fbbeb51daa3748",
+    "source": "V.A. gold emblem supplied by owner, image used for link preview only"
+  },
+  "siteIcons": [
+    "favicon.png",
+    "apple-touch-icon.png"
+  ]
 }
