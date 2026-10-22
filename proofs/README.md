@@ -14,6 +14,10 @@ The DeagleTWC publication is the canonical **public reading and examination loca
 | **Find the original source record** | [Hashed public source estate](SOURCE-ESTATE.md) | Three public-release PDF identities with the actual original-file SHA-256 values; originals not yet mirrored |
 | **Review pilot evidence correctly** | [Pilot release and custody standard](PILOT-EVIDENCE-RELEASE.md) | January 2026 and other historical pilot evidence intake; publication-permission boundaries |
 
+## Independent examination without proprietary access
+
+A qualified reviewer can use the [blank examination packet](REVIEWER-PACKET-TEMPLATE.md), examine the [bounded evidence standard](EXAMINATION-STANDARD.md), and submit a public [fixed-carrier challenge](https://github.com/DeagleTWC/va-proof-estate/issues/new?template=bounded-proof-review.md). The issue template is a review intake, **not permission to publish protected information or run tests on third-party systems**. Independent status is conferred only by a genuinely separate examiner's completed evidence, not by the existence of a submission form.
+
 ## Proof actually accessible today
 
 **Observed synthetic examiner fixture (one bounded test, not native V.A.):** [VA-AD-001](VA-AD-001/README.md) tests permitted effect, missing authority, revoked authority, invalid evidence, same-condition reproduction and digest verification. The examiner is the same local machine/process family. It does not establish external route closure or the native computational floor. Run `python proofs/VA-AD-001/verify.py` from repository root to compare the archived report with fresh execution and detect receipt alteration.
