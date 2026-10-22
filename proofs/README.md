@@ -21,7 +21,7 @@ A qualified reviewer can use the [blank examination packet](REVIEWER-PACKET-TEMP
 
 ## Primary public text now present
 
-Three source-grounded, page-labeled transcriptions have been published here: [July 2026 Proof Estate and Challenge Standard](sources/shift-proof-estate-challenge-standard-v1-extracted.md), [True-Zero Consequence Systems Science v1.2.3](sources/true-zero-consequence-systems-science-v1.2.3-extracted.md), and [Independent Reviewer Qualification Standard](sources/independent-reviewer-standard-v1-extracted.md). The [page-to-claim crosswalk](SOURCE-TO-CLAIM-MAP.md) identifies where each major bounded statement appears. Original PDF hashes are preserved in the [source estate](SOURCE-ESTATE.md); the originals' binary bytes are not yet hosted here. The True-Zero text extraction begins on PDF page 2.
+Four source-grounded, page-labeled transcriptions have been published here: [July 2026 Proof Estate and Challenge Standard](sources/shift-proof-estate-challenge-standard-v1-extracted.md), [True-Zero Consequence Systems Science v1.2.3](sources/true-zero-consequence-systems-science-v1.2.3-extracted.md), [Independent Reviewer Qualification Standard](sources/independent-reviewer-standard-v1-extracted.md), and [The Shift Public Proof Path v2](sources/shift-public-proof-path-v2-extracted.md). The [page-to-claim crosswalk](SOURCE-TO-CLAIM-MAP.md) identifies where each major bounded statement appears. Original PDF hashes are preserved in the [source estate](SOURCE-ESTATE.md); the originals' binary bytes are not yet hosted here. The True-Zero text extraction begins on PDF page 2.
 
 ### Additional original review route
 
