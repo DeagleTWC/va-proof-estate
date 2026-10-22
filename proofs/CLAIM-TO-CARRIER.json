@@ -22,7 +22,10 @@
       "carrier": null,
       "source": "proofs/SOURCE-ESTATE.md",
       "scope": "True Zero formalization; exact primary PDF not mirrored",
-      "nativeVAEvidence": false
+      "nativeVAEvidence": false,
+      "sourceTextCarrier": "proofs/sources/true-zero-consequence-systems-science-v1.2.3-extracted.md",
+      "sourcePdfSHA256": "b629104cbcb541f26e5b78a3468f0621ac759ed1f46da2903ad95315fa4b759c",
+      "sourceScope": "Public formal record text only; source not proof of measured operational consequences"
     },
     {
       "id": "VA-F02",
@@ -31,7 +34,10 @@
       "carrier": null,
       "source": "proofs/SOURCE-ESTATE.md",
       "scope": "Elements Basin/corrected K public record; exact primary proof carrier not mirrored",
-      "nativeVAEvidence": false
+      "nativeVAEvidence": false,
+      "sourceTextCarrier": "proofs/sources/true-zero-consequence-systems-science-v1.2.3-extracted.md",
+      "sourcePdfSHA256": "b629104cbcb541f26e5b78a3468f0621ac759ed1f46da2903ad95315fa4b759c",
+      "sourceScope": "Public formal record text only; source not proof of measured operational consequences"
     },
     {
       "id": "VA-N01",
@@ -40,7 +46,10 @@
       "carrier": null,
       "source": "index.html#claims",
       "scope": "Native standing/admissibility; original executable run not attached",
-      "nativeVAEvidence": false
+      "nativeVAEvidence": false,
+      "sourceTextCarrier": "proofs/sources/true-zero-consequence-systems-science-v1.2.3-extracted.md",
+      "sourcePdfSHA256": "b629104cbcb541f26e5b78a3468f0621ac759ed1f46da2903ad95315fa4b759c",
+      "sourceScope": "Published design/build/pilot record; original native run packet not attached"
     },
     {
       "id": "VA-N02",
@@ -49,7 +58,10 @@
       "carrier": null,
       "source": "index.html#claims",
       "scope": "Refusal/no-bind, original effect witness not attached",
-      "nativeVAEvidence": false
+      "nativeVAEvidence": false,
+      "sourceTextCarrier": "proofs/sources/true-zero-consequence-systems-science-v1.2.3-extracted.md",
+      "sourcePdfSHA256": "b629104cbcb541f26e5b78a3468f0621ac759ed1f46da2903ad95315fa4b759c",
+      "sourceScope": "Published design/build/pilot record; original native run packet not attached"
     },
     {
       "id": "VA-N03",
@@ -58,7 +70,10 @@
       "carrier": null,
       "source": "index.html#claims",
       "scope": "Changed-condition record, native receipts not attached",
-      "nativeVAEvidence": false
+      "nativeVAEvidence": false,
+      "sourceTextCarrier": "proofs/sources/true-zero-consequence-systems-science-v1.2.3-extracted.md",
+      "sourcePdfSHA256": "b629104cbcb541f26e5b78a3468f0621ac759ed1f46da2903ad95315fa4b759c",
+      "sourceScope": "Published design/build/pilot record; original native run packet not attached"
     },
     {
       "id": "VA-N04",
@@ -67,7 +82,10 @@
       "carrier": null,
       "source": "index.html#claims",
       "scope": "Native replay, original frozen run not attached",
-      "nativeVAEvidence": false
+      "nativeVAEvidence": false,
+      "sourceTextCarrier": "proofs/sources/true-zero-consequence-systems-science-v1.2.3-extracted.md",
+      "sourcePdfSHA256": "b629104cbcb541f26e5b78a3468f0621ac759ed1f46da2903ad95315fa4b759c",
+      "sourceScope": "Published design/build/pilot record; original native run packet not attached"
     },
     {
       "id": "VA-P01",
@@ -76,7 +94,10 @@
       "carrier": null,
       "source": "index.html#physical",
       "scope": "Instrumented formation obligations, no apparatus run attached",
-      "nativeVAEvidence": false
+      "nativeVAEvidence": false,
+      "sourceTextCarrier": "proofs/sources/shift-proof-estate-challenge-standard-v1-extracted.md",
+      "sourcePdfSHA256": "3d355e5e67e1205833a39275c51370481bacfec234fd90aa73178683e137e5a6",
+      "sourceScope": "Declared physical proof requirements only, not an instrumented result"
     },
     {
       "id": "VA-P02",
@@ -85,7 +106,10 @@
       "carrier": null,
       "source": "index.html#physical",
       "scope": "Measured non-formation obligations, no instrument run attached",
-      "nativeVAEvidence": false
+      "nativeVAEvidence": false,
+      "sourceTextCarrier": "proofs/sources/shift-proof-estate-challenge-standard-v1-extracted.md",
+      "sourcePdfSHA256": "3d355e5e67e1205833a39275c51370481bacfec234fd90aa73178683e137e5a6",
+      "sourceScope": "Declared physical proof requirements only, not an instrumented result"
     },
     {
       "id": "VA-H01",
@@ -94,7 +118,10 @@
       "carrier": null,
       "source": "proofs/PILOT-EVIDENCE-RELEASE.md",
       "scope": "Original historical/pilot run and distinct examiner carriers not attached",
-      "nativeVAEvidence": false
+      "nativeVAEvidence": false,
+      "sourceTextCarrier": "proofs/sources/true-zero-consequence-systems-science-v1.2.3-extracted.md",
+      "sourcePdfSHA256": "b629104cbcb541f26e5b78a3468f0621ac759ed1f46da2903ad95315fa4b759c",
+      "sourceScope": "Published design/build/pilot record; original native run packet not attached"
     },
     {
       "id": "HF-001",
@@ -152,5 +179,11 @@
       "scope": "Bounded financial-burden examination proposal; no native V.A. run attached",
       "nativeVAEvidence": false
     }
-  ]
+  ],
+  "publicPrimarySourceTextPaths": [
+    "proofs/sources/true-zero-consequence-systems-science-v1.2.3-extracted.md",
+    "proofs/sources/shift-proof-estate-challenge-standard-v1-extracted.md",
+    "proofs/sources/independent-reviewer-standard-v1-extracted.md"
+  ],
+  "publicSourceCrosswalk": "proofs/SOURCE-TO-CLAIM-MAP.md"
 }
