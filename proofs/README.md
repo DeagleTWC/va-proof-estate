@@ -23,6 +23,10 @@ A qualified reviewer can use the [blank examination packet](REVIEWER-PACKET-TEMP
 
 Three source-grounded, page-labeled transcriptions have been published here: [July 2026 Proof Estate and Challenge Standard](sources/shift-proof-estate-challenge-standard-v1-extracted.md), [True-Zero Consequence Systems Science v1.2.3](sources/true-zero-consequence-systems-science-v1.2.3-extracted.md), and [Independent Reviewer Qualification Standard](sources/independent-reviewer-standard-v1-extracted.md). The [page-to-claim crosswalk](SOURCE-TO-CLAIM-MAP.md) identifies where each major bounded statement appears. Original PDF hashes are preserved in the [source estate](SOURCE-ESTATE.md); the originals' binary bytes are not yet hosted here. The True-Zero text extraction begins on PDF page 2.
 
+### Additional original review route
+
+[The Shift — Public Proof Path, Final v2](sources/shift-public-proof-path-v2-extracted.md) is now published as a page-labeled extraction of the 2026 public-safe original. It gives reviewers the historical six-surface inspection sequence without treating distinct third-party and related repository implementations as one native integrated V.A. runtime. Its original PDF SHA-256 is preserved in the [source estate](SOURCE-ESTATE.md). This improves documentary completeness, not the current native execution evidence standing.
+
 ## Proof actually accessible today
 
 **Observed synthetic examiner fixture (one bounded test, not native V.A.):** [VA-AD-001](VA-AD-001/README.md) tests permitted effect, missing authority, revoked authority, invalid evidence, same-condition reproduction and digest verification. The examiner is the same local machine/process family. It does not establish external route closure or the native computational floor. Run `python proofs/VA-AD-001/verify.py` from repository root to compare the archived report with fresh execution and detect receipt alteration.
