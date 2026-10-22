@@ -19,3 +19,7 @@ See [`proof-estate-manifest.json`](proof-estate-manifest.json) for the release c
 **[Open the central public proof register](proofs/README.md)**. The first self-contained [authority-change examiner fixture](proofs/VA-AD-001/README.md) includes runnable Python, a frozen local fixture report, positive and negative controls, a changed-authority case, receipt hashes and same-condition replay. It is a **synthetic test fixture**, not an original native V.A. run or January 2026 customer-pilot packet.
 
 Cleared original V.A. proof packets and permissioned historical pilot evidence belong under `proofs/` with precise provenance and evidence standing. No Kamanaka-hosted repository is required to execute the fixture. The underlying private construction and unapproved customer data are excluded.
+
+### Public examiner desk
+
+Start with the [central 17-entry proof register](proofs/README.md), the [seven-part examination standard](proofs/EXAMINATION-STANDARD.md), the [SHA-256-identified public source estate](proofs/SOURCE-ESTATE.md), and the [separately controlled pilot evidence release path](proofs/PILOT-EVIDENCE-RELEASE.md). Automated [public proof integrity checks](.github/workflows/public-proof-integrity.yml) verify fixture behavior, receipt tampering, carrier links and release digests. This does not substitute fixture execution for native V.A. evidence.
