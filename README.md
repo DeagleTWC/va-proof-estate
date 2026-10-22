@@ -4,7 +4,7 @@
 
 **[Open the live V.A. Proof Estate](https://deagletwc.github.io/va-proof-estate/)**
 
-This is the publication carrier for the V.A.-only evidence-routing interface, **edition 02**. The code repository hosts the static website; the evidence interface is the public entry point.
+This is the publication carrier for the V.A.-only evidence-routing interface, **release 2.0 / edition 02**. **The custodian identifies the current V.A. system as V12**; website release numbering is separate from system versioning. See the [version-identity and evidence-lineage record](proofs/VERSION-IDENTITY.md). V12 native build receipts are not attached to this public release. The code repository hosts the static website; the evidence interface is the public entry point.
 
 The site differentiates **DECLARED**, **OBSERVED**, and **INDEPENDENTLY REPRODUCED** evidence, contains a claim-to-carrier ledger, native bounded witness specifications, separate physical-apparatus evidence requirements and negative controls, versioned challenge identities, and local one-click public-safe JSON challenge packets.
 
