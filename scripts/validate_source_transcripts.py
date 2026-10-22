@@ -15,7 +15,7 @@ def main():
         path = ROOT / "proofs" / "sources" / name
         text = path.read_text(encoding="utf-8")
         assert original_hash in text, name + ": original PDF digest missing"
-        found = [int(x) for x in re.findall(r"^## Source PDF page (\d+) of (\d+)$", text, flags=re.M)
+        found = [int(x[0]) for x in re.findall(r"^## Source PDF page (\d+) of (\d+)$", text, flags=re.M)
                  if x[1] == str(total)]
         assert found == expected, f"{name}: page coverage mismatch: {found}"
         assert "Not" in text and "original PDF" in text
