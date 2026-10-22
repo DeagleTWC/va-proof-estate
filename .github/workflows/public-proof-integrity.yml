@@ -7,6 +7,7 @@ on:
       - "proof-estate-manifest.json"
       - "index.html"
       - "scripts/validate_public_register.py"
+      - "scripts/validate_source_transcripts.py"
       - ".github/workflows/public-proof-integrity.yml"
   pull_request:
     paths:
@@ -28,5 +29,7 @@ jobs:
           python-version: "3.11"
       - name: Reproduce and check bounded synthetic proof
         run: python proofs/VA-AD-001/verify.py
+      - name: Verify original-source transcript identity and page coverage
+        run: python scripts/validate_source_transcripts.py
       - name: Verify public manifest and claim-register integrity
         run: python scripts/validate_public_register.py
