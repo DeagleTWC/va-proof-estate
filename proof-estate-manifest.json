@@ -2,10 +2,10 @@
   "site": "V.A. — The Proof Estate",
   "release": "2.0",
   "edition": "02",
-  "published": "2026-10-21",
+  "published": "2026-10-22",
   "scope": "native V.A. only; no converted or derivative brands",
   "mainFile": "index.html",
-  "mainFileSHA256": "c4d53bc5b0f38228c0c37d47db75187f8522418cb046295b8376fff39480b149",
+  "mainFileSHA256": "701c9526fce3bff510aa761dfbd848185db5e2f5d4ed88fabaddb2467de47402",
   "publicEvidenceStatus": "DECLARED",
   "evidenceStatusVocabulary": [
     "DECLARED",
@@ -40,5 +40,15 @@
   "siteIcons": [
     "favicon.png",
     "apple-touch-icon.png"
+  ],
+  "publicExaminerFixtures": [
+    {
+      "id": "VA-AD-001",
+      "path": "proofs/VA-AD-001",
+      "sourceSHA256": "b5da3860561cb3aa68bda87f04f53852963db5a844102275ca17a208fc7944ef",
+      "localReport": "proofs/VA-AD-001/local-fixture-report.json",
+      "standing": "LOCAL SYNTHETIC FIXTURE EXECUTION ONLY; NOT NATIVE V.A. OR PILOT",
+      "independentlyReproduced": false
+    }
   ]
 }
