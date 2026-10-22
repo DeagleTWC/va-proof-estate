@@ -42,3 +42,13 @@ The only load-bearing difference between positive and changed-condition cases is
 An original, cleared carrier tied to the tested native build and run identity; specified conditions and candidate; measured actual effect/non-effect at the binding boundary; changed-condition test; original immutable receipts; replay; and separately attributed independent reproduction if actually completed.
 
 **Open evidence. Protected construction.** Nothing here releases proprietary mathematics, substrate mechanics, pilot customer data, or rights to reconstruct V.A.
+
+## Verify independently of the archived report
+
+```bash
+python proofs/VA-AD-001/verify.py
+```
+
+The additional [verifier](verify.py) invokes the runner twice in fresh Python processes, checks observed state-hash values and receipt hashes, compares all four cases with the archived [local fixture report](local-fixture-report.json), detects altered receipt fields, and asserts that only authority changes between positive and revoked-control candidates. GitHub Actions executes this verification on applicable repository changes.
+
+This verifier is a distinct script, **not an independent outside examiner**. Its checks concern a single in-process mock-effect route. No native V.A., customer pilot, separately instrumented physical consequence, or exhaustive alternate route is tested. Source identity and result hashes can be reconstructed locally.
