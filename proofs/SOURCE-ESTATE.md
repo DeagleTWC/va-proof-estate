@@ -4,6 +4,7 @@ The following identities and SHA-256 digests were obtained from the actual PDF b
 
 | Original named source | Edition and content | Size (bytes) | SHA-256 |
 | --- | --- | ---: | --- |
+| `The_Shift_Public_Proof_Path_Final_v2(1).pdf` | July 2026, reviewer proof-path v2, six distinct bounded public examination surfaces | 71495 | `dd5a626e4ed5efafb49e70e987f61f151e220d793e35b96c55b05e59dc426ca6` |
 | `THE_SHIFT_PUBLIC_PROOF_ESTATE_AND_CHALLENGE_STANDARD_V1(2).pdf` | July 2026, v1.0; public evidence ladder, bounded proof path, review challenge, publication boundary | 93105 | `3d355e5e67e1205833a39275c51370481bacfec234fd90aa73178683e137e5a6` |
 | `True_Zero_Consequence_Systems_Science_Public_Record_v1_2_3_RELEASE(6).pdf` | July 18, 2026, v1.2.3 reviewed public record; scientific statements, test obligations, corpus-recorded pilot descriptions | 460125 | `b629104cbcb541f26e5b78a3468f0621ac759ed1f46da2903ad95315fa4b759c` |
 | `Public_Independent_Reviewer_Qualification_Standard_v1.0(2).pdf` | v1.0 public release; self-check vs independently qualified design check and reproduction | 131428 | `a3a8dd7c9fd3fda44a62eba1c6ae116344853faef94ae4db5a76902e5681f9c9` |
@@ -33,3 +34,5 @@ Where another repository contains a public implementation or demonstration, tran
 - [Independent Reviewer Qualification Standard — pages 1–7](sources/independent-reviewer-standard-v1-extracted.md)
 
 These are page-labeled text extractions from the original public PDFs, not original PDF copies. Refer to the PDF hashes above for source identity. For precise mathematical symbols, figures and layout, consult the canonical PDFs. The first page of the True-Zero record is not present in the extracted text.
+
+- [The Shift — Public Proof Path, Final v2 — pages 1–3](sources/shift-public-proof-path-v2-extracted.md); original SHA-256 `dd5a626e4ed5efafb49e70e987f61f151e220d793e35b96c55b05e59dc426ca6`. Historical public reviewer path, not a new native run, and not a license to republish downstream proprietary sources.
