@@ -1,0 +1,67 @@
+{
+  "artifact_sha256": "b5da3860561cb3aa68bda87f04f53852963db5a844102275ca17a208fc7944ef",
+  "evidence_class": "LOCAL SYNTHETIC FIXTURE EXECUTION (NOT NATIVE V.A. RUN)",
+  "identity": "VA-AD-001/SPEC-1.0",
+  "scope": "one in-process mock effect route; no external effect",
+  "cases": [
+    {
+      "case": "positive-authorized",
+      "condition": {
+        "approved": true,
+        "authority": "ACTIVE",
+        "evidence_valid": true
+      },
+      "decision": "ADMIT",
+      "observed_mock_effect": true,
+      "before_state_sha256": "c26a67f240f9848a8fd67bb92b55614c0e57e024c64088560d3bd158c6c98a25",
+      "after_state_sha256": "9cdfd85d7922efe96afc1cc24a886d6bd4fdc39fc9319a39398c11ab5a15d5c5",
+      "receipt_sha256": "f4cd5c661f5fa84529dcbca82d63bee457cccd11546489642fadb81e9f84ae7f"
+    },
+    {
+      "case": "negative-never-authorized",
+      "condition": {
+        "approved": false,
+        "authority": "MISSING",
+        "evidence_valid": true
+      },
+      "decision": "REFUSE",
+      "observed_mock_effect": false,
+      "before_state_sha256": "c26a67f240f9848a8fd67bb92b55614c0e57e024c64088560d3bd158c6c98a25",
+      "after_state_sha256": "c26a67f240f9848a8fd67bb92b55614c0e57e024c64088560d3bd158c6c98a25",
+      "receipt_sha256": "b9302719ef2084d044fd02643d59309bbbe350862ce4665d3eb46d677a413195"
+    },
+    {
+      "case": "changed-condition-revoked",
+      "condition": {
+        "approved": true,
+        "authority": "REVOKED",
+        "evidence_valid": true
+      },
+      "decision": "REFUSE",
+      "observed_mock_effect": false,
+      "before_state_sha256": "c26a67f240f9848a8fd67bb92b55614c0e57e024c64088560d3bd158c6c98a25",
+      "after_state_sha256": "c26a67f240f9848a8fd67bb92b55614c0e57e024c64088560d3bd158c6c98a25",
+      "receipt_sha256": "309e75bfa717fe02e524cdad4bb7c31f9c27d4ac0c377eadefc67fd49caf3e80"
+    },
+    {
+      "case": "negative-stale-evidence",
+      "condition": {
+        "approved": true,
+        "authority": "ACTIVE",
+        "evidence_valid": false
+      },
+      "decision": "REFUSE",
+      "observed_mock_effect": false,
+      "before_state_sha256": "c26a67f240f9848a8fd67bb92b55614c0e57e024c64088560d3bd158c6c98a25",
+      "after_state_sha256": "c26a67f240f9848a8fd67bb92b55614c0e57e024c64088560d3bd158c6c98a25",
+      "receipt_sha256": "739133a63b0cf19d8bb30135ba40fb9254c288e362b4fa4567d5ea17cd80ed4a"
+    }
+  ],
+  "receipt_integrity": "PASS",
+  "same_condition_replay": "PASS",
+  "overall": "PASS",
+  "independent_reproduction": "NOT ATTESTED",
+  "native_VA_execution": "NOT TESTED",
+  "historical_pilot_data": "NOT INCLUDED",
+  "note": "Summarized from one local execution of the public-safe fixture; hashes can be regenerated from the complete runner output. No claims beyond this one mock effect route."
+}
