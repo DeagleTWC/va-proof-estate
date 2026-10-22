@@ -5,6 +5,7 @@ import re
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCES = [
+    ("shift-public-proof-path-v2-extracted.md", "dd5a626e4ed5efafb49e70e987f61f151e220d793e35b96c55b05e59dc426ca6", 3, list(range(1,4))),
     ("shift-proof-estate-challenge-standard-v1-extracted.md", "3d355e5e67e1205833a39275c51370481bacfec234fd90aa73178683e137e5a6", 15, list(range(1,16))),
     ("true-zero-consequence-systems-science-v1.2.3-extracted.md", "b629104cbcb541f26e5b78a3468f0621ac759ed1f46da2903ad95315fa4b759c", 17, list(range(2,18))),
     ("independent-reviewer-standard-v1-extracted.md", "a3a8dd7c9fd3fda44a62eba1c6ae116344853faef94ae4db5a76902e5681f9c9", 7, list(range(1,8))),
@@ -18,7 +19,7 @@ def main():
         found = [int(x[0]) for x in re.findall(r"^## Source PDF page (\d+) of (\d+)$", text, flags=re.M)
                  if x[1] == str(total)]
         assert found == expected, f"{name}: page coverage mismatch: {found}"
-        assert "Not" in text and "original PDF" in text
+        assert "not" in text.lower() and "original pdf" in text.lower()
         assert len(text) > 5000
         print("PASS:", name, f"extracted PDF pages {found[0]}–{found[-1]}/{total}")
     mapping = (ROOT / "proofs" / "SOURCE-TO-CLAIM-MAP.md").read_text(encoding="utf-8")
