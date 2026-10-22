@@ -67,8 +67,12 @@
   "sourceTextInventory": [
     "proofs/sources/shift-proof-estate-challenge-standard-v1-extracted.md",
     "proofs/sources/true-zero-consequence-systems-science-v1.2.3-extracted.md",
-    "proofs/sources/independent-reviewer-standard-v1-extracted.md"
+    "proofs/sources/independent-reviewer-standard-v1-extracted.md",
+    "proofs/sources/shift-public-proof-path-v2-extracted.md"
   ],
   "sourceToClaimMap": "proofs/SOURCE-TO-CLAIM-MAP.md",
-  "originalSourcePdfCopiesInRepository": 0
+  "originalSourcePdfCopiesInRepository": 0,
+  "sourceOriginalPdfSHA256": {
+    "The_Shift_Public_Proof_Path_Final_v2(1).pdf": "dd5a626e4ed5efafb49e70e987f61f151e220d793e35b96c55b05e59dc426ca6"
+  }
 }
