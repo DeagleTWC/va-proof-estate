@@ -3,9 +3,9 @@
   "release": "2.0",
   "edition": "02",
   "published": "2026-10-22",
-  "scope": "native V.A. only; no converted or derivative brands",
+  "scope": "Native V.A. claim and public examination estate, plus expressly labeled non-native synthetic fixture; no converted or derivative brands",
   "mainFile": "index.html",
-  "mainFileSHA256": "701c9526fce3bff510aa761dfbd848185db5e2f5d4ed88fabaddb2467de47402",
+  "mainFileSHA256": "e270c74933ce8f6798afd2e6c63e0770f06323e3d089b53eb69f285a542f690a",
   "publicEvidenceStatus": "DECLARED",
   "evidenceStatusVocabulary": [
     "DECLARED",
@@ -50,5 +50,18 @@
       "standing": "LOCAL SYNTHETIC FIXTURE EXECUTION ONLY; NOT NATIVE V.A. OR PILOT",
       "independentlyReproduced": false
     }
-  ]
+  ],
+  "publicEvidenceStatusScope": "Declared status applies to native V.A. claims on this page. A separately labeled synthetic fixture has its own local observed standing.",
+  "expandedRegister": {
+    "path": "proofs/CLAIM-TO-CARRIER.json",
+    "count": 17,
+    "standing": {
+      "DECLARED": 16,
+      "OBSERVED_SYNTHETIC_FIXTURE": 1,
+      "INDEPENDENT_NATIVE_REPRODUCTIONS": 0
+    }
+  },
+  "publicSourceInventory": "proofs/SOURCE-ESTATE.md",
+  "publicExaminerStandard": "proofs/EXAMINATION-STANDARD.md",
+  "pilotReleaseControls": "proofs/PILOT-EVIDENCE-RELEASE.md"
 }
