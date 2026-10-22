@@ -5,7 +5,7 @@
   "published": "2026-10-22",
   "scope": "Native V.A. claim and public examination estate, plus expressly labeled non-native synthetic fixture; no converted or derivative brands",
   "mainFile": "index.html",
-  "mainFileSHA256": "f8bdd478c89891524c88af5110d37dacd39080010ae9c122fe07c91c5b0e6867",
+  "mainFileSHA256": "01e911e0de34669f7b939b54dce964e2faa63ae673c527e4783e2100bb5c74ee",
   "publicEvidenceStatus": "DECLARED",
   "evidenceStatusVocabulary": [
     "DECLARED",
@@ -74,5 +74,19 @@
   "originalSourcePdfCopiesInRepository": 0,
   "sourceOriginalPdfSHA256": {
     "The_Shift_Public_Proof_Path_Final_v2(1).pdf": "dd5a626e4ed5efafb49e70e987f61f151e220d793e35b96c55b05e59dc426ca6"
+  },
+  "systemVersionReference": {
+    "designation": "V12",
+    "provenance": "Custodian-identified current version as of 2026-10-22",
+    "verifiedFrozenBuildAttached": false,
+    "nativeV12ReceiptsAttached": false,
+    "independentV12ReproductionAttached": false,
+    "versionIdentityRecord": "proofs/VERSION-IDENTITY.md"
+  },
+  "versionDisambiguation": {
+    "publicationRelease": "2.0",
+    "historicalDeployBuild": "V1.2 (April 2026)",
+    "scientificRecordEdition": "v1.2.3 (July 2026)",
+    "syntheticExaminerFixture": "VA-AD-001/SPEC-1.0"
   }
 }
