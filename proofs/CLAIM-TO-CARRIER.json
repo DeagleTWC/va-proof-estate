@@ -1,0 +1,156 @@
+{
+  "schema": "va-proof-register/1.0",
+  "published": "2026-10-22",
+  "canonicalRepository": "DeagleTWC/va-proof-estate",
+  "interpretation": "Public standing reflects what this GitHub publication attaches. It does not negate separately held historical records or customer pilots.",
+  "nativeRuntimeReceiptsAttached": 0,
+  "independentNativeReproductionsAttached": 0,
+  "entries": [
+    {
+      "id": "VA-AD-001",
+      "class": "synthetic-fixture",
+      "standing": "OBSERVED",
+      "carrier": "proofs/VA-AD-001/run.py",
+      "record": "proofs/VA-AD-001/local-fixture-report.json",
+      "scope": "local in-process mock effect only",
+      "nativeVAEvidence": false
+    },
+    {
+      "id": "VA-F01",
+      "class": "formal-record",
+      "standing": "DECLARED",
+      "carrier": null,
+      "source": "proofs/SOURCE-ESTATE.md",
+      "scope": "True Zero formalization; exact primary PDF not mirrored",
+      "nativeVAEvidence": false
+    },
+    {
+      "id": "VA-F02",
+      "class": "formal-record",
+      "standing": "DECLARED",
+      "carrier": null,
+      "source": "proofs/SOURCE-ESTATE.md",
+      "scope": "Elements Basin/corrected K public record; exact primary proof carrier not mirrored",
+      "nativeVAEvidence": false
+    },
+    {
+      "id": "VA-N01",
+      "class": "native-claim",
+      "standing": "DECLARED",
+      "carrier": null,
+      "source": "index.html#claims",
+      "scope": "Native standing/admissibility; original executable run not attached",
+      "nativeVAEvidence": false
+    },
+    {
+      "id": "VA-N02",
+      "class": "native-claim",
+      "standing": "DECLARED",
+      "carrier": null,
+      "source": "index.html#claims",
+      "scope": "Refusal/no-bind, original effect witness not attached",
+      "nativeVAEvidence": false
+    },
+    {
+      "id": "VA-N03",
+      "class": "native-claim",
+      "standing": "DECLARED",
+      "carrier": null,
+      "source": "index.html#claims",
+      "scope": "Changed-condition record, native receipts not attached",
+      "nativeVAEvidence": false
+    },
+    {
+      "id": "VA-N04",
+      "class": "native-claim",
+      "standing": "DECLARED",
+      "carrier": null,
+      "source": "index.html#claims",
+      "scope": "Native replay, original frozen run not attached",
+      "nativeVAEvidence": false
+    },
+    {
+      "id": "VA-P01",
+      "class": "physical-proof-requirement",
+      "standing": "DECLARED",
+      "carrier": null,
+      "source": "index.html#physical",
+      "scope": "Instrumented formation obligations, no apparatus run attached",
+      "nativeVAEvidence": false
+    },
+    {
+      "id": "VA-P02",
+      "class": "physical-proof-requirement",
+      "standing": "DECLARED",
+      "carrier": null,
+      "source": "index.html#physical",
+      "scope": "Measured non-formation obligations, no instrument run attached",
+      "nativeVAEvidence": false
+    },
+    {
+      "id": "VA-H01",
+      "class": "historical-proof-requirement",
+      "standing": "DECLARED",
+      "carrier": null,
+      "source": "proofs/PILOT-EVIDENCE-RELEASE.md",
+      "scope": "Original historical/pilot run and distinct examiner carriers not attached",
+      "nativeVAEvidence": false
+    },
+    {
+      "id": "HF-001",
+      "class": "challenge-specification",
+      "standing": "DECLARED",
+      "carrier": "challenges/HF-001-hugging-face-consequence-boundary.md",
+      "scope": "Bounded external-effect examination proposal; no native V.A. run attached",
+      "nativeVAEvidence": false
+    },
+    {
+      "id": "RE-001",
+      "class": "challenge-specification",
+      "standing": "DECLARED",
+      "carrier": "challenges/RE-001-production-deletion-frozen-standing.md",
+      "scope": "Bounded destructive-effect examination proposal; no native V.A. run attached",
+      "nativeVAEvidence": false
+    },
+    {
+      "id": "EC-001",
+      "class": "challenge-specification",
+      "standing": "DECLARED",
+      "carrier": "challenges/EC-001-echoleak-information-release.md",
+      "scope": "Bounded information-release examination proposal; no native V.A. run attached",
+      "nativeVAEvidence": false
+    },
+    {
+      "id": "EV-001",
+      "class": "challenge-specification",
+      "standing": "DECLARED",
+      "carrier": "challenges/EV-001-false-evidence-standing.md",
+      "scope": "Bounded evidence-standing examination proposal; no native V.A. run attached",
+      "nativeVAEvidence": false
+    },
+    {
+      "id": "SD-001",
+      "class": "challenge-specification",
+      "standing": "DECLARED",
+      "carrier": "challenges/SD-001-credential-possession-vs-standing.md",
+      "scope": "Bounded credential-standing examination proposal; no native V.A. run attached",
+      "nativeVAEvidence": false
+    },
+    {
+      "id": "SK-001",
+      "class": "challenge-specification",
+      "standing": "DECLARED",
+      "carrier": "challenges/SK-001-untrusted-content-host-effect.md",
+      "scope": "Bounded untrusted-content examination proposal; no native V.A. run attached",
+      "nativeVAEvidence": false
+    },
+    {
+      "id": "CP-001",
+      "class": "challenge-specification",
+      "standing": "DECLARED",
+      "carrier": "challenges/CP-001-cumulative-financial-burden.md",
+      "scope": "Bounded financial-burden examination proposal; no native V.A. run attached",
+      "nativeVAEvidence": false
+    }
+  ]
+}
