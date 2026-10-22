@@ -13,3 +13,9 @@ No converted systems or downstream brands are included. No protected constructio
 **Evidence rule:** Every claim terminates in a carrier. Function must be open to examination. Construction need not be open to reconstruction.
 
 See [`proof-estate-manifest.json`](proof-estate-manifest.json) for the release checksum and explicit standing ceilings.
+
+## DeagleTWC-contained proof carriers
+
+**[Open the central public proof register](proofs/README.md)**. The first self-contained [authority-change examiner fixture](proofs/VA-AD-001/README.md) includes runnable Python, a frozen local fixture report, positive and negative controls, a changed-authority case, receipt hashes and same-condition replay. It is a **synthetic test fixture**, not an original native V.A. run or January 2026 customer-pilot packet.
+
+Cleared original V.A. proof packets and permissioned historical pilot evidence belong under `proofs/` with precise provenance and evidence standing. No Kamanaka-hosted repository is required to execute the fixture. The underlying private construction and unapproved customer data are excluded.
