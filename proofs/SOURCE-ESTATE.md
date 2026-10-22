@@ -25,3 +25,11 @@ Publish an exact public-cleared copy of each source under `proofs/sources/` (or 
 Where another repository contains a public implementation or demonstration, transfer a copy only when its provenance and redistribution rights are clear. Never turn an attributed downstream demonstration into native V.A. proof by changing the header or name.
 
 **This directory is an inventory until the original carriers are attached.**
+
+## Searchable source transcripts
+
+- [Proof Estate and Challenge Standard — pages 1–15](sources/shift-proof-estate-challenge-standard-v1-extracted.md)
+- [True-Zero Consequence Systems Science v1.2.3 — pages 2–17](sources/true-zero-consequence-systems-science-v1.2.3-extracted.md)
+- [Independent Reviewer Qualification Standard — pages 1–7](sources/independent-reviewer-standard-v1-extracted.md)
+
+These are page-labeled text extractions from the original public PDFs, not original PDF copies. Refer to the PDF hashes above for source identity. For precise mathematical symbols, figures and layout, consult the canonical PDFs. The first page of the True-Zero record is not present in the extracted text.
