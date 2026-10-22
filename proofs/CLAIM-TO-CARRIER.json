@@ -25,7 +25,8 @@
       "nativeVAEvidence": false,
       "sourceTextCarrier": "proofs/sources/true-zero-consequence-systems-science-v1.2.3-extracted.md",
       "sourcePdfSHA256": "b629104cbcb541f26e5b78a3468f0621ac759ed1f46da2903ad95315fa4b759c",
-      "sourceScope": "Public formal record text only; source not proof of measured operational consequences"
+      "sourceScope": "Public formal record text only; source not proof of measured operational consequences",
+      "publicFormalSourceText": "proofs/sources/true-zero-consequence-systems-science-v1.2.3-extracted.md"
     },
     {
       "id": "VA-F02",
@@ -37,7 +38,8 @@
       "nativeVAEvidence": false,
       "sourceTextCarrier": "proofs/sources/true-zero-consequence-systems-science-v1.2.3-extracted.md",
       "sourcePdfSHA256": "b629104cbcb541f26e5b78a3468f0621ac759ed1f46da2903ad95315fa4b759c",
-      "sourceScope": "Public formal record text only; source not proof of measured operational consequences"
+      "sourceScope": "Public formal record text only; source not proof of measured operational consequences",
+      "publicFormalSourceText": "proofs/sources/true-zero-consequence-systems-science-v1.2.3-extracted.md"
     },
     {
       "id": "VA-N01",
@@ -121,7 +123,8 @@
       "nativeVAEvidence": false,
       "sourceTextCarrier": "proofs/sources/true-zero-consequence-systems-science-v1.2.3-extracted.md",
       "sourcePdfSHA256": "b629104cbcb541f26e5b78a3468f0621ac759ed1f46da2903ad95315fa4b759c",
-      "sourceScope": "Published design/build/pilot record; original native run packet not attached"
+      "sourceScope": "Published design/build/pilot record; original native run packet not attached",
+      "publicHistoricalSourceText": "proofs/sources/true-zero-consequence-systems-science-v1.2.3-extracted.md"
     },
     {
       "id": "HF-001",
@@ -185,5 +188,6 @@
     "proofs/sources/shift-proof-estate-challenge-standard-v1-extracted.md",
     "proofs/sources/independent-reviewer-standard-v1-extracted.md"
   ],
-  "publicSourceCrosswalk": "proofs/SOURCE-TO-CLAIM-MAP.md"
+  "publicSourceCrosswalk": "proofs/SOURCE-TO-CLAIM-MAP.md",
+  "sourceToClaimMap": "proofs/SOURCE-TO-CLAIM-MAP.md"
 }
