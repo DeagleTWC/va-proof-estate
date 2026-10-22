@@ -4,10 +4,15 @@
 
 The DeagleTWC publication is the canonical **public reading and examination location** for V.A. A reviewer must be able to tell what was specified, what was executed, who witnessed the result, and what is not disclosed. A public fixture cannot inherit the standing of a native V.A. run; missing attachments do not erase the pre-existing corpus or historical pilot record.
 
+## Current V12 and historical evidence
+
+**The system custodian identifies V12 as the current V.A. version.** The DeagleTWC Proof Estate's own release is **2.0 / edition 02**, not system version 2.0. The April 2026 Veritas / SafeChange **Deploy Build V1.2** is a historical engineering record; the scientific public record **v1.2.3** is a document edition. None of the older records or the VA-AD-001 synthetic fixture is presented as a native V12 execution. A public V12 native release packet is not attached here. See the [version-identity and evidence-lineage register](VERSION-IDENTITY.md) for the precise standing and publication requirements.
+
 ## Begin here
 
 | Reader's objective | Exact entry point | What it provides |
 | --- | --- | --- |
+| **Check current system version and historical lineage** | [Version identity — V12](VERSION-IDENTITY.md) | Disambiguates current system V12, website v2.0, historical Deploy Build V1.2 and scientific record v1.2.3 without claim promotion |
 | **Examine a result now** | [VA-AD-001](VA-AD-001/README.md) | Python-only, local synthetic test; before/after mock effect, authority change, receipt hashes, replay and [independent verifier script](VA-AD-001/verify.py) |
 | **Inspect all public standing** | [Machine-readable claim-to-carrier ledger](CLAIM-TO-CARRIER.json) | 17 precisely identified objects, each with status, carrier/absence and bounded scope |
 | **Apply the evidence bar** | [Seven-part examination standard](EXAMINATION-STANDARD.md) | Claim, carrier, conditions, controls, change/replay, route/witness |
