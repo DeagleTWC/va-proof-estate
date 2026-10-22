@@ -63,5 +63,12 @@
   },
   "publicSourceInventory": "proofs/SOURCE-ESTATE.md",
   "publicExaminerStandard": "proofs/EXAMINATION-STANDARD.md",
-  "pilotReleaseControls": "proofs/PILOT-EVIDENCE-RELEASE.md"
+  "pilotReleaseControls": "proofs/PILOT-EVIDENCE-RELEASE.md",
+  "sourceTextInventory": [
+    "proofs/sources/shift-proof-estate-challenge-standard-v1-extracted.md",
+    "proofs/sources/true-zero-consequence-systems-science-v1.2.3-extracted.md",
+    "proofs/sources/independent-reviewer-standard-v1-extracted.md"
+  ],
+  "sourceToClaimMap": "proofs/SOURCE-TO-CLAIM-MAP.md",
+  "originalSourcePdfCopiesInRepository": 0
 }
