@@ -6,6 +6,7 @@
 
 | Public claim or proof obligation | Primary source location | What is available here | Evidence classification |
 | --- | --- | --- | --- |
+| **Original public proof-route identity and limits** | [Shift Public Proof Path v2, PDF pp.1–3](sources/shift-public-proof-path-v2-extracted.md#source-pdf-page-1-of-3) | Six distinct examination surfaces, reviewer method, and explicit non-integration/non-reconstruction limit | Public review orientation; no newly observed native result |
 | **True Zero and the formal lineage** | [True-Zero reviewed record, PDF p.5](sources/true-zero-consequence-systems-science-v1.2.3-extracted.md#source-pdf-page-5-of-17), §§4–5 | The authored object definitions and lineage language | Public formal record; not empirical measurement |
 | **Standing before consequence; refusal before effect** | [True-Zero reviewed record, PDF p.6](sources/true-zero-consequence-systems-science-v1.2.3-extracted.md#source-pdf-page-6-of-17), §6 | Public system laws and explicit distinction between decision and effect | Formal specification |
 | **Declared, corpus-recorded, demonstrated, pilot, and independent** | [True-Zero reviewed record, PDF p.7](sources/true-zero-consequence-systems-science-v1.2.3-extracted.md#source-pdf-page-7-of-17), §7 | Evidence categories and non-substitution rule | Published evidence taxonomy |
