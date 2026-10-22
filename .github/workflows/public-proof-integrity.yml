@@ -1,0 +1,32 @@
+name: Public Proof Integrity
+on:
+  push:
+    branches: [main]
+    paths:
+      - "proofs/**"
+      - "proof-estate-manifest.json"
+      - "index.html"
+      - "scripts/validate_public_register.py"
+      - ".github/workflows/public-proof-integrity.yml"
+  pull_request:
+    paths:
+      - "proofs/**"
+      - "proof-estate-manifest.json"
+      - "index.html"
+      - "scripts/validate_public_register.py"
+      - ".github/workflows/public-proof-integrity.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-public-carriers:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Reproduce and check bounded synthetic proof
+        run: python proofs/VA-AD-001/verify.py
+      - name: Verify public manifest and claim-register integrity
+        run: python scripts/validate_public_register.py
