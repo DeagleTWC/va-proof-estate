@@ -1,39 +1,41 @@
-# DeagleTWC — Public Proof Register
+# V.A. — The Public Proof Register
 
-This folder is the **canonical public publication destination** for V.A. proof carriers, proof mechanisms cleared for release, bounded test fixtures, receipts and independent-review packets.
+**Proof before power. Open evidence. Protected construction.**
 
-**Primary hosting:** `DeagleTWC/va-proof-estate`. Reviewer reproduction must be possible from files inside DeagleTWC or from explicitly authorized original evidence packets attached here. This index does not require Kamanaka-hosted code or links to function.
+The DeagleTWC publication is the canonical **public reading and examination location** for V.A. A reviewer must be able to tell what was specified, what was executed, who witnessed the result, and what is not disclosed. A public fixture cannot inherit the standing of a native V.A. run; missing attachments do not erase the pre-existing corpus or historical pilot record.
 
-## Available now
+## Begin here
 
-| Identifier | Object | Current evidence standing |
+| Reader's objective | Exact entry point | What it provides |
 | --- | --- | --- |
-| [VA-AD-001](VA-AD-001/README.md) | Self-contained executable synthetic authority-change examiner fixture, four cases, before/after mock-state hashes and receipt replay | **Local fixture execution only.** Not native V.A., not pilot, not independent external reproduction |
-| [VA-F01 / VA-F02](../index.html#claims) | Public True Zero / corrected-mathematics claim entries and their defined falsification tests | **DECLARED**; consult exact published formal source |
-| [VA-N01..VA-N04](../index.html#claims) | Native V.A. continuation, refusal, changed-condition, replay claim entries | **DECLARED on this website**; original native run carriers not attached here |
-| [HF-001](../challenges/HF-001-hugging-face-consequence-boundary.md) | Isolated, incident-derived unauthorized external effect challenge | **DECLARED** specification |
-| [RE-001](../challenges/RE-001-production-deletion-frozen-standing.md) | Isolated, incident-derived destructive-effect challenge | **DECLARED** specification |
-| [EC-001](../challenges/EC-001-echoleak-information-release.md) | Isolated, incident-derived information-release challenge | **DECLARED** specification |
-| [EV-001](../challenges/EV-001-false-evidence-standing.md) | Isolated, incident-derived invalid-evidence-standing challenge | **DECLARED** specification |
+| **Examine a result now** | [VA-AD-001](VA-AD-001/README.md) | Python-only, local synthetic test; before/after mock effect, authority change, receipt hashes, replay and [independent verifier script](VA-AD-001/verify.py) |
+| **Inspect all public standing** | [Machine-readable claim-to-carrier ledger](CLAIM-TO-CARRIER.json) | 17 precisely identified objects, each with status, carrier/absence and bounded scope |
+| **Apply the evidence bar** | [Seven-part examination standard](EXAMINATION-STANDARD.md) | Claim, carrier, conditions, controls, change/replay, route/witness |
+| **Find the original source record** | [Hashed public source estate](SOURCE-ESTATE.md) | Three public-release PDF identities with the actual original-file SHA-256 values; originals not yet mirrored |
+| **Review pilot evidence correctly** | [Pilot release and custody standard](PILOT-EVIDENCE-RELEASE.md) | January 2026 and other historical pilot evidence intake; publication-permission boundaries |
 
-## Existing public primary-source documentation
+## Proof actually accessible today
 
-The public proof framework is recorded in *The Shift — Public Proof Estate and Challenge Standard*, July 2026, and the public *True-Zero Consequence Systems Science* record. They distinguish declared statements, native executable proof, observed results, pilot evidence and independent reproduction. An exact copy of each public-safe approved edition should be published here with its digest before its formal claims receive a stronger source link.
+**Observed synthetic examiner fixture (one bounded test, not native V.A.):** [VA-AD-001](VA-AD-001/README.md) tests permitted effect, missing authority, revoked authority, invalid evidence, same-condition reproduction and digest verification. The examiner is the same local machine/process family. It does not establish external route closure or the native computational floor. Run `python proofs/VA-AD-001/verify.py` from repository root to compare the archived report with fresh execution and detect receipt alteration.
 
-## Pilot evidence, including January 2026
+**Declared native and formal claims:** `VA-F01/F02`, `VA-N01..N04`, `VA-P01/P02`, `VA-H01` are routed in the [public claim ledger](CLAIM-TO-CARRIER.json). Their exact original formal PDFs, native receipts, physical data or independent packets are not all attached here. The source estate identifies three publication-cleared supporting records held separately.
 
-The historical pilot record is **not annulled or replaced** by this repository. However, this repository does not presently contain the exact original January 2026 pilot run packet, customer release permission, or independently retained physical outcome record.
+**Falsifiable proposed challenges (no original V.A. run attached):** [HF-001](../challenges/HF-001-hugging-face-consequence-boundary.md), [RE-001](../challenges/RE-001-production-deletion-frozen-standing.md), [EC-001](../challenges/EC-001-echoleak-information-release.md), [EV-001](../challenges/EV-001-false-evidence-standing.md), [SD-001](../challenges/SD-001-credential-possession-vs-standing.md), [SK-001](../challenges/SK-001-untrusted-content-host-effect.md), [CP-001](../challenges/CP-001-cumulative-financial-burden.md).
 
-The release path is: identify the original pilot carrier and scope; confirm which material belongs to the pilot operator or customer; obtain written permission for specific disclosures where required; export a public-safe record with original run/build identity, condition change, observable effect/non-effect, hash/receipt/replay; label who observed or reproduced it. **Do not place raw customer data or a paid customer's pilot packet on a public GitHub repository without clearance.**
+The public site carries **one locally observed synthetic fixture** and **16 declared/formal/native/challenge entries**, under separately labeled scopes. It does not attach original native V.A. runtime results or independent native reproduction packets.
 
-## Distinct proof classes
+## Original work and historical continuity
 
-- **Formal record:** exact mathematical statement, assumptions, derivation, limitation or falsification condition.
-- **Native operational record:** identified V.A. carrier and original measured consequence/non-consequence.
-- **Fixture result:** a controlled educational/mock test. Never mistake it for a native V.A. pilot or an independently reproduced result.
-- **Pilot record:** exact customer/authorized pilot setting, dated run and lawful publication scope, subject to release controls.
-- **Independent reproduction:** separate examiner, separate original observation and traceable frozen carrier identity.
+The July 2026 public proof documents already record a considerably broader proof path than this website has yet brought under one repository roof. The original materials include named formalizations, engineering case families, native boundary obligations, pilot history, and examination standards. The website is a **publication carrier**, not a substitute for or reconstruction of the protected original.
 
-Protected substrate and mathematical construction remain outside the public estate. Public specification is not source transfer, and release of a fixture does not establish universal safety or construction rights.
+**January 2026 and later pilots:** historical and custodian-reported pilot activity is retained as a distinct evidence category. No original January run packet or customer-authorized raw pilot dataset is placed here, and neither should be released without the relevant permissions. The [pilot publication standard](PILOT-EVIDENCE-RELEASE.md) provides the exact non-enabling evidence fields for a safe extract.
 
-**Function must be examinable. Construction need not be reconstructable.**
+## Release invariants
+
+- Every public conclusion names its object, version, evidence status, test conditions, result and falsification boundary.
+- An actual non-effect is measured; a displayed REFUSE word alone proves neither non-formation nor route closure.
+- A same-condition replay preserves the original result; a material change produces a new result without rewriting prior evidence.
+- A declared specification is never silently promoted to an observed run; self-checking is never called independent reproduction.
+- No protected mathematical operators, substrate construction, customer-confidential pilot data or downstream author's proprietary implementation is uploaded without release authority.
+
+**Function must remain examinable. Construction need not become reconstructable.**
