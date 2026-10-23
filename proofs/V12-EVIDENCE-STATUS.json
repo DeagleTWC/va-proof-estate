@@ -1,0 +1,26 @@
+{
+  "schema": "va-native-v12-public/1.0",
+  "system": "V.A. / The Shift",
+  "systemVersion": "V12",
+  "versionProvenance": "Custodian identification; original native V12 frozen build identity not attached to this GitHub release",
+  "publicEvidenceStatus": "NOT_ATTACHED_HERE",
+  "evidenceScope": "Current public publication only; not a statement that original private evidence does not exist",
+  "nativeCarrier": null,
+  "nativeCarrierSHA256": null,
+  "nativeRunIdentifier": null,
+  "positiveEffectObservation": null,
+  "negativeNonEffectObservation": null,
+  "changedConditionObservation": null,
+  "sameConditionReplay": null,
+  "receiptRecord": null,
+  "alternateRouteInventory": null,
+  "examinerRecords": [],
+  "independentReproductions": [],
+  "releaseAuthorization": null,
+  "notNativeV12Evidence": [
+    "VA-AD-001 synthetic local fixture",
+    "historical Deploy Build V1.2",
+    "other engineering builds with a coincidentally matching v12 designation"
+  ],
+  "document": "proofs/V12-REVIEW.md"
+}
