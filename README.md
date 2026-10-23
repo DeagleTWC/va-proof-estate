@@ -22,4 +22,8 @@ Cleared original V.A. proof packets and permissioned historical pilot evidence b
 
 ### Public examiner desk
 
-Start with the [central 17-entry proof register](proofs/README.md), the [seven-part examination standard](proofs/EXAMINATION-STANDARD.md), the [SHA-256-identified public source estate](proofs/SOURCE-ESTATE.md), and the [separately controlled pilot evidence release path](proofs/PILOT-EVIDENCE-RELEASE.md). Automated [public proof integrity checks](.github/workflows/public-proof-integrity.yml) verify fixture behavior, receipt tampering, carrier links and release digests. This does not substitute fixture execution for native V.A. evidence.
+Start with the [V12 native evidence release path](proofs/V12-REVIEW.md), then the [central 17-entry proof register](proofs/README.md), the [seven-part examination standard](proofs/EXAMINATION-STANDARD.md), the [SHA-256-identified public source estate](proofs/SOURCE-ESTATE.md), and the [separately controlled pilot evidence release path](proofs/PILOT-EVIDENCE-RELEASE.md). Automated [public proof integrity checks](.github/workflows/public-proof-integrity.yml) verify fixture behavior, receipt tampering, carrier links and release digests. This does not substitute fixture execution for native V.A. evidence.
+
+### Native V12 evidence gate
+
+[Inspect the exact V12 public proof status](proofs/V12-EVIDENCE-STATUS.json). The [native V12 release standard](proofs/V12-REVIEW.md) and [automated promotion verifier](scripts/validate_v12_evidence.py) reject declarations of observed native runs or independent reproduction until the original release-cleared carriers, digests, observations and qualified examiner records are actually attached. This does not assess what may exist in protected custody.
