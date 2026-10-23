@@ -12,11 +12,12 @@ The DeagleTWC publication is the canonical **public reading and examination loca
 
 | Reader's objective | Exact entry point | What it provides |
 | --- | --- | --- |
+| **Examine native V12 publication readiness** | [V12 original-evidence review path](V12-REVIEW.md) and [machine-readable current status](V12-EVIDENCE-STATUS.json) | Native carrier is not attached here; CI rejects unsupported promotion and verifies original carrier hashes when present |
 | **Check current system version and historical lineage** | [Version identity — V12](VERSION-IDENTITY.md) | Disambiguates current system V12, website v2.0, historical Deploy Build V1.2 and scientific record v1.2.3 without claim promotion |
 | **Examine a result now** | [VA-AD-001](VA-AD-001/README.md) | Python-only, local synthetic test; before/after mock effect, authority change, receipt hashes, replay and [independent verifier script](VA-AD-001/verify.py) |
 | **Inspect all public standing** | [Machine-readable claim-to-carrier ledger](CLAIM-TO-CARRIER.json) | 17 precisely identified objects, each with status, carrier/absence and bounded scope |
 | **Apply the evidence bar** | [Seven-part examination standard](EXAMINATION-STANDARD.md) | Claim, carrier, conditions, controls, change/replay, route/witness |
-| **Find the original source record** | [Hashed public source estate](SOURCE-ESTATE.md) | Three public-release PDF identities with the actual original-file SHA-256 values; originals not yet mirrored |
+| **Find the original source record** | [Hashed public source estate](SOURCE-ESTATE.md) | Four public-release PDF identities with the original-file SHA-256 values; PDFs not yet mirrored |
 | **Review pilot evidence correctly** | [Pilot release and custody standard](PILOT-EVIDENCE-RELEASE.md) | January 2026 and other historical pilot evidence intake; publication-permission boundaries |
 
 ## Independent examination without proprietary access
@@ -32,11 +33,13 @@ Four source-grounded, page-labeled transcriptions have been published here: [Jul
 
 [The Shift — Public Proof Path, Final v2](sources/shift-public-proof-path-v2-extracted.md) is now published as a page-labeled extraction of the 2026 public-safe original. It gives reviewers the historical six-surface inspection sequence without treating distinct third-party and related repository implementations as one native integrated V.A. runtime. Its original PDF SHA-256 is preserved in the [source estate](SOURCE-ESTATE.md). This improves documentary completeness, not the current native execution evidence standing.
 
+**V12 native promotion gate:** [the release standard](V12-REVIEW.md) is now enforced by [a fail-closed verifier](../scripts/validate_v12_evidence.py). A matching version number in a distinct bench or downstream build does not establish current native V.A. V12 identity.
+
 ## Proof actually accessible today
 
 **Observed synthetic examiner fixture (one bounded test, not native V.A.):** [VA-AD-001](VA-AD-001/README.md) tests permitted effect, missing authority, revoked authority, invalid evidence, same-condition reproduction and digest verification. The examiner is the same local machine/process family. It does not establish external route closure or the native computational floor. Run `python proofs/VA-AD-001/verify.py` from repository root to compare the archived report with fresh execution and detect receipt alteration.
 
-**Declared native and formal claims:** `VA-F01/F02`, `VA-N01..N04`, `VA-P01/P02`, `VA-H01` are routed in the [public claim ledger](CLAIM-TO-CARRIER.json). Their exact original formal PDFs, native receipts, physical data or independent packets are not all attached here. The source estate identifies three publication-cleared supporting records held separately.
+**Declared native and formal claims:** `VA-F01/F02`, `VA-N01..N04`, `VA-P01/P02`, `VA-H01` are routed in the [public claim ledger](CLAIM-TO-CARRIER.json). Their exact original formal PDFs, native receipts, physical data or independent packets are not all attached here. The source estate indexes four public-source records, not native run packets.
 
 **Falsifiable proposed challenges (no original V.A. run attached):** [HF-001](../challenges/HF-001-hugging-face-consequence-boundary.md), [RE-001](../challenges/RE-001-production-deletion-frozen-standing.md), [EC-001](../challenges/EC-001-echoleak-information-release.md), [EV-001](../challenges/EV-001-false-evidence-standing.md), [SD-001](../challenges/SD-001-credential-possession-vs-standing.md), [SK-001](../challenges/SK-001-untrusted-content-host-effect.md), [CP-001](../challenges/CP-001-cumulative-financial-burden.md).
 
