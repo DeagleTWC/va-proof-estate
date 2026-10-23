@@ -2,10 +2,10 @@
   "site": "V.A. — The Proof Estate",
   "release": "2.0",
   "edition": "02",
-  "published": "2026-10-22",
+  "published": "2026-10-23",
   "scope": "Native V.A. claim and public examination estate, plus expressly labeled non-native synthetic fixture; no converted or derivative brands",
   "mainFile": "index.html",
-  "mainFileSHA256": "01e911e0de34669f7b939b54dce964e2faa63ae673c527e4783e2100bb5c74ee",
+  "mainFileSHA256": "5c09ce805d0dac1d0eb99c5a76ef4eddaa477ad4ef5277ac6885c4a850a39d94",
   "publicEvidenceStatus": "DECLARED",
   "evidenceStatusVocabulary": [
     "DECLARED",
@@ -88,5 +88,7 @@
     "historicalDeployBuild": "V1.2 (April 2026)",
     "scientificRecordEdition": "v1.2.3 (July 2026)",
     "syntheticExaminerFixture": "VA-AD-001/SPEC-1.0"
-  }
+  },
+  "nativeV12EvidenceGate": "proofs/V12-EVIDENCE-STATUS.json",
+  "nativeV12ExaminationRoute": "proofs/V12-REVIEW.md"
 }
