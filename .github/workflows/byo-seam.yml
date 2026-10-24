@@ -4,10 +4,6 @@ on:
     paths:
       - 'examiner/**'
       - '.github/workflows/byo-seam.yml'
-  pull_request:
-    paths:
-      - 'examiner/**'
-      - '.github/workflows/byo-seam.yml'
   workflow_dispatch:
 jobs:
   synthetic-interface-examination:
