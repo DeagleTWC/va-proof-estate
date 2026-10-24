@@ -1,0 +1,31 @@
+{
+  "schema": "DEAGLE-PHYSICAL-REVIEW-1",
+  "physical_class": "PH-01",
+  "artifact": {
+    "id": "UNPUBLISHED",
+    "version": "TBD",
+    "scope": "PUBLIC-SAFE ONLY",
+    "sha256": "",
+    "frozen": false
+  },
+  "release": {
+    "custodian_approved": false,
+    "contains_protected_construction": false,
+    "contains_confidential_customer_data": false
+  },
+  "evidence": {
+    "pre_state_ref": "",
+    "post_state_ref": "",
+    "independent_sensor_ref": "",
+    "calibration_ref": "",
+    "uncertainty_ref": "",
+    "negative_control_ref": "",
+    "changed_condition_ref": "",
+    "same_condition_replay_ref": "",
+    "receipt_ref": "",
+    "domain_specific_accounting_ref": "",
+    "independent_reproduction_ref": ""
+  },
+  "asserted_independent_reproduction": false,
+  "note": "BLANK EXAMPLE: NOT AN OBSERVATION OR COMPLETED PHYSICAL RESULT"
+}
