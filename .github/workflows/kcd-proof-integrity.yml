@@ -1,0 +1,35 @@
+name: KCD Public Category and Proof Status Integrity
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'category/**'
+      - 'kcd/**'
+      - 'scripts/validate_kcd_register.py'
+      - '.github/workflows/kcd-proof-integrity.yml'
+  pull_request:
+    paths:
+      - 'category/**'
+      - 'kcd/**'
+      - 'scripts/validate_kcd_register.py'
+      - '.github/workflows/kcd-proof-integrity.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  category-standing-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify exact KCD public source lineage and no unearned physical evidence promotion
+        run: python scripts/validate_kcd_register.py
+      - name: Check separate physical category files
+        run: |
+          test -s category/README.md
+          test -s kcd/README.md
+          test -s kcd/PROOF-SERIES-01.md
+          test -s kcd/KCD-PROOF-REGISTER.json
+          python -c 'import json; x=json.load(open("kcd/KCD-PROOF-REGISTER.json")); assert not x["programBInheritedStanding"]; assert not x["protectedConstructionReleased"]'
