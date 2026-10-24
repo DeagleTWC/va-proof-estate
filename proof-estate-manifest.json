@@ -5,7 +5,7 @@
   "published": "2026-10-23",
   "scope": "Native V.A. claim and public examination estate, plus expressly labeled non-native synthetic fixture; no converted or derivative brands",
   "mainFile": "index.html",
-  "mainFileSHA256": "5c09ce805d0dac1d0eb99c5a76ef4eddaa477ad4ef5277ac6885c4a850a39d94",
+  "mainFileSHA256": "8d38bcec5367253047290e3e8d91224085fd66360f523715b510837850ec6f32",
   "publicEvidenceStatus": "DECLARED",
   "evidenceStatusVocabulary": [
     "DECLARED",
@@ -90,5 +90,20 @@
     "syntheticExaminerFixture": "VA-AD-001/SPEC-1.0"
   },
   "nativeV12EvidenceGate": "proofs/V12-EVIDENCE-STATUS.json",
-  "nativeV12ExaminationRoute": "proofs/V12-REVIEW.md"
+  "nativeV12ExaminationRoute": "proofs/V12-REVIEW.md",
+  "byoSeamAddendumDate": "2026-10-24",
+  "publicSeamExaminer": {
+    "protocol": "DEAGLE-BYO-SEAM-1",
+    "entry": "examiner/README.md",
+    "executable": "examiner/byo_seam.py",
+    "positiveControl": "examiner/example_layer.py",
+    "negativeControl": "examiner/negative_layer.py",
+    "fixtureCount": 6,
+    "standing": "SYNTHETIC LOCAL INTERFACE EXAMINATION ONLY; NOT NATIVE V.A. OR EXTERNAL EFFECT",
+    "reproducedInCurrentAuthorSession": true,
+    "nativeVAEvidence": false,
+    "independentNativeReproduction": false,
+    "physicalWitness": false
+  },
+  "publicPhysicalWitnessRequirements": "examiner/PHYSICAL-WITNESS.md"
 }
