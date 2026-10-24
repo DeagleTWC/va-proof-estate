@@ -3,9 +3,9 @@
   "release": "2.0",
   "edition": "02",
   "published": "2026-10-23",
-  "scope": "Native V.A. claim and public examination estate, plus expressly labeled non-native synthetic fixture; no converted or derivative brands",
+  "scope": "V.A.-only native claim and public examination estate; separately labeled synthetic examiner, public True-Zero category primer, and prospective KCD Program A physical proof register (not native V.A. evidence).",
   "mainFile": "index.html",
-  "mainFileSHA256": "603d087014b2d3ad8370f5d303172d09787de99b242432a5570620fe21d60d81",
+  "mainFileSHA256": "2486723f6deff9e3a50bc498b6702b6e570ec4ce00e211e7977c55cb2c7bfbd2",
   "publicEvidenceStatus": "DECLARED",
   "evidenceStatusVocabulary": [
     "DECLARED",
@@ -131,5 +131,21 @@
     "script": "examiner/physical_packet_preflight.py",
     "blankTemplate": "examiner/physical_packet_blank.json",
     "standing": "METADATA PRESENCE AND RELEASE DECLARATIONS ONLY; DOES NOT AUTHENTICATE PHYSICAL OBSERVATIONS"
+  },
+  "categoryIdentity": {
+    "primary": "True-Zero Consequence Systems Science",
+    "path": "category/README.md",
+    "standing": "PUBLIC FORMAL DEFINITION; NOT A CLAIM OF UNIVERSAL VALIDATION OR REGULATORY APPROVAL"
+  },
+  "kcdNextCategory": {
+    "path": "kcd/README.md",
+    "proofProgram": "kcd/PROOF-SERIES-01.md",
+    "separateRegister": "kcd/KCD-PROOF-REGISTER.json",
+    "proofStatus": "FOUR FORMALIZED PUBLIC KCD-PH EXAMINATION OBJECTS; ZERO INSTRUMENTED PHYSICAL RUNS ATTACHED HERE",
+    "separateFromNativeVARegister": true,
+    "programAOnly": true,
+    "programBStandingInherited": false,
+    "protectedConstructionReleased": false,
+    "validationScript": "scripts/validate_kcd_register.py"
   }
 }
