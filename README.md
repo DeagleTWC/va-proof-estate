@@ -18,6 +18,14 @@ See [`proof-estate-manifest.json`](proof-estate-manifest.json) for the release c
 
 **[Run the public BYO examiner and generated stress matrix](examiner/README.md)** to present a local adapter and challenge it with command substitution, changed authority, stale evidence, and an alternate modeled route. [The source](examiner/byo_seam.py), [negative control](examiner/negative_layer.py), [generated changed-condition stress matrix](examiner/adversarial_matrix.py), and [original physical-mechanism examination index](examiner/PHYSICAL-MECHANISMS.md) are public. CI checks a reference adapter and a deliberately unsafe adapter. The result is **synthetic local interface evidence only**, never a native V.A. runtime, customer pilot, physical mechanism measurement or entitlement to protected construction.
 
+## Expanded adversarial and physical evidence routes
+
+The original fixed six-case examiner remains available. The [generated 36-case matrix](examiner/adversarial_matrix.py) provides varied target, authority, stale-evidence and route checks. The [persistent-session challenge](examiner/session_challenge.py) examines 54 state-dependent events in one local adapter process, including one-use ticket replay, substitution, authority loss, expiry, capacity failure, and cross-ticket attempts. An [exact-session report verifier](examiner/verify_session.py) rejects inconsistent or altered archives. The publicly supplied sample is deliberately ordinary and synthetic; **passing does not establish native V.A. behavior or actual real-world effect custody**.
+
+The [physical-mechanism index](examiner/PHYSICAL-MECHANISMS.md) names four selected protected mechanism classes without disclosing the originals' protected construction. The [physical packet preflight](examiner/physical_packet_preflight.py) examines release declarations and metadata completeness only; its [unapproved blank record](examiner/physical_packet_blank.json) **fails by design**. A complete metadata form would still not establish measured non-formation or a qualified independent physical witness.
+
+**All outside code executes on the participant's own machine, not in a V.A. hosted execution environment.** The examiner's own GitHub Actions tests run the published reference adapters, not user-supplied untrusted packages. The public estate is deliberately selected; it is not the full scientific, engineering, pilot, or historical record.
+
 ## DeagleTWC-contained proof carriers
 
 **[Open the central public proof register](proofs/README.md)**. The first self-contained [authority-change examiner fixture](proofs/VA-AD-001/README.md) includes runnable Python, a frozen local fixture report, positive and negative controls, a changed-authority case, receipt hashes and same-condition replay. It is a **synthetic test fixture**, not an original native V.A. run or January 2026 customer-pilot packet.
