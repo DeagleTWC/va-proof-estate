@@ -23,7 +23,6 @@
         "acoustic",
         "vibration",
         "thermal",
-        "simulated",
         "composite"
       ],
       "sourceStage": "FORMALIZED",
@@ -82,5 +81,6 @@
     "changedConditionReplay": true,
     "alternativeRoutesDeclared": true,
     "independentReproductionRequiresDistinctExaminer": true
-  }
+  },
+  "physicalEvidenceExcludes": "Synthetic or simulated carrier results may inform examination design but never qualify a KCD-PH instrumented physical observation."
 }
