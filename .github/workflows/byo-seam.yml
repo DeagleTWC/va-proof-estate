@@ -1,0 +1,35 @@
+name: BYO seam synthetic examination
+on:
+  push:
+    paths:
+      - 'examiner/**'
+      - '.github/workflows/byo-seam.yml'
+  pull_request:
+    paths:
+      - 'examiner/**'
+      - '.github/workflows/byo-seam.yml'
+  workflow_dispatch:
+jobs:
+  synthetic-interface-examination:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Positive seam examination
+        run: |
+          python examiner/byo_seam.py --out /tmp/positive.json --adapter python examiner/example_layer.py > /dev/null
+          python -c 'import json; r=json.load(open("/tmp/positive.json")); assert r["pass_count"]==r["case_count"]==6'
+      - name: Unsafe adapter negative control must fail
+        run: |
+          if python examiner/byo_seam.py --out /tmp/negative.json --adapter python examiner/negative_layer.py > /dev/null; then
+            echo "FAIL: unsafe adapter unexpectedly passed"
+            exit 1
+          fi
+          python -c 'import json; r=json.load(open("/tmp/negative.json")); assert r["pass_count"] < r["case_count"]'
+      - name: Do not promote synthetic result to physical or native V.A. proof
+        run: |
+          python -c 'import json; r=json.load(open("/tmp/positive.json")); assert "NOT NATIVE V.A." in r["examiner_scope"]'
