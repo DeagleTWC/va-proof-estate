@@ -14,6 +14,10 @@ No converted systems or downstream brands are included. No protected constructio
 
 See [`proof-estate-manifest.json`](proof-estate-manifest.json) for the release checksum and explicit standing ceilings.
 
+## Bring your own work — executable local seam
+
+**[Run the six-case public BYO layer examiner](examiner/README.md)** to present a local adapter and challenge it with command substitution, changed authority, stale evidence, and an alternate modeled route. [The source](examiner/byo_seam.py), [negative control](examiner/negative_layer.py), and [physical witness requirements](examiner/PHYSICAL-WITNESS.md) are public. CI checks a reference adapter and a deliberately unsafe adapter. The result is **synthetic local interface evidence only**, never a native V.A. runtime, customer pilot, physical mechanism measurement or entitlement to protected construction.
+
 ## DeagleTWC-contained proof carriers
 
 **[Open the central public proof register](proofs/README.md)**. The first self-contained [authority-change examiner fixture](proofs/VA-AD-001/README.md) includes runnable Python, a frozen local fixture report, positive and negative controls, a changed-authority case, receipt hashes and same-condition replay. It is a **synthetic test fixture**, not an original native V.A. run or January 2026 customer-pilot packet.
