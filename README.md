@@ -16,7 +16,7 @@ See [`proof-estate-manifest.json`](proof-estate-manifest.json) for the release c
 
 ## Bring your own work — executable local seam
 
-**[Run the six-case public BYO layer examiner](examiner/README.md)** to present a local adapter and challenge it with command substitution, changed authority, stale evidence, and an alternate modeled route. [The source](examiner/byo_seam.py), [negative control](examiner/negative_layer.py), and [physical witness requirements](examiner/PHYSICAL-WITNESS.md) are public. CI checks a reference adapter and a deliberately unsafe adapter. The result is **synthetic local interface evidence only**, never a native V.A. runtime, customer pilot, physical mechanism measurement or entitlement to protected construction.
+**[Run the public BYO examiner and generated stress matrix](examiner/README.md)** to present a local adapter and challenge it with command substitution, changed authority, stale evidence, and an alternate modeled route. [The source](examiner/byo_seam.py), [negative control](examiner/negative_layer.py), [generated changed-condition stress matrix](examiner/adversarial_matrix.py), and [original physical-mechanism examination index](examiner/PHYSICAL-MECHANISMS.md) are public. CI checks a reference adapter and a deliberately unsafe adapter. The result is **synthetic local interface evidence only**, never a native V.A. runtime, customer pilot, physical mechanism measurement or entitlement to protected construction.
 
 ## DeagleTWC-contained proof carriers
 
