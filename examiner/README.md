@@ -66,6 +66,31 @@ This unsafe invocation **must exit nonzero** and records **8/36 passing** local 
 
 **Physical mechanism index:** [PH-01 through PH-04 public-safe engineering classes](PHYSICAL-MECHANISMS.md) distinguish corrected KCD from its one candidate EM embodiment and identify the independent evidence still required for physical standing.
 
+## Persistent-session authority challenge — separate public test
+
+The six-case and generated matrix examiners start a new process for each input. To make replay and state-transition behavior harder to ignore, the [persistent-session examiner](session_challenge.py) sends an entire sequence of JSON lines to **one running adapter process**. This is still a synthetic interface test, **not native V.A.**
+
+```sh
+python examiner/session_challenge.py --seed 20261024 --rounds 2 --out session-report.json --adapter python examiner/session_reference.py
+python examiner/verify_session.py session-report.json --adapter python examiner/session_reference.py
+```
+
+The published toy reference is expected to return **54/54** passing events (27 per cohort). The cases include valid one-use ticket execution, second-use replay refusal, substituted target refusal, revocation, stale evidence, unauthorized secondary route, valid later primary route, expiry, capacity failure, cross-ticket injection and missing authority. Each cohort carries randomized ticket, candidate and target identities. The [broken sample](session_broken.py) intentionally executes attempted effects without respecting those constraints and **must fail**. The examiner separately checks reply identity, decision, requested simulated effect, report digests and exact local reproduction.
+
+An adapter for this route reads one JSON packet per input line until end of file and writes exactly one JSON response per line. [Read the reference](session_reference.py) for the **public interface grammar only**; it is a toy and contains no protected native construction. `START` presents a ticket with an exact target, allowed routes and current conditions. `REVOKE`, `STALE` and `EXPIRE` change local state; `TRY` proposes an effect. A valid attempt consumes its ticket; a denied attempt does not create a simulated effect.
+
+**Limit:** these inputs are generated and declared by the public examiner, and local toy adapters can be written to mimic its visible expectations. A passing adapter has not established external power custody, actual real-world route closure, physical non-formation, independent certification or V.A. native implementation.
+
+## Physical-mechanism evidence preflight
+
+Original records are identified in the [controlled public physical-mechanism index](PHYSICAL-MECHANISMS.md), without releasing construction. A [physical metadata preflight](physical_packet_preflight.py) helps prepare a **public-safe packet**, requiring custody approval, frozen artifact identifier and digest, measurement references, independent sensors, calibration, uncertainty, negative control, changed-condition examination, receipts and replay.
+
+```sh
+python examiner/physical_packet_preflight.py examiner/physical_packet_blank.json
+```
+
+The supplied blank packet is **supposed to fail**: it has no cleared measurements or release approval. No original experimental data or proprietary design is included. Even a metadata-complete packet is only **METADATA_PRESENT_UNVERIFIED**; the tool never authenticates observations or promotes a claim to proven physical consequence custody. Do not add private source, private mathematical construction, customer data, actuator instructions or unreleased blueprints.
+
 ## Evidence ceiling: important
 
 **What this actually shows:** a supplied adapter returned suitable decisions and requested simulated effects for these six declared packets. The examiner generated deterministic local results.
