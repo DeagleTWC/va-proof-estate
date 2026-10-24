@@ -64,6 +64,13 @@ jobs:
             echo "FAIL: modified stateful report was accepted"
             exit 1
           fi
+      - name: Physical packet preflight refuses incomplete and unpublished evidence
+        run: |
+          if python examiner/physical_packet_preflight.py examiner/physical_packet_blank.json --out /tmp/physical-preflight.json > /dev/null; then
+            echo "FAIL: incomplete unapproved physical packet unexpectedly promoted"
+            exit 1
+          fi
+          python -c 'import json; x=json.load(open("/tmp/physical-preflight.json")); assert x["status"]=="WITHHOLD_PUBLICATION"; assert not x["physical_outcome_verified"]; assert len(x["issues"])>5'
       - name: Do not promote synthetic result to physical or native V.A. proof
         run: |
           python -c 'import json; r=json.load(open("/tmp/positive.json")); assert "NOT NATIVE V.A." in r["examiner_scope"]'
