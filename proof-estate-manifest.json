@@ -5,7 +5,7 @@
   "published": "2026-10-23",
   "scope": "Native V.A. claim and public examination estate, plus expressly labeled non-native synthetic fixture; no converted or derivative brands",
   "mainFile": "index.html",
-  "mainFileSHA256": "5234fbc91226390c5dd1792de5c2478208b9846d943350d0b9fc94de360973ac",
+  "mainFileSHA256": "603d087014b2d3ad8370f5d303172d09787de99b242432a5570620fe21d60d81",
   "publicEvidenceStatus": "DECLARED",
   "evidenceStatusVocabulary": [
     "DECLARED",
@@ -112,9 +112,24 @@
       "negativeControlCount": 28,
       "generatedCarrier": "SYNTHETIC INTERFACE ONLY; NOT PRODUCTION, PHYSICAL, OR NATIVE V.A.",
       "verifiedInGitHubCI": true
+    },
+    "persistentChallenge": {
+      "executable": "examiner/session_challenge.py",
+      "referenceAdapter": "examiner/session_reference.py",
+      "negativeControl": "examiner/session_broken.py",
+      "verifier": "examiner/verify_session.py",
+      "sampleRounds": 2,
+      "sampleEventCount": 54,
+      "standing": "PERSISTENT-PROCESS LOCAL SYNTHETIC INTERFACE TEST; NO NATIVE V.A. OR ACTUAL PHYSICAL EFFECT",
+      "verifiedInGitHubCI": true
     }
   },
   "publicPhysicalWitnessRequirements": "examiner/PHYSICAL-WITNESS.md",
   "publicPhysicalMechanismIndex": "examiner/PHYSICAL-MECHANISMS.md",
-  "publicByoChallengeSubmission": ".github/ISSUE_TEMPLATE/byo-examination.md"
+  "publicByoChallengeSubmission": ".github/ISSUE_TEMPLATE/byo-examination.md",
+  "publicPhysicalMetadataPreflight": {
+    "script": "examiner/physical_packet_preflight.py",
+    "blankTemplate": "examiner/physical_packet_blank.json",
+    "standing": "METADATA PRESENCE AND RELEASE DECLARATIONS ONLY; DOES NOT AUTHENTICATE PHYSICAL OBSERVATIONS"
+  }
 }
