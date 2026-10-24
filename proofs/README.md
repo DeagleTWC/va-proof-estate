@@ -12,6 +12,8 @@ The DeagleTWC publication is the canonical **public reading and examination loca
 
 **Expanded examiner intake:** [Persistent-session challenge](../examiner/session_challenge.py) and [replay verifier](../examiner/verify_session.py) are synthetic tests of a third-party adapter's own responses. [Physical packet preflight](../examiner/physical_packet_preflight.py) checks declared release permission and whether required measurement references were supplied; it cannot verify the measurement. The original mechanisms and private implementation remain under separate custody.
 
+**Category distinction:** [True-Zero category definition](../category/README.md) and the [separately registered KCD physical proof program](../kcd/README.md) are distinct from this **V.A.-only** claim register. No KCD formalization or synthetic test is silently promoted to a current native V.A. observed run or to a measured physical result.
+
 ## Begin here
 
 | Reader's objective | Exact entry point | What it provides |
