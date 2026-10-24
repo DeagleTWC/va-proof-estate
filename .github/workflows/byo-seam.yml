@@ -30,6 +30,25 @@ jobs:
             exit 1
           fi
           python -c 'import json; r=json.load(open("/tmp/negative.json")); assert r["pass_count"] < r["case_count"]'
+      - name: Generated changed-condition and reroute stress matrix
+        run: |
+          python examiner/adversarial_matrix.py --seed 20261024 --rounds 4 --out /tmp/matrix.json --adapter python examiner/example_layer.py > /dev/null
+          python -c 'import json; r=json.load(open("/tmp/matrix.json")); assert r["pass_count"]==r["case_count"]==36'
+          python examiner/verify_matrix.py /tmp/matrix.json --adapter python examiner/example_layer.py
+      - name: Generated matrix must reject unsafe adapter
+        run: |
+          if python examiner/adversarial_matrix.py --seed 20261024 --rounds 4 --out /tmp/unsafe-matrix.json --adapter python examiner/negative_layer.py > /dev/null; then
+            echo "FAIL: unsafe layer passed generated matrix"
+            exit 1
+          fi
+          python -c 'import json; r=json.load(open("/tmp/unsafe-matrix.json")); assert r["pass_count"]==8 and r["case_count"]==36'
+      - name: Report verifier must detect tampering
+        run: |
+          python -c 'import json; p="/tmp/matrix.json"; o=json.load(open(p)); o["cases"][0]["passed"]=False; json.dump(o,open("/tmp/tampered.json","w"))'
+          if python examiner/verify_matrix.py /tmp/tampered.json; then
+            echo "FAIL: tampered packet was accepted"
+            exit 1
+          fi
       - name: Do not promote synthetic result to physical or native V.A. proof
         run: |
           python -c 'import json; r=json.load(open("/tmp/positive.json")); assert "NOT NATIVE V.A." in r["examiner_scope"]'
