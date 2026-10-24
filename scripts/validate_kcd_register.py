@@ -57,6 +57,7 @@ def main():
         guard(state in STATUSES, f"{ident}: invalid evidence status")
         guard(c.get("sourceStage") == "FORMALIZED", f"{ident}: source formal identity changed")
         guard(c.get("fieldClasses") and isinstance(c.get("fieldClasses"), list), f"{ident}: carrier identity missing")
+        guard("simulated" not in c["fieldClasses"], f"{ident}: synthetic carrier cannot qualify as physical witness")
         guard(c.get("physicalMeasurementAttached") is (state != "FORMALIZED"), f"{ident}: physical attachment mismatch")
         if state == "FORMALIZED":
             guard(c.get("evidencePacket") is None, f"{ident}: formal-only item cannot include promoted result")
