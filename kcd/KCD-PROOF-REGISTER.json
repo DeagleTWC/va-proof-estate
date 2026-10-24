@@ -1,0 +1,86 @@
+{
+  "schema": "DEAGLE-KCD-PROOF-REGISTER-1",
+  "published": "2026-10-24",
+  "scope": "KCD Program A public category and prospective bounded physical witness series. Separate from native V.A. V12 proof estate.",
+  "source": "KCD Unified Mechanism and Application Architecture v2.0",
+  "sourceStatus": "CONTROLLED ORIGINAL RETAINED UNDER CUSTODY",
+  "proofProgram": "kcd/PROOF-SERIES-01.md",
+  "protectedConstructionReleased": false,
+  "independentPhysicalRunsAttached": 0,
+  "observedPhysicalRunsAttached": 0,
+  "programBInheritedStanding": false,
+  "claimStatusVocabulary": [
+    "FORMALIZED",
+    "OBSERVED_BOUNDED",
+    "INDEPENDENTLY_REPRODUCED"
+  ],
+  "claims": [
+    {
+      "id": "KCD-PH-01",
+      "title": "Protected interior / changed exterior relation",
+      "fieldClasses": [
+        "electromagnetic",
+        "acoustic",
+        "vibration",
+        "thermal",
+        "simulated",
+        "composite"
+      ],
+      "sourceStage": "FORMALIZED",
+      "evidenceStatus": "FORMALIZED",
+      "physicalMeasurementAttached": false,
+      "evidencePacket": null,
+      "independentWitnessAttached": false
+    },
+    {
+      "id": "KCD-PH-02",
+      "title": "Measured non-formation / loss of standing",
+      "fieldClasses": [
+        "electromagnetic"
+      ],
+      "sourceStage": "FORMALIZED",
+      "evidenceStatus": "FORMALIZED",
+      "physicalMeasurementAttached": false,
+      "evidencePacket": null,
+      "independentWitnessAttached": false
+    },
+    {
+      "id": "KCD-PH-03",
+      "title": "Narrow, redirect, transfer and closed burden",
+      "fieldClasses": [
+        "electromagnetic",
+        "acoustic",
+        "vibration",
+        "thermal"
+      ],
+      "sourceStage": "FORMALIZED",
+      "evidenceStatus": "FORMALIZED",
+      "physicalMeasurementAttached": false,
+      "evidencePacket": null,
+      "independentWitnessAttached": false
+    },
+    {
+      "id": "KCD-PH-04",
+      "title": "Composite domain-specific capacity and closure",
+      "fieldClasses": [
+        "composite"
+      ],
+      "sourceStage": "FORMALIZED",
+      "evidenceStatus": "FORMALIZED",
+      "physicalMeasurementAttached": false,
+      "evidencePacket": null,
+      "independentWitnessAttached": false
+    }
+  ],
+  "standingCeiling": "FORMALIZED EXAMINATION OBJECTS ONLY. No new KCD instrumented physical outcome or independent reproduction attached on this public estate. No transfer of native V.A. evidence, KCD-A1 future performance, or Program B standing.",
+  "publicationLimit": "The proof estate is a selected public path, not the complete original corpus, historical testing record, or protected physical construction.",
+  "reviewRequirements": {
+    "originalMeasurementPacketMustBeReleased": true,
+    "artifactFrozen": true,
+    "calibratedIndependentMeasurement": true,
+    "negativeControl": true,
+    "changedConditionReplay": true,
+    "alternativeRoutesDeclared": true,
+    "independentReproductionRequiresDistinctExaminer": true
+  }
+}
