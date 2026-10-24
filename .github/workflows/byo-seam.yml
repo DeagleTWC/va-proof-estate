@@ -45,6 +45,25 @@ jobs:
             echo "FAIL: tampered packet was accepted"
             exit 1
           fi
+      - name: Stateful sequence - single-process ticket use, substitution and revocation
+        run: |
+          python examiner/session_challenge.py --seed 20261024 --rounds 2 --out /tmp/session.json --adapter python examiner/session_reference.py > /dev/null
+          python -c 'import json; r=json.load(open("/tmp/session.json")); assert r["event_count"]==54 and r["pass_count"]==54'
+          python examiner/verify_session.py /tmp/session.json --adapter python examiner/session_reference.py
+      - name: Stateful unsafe adapter must be rejected
+        run: |
+          if python examiner/session_challenge.py --seed 20261024 --rounds 2 --out /tmp/broken-session.json --adapter python examiner/session_broken.py > /dev/null; then
+            echo "FAIL: unsafe stateful adapter unexpectedly passed"
+            exit 1
+          fi
+          python -c 'import json; r=json.load(open("/tmp/broken-session.json")); assert r["pass_count"]<r["event_count"]'
+      - name: Stateful receipt mutation must be detected
+        run: |
+          python -c 'import json; x=json.load(open("/tmp/session.json")); x["observations"][0]["passed"]=False; json.dump(x,open("/tmp/session-mutated.json","w"))'
+          if python examiner/verify_session.py /tmp/session-mutated.json; then
+            echo "FAIL: modified stateful report was accepted"
+            exit 1
+          fi
       - name: Do not promote synthetic result to physical or native V.A. proof
         run: |
           python -c 'import json; r=json.load(open("/tmp/positive.json")); assert "NOT NATIVE V.A." in r["examiner_scope"]'
