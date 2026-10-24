@@ -10,6 +10,8 @@ The DeagleTWC publication is the canonical **public reading and examination loca
 
 **Bring your own work:** the [public synthetic BYO seam and generated stress matrix](../examiner/README.md) executes fixed local adapter challenges and has a deliberate negative control. It does not run native V.A. or grant standing to the external technology. [Original physical-mechanism examination index](../examiner/PHYSICAL-MECHANISMS.md) identify separate measurement obligations without releasing controlled apparatus construction.
 
+**Expanded examiner intake:** [Persistent-session challenge](../examiner/session_challenge.py) and [replay verifier](../examiner/verify_session.py) are synthetic tests of a third-party adapter's own responses. [Physical packet preflight](../examiner/physical_packet_preflight.py) checks declared release permission and whether required measurement references were supplied; it cannot verify the measurement. The original mechanisms and private implementation remain under separate custody.
+
 ## Begin here
 
 | Reader's objective | Exact entry point | What it provides |
