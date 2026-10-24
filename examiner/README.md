@@ -43,6 +43,29 @@ For an allowed attempt, return `"decision":"EXECUTE"` and an `"effect_request":{
 
 A receipt is generated for every case using canonical JSON and SHA-256, and the suite fingerprint identifies the fixed fixtures. Preserve an untouched report and rerun on the same machine for basic repeatability. If source changes, record the new version separately. Re-running the reference adapter does not confer independent witness status.
 
+## Generated changed-condition matrix (independent interface test)
+
+The starter six-case set is intentionally small and public. The second route generates a larger synthetic test matrix from a seed, changing the candidate identity and target for each cohort. It examines primary and secondary routes, command substitution, authority removal, stale evidence, multiple simultaneous failures, and exact repetition.
+
+```sh
+python examiner/adversarial_matrix.py --seed 20261024 --rounds 4 --out matrix-report.json --adapter python examiner/example_layer.py
+python examiner/verify_matrix.py matrix-report.json --adapter python examiner/example_layer.py
+```
+
+Expected for the published **toy reference adapter**: **36/36** generated local cases (nine per cohort), with each packet sent twice. An intentionally unsafe adapter is provided so reviewers can see that failure is actually reported:
+
+```sh
+python examiner/adversarial_matrix.py --seed 20261024 --rounds 4 --out unsafe-report.json --adapter python examiner/negative_layer.py
+```
+
+This unsafe invocation **must exit nonzero** and records **8/36 passing** local cases. Automated checks also alter an archived response and verify that its receipt/report integrity check fails. `--seed` is repeatable: replacing it with a fresh locally chosen integer yields a different matrix, but the seed must be retained with the report.
+
+**Challenge strength and limitation:** generated targets and paired changed-condition inputs reduce reliance on a single memorized example. Because the protocol and test oracle are public, a trivial imitation can still pass. Re-running the adapter as a separate subprocess does not prove long-lived autonomous state. A SHA-256 receipt detects alteration relative to its recorded digest, **not authorship, independent witnessing or actual external effect**. The examiner never controls real payment, data or hardware consequences. A production claim requires a separate real consequence-bearing witness.
+
+**External layer ownership:** the participant writes an adapter *locally*, controls its code and decides what results to publish. The site accepts bounded observations for examination; it does not accept private proprietary internals or run arbitrary uploaded code on a V.A. server.
+
+**Physical mechanism index:** [PH-01 through PH-04 public-safe engineering classes](PHYSICAL-MECHANISMS.md) distinguish corrected KCD from its one candidate EM embodiment and identify the independent evidence still required for physical standing.
+
 ## Evidence ceiling: important
 
 **What this actually shows:** a supplied adapter returned suitable decisions and requested simulated effects for these six declared packets. The examiner generated deterministic local results.
