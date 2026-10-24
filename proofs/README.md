@@ -8,6 +8,8 @@ The DeagleTWC publication is the canonical **public reading and examination loca
 
 **The system custodian identifies V12 as the current V.A. version.** The DeagleTWC Proof Estate's own release is **2.0 / edition 02**, not system version 2.0. The April 2026 Veritas / SafeChange **Deploy Build V1.2** is a historical engineering record; the scientific public record **v1.2.3** is a document edition. None of the older records or the VA-AD-001 synthetic fixture is presented as a native V12 execution. A public V12 native release packet is not attached here. See the [version-identity and evidence-lineage register](VERSION-IDENTITY.md) for the precise standing and publication requirements.
 
+**Bring your own work:** the [public synthetic BYO seam](../examiner/README.md) executes fixed local adapter challenges and has a deliberate negative control. It does not run native V.A. or grant standing to the external technology. [Physical witness requirements](../examiner/PHYSICAL-WITNESS.md) identify separate measurement obligations without releasing controlled apparatus construction.
+
 ## Begin here
 
 | Reader's objective | Exact entry point | What it provides |
