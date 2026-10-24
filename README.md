@@ -14,6 +14,14 @@ No converted systems or downstream brands are included. No protected constructio
 
 See [`proof-estate-manifest.json`](proof-estate-manifest.json) for the release checksum and explicit standing ceilings.
 
+## First: what category of systems is this?
+
+**[Read the public True-Zero category definition](category/README.md)** before evaluating individual implementations. This is a distinct formalized discipline of lawful possibility and native consequence formation, not an AI-agent permission hierarchy, governance wrapper or ordinary audit layer.
+
+**[KCD — Next Category of Proofs](kcd/README.md)** is a *separate physical examination track* under the same protected foundational lineage. The [pre-registered physical test series](kcd/PROOF-SERIES-01.md) and [machine-readable four-claim proof register](kcd/KCD-PROOF-REGISTER.json) identify what is formalized, what future measured non-formation would require, and what remains unverified by public physical attachments. **KCD-A1** is one electromagnetic engineering face, not all KCD; **Program B** is separately gated and inherits no Program A standing.
+
+The category definition and upcoming KCD plans **do not reclassify the V.A. site's synthetic runnable examiner as native physical proof**. The V.A.-only claim ledger remains V.A.-only, and the current public website is a selected examination surface rather than the entirety of the protected original record.
+
 ## Bring your own work — executable local seam
 
 **[Run the public BYO examiner and generated stress matrix](examiner/README.md)** to present a local adapter and challenge it with command substitution, changed authority, stale evidence, and an alternate modeled route. [The source](examiner/byo_seam.py), [negative control](examiner/negative_layer.py), [generated changed-condition stress matrix](examiner/adversarial_matrix.py), and [original physical-mechanism examination index](examiner/PHYSICAL-MECHANISMS.md) are public. CI checks a reference adapter and a deliberately unsafe adapter. The result is **synthetic local interface evidence only**, never a native V.A. runtime, customer pilot, physical mechanism measurement or entitlement to protected construction.
