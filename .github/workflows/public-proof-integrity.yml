@@ -29,6 +29,10 @@ on:
       - "scripts/test_verify_historical_v12_zip.py"
       - "scripts/validate_v12_original_public_report.py"
       - "scripts/test_v12_original_public_report.py"
+      - "scripts/verify_historical_run_lineage.py"
+      - "scripts/test_historical_run_lineage.py"
+      - "scripts/validate_historical_run_status.py"
+      - "scripts/test_historical_run_status.py"
       - ".github/workflows/public-proof-integrity.yml"
   pull_request:
     paths:
@@ -38,6 +42,14 @@ on:
       - "scripts/validate_public_register.py"
       - "scripts/validate_v12_evidence.py"
       - ".github/workflows/public-proof-integrity.yml"
+      - "scripts/verify_historical_run_lineage.py"
+      - "scripts/test_historical_run_lineage.py"
+      - "scripts/validate_historical_run_status.py"
+      - "scripts/test_historical_run_status.py"
+      - "scripts/verify_historical_v12_zip.py"
+      - "scripts/test_verify_historical_v12_zip.py"
+      - "scripts/validate_v12_original_public_report.py"
+      - "scripts/test_v12_original_public_report.py"
   workflow_dispatch:
 permissions:
   contents: read
@@ -86,6 +98,11 @@ jobs:
           python scripts/test_verify_historical_v12_zip.py
           python scripts/validate_v12_original_public_report.py
           python scripts/test_v12_original_public_report.py
+      - name: Test original historical connected-run source lineage and negative controls
+        run: |
+          python scripts/test_historical_run_lineage.py
+          python scripts/validate_historical_run_status.py
+          python scripts/test_historical_run_status.py
       - name: Enforce authentic native V12 evidence promotion and reject false claims
         run: python scripts/validate_v12_evidence.py
       - name: Verify public manifest and claim-register integrity
