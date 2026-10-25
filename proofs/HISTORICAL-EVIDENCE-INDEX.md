@@ -31,6 +31,10 @@ The July 2026 original public proof path identifies these six **separate** bound
 
 Machine-readable current-source snapshot: [Historical Public Surfaces JSON](HISTORICAL-PUBLIC-SURFACES.json). These six do not reclassify any prior recorded pilot as independently reproduced or any part of native V12 as evidenced by this website.
 
+## Offline historical artifact discovery
+
+Before release clearance, use the [Milestone 08 private inventory utility](historical/LOCAL-INVENTORY.md) to fingerprint unchanged local source bytes and prepare a *private, incomplete* candidate. It never infers original freeze dates from file metadata or independently certifies outcomes. **Do not publish its file list or candidate.** This tool does not enumerate every historical pilot or freeze until their original records are reviewed.
+
 ## Release-cleared original-carrier intake\n\nHistorical evidence that predates October 2026 is admitted only through the [historical original/public-extract procedure](historical/ADMISSION-GUIDE.md). The [public historical carrier register](historical/PUBLIC-CARRIER-REGISTER.json) currently holds no individual released original run packets; this is **not** a count of prior freezes or pilots. The [intentionally incomplete example entry](historical/CARRIER-ENTRY-TEMPLATE.json) documents required fields but is not proof and must fail preflight until real release-cleared sources are supplied. Original date and digest remain unchanged; later cleared extract receives a distinct digest/date. CI refuses missing bytes or false evidence promotion.\n\n## Carrier-level inventory: add originals without overwriting lineage
 
 A public entry for each safely releasable historic artifact should preserve:
