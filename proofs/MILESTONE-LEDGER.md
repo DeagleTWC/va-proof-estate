@@ -24,10 +24,15 @@
 | 12 | Multi-pilot and real-workflow source-stage triage | SITE INFRASTRUCTURE / SYNTHETIC VALIDATION ONLY | Assign separately verified original pilot build, actual live run, receipt, replay, acceptance and independent witness carriers; no source is promoted by a label |
 | 13 | Historical third-party proof custody and BYO workflow examination | BUILT FOR PUBLIC EXAMINATION / ORIGINAL THIRD-PARTY RELEASE PENDING | Use exact externally authorized original carriers and distinct independent examiner observations; BYO applicant runs data-only integrity checks and preserves no-effect/changed-condition evidence |
 | 14 | Five historically sourced engineering/pilot/review evidence families reconciled | PUBLIC SAFE SOURCE INDEX DELIVERED / ORIGINAL PACKETS UNDER SEPARATE CUSTODY | Inspect actual original source bytes, dates, runs and release authority before attaching an evidence carrier |
+| 15 | Original public source-byte cross-check: July PDF and three historical source receipts | VERIFIED SOURCE LINKS / NOT NATIVE PILOT RELEASE | Preserve immutable commit, Git blob identity and full-source SHA-256; qualify original private V1.2 proof/pilot packets separately before original-run publication |
 
 ## Original historical source recovery
 
 [Milestone 11 historical source reconciliation](MILESTONE-11-SOURCE-RECONCILIATION.md) identifies previously frozen engineering proof, controlled pilot scope, launch packages, a source-stage pending live-run form and technical review of third-party work. These are five **source families**, not five pilots and not all previous freezes. Exact original ZIPs, subsequent run receipts and release approvals remain under separate custody. The [public source-family index](HISTORICAL-SOURCE-FAMILIES.json) does not claim operational or native V12 standing.
+
+## Historical original-source byte verification
+
+The [Milestone 12 byte-identity crosswalk](HISTORICAL-SOURCE-BYTE-VERIFICATION.md) checks the original July 2026 public PDF's exact SHA-256 against the existing estate and links three preserved earlier public receipt/result files by immutable original commit, Git blob SHA-1 and full-source SHA-256. This verifies **public source existence and original file identity**, **not** an original private engineering-build ZIP, all historical live pilot results, independent external effect sensing, or current native V.A. V12 standing.
 
 ## Third-party historical evidence and applicant-owned workflow entry
 

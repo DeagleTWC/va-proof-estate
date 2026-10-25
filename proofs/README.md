@@ -82,3 +82,7 @@ Earlier pilots and freezes remain original historical objects, distinct from the
 ## Historical source recovery checkpoint
 
 [Milestone 11: Original Source Reconciliation](MILESTONE-11-SOURCE-RECONCILIATION.md) separates prior build proof, historical pilot scope, launch documents, original first-run form stages and externally submitted engineering examinations. The [public-safe source-family index](HISTORICAL-SOURCE-FAMILIES.json) is not a census of pilots, and it is not an original native run result. Original record identities and custody persist until release-authorized originals can be examined.
+
+## Verified originals at source, not newly fabricated results
+
+The [historical source-byte crosswalk](HISTORICAL-SOURCE-BYTE-VERIFICATION.md) individually pins actual stored receipt/result files in three earlier public proof repositories and verifies the original July public proof-path PDF's 71,495 bytes match its previously published SHA-256. Original source files remain in their own repositories; the public manifest preserves Git blob identity and exact source hash. These are traceable historical **source artifacts**, not a substitute for the original private V1.2 ZIP, completed customer pilot, independently instrumented no-effect observation or native V.A. V12 reproduction.
