@@ -1,6 +1,6 @@
 # Measurement Coverage Worksheet — Public Examiner Blank
 
-**Purpose:** A release-safe checklist for establishing whether an observed bounded result can be attributed to an identified system under declared conditions, including a refusal/non-effect. **Completing this form is not proof.** Original instrumentation, logs and independent custody are required. This form must not contain proprietary construction, private corrected-K operators, customer data, credentials or private signing keys.
+**Purpose:** A release-safe checklist for either **reviewing an existing historical freeze/pilot result from its unchanged original** or documenting a newly authorized bounded examination, including a refusal/non-effect. Never retroactively date, regenerate or substitute an existing freeze. **Completing this form is not proof.** Original instrumentation, logs and independent custody are required. This form must not contain proprietary construction, private corrected-K operators, customer data, credentials or private signing keys.
 
 ## A. Identity and scope
 
