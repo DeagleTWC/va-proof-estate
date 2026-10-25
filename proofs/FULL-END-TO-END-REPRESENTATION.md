@@ -1,3 +1,7 @@
+## Governing priority: Maximum safe, independently verifiable evidence
+
+The [Proof Estate Publication and Harm Prevention Charter](PUBLIC-INTEREST-PUBLICATION-CHARTER.md) overrides commercial-exclusivity arguments for concealing otherwise safe, authorized demonstrated outcomes. The estate seeks maximal recheckable scientific, engineering, safety and historical pilot evidence—including actual TMU workflow outcomes, original receipts, changed-condition controls and independent review **when exact source rights and harm review permit**. The kernel and protected foundational construction remain unavailable; the proof of their *function* should be made as transparent as safety and lawful custody allow. The [TMU evidence status](TMU-PUBLIC-EVIDENCE-STATUS.json) identifies an eligibility lane, not an automatically completed and publishable pilot.
+
 # V.A. / The Shift — Complete Public End-to-End Estate
 
 **Primary website:** [Open the complete Deagle End-to-End Atlas](../end-to-end.html)  
