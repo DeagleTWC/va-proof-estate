@@ -1,6 +1,6 @@
 # Claim-to-Evidence Dependency Map
 
-This map states **necessary evidence relationships**, not a simulation or an operational proof.
+This map states **necessary evidence relationships**, not a simulation or an operational proof. Historical V.A. pilots, engineering layers and original freezes already predate this public website. The diagram is a **claim admission dependency**, not a suggestion that all earlier work starts anew. See [historical evidence index](HISTORICAL-EVIDENCE-INDEX.md).
 
 ```text
 IDENTIFIED CLAIM + EXACT OBJECT
