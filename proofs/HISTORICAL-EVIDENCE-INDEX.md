@@ -31,6 +31,10 @@ The July 2026 original public proof path identifies these six **separate** bound
 
 Machine-readable current-source snapshot: [Historical Public Surfaces JSON](HISTORICAL-PUBLIC-SURFACES.json). These six do not reclassify any prior recorded pilot as independently reproduced or any part of native V12 as evidenced by this website.
 
+## Historic source families reconciled — Milestone 11
+
+[Source recovery, identity and custody ceiling](MILESTONE-11-SOURCE-RECONCILIATION.md) distinguishes historical engineering proof, controlled pilot scope, launch packages, a source-stage first-run form, and previously bounded external engineering review. The [public-safe source family index](HISTORICAL-SOURCE-FAMILIES.json) contains **five evidence families, not five pilots**. Private originals and public release rights remain separate. Missing public original attachments do not negate historical testing and freezes.
+
 ## Additional pilots and actual workflow records under private custody
 
 The [Milestone 09 multi-pilot and real-workflow evidence path](MULTI-PILOT-EVIDENCE-ROUTE.md) keeps separately identified prior workflows and engineering freezes distinct from the six selected public proof-route repositories. It supports multiple pilot lanes without implying that a proposal, a frozen build verification, an operational live result and a customer acceptance are interchangeable. Only release-cleared exact originals can later enter the public historical carrier register; private Library records are not mirrored here.

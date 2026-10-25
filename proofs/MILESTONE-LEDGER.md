@@ -23,6 +23,11 @@
 | 11 | Offline historical source fingerprint inventory and private release-candidate creation | IMPLEMENTED AS PUBLIC TOOLING MILESTONE | Fingerprint original files offline; preserve original historical freeze identity and authorize a distinct public extract before any publication |
 | 12 | Multi-pilot and real-workflow source-stage triage | SITE INFRASTRUCTURE / SYNTHETIC VALIDATION ONLY | Assign separately verified original pilot build, actual live run, receipt, replay, acceptance and independent witness carriers; no source is promoted by a label |
 | 13 | Historical third-party proof custody and BYO workflow examination | BUILT FOR PUBLIC EXAMINATION / ORIGINAL THIRD-PARTY RELEASE PENDING | Use exact externally authorized original carriers and distinct independent examiner observations; BYO applicant runs data-only integrity checks and preserves no-effect/changed-condition evidence |
+| 14 | Five historically sourced engineering/pilot/review evidence families reconciled | PUBLIC SAFE SOURCE INDEX DELIVERED / ORIGINAL PACKETS UNDER SEPARATE CUSTODY | Inspect actual original source bytes, dates, runs and release authority before attaching an evidence carrier |
+
+## Original historical source recovery
+
+[Milestone 11 historical source reconciliation](MILESTONE-11-SOURCE-RECONCILIATION.md) identifies previously frozen engineering proof, controlled pilot scope, launch packages, a source-stage pending live-run form and technical review of third-party work. These are five **source families**, not five pilots and not all previous freezes. Exact original ZIPs, subsequent run receipts and release approvals remain under separate custody. The [public source-family index](HISTORICAL-SOURCE-FAMILIES.json) does not claim operational or native V12 standing.
 
 ## Third-party historical evidence and applicant-owned workflow entry
 
@@ -36,7 +41,11 @@ The [Milestone 09 source-routing guide](MULTI-PILOT-EVIDENCE-ROUTE.md) separates
 
 The [Milestone 08 private scanner](historical/LOCAL-INVENTORY.md) can hash files under a user-selected local directory and verify later changes. It creates a **PRIVATE** inventory and an intentionally incomplete candidate that fails public admission. Neither the scanner nor its synthetic regression counts historical pilots, substitutes for a documented freeze or grants publication authority.
 
-## Next historical evidence publication action\n\nLocate one original historical pilot or freeze with its original exact identity, existing freeze digest and custody. If release rights permit, prepare a separately hashed public-safe extract; run [the historical carrier preflight](historical/ADMISSION-GUIDE.md) and preserve its limitations. An attached historical extract never becomes native V12 or KCD physical evidence by relabeling. This site currently contains **zero individually admitted historical run packets** under that register; the number of historical pilots and freezes remains greater than this public attachment count.\n\n## Next public Cycle 001 examination action
+## Next historical evidence publication action
+
+Locate one original historical pilot or freeze with its original exact identity, existing freeze digest and custody. If release rights permit, prepare a separately hashed public-safe extract; run [the historical carrier preflight](historical/ADMISSION-GUIDE.md) and preserve its limitations. An attached historical extract never becomes native V12 or KCD physical evidence by relabeling. This site currently contains **zero individually admitted historical run packets** under that register; the number of historical pilots and freezes remains greater than this public attachment count.
+
+## Next public Cycle 001 examination action
 
 1. A new, genuinely distinct Cycle 001 applicant uses [the freeze protocol](../examiner/ISSUE-CYCLE-001.md) and comments **only** their release-safe `freeze.json` on [Issue #1](https://github.com/DeagleTWC/va-proof-estate/issues/1).
 2. A distinct authorized issuer dispatches the documented GitHub workflow **after** the unedited freeze.
