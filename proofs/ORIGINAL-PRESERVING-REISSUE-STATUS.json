@@ -1,0 +1,51 @@
+{
+  "schema": "va-original-preserving-derived-seal/1.0",
+  "milestone": 19,
+  "asOf": "2026-10-25",
+  "evidenceCategory": "HISTORIC_RELEASE_ARCHIVE_INTEGRITY_DERIVATIVE_NOT_ORIGINAL_NATIVE_WITNESS",
+  "original": {
+    "originalArchivePreserved": true,
+    "originalCopiesUnchanged": true,
+    "originalSourceContentMembers": 56,
+    "originallyIndexedMembers": 55,
+    "originallyMatchingHashes": 54,
+    "originallyMismatchingHashes": 1,
+    "originallyUnindexedMembers": 1,
+    "originalArchiveStatus": "HOLD_UNCHANGED",
+    "historicalFreezeAuthenticatedByNewDerivative": false,
+    "exactPrivateOriginalDigestPublished": false
+  },
+  "derivative": {
+    "createdUnderPrivateCustody": true,
+    "newIndependentArtifactIdentity": true,
+    "reviewPurposeOnly": true,
+    "originalSourceMemberPayloadsByteIdentical": true,
+    "originalContentMembersRetained": 56,
+    "newCustodyProvenanceRecordAdded": true,
+    "newHashIndexCoversAllMembersExceptItself": true,
+    "indexedMembers": 57,
+    "matchingSHA256Entries": 57,
+    "missingIndexEntries": 0,
+    "sourceMemberAlterations": 0,
+    "localDerivativeSealResult": "PASS_PRIVATE_DERIVED_MEMBER_HASH_CLOSURE_ONLY",
+    "newArchiveExactDigestRetainedPrivate": true,
+    "derivativePubliclyReleased": false,
+    "derivedRuntimeRerun": false
+  },
+  "independentQualification": {
+    "externalEffectMeasuredByDerivative": false,
+    "cryptographicIndependentHumanIdentityEstablished": false,
+    "nativeV12StandingInherited": false,
+    "originalHistoricReleaseHOLDOverturned": false,
+    "independentNativeVAPublicCarrierAdmitted": false,
+    "actualHistoricPilotCount": "NOT DETERMINED"
+  },
+  "disclosure": "ORIGINAL_AND_DERIVATIVE_BYTES_PRIVATE_NOT_RELEASE_APPROVED",
+  "publicTools": [
+    "scripts/reissue_original_seal_for_review.py",
+    "scripts/test_reissue_original_seal_for_review.py",
+    "scripts/audit_original_release_seal.py"
+  ],
+  "nextGate": "A separate authorized operational proof: original frozen native V.A. run, real external consequence observation for allowed/refused/changed conditions across declared routes, original receipt and replay, authentic independent examiner and clearance for the exact bounded public extract.",
+  "noAutomaticPromotion": true
+}
