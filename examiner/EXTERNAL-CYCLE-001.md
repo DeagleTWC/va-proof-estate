@@ -1,6 +1,6 @@
 # Deagle external examination — Review Cycle 001
 
-**Status: OPEN FOR INDEPENDENT CANDIDATES. No third-party examination, execution or witness standing is established merely by opening this cycle.**
+**Status: OPEN FOR INDEPENDENT CANDIDATES. [Participate in Cycle 001](https://github.com/DeagleTWC/va-proof-estate/issues/1). No third-party examination, execution or witness standing is established merely by opening this cycle.**
 
 ## Examination invitation
 
