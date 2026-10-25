@@ -23,7 +23,7 @@ def main():
         ("independent third-party witnessed",lambda x:x.update(independentNativeV12ReproductionsEstablished=True)),
         ("historic source promoted to original freeze",lambda x:x["publicHistoricalSourceFiles"][0].update(originalHistoricalFreezeIdentityNotInferred=False)),
         ("unread private original ZIP falsely verified",lambda x:x.update(historicalEngineeringV12ZipSourceVerifiedHere=True)),
-        ("private original Zip falsely publicly attached",lambda x:x.update(originalHistoricalV12ZIPPubliclyAttached=True)),
+        ("private original Zip falsely publicly attached",lambda x:x.update(historicalOriginalV12ZIPPubliclyAttached=True)),
         ("PDF digest changed",lambda x:x["sourcePDF"].update(originalPDFSHA256="0"*64)),
         ("public source case count changed",lambda x:x["publicHistoricalSourceFiles"][1].update(actualRecordedCaseCount=99)),
         ("source linked as external physical effect",lambda x:x["publicHistoricalSourceFiles"][1].update(externalObservedEffectVerified=True)),
