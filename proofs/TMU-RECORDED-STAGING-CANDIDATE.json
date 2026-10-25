@@ -1,0 +1,59 @@
+{
+  "schema": "va-tmu-recorded-staging-evidence-candidate/1.0",
+  "published": "2026-10-25",
+  "sourceRecordReportedDate": "2026-04-13",
+  "recordAcquisition": "Original April 2026 correspondence attachment bytes recovered under private authorized account custody",
+  "originalEvidenceDescription": "TMU-referenced governed-runtime staging proof outputs, not an established live TMU customer deployment",
+  "sourceRecordClass": "HISTORICAL_SAVED_STAGING_GATE_AND_RECEIPT_LOGS",
+  "sourceRecordPack": "TMU_One_Path_Proof_Pack",
+  "sourceRecordPackVersion": "v1.2_FULL_ENV",
+  "originalEmailAttachmentsLocated": 7,
+  "originalMetadataFilesLocated": 1,
+  "originalGateLogFilesLocated": 5,
+  "originalReceiptBundleLocated": 1,
+  "originalReceiptBundleMatchesRecordedCaseIdentifiers": true,
+  "fiveGateOutputsReportedPass": true,
+  "savedDecisionClasses": [
+    "EXECUTE",
+    "REFUSE"
+  ],
+  "savedReceiptsFound": 2,
+  "savedReplayOutcomeClassComparisonsReported": 2,
+  "recordedTotalSpansMilliseconds": {
+    "execute": 142,
+    "refuse": 67
+  },
+  "recordedCommitSubspansMilliseconds": {
+    "execute": 38,
+    "refuse": 12
+  },
+  "reportedEnvironment": "staging_docker",
+  "publicNotes": "The counts and outcome labels above are a minimal descriptive evidence-candidate inventory, not release-cleared raw pilot records, an independent rerun, or authenticated external consequences.",
+  "originalArtifactBytesRetainedPrivate": true,
+  "originalArtifactHashesRetainedPrivate": true,
+  "separatelyFixedContemporaneousSourceDigestLocated": false,
+  "originalExecutedRuntimeReproducedInThisMilestone": false,
+  "independentNativeVaWitnessAuthenticated": false,
+  "externalEffectAndNonEffectInstrumented": false,
+  "actualTMUCustomerDeploymentEstablished": false,
+  "partnerReleaseRightsConfirmed": false,
+  "exactOutcomeOrReceiptExtractSafetyApproved": false,
+  "completedRunSourceStatus": "ORIGINAL_RECORDED_STAGING_TEST_OUTPUTS_FOUND",
+  "tmupilotStatus": "LIVE_EXTERNAL_TMU_PILOT_NOT_ESTABLISHED_BY_THIS_SOURCE",
+  "publicCarrierStatus": "NO_ORIGINAL_RECEIPT_OR_TEST_PAYLOAD_ADMITTED",
+  "charterDisposition": "CONTROLLED_REVIEW_UNTIL_RIGHTS_AND_SAFETY_APPROVAL",
+  "separateReportedLaterRun": "April 16 correspondence describes a separately reported commit-boundary harness and simulated overhead, not authenticated as the exact April 13 staging carrier",
+  "obligationsBeforeRelease": [
+    "Confirm exact rights/consent of TMU and other source owners for precise proposed public bytes",
+    "Verify contemporaneous source freeze and original execution environment",
+    "Validate actual external consequence/non-formation and unexamined routes if claiming operational standing",
+    "Authenticate independent reviewer and original witness methodology if claiming independently reproduced",
+    "Remove hidden source, vulnerability/bypass, personal/customer identifiers and reconstructible substrate data",
+    "Rehash and approve exact public extract with distinct original and extract custody and documented safety review"
+  ],
+  "relatedMission": "proofs/PUBLIC-INTEREST-PUBLICATION-CHARTER.md",
+  "relatedExistingTMUStatus": "proofs/TMU-PUBLIC-EVIDENCE-STATUS.json",
+  "separateHistoricVeritasPilot": "proofs/HISTORICAL-RUN-RECONCILIATION.md",
+  "noNewPublicationPermissionGranted": true,
+  "noAutomaticProofPromotion": true
+}
