@@ -23,7 +23,7 @@ def fixture():
     rows=lambda state:[{"test":name,"expected_fixed":True,"outcome":state,
                         "detail":"Synthetic outcome; not an actual PyJWT execution"}
                        for name in names]
-    code=("import sys, jwt\nROOT=sys.argv[1]\nsys.path.insert(0, ROOT)\n"+
+    code=("import sys\nimport jwt\nROOT=sys.argv[1]\nsys.path.insert(0, ROOT)\n"+
           "\n".join("record('"+n+"', True, lambda: None)" for n in names)+"\n").encode()
     contents={
       REPORT:b"%PDF-1.4\nSYNTHETIC PDF; no historic standing\n%%EOF\n",
