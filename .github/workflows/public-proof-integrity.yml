@@ -120,6 +120,11 @@ jobs:
           python scripts/test_historical_external_review_originals.py
           python scripts/validate_historical_review_originals.py
           python scripts/test_historical_review_originals.py
+      - name: Verify recovered original PyJWT differential source format, results and no native promotion
+        run: |
+          python scripts/test_historical_pyjwt_differential_original.py
+          python scripts/validate_historical_differential_source.py
+          python scripts/test_historical_differential_source.py
       - name: Enforce authentic native V12 evidence promotion and reject false claims
         run: python scripts/validate_v12_evidence.py
       - name: Verify public manifest and claim-register integrity
