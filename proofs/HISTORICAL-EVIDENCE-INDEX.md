@@ -16,6 +16,21 @@ The custodian identifies **multiple prior pilots, multiple engineering layers an
 | October 2026 synthetic examination work | [Local examiner](../examiner/README.md), [Cycle 001](../examiner/EXTERNAL-CYCLE-001.md) | Rerunnable public synthetic cases, fresh external-challenge workflow, and active examiner invitation | These are **additions**, not replacements for any preceding freeze or pilot |
 | Physical KCD examinations | [Program A evidence register](../kcd/KCD-PROOF-REGISTER.json) | Controlled formalization and proposed physical proof track, no physical measurements attached here | Native V.A. or earlier engineering pilot does not automatically confer KCD physical standing |
 
+## Six earlier public proof surfaces — pinned source revisions
+
+The July 2026 original public proof path identifies these six **separate** bounded examination surfaces. This is a source-oriented subset of the wider historical estate, not the count of pilots, layers or freezes. The current commit identifiers below are **2026-10-25 verification snapshots**, not assertions about which revision was originally frozen. Some repositories maintain separate ownership, brand history and redistribution rights; this index only links them and never republishes their code.
+
+| Earlier public surface | July public reviewer purpose | Observed repository revision |
+| --- | --- | --- |
+| [Kamanaka5502/elyria-one-proof](https://github.com/Kamanaka5502/elyria-one-proof) | Candidate, pre-action decision, receipt and replay | [`7ef8c424ca95`](https://github.com/Kamanaka5502/elyria-one-proof/commit/7ef8c424ca95d0bf55b18b9d13aa79e4ac29a058) (current snapshot; not historic original freeze) |
+| [Kamanaka5502/elyria-pre-effect-enforcement-harness](https://github.com/Kamanaka5502/elyria-pre-effect-enforcement-harness) | Refusal/no-effect vs downstream logging | [`bf3cf0c442ae`](https://github.com/Kamanaka5502/elyria-pre-effect-enforcement-harness/commit/bf3cf0c442ae99424cdcb12b92bc98eea282197b) (current snapshot; not historic original freeze) |
+| [Kamanaka5502/authority-revocation-witness](https://github.com/Kamanaka5502/authority-revocation-witness) | Revocation invalidates prior authority for continuation | [`620324048ff1`](https://github.com/Kamanaka5502/authority-revocation-witness/commit/620324048ff1b067af6602d50d3016adcaed3747) (current snapshot; not historic original freeze) |
+| [Kamanaka5502/scope-expiry-gate](https://github.com/Kamanaka5502/scope-expiry-gate) | Prior approval fails after scope expiry | [`d0acaa0b4dee`](https://github.com/Kamanaka5502/scope-expiry-gate/commit/d0acaa0b4dee8cc26b357ce0e26c57f2d989da34) (current snapshot; not historic original freeze) |
+| [Kamanaka5502/elyria-ai-revalidation-engine](https://github.com/Kamanaka5502/elyria-ai-revalidation-engine) | Changed environmental/input conditions and stale approvals | [`0f096a46cb9d`](https://github.com/Kamanaka5502/elyria-ai-revalidation-engine/commit/0f096a46cb9dcafacbf924cdebae4614c7c94a79) (current snapshot; not historic original freeze) |
+| [Kamanaka5502/veritas-safechange](https://github.com/Kamanaka5502/veritas-safechange) | Reconsidered eligibility at attempted commit/bind | [`1d93e6bee42c`](https://github.com/Kamanaka5502/veritas-safechange/commit/1d93e6bee42c3b1f0725f69c369b45641605c26d) (current snapshot; not historic original freeze) |
+
+Machine-readable current-source snapshot: [Historical Public Surfaces JSON](HISTORICAL-PUBLIC-SURFACES.json). These six do not reclassify any prior recorded pilot as independently reproduced or any part of native V12 as evidenced by this website.
+
 ## Carrier-level inventory: add originals without overwriting lineage
 
 A public entry for each safely releasable historic artifact should preserve:
