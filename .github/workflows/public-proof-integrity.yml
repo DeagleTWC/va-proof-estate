@@ -10,6 +10,8 @@ on:
       - "scripts/validate_v12_evidence.py"
       - "scripts/validate_source_transcripts.py"
       - "scripts/validate_historical_public_surfaces.py"
+      - "scripts/validate_historical_carriers.py"
+      - "scripts/test_historical_carriers.py"
       - ".github/workflows/public-proof-integrity.yml"
   pull_request:
     paths:
@@ -36,6 +38,10 @@ jobs:
         run: python scripts/validate_source_transcripts.py
       - name: Verify historical source revisions are not relabeled as original freezes
         run: python scripts/validate_historical_public_surfaces.py
+      - name: Verify historical carrier release admission and negative controls
+        run: |
+          python scripts/validate_historical_carriers.py
+          python scripts/test_historical_carriers.py
       - name: Enforce authentic native V12 evidence promotion and reject false claims
         run: python scripts/validate_v12_evidence.py
       - name: Verify public manifest and claim-register integrity

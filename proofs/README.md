@@ -66,3 +66,7 @@ The July 2026 public proof documents already record a considerably broader proof
 - No protected mathematical operators, substrate construction, customer-confidential pilot data or downstream author's proprietary implementation is uploaded without release authority.
 
 **Function must remain examinable. Construction need not become reconstructable.**
+
+## Historical carrier release path
+
+Earlier pilots and freezes remain original historical objects, distinct from the new October 2026 examiner cycle. The [historical lineage](HISTORICAL-EVIDENCE-INDEX.md) identifies earlier public proof surfaces. The [historical admission gate](historical/ADMISSION-GUIDE.md) preserves the original frozen digest and custody separately from any newly cleared public extract. [The release register](historical/PUBLIC-CARRIER-REGISTER.json) does not substitute an unapproved demonstration or count absence of published originals as absence of prior pilots.
