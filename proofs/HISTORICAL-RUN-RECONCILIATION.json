@@ -1,0 +1,79 @@
+{
+  "schema": "va-historical-connected-run-source-crosscheck/1.0",
+  "reviewDate": "2026-10-25",
+  "sourceReviewBasis": "Actual separately stored April 2026 ZIP bytes examined locally under private source custody; original ZIPs not uploaded to GitHub.",
+  "findingClass": "ORIGINAL_ARCHIVED_RECORD_CONSISTENCY_WITH_VERSIONED_RUN_ID",
+  "sourceFamilies": [
+    {
+      "sourceLabel": "Earlier three-case integration simulation closeout",
+      "stage": "ARCHIVED_INTEGRATION_SIMULATION_CAPTURE",
+      "originalZipRetainedPrivate": true,
+      "recordedOutcomeClasses": [
+        "EXECUTE",
+        "REFUSE",
+        "ESCALATE"
+      ],
+      "originalRecordEntriesCrossChecked": 3,
+      "recordedDisposition": "GO_WITH_CONSTRAINTS",
+      "actualExternalEffectEstablished": false
+    },
+    {
+      "sourceLabel": "Connected-environment source record v1",
+      "stage": "COMPLETED_CAPTURE_RECORD_RETAINED",
+      "originalZipRetainedPrivate": true,
+      "recordedOutcomeClasses": [
+        "EXECUTE",
+        "REFUSE",
+        "ESCALATE"
+      ],
+      "originalRecordEntriesCrossChecked": 3,
+      "recordedDisposition": "GO_WITH_CONSTRAINTS",
+      "actualExternalEffectEstablished": false
+    },
+    {
+      "sourceLabel": "Connected-environment source record v2",
+      "stage": "REVISED_COMPLETED_CAPTURE_RECORD_RETAINED",
+      "originalZipRetainedPrivate": true,
+      "recordedOutcomeClasses": [
+        "EXECUTE",
+        "REFUSE",
+        "ESCALATE"
+      ],
+      "originalRecordEntriesCrossChecked": 3,
+      "recordedDisposition": "GO_WITH_CONSTRAINTS",
+      "actualExternalEffectEstablished": false
+    },
+    {
+      "sourceLabel": "Pilot-expansion readiness v2",
+      "stage": "CONSTRAINED_READINESS_DECISION_RECORD",
+      "originalZipRetainedPrivate": true,
+      "recordedOutcomeClasses": [],
+      "originalRecordEntriesCrossChecked": 0,
+      "recordedDisposition": "GO_WITH_CONSTRAINTS",
+      "actualExternalEffectEstablished": false
+    }
+  ],
+  "archiveCopiesOrVersionsDoNotEqualPilots": true,
+  "recordedCaseEntriesAcrossThreeSourceArchives": 9,
+  "connectedV1V2ShareSameRunId": true,
+  "differentConnectedRunsEstablishedBetweenV1V2": false,
+  "connectedV1V2RecordedLatenciesRevised": true,
+  "readinessV2ReportedLatencyMatchesConnectedV2": true,
+  "threeDecisionClassesRemainConsistentWithinEachOriginal": true,
+  "sourceReplayFieldsAssertedAsHeld": true,
+  "replayFreshlyExecutedAgainstNativeRuntime": false,
+  "receiptSignaturesIndependentlyCryptographicallyValidated": false,
+  "externalProtectedEffectsIndependentlyMeasured": false,
+  "qualifiedThirdPartyExaminerIdentityEstablishedBySource": false,
+  "originalPilotRunPubliclyReleased": false,
+  "publicOriginalPilotCarrierRegisterChanged": false,
+  "privacy": {
+    "originalZipBytesUploaded": false,
+    "privateZipHashesPublished": false,
+    "customerOrClinicalRecordsPublished": false,
+    "originalRunIdsPublished": false,
+    "thirdPartyPrivateIdentitiesPublished": false
+  },
+  "limits": "Internal archived capture/receipt agreement and a version lineage are verifiable locally. The examined sources do not by themselves prove a customer hospital deployment, independent remote instrument, genuine signed receipt chain, native V.A. V12 execution, authenticated third-party examiner, or lawful release rights.",
+  "nextEvidenceGate": "Obtain authorized public-safe hash-bound extract from one actual completed run, then separately test externally observed effects/non-effects and third-party receipt/replay without exposing private source."
+}

@@ -26,6 +26,11 @@
 | 14 | Five historically sourced engineering/pilot/review evidence families reconciled | PUBLIC SAFE SOURCE INDEX DELIVERED / ORIGINAL PACKETS UNDER SEPARATE CUSTODY | Inspect actual original source bytes, dates, runs and release authority before attaching an evidence carrier |
 | 15 | Original public source-byte cross-check: July PDF and three historical source receipts | VERIFIED SOURCE LINKS / NOT NATIVE PILOT RELEASE | Preserve immutable commit, Git blob identity and full-source SHA-256; qualify original private V1.2 proof/pilot packets separately before original-run publication |
 | 16 | Original Deploy Build V1.2 proof archive verified from Library bytes | CUSTODIAN-LOCAL ENGINEERING EVIDENCE REPRODUCED / ORIGINAL PRIVATE | Two archive copies byte-identical; ten manifest digests matched; original eight-case verifier and tamper test passed. Public release of actual original carrier, customer live-run witness and current native V12 standing remain separate gates. |
+| 17 | Source-byte review of completed archived integration and connected-environment records | PRIVATE ORIGINALS EXAMINED / CASE-RECEIPT CROSSCHECK / NOT INDEPENDENT EFFECT | Three case classes with actual filled original captures; connected v1/v2 share run ID and have revised reported latencies; external effect and release rights require separate proof |
+
+## Milestone 14 — retained completed source records and version-sensitive pilot lineage
+
+[Milestone 14 record reconciliation](HISTORICAL-RUN-RECONCILIATION.md) examines actual April archived filled integration and connected-environment receipt/capture packages, not blank pilot forms. Three case classes are present in each of three source ZIP archives. Two connected-environment revisions share the same run identity and differ in reported latencies, and the following readiness record agrees with v2. These results establish **cross-record consistency in retained sources**, not independently authenticated effect, signed replay or production pilot. The original ZIPs remain privately held; the public register and checker do not invent a new independent witness or silently double-count a run.
 
 ## Milestone 13 — recovered original engineering proof base
 
