@@ -78,3 +78,7 @@ jobs:
       - name: Compare independent local synthetic results and reject self-rehashed false claims
         run: |
           python examiner/test_comparative.py
+
+      - name: External frozen challenge, signed witnesses, negative and tamper controls
+        run: |
+          python examiner/test_independent_challenge.py

@@ -110,3 +110,7 @@ Participants can keep their work private and run this locally. Publish only a re
 ## Cross-foundation comparison and local custody — public-safe
 
 [COMPARATIVE-EXAMINATION](COMPARATIVE-EXAMINATION.md) defines same-fixture comparisons and non-authenticating report custody. No executable uploads are accepted and external adapters remain on participant-controlled machines. Different reported outcomes do not establish relative architecture superiority, real consequence protection, or native V.A. behavior.
+
+## Freeze-after-commit external examination
+
+[Independent-examiner signed challenge](INDEPENDENT-CHALLENGE.md) creates a source-frozen candidate fingerprint, a **fresh examiner-issued seed**, reproducible locally observed synthetic output, and independently signed records from distinct declared examiners. It rejects altered signatures, unsupported standing, changed source bytes and mismatched challenge identities. Two signing keys do **not** authenticate two independent people or external consequences; examiners must separately establish original witness custody. Submit only release-cleared records through the [external examiner issue form](https://github.com/DeagleTWC/va-proof-estate/issues/new?template=external-independent-examination.md).
