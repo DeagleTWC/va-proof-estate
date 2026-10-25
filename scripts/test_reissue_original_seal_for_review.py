@@ -54,7 +54,7 @@ def main():
             index=json.loads(z.read(INDEX))
             assert set(index)==set(files)|{"src/new_verifier.js",PROVENANCE}
             assert all(sha(z.read(n))==v for n,v in index.items())
-            assert json.loads(z.read(PROVENANCE))["originalZipSHA256"]==expected
+            assert json.loads(z.read(PROVENANCE))["originalArchiveSHA256"]==expected
             assert z.read("docs/log.md")==files["docs/log.md"]
         refused(lambda:reissue(orig,expected,outfile,"2026-10-25"),"cannot overwrite old derived ZIP")
         refused(lambda:reissue(orig,"0"*64,dest/"bad-digest.zip","2026-10-25"),
