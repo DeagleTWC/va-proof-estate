@@ -28,7 +28,7 @@ def require(ok,why):
 def check_registry(data):
     require(data.get("schema")=="deagle-historical-source-bytes/1.0","registry schema mismatch")
     require(data.get("noStandingPromotion") is True,"standing promotion not barred")
-    require(data["originalHistoricalV12ZIPPubliclyAttached"] is False,"private V1.2 ZIP falsely published")
+    require(data["historicalOriginalV12ZIPPubliclyAttached"] is False,"private V1.2 ZIP falsely published")
     require(data["historicalEngineeringV12ZipSourceVerifiedHere"] is False,"unread engineering ZIP marked verified")
     require(data["nativeObservedEffectEstablishedByTheseSourceLinks"] is False,"native effect falsely promoted")
     require(data["independentNativeV12ReproductionsEstablished"] is False,"independent standing falsely promoted")
