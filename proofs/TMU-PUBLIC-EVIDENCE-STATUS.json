@@ -23,6 +23,21 @@
     "Disclosure authorization plus documented safety, privacy and anti-reconstruction assessment"
   ],
   "standing": "REVIEW_CANDIDATE_ONLY_NO_COMPLETED_TMU_CARRIER_ADMITTED_FROM_PLANNING_TEXT",
-  "nextAction": "Locate original TMU run packets separately from draft partner matrices. Determine participants' specific rights and source custody. Prepare maximally revealing outcome-only public candidate with removed sensitive implementation, subject to the exact-byte safety and independent custody review.",
-  "sourcePublicationPolicy": "proofs/PUBLIC-INTEREST-PUBLICATION-CHARTER.md"
+  "nextAction": "Seven April 2026 original staging test/receipt attachments recovered and internally reconciled. Preserve original private bytes; obtain rights and safety approval for exact non-enabling extract; do not conflate saved staging records with live TMU production or independent externally sensed effects.",
+  "sourcePublicationPolicy": "proofs/PUBLIC-INTEREST-PUBLICATION-CHARTER.md",
+  "historicalRecordedStagingSourceFilesRecovered": 7,
+  "historicalRecordedStageGateOutputsRecovered": 5,
+  "historicalRecordedStageGatePASSOutputs": 5,
+  "historicalRecordedReceiptBundleRecovered": true,
+  "historicalRecordedReceiptBundleReceiptCount": 2,
+  "historicalStagingSourceCaseDecisions": [
+    "EXECUTE",
+    "REFUSE"
+  ],
+  "historicalStagingEvidenceSource": "proofs/TMU-RECORDED-STAGING-CANDIDATE.json",
+  "historicalStagingEvidenceReview": "proofs/TMU-ORIGINAL-STAGING-EVIDENCE-REVIEW.md",
+  "historicalSourceByteHashesRecordedPrivate": true,
+  "historicalSourceSHA256AuthenticatedAtOriginalFreeze": false,
+  "originalPartnerTMULiveEffectWitnessEstablished": false,
+  "historicalRawTMUReceiptSourceApprovedForPublicRelease": false
 }
