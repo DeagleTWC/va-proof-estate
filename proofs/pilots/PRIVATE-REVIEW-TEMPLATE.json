@@ -1,0 +1,28 @@
+{
+  "schema": "va-private-multi-pilot-audit/1.0",
+  "classification": "PRIVATE_LOCAL_SOURCE_REVIEW_DO_NOT_PUBLISH",
+  "pilots": [
+    {
+      "localId": "PILOT-LOCAL-01",
+      "sourceType": "HISTORICAL_PILOT_OR_FREEZE",
+      "claimedStage": "SOURCE_INVENTORIED",
+      "notes": "PRIVATE: example only; enter each actual original as a distinct lane",
+      "artifacts": [
+        {
+          "role": "PILOT_SCOPE_OR_SPEC",
+          "path": null,
+          "sha256": null
+        }
+      ]
+    }
+  ],
+  "statusVocabulary": [
+    "SOURCE_INVENTORIED",
+    "BUILD_VERIFICATION_PACKET_PRESENT",
+    "LIVE_RUN_PACKET_PRESENT",
+    "ACCEPTANCE_PACKET_PRESENT",
+    "INDEPENDENT_PACKET_PRESENT"
+  ],
+  "releaseApproval": false,
+  "disclaimer": "Template only; not an original freeze, result, real pilot report, proof of external witness, or authorized publication."
+}
