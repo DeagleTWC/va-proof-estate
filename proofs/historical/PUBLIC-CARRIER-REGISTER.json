@@ -1,0 +1,20 @@
+{
+  "schema": "va-historical-public-carriers/1.0",
+  "published": "2026-10-25",
+  "publication": "DeagleTWC/va-proof-estate",
+  "subject": "Release-cleared, exact public extracts of unchanged historical source carriers",
+  "distinctions": {
+    "preExistingRecord": "Multiple historical pilot activities, engineered layers and original freeze events predate this publication; registry membership is not a count of those events.",
+    "currentPublicCount": "This file tracks only individual historical carriers cleared and physically attached to this GitHub release.",
+    "separateNativeV12": "Never promote V.A. V12 evidence by linking a distinct older build or freeze.",
+    "separateKCDPhysical": "Never promote physical KCD evidence from paper, synthetic runs or native V.A. records.",
+    "releaseRights": "Only an authorized public-safe extract may be attached; original protected bytes remain with their custodian."
+  },
+  "standingVocabulary": [
+    "SOURCE_RECORDED",
+    "PUBLIC_BOUNDED_OBSERVATION",
+    "PUBLIC_INDEPENDENT_REPRODUCTION"
+  ],
+  "entries": [],
+  "admissionCeiling": "No historical original run packet or release-cleared observation extract is currently attached through this register. This is not a finding that the underlying pilots/freezes did not exist. Register verification checks metadata integrity and attached bytes, not observational or reviewer truth."
+}
