@@ -123,6 +123,29 @@ def main():
             out = temp / f"bad-{i}.zip"
             write_archive(out, altered)
             reject(out, label)
+        # Attackers can regenerate a package manifest. Recomputing the outer hash
+        # must not bypass the independently verified internal receipt/replay checks.
+        rebuilt = dict(files)
+        forged_receipts = json.loads(rebuilt["outputs/enforcement_receipts.json"])
+        forged_receipts[0]["boundary_outcome"] = "REFUSE"
+        rebuilt["outputs/enforcement_receipts.json"] = encode(forged_receipts)
+        modified_manifest = json.loads(rebuilt["manifest.json"])
+        modified_manifest["hash_receipt_chain"] = digest(rebuilt["outputs/enforcement_receipts.json"])
+        rebuilt["manifest.json"] = encode(modified_manifest)
+        forged = temp / "regenerated-manifest.zip"
+        write_archive(forged, rebuilt)
+        reject(forged, "receipt mutation with regenerated outer manifest")
+
+        replay_rewritten = dict(files)
+        changed_replay = json.loads(replay_rewritten["outputs/replay_records.json"])
+        changed_replay[0]["replay_match"] = False
+        replay_rewritten["outputs/replay_records.json"] = encode(changed_replay)
+        m2 = json.loads(replay_rewritten["manifest.json"])
+        m2["hash_replay_results"] = digest(replay_rewritten["outputs/replay_records.json"])
+        replay_rewritten["manifest.json"] = encode(m2)
+        forged_replay = temp / "regenerated-replay-manifest.zip"
+        write_archive(forged_replay, replay_rewritten)
+        reject(forged_replay, "replay failure with recalculated manifest")
         dup = temp / "duplicate.zip"
         from warnings import catch_warnings, simplefilter
         with catch_warnings():
@@ -134,7 +157,7 @@ def main():
             z.writestr(ROOT_NAME + "/../../escape.txt", b"synthetic")
         reject(p, "ZIP traversal")
         print("PASS: synthetic ZIP structural carrier and ten original hash entries")
-        print("PASS: nine invalid source/receipt/replay/control/ZIP variants refused")
+        print("PASS: eleven invalid source/receipt/replay/control/ZIP variants refused")
         print("PASS: zero native, real-world, customer-pilot or independent witness promotion")
 
 
