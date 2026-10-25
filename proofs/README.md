@@ -78,3 +78,7 @@ Earlier pilots and freezes remain original historical objects, distinct from the
 ## Historical external reviewers and applicant-owned workflows
 
 [Third-party examination lineage](THIRD-PARTY-EVIDENCE.md) separates credible historical bounded technical review of outside systems from the separate requirement for independent reproduction of *native V.A.*. Private original external submissions are not published without rights clearance. [Bring Your Own Workflow evidence review](../examiner/BYO-WORKFLOW-EVIDENCE.md) provides a data-only local process for anyone with authority over their own test corridor, with documented positive, refused/no-effect, changed-condition and optional replay observations. A successful packet hash check never substitutes for a real external consequence or qualified examiner.
+
+## Historical source recovery checkpoint
+
+[Milestone 11: Original Source Reconciliation](MILESTONE-11-SOURCE-RECONCILIATION.md) separates prior build proof, historical pilot scope, launch documents, original first-run form stages and externally submitted engineering examinations. The [public-safe source-family index](HISTORICAL-SOURCE-FAMILIES.json) is not a census of pilots, and it is not an original native run result. Original record identities and custody persist until release-authorized originals can be examined.
