@@ -4,6 +4,9 @@ on:
     branches: [main]
     paths:
       - "proofs/**"
+      - "scripts/**"
+      - "examiner/**"
+      - ".github/ISSUE_TEMPLATE/**"
       - "proof-estate-manifest.json"
       - "index.html"
       - "scripts/validate_public_register.py"
@@ -37,6 +40,9 @@ on:
   pull_request:
     paths:
       - "proofs/**"
+      - "scripts/**"
+      - "examiner/**"
+      - ".github/ISSUE_TEMPLATE/**"
       - "proof-estate-manifest.json"
       - "index.html"
       - "scripts/validate_public_register.py"
@@ -103,6 +109,12 @@ jobs:
           python scripts/test_historical_run_lineage.py
           python scripts/validate_historical_run_status.py
           python scripts/test_historical_run_status.py
+      - name: Check detached independent witness signatures and provenance (synthetic-only keys)
+        run: |
+          openssl version
+          python scripts/test_independent_witnesses.py
+          python scripts/validate_independent_witness_status.py
+          python scripts/test_independent_witness_status.py
       - name: Enforce authentic native V12 evidence promotion and reject false claims
         run: python scripts/validate_v12_evidence.py
       - name: Verify public manifest and claim-register integrity

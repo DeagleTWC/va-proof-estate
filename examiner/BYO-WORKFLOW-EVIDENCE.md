@@ -76,3 +76,7 @@ The review route is useful precisely because a scoped PASS can coexist with a di
 ## Historical source revision test
 
 For participants or historians with their own lawful source archives, the [Milestone 14 read-only connected-run lineage examiner](../scripts/verify_historical_run_lineage.py) demonstrates a source-level audit pattern: bind each completed case to a retained receipt; identify revisions using unchanged run IDs, rather than double-counting them; and compare downstream readiness records to the correct preceding version. The three-case historical verification is **not** a public upload of the original pilot package and does not confer independent effect standing. Applicants may use this process on their own archives locally before presenting separately release-cleared evidence through the BYO issue route.
+
+## Qualified outside observation after local packet consistency
+
+Applicants with real, lawfully testable workflows may advance from the initial **data-only BYO packet** to a [Milestone 15 independently signed external effect examination](../proofs/INDEPENDENT-OBSERVATION-QUALIFICATION.md). Its separate local tool cryptographically checks qualified-candidate statements bound to unchanged source, challenge, receipt, changed governing conditions and externally recorded effect routes. **The tool does not verify actual people, instrument accuracy, lawful authority or consequence reality.** Distinct human examiners and every public release must be qualified through separate custody review before an operational standing claim.
