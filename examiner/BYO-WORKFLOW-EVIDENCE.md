@@ -34,7 +34,13 @@ private-workflow-packet/
     <case>-observer.json
 ```
 
-Use [the synthetic sample builder](test_byo_workflow_evidence.py) as the exact data grammar. The minimum three **different original cases** are an admitted positive consequence, a negative/refused case with no effect observed, and a changed-condition refusal tied to the same candidate as the positive case. The optional fourth replay references the original receipt SHA-256.
+Create a **runnable synthetic example packet** on your own machine before preparing your original workflow:
+```sh
+python examiner/byo_workflow_sample.py --out "/private/synthetic-byo-example"
+python examiner/byo_workflow_evidence.py --packet "/private/synthetic-byo-example"
+```
+
+This demonstration contains fabricated data and simulated effects; it is explicitly **not** an independent third-party or native V.A. proof. Then use [the sample builder](byo_workflow_sample.py) and [negative-control tests](test_byo_workflow_evidence.py) as the exact data grammar. The minimum three **different original cases** are an admitted positive consequence, a negative/refused case with no effect observed, and a changed-condition refusal tied to the same candidate as the positive case. The optional fourth replay references the original receipt SHA-256.
 
 Each referenced file has a declared SHA-256 in its parent carrier; `manifest.json` has `schema: deagle-byo-workflow-evidence/1.0`, `packetCustody: PARTICIPANT_OWNED_LOCAL`, `externalEffectStanding: UNVERIFIED`, `releaseAuthorized: false`, `workflowId`, `workflow: {path, sha256}`, and `cases: [{path, sha256}, ...]`.
 
