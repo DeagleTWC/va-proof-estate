@@ -22,6 +22,11 @@
 | 09 | Historical proof-desk lineage, coverage worksheet and evidence-dependency graph | MERGED TO MAIN / PUBLICATION CONTENT DELIVERED | Maintain original freeze source identities and public-attachment boundaries across subsequent changes |\n| 10 | Historical carrier public release intake and fail-closed byte-integrity checks | IMPLEMENTED AS PUBLIC SITE MILESTONE | Authorize one unchanged original's public extract, attach it by immutable digest, and separately examine the actual bounded observations before promotion |
 | 11 | Offline historical source fingerprint inventory and private release-candidate creation | IMPLEMENTED AS PUBLIC TOOLING MILESTONE | Fingerprint original files offline; preserve original historical freeze identity and authorize a distinct public extract before any publication |
 | 12 | Multi-pilot and real-workflow source-stage triage | SITE INFRASTRUCTURE / SYNTHETIC VALIDATION ONLY | Assign separately verified original pilot build, actual live run, receipt, replay, acceptance and independent witness carriers; no source is promoted by a label |
+| 13 | Historical third-party proof custody and BYO workflow examination | BUILT FOR PUBLIC EXAMINATION / ORIGINAL THIRD-PARTY RELEASE PENDING | Use exact externally authorized original carriers and distinct independent examiner observations; BYO applicant runs data-only integrity checks and preserves no-effect/changed-condition evidence |
+
+## Third-party historical evidence and applicant-owned workflow entry
+
+The [historical external-review custody guide](THIRD-PARTY-EVIDENCE.md) protects original third-party reviews while distinguishing tested external software from actual outside-witness reproduction of native V.A. The [BYO real-workflow route](../examiner/BYO-WORKFLOW-EVIDENCE.md) adds a read-only local packet checker and a public-safe submission form. It does not execute uploaded code, authenticate a self-declared witness, or promote unobserved consequences.
 
 ## Multi-pilot and real-workflow distinction
 
