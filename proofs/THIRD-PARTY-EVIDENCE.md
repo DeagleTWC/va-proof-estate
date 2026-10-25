@@ -20,3 +20,7 @@ A reviewer who tested somebody else's engineering may receive credit for that bo
 The [BYO Workflow Evidence Route](../examiner/BYO-WORKFLOW-EVIDENCE.md) invites any authorized engineer or institution to submit their own workflow for local data-only evidence checks followed by independent testing and human qualification. No real-world consequence or external independence is authenticated by the automated preflight; submission merely opens an evidentiary review.
 
 **Evidence should be promoted by actual preserved third-party results and real independent observation — not by the number of testimonials or submitted PDFs.**
+
+## Milestone 16 — actual historic reviewer-document source custody
+
+The [July 2026 historic external reviewer report originals](HISTORICAL-EXTERNAL-REVIEW-ORIGINALS.md) are now independently located and fingerprinted under private custody. One assessed the integrity of an external PyJWT release-claim review *submission carrier* (HOLD); another recorded a separate same-object differential PyJWT behavior review and narrower PARTIAL reviewer qualification. They are distinct examination objects; the source reports are not linked into this repository until authorized, and the supporting harness/JSON outputs were not re-executed at this milestone. They cannot prove independently observed native V.A. effects. Use the new [real-original report verifier](../scripts/verify_historical_external_review_originals.py) for custody checks before requesting public release.
