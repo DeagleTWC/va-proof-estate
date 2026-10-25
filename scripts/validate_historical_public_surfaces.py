@@ -53,7 +53,11 @@ def validate(data, source_text, manifest):
         target = "Kamanaka5502/" + expected
         sha = surface["currentRevisionSnapshot"]["sha"]
         require(surface["repository"] == target, f"source mismatch: {target}")
-        require(expected in source_text, f"source PDF missing reference: {expected}")
+        # PDF extraction inserts line-break artifacts inside several historical repository names.
+        # Normalize only alphanumeric separators for this source-identity comparison.
+        flattened = re.sub(r"[^a-z0-9]", "", source_text.lower())
+        require(re.sub(r"[^a-z0-9]", "", expected) in flattened,
+                f"source PDF missing reference: {expected}")
         require(surface["url"] == "https://github.com/" + target, f"unexpected source URL: {target}")
         require(SHA.fullmatch(sha) is not None and sha != "0"*40, f"invalid revision identity: {target}")
         require(surface["currentRevisionSnapshot"]["commitUrl"] == "https://github.com/" + target + "/commit/" + sha,
