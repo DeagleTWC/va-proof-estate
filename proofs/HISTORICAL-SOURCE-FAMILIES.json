@@ -1,0 +1,83 @@
+{
+  "schema": "deagle-m11-public-historical-source-family-index/1.0",
+  "releaseDate": "2026-10-25",
+  "publication": "DeagleTWC/va-proof-estate",
+  "scope": "Public-safe source-family index only, not an upload of historical pilots or original freeze bytes.",
+  "statusVocabulary": [
+    "PRIVATE_SOURCE_LOCATED",
+    "PUBLIC_SOURCE_LINKED",
+    "PUBLIC_ORIGINAL_ADMITTED",
+    "INDEPENDENTLY_REPRODUCED"
+  ],
+  "noProductionOrNativePromotion": true,
+  "historicalFamilies": [
+    {
+      "id": "M11-ENG-BUILD",
+      "label": "Earlier frozen engineering proof base",
+      "sourceType": "ORIGINAL_ENGINEERING_FREEZE",
+      "status": "PRIVATE_SOURCE_LOCATED",
+      "stage": "BUILD_PACKAGE_AND_VERIFICATION_HISTORY",
+      "originalBytesPubliclyAttached": false,
+      "actualLiveEffectEstablishedHere": false,
+      "nativeV12StandingInherited": false,
+      "link": "proofs/VERSION-IDENTITY.md",
+      "note": "Original proof base and recorded verification stage predate the October public site; the original ZIP is under separate custody and its exact public release is not established."
+    },
+    {
+      "id": "M11-PILOT-SCOPE",
+      "label": "Bounded pilot deployment and acceptance criteria",
+      "sourceType": "LIVE_WORKFLOW_PILOT_PLAN",
+      "status": "PRIVATE_SOURCE_LOCATED",
+      "stage": "PLANNED_EXECUTION_AND_ACCEPTANCE_CRITERIA",
+      "originalBytesPubliclyAttached": false,
+      "actualLiveEffectEstablishedHere": false,
+      "nativeV12StandingInherited": false,
+      "link": "proofs/PILOT-EVIDENCE-RELEASE.md",
+      "note": "Live input corridor and pass gates specified, distinct from proof of its eventual execution."
+    },
+    {
+      "id": "M11-LAUNCH",
+      "label": "Earlier pilot launch and execution-lock packages",
+      "sourceType": "PILOT_LAUNCH_PACKAGE",
+      "status": "PRIVATE_SOURCE_LOCATED",
+      "stage": "RECORDED_LAUNCH_PACKAGE",
+      "originalBytesPubliclyAttached": false,
+      "actualLiveEffectEstablishedHere": false,
+      "nativeV12StandingInherited": false,
+      "link": "proofs/MULTI-PILOT-EVIDENCE-ROUTE.md",
+      "note": "Correspondence and package identities located; launch does not establish payment, final acceptance, or completed live result."
+    },
+    {
+      "id": "M11-RUN-FORM",
+      "label": "First-run record at its preserved source stage",
+      "sourceType": "PILOT_RESULT_FORM",
+      "status": "PRIVATE_SOURCE_LOCATED",
+      "stage": "PENDING_IN_EXAMINED_FORM",
+      "originalBytesPubliclyAttached": false,
+      "actualLiveEffectEstablishedHere": false,
+      "nativeV12StandingInherited": false,
+      "link": "proofs/MULTI-PILOT-EVIDENCE-ROUTE.md",
+      "note": "An examined original form was marked pending; this does not say other pilot runs did not occur or that later results are absent."
+    },
+    {
+      "id": "M11-EXT-REVIEW",
+      "label": "Prior review of third-party frozen engineering",
+      "sourceType": "EXTERNAL_ENGINEERING_REVIEW",
+      "status": "PRIVATE_SOURCE_LOCATED",
+      "stage": "HISTORICALLY_DOCUMENTED_BOUNDED_REVIEW",
+      "originalBytesPubliclyAttached": false,
+      "actualLiveEffectEstablishedHere": false,
+      "nativeV12StandingInherited": false,
+      "link": "proofs/THIRD-PARTY-EVIDENCE.md",
+      "note": "This is a technical examination of another party's original, not reproduction of native V.A.; original review and external-submission rights remain separate."
+    }
+  ],
+  "knownAdditionalPublicSurfaces": "proofs/HISTORICAL-PUBLIC-SURFACES.json",
+  "admittedPublicOriginalCarriers": "proofs/historical/PUBLIC-CARRIER-REGISTER.json",
+  "privateSourceLocatorPublication": "NOT_AUTHORIZED",
+  "originalFreezeCount": "NOT_ESTABLISHED_FROM_THIS_PUBLIC_INDEX",
+  "totalHistoricalPilotCount": "NOT_ESTABLISHED_FROM_THIS_PUBLIC_INDEX",
+  "publicNativeObservedResultCountThisMilestone": 0,
+  "publicIndependentNativeVAReproductionsThisMilestone": 0,
+  "sourceReviewRule": "This index records historically distinguishable evidence source stages, not their total counts, measurements, original SHA-256 or witnessed qualifications. Only authentic release-authorized original bytes, directly observed effects and qualified independent review can advance standing."
+}
