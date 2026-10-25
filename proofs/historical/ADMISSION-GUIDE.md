@@ -12,6 +12,10 @@ The historical source object **keeps its original identifier, original freeze da
 
 A newly authorized public extract receives **its own** release identity, publication date, SHA-256 and clearance boundary. It may omit non-disclosable internal fields while retaining enough material for the bounded public claim. It does **not** replace or modify the original frozen object.
 
+## Controlling publication mission
+
+The [public-interest evidence charter](../PUBLIC-INTEREST-PUBLICATION-CHARTER.md) requires the **maximum safely releasable, independently checkable results**, not automatic suppression of pilot outcomes for commercial secrecy. Candidate extracts should aim to preserve observable function, positive and negative cases, original receipts, changed conditions, independent review and limitations, while redacting specific hazardous construction and unauthorized third-party material. Each exact candidate must undergo recorded source custody, disclosure rights, privacy and public-harm review before publication. TMU historical pilot originals are **eligible for this process** when recovered, not blanket excluded or automatically authorized. The [private release review preflight](../../scripts/preflight_public_interest_release.py) verifies exact source/extract bytes and recorded approvals but cannot authenticate real rights or safety on its own.
+
 ## Release checklist
 
 1. **Locate the actual original.** Verify the original build/freezed file or run packet, identifier, creation record, byte digest and custody. If any original field is unavailable, retain **NOT ESTABLISHED** for that field; do not guess.
