@@ -86,3 +86,7 @@ jobs:
       - name: External evidence packet acceptance and rejection regression
         run: |
           python examiner/test_external_witness_admission.py
+
+      - name: Frozen GitHub comment issuer and false chronology rejection
+        run: |
+          python examiner/test_issue_cycle_challenge.py

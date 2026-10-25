@@ -51,3 +51,7 @@ Negative controls, failures and disagreements must be retained, not rewritten in
 No synthetic result can automatically change the native V.A. or KCD registers. Custodian release clearance is required before making any actual external evidence public. Do not post private IP, corrected mathematical construction, customer information, credentials, actuator instructions or unreleased implementation details.
 
 Related: [frozen challenge](INDEPENDENT-CHALLENGE.md) | [examiner source](external_witness_admission.py) | [public intake](../.github/ISSUE_TEMPLATE/external-independent-examination.md) | [proof standard](../proofs/EXAMINATION-STANDARD.md).
+
+## Fresh Actions-issued challenge
+
+After an outside participant posts an unedited complete freeze JSON on Issue #1, a distinct custodian can initiate [the GitHub-anchored challenge issuer](ISSUE-CYCLE-001.md) to create a new seed and archived Actions-run evidence. No external examiner result is asserted by the issuance step alone.

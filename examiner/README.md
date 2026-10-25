@@ -118,3 +118,7 @@ Participants can keep their work private and run this locally. Publish only a re
 ## External Review Cycle 001 — signed evidence intake
 
 [Review Cycle 001](EXTERNAL-CYCLE-001.md) opens a prospective outside-engineer examination with a read-only ten-carrier packet verifier. It checks paired local signed synthetic reports and retains failures and disagreements; it cannot establish examiner independence, signed chronology, native V.A. execution or real external effects. No third-party result is asserted by publishing this procedure.
+
+## GitHub-anchored challenge issuer
+
+The [Cycle 001 issuer](ISSUE-CYCLE-001.md) binds a public, unedited, pre-existing freeze comment to a new Actions-issued synthetic challenge and archived source-comment snapshot. The workflow does not execute participant code or authenticate independent witnesses.

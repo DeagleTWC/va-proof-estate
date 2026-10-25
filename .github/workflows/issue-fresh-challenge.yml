@@ -1,0 +1,76 @@
+name: Issue Fresh External Challenge
+on:
+  workflow_dispatch:
+    inputs:
+      freeze_comment_id:
+        description: Numeric comment ID containing exact freeze JSON in Cycle 001 issue
+        type: string
+        required: true
+      family:
+        description: Public synthetic test family
+        type: choice
+        options: [matrix, session]
+        required: true
+      rounds:
+        description: Cohorts (1-20 session or 1-40 matrix)
+        type: number
+        default: 2
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  issue-fresh-challenge:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Retrieve original public freeze comment
+        env:
+          GH_TOKEN: \${{ github.token }}
+          COMMENT_ID: \${{ inputs.freeze_comment_id }}
+          REPOSITORY: \${{ github.repository }}
+        run: |
+          case "$COMMENT_ID" in
+            ''|*[!0-9]*) echo "Comment ID must be numeric"; exit 1;;
+          esac
+          gh api "repos/$REPOSITORY/issues/comments/$COMMENT_ID" > /tmp/cycle001-comment.json
+      - name: Generate challenge after public freeze
+        env:
+          ACTOR: \${{ github.actor }}
+          RUN_ID: \${{ github.run_id }}
+          ATTEMPT: \${{ github.run_attempt }}
+          HEAD_SHA: \${{ github.sha }}
+          FAMILY: \${{ inputs.family }}
+          ROUNDS: \${{ inputs.rounds }}
+        run: |
+          python examiner/issue_cycle_challenge.py issue \
+            --comment-json /tmp/cycle001-comment.json \
+            --actor "$ACTOR" --run-id "$RUN_ID" --attempt "$ATTEMPT" \
+            --commit "$HEAD_SHA" --family "$FAMILY" --rounds "$ROUNDS" \
+            --out /tmp/cycle001-issuance
+          python examiner/issue_cycle_challenge.py verify --dir /tmp/cycle001-issuance
+      - name: Preserve issued synthetic challenge and source snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: cycle-001-challenge-\${{ github.run_id }}-attempt-\${{ github.run_attempt }}
+          path: |
+            /tmp/cycle001-issuance/freeze.json
+            /tmp/cycle001-issuance/challenge.json
+            /tmp/cycle001-issuance/issuance.json
+            /tmp/cycle001-issuance/comment-snapshot.json
+          if-no-files-found: error
+          retention-days: 90
+      - name: Post issued challenge reference on Cycle 001
+        env:
+          GH_TOKEN: \${{ github.token }}
+          REPOSITORY: \${{ github.repository }}
+        run: |
+          gh api -X POST "repos/$REPOSITORY/issues/1/comments" \
+            -F body=@/tmp/cycle001-issuance/issue-reply.md
