@@ -20,6 +20,11 @@
 | 07 | Native V.A. V12 public-safe effect evidence | NOT ATTACHED TO THIS PUBLIC ESTATE | Frozen native build, changed-condition effect, original receipts, route accounting, replay and authorized release |
 | 08 | KCD instrumented physical evidence | SEPARATE CONTROLLED TRACK / NOT ATTACHED | Calibrated measurements, apparatus freeze, negative controls, changed-condition checks and distinct independent witness |
 | 09 | Historical proof-desk lineage, coverage worksheet and evidence-dependency graph | MERGED TO MAIN / PUBLICATION CONTENT DELIVERED | Maintain original freeze source identities and public-attachment boundaries across subsequent changes |\n| 10 | Historical carrier public release intake and fail-closed byte-integrity checks | IMPLEMENTED AS PUBLIC SITE MILESTONE | Authorize one unchanged original's public extract, attach it by immutable digest, and separately examine the actual bounded observations before promotion |
+| 11 | Offline historical source fingerprint inventory and private release-candidate creation | IMPLEMENTED AS PUBLIC TOOLING MILESTONE | Fingerprint original files offline; preserve original historical freeze identity and authorize a distinct public extract before any publication |
+
+## Offline historical source discovery
+
+The [Milestone 08 private scanner](historical/LOCAL-INVENTORY.md) can hash files under a user-selected local directory and verify later changes. It creates a **PRIVATE** inventory and an intentionally incomplete candidate that fails public admission. Neither the scanner nor its synthetic regression counts historical pilots, substitutes for a documented freeze or grants publication authority.
 
 ## Next historical evidence publication action\n\nLocate one original historical pilot or freeze with its original exact identity, existing freeze digest and custody. If release rights permit, prepare a separately hashed public-safe extract; run [the historical carrier preflight](historical/ADMISSION-GUIDE.md) and preserve its limitations. An attached historical extract never becomes native V12 or KCD physical evidence by relabeling. This site currently contains **zero individually admitted historical run packets** under that register; the number of historical pilots and freezes remains greater than this public attachment count.\n\n## Next public Cycle 001 examination action
 
