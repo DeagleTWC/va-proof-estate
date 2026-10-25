@@ -116,7 +116,8 @@
       "originalResultEvidenceRefs",
       "independentWitnessRecordIfAny",
       "publicReleaseAuthority"
-    ]
+    ],
+    "entries": []
   },
   "admissionRule": "Do not turn repository HEAD snapshots, source descriptions, generated test runs, document hashes or a downstream artifact into a verified original freeze, native V12 execution or independent physical measurement."
 }
