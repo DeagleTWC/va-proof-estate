@@ -1,6 +1,8 @@
 # V.A. — The Proof Estate
 
-**Proof before power.**
+**Proof before power. Maximum verifiable function. Prevention of harm.**
+
+**[Controlling public-interest publication and harm-prevention charter](proofs/PUBLIC-INTEREST-PUBLICATION-CHARTER.md)** — publish the most independently checkable scientific, engineering, historical pilot and safety evidence lawfully possible, including eligible TMU run results and receipts, while protecting dangerous construction, private original records, customer rights and sensitive operational details. Commercial exclusivity alone does not justify withholding safe, authorized function evidence. [TMU evidence candidacy and current public standing](proofs/TMU-PUBLIC-EVIDENCE-STATUS.json) · [exact-byte private release review standard](proofs/RELEASE-REVIEW-PRIVATE-TEMPLATE.json).
 
 **[Open the live V.A. Proof Estate](https://deagletwc.github.io/va-proof-estate/)**
 
