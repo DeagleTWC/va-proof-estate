@@ -1,3 +1,7 @@
+## Begin with the complete end-to-end estate
+
+The [Deagle whole-system atlas](../end-to-end.html), [twelve-stage technical evidence map](FULL-END-TO-END-REPRESENTATION.md), and [39-public-source classified provenance register](END-TO-END-ESTATE-REGISTER.json) now unite the earlier public proof routes under one public reading/examination home. Each source retains its publisher, frozen revision where independently known, commercial attribution and proof scope; records elsewhere in this index are not retrospectively reclassified as native V12 proof by appearance in the atlas.
+
 # Existing pilot, layer and freeze lineage — public publication index
 
 **Purpose:** Keep earlier V.A. / The Shift engineering, tests, pilots, freezes and independent review records distinct from newly introduced public-site milestone work. **Cycle 001 is a fresh public external examination lane, not the origin of V.A. engineering or its earlier pilot/testing history.**
