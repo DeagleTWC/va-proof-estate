@@ -4,6 +4,8 @@
 
 **Scope:** V.A. / The Shift historical pilot and freeze records that existed before the October 2026 public Proof Estate. No protected mathematics, substrate, proprietary implementation, KCD controlled source, client records, security credentials or unreleased works may enter this repository.
 
+For a folder containing earlier pilot and freeze files, first use the [offline local fingerprint inventory](LOCAL-INVENTORY.md) to check unchanged source bytes without posting paths, protected originals or private candidates. This **precedes** release authorization and grants no evidence standing.
+
 ## Original record → public extract (two different objects)
 
 The historical source object **keeps its original identifier, original freeze date, original SHA-256, original custodian and original execution/result record**. Do not generate a new historical timestamp, overwrite a freeze, or represent a later narrative as the original.
