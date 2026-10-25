@@ -1,0 +1,77 @@
+name: Independent Effect Observation — Evidence Qualification
+description: Request independent examination of original consequence measurements, original source and signed witness statements. Do not publish private data.
+title: "[WITNESS REVIEW] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Public-safe request only.** Do not attach customer names, personal identifiers, clinical information, private source, raw confidential measurements, signing keys, proprietary mathematics, security vulnerabilities or operational access.
+        A cryptographic pass is not automatically an independently qualified human witness or a native V.A. consequence.
+        Read the [qualification standard](https://github.com/DeagleTWC/va-proof-estate/blob/main/proofs/INDEPENDENT-OBSERVATION-QUALIFICATION.md).
+  - type: input
+    id: review_id
+    attributes:
+      label: Non-confidential original examination identifier
+      placeholder: review-001
+    validations:
+      required: true
+  - type: dropdown
+    id: origin
+    attributes:
+      label: Original evidence category
+      options:
+        - Historical V.A. source/record
+        - Current native V.A.
+        - Applicant-owned workflow
+        - Third-party engineering examined by the Proof Estate
+        - Physical apparatus (separate requirements)
+    validations:
+      required: true
+  - type: textarea
+    id: boundary
+    attributes:
+      label: Precise protected consequence and material effect route(s)
+      description: State what would form or not form and which routes were examined, without disclosing protected pathways.
+    validations:
+      required: true
+  - type: textarea
+    id: controls
+    attributes:
+      label: Bounded positive, refused, changed-condition and replay cases
+      description: Brief public-safe summary; include unresolved negative-effect routes.
+    validations:
+      required: true
+  - type: dropdown
+    id: signature
+    attributes:
+      label: Local evidence preflight
+      options:
+        - Not yet collected
+        - Original source located, signatures absent
+        - Signed-record local preflight PASS — human qualification still pending
+        - Local preflight refused/failed — discrepancies retained
+    validations:
+      required: true
+  - type: textarea
+    id: originals
+    attributes:
+      label: Exact public-safe original references
+      description: Supply only release-cleared URLs and hashes; otherwise write PRIVATE — CONTROLLED REVIEW ONLY. Do not post the private original digest if it could identify protected data.
+    validations:
+      required: true
+  - type: textarea
+    id: reviewers
+    attributes:
+      label: Independent examiner status and unresolved qualifications
+      description: Without disclosing identities, state whether independent qualified people, source custody and external sensing have been verified by human diligence.
+    validations:
+      required: true
+  - type: checkboxes
+    id: approval
+    attributes:
+      label: Consent and evidence safeguards
+      options:
+        - label: I have authority to describe this bounded examination publicly and will not disclose confidential source or customer data.
+          required: true
+        - label: I understand that signed files authenticate keys, not human independence or actual physical effects.
+          required: true
