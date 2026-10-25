@@ -42,7 +42,9 @@ def check_registry(data):
     source_text=(ROOT/pdf["sourceExtraction"]).read_text(encoding="utf-8")
     source_estate=(ROOT/"proofs/SOURCE-ESTATE.md").read_text(encoding="utf-8")
     require(PDF_DIGEST in source_estate,"Original PDF digest not in source estate")
-    require("elyria-one-proof" in source_text and "authority-revocation-witness" in source_text,
+    # The PDF transcript may wrap names across extracted line breaks.
+    flat=re.sub(r"[^a-z0-9]","",source_text.lower())
+    require("elyriaoneproof" in flat and "authorityrevocationwitness" in flat,
             "PDF-original source-reference comparison failed")
     src=data.get("publicHistoricalSourceFiles")
     require(isinstance(src,list) and len(src)==len(EXPECTED),"Source count mismatch")
