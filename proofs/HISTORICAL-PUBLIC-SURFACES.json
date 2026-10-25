@@ -1,0 +1,123 @@
+{
+  "schema": "deagle-historical-public-surfaces/1.0",
+  "published": "2026-10-25",
+  "sourceDocument": {
+    "publicRecord": "The Shift — Public Proof Path, Final v2, July 2026",
+    "pdfSHA256": "dd5a626e4ed5efafb49e70e987f61f151e220d793e35b96c55b05e59dc426ca6",
+    "transcription": "proofs/sources/shift-public-proof-path-v2-extracted.md",
+    "primaryLocation": "Source PDF page 2 of 3; the six named repositories are a reviewer route, not serial architecture."
+  },
+  "publicationContext": {
+    "historicalRecord": "Multiple engineering layers, freeze events and pilot records predate the October 2026 public Proof Estate.",
+    "sixSurfaceScope": "Selected earlier public reviewer surfaces, not the entirety of native engineering, original freezes or pilots.",
+    "thisSite": "DeagleTWC/va-proof-estate release 2.0 edition 02",
+    "currentNativeIdentity": "V.A. V12 (custodian identification)",
+    "originalNativeRunReceiptsAttachedHere": 0,
+    "verifiedOriginalHistoricalFreezeHashesAttachedInThisList": 0,
+    "publicIndependentNativeReproductionsAttachedHere": 0,
+    "sourceOwnership": "Each cited repository preserves its own publisher, rights, history and source custody. No mirroring or transfer of technical standing.",
+    "confidentiality": "No private pilot or protected source included."
+  },
+  "selectedPublicSurfaces": [
+    {
+      "sourceOrder": 1,
+      "repository": "Kamanaka5502/elyria-one-proof",
+      "url": "https://github.com/Kamanaka5502/elyria-one-proof",
+      "declaredReviewPurpose": "Candidate, pre-action decision, receipt and replay",
+      "publicLabel": "Public minimal boundary proof surface",
+      "currentRevisionSnapshot": {
+        "sha": "7ef8c424ca95d0bf55b18b9d13aa79e4ac29a058",
+        "commitUrl": "https://github.com/Kamanaka5502/elyria-one-proof/commit/7ef8c424ca95d0bf55b18b9d13aa79e4ac29a058",
+        "latestCommitRecordedAt": "2026-08-14T15:41:12Z"
+      },
+      "historyBoundary": "This October 25 repository revision is an observed index snapshot. It is not identified as the original historical freeze or an independently reproduced native V.A. proof.",
+      "relationToCurrent": "Historical independent public proof-route reference only; not mirrored, absorbed or integrated into native V.A. V12."
+    },
+    {
+      "sourceOrder": 2,
+      "repository": "Kamanaka5502/elyria-pre-effect-enforcement-harness",
+      "url": "https://github.com/Kamanaka5502/elyria-pre-effect-enforcement-harness",
+      "declaredReviewPurpose": "Refusal/no-effect vs downstream logging",
+      "publicLabel": "Bounded pre-effect enforcement harness",
+      "currentRevisionSnapshot": {
+        "sha": "bf3cf0c442ae99424cdcb12b92bc98eea282197b",
+        "commitUrl": "https://github.com/Kamanaka5502/elyria-pre-effect-enforcement-harness/commit/bf3cf0c442ae99424cdcb12b92bc98eea282197b",
+        "latestCommitRecordedAt": "2026-09-10T18:05:23Z"
+      },
+      "historyBoundary": "This October 25 repository revision is an observed index snapshot. It is not identified as the original historical freeze or an independently reproduced native V.A. proof.",
+      "relationToCurrent": "Historical independent public proof-route reference only; not mirrored, absorbed or integrated into native V.A. V12."
+    },
+    {
+      "sourceOrder": 3,
+      "repository": "Kamanaka5502/authority-revocation-witness",
+      "url": "https://github.com/Kamanaka5502/authority-revocation-witness",
+      "declaredReviewPurpose": "Revocation invalidates prior authority for continuation",
+      "publicLabel": "Changed-authority witness",
+      "currentRevisionSnapshot": {
+        "sha": "620324048ff1b067af6602d50d3016adcaed3747",
+        "commitUrl": "https://github.com/Kamanaka5502/authority-revocation-witness/commit/620324048ff1b067af6602d50d3016adcaed3747",
+        "latestCommitRecordedAt": "2026-06-20T02:58:57Z"
+      },
+      "historyBoundary": "This October 25 repository revision is an observed index snapshot. It is not identified as the original historical freeze or an independently reproduced native V.A. proof.",
+      "relationToCurrent": "Historical independent public proof-route reference only; not mirrored, absorbed or integrated into native V.A. V12."
+    },
+    {
+      "sourceOrder": 4,
+      "repository": "Kamanaka5502/scope-expiry-gate",
+      "url": "https://github.com/Kamanaka5502/scope-expiry-gate",
+      "declaredReviewPurpose": "Prior approval fails after scope expiry",
+      "publicLabel": "Expired-scope witness",
+      "currentRevisionSnapshot": {
+        "sha": "d0acaa0b4dee8cc26b357ce0e26c57f2d989da34",
+        "commitUrl": "https://github.com/Kamanaka5502/scope-expiry-gate/commit/d0acaa0b4dee8cc26b357ce0e26c57f2d989da34",
+        "latestCommitRecordedAt": "2026-06-01T04:19:39Z"
+      },
+      "historyBoundary": "This October 25 repository revision is an observed index snapshot. It is not identified as the original historical freeze or an independently reproduced native V.A. proof.",
+      "relationToCurrent": "Historical independent public proof-route reference only; not mirrored, absorbed or integrated into native V.A. V12."
+    },
+    {
+      "sourceOrder": 5,
+      "repository": "Kamanaka5502/elyria-ai-revalidation-engine",
+      "url": "https://github.com/Kamanaka5502/elyria-ai-revalidation-engine",
+      "declaredReviewPurpose": "Changed environmental/input conditions and stale approvals",
+      "publicLabel": "Changed-condition revalidation surface",
+      "currentRevisionSnapshot": {
+        "sha": "0f096a46cb9dcafacbf924cdebae4614c7c94a79",
+        "commitUrl": "https://github.com/Kamanaka5502/elyria-ai-revalidation-engine/commit/0f096a46cb9dcafacbf924cdebae4614c7c94a79",
+        "latestCommitRecordedAt": "2026-06-20T02:59:03Z"
+      },
+      "historyBoundary": "This October 25 repository revision is an observed index snapshot. It is not identified as the original historical freeze or an independently reproduced native V.A. proof.",
+      "relationToCurrent": "Historical independent public proof-route reference only; not mirrored, absorbed or integrated into native V.A. V12."
+    },
+    {
+      "sourceOrder": 6,
+      "repository": "Kamanaka5502/veritas-safechange",
+      "url": "https://github.com/Kamanaka5502/veritas-safechange",
+      "declaredReviewPurpose": "Reconsidered eligibility at attempted commit/bind",
+      "publicLabel": "Live-state change corridor",
+      "currentRevisionSnapshot": {
+        "sha": "1d93e6bee42c3b1f0725f69c369b45641605c26d",
+        "commitUrl": "https://github.com/Kamanaka5502/veritas-safechange/commit/1d93e6bee42c3b1f0725f69c369b45641605c26d",
+        "latestCommitRecordedAt": "2026-09-17T23:20:39Z"
+      },
+      "historyBoundary": "This October 25 repository revision is an observed index snapshot. It is not identified as the original historical freeze or an independently reproduced native V.A. proof.",
+      "relationToCurrent": "Historical independent public proof-route reference only; not mirrored, absorbed or integrated into native V.A. V12."
+    }
+  ],
+  "originalHistoricalFreezeInventory": {
+    "entryCount": 0,
+    "status": "SOURCE-ORIGINALS_NOT_ATTACHED_TO_THIS_INDEX",
+    "note": "Zero rows indicates only that the individual historic original freeze documents were not entered here; it is not a statement that no freezes or pilots occurred.",
+    "requiredFields": [
+      "originalArtifactId",
+      "freezeDateFromOriginal",
+      "originalFileDigest",
+      "originalArchiveCustodian",
+      "originalResultEvidenceRefs",
+      "independentWitnessRecordIfAny",
+      "publicReleaseAuthority"
+    ],
+    "entries": []
+  },
+  "admissionRule": "Do not turn repository HEAD snapshots, source descriptions, generated test runs, document hashes or a downstream artifact into a verified original freeze, native V12 execution or independent physical measurement."
+}
