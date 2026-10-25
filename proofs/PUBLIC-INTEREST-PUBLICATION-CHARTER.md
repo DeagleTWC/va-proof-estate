@@ -70,6 +70,10 @@ An eligible outcome can be **safely publishable even when the underlying protect
 
 The [TMU evidence release candidate register](TMU-PUBLIC-EVIDENCE-STATUS.json) is a **status index**, not the pilot dataset. No unapproved original material, raw partner message or confidential receipt is published there.
 
+## Recovered original historic staging source — evidence-versus-release illustration
+
+The [TMU-referenced April saved staging evidence case](TMU-ORIGINAL-STAGING-EVIDENCE-REVIEW.md) demonstrates the charter: genuine source output and original receipt bytes can be authenticated in private custody, documented as historical evidence, and presented publicly in a minimal non-enabling source-stage index **without declaring their protected original payloads released or attributing live customer deployment to the source**. Five saved gate PASS results and two recorded outcome receipts are meaningful historical engineering-source content, but neither source integrity nor a partner-name label proves independent external consequence. Exact source rights and safety review are required before the actual public source extract may be admitted.
+
 ## Reviewer obligation and corrections
 
 Every public result must label the artifact/version, actual method, measured outcome, limitations, untested routes, independent review status, publication/extract identity and any HOLD. If a later check finds an error or disclosure risk, keep an immutable change record, suspend access to dangerous bytes if needed, preserve the original privately, and publish a scoped correction. Removing a high-risk implementation detail must not silently erase an independently demonstrable safety result.

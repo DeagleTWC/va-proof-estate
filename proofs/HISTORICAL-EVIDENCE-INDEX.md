@@ -1,3 +1,7 @@
+## TMU-referenced original recorded staging source and two receipts recovered
+
+[April original saved source review](TMU-ORIGINAL-STAGING-EVIDENCE-REVIEW.md) and [machine-readable candidate ledger](TMU-RECORDED-STAGING-CANDIDATE.json) establish a seven-file historical email-attachment source set from April 2026, including the original two-record receipt bundle referred to by saved test reports. The five logged source gate reports say PASS, with an EXECUTE and REFUSE source outcome and two saved replay comparisons. A private byte audit reconciles receipt case identifiers, state strings and timing subspan totals. This is not a separately authenticated native V.A. production run, independent externally sensed effect or approved release of a TMU partner's private data. Original source bytes and private fingerprints remain outside the public site.
+
 ## Begin with the complete end-to-end estate
 
 The [Deagle whole-system atlas](../end-to-end.html), [twelve-stage technical evidence map](FULL-END-TO-END-REPRESENTATION.md), and [39-public-source classified provenance register](END-TO-END-ESTATE-REGISTER.json) now unite the earlier public proof routes under one public reading/examination home. Each source retains its publisher, frozen revision where independently known, commercial attribution and proof scope; records elsewhere in this index are not retrospectively reclassified as native V12 proof by appearance in the atlas.

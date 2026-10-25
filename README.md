@@ -6,6 +6,8 @@
 
 **[Open the live V.A. Proof Estate](https://deagletwc.github.io/va-proof-estate/)**
 
+**[Original TMU-referenced historical staging evidence recovered](proofs/TMU-ORIGINAL-STAGING-EVIDENCE-REVIEW.md)** — seven unchanged original source attachments, including two source receipt records, have been privately reconciled. The original saved logs record five PASS gates and both permitted/refused paths. External live TMU operation, qualified independent effect measurement and public disclosure rights remain separate gates. [Bounded record](proofs/TMU-RECORDED-STAGING-CANDIDATE.json).
+
 **[START HERE — Explore the complete end-to-end V.A. Estate](https://deagletwc.github.io/va-proof-estate/end-to-end.html)**
 
 The central public atlas spans the full foundational-to-consequence examination path, with **12 stages**, an evidence-classified review of genuine original historic engineering and recorded workflows, **39 source references** from the Kamanaka public estate classified by relationship and attribution, eight applied consequence corridors, and direct Bring Your Own Workflow and independent qualification entries. Deagle is the comprehensive public examination *home*; original independently authored and downstream sources keep their own source rights, custody and standing. See [full technical narrative](proofs/FULL-END-TO-END-REPRESENTATION.md) and [machine-readable end-to-end register](proofs/END-TO-END-ESTATE-REGISTER.json).
