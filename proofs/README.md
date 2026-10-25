@@ -1,3 +1,9 @@
+## CONTROLLING MISSION — Maximum verifiable public function / harm prevention
+
+**[Proof Estate Public Interest Publication Charter](PUBLIC-INTEREST-PUBLICATION-CHARTER.md)** governs future releases: maximize verifiable scientific, engineering, safety and historical pilot evidence; preserve exact original custody and release rights; refuse publication of protected construction, sensitive information or harmful replication details. This is an **active evidence-release priority**, not a blanket nondisclosure based on commercial exclusivity. Maximal safe pilot excerpts may include real outcomes, refusals, receipts, changed-condition behavior and independently measured effects where rights, privacy, anti-reconstruction and human custody review pass on the exact proposed bytes.
+
+**[TMU source status](TMU-PUBLIC-EVIDENCE-STATUS.json)** is currently **review eligible**, not automatically released or independently qualified: located shared draft matrices are not by themselves original completed TMU runs. The [public-interest pipeline](PUBLIC-INTEREST-EVIDENCE-PIPELINE.json) and [private exact-byte preflight](../scripts/preflight_public_interest_release.py) track explicit safety, custody and authorizations; the preflight checks structural declarations and hashes, never judges dangerousness, human authenticity or legal consent autonomously.
+
 ## Complete V.A. / The Shift end-to-end system representation — START HERE
 
 **[Deagle's complete visual End-to-End Atlas](../end-to-end.html)** | [twelve-stage technical account](FULL-END-TO-END-REPRESENTATION.md) | [public 39-source relationship and evidence register](END-TO-END-ESTATE-REGISTER.json).
