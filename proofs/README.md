@@ -1,3 +1,9 @@
+## Complete V.A. / The Shift end-to-end system representation — START HERE
+
+**[Deagle's complete visual End-to-End Atlas](../end-to-end.html)** | [twelve-stage technical account](FULL-END-TO-END-REPRESENTATION.md) | [public 39-source relationship and evidence register](END-TO-END-ESTATE-REGISTER.json).
+
+The complete site follows the mathematical foundation, identity and persistent continuity, governed candidate, standing, evidence and viability, pre-effect boundary, exact disposition, actual consequence, original receipt, replay/changed conditions, external examination and lawful promotion. Historical real evidence is routed by individual original; the site is not limited to synthetic demos or six public repos. The original 39-source Kamanaka public catalog preserves separate downstream attribution and includes 3 related or independent public projects without assimilating them into the native V.A. runtime or intellectual property. The full architecture is an examiner map, **not a reconstructed protected implementation or proof that all external sources comprise one live executable**.
+
 # V.A. — The Public Proof Register
 
 **Proof before power. Open evidence. Protected construction.**
