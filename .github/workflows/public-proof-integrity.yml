@@ -9,6 +9,7 @@ on:
       - ".github/ISSUE_TEMPLATE/**"
       - "proof-estate-manifest.json"
       - "index.html"
+      - "end-to-end.html"
       - "scripts/validate_public_register.py"
       - "scripts/validate_v12_evidence.py"
       - "scripts/validate_source_transcripts.py"
@@ -45,6 +46,7 @@ on:
       - ".github/ISSUE_TEMPLATE/**"
       - "proof-estate-manifest.json"
       - "index.html"
+      - "end-to-end.html"
       - "scripts/validate_public_register.py"
       - "scripts/validate_v12_evidence.py"
       - ".github/workflows/public-proof-integrity.yml"
@@ -135,6 +137,10 @@ jobs:
           python scripts/test_reissue_original_seal_for_review.py
           python scripts/validate_original_preserving_reissue_status.py
           python scripts/test_original_preserving_reissue_status.py
+      - name: Validate complete Deagle end-to-end estate and source attribution
+        run: |
+          python scripts/validate_end_to_end_atlas.py
+          python scripts/test_end_to_end_atlas.py
       - name: Enforce authentic native V12 evidence promotion and reject false claims
         run: python scripts/validate_v12_evidence.py
       - name: Verify public manifest and claim-register integrity
