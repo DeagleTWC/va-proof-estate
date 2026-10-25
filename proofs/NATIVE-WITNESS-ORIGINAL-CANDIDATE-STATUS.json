@@ -1,0 +1,47 @@
+{
+  "schema": "va-native-witness-candidate-gate/1.0",
+  "milestone": 18,
+  "reviewDate": "2026-10-25",
+  "reviewObjective": "Qualify authentic original source identity, independently observed native V.A. consequences, human examiner provenance and release-authorized carrier",
+  "currentStage": "SOURCE_ORIGINAL_INTEGRITY_HOLD",
+  "independentNativeVAWitnessPubliclyAdmitted": false,
+  "originalNativeVAExternalEffectCarrierAdmitted": false,
+  "actualHistoricalPilotCountEstablishedByThisMilestone": "NOT DETERMINED",
+  "nativeIndependentWitnessPublicCount": 0,
+  "privateCandidateSourcesReconciled": true,
+  "exactPrivateOriginalBytesRepublished": false,
+  "originalPrivateSourceIdentifiersPublished": false,
+  "archiveCandidateCopiesCompared": true,
+  "duplicateCopiesTreatedAsDistinctWitnesses": false,
+  "internalCandidateSourceSealQualified": false,
+  "privateCandidateDefectDetailsRetainedOffPublicSite": true,
+  "reviewedPublicSafeCategories": [
+    {
+      "category": "LOCAL_INDEPENDENT_VERIFIER_RELEASE_CANDIDATE",
+      "stage": "ORIGINAL_CARRIER_REVIEWED_RELEASE_SEAL_HOLD",
+      "nativeIndependentHumanWitness": false,
+      "actualExternallyInstrumentedEffectProven": false,
+      "originalReleaseRightsEstablished": false
+    },
+    {
+      "category": "BOUNDARY_INTERFACE_SAMPLE_PILOT",
+      "stage": "SEPARATE_INTERFACE_TEST_SURFACE",
+      "nativeIndependentHumanWitness": false,
+      "actualExternallyInstrumentedEffectProven": false,
+      "originalReleaseRightsEstablished": false
+    },
+    {
+      "category": "EXTERNAL_SEAM_FORMAL_REASONING_DEMONSTRATOR",
+      "stage": "THIRD_PARTY_ENGINEERING_SUBJECT_NOT_NATIVE_VA",
+      "nativeIndependentHumanWitness": false,
+      "actualExternallyInstrumentedEffectProven": false,
+      "originalReleaseRightsEstablished": false
+    }
+  ],
+  "releaseSealLocalTool": "scripts/audit_original_release_seal.py",
+  "originalSourceDisclosureGate": "EXPLICIT_AUTHORIZED_EXTRACT_REQUIRED",
+  "humanWitnessQualificationGate": "ACTUAL_SEPARATE_QUALIFIED_HUMAN_AND_EFFECT_MEASUREMENT_REQUIRED",
+  "disposition": "HOLD_NATIVE_INDEPENDENT_ADMISSION_PENDING_QUALIFIED_ORIGINAL",
+  "noAutomaticStandingPromotion": true,
+  "nextAction": "Obtain an original frozen native V.A. run, original receipt/replay and independently sensed permitted/refused/changed-condition effects with identified qualified independent reviewer(s) and written extract release approval. Preserve all earlier original archives unchanged."
+}
