@@ -154,9 +154,14 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--zip", required=True, help="Private historical ZIP held on your machine")
     parser.add_argument("--out", help="Private result JSON path outside original; refuses overwrite")
+    parser.add_argument("--expected-sha256", help="Known original ZIP SHA-256 from separate authenticated custody record")
     args = parser.parse_args()
     try:
         report = verify_zip(args.zip)
+        if args.expected_sha256:
+            demand(HEX.fullmatch(args.expected_sha256) and
+                   args.expected_sha256 == report["archiveSha256"],
+                   "ZIP original digest mismatch against separately fixed reference")
         if args.out:
             from pathlib import Path
             import os
