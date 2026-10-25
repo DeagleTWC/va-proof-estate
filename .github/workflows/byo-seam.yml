@@ -82,3 +82,7 @@ jobs:
       - name: External frozen challenge, signed witnesses, negative and tamper controls
         run: |
           python examiner/test_independent_challenge.py
+
+      - name: External evidence packet acceptance and rejection regression
+        run: |
+          python examiner/test_external_witness_admission.py

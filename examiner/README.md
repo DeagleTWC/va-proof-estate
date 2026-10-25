@@ -114,3 +114,7 @@ Participants can keep their work private and run this locally. Publish only a re
 ## Freeze-after-commit external examination
 
 [Independent-examiner signed challenge](INDEPENDENT-CHALLENGE.md) creates a source-frozen candidate fingerprint, a **fresh examiner-issued seed**, reproducible locally observed synthetic output, and independently signed records from distinct declared examiners. It rejects altered signatures, unsupported standing, changed source bytes and mismatched challenge identities. Two signing keys do **not** authenticate two independent people or external consequences; examiners must separately establish original witness custody. Submit only release-cleared records through the [external examiner issue form](https://github.com/DeagleTWC/va-proof-estate/issues/new?template=external-independent-examination.md).
+
+## External Review Cycle 001 — signed evidence intake
+
+[Review Cycle 001](EXTERNAL-CYCLE-001.md) opens a prospective outside-engineer examination with a read-only ten-carrier packet verifier. It checks paired local signed synthetic reports and retains failures and disagreements; it cannot establish examiner independence, signed chronology, native V.A. execution or real external effects. No third-party result is asserted by publishing this procedure.
