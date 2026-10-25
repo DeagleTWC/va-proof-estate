@@ -16,6 +16,10 @@ The custodian identifies **multiple prior pilots, multiple engineering layers an
 | October 2026 synthetic examination work | [Local examiner](../examiner/README.md), [Cycle 001](../examiner/EXTERNAL-CYCLE-001.md) | Rerunnable public synthetic cases, fresh external-challenge workflow, and active examiner invitation | These are **additions**, not replacements for any preceding freeze or pilot |
 | Physical KCD examinations | [Program A evidence register](../kcd/KCD-PROOF-REGISTER.json) | Controlled formalization and proposed physical proof track, no physical measurements attached here | Native V.A. or earlier engineering pilot does not automatically confer KCD physical standing |
 
+## Actual original public receipt files now individually pinned
+
+The [Milestone 12 byte-verified source crosswalk](HISTORICAL-SOURCE-BYTE-VERIFICATION.md) now includes three **actual** stored historical public receipt/result source files, with exact Git blob SHA-1, full-source SHA-256, original repository, immutable source revision, recorded bounded case count and explicit exclusion of external-effect standing. The original July public Proof Path PDF's file bytes were also independently recovered and match the source PDF digest previously recorded here. These links are more specific than an index of repository names and do **not** replace frozen historic V1.2 packages or prove native V12.
+
 ## Six earlier public proof surfaces — pinned source revisions
 
 The July 2026 original public proof path identifies these six **separate** bounded examination surfaces. This is a source-oriented subset of the wider historical estate, not the count of pilots, layers or freezes. The current commit identifiers below are **2026-10-25 verification snapshots**, not assertions about which revision was originally frozen. Some repositories maintain separate ownership, brand history and redistribution rights; this index only links them and never republishes their code.
