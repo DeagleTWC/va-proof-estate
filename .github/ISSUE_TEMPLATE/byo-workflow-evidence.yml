@@ -1,0 +1,73 @@
+name: Bring Your Own Workflow — Evidence Review
+description: Request a bounded evidence examination of a workflow you own or are authorized to test (public-safe details only)
+title: "[BYO WORKFLOW] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Do not post customer records, credentials, confidential source, live access tokens, private math, private repository links, patient data, or operational security weaknesses.**
+        The Proof Estate does not execute untrusted workflow code. Run the local read-only verifier first. A data packet pass is not a native V.A. execution or independently measured external effect.
+        [Instructions](https://github.com/DeagleTWC/va-proof-estate/blob/main/examiner/BYO-WORKFLOW-EVIDENCE.md).
+  - type: input
+    id: workflow
+    attributes:
+      label: Public-safe workflow identifier
+      description: Use a non-confidential name or pseudonymous ID; do not include customer names.
+      placeholder: workflow-example-001
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Examination route
+      options:
+        - Synthetic adapter interface
+        - Data-only real-workflow packet
+        - Historical third-party proof-carrier review
+        - Independent real-world consequence witness
+        - Physical apparatus evidence review (separate requirements)
+    validations:
+      required: true
+  - type: textarea
+    id: claim
+    attributes:
+      label: Bounded, falsifiable claim and protected consequence
+      description: What precise effect or non-effect is being tested?
+    validations:
+      required: true
+  - type: textarea
+    id: original
+    attributes:
+      label: Frozen source identity and public release links
+      description: List release-cleared URL(s), exact revisions and SHA-256. If not publicly releasable, state PRIVATE SOURCE — NO PUBLIC ATTACHMENT.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Public-safe examination summary
+      description: Briefly state tested positive control, denied effect, changed condition, alternate routes, receipt/replay and local verifier result. Include disagreements and missing observations.
+    validations:
+      required: true
+  - type: dropdown
+    id: status
+    attributes:
+      label: What does the evidence presently establish?
+      options:
+        - Specification only, original result not publicly attached
+        - Source frozen, examination not yet performed
+        - Local data structure and hashes checked only
+        - Bounded real-world observations under independent examiner review
+        - External prior review under private release custody
+    validations:
+      required: true
+  - type: checkboxes
+    id: clearance
+    attributes:
+      label: Publication and safety declaration
+      options:
+        - label: I have authority to submit this non-confidential scope description and any public links I include.
+          required: true
+        - label: I understand a public issue does not grant independent V.A. standing or permission to operate others' systems.
+          required: true

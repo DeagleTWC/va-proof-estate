@@ -74,3 +74,7 @@ Earlier pilots and freezes remain original historical objects, distinct from the
 ## Multiple historic pilots and real-workflow sources
 
 [Milestone 09: multiple pilots and real-workflow evidence routing](MULTI-PILOT-EVIDENCE-ROUTE.md) adds source-custody classification and a private offline verifier for many distinct historical corridors. It does not publish any new customer record, imply a past pilot did not occur, or promote a proposed deployment, frozen verifier, synthetic source, or pending live-run form into an operationally witnessed V12 result.
+
+## Historical external reviewers and applicant-owned workflows
+
+[Third-party examination lineage](THIRD-PARTY-EVIDENCE.md) separates credible historical bounded technical review of outside systems from the separate requirement for independent reproduction of *native V.A.*. Private original external submissions are not published without rights clearance. [Bring Your Own Workflow evidence review](../examiner/BYO-WORKFLOW-EVIDENCE.md) provides a data-only local process for anyone with authority over their own test corridor, with documented positive, refused/no-effect, changed-condition and optional replay observations. A successful packet hash check never substitutes for a real external consequence or qualified examiner.

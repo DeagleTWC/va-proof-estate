@@ -1,0 +1,30 @@
+{
+  "schema": "deagle-third-party-evidence-publication-register/1.0",
+  "snapshot": "2026-10-25",
+  "purpose": "Separate historically examined third-party engineering work from independently reproduced V.A. system evidence. Nonpublic underlying carriers are NOT evidence on this public site.",
+  "admissionClasses": {
+    "EXTERNAL_SUBMISSION_UNRELEASED": "Historical external source and disposition retained under restricted custody; original bytes not published and no source standing inherited.",
+    "PUBLIC_THIRD_PARTY_CARRIER": "Release-cleared immutable external source and source identity linked; this is source evidence, not native V.A. evidence.",
+    "BOUNDED_EXTERNAL_REVIEW": "Qualified reviewer examination, tests, original receipts and a scope-limited disposition publicly attached; may have HOLD outcomes.",
+    "INDEPENDENT_NATIVE_VA_REPRODUCTION": "Separate actual native V.A. test by independently qualified external witness, original results and valid permission; cannot inherit from testing the submitter's own unrelated system."
+  },
+  "publicReviewCandidates": [
+    {
+      "id": "HIST-TP-001",
+      "kind": "EXTERNAL_ENGINEERING_SUBMISSION_REVIEWED_BY_ESTATE_CUSTODIAN",
+      "historicalPeriod": "2026-08",
+      "publicationState": "EXTERNAL_SUBMISSION_UNRELEASED",
+      "originalFrozenPackagePubliclyAttached": false,
+      "qualifiedThirdPartyWitnessOfNativeVA": false,
+      "externalSourceRightsCleared": false,
+      "reviewOutcomePublished": false,
+      "publicObservationClaims": [],
+      "note": "Custody-ledger placeholder for a historically recorded external-submitted frozen technical examination. No external identity, private file hashes or results are disclosed; cannot be used as public proof. Retain any passes, failures, corrections and unresolved standing in the source review."
+    }
+  ],
+  "admittedPublicThirdPartyReviewCarriers": [],
+  "publicNativeVAThirdPartyReproductions": [],
+  "noAutomaticPromotion": true,
+  "prohibitedInference": "Historical third-party engineering test passes are not independent reproduction of protected native V.A., nor proof that the third-party implementation holds at the consequence boundary. Preserve narrower outcomes and HOLD dispositions.",
+  "futureAdmission": "After all owners authorize a public extract, bind original bytes, SHA-256, reviewer identity/role/independence, scope, signed disposition, negative controls, route coverage and replay. Never rewrite the older original."
+}
