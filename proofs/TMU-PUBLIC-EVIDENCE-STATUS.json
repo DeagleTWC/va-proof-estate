@@ -1,0 +1,28 @@
+{
+  "schema": "va-tmu-public-evidence-candidate/1.0",
+  "recordVersion": "2026-10-25",
+  "classification": "PUBLIC_SAFE_REVIEW_STATUS_ONLY",
+  "originalSourceCategory": "TMU-ADJACENT-COLLABORATIVE_PILOT_SCOPE",
+  "publicationEligibility": "CAN_BE_CONSIDERED_FOR_PUBLIC_RELEASE_AFTER_EXACT_EVIDENCE_RIGHTS_CUSTODY_SAFETY_REVIEW",
+  "materialLocatedInLibrary": "Partner discussion and draft v0.1 pilot matrix defining proposed interface/custody tests",
+  "actualTMUExecutionPacketEstablishedByLocatedPlanningTexts": false,
+  "originalTMURunReceiptsAdmittedHere": false,
+  "changedConditionOutcomeOriginalsAdmittedHere": false,
+  "independentTMUWitnessOriginalsAdmittedHere": false,
+  "TMUDisclosureRightsEstablishedHere": false,
+  "specificProposedExtractApprovedHere": false,
+  "sensitiveParticipantOrKernelDataPublished": false,
+  "distinctRoles": "TMU intent, externally sourced admissibility where present, and V.A./Veritas native consequence enforcement must not be conflated.",
+  "reviewableEvidence": [
+    "Actual source-bound bounded workflow outcome and effect/non-effect",
+    "Original outcome receipts and custody integrity",
+    "Changed-condition: revocation, expiry, authority or scope as actually tested",
+    "Replay and negative controls where actually executed",
+    "Independent human/witness and measured outcome where separately established",
+    "Original source and released extract SHA-256 identities",
+    "Disclosure authorization plus documented safety, privacy and anti-reconstruction assessment"
+  ],
+  "standing": "REVIEW_CANDIDATE_ONLY_NO_COMPLETED_TMU_CARRIER_ADMITTED_FROM_PLANNING_TEXT",
+  "nextAction": "Locate original TMU run packets separately from draft partner matrices. Determine participants' specific rights and source custody. Prepare maximally revealing outcome-only public candidate with removed sensitive implementation, subject to the exact-byte safety and independent custody review.",
+  "sourcePublicationPolicy": "proofs/PUBLIC-INTEREST-PUBLICATION-CHARTER.md"
+}
