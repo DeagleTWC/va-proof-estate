@@ -1,0 +1,697 @@
+{
+  "schema": "deagle-end-to-end-portfolio/1.0",
+  "captured": "2026-10-25",
+  "canonicalPublicEstate": "DeagleTWC/va-proof-estate",
+  "currentNativeSystemCustodyVersion": "V12",
+  "purpose": "Whole-of-estate public navigation: mathematics, governed consequence, continuity, original proof, histories, independent qualification, BYO examination and bounded domain review.",
+  "sourceInventory": {
+    "owner": "Kamanaka5502",
+    "publicRepositoryCount": 39,
+    "snapshotIsOriginalFreeze": false,
+    "reviewedExecutionAutomaticallyNative": false,
+    "exclusions": "Private repositories not inventoried; adjacent public titles have no inherited source ownership or native standing",
+    "records": [
+      {
+        "name": "3lockbox-ip-admission-gate",
+        "url": "https://github.com/Kamanaka5502/3lockbox-ip-admission-gate",
+        "publicAtSnapshot": true,
+        "description": "Public repository; inspect its original contents to determine exact scope.",
+        "relationship": "bounded_boundary_source",
+        "pushedAtSnapshot": "2026-09-05T15:58:14Z",
+        "originalOwner": "Kamanaka5502",
+        "evidenceStanding": "PUBLIC_REPOSITORY_REFERENCE_ONLY",
+        "inheritsNativeVAStanding": false,
+        "historicalOriginalFreezeVerifiedFromThisSnapshot": false
+      },
+      {
+        "name": "authority-revocation-witness",
+        "url": "https://github.com/Kamanaka5502/authority-revocation-witness",
+        "publicAtSnapshot": true,
+        "description": "Deterministic proof artifact showing that previously valid authority does not survive revocation.",
+        "relationship": "bounded_boundary_source",
+        "pushedAtSnapshot": "2026-06-20T02:58:57Z",
+        "originalOwner": "Kamanaka5502",
+        "evidenceStanding": "PUBLIC_REPOSITORY_REFERENCE_ONLY",
+        "inheritsNativeVAStanding": false,
+        "historicalOriginalFreezeVerifiedFromThisSnapshot": false
+      },
+      {
+        "name": "bind-time-authority-proof",
+        "url": "https://github.com/Kamanaka5502/bind-time-authority-proof",
+        "publicAtSnapshot": true,
+        "description": "Deterministic bind-time authority enforcement under mid-state mutation.",
+        "relationship": "bounded_boundary_source",
+        "pushedAtSnapshot": "2026-09-11T06:27:13Z",
+        "originalOwner": "Kamanaka5502",
+        "evidenceStanding": "PUBLIC_REPOSITORY_REFERENCE_ONLY",
+        "inheritsNativeVAStanding": false,
+        "historicalOriginalFreezeVerifiedFromThisSnapshot": false
+      },
+      {
+        "name": "board-ai-dependency-boundary",
+        "url": "https://github.com/Kamanaka5502/board-ai-dependency-boundary",
+        "publicAtSnapshot": true,
+        "description": "AI Dependency Boundary Assurance • Board-facing sandbox pilot • Proprietary Elyria Systems release",
+        "relationship": "domain_specific_public_surface",
+        "pushedAtSnapshot": "2026-06-20T02:59:21Z",
+        "originalOwner": "Kamanaka5502",
+        "evidenceStanding": "PUBLIC_REPOSITORY_REFERENCE_ONLY",
+        "inheritsNativeVAStanding": false,
+        "historicalOriginalFreezeVerifiedFromThisSnapshot": false
+      },
+      {
+        "name": "creative-ops-ai-specialist-evaluation",
+        "url": "https://github.com/Kamanaka5502/creative-ops-ai-specialist-evaluation",
+        "publicAtSnapshot": true,
+        "description": "A public AI Specialist evaluation build demonstrating RAG-ready workflow design, prompt lineage, provider evaluation, automation patterns, responsible-AI release controls, and a browser-based evaluator sandbox.",
+        "relationship": "separate_or_adjacent_attribution",
+        "pushedAtSnapshot": "2026-06-26T01:22:06Z",
+        "originalOwner": "Kamanaka5502",
+        "evidenceStanding": "PUBLIC_REPOSITORY_REFERENCE_ONLY",
+        "inheritsNativeVAStanding": false,
+        "historicalOriginalFreezeVerifiedFromThisSnapshot": false
+      },
+      {
+        "name": "dimensional-drift-witness",
+        "url": "https://github.com/Kamanaka5502/dimensional-drift-witness",
+        "publicAtSnapshot": true,
+        "description": "Source-visible bounded proof/witness stack for execution integrity, replay-legitimacy separation, and consequence-bearing runtime governance.",
+        "relationship": "bounded_boundary_source",
+        "pushedAtSnapshot": "2026-06-01T03:36:18Z",
+        "originalOwner": "Kamanaka5502",
+        "evidenceStanding": "PUBLIC_REPOSITORY_REFERENCE_ONLY",
+        "inheritsNativeVAStanding": false,
+        "historicalOriginalFreezeVerifiedFromThisSnapshot": false
+      },
+      {
+        "name": "elyria-admission-runtime",
+        "url": "https://github.com/Kamanaka5502/elyria-admission-runtime",
+        "publicAtSnapshot": true,
+        "description": "Evidence-gated consequence-admission runtime for high-consequence AI and automation: authority, standing, evidence, refusal, signed receipts, and replayable proof before action binds.",
+        "relationship": "bounded_boundary_source",
+        "pushedAtSnapshot": "2026-10-19T07:57:15Z",
+        "originalOwner": "Kamanaka5502",
+        "evidenceStanding": "PUBLIC_REPOSITORY_REFERENCE_ONLY",
+        "inheritsNativeVAStanding": false,
+        "historicalOriginalFreezeVerifiedFromThisSnapshot": false
+      },
+      {
+        "name": "elyria-agent-action-boundary",
+        "url": "https://github.com/Kamanaka5502/elyria-agent-action-boundary",
+        "publicAtSnapshot": true,
+        "description": "Agentic AI control-plane architecture for proving what an AI agent may access, call, change, escalate, or refuse before tool use becomes enterprise consequence.",
+        "relationship": "enterprise_reference_surface",
+        "pushedAtSnapshot": "2026-06-12T21:11:58Z",
+        "originalOwner": "Kamanaka5502",
+        "evidenceStanding": "PUBLIC_REPOSITORY_REFERENCE_ONLY",
+        "inheritsNativeVAStanding": false,
+        "historicalOriginalFreezeVerifiedFromThisSnapshot": false
+      },
+      {
+        "name": "elyria-ai-audit-evidence-pack",
+        "url": "https://github.com/Kamanaka5502/elyria-ai-audit-evidence-pack",
+        "publicAtSnapshot": true,
+        "description": "Enterprise AI audit evidence package for proving what governance happened, what decision was made, what evidence supported it, who owned it, and whether replay can verify it later.",
+        "relationship": "enterprise_reference_surface",
+        "pushedAtSnapshot": "2026-06-12T23:28:14Z",
+        "originalOwner": "Kamanaka5502",
+        "evidenceStanding": "PUBLIC_REPOSITORY_REFERENCE_ONLY",
+        "inheritsNativeVAStanding": false,
+        "historicalOriginalFreezeVerifiedFromThisSnapshot": false
+      },
+      {
+        "name": "elyria-ai-revalidation-engine",
+        "url": "https://github.com/Kamanaka5502/elyria-ai-revalidation-engine",
+        "publicAtSnapshot": true,
+        "description": "Enterprise AI revalidation reference architecture for detecting when prior AI approval becomes stale after model, prompt, data, tool, policy, access, source, or environment change.",
+        "relationship": "enterprise_reference_surface",
+        "pushedAtSnapshot": "2026-06-20T02:59:03Z",
+        "originalOwner": "Kamanaka5502",
+        "evidenceStanding": "PUBLIC_REPOSITORY_REFERENCE_ONLY",
+        "inheritsNativeVAStanding": false,
+        "historicalOriginalFreezeVerifiedFromThisSnapshot": false
+      },
+      {
+        "name": "elyria-boundary-proof-register",
+        "url": "https://github.com/Kamanaka5502/elyria-boundary-proof-register",
+        "publicAtSnapshot": true,
+        "description": "Elyria Systems public register of boundary-proof artifacts, product corridors, evidence surfaces, and replayable governance claims.",
+        "relationship": "enterprise_reference_surface",
+        "pushedAtSnapshot": "2026-06-18T23:41:28Z",
+        "originalOwner": "Kamanaka5502",
+        "evidenceStanding": "PUBLIC_REPOSITORY_REFERENCE_ONLY",
+        "inheritsNativeVAStanding": false,
+        "historicalOriginalFreezeVerifiedFromThisSnapshot": false
+      },
+      {
+        "name": "elyria-build-tool",
+        "url": "https://github.com/Kamanaka5502/elyria-build-tool",
+        "publicAtSnapshot": true,
+        "description": "Customer-facing governance intake and blueprint generator for scoping, layering, and proving governed execution before it moves. Visibility: Private first, Public after review",
+        "relationship": "enterprise_reference_surface",
+        "pushedAtSnapshot": "2026-06-12T00:59:55Z",
+        "originalOwner": "Kamanaka5502",
+        "evidenceStanding": "PUBLIC_REPOSITORY_REFERENCE_ONLY",
+        "inheritsNativeVAStanding": false,
+        "historicalOriginalFreezeVerifiedFromThisSnapshot": false
+      },
+      {
+        "name": "elyria-certified-execution",
+        "url": "https://github.com/Kamanaka5502/elyria-certified-execution",
+        "publicAtSnapshot": true,
+        "description": "Protected public proof surface for consequence-bearing AI execution certification: standing, authority, corridor integrity, receipt/replay, and fail-closed behavior at the boundary where actions bind.",
+        "relationship": "bounded_boundary_source",
+        "pushedAtSnapshot": "2026-05-21T00:14:14Z",
+        "originalOwner": "Kamanaka5502",
+        "evidenceStanding": "PUBLIC_REPOSITORY_REFERENCE_ONLY",
+        "inheritsNativeVAStanding": false,
+        "historicalOriginalFreezeVerifiedFromThisSnapshot": false
+      },
+      {
+        "name": "elyria-clinical-ai-boundary",
+        "url": "https://github.com/Kamanaka5502/elyria-clinical-ai-boundary",
+        "publicAtSnapshot": true,
+        "description": "Elyria Systems public clinical AI boundary proof surface for recommendation admissibility, physician signoff, stale evidence refusal, receipt binding, and replayable clinical governance.",
+        "relationship": "domain_specific_public_surface",
+        "pushedAtSnapshot": "2026-05-30T17:29:24Z",
+        "originalOwner": "Kamanaka5502",
+        "evidenceStanding": "PUBLIC_REPOSITORY_REFERENCE_ONLY",
+        "inheritsNativeVAStanding": false,
+        "historicalOriginalFreezeVerifiedFromThisSnapshot": false
+      },
+      {
+        "name": "elyria-compliance-evidence-wrapper",
+        "url": "https://github.com/Kamanaka5502/elyria-compliance-evidence-wrapper",
+        "publicAtSnapshot": true,
+        "description": "Public-safe compliance evidence wrapper translating Elyria consequence-boundary decisions into auditor, regulator, and enterprise risk review packets.",
+        "relationship": "enterprise_reference_surface",
+        "pushedAtSnapshot": "2026-06-05T19:27:30Z",
+        "originalOwner": "Kamanaka5502",
+        "evidenceStanding": "PUBLIC_REPOSITORY_REFERENCE_ONLY",
+        "inheritsNativeVAStanding": false,
+        "historicalOriginalFreezeVerifiedFromThisSnapshot": false
+      },
+      {
+        "name": "elyria-consciousness-boundary-engine",
+        "url": "https://github.com/Kamanaka5502/elyria-consciousness-boundary-engine",
+        "publicAtSnapshot": true,
+        "description": "Public proof surface for governed memory, identity, self-reference, agency posture, continuity, receipts, and replay in AI systems.",
+        "relationship": "domain_specific_public_surface",
+        "pushedAtSnapshot": "2026-07-20T14:58:51Z",
+        "originalOwner": "Kamanaka5502",
+        "evidenceStanding": "PUBLIC_REPOSITORY_REFERENCE_ONLY",
+        "inheritsNativeVAStanding": false,
+        "historicalOriginalFreezeVerifiedFromThisSnapshot": false
+      },
+      {
+        "name": "elyria-consequence-boundary-infrastructure",
+        "url": "https://github.com/Kamanaka5502/elyria-consequence-boundary-infrastructure",
+        "publicAtSnapshot": true,
+        "description": "Public category surface for consequence-boundary infrastructure across privacy, AI deployment, aerospace stage admission, privileged operations, and AI memory/identity continuity.",
+        "relationship": "bounded_boundary_source",
+        "pushedAtSnapshot": "2026-09-11T18:38:49Z",
+        "originalOwner": "Kamanaka5502",
+        "evidenceStanding": "PUBLIC_REPOSITORY_REFERENCE_ONLY",
+        "inheritsNativeVAStanding": false,
+        "historicalOriginalFreezeVerifiedFromThisSnapshot": false
+      },
+      {
+        "name": "elyria-consequence-os-public",
+        "url": "https://github.com/Kamanaka5502/elyria-consequence-os-public",
+        "publicAtSnapshot": true,
+        "description": "Public repository; inspect its original contents to determine exact scope.",
+        "relationship": "bounded_boundary_source",
+        "pushedAtSnapshot": "2026-06-04T18:55:59Z",
+        "originalOwner": "Kamanaka5502",
+        "evidenceStanding": "PUBLIC_REPOSITORY_REFERENCE_ONLY",
+        "inheritsNativeVAStanding": false,
+        "historicalOriginalFreezeVerifiedFromThisSnapshot": false
+      },
+      {
+        "name": "elyria-deformable-viability-fabric",
+        "url": "https://github.com/Kamanaka5502/elyria-deformable-viability-fabric",
+        "publicAtSnapshot": true,
+        "description": "N-dimensional regime-governance layer for detecting deformable viability envelopes, topology shifts, stale admissibility, and safe recovery posture before consequence binds.",
+        "relationship": "bounded_boundary_source",
+        "pushedAtSnapshot": "2026-08-14T15:41:40Z",
+        "originalOwner": "Kamanaka5502",
+        "evidenceStanding": "PUBLIC_REPOSITORY_REFERENCE_ONLY",
+        "inheritsNativeVAStanding": false,
+        "historicalOriginalFreezeVerifiedFromThisSnapshot": false
+      },
+      {
+        "name": "elyria-enterprise-ai-control-plane",
+        "url": "https://github.com/Kamanaka5502/elyria-enterprise-ai-control-plane",
+        "publicAtSnapshot": true,
+        "description": "Principal Architect-level public-safe reference architecture for responsible AI, agentic governance, Azure alignment, production movement control, and enterprise AI readiness.",
+        "relationship": "enterprise_reference_surface",
+        "pushedAtSnapshot": "2026-06-12T20:29:12Z",
+        "originalOwner": "Kamanaka5502",
+        "evidenceStanding": "PUBLIC_REPOSITORY_REFERENCE_ONLY",
+        "inheritsNativeVAStanding": false,
+        "historicalOriginalFreezeVerifiedFromThisSnapshot": false
+      },
+      {
+        "name": "elyria-execution-governance-portfolio",
+        "url": "https://github.com/Kamanaka5502/elyria-execution-governance-portfolio",
+        "publicAtSnapshot": true,
+        "description": "Portfolio index for Elyria / Veritas pre-effect execution governance: commit-boundary admission, webhook ingress, deterministic receipts, custody compliance, replay, rollback, and fail-closed consequence control.",
+        "relationship": "enterprise_reference_surface",
+        "pushedAtSnapshot": "2026-08-05T12:08:23Z",
+        "originalOwner": "Kamanaka5502",
+        "evidenceStanding": "PUBLIC_REPOSITORY_REFERENCE_ONLY",
+        "inheritsNativeVAStanding": false,
+        "historicalOriginalFreezeVerifiedFromThisSnapshot": false
+      },
+      {
+        "name": "elyria-field-laws",
+        "url": "https://github.com/Kamanaka5502/elyria-field-laws",
+        "publicAtSnapshot": true,
+        "description": "A formal law pack for multidimensional consequence-bound movement governance.",
+        "relationship": "bounded_boundary_source",
+        "pushedAtSnapshot": "2026-10-20T21:24:08Z",
+        "originalOwner": "Kamanaka5502",
+        "evidenceStanding": "PUBLIC_REPOSITORY_REFERENCE_ONLY",
+        "inheritsNativeVAStanding": false,
+        "historicalOriginalFreezeVerifiedFromThisSnapshot": false
+      },
+      {
+        "name": "elyria-financial-motion-assurance",
+        "url": "https://github.com/Kamanaka5502/elyria-financial-motion-assurance",
+        "publicAtSnapshot": true,
+        "description": "Pre-execution motion-admission wrapper for AI-assisted financial intent, invariant routing, replayable receipts, and fail-closed consequence control.",
+        "relationship": "domain_specific_public_surface",
+        "pushedAtSnapshot": "2026-06-03T22:09:01Z",
+        "originalOwner": "Kamanaka5502",
+        "evidenceStanding": "PUBLIC_REPOSITORY_REFERENCE_ONLY",
+        "inheritsNativeVAStanding": false,
+        "historicalOriginalFreezeVerifiedFromThisSnapshot": false
+      },
+      {
+        "name": "elyria-financial-motion-governance",
+        "url": "https://github.com/Kamanaka5502/elyria-financial-motion-governance",
+        "publicAtSnapshot": true,
+        "description": "Pre-effect financial movement governance for payments, treasury approvals, settlement custody, AI-to-finance actions, deterministic receipts, and fail-closed value-transfer control.",
+        "relationship": "domain_specific_public_surface",
+        "pushedAtSnapshot": "2026-06-03T22:20:19Z",
+        "originalOwner": "Kamanaka5502",
+        "evidenceStanding": "PUBLIC_REPOSITORY_REFERENCE_ONLY",
+        "inheritsNativeVAStanding": false,
+        "historicalOriginalFreezeVerifiedFromThisSnapshot": false
+      },
+      {
+        "name": "elyria-kernel-atlas-live",
+        "url": "https://github.com/Kamanaka5502/elyria-kernel-atlas-live",
+        "publicAtSnapshot": true,
+        "description": "Public repository; inspect its original contents to determine exact scope.",
+        "relationship": "bounded_boundary_source",
+        "pushedAtSnapshot": "2026-06-27T23:21:11Z",
+        "originalOwner": "Kamanaka5502",
+        "evidenceStanding": "PUBLIC_REPOSITORY_REFERENCE_ONLY",
+        "inheritsNativeVAStanding": false,
+        "historicalOriginalFreezeVerifiedFromThisSnapshot": false
+      },
+      {
+        "name": "elyria-mission-control-engine",
+        "url": "https://github.com/Kamanaka5502/elyria-mission-control-engine",
+        "publicAtSnapshot": true,
+        "description": "Controlled stage-admission proof surface for AI-assisted scientific and aerospace-facing workflows, with receipts, replay, and no-advance proof.",
+        "relationship": "domain_specific_public_surface",
+        "pushedAtSnapshot": "2026-05-06T01:20:06Z",
+        "originalOwner": "Kamanaka5502",
+        "evidenceStanding": "PUBLIC_REPOSITORY_REFERENCE_ONLY",
+        "inheritsNativeVAStanding": false,
+        "historicalOriginalFreezeVerifiedFromThisSnapshot": false
+      },
+      {
+        "name": "elyria-one-proof",
+        "url": "https://github.com/Kamanaka5502/elyria-one-proof",
+        "publicAtSnapshot": true,
+        "description": "Minimal BOT/AI execution-boundary proof: admissibility before action, deterministic receipt, replay.",
+        "relationship": "bounded_boundary_source",
+        "pushedAtSnapshot": "2026-08-14T15:41:13Z",
+        "originalOwner": "Kamanaka5502",
+        "evidenceStanding": "PUBLIC_REPOSITORY_REFERENCE_ONLY",
+        "inheritsNativeVAStanding": false,
+        "historicalOriginalFreezeVerifiedFromThisSnapshot": false
+      },
+      {
+        "name": "elyria-pre-effect-enforcement-harness",
+        "url": "https://github.com/Kamanaka5502/elyria-pre-effect-enforcement-harness",
+        "publicAtSnapshot": true,
+        "description": "Bounded proof harness showing that protected actions cannot reach effect unless the governed boundary resolves EXECUTE.",
+        "relationship": "bounded_boundary_source",
+        "pushedAtSnapshot": "2026-09-10T18:05:24Z",
+        "originalOwner": "Kamanaka5502",
+        "evidenceStanding": "PUBLIC_REPOSITORY_REFERENCE_ONLY",
+        "inheritsNativeVAStanding": false,
+        "historicalOriginalFreezeVerifiedFromThisSnapshot": false
+      },
+      {
+        "name": "elyria-q-standing-diagnostics-engine",
+        "url": "https://github.com/Kamanaka5502/elyria-q-standing-diagnostics-engine",
+        "publicAtSnapshot": true,
+        "description": "Elyria-Q enforces pre-effect admissibility for high-risk operations by validating authority, policy state, custody integrity, and system capacity at execution. Actions without standing are refused, narrowed, or escalated, with verifiable receipts and replay for audit and compliance. Built by Elyria Systems — VA.",
+        "relationship": "bounded_boundary_source",
+        "pushedAtSnapshot": "2026-05-21T00:08:35Z",
+        "originalOwner": "Kamanaka5502",
+        "evidenceStanding": "PUBLIC_REPOSITORY_REFERENCE_ONLY",
+        "inheritsNativeVAStanding": false,
+        "historicalOriginalFreezeVerifiedFromThisSnapshot": false
+      },
+      {
+        "name": "elyria-rag-source-authority-gate",
+        "url": "https://github.com/Kamanaka5502/elyria-rag-source-authority-gate",
+        "publicAtSnapshot": true,
+        "description": "RAG governance control-plane architecture for determining which sources an AI system may retrieve from, under what authority, with what freshness, grounding, access control, telemetry, and revalidation requirements.",
+        "relationship": "enterprise_reference_surface",
+        "pushedAtSnapshot": "2026-06-12T22:13:20Z",
+        "originalOwner": "Kamanaka5502",
+        "evidenceStanding": "PUBLIC_REPOSITORY_REFERENCE_ONLY",
+        "inheritsNativeVAStanding": false,
+        "historicalOriginalFreezeVerifiedFromThisSnapshot": false
+      },
+      {
+        "name": "elyria-runtime-law",
+        "url": "https://github.com/Kamanaka5502/elyria-runtime-law",
+        "publicAtSnapshot": true,
+        "description": "Elyria Runtime Law v0.1 — consequence admission before effect for AI and automated systems. Evaluates attempted becoming through authority, evidence, state, capacity, viability, breach, restart, and coherence before consequence may bind.",
+        "relationship": "bounded_boundary_source",
+        "pushedAtSnapshot": "2026-06-04T00:07:29Z",
+        "originalOwner": "Kamanaka5502",
+        "evidenceStanding": "PUBLIC_REPOSITORY_REFERENCE_ONLY",
+        "inheritsNativeVAStanding": false,
+        "historicalOriginalFreezeVerifiedFromThisSnapshot": false
+      },
+      {
+        "name": "invisible-middle-intelligence-layer",
+        "url": "https://github.com/Kamanaka5502/invisible-middle-intelligence-layer",
+        "publicAtSnapshot": true,
+        "description": "Structural systems intelligence layer for detecting hidden human compensation, burden transfer, containment instability, and flourishing degradation in human-facing systems.",
+        "relationship": "separate_or_adjacent_attribution",
+        "pushedAtSnapshot": "2026-05-28T21:12:40Z",
+        "originalOwner": "Kamanaka5502",
+        "evidenceStanding": "PUBLIC_REPOSITORY_REFERENCE_ONLY",
+        "inheritsNativeVAStanding": false,
+        "historicalOriginalFreezeVerifiedFromThisSnapshot": false
+      },
+      {
+        "name": "lpem-proof-estate",
+        "url": "https://github.com/Kamanaka5502/lpem-proof-estate",
+        "publicAtSnapshot": true,
+        "description": "Bounded executable proof estate for replay/legitimacy, proof/custody, persistence/promotion, and execution/standing separation.",
+        "relationship": "bounded_boundary_source",
+        "pushedAtSnapshot": "2026-06-01T01:32:13Z",
+        "originalOwner": "Kamanaka5502",
+        "evidenceStanding": "PUBLIC_REPOSITORY_REFERENCE_ONLY",
+        "inheritsNativeVAStanding": false,
+        "historicalOriginalFreezeVerifiedFromThisSnapshot": false
+      },
+      {
+        "name": "mission-control-customer-ops-runtime",
+        "url": "https://github.com/Kamanaka5502/mission-control-customer-ops-runtime",
+        "publicAtSnapshot": true,
+        "description": "Customer operations runtime for intake, evidence collection, approval workflows, governed execution, receipts, replay, and deployment-ready operational control.",
+        "relationship": "domain_specific_public_surface",
+        "pushedAtSnapshot": "2026-07-22T04:13:28Z",
+        "originalOwner": "Kamanaka5502",
+        "evidenceStanding": "PUBLIC_REPOSITORY_REFERENCE_ONLY",
+        "inheritsNativeVAStanding": false,
+        "historicalOriginalFreezeVerifiedFromThisSnapshot": false
+      },
+      {
+        "name": "national-cyber-boundary",
+        "url": "https://github.com/Kamanaka5502/national-cyber-boundary",
+        "publicAtSnapshot": true,
+        "description": "Governed execution-boundary runtime for national cybersecurity critical-access decisions — authority, evidence, policy, custody, and replay must hold before cyber consequence can bind.",
+        "relationship": "domain_specific_public_surface",
+        "pushedAtSnapshot": "2026-05-30T17:29:48Z",
+        "originalOwner": "Kamanaka5502",
+        "evidenceStanding": "PUBLIC_REPOSITORY_REFERENCE_ONLY",
+        "inheritsNativeVAStanding": false,
+        "historicalOriginalFreezeVerifiedFromThisSnapshot": false
+      },
+      {
+        "name": "Samantha-Revita-Elyria-Systems",
+        "url": "https://github.com/Kamanaka5502/Samantha-Revita-Elyria-Systems",
+        "publicAtSnapshot": true,
+        "description": "Elyria Systems builds operational governance tools for AI, workflow, access, payment, and system-behavior control—turning consequence-bearing actions into admit, hold, refuse, receipt, and replay structures.",
+        "relationship": "separate_or_adjacent_attribution",
+        "pushedAtSnapshot": "2026-09-04T17:06:53Z",
+        "originalOwner": "Kamanaka5502",
+        "evidenceStanding": "PUBLIC_REPOSITORY_REFERENCE_ONLY",
+        "inheritsNativeVAStanding": false,
+        "historicalOriginalFreezeVerifiedFromThisSnapshot": false
+      },
+      {
+        "name": "scope-expiry-gate",
+        "url": "https://github.com/Kamanaka5502/scope-expiry-gate",
+        "publicAtSnapshot": true,
+        "description": "Fail-closed proof artifact for detecting when prior approval, access, or authority continues after scope expiry.",
+        "relationship": "bounded_boundary_source",
+        "pushedAtSnapshot": "2026-06-01T04:21:14Z",
+        "originalOwner": "Kamanaka5502",
+        "evidenceStanding": "PUBLIC_REPOSITORY_REFERENCE_ONLY",
+        "inheritsNativeVAStanding": false,
+        "historicalOriginalFreezeVerifiedFromThisSnapshot": false
+      },
+      {
+        "name": "standinggrid",
+        "url": "https://github.com/Kamanaka5502/standinggrid",
+        "publicAtSnapshot": true,
+        "description": "Supervisory authority continuity layer: governing-basis standing before execution binding.",
+        "relationship": "bounded_boundary_source",
+        "pushedAtSnapshot": "2026-05-30T17:28:47Z",
+        "originalOwner": "Kamanaka5502",
+        "evidenceStanding": "PUBLIC_REPOSITORY_REFERENCE_ONLY",
+        "inheritsNativeVAStanding": false,
+        "historicalOriginalFreezeVerifiedFromThisSnapshot": false
+      },
+      {
+        "name": "veritas-safechange",
+        "url": "https://github.com/Kamanaka5502/veritas-safechange",
+        "publicAtSnapshot": true,
+        "description": "Commit-boundary proof corridor showing whether an attempted action may complete under live state before consequence can bind.",
+        "relationship": "bounded_boundary_source",
+        "pushedAtSnapshot": "2026-09-17T23:20:39Z",
+        "originalOwner": "Kamanaka5502",
+        "evidenceStanding": "PUBLIC_REPOSITORY_REFERENCE_ONLY",
+        "inheritsNativeVAStanding": false,
+        "historicalOriginalFreezeVerifiedFromThisSnapshot": false
+      }
+    ]
+  },
+  "endToEndStages": [
+    {
+      "id": "00",
+      "title": "Category and original evidence",
+      "scope": "True-Zero / Elements Basin / corrected K; original mathematical order is discovered/formalized and protected operations are not published",
+      "proofEstateRecord": "proofs/sources/true-zero-consequence-systems-science-v1.2.3-extracted.md",
+      "publicPatterns": [
+        "elyria-field-laws",
+        "elyria-runtime-law"
+      ],
+      "evidenceStatus": "MIXED_EXAMINE_EACH_ORIGINAL",
+      "notAnImplementationSequence": true
+    },
+    {
+      "id": "01",
+      "title": "Live continuity and identity",
+      "scope": "Coherence, persistent state, identity and lawful continuation are distinguished from a conventional stateless request",
+      "proofEstateRecord": "proofs/VERSION-IDENTITY.md",
+      "publicPatterns": [
+        "elyria-consciousness-boundary-engine",
+        "standinggrid"
+      ],
+      "evidenceStatus": "MIXED_EXAMINE_EACH_ORIGINAL",
+      "notAnImplementationSequence": true
+    },
+    {
+      "id": "02",
+      "title": "Governed candidate admission",
+      "scope": "Candidate and attempted consequence identified under a fixed accountable object and review scope",
+      "proofEstateRecord": "proofs/EXAMINATION-STANDARD.md",
+      "publicPatterns": [
+        "elyria-one-proof",
+        "elyria-admission-runtime"
+      ],
+      "evidenceStatus": "MIXED_EXAMINE_EACH_ORIGINAL",
+      "notAnImplementationSequence": true
+    },
+    {
+      "id": "03",
+      "title": "Authority and standing",
+      "scope": "Governing basis, active actor authority, scope, revocation and continuity checked at attempted bind",
+      "proofEstateRecord": "proofs/HISTORICAL-SOURCE-BYTE-VERIFICATION.md",
+      "publicPatterns": [
+        "authority-revocation-witness",
+        "scope-expiry-gate",
+        "bind-time-authority-proof"
+      ],
+      "evidenceStatus": "MIXED_EXAMINE_EACH_ORIGINAL",
+      "notAnImplementationSequence": true
+    },
+    {
+      "id": "04",
+      "title": "Evidence and custody",
+      "scope": "Source authority, freshness, original evidence, receipt chain and ownership retained without standing inflation",
+      "proofEstateRecord": "proofs/HISTORICAL-EVIDENCE-INDEX.md",
+      "publicPatterns": [
+        "elyria-rag-source-authority-gate",
+        "elyria-ai-audit-evidence-pack"
+      ],
+      "evidenceStatus": "MIXED_EXAMINE_EACH_ORIGINAL",
+      "notAnImplementationSequence": true
+    },
+    {
+      "id": "05",
+      "title": "Viability and admissibility",
+      "scope": "Continuance constraints, viable movement and negative controls distinguish eligibility from possession of a credential",
+      "proofEstateRecord": "proofs/CLAIM-TO-CARRIER.json",
+      "publicPatterns": [
+        "elyria-deformable-viability-fabric",
+        "elyria-q-standing-diagnostics-engine"
+      ],
+      "evidenceStatus": "MIXED_EXAMINE_EACH_ORIGINAL",
+      "notAnImplementationSequence": true
+    },
+    {
+      "id": "06",
+      "title": "Pre-effect boundary",
+      "scope": "Consequences must not bind on invalid standing; action outcomes require a real effect/non-effect carrier",
+      "proofEstateRecord": "proofs/HISTORICAL-SOURCE-BYTE-VERIFICATION.md",
+      "publicPatterns": [
+        "elyria-pre-effect-enforcement-harness",
+        "elyria-certified-execution"
+      ],
+      "evidenceStatus": "MIXED_EXAMINE_EACH_ORIGINAL",
+      "notAnImplementationSequence": true
+    },
+    {
+      "id": "07",
+      "title": "Bounded disposition",
+      "scope": "Admission, narrowing, redirection, pause, refusal or halt remain tied to the exact verified corridor and implementation; not all outcomes appear in every public test",
+      "proofEstateRecord": "proofs/EXAMINATION-STANDARD.md",
+      "publicPatterns": [
+        "elyria-admission-runtime",
+        "elyria-agent-action-boundary"
+      ],
+      "evidenceStatus": "MIXED_EXAMINE_EACH_ORIGINAL",
+      "notAnImplementationSequence": true
+    },
+    {
+      "id": "08",
+      "title": "Execution and protected consequence",
+      "scope": "Authorized consequence versus denied/non-formed outcome are distinct physical or system effect measurements, not merely decision labels",
+      "proofEstateRecord": "proofs/V12-REVIEW.md",
+      "publicPatterns": [
+        "veritas-safechange",
+        "elyria-financial-motion-governance"
+      ],
+      "evidenceStatus": "MIXED_EXAMINE_EACH_ORIGINAL",
+      "notAnImplementationSequence": true
+    },
+    {
+      "id": "09",
+      "title": "Receipt and immutable custody",
+      "scope": "Preserve condition, decision, actor, bound identity and tamper-evident source records before claiming auditability",
+      "proofEstateRecord": "proofs/V1.2-ORIGINAL-SOURCE-VERIFICATION.md",
+      "publicPatterns": [
+        "elyria-ai-audit-evidence-pack",
+        "elyria-one-proof"
+      ],
+      "evidenceStatus": "MIXED_EXAMINE_EACH_ORIGINAL",
+      "notAnImplementationSequence": true
+    },
+    {
+      "id": "10",
+      "title": "Replay and changed conditions",
+      "scope": "Original receipt must remain intact; material changes require new qualification; replay labels without execution do not qualify",
+      "proofEstateRecord": "proofs/HISTORICAL-RUN-RECONCILIATION.md",
+      "publicPatterns": [
+        "elyria-ai-revalidation-engine",
+        "dimensional-drift-witness"
+      ],
+      "evidenceStatus": "MIXED_EXAMINE_EACH_ORIGINAL",
+      "notAnImplementationSequence": true
+    },
+    {
+      "id": "11",
+      "title": "Independent examination and release",
+      "scope": "Freeze carrier, observe alternative effect routes, preserve negative controls, qualify independent reviewers and authorize only minimal public extract",
+      "proofEstateRecord": "proofs/INDEPENDENT-OBSERVATION-QUALIFICATION.md",
+      "publicPatterns": [
+        "elyria-boundary-proof-register",
+        "lpem-proof-estate"
+      ],
+      "evidenceStatus": "MIXED_EXAMINE_EACH_ORIGINAL",
+      "notAnImplementationSequence": true
+    }
+  ],
+  "evidenceFamilies": [
+    {
+      "id": "formal",
+      "title": "Discovered/formalized public scientific source",
+      "status": "DOCUMENTED_PUBLIC_TEXT",
+      "path": "proofs/SOURCE-ESTATE.md"
+    },
+    {
+      "id": "public-tests",
+      "title": "Pinned historical public receipt/test sources",
+      "status": "ORIGINAL_PUBLIC_SOURCE_IDENTITIES_VERIFIED",
+      "path": "proofs/HISTORICAL-SOURCE-BYTE-VERIFICATION.md"
+    },
+    {
+      "id": "historic-build",
+      "title": "Historical Deploy Build V1.2 original ZIP",
+      "status": "PRIVATE_ORIGINAL_EIGHT_CASE_VERIFIER_REPRODUCED",
+      "path": "proofs/V1.2-ORIGINAL-SOURCE-VERIFICATION.md"
+    },
+    {
+      "id": "historic-runs",
+      "title": "Recorded completed integration and connected cases",
+      "status": "PRIVATE_COMPLETED_RECORDS_CROSSCHECKED_WITH_REVISIONS",
+      "path": "proofs/HISTORICAL-RUN-RECONCILIATION.md"
+    },
+    {
+      "id": "external-review",
+      "title": "Original independently authored third-party PyJWT review archive",
+      "status": "HASH_BOUND_REPORT_HARNESS_AND_RESULTS_SOURCE_ONLY",
+      "path": "proofs/HISTORICAL-DIFFERENTIAL-SOURCE-RECONCILIATION.md"
+    },
+    {
+      "id": "seal",
+      "title": "Historic original HOLD and distinct complete review derivative",
+      "status": "ORIGINAL_HOLD_DERIVATIVE_PRIVATE_57_OF_57_MATCH",
+      "path": "proofs/ORIGINAL-PRESERVING-REISSUE.md"
+    },
+    {
+      "id": "native-current",
+      "title": "Current V.A. V12 full end-to-end operational packet",
+      "status": "NO_PUBLIC_RELEASE_APPROVED_NATIVE_ORIGINAL_ATTACHED",
+      "path": "proofs/V12-REVIEW.md"
+    },
+    {
+      "id": "independent-native",
+      "title": "Qualified human/native effect witness packet",
+      "status": "NOT_PUBLICLY_ADMITTED",
+      "path": "proofs/INDEPENDENT-WITNESS-STATUS.json"
+    },
+    {
+      "id": "byo",
+      "title": "Applicant-owned real workflow examinations",
+      "status": "OPEN_LOCAL_TEST_AND_PUBLIC_SAFE_REQUEST_PATH",
+      "path": "examiner/BYO-WORKFLOW-EVIDENCE.md"
+    },
+    {
+      "id": "physical",
+      "title": "Physical KCD and apparatus evidence",
+      "status": "SEPARATE_PROOF_CATEGORY_WITHOUT_INHERITED_NATIVE_RESULT",
+      "path": "kcd/README.md"
+    }
+  ],
+  "disclosureBoundary": "Public explanation and proof routes only. No protected operators, original private archives, customer identifiable records, keys or source disclosure through this register.",
+  "sourceAttributionRule": "A Kamanaka public surface is not automatically the original native V.A. runtime; independently authored and separate commercial/public projects retain distinct ownership and verification.",
+  "architectureSequenceRule": "Examination ordering is a reviewer navigation route, not literal computational geometry, an implementation design, or evidence that separate repositories are integrated into one deployed native executable.",
+  "noAutomaticPromotion": true
+}
