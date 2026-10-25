@@ -36,7 +36,7 @@ def packet(dir_path):
         save(dir_path / (side + "-record.json"), w)
         secret, public = keypair(dir_path, side)
         private.append(secret)
-        shutil.copyfile(public, dir_path / (side + "-public.pem"))
+        # keypair already wrote the correctly named public-key carrier.
         save(dir_path / (side + "-signature.json"), sign(w, secret, public))
     return private
 
