@@ -40,6 +40,18 @@ python scripts/historical_freeze_inventory.py select \
 
 **Important:** The candidate leaves original source ID, original freeze date, pilot/run identity, observations, custody, independent witness and release authorization unset. It therefore **fails** the public [historical carrier admission gate](ADMISSION-GUIDE.md) until originals are checked and cleared by their lawful custodians. This separation is deliberate.
 
+## Windows PowerShell example
+
+Run these as separate commands in a local PowerShell terminal, from the cloned proof-estate repository. Replace the example paths with folders you own or are authorized to inspect. Keep both outputs in a private location outside the original files and outside cloud-synced public folders.
+
+```powershell
+py -3 scripts/historical_freeze_inventory.py scan --root "C:\\PrivateProof\\Originals" --out "C:\\PrivateProof\\inventory-private.json"
+py -3 scripts/historical_freeze_inventory.py verify --root "C:\\PrivateProof\\Originals" --inventory "C:\\PrivateProof\\inventory-private.json"
+py -3 scripts/historical_freeze_inventory.py select --root "C:\\PrivateProof\\Originals" --inventory "C:\\PrivateProof\\inventory-private.json" --relative-path "frozen-build.zip" --out "C:\\PrivateProof\\candidate-private.json"
+```
+
+On Windows, the output-file creation flags do not themselves establish a private NTFS access-control list. Verify your folder permissions and disk encryption before scanning sensitive originals. No report is transferred to GitHub by these commands. **Do not upload either resulting JSON file.**
+
 ## What this milestone resolves
 
 - Multiple distinct historical files can be inventoried without conflating them with six selected public proof surfaces or the new Cycle 001.
