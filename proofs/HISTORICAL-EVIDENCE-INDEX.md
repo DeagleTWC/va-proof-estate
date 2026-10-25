@@ -16,6 +16,10 @@ The custodian identifies **multiple prior pilots, multiple engineering layers an
 | October 2026 synthetic examination work | [Local examiner](../examiner/README.md), [Cycle 001](../examiner/EXTERNAL-CYCLE-001.md) | Rerunnable public synthetic cases, fresh external-challenge workflow, and active examiner invitation | These are **additions**, not replacements for any preceding freeze or pilot |
 | Physical KCD examinations | [Program A evidence register](../kcd/KCD-PROOF-REGISTER.json) | Controlled formalization and proposed physical proof track, no physical measurements attached here | Native V.A. or earlier engineering pilot does not automatically confer KCD physical standing |
 
+## Historical external technical-review originals separately located
+
+[Milestone 16](HISTORICAL-EXTERNAL-REVIEW-ORIGINALS.md) retrieves and hashes **two actual July 2026 original technical reviewer-assessment PDFs**, one giving a HOLD based on the incompleteness of an applicant's public qualification carrier and a distinct same-object PyJWT differential review reporting bounded five-claim PASS with PARTIAL reviewer qualification. Both documents retain their own dispositions and source scopes. This establishes authentic documentary reviewer-review history in private custody, **not a released original test harness, independently verified underlying differential run, new customer pilot, independent native V.A. witness or public release clearance**. Original PDFs were not uploaded.
+
 ## Independent external-witness qualification — new custody gate
 
 [Milestone 15 signed observation qualification](INDEPENDENT-OBSERVATION-QUALIFICATION.md) makes real historical evidence eligible for **separately attributable human-examined proof** only when original frozen source, independent external effect measurement, receipt, challenge, condition change, measured routes, separate qualified observers and release rights are established. This is a new public **admission capability**, not a manufactured independent reproduction of the privately held M13/M14 runs. Previously stored source records and their version history remain valid for exactly their observed scope.
