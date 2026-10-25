@@ -5,7 +5,7 @@
   "published": "2026-10-23",
   "scope": "V.A.-only native claim and public examination estate; separately labeled synthetic examiner, public True-Zero category primer, and prospective KCD Program A physical proof register (not native V.A. evidence).",
   "mainFile": "index.html",
-  "mainFileSHA256": "2486723f6deff9e3a50bc498b6702b6e570ec4ce00e211e7977c55cb2c7bfbd2",
+  "mainFileSHA256": "2e50b15a72558885a01158aa58c854d92d967cde735420133e07789fc71def5f",
   "publicEvidenceStatus": "DECLARED",
   "evidenceStatusVocabulary": [
     "DECLARED",
@@ -147,5 +147,13 @@
     "programBStandingInherited": false,
     "protectedConstructionReleased": false,
     "validationScript": "scripts/validate_kcd_register.py"
+  },
+  "publicIndependentExaminer": {
+    "guide": "examiner/INDEPENDENT-CHALLENGE.md",
+    "executable": "examiner/independent_challenge.py",
+    "negativeControls": "examiner/test_independent_challenge.py",
+    "intake": ".github/ISSUE_TEMPLATE/external-independent-examination.md",
+    "standing": "SIGNED LOCAL SYNTHETIC INTERFACE TEST; WITNESS IDENTITY AND NATIVE V.A. EXECUTION NOT ESTABLISHED",
+    "separateFromNativeEvidence": true
   }
 }
