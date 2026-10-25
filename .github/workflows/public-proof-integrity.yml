@@ -21,6 +21,8 @@ on:
       - "examiner/test_byo_workflow_evidence.py"
       - "scripts/validate_third_party_review.py"
       - "scripts/test_third_party_review.py"
+      - "scripts/validate_historical_source_families.py"
+      - "scripts/test_historical_source_families.py"
       - ".github/workflows/public-proof-integrity.yml"
   pull_request:
     paths:
@@ -64,6 +66,10 @@ jobs:
         run: |
           python scripts/validate_third_party_review.py
           python scripts/test_third_party_review.py
+      - name: Verify historical source family classification
+        run: |
+          python scripts/validate_historical_source_families.py
+          python scripts/test_historical_source_families.py
       - name: Enforce authentic native V12 evidence promotion and reject false claims
         run: python scripts/validate_v12_evidence.py
       - name: Verify public manifest and claim-register integrity
