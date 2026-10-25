@@ -1,0 +1,43 @@
+{
+  "schema": "va-historical-carrier-entry/1.0",
+  "id": null,
+  "sourceKind": null,
+  "original": {
+    "sourceDesignation": null,
+    "originalArtifactId": null,
+    "originalFreezeDate": null,
+    "originalSHA256": null,
+    "originalCustodian": null,
+    "originalPilotOrRunId": null
+  },
+  "publication": {
+    "releaseAuthorizationId": null,
+    "releaseClearedBy": null,
+    "authorizedScope": null,
+    "extractPreparedDate": null,
+    "publicExtractPath": null,
+    "publicExtractSHA256": null
+  },
+  "evidence": {
+    "standing": "SOURCE_RECORDED",
+    "boundedClaim": null,
+    "conditionScope": null,
+    "routeCoverageLimits": null,
+    "positiveObservation": null,
+    "negativeObservation": null,
+    "changedCondition": null,
+    "receiptReplay": null,
+    "observationFile": null,
+    "observationSHA256": null,
+    "negativeControlFile": null,
+    "negativeControlSHA256": null,
+    "replayFile": null,
+    "replaySHA256": null
+  },
+  "independent": {
+    "reviewerPackets": [],
+    "independenceReviewId": null
+  },
+  "protectedOriginalRemainsPrivate": true,
+  "instructions": "DRAFT TEMPLATE ONLY. Null fields are unverified and deliberately fail preflight. Do not post confidential original bytes or customer data. This template is never an admitted entry."
+}
