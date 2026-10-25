@@ -14,5 +14,30 @@
   "custodyApproved": false,
   "reviewerIndependenceVerified": false,
   "originalRetained": true,
-  "releaseAuthorized": false
+  "releaseAuthorized": false,
+  "dangerousConstructionExcluded": false,
+  "linkageAndReconstructionRiskReviewed": false,
+  "negativeFindingsRetained": false,
+  "scopeOfPermission": "UNFILLED",
+  "releaseLimitations": "UNFILLED",
+  "reviews": {
+    "custody": {
+      "reviewerId": "UNFILLED",
+      "authorizationRef": "UNFILLED",
+      "candidateSHA256": "UNFILLED",
+      "approved": false
+    },
+    "rights": {
+      "reviewerId": "UNFILLED",
+      "authorizationRef": "UNFILLED",
+      "candidateSHA256": "UNFILLED",
+      "approved": false
+    },
+    "safety": {
+      "reviewerId": "UNFILLED",
+      "authorizationRef": "UNFILLED",
+      "candidateSHA256": "UNFILLED",
+      "approved": false
+    }
+  }
 }
