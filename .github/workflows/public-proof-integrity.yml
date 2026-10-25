@@ -115,6 +115,11 @@ jobs:
           python scripts/test_independent_witnesses.py
           python scripts/validate_independent_witness_status.py
           python scripts/test_independent_witness_status.py
+      - name: Verify historical real-source external reviewer originals and evidence ceilings
+        run: |
+          python scripts/test_historical_external_review_originals.py
+          python scripts/validate_historical_review_originals.py
+          python scripts/test_historical_review_originals.py
       - name: Enforce authentic native V12 evidence promotion and reject false claims
         run: python scripts/validate_v12_evidence.py
       - name: Verify public manifest and claim-register integrity

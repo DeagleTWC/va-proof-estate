@@ -1,0 +1,49 @@
+{
+  "schema": "va-historical-external-review-original-register/1.0",
+  "asOf": "2026-10-25",
+  "milestone": 16,
+  "scope": "Original-source byte verification for two historic public-safe-labelled reviewer assessment documents. Source copies and fingerprints remain under restricted custody until authorized release.",
+  "externalArtifact": "PyJWT 2.13.0",
+  "externalReviewSubjectIsNativeVA": false,
+  "entries": [
+    {
+      "reviewId": "IQR-ITR-001-v1.0",
+      "documentKind": "REVIEW_OF_EXTERNAL_REVIEWER_SUBMISSION_CARRIER",
+      "reviewDateAsPrinted": "2026-07-20",
+      "sourcePDFPages": 8,
+      "sourcePDFOriginalBytesRetrieved": true,
+      "privateOriginalSHA256MatchedSourceCustody": true,
+      "publicOriginalPDFAttached": false,
+      "originallyRecordedDisposition": "HOLD_QUALIFICATION_NOT_ESTABLISHED_BY_SUBMITTED_CARRIER",
+      "sourceBasis": "Examined the submitted PyJWT 2.13.0 five-claim reviewer-qualification carrier; saved outputs lacked an independently regenerable source-to-run relation.",
+      "independentlyReperformedClaimTestsByThisMilestone": false,
+      "externallyAuthenticatedWitnessOfNativeVA": false,
+      "releaseRightsVerified": false
+    },
+    {
+      "reviewId": "ITR-PYJWT-2130-INDEPENDENT-v1.0",
+      "documentKind": "SEPARATELY_DESCRIBED_SAME_OBJECT_DIFFERENTIAL_REVIEW",
+      "reviewDateAsPrinted": "2026-07-20",
+      "sourcePDFPages": 5,
+      "sourcePDFOriginalBytesRetrieved": true,
+      "privateOriginalSHA256MatchedSourceCustody": true,
+      "publicOriginalPDFAttached": false,
+      "originallyRecordedDisposition": "FIVE_RELEASE_CLAIMS_REPORTED_PASS_REVIEWER_PARTIALLY_QUALIFIED",
+      "sourceBasis": "The original document records a distinct same-object PyJWT 2.13.0 vs 2.12.1 differential examination and a bounded partial reviewer-qualification assessment; underlying harness/results named in that report were not separately recovered or rerun in this milestone.",
+      "independentlyReperformedClaimTestsByThisMilestone": false,
+      "externallyAuthenticatedWitnessOfNativeVA": false,
+      "releaseRightsVerified": false
+    }
+  ],
+  "sameDayDocumentsCannotEstablishChronology": true,
+  "holdAndPartialConclusionsAddressDifferentEvidenceObjects": true,
+  "underlyingOriginalHarnessesOrDifferentialResultsSeparatelyExamined": false,
+  "independentThirdPartyWitnessOfNativeVAAuthenticated": false,
+  "historicalNativeVAPilotOriginalPubliclyAdmitted": false,
+  "authorizationToPublishOriginalPDFs": false,
+  "publicByteCarrierCount": 0,
+  "publicVerificationResult": "TWO_ORIGINAL_REVIEW_PDFS_IDENTIFIED_AND_FINGERPRINTED_IN_PRIVATE_CUSTODY",
+  "publicIndependentReproductionClaim": "NOT_ESTABLISHED",
+  "noReleaseRightsOrSourceTruthByMetadataAlone": true,
+  "nextQualificationGate": "Recover named same-object harness and version-specific JSON results, verify hashes and reproducibility, authenticate reviewer provenance and independent people, obtain explicit original-PDF disclosure authorization, and only then admit a properly scoped public extract. Separate native V.A. independent effect witness requires an actual native original and external outcome."
+}
