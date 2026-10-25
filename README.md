@@ -4,6 +4,11 @@
 
 **[Open the live V.A. Proof Estate](https://deagletwc.github.io/va-proof-estate/)**
 
+**[START HERE — Explore the complete end-to-end V.A. Estate](https://deagletwc.github.io/va-proof-estate/end-to-end.html)**
+
+The central public atlas spans the full foundational-to-consequence examination path, with **12 stages**, an evidence-classified review of genuine original historic engineering and recorded workflows, **39 source references** from the Kamanaka public estate classified by relationship and attribution, eight applied consequence corridors, and direct Bring Your Own Workflow and independent qualification entries. Deagle is the comprehensive public examination *home*; original independently authored and downstream sources keep their own source rights, custody and standing. See [full technical narrative](proofs/FULL-END-TO-END-REPRESENTATION.md) and [machine-readable end-to-end register](proofs/END-TO-END-ESTATE-REGISTER.json).
+
+
 This is the publication carrier for the V.A.-only evidence-routing interface, **release 2.0 / edition 02**. **The custodian identifies the current V.A. system as V12**; website release numbering is separate from system versioning. See the [version-identity and evidence-lineage record](proofs/VERSION-IDENTITY.md). V12 native build receipts are not attached to this public release. The code repository hosts the static website; the evidence interface is the public entry point.
 
 The site differentiates **DECLARED**, **OBSERVED**, and **INDEPENDENTLY REPRODUCED** evidence, contains a claim-to-carrier ledger, native bounded witness specifications, separate physical-apparatus evidence requirements and negative controls, versioned challenge identities, and local one-click public-safe JSON challenge packets.
