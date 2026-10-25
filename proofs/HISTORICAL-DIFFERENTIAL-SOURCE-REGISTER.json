@@ -1,0 +1,59 @@
+{
+  "schema": "va-historical-differential-source-reconciliation/1.0",
+  "recovered": "2026-10-25",
+  "milestone": 17,
+  "exactObject": "July 2026 original independently authored PyJWT same-object differential review package",
+  "historicalExternalReviewClass": "REVIEW_OF_THIRD_PARTY_SOFTWARE_NOT_NATIVE_VA",
+  "historicalOriginalArchivePresentInLibrary": true,
+  "originalArchiveMemberCount": 5,
+  "originalArchiveBytesExamined": true,
+  "sourcePackageOriginalityBeyondKnownPrivateCustody": "CONTEMPORANEOUS_FREEZE_CHRONOLOGY_NOT_REAUTHENTICATED",
+  "priorM16SameObjectOriginalPDFAgainInsideArchive": true,
+  "priorM16OriginalPDFExactBytesMatched": true,
+  "reportedSha256MembersChecked": [
+    {
+      "name": "independent_pyjwt_2_13_0_review_harness.py",
+      "sha256": "02c17c0590c0a848e1e79f8d04409c8687a7900a56b2aae483cbd3970c9ff824",
+      "actualBytesMatched": true
+    },
+    {
+      "name": "independent_results_pyjwt_2.13.0.json",
+      "sha256": "2892c50c3abdf2379fe861fc88a0dc53ec09762a754a14b9e1d39d681b91f9bd",
+      "actualBytesMatched": true
+    },
+    {
+      "name": "independent_results_pyjwt_2.12.1.json",
+      "sha256": "8c8effa686a40b8d8d4adbdbfcf918337370bc75558ba08f18e595227e07b070",
+      "actualBytesMatched": true
+    }
+  ],
+  "sourceResults": {
+    "fixedVersion": "2.13.0",
+    "baselineVersion": "2.12.1",
+    "sameSixCaseIdsOnBothVersions": true,
+    "fixedSavedPassCount": 6,
+    "baselineSavedFailCount": 6,
+    "fiveReleaseClaimFamilies": [
+      "C001",
+      "C002",
+      "C003",
+      "C004",
+      "C005"
+    ],
+    "caseVariantCount": 6
+  },
+  "historicalReviewerDispositionPreserved": "PARTIAL_QUALIFICATION_BOUNDED_PYTHON_RELEASE_CLAIM_REVIEW",
+  "earlierM16SubmittedCarrierDispositionPreserved": "HOLD_SUBMITTED_QUALIFICATION_CARRIER",
+  "differentReviewObjectsKeptSeparate": true,
+  "originalHarnessExecutedInMilestone17": false,
+  "underlyingPyJWTDependenciesReinstalledAndRerunInMilestone17": false,
+  "originalRunEnvironmentOrTimestampAuthenticatedInMilestone17": false,
+  "independentHumanWitnessIdentityAuthenticatedInMilestone17": false,
+  "nativeVAOriginalExaminedByThisSource": false,
+  "nativeVAIndependentEffectReproduced": false,
+  "publicPermissionToRepublishOriginalArchiveOrPDF": false,
+  "publicArchiveOrOriginalTestBytesAttached": false,
+  "originalArchiveExactHashKeptPrivate": true,
+  "evidenceCeiling": "ORIGINAL_HARNESS_AND_SAVED_DIFFERENTIAL_RESULTS_SOURCE_HASHES_MATCH_HISTORIC_REPORT",
+  "nextGate": "If authorized, reproduce the original harness against separately frozen exact PyJWT release installations, record command/environment/outputs and event provenance. Separately acquire genuine native V.A. witness original, independent observed external consequence and release rights for native evidence standing."
+}
