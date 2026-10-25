@@ -122,3 +122,9 @@ Participants can keep their work private and run this locally. Publish only a re
 ## GitHub-anchored challenge issuer
 
 The [Cycle 001 issuer](ISSUE-CYCLE-001.md) binds a public, unedited, pre-existing freeze comment to a new Actions-issued synthetic challenge and archived source-comment snapshot. The workflow does not execute participant code or authenticate independent witnesses.
+
+## Bring your own real workflow — evidence without executable upload
+
+The new [BYO Workflow Evidence Route](BYO-WORKFLOW-EVIDENCE.md) accepts locally frozen **data-only** case packets describing a protected consequence, permissible and denied runs, a changed-condition refusal, original receipt files and separate effect-observer records. Participants run the [read-only local verifier](byo_workflow_evidence.py) on their own machines. The site never runs user-uploaded code. The optional [synthetic demonstration packet builder](byo_workflow_sample.py) creates only fake examples, so its passing result cannot prove any native V.A. consequence or independently observed real-world effect. Use the [public-safe review request](https://github.com/DeagleTWC/va-proof-estate/issues/new?template=byo-workflow-evidence.yml) to request a qualified examiner after retaining privately held originals and securing release authority.
+
+Historical third-party technical reviews follow a [separate original-custody standard](../proofs/THIRD-PARTY-EVIDENCE.md), preserving the difference between evaluating outside engineering and independent reproduction of V.A.
