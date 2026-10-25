@@ -106,3 +106,7 @@ Participants can keep their work private and run this locally. Publish only a re
 **Review path:** [Examination standard](../proofs/EXAMINATION-STANDARD.md) | [Fixed-carrier issue intake](https://github.com/DeagleTWC/va-proof-estate/issues/new?template=bounded-proof-review.md) | [Physical witness requirements](PHYSICAL-WITNESS.md).
 
 **The public Proof Estate is a curated present examination surface, not the whole underlying scientific, engineering, pilot or historical record.**
+
+## Cross-foundation comparison and local custody — public-safe
+
+[COMPARATIVE-EXAMINATION](COMPARATIVE-EXAMINATION.md) defines same-fixture comparisons and non-authenticating report custody. No executable uploads are accepted and external adapters remain on participant-controlled machines. Different reported outcomes do not establish relative architecture superiority, real consequence protection, or native V.A. behavior.

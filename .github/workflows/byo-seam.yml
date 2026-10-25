@@ -74,3 +74,7 @@ jobs:
       - name: Do not promote synthetic result to physical or native V.A. proof
         run: |
           python -c 'import json; r=json.load(open("/tmp/positive.json")); assert "NOT NATIVE V.A." in r["examiner_scope"]'
+
+      - name: Compare independent local synthetic results and reject self-rehashed false claims
+        run: |
+          python examiner/test_comparative.py

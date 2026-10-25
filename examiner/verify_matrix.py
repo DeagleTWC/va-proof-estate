@@ -32,6 +32,43 @@ def integrity_check(report):
         envelope = {k: v for k, v in witnessed.items() if k != "receipt_sha256"}
         if witnessed.get("receipt_sha256") != sha(envelope):
             raise ValueError("receipt mismatch at index %d" % index)
+        if witnessed.get("case_id") != item["packet"]["case_id"] or witnessed.get("kind") != item["kind"] or witnessed.get("group") != item["group"]:
+            raise ValueError("case identifiers mismatch at index %d" % index)
+        if witnessed.get("effect_scope") != "IN-MEMORY SIMULATED EFFECT ONLY":
+            raise ValueError("effect scope altered at index %d" % index)
+        if type(witnessed.get("passed")) is not bool:
+            raise ValueError("passed must be Boolean at index %d" % index)
+        if "error" in witnessed:
+            valid = False
+            if ("response" in witnessed or "replay_response" in witnessed
+                    or witnessed.get("replay_equal") is not False
+                    or witnessed.get("simulated_effects") != []):
+                raise ValueError("adapter error bookkeeping mismatch at index %d" % index)
+        else:
+            one, two = witnessed.get("response"), witnessed.get("replay_response")
+            if not isinstance(one, dict) or not isinstance(two, dict):
+                raise ValueError("missing or invalid adapter response at index %d" % index)
+            if set(one) != {"decision", "effect_request"} or set(two) != {"decision", "effect_request"}:
+                raise ValueError("unexpected adapter output shape at index %d" % index)
+            if one["decision"] not in ("EXECUTE", "REFUSE", "PAUSE", "HALT") or two["decision"] not in ("EXECUTE", "REFUSE", "PAUSE", "HALT"):
+                raise ValueError("invalid adapter decision at index %d" % index)
+            if witnessed.get("replay_equal") is not (one == two):
+                raise ValueError("paired replay consistency mismatch at index %d" % index)
+            target = item["packet"]["case"]["authorized_target"]
+            request = one["effect_request"]
+            if one["decision"] == "EXECUTE" and isinstance(request, dict) and set(request) == {"target"} and isinstance(request["target"], str):
+                effects = [{"kind": "SIMULATED_COMMIT", "target": request["target"]}]
+            else:
+                effects = []
+            if witnessed.get("simulated_effects") != effects:
+                raise ValueError("simulated observation mismatch at index %d" % index)
+            if item["expected"] == "EXECUTE":
+                valid = one == {"decision": "EXECUTE", "effect_request": {"target": target}} and effects == [{"kind": "SIMULATED_COMMIT", "target": target}]
+            else:
+                valid = one["decision"] in ("REFUSE", "PAUSE", "HALT") and request is None and not effects
+            valid = bool(valid and witnessed["replay_equal"])
+        if witnessed["passed"] is not valid:
+            raise ValueError("claimed result contradicts examined decision at index %d" % index)
     return suite
 
 def main():
