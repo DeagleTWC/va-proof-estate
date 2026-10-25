@@ -1,3 +1,7 @@
+## Public-interest maximum-evidence release rule
+
+The [controlling publication charter](../proofs/PUBLIC-INTEREST-PUBLICATION-CHARTER.md) prioritizes the largest independently recheckable, legally authorized functional evidence extract consistent with protecting the kernel and preventing harm. Applicants may publish exact safe redactions of **actual** completed workflows, original receipts, refused/no-effect results, changed-condition cases and independent examiner material. The [exact-byte private release preflight](../scripts/preflight_public_interest_release.py) checks a proposed extract's original identity, distinct digest and recorded human source/rights/safety review. It cannot substitute for those human reviews or prove absence of dangerous detail. No unreviewed BYO or TMU source should be posted publicly; submitted workflows remain owned by their lawful creators.
+
 # Bring Your Own Workflow — Evidence Examination
 
 **Your workflow remains yours. The Proof Estate examines evidence; it does not claim ownership or execute your code.**

@@ -4,6 +4,8 @@
 **Continuity basis:** 2026-10-25 original checkpoint `30f729a364982a2f1eb753858f0c9d9cc94c0efb`; historical-lineage publication merged at `a3948e4f01d2cfe044f7aa6bb9d8fd74f1b7fe64`. Use the live branch for current commit identity.
 **Source of current activity:** [Cycle 001 issue](https://github.com/DeagleTWC/va-proof-estate/issues/1) and [Actions](https://github.com/DeagleTWC/va-proof-estate/actions). This document describes the recorded checkpoint; do not assume a past issue state remains current.
 
+**Overriding publication charter (2026-10-25):** [Maximize independently verifiable function; prevent harm](PUBLIC-INTEREST-PUBLICATION-CHARTER.md). Release the largest lawful and safe original-grounded outcome extract, including eligible TMU history, through documented source custody, specific rights and exact-byte safety review. Never disclose dangerous construction, invent a run, or treat commercial exclusivity as overriding safe evidence.
+
 **Historical floor:** Multiple prior pilots, engineering layers and frozen original artifacts predate the October 2026 public-site work. They remain part of the existing source estate and are not erased, reclassified or restarted by this ledger. Their original identities and custody must be preserved. See [Historical Evidence Index](HISTORICAL-EVIDENCE-INDEX.md).
 
 **Rule:** This table is the delivery record of the **public website and new Cycle 001 review lane**, not a chronology of first V.A. builds, freezes, operations, pilots or independent reviews. A delivered public capability, issued challenge, signed report, native observed effect, and independent physical reproduction are different publication/evidence objects. No step inherits standing automatically.

@@ -1,0 +1,70 @@
+{
+  "schema": "va-public-interest-evidence-pipeline/1.0",
+  "charterVersion": "2026-10-25",
+  "controllingMission": "Publish the maximum independently verifiable scientific, engineering, historical pilot and safety evidence possible, withholding protected construction, unauthorized source, and information enabling harmful replication or weaponization. Prevention of harm takes priority over commercial exclusivity.",
+  "priorityOrder": [
+    "PREVENT_HARM_AND_OBEY_LAWFUL_DISCLOSURE_AUTHORITY",
+    "MAXIMIZE_INDEPENDENTLY_VERIFIABLE_FUNCTIONAL_EVIDENCE",
+    "PROTECT_PROPRIETARY_OR_HAZARDOUS_KERNEL_AND_FOUNDATIONAL_CONSTRUCTION",
+    "RETAIN_ORIGINAL_EVIDENCE_AND_DISPOSITIVE_FAILURES",
+    "COMMERCIAL_EXCLUSIVITY_SUBORDINATE_TO_SAFE_EVIDENCE_PUBLICATION"
+  ],
+  "allowedDispositions": [
+    "RELEASE",
+    "NARROW",
+    "CONTROLLED_REVIEW",
+    "HOLD",
+    "REFUSE_PUBLICATION"
+  ],
+  "publicationMustBindExactProposedBytes": true,
+  "humanCustodySafetyRightsReviewRequired": true,
+  "redactedExtractHasDistinctSHA256FromOriginal": true,
+  "independentReviewMustBeAuthenticatedWhenClaimed": true,
+  "documentedNegativeOutcomesRetained": true,
+  "commercialExclusivityAloneBlocksSafeEvidence": false,
+  "protectedKernelConstructionIsPublic": false,
+  "dangerousReplicationInformationIsPublic": false,
+  "unreviewedOriginalPilotDataIsPublic": false,
+  "candidateFamilies": [
+    {
+      "id": "scientific",
+      "description": "Public scientific formalization and original source identity",
+      "reviewStatus": "OPEN_TO_MAXIMUM_SAFE_DISCLOSURE",
+      "source": "proofs/SOURCE-ESTATE.md",
+      "newOriginalApprovedByThisCharter": false
+    },
+    {
+      "id": "engineering",
+      "description": "Original bounded engineering proofs, receipts, tamper and replays",
+      "reviewStatus": "OPEN_TO_MAXIMUM_SAFE_DISCLOSURE",
+      "source": "proofs/HISTORICAL-EVIDENCE-INDEX.md",
+      "newOriginalApprovedByThisCharter": false
+    },
+    {
+      "id": "historical_pilots",
+      "description": "Actual completed historical pilot functional outcomes and evidence",
+      "reviewStatus": "ORIGINAL_BY_ORIGINAL_RIGHTS_AND_SAFETY_REVIEW_REQUIRED",
+      "source": "proofs/MULTI-PILOT-EVIDENCE-ROUTE.md",
+      "newOriginalApprovedByThisCharter": false
+    },
+    {
+      "id": "independent_safety",
+      "description": "Qualified outside witness measurements, refusals, failure findings",
+      "reviewStatus": "ORIGINAL_BY_ORIGINAL_RIGHTS_AND_SAFETY_REVIEW_REQUIRED",
+      "source": "proofs/INDEPENDENT-OBSERVATION-QUALIFICATION.md",
+      "newOriginalApprovedByThisCharter": false
+    },
+    {
+      "id": "TMU",
+      "description": "TMU actual pilot workflow outcomes, receipts, changed-condition records and independently verified observations when recovered",
+      "reviewStatus": "ELIGIBLE_FOR_REVIEW_NOT_APPROVED_FOR_PUBLIC_RELEASE",
+      "source": "proofs/TMU-PUBLIC-EVIDENCE-STATUS.json",
+      "newOriginalApprovedByThisCharter": false
+    }
+  ],
+  "newReleaseCarriersApprovedByThisCharter": 0,
+  "publicCarrierRegister": "proofs/historical/PUBLIC-CARRIER-REGISTER.json",
+  "reviewTemplate": "proofs/RELEASE-REVIEW-PRIVATE-TEMPLATE.json",
+  "reviewTool": "scripts/preflight_public_interest_release.py",
+  "sourcePolicy": "proofs/PUBLIC-INTEREST-PUBLICATION-CHARTER.md"
+}
