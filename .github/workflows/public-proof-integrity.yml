@@ -9,6 +9,7 @@ on:
       - "scripts/validate_public_register.py"
       - "scripts/validate_v12_evidence.py"
       - "scripts/validate_source_transcripts.py"
+      - "scripts/validate_historical_public_surfaces.py"
       - ".github/workflows/public-proof-integrity.yml"
   pull_request:
     paths:
@@ -33,6 +34,8 @@ jobs:
         run: python proofs/VA-AD-001/verify.py
       - name: Verify original-source transcript identity and page coverage
         run: python scripts/validate_source_transcripts.py
+      - name: Verify historical source revisions are not relabeled as original freezes
+        run: python scripts/validate_historical_public_surfaces.py
       - name: Enforce authentic native V12 evidence promotion and reject false claims
         run: python scripts/validate_v12_evidence.py
       - name: Verify public manifest and claim-register integrity
