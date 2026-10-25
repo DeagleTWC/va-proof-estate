@@ -72,3 +72,7 @@ The custodian has historical records of external-submitted frozen engineering wo
 The review route is useful precisely because a scoped PASS can coexist with a distinct **HOLD/NOT YET HOLDS AT SEAM** disposition. Review outcomes must retain unresolved routes, observed failures and earlier frozen bytes. When publication rights are settled, use [the historical release gate](../proofs/historical/ADMISSION-GUIDE.md) and [the original review standard](../proofs/EXAMINATION-STANDARD.md).
 
 **Open evidence. Protected construction. Independent consequence observation before promotion.**
+
+## Historical source revision test
+
+For participants or historians with their own lawful source archives, the [Milestone 14 read-only connected-run lineage examiner](../scripts/verify_historical_run_lineage.py) demonstrates a source-level audit pattern: bind each completed case to a retained receipt; identify revisions using unchanged run IDs, rather than double-counting them; and compare downstream readiness records to the correct preceding version. The three-case historical verification is **not** a public upload of the original pilot package and does not confer independent effect standing. Applicants may use this process on their own archives locally before presenting separately release-cleared evidence through the BYO issue route.
