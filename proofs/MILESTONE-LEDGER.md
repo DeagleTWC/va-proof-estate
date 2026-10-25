@@ -25,6 +25,11 @@
 | 13 | Historical third-party proof custody and BYO workflow examination | BUILT FOR PUBLIC EXAMINATION / ORIGINAL THIRD-PARTY RELEASE PENDING | Use exact externally authorized original carriers and distinct independent examiner observations; BYO applicant runs data-only integrity checks and preserves no-effect/changed-condition evidence |
 | 14 | Five historically sourced engineering/pilot/review evidence families reconciled | PUBLIC SAFE SOURCE INDEX DELIVERED / ORIGINAL PACKETS UNDER SEPARATE CUSTODY | Inspect actual original source bytes, dates, runs and release authority before attaching an evidence carrier |
 | 15 | Original public source-byte cross-check: July PDF and three historical source receipts | VERIFIED SOURCE LINKS / NOT NATIVE PILOT RELEASE | Preserve immutable commit, Git blob identity and full-source SHA-256; qualify original private V1.2 proof/pilot packets separately before original-run publication |
+| 16 | Original Deploy Build V1.2 proof archive verified from Library bytes | CUSTODIAN-LOCAL ENGINEERING EVIDENCE REPRODUCED / ORIGINAL PRIVATE | Two archive copies byte-identical; ten manifest digests matched; original eight-case verifier and tamper test passed. Public release of actual original carrier, customer live-run witness and current native V12 standing remain separate gates. |
+
+## Milestone 13 — recovered original engineering proof base
+
+The [original V1.2 proof-archive verification](V1.2-ORIGINAL-SOURCE-VERIFICATION.md) now directly examines two byte-identical historical source ZIP copies under private custody. Ten original manifest checks match, and a controlled copy of the **actual originally supplied eight-case verifier and negative tamper test** passed. The verified engineering *fixture/receipt/replay* stage is real; the original customer live-run effect, independently observed consequence, native current V12 qualification, source-owner release rights and protected bytes were **not** promoted. A read-only independent ZIP format checker and synthetic corrupt-package tests are now available publicly.
 
 ## Original historical source recovery
 
