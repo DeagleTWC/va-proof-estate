@@ -31,6 +31,10 @@ The July 2026 original public proof path identifies these six **separate** bound
 
 Machine-readable current-source snapshot: [Historical Public Surfaces JSON](HISTORICAL-PUBLIC-SURFACES.json). These six do not reclassify any prior recorded pilot as independently reproduced or any part of native V12 as evidenced by this website.
 
+## Additional pilots and actual workflow records under private custody
+
+The [Milestone 09 multi-pilot and real-workflow evidence path](MULTI-PILOT-EVIDENCE-ROUTE.md) keeps separately identified prior workflows and engineering freezes distinct from the six selected public proof-route repositories. It supports multiple pilot lanes without implying that a proposal, a frozen build verification, an operational live result and a customer acceptance are interchangeable. Only release-cleared exact originals can later enter the public historical carrier register; private Library records are not mirrored here.
+
 ## Offline historical artifact discovery
 
 Before release clearance, use the [Milestone 08 private inventory utility](historical/LOCAL-INVENTORY.md) to fingerprint unchanged local source bytes and prepare a *private, incomplete* candidate. It never infers original freeze dates from file metadata or independently certifies outcomes. **Do not publish its file list or candidate.** This tool does not enumerate every historical pilot or freeze until their original records are reviewed.

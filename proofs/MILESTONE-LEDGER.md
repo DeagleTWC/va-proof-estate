@@ -21,6 +21,11 @@
 | 08 | KCD instrumented physical evidence | SEPARATE CONTROLLED TRACK / NOT ATTACHED | Calibrated measurements, apparatus freeze, negative controls, changed-condition checks and distinct independent witness |
 | 09 | Historical proof-desk lineage, coverage worksheet and evidence-dependency graph | MERGED TO MAIN / PUBLICATION CONTENT DELIVERED | Maintain original freeze source identities and public-attachment boundaries across subsequent changes |\n| 10 | Historical carrier public release intake and fail-closed byte-integrity checks | IMPLEMENTED AS PUBLIC SITE MILESTONE | Authorize one unchanged original's public extract, attach it by immutable digest, and separately examine the actual bounded observations before promotion |
 | 11 | Offline historical source fingerprint inventory and private release-candidate creation | IMPLEMENTED AS PUBLIC TOOLING MILESTONE | Fingerprint original files offline; preserve original historical freeze identity and authorize a distinct public extract before any publication |
+| 12 | Multi-pilot and real-workflow source-stage triage | SITE INFRASTRUCTURE / SYNTHETIC VALIDATION ONLY | Assign separately verified original pilot build, actual live run, receipt, replay, acceptance and independent witness carriers; no source is promoted by a label |
+
+## Multi-pilot and real-workflow distinction
+
+The [Milestone 09 source-routing guide](MULTI-PILOT-EVIDENCE-ROUTE.md) separates original engineering freezes, real configured workflow pilots, execution results, receipts/replay, accepted pilots and independent review. The private local auditor checks declared source file roles and hashes **per original pilot lane**, but never uploads sources or validates the truth of their claimed consequences. The six selected public GitHub source surfaces are not the full historical pilot estate.
 
 ## Offline historical source discovery
 
