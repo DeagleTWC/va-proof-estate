@@ -1,0 +1,18 @@
+{
+  "schema": "va-private-disclosure-review/1.0",
+  "status": "HOLD",
+  "note": "Template only. Do not store completed private candidate manifests in a public repository.",
+  "candidateId": "UNFILLED",
+  "originalSHA256": "UNFILLED",
+  "extractRelativePath": "UNFILLED",
+  "extractSHA256": "UNFILLED",
+  "claim": "UNFILLED",
+  "approvedReviewers": [],
+  "rightsApproved": false,
+  "safetyApproved": false,
+  "privacyApproved": false,
+  "custodyApproved": false,
+  "reviewerIndependenceVerified": false,
+  "originalRetained": true,
+  "releaseAuthorized": false
+}
