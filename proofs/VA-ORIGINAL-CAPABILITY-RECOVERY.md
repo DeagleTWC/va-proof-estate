@@ -8,7 +8,7 @@ The original V.A. architecture is the target, not the vocabulary or code structu
 
 This crosswalk reuses the existing [39-source public Kamanaka snapshot](END-TO-END-ESTATE-REGISTER.json) **as references only**. It routes 36 listed boundary, enterprise and domain references into **ten V.A.-original proof/engineering requirement lanes**, and retains 3 separately/adjacently attributed projects in a non-assimilated list. No source code, patentable/private mathematics, private instrumentation or customer records have been copied.
 
-**Current mathematical-floor precedence:** The [NEW corrected K source hierarchy correction](CURRENT-CORRECTED-K-SOURCE-HIERARCHY-CORRECTION-2026-10-26.md) governs this recovery map. Re-establishing a requirement in original V.A. means using authentic authorized current corrected-K lineage; it **cannot** mean porting an archived old decision path or replacing the native true-zero floor with ordinary legacy arithmetic, a generic local database extension, or synthetic test logic. The historic source map remains reference-only.\n\n## Ten V.A.-original engineering lanes
+## Ten V.A.-original engineering lanes
 
 | Original V.A. target | Public source references | Value that must be re-established by V.A., rather than inherited |
 | --- | ---: | --- |
