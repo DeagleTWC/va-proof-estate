@@ -10,7 +10,7 @@ The [April 2026 original seven-attachment investigation](TMU-ORIGINAL-STAGING-EV
 
 
 
-**M27 examiner tooling (not effect proof):** [Original target readback byte-consistency preflight](M27-TARGET-READBACK-PREFLIGHT.md), [data-only checker](../scripts/preflight_m27_target_readback.py), and [28 local synthetic controls](../scripts/test_preflight_m27_target_readback.py). [M27 v1.1 qualification-hardening record](M27-READBACK-HARDENING-2026-10-26.md) documents the correction of affected-state refusal and metadata-only effect false positives. These establish a source-hash and protected-state before/after record validation procedure only; external sensing, human independence, native lineage, real-world effect, rights, M27 closure and M28 entry remain unqualified.
+**Current scientific sequence — M27 HOLD; M28 NOT OPEN.** The [milestone ledger and numbering crosswalk](MILESTONE-LEDGER.md) distinguish this private research sequence from the public-site stage numbers. The [source examination](M27-EXTERNAL-CONSEQUENCE-SOURCE-STATUS-2026-10-26.md) did not qualify independently measured permitted effect plus refused non-effect. The [M27 target-readback checker](M27-TARGET-READBACK-PREFLIGHT.md) is revision **v1.1** of **local evidence-consistency tooling**, with [28 synthetic regression controls](../scripts/test_preflight_m27_target_readback.py) and a [documented correction](M27-READBACK-HARDENING-2026-10-26.md). Earlier references to “M27.1” describe that tooling revision, **not** another completed scientific milestone, native run, independently sensed effect, or permission to publish private originals.
 
 ## Complete V.A. / The Shift end-to-end system representation — START HERE
 
