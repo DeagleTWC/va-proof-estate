@@ -149,17 +149,36 @@ jobs:
         run: |
           python scripts/test_verify_tmu_staging_originals.py
           python scripts/validate_tmu_recorded_staging_candidate.py
+      - name: Bind non-native CI observations to checked-out source bytes
+        run: |
+          mkdir -p "$RUNNER_TEMP/va-public-proof-integrity"
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+          printf 'checked_out_commit=%s\nrun_id=%s\nrun_attempt=%s\n' "$GITHUB_SHA" "$GITHUB_RUN_ID" "$GITHUB_RUN_ATTEMPT" > "$RUNNER_TEMP/va-public-proof-integrity/run-identity.txt"
+          python --version > "$RUNNER_TEMP/va-public-proof-integrity/python-version.txt" 2>&1
+          sha256sum scripts/preflight_m27_target_readback.py scripts/test_preflight_m27_target_readback.py scripts/verify_va_original_capability_recovery.mjs scripts/test_va_original_capability_recovery.mjs proofs/VA-ORIGINAL-CAPABILITY-RECOVERY.json proofs/END-TO-END-ESTATE-REGISTER.json > "$RUNNER_TEMP/va-public-proof-integrity/public-source-sha256.txt"
+          printf '{"schema":"va-public-ci-observation/1.0","nativeVAEvidence":false,"externalEffectsQualified":false,"independentWitnessQualified":false,"M27Completed":false,"M28Authorized":false,"publicationAuthorized":false}\n' > "$RUNNER_TEMP/va-public-proof-integrity/standing-ceiling.json"
       - name: Enforce M27 v1.2 original-readback evidence consistency (synthetic checks only)
         run: |
-          python -m unittest discover -s scripts -p 'test_preflight_m27_target_readback.py' -v
+          set -o pipefail
+          python -m unittest discover -s scripts -p 'test_preflight_m27_target_readback.py' -v 2>&1 | tee "$RUNNER_TEMP/va-public-proof-integrity/m27-synthetic-tests.log"
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
       - name: Enforce VA-original reference integrity and anti-promotion controls
         run: |
-          node scripts/verify_va_original_capability_recovery.mjs
-          node scripts/test_va_original_capability_recovery.mjs
+          set -o pipefail
+          node --version > "$RUNNER_TEMP/va-public-proof-integrity/node-version.txt"
+          node scripts/verify_va_original_capability_recovery.mjs 2>&1 | tee "$RUNNER_TEMP/va-public-proof-integrity/va-origin-register.log"
+          node scripts/test_va_original_capability_recovery.mjs 2>&1 | tee "$RUNNER_TEMP/va-public-proof-integrity/va-origin-adversarial-tests.log"
       - name: Enforce authentic native V12 evidence promotion and reject false claims
         run: python scripts/validate_v12_evidence.py
       - name: Verify public manifest and claim-register integrity
         run: python scripts/validate_public_register.py
+      - name: Preserve source-bound public CI logs (not native effect proof)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: va-public-proof-ci-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/va-public-proof-integrity/
+          if-no-files-found: warn
+          retention-days: 90
