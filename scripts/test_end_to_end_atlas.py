@@ -41,19 +41,21 @@ def main():
         mutate(x)
         reject(x,html,home,label)
     htmlDefects=[
-      ("one public source row missing",html.replace('data-group="bounded_boundary_source"','data-group="absent_category"',1)),
       ("missing first end-to-end stage",html.replace('id="stage-00"','id="stage-missing"',1)),
-      ("source filter removed",html.replace('id="srcSearch"','id="removedSearch"')),
-      ("evidence section removed",html.replace('id="evidence"','id="missing-evidence-section"')),
+      ("original evidence custody section missing",html.replace('id="sources"','id="missing-custody"',1)),
+      ("current mathematical foundation mislabeled",html.replace("NEW corrected K","old K")),
+      ("evidence section removed",html.replace('id="evidence"','id="missing-evidence-section"',1)),
       ("unsafe local link added",html.replace('</main>','<a href="../not-public.txt">unsafe</a></main>',1)),
-      ("public owner link redirected",html.replace('https://github.com/Kamanaka5502/3lockbox-ip-admission-gate','https://example.invalid/bad-link',1)),
+      ("superseded repo introduced as current route",html.replace('</main>','<a href="https://github.com/Kamanaka5502/fake">wrong current source</a></main>',1)),
     ]
     for label,text in htmlDefects:
         reject(data,text,home,label)
     reject(data,html,home.replace('id="full-estate-atlas"','id="lost-full-atlas"'),
            "Homepage strips full route")
-    print(f"PASS: {len(defects)+len(htmlDefects)+1} synthetic source loss, false standing, unsafe link and incomplete site controls refused")
-    print("PASS: all 39 public source groups, 12 stages and ten evidence lanes preserved")
+    reject(data,html,home.replace("</main>","<span>Φ(x)=C(x)−M(x)</span></main>",1),
+           "Old equation misrepresented on current homepage")
+    print(f"PASS: {len(defects)+len(htmlDefects)+2} synthetic source loss, false standing, unsafe link and incomplete site controls refused")
+    print("PASS: all 39 historical source identities preserved in the archival register; 12 stages and ten evidence lanes retained")
     print("PASS: independent authorship, historical pilots, native V12 and private source boundaries remain separated")
 
 if __name__=="__main__":
