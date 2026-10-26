@@ -27,7 +27,7 @@ The specific M27 [source-review disposition](M27-EXTERNAL-CONSEQUENCE-SOURCE-STA
 
 ## One current next action, no reset
 
-1. Qualify a **real independent external applicant** against the [reviewer standard](../examiner/EXTERNAL-CYCLE-001.md) and bring them to [Cycle 001](https://github.com/DeagleTWC/va-proof-estate/issues/1).
+1. Qualify a **real independent external applicant** against the [public independent reviewer qualification source](sources/independent-reviewer-standard-v1-extracted.md) and bring them to [Cycle 001](https://github.com/DeagleTWC/va-proof-estate/issues/1).
 2. Have that participant freeze their **own** bounded source offline and publish only the permitted, complete `freeze.json` as an unedited issue comment **before** any fresh seed.
 3. Then a **distinct authorized issuer** runs the existing [challenge workflow](../.github/workflows/issue-fresh-challenge.yml). Preserve the actual GitHub carrier and the four issued original files.
 4. Two genuinely independent examiners conduct authorized local examinations; preserve positive, negative and changed-condition results, failures, receipts, replay and separate report/signature custody.
