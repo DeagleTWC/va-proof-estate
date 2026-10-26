@@ -47,14 +47,20 @@ def main():
       ("evidence section removed",html.replace('id="evidence"','id="missing-evidence-section"',1)),
       ("unsafe local link added",html.replace('</main>','<a href="../not-public.txt">unsafe</a></main>',1)),
       ("superseded repo introduced as current route",html.replace('</main>','<a href="https://github.com/Kamanaka5502/fake">wrong current source</a></main>',1)),
+      ("archival register link disconnected",html.replace('href="proofs/END-TO-END-ESTATE-REGISTER.json"','href="proofs/SOURCE-ESTATE.md"',1)),
+      ("historic source list mislabeled current",html.replace("39 ARCHIVED SOURCE REFERENCES","39 PUBLIC SOURCE REPOSITORIES",1)),
+      ("unsafe javascript URL injected",html.replace('</main>','<a href="javascript:alert(1)">unsafe</a></main>',1)),
+      ("public scope qualification removed",html.replace("not a complete private mathematical or physical evidence release","complete independently verified native result",1)),
     ]
     for label,text in htmlDefects:
         reject(data,text,home,label)
     reject(data,html,home.replace('id="full-estate-atlas"','id="lost-full-atlas"'),
            "Homepage strips full route")
+    reject(data,html,home.replace("The mathematical starting point.","The entire foundation.",1),
+           "Homepage reintroduces whole-foundation claim")
     reject(data,html,home.replace("</main>","<span>Φ(x)=C(x)−M(x)</span></main>",1),
            "Old equation misrepresented on current homepage")
-    print(f"PASS: {len(defects)+len(htmlDefects)+2} synthetic source loss, false standing, unsafe link and incomplete site controls refused")
+    print(f"PASS: {len(defects)+len(htmlDefects)+3} synthetic source loss, false standing, unsafe link and incomplete site controls refused")
     print("PASS: all 39 historical source identities preserved in the archival register; 12 stages and ten evidence lanes retained")
     print("PASS: independent authorship, historical pilots, native V12 and private source boundaries remain separated")
 
