@@ -158,21 +158,18 @@ def validate(data,atlas,home):
     doc=parse_html(atlas)
     require(doc.stages==["stage-"+x for x in EXPECTED_STAGE_IDS],
             "The website does not show every one of twelve examination stages")
-    require(doc.search_input and doc.source_select and "srcCount" in doc.ids,
-            "39-source catalog interactive search/filter is missing")
-    require(len(doc.repo_rows)==39,
-            "Rendered source table omits public repositories")
-    for expected, actual in zip(sources,doc.repo_rows):
-        cat, searchable=actual
-        require(cat==expected["relationship"] and
-                expected["name"].lower() in searchable,
-                "Displayed source category or search metadata does not match original record")
-        require(expected["url"] in doc.links,
-                "Public source cannot be opened from end-to-end page: "+expected["name"])
+    require("NEW corrected K" in atlas and "NEW corrected K" in home,
+            "Current NEW corrected K foundation omitted from the public pages")
+    require("Φ(x)" not in home,
+            "Obsolete displayed capacity equation remains in the current homepage")
+    require("39 of 39 sources visible" not in atlas and "srcSearch" not in atlas,
+            "Historical outside-repository catalogue incorrectly remains the current system presentation")
+    require(not any(href.startswith(EXPECTED_KAMANAKA_BASE) for href in doc.links),
+            "Public V.A. atlas must not route its native presentation to the superseded source network")
     for special in ("architecture","realization","evidence","applications","sources","examine"):
         require(special in doc.ids,"End-to-end section not accessible: "+special)
-    require("proofs/END-TO-END-ESTATE-REGISTER.json" in doc.links,
-            "Human/structured provenance crosswalk disconnected")
+    require("proofs/CLAIM-TO-CARRIER.json" in doc.links,
+            "Current Deagle proof register disconnected")
     for href in doc.links:
         local_link(href,"end-to-end.html")
     home_doc=parse_html(home)
@@ -193,7 +190,7 @@ def main():
     result=validate(data,atlas,homepage)
     print("PASS: Deagle end-to-end atlas rooted in correct source and current native identity")
     print("PASS: 12 stages, 10 evidence families and 39 original public source identities",result)
-    print("PASS: all repo links/source classifications and local evidence carriers connected")
+    print("PASS: all 39 archived original source identities remain distinct; current page has Deagle-only source routes")
     print("PASS: protected construction, outside authorship and native standing non-promotion retained")
 
 if __name__=="__main__":
