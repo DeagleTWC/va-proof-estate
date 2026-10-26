@@ -1,0 +1,645 @@
+{
+  "schema": "va-original-capability-recovery/1.0",
+  "created": "2026-10-26",
+  "canonicalEstate": "DeagleTWC/va-proof-estate",
+  "sourceRegister": "proofs/END-TO-END-ESTATE-REGISTER.json",
+  "sourceRegisterGitBlob": "1e0d00f5e04a714c4c3698a34057ccfca1c72829",
+  "origin": "V.A. / The Shift original-origin-first capability recovery (public reference inventory; not a transfer of implementation rights)",
+  "publicEvidenceCeiling": "SOURCE_TO_ORIGINAL_VA_REQUIREMENT_CROSSWALK_ONLY",
+  "nativeVABuildMigrated": false,
+  "independentNativeEffectQualified": false,
+  "allSourceRightsCleared": false,
+  "tenTimesBetterDemonstrated": false,
+  "scientificM27": "HOLD",
+  "scientificM28": "NOT_OPEN",
+  "qualityCriteria": [
+    "Original V.A. source/chronology and build identity independently pinned",
+    "Authority and standing re-evaluated at the real pre-effect boundary",
+    "Frozen candidate, protected target and route explicitly identified",
+    "Tamper-detectable original evidence and custody with separate hashes",
+    "Positive protected-target effect independently measured",
+    "Refused protected-target non-effect independently measured",
+    "Materially changed condition tested with candidate fixed",
+    "All material alternate effect routes enumerated and gaps disclosed",
+    "Original decision receipt and genuine separately performed replay verified",
+    "Independent reviewer qualification and exact-public-byte rights, harm and privacy approval"
+  ],
+  "superiorityRule": "A claim of >=10x technical improvement requires a defined baseline, same-condition metrics, measured ratio >=10 on the stated dimension, controls, reproducible original evidence and qualified independent comparison; absent these, improvement factor is NOT ESTABLISHED.",
+  "lanes": [
+    {
+      "id": "PRE_EFFECT_ADMISSION",
+      "title": "Original V.A. pre-effect admission",
+      "publicEstateStageIndices": [
+        2,
+        5,
+        6,
+        7
+      ],
+      "publicReferenceCount": 7,
+      "VAOriginalUpgradeRequirement": "Reject consequence formation without independently bound standing, evidence and route-specific live admissibility; compare real protected effect, not dashboard decisions.",
+      "sourceNames": [
+        "elyria-admission-runtime",
+        "elyria-runtime-law",
+        "elyria-field-laws",
+        "elyria-one-proof",
+        "elyria-consequence-os-public",
+        "elyria-kernel-atlas-live",
+        "elyria-consequence-boundary-infrastructure"
+      ],
+      "implementationStanding": "REBUILD_NOT_ESTABLISHED_BY_SOURCE_INVENTORY",
+      "priority": "REBUILD_AND_TEST_IN_VA_ORIGINAL_FORM",
+      "nativeEvidencePromoted": false
+    },
+    {
+      "id": "AUTHORITY_AND_STANDING",
+      "title": "Live authority and standing",
+      "publicEstateStageIndices": [
+        1,
+        3,
+        6
+      ],
+      "publicReferenceCount": 5,
+      "VAOriginalUpgradeRequirement": "Detect revocation, scope expiry, stale issued authority, conflicting issuers and changed conditions at final consequence boundary.",
+      "sourceNames": [
+        "authority-revocation-witness",
+        "bind-time-authority-proof",
+        "scope-expiry-gate",
+        "standinggrid",
+        "elyria-q-standing-diagnostics-engine"
+      ],
+      "implementationStanding": "REBUILD_NOT_ESTABLISHED_BY_SOURCE_INVENTORY",
+      "priority": "REBUILD_AND_TEST_IN_VA_ORIGINAL_FORM",
+      "nativeEvidencePromoted": false
+    },
+    {
+      "id": "EVIDENCE_CUSTODY",
+      "title": "Evidence/source integrity and custody",
+      "publicEstateStageIndices": [
+        4,
+        9
+      ],
+      "publicReferenceCount": 4,
+      "VAOriginalUpgradeRequirement": "Bind original bytes, source owner, semantic provenance and human disclosure rights to each receipt; fail on missing and altered evidence.",
+      "sourceNames": [
+        "3lockbox-ip-admission-gate",
+        "elyria-rag-source-authority-gate",
+        "elyria-ai-audit-evidence-pack",
+        "elyria-compliance-evidence-wrapper"
+      ],
+      "implementationStanding": "REBUILD_NOT_ESTABLISHED_BY_SOURCE_INVENTORY",
+      "priority": "REBUILD_AND_TEST_IN_VA_ORIGINAL_FORM",
+      "nativeEvidencePromoted": false
+    },
+    {
+      "id": "LIVE_REVALIDATION",
+      "title": "Changed condition and revalidation",
+      "publicEstateStageIndices": [
+        1,
+        3,
+        10
+      ],
+      "publicReferenceCount": 2,
+      "VAOriginalUpgradeRequirement": "Retain the pre-change original and demonstrate consequence change under actual material changes, with unchanged candidate, route and readback controls.",
+      "sourceNames": [
+        "elyria-ai-revalidation-engine",
+        "dimensional-drift-witness"
+      ],
+      "implementationStanding": "REBUILD_NOT_ESTABLISHED_BY_SOURCE_INVENTORY",
+      "priority": "REBUILD_AND_TEST_IN_VA_ORIGINAL_FORM",
+      "nativeEvidencePromoted": false
+    },
+    {
+      "id": "MEMORY_AND_CONTINUITY",
+      "title": "Memory, identity and lawful continuity",
+      "publicEstateStageIndices": [
+        1,
+        5,
+        10
+      ],
+      "publicReferenceCount": 2,
+      "VAOriginalUpgradeRequirement": "Prove persistent identity and admissible continuation using protected V.A. source; no synthetic identity claim upgraded by matching replay strings.",
+      "sourceNames": [
+        "elyria-consciousness-boundary-engine",
+        "lpem-proof-estate"
+      ],
+      "implementationStanding": "REBUILD_NOT_ESTABLISHED_BY_SOURCE_INVENTORY",
+      "priority": "REBUILD_AND_TEST_IN_VA_ORIGINAL_FORM",
+      "nativeEvidencePromoted": false
+    },
+    {
+      "id": "REFUSAL_NON_EFFECT",
+      "title": "Refusal, halt, alternative effect routes",
+      "publicEstateStageIndices": [
+        6,
+        7,
+        8
+      ],
+      "publicReferenceCount": 2,
+      "VAOriginalUpgradeRequirement": "Show independent target non-effect under REFUSE/HALT and enumerate alternate routes; refuse an already-effected baseline.",
+      "sourceNames": [
+        "elyria-pre-effect-enforcement-harness",
+        "elyria-certified-execution"
+      ],
+      "implementationStanding": "REBUILD_NOT_ESTABLISHED_BY_SOURCE_INVENTORY",
+      "priority": "REBUILD_AND_TEST_IN_VA_ORIGINAL_FORM",
+      "nativeEvidencePromoted": false
+    },
+    {
+      "id": "ORIGINAL_RECEIPT_REPLAY",
+      "title": "Immutable original receipt and replay",
+      "publicEstateStageIndices": [
+        9,
+        10,
+        11
+      ],
+      "publicReferenceCount": 3,
+      "VAOriginalUpgradeRequirement": "Differentiate actual independently performed reruns and source-bound receipt chains from reported labels and marketing catalogs.",
+      "sourceNames": [
+        "veritas-safechange",
+        "elyria-boundary-proof-register",
+        "elyria-execution-governance-portfolio"
+      ],
+      "implementationStanding": "REBUILD_NOT_ESTABLISHED_BY_SOURCE_INVENTORY",
+      "priority": "REBUILD_AND_TEST_IN_VA_ORIGINAL_FORM",
+      "nativeEvidencePromoted": false
+    },
+    {
+      "id": "VIABILITY_RECOVERY",
+      "title": "Viability, deformation, recovery and lawful halt",
+      "publicEstateStageIndices": [
+        5,
+        6,
+        7
+      ],
+      "publicReferenceCount": 1,
+      "VAOriginalUpgradeRequirement": "Test actual changed operating conditions, recoverability and stop behavior under a frozen supported route and independent measurement.",
+      "sourceNames": [
+        "elyria-deformable-viability-fabric"
+      ],
+      "implementationStanding": "REBUILD_NOT_ESTABLISHED_BY_SOURCE_INVENTORY",
+      "priority": "REBUILD_AND_TEST_IN_VA_ORIGINAL_FORM",
+      "nativeEvidencePromoted": false
+    },
+    {
+      "id": "CONSEQUENCE_CORRIDORS",
+      "title": "Specific protected consequence corridors",
+      "publicEstateStageIndices": [
+        2,
+        6,
+        8,
+        11
+      ],
+      "publicReferenceCount": 7,
+      "VAOriginalUpgradeRequirement": "Require independently authorized domain-specific effect and non-effect records; don't infer production operation from public corridor examples.",
+      "sourceNames": [
+        "board-ai-dependency-boundary",
+        "elyria-clinical-ai-boundary",
+        "elyria-financial-motion-assurance",
+        "elyria-financial-motion-governance",
+        "elyria-mission-control-engine",
+        "mission-control-customer-ops-runtime",
+        "national-cyber-boundary"
+      ],
+      "implementationStanding": "REBUILD_NOT_ESTABLISHED_BY_SOURCE_INVENTORY",
+      "priority": "REBUILD_AND_TEST_IN_VA_ORIGINAL_FORM",
+      "nativeEvidencePromoted": false
+    },
+    {
+      "id": "CONTROL_AND_EXAMINATION",
+      "title": "VA original controlled examiner entry and release",
+      "publicEstateStageIndices": [
+        2,
+        4,
+        11
+      ],
+      "publicReferenceCount": 3,
+      "VAOriginalUpgradeRequirement": "Retain public BYO examiner submission, qualified operator roles, source rights, exact-source hashes and fail-closed claims instead of branded UI-as-proof.",
+      "sourceNames": [
+        "elyria-enterprise-ai-control-plane",
+        "elyria-agent-action-boundary",
+        "elyria-build-tool"
+      ],
+      "implementationStanding": "REBUILD_NOT_ESTABLISHED_BY_SOURCE_INVENTORY",
+      "priority": "REBUILD_AND_TEST_IN_VA_ORIGINAL_FORM",
+      "nativeEvidencePromoted": false
+    }
+  ],
+  "sourceReferences": [
+    {
+      "name": "3lockbox-ip-admission-gate",
+      "url": "https://github.com/Kamanaka5502/3lockbox-ip-admission-gate",
+      "sourceSnapshotRelation": "bounded_boundary_source",
+      "targetVALane": "EVIDENCE_CUSTODY",
+      "sourceOwnerAtSnapshot": "Kamanaka5502",
+      "standing": "PUBLIC_SOURCE_REFERENCE_ONLY",
+      "nativeVAEvidence": false,
+      "implementationCopied": false,
+      "tenXEstablished": false
+    },
+    {
+      "name": "authority-revocation-witness",
+      "url": "https://github.com/Kamanaka5502/authority-revocation-witness",
+      "sourceSnapshotRelation": "bounded_boundary_source",
+      "targetVALane": "AUTHORITY_AND_STANDING",
+      "sourceOwnerAtSnapshot": "Kamanaka5502",
+      "standing": "PUBLIC_SOURCE_REFERENCE_ONLY",
+      "nativeVAEvidence": false,
+      "implementationCopied": false,
+      "tenXEstablished": false
+    },
+    {
+      "name": "bind-time-authority-proof",
+      "url": "https://github.com/Kamanaka5502/bind-time-authority-proof",
+      "sourceSnapshotRelation": "bounded_boundary_source",
+      "targetVALane": "AUTHORITY_AND_STANDING",
+      "sourceOwnerAtSnapshot": "Kamanaka5502",
+      "standing": "PUBLIC_SOURCE_REFERENCE_ONLY",
+      "nativeVAEvidence": false,
+      "implementationCopied": false,
+      "tenXEstablished": false
+    },
+    {
+      "name": "board-ai-dependency-boundary",
+      "url": "https://github.com/Kamanaka5502/board-ai-dependency-boundary",
+      "sourceSnapshotRelation": "domain_specific_public_surface",
+      "targetVALane": "CONSEQUENCE_CORRIDORS",
+      "sourceOwnerAtSnapshot": "Kamanaka5502",
+      "standing": "PUBLIC_SOURCE_REFERENCE_ONLY",
+      "nativeVAEvidence": false,
+      "implementationCopied": false,
+      "tenXEstablished": false
+    },
+    {
+      "name": "dimensional-drift-witness",
+      "url": "https://github.com/Kamanaka5502/dimensional-drift-witness",
+      "sourceSnapshotRelation": "bounded_boundary_source",
+      "targetVALane": "LIVE_REVALIDATION",
+      "sourceOwnerAtSnapshot": "Kamanaka5502",
+      "standing": "PUBLIC_SOURCE_REFERENCE_ONLY",
+      "nativeVAEvidence": false,
+      "implementationCopied": false,
+      "tenXEstablished": false
+    },
+    {
+      "name": "elyria-admission-runtime",
+      "url": "https://github.com/Kamanaka5502/elyria-admission-runtime",
+      "sourceSnapshotRelation": "bounded_boundary_source",
+      "targetVALane": "PRE_EFFECT_ADMISSION",
+      "sourceOwnerAtSnapshot": "Kamanaka5502",
+      "standing": "PUBLIC_SOURCE_REFERENCE_ONLY",
+      "nativeVAEvidence": false,
+      "implementationCopied": false,
+      "tenXEstablished": false
+    },
+    {
+      "name": "elyria-agent-action-boundary",
+      "url": "https://github.com/Kamanaka5502/elyria-agent-action-boundary",
+      "sourceSnapshotRelation": "enterprise_reference_surface",
+      "targetVALane": "CONTROL_AND_EXAMINATION",
+      "sourceOwnerAtSnapshot": "Kamanaka5502",
+      "standing": "PUBLIC_SOURCE_REFERENCE_ONLY",
+      "nativeVAEvidence": false,
+      "implementationCopied": false,
+      "tenXEstablished": false
+    },
+    {
+      "name": "elyria-ai-audit-evidence-pack",
+      "url": "https://github.com/Kamanaka5502/elyria-ai-audit-evidence-pack",
+      "sourceSnapshotRelation": "enterprise_reference_surface",
+      "targetVALane": "EVIDENCE_CUSTODY",
+      "sourceOwnerAtSnapshot": "Kamanaka5502",
+      "standing": "PUBLIC_SOURCE_REFERENCE_ONLY",
+      "nativeVAEvidence": false,
+      "implementationCopied": false,
+      "tenXEstablished": false
+    },
+    {
+      "name": "elyria-ai-revalidation-engine",
+      "url": "https://github.com/Kamanaka5502/elyria-ai-revalidation-engine",
+      "sourceSnapshotRelation": "enterprise_reference_surface",
+      "targetVALane": "LIVE_REVALIDATION",
+      "sourceOwnerAtSnapshot": "Kamanaka5502",
+      "standing": "PUBLIC_SOURCE_REFERENCE_ONLY",
+      "nativeVAEvidence": false,
+      "implementationCopied": false,
+      "tenXEstablished": false
+    },
+    {
+      "name": "elyria-boundary-proof-register",
+      "url": "https://github.com/Kamanaka5502/elyria-boundary-proof-register",
+      "sourceSnapshotRelation": "enterprise_reference_surface",
+      "targetVALane": "ORIGINAL_RECEIPT_REPLAY",
+      "sourceOwnerAtSnapshot": "Kamanaka5502",
+      "standing": "PUBLIC_SOURCE_REFERENCE_ONLY",
+      "nativeVAEvidence": false,
+      "implementationCopied": false,
+      "tenXEstablished": false
+    },
+    {
+      "name": "elyria-build-tool",
+      "url": "https://github.com/Kamanaka5502/elyria-build-tool",
+      "sourceSnapshotRelation": "enterprise_reference_surface",
+      "targetVALane": "CONTROL_AND_EXAMINATION",
+      "sourceOwnerAtSnapshot": "Kamanaka5502",
+      "standing": "PUBLIC_SOURCE_REFERENCE_ONLY",
+      "nativeVAEvidence": false,
+      "implementationCopied": false,
+      "tenXEstablished": false
+    },
+    {
+      "name": "elyria-certified-execution",
+      "url": "https://github.com/Kamanaka5502/elyria-certified-execution",
+      "sourceSnapshotRelation": "bounded_boundary_source",
+      "targetVALane": "REFUSAL_NON_EFFECT",
+      "sourceOwnerAtSnapshot": "Kamanaka5502",
+      "standing": "PUBLIC_SOURCE_REFERENCE_ONLY",
+      "nativeVAEvidence": false,
+      "implementationCopied": false,
+      "tenXEstablished": false
+    },
+    {
+      "name": "elyria-clinical-ai-boundary",
+      "url": "https://github.com/Kamanaka5502/elyria-clinical-ai-boundary",
+      "sourceSnapshotRelation": "domain_specific_public_surface",
+      "targetVALane": "CONSEQUENCE_CORRIDORS",
+      "sourceOwnerAtSnapshot": "Kamanaka5502",
+      "standing": "PUBLIC_SOURCE_REFERENCE_ONLY",
+      "nativeVAEvidence": false,
+      "implementationCopied": false,
+      "tenXEstablished": false
+    },
+    {
+      "name": "elyria-compliance-evidence-wrapper",
+      "url": "https://github.com/Kamanaka5502/elyria-compliance-evidence-wrapper",
+      "sourceSnapshotRelation": "enterprise_reference_surface",
+      "targetVALane": "EVIDENCE_CUSTODY",
+      "sourceOwnerAtSnapshot": "Kamanaka5502",
+      "standing": "PUBLIC_SOURCE_REFERENCE_ONLY",
+      "nativeVAEvidence": false,
+      "implementationCopied": false,
+      "tenXEstablished": false
+    },
+    {
+      "name": "elyria-consciousness-boundary-engine",
+      "url": "https://github.com/Kamanaka5502/elyria-consciousness-boundary-engine",
+      "sourceSnapshotRelation": "domain_specific_public_surface",
+      "targetVALane": "MEMORY_AND_CONTINUITY",
+      "sourceOwnerAtSnapshot": "Kamanaka5502",
+      "standing": "PUBLIC_SOURCE_REFERENCE_ONLY",
+      "nativeVAEvidence": false,
+      "implementationCopied": false,
+      "tenXEstablished": false
+    },
+    {
+      "name": "elyria-consequence-boundary-infrastructure",
+      "url": "https://github.com/Kamanaka5502/elyria-consequence-boundary-infrastructure",
+      "sourceSnapshotRelation": "bounded_boundary_source",
+      "targetVALane": "PRE_EFFECT_ADMISSION",
+      "sourceOwnerAtSnapshot": "Kamanaka5502",
+      "standing": "PUBLIC_SOURCE_REFERENCE_ONLY",
+      "nativeVAEvidence": false,
+      "implementationCopied": false,
+      "tenXEstablished": false
+    },
+    {
+      "name": "elyria-consequence-os-public",
+      "url": "https://github.com/Kamanaka5502/elyria-consequence-os-public",
+      "sourceSnapshotRelation": "bounded_boundary_source",
+      "targetVALane": "PRE_EFFECT_ADMISSION",
+      "sourceOwnerAtSnapshot": "Kamanaka5502",
+      "standing": "PUBLIC_SOURCE_REFERENCE_ONLY",
+      "nativeVAEvidence": false,
+      "implementationCopied": false,
+      "tenXEstablished": false
+    },
+    {
+      "name": "elyria-deformable-viability-fabric",
+      "url": "https://github.com/Kamanaka5502/elyria-deformable-viability-fabric",
+      "sourceSnapshotRelation": "bounded_boundary_source",
+      "targetVALane": "VIABILITY_RECOVERY",
+      "sourceOwnerAtSnapshot": "Kamanaka5502",
+      "standing": "PUBLIC_SOURCE_REFERENCE_ONLY",
+      "nativeVAEvidence": false,
+      "implementationCopied": false,
+      "tenXEstablished": false
+    },
+    {
+      "name": "elyria-enterprise-ai-control-plane",
+      "url": "https://github.com/Kamanaka5502/elyria-enterprise-ai-control-plane",
+      "sourceSnapshotRelation": "enterprise_reference_surface",
+      "targetVALane": "CONTROL_AND_EXAMINATION",
+      "sourceOwnerAtSnapshot": "Kamanaka5502",
+      "standing": "PUBLIC_SOURCE_REFERENCE_ONLY",
+      "nativeVAEvidence": false,
+      "implementationCopied": false,
+      "tenXEstablished": false
+    },
+    {
+      "name": "elyria-execution-governance-portfolio",
+      "url": "https://github.com/Kamanaka5502/elyria-execution-governance-portfolio",
+      "sourceSnapshotRelation": "enterprise_reference_surface",
+      "targetVALane": "ORIGINAL_RECEIPT_REPLAY",
+      "sourceOwnerAtSnapshot": "Kamanaka5502",
+      "standing": "PUBLIC_SOURCE_REFERENCE_ONLY",
+      "nativeVAEvidence": false,
+      "implementationCopied": false,
+      "tenXEstablished": false
+    },
+    {
+      "name": "elyria-field-laws",
+      "url": "https://github.com/Kamanaka5502/elyria-field-laws",
+      "sourceSnapshotRelation": "bounded_boundary_source",
+      "targetVALane": "PRE_EFFECT_ADMISSION",
+      "sourceOwnerAtSnapshot": "Kamanaka5502",
+      "standing": "PUBLIC_SOURCE_REFERENCE_ONLY",
+      "nativeVAEvidence": false,
+      "implementationCopied": false,
+      "tenXEstablished": false
+    },
+    {
+      "name": "elyria-financial-motion-assurance",
+      "url": "https://github.com/Kamanaka5502/elyria-financial-motion-assurance",
+      "sourceSnapshotRelation": "domain_specific_public_surface",
+      "targetVALane": "CONSEQUENCE_CORRIDORS",
+      "sourceOwnerAtSnapshot": "Kamanaka5502",
+      "standing": "PUBLIC_SOURCE_REFERENCE_ONLY",
+      "nativeVAEvidence": false,
+      "implementationCopied": false,
+      "tenXEstablished": false
+    },
+    {
+      "name": "elyria-financial-motion-governance",
+      "url": "https://github.com/Kamanaka5502/elyria-financial-motion-governance",
+      "sourceSnapshotRelation": "domain_specific_public_surface",
+      "targetVALane": "CONSEQUENCE_CORRIDORS",
+      "sourceOwnerAtSnapshot": "Kamanaka5502",
+      "standing": "PUBLIC_SOURCE_REFERENCE_ONLY",
+      "nativeVAEvidence": false,
+      "implementationCopied": false,
+      "tenXEstablished": false
+    },
+    {
+      "name": "elyria-kernel-atlas-live",
+      "url": "https://github.com/Kamanaka5502/elyria-kernel-atlas-live",
+      "sourceSnapshotRelation": "bounded_boundary_source",
+      "targetVALane": "PRE_EFFECT_ADMISSION",
+      "sourceOwnerAtSnapshot": "Kamanaka5502",
+      "standing": "PUBLIC_SOURCE_REFERENCE_ONLY",
+      "nativeVAEvidence": false,
+      "implementationCopied": false,
+      "tenXEstablished": false
+    },
+    {
+      "name": "elyria-mission-control-engine",
+      "url": "https://github.com/Kamanaka5502/elyria-mission-control-engine",
+      "sourceSnapshotRelation": "domain_specific_public_surface",
+      "targetVALane": "CONSEQUENCE_CORRIDORS",
+      "sourceOwnerAtSnapshot": "Kamanaka5502",
+      "standing": "PUBLIC_SOURCE_REFERENCE_ONLY",
+      "nativeVAEvidence": false,
+      "implementationCopied": false,
+      "tenXEstablished": false
+    },
+    {
+      "name": "elyria-one-proof",
+      "url": "https://github.com/Kamanaka5502/elyria-one-proof",
+      "sourceSnapshotRelation": "bounded_boundary_source",
+      "targetVALane": "PRE_EFFECT_ADMISSION",
+      "sourceOwnerAtSnapshot": "Kamanaka5502",
+      "standing": "PUBLIC_SOURCE_REFERENCE_ONLY",
+      "nativeVAEvidence": false,
+      "implementationCopied": false,
+      "tenXEstablished": false
+    },
+    {
+      "name": "elyria-pre-effect-enforcement-harness",
+      "url": "https://github.com/Kamanaka5502/elyria-pre-effect-enforcement-harness",
+      "sourceSnapshotRelation": "bounded_boundary_source",
+      "targetVALane": "REFUSAL_NON_EFFECT",
+      "sourceOwnerAtSnapshot": "Kamanaka5502",
+      "standing": "PUBLIC_SOURCE_REFERENCE_ONLY",
+      "nativeVAEvidence": false,
+      "implementationCopied": false,
+      "tenXEstablished": false
+    },
+    {
+      "name": "elyria-q-standing-diagnostics-engine",
+      "url": "https://github.com/Kamanaka5502/elyria-q-standing-diagnostics-engine",
+      "sourceSnapshotRelation": "bounded_boundary_source",
+      "targetVALane": "AUTHORITY_AND_STANDING",
+      "sourceOwnerAtSnapshot": "Kamanaka5502",
+      "standing": "PUBLIC_SOURCE_REFERENCE_ONLY",
+      "nativeVAEvidence": false,
+      "implementationCopied": false,
+      "tenXEstablished": false
+    },
+    {
+      "name": "elyria-rag-source-authority-gate",
+      "url": "https://github.com/Kamanaka5502/elyria-rag-source-authority-gate",
+      "sourceSnapshotRelation": "enterprise_reference_surface",
+      "targetVALane": "EVIDENCE_CUSTODY",
+      "sourceOwnerAtSnapshot": "Kamanaka5502",
+      "standing": "PUBLIC_SOURCE_REFERENCE_ONLY",
+      "nativeVAEvidence": false,
+      "implementationCopied": false,
+      "tenXEstablished": false
+    },
+    {
+      "name": "elyria-runtime-law",
+      "url": "https://github.com/Kamanaka5502/elyria-runtime-law",
+      "sourceSnapshotRelation": "bounded_boundary_source",
+      "targetVALane": "PRE_EFFECT_ADMISSION",
+      "sourceOwnerAtSnapshot": "Kamanaka5502",
+      "standing": "PUBLIC_SOURCE_REFERENCE_ONLY",
+      "nativeVAEvidence": false,
+      "implementationCopied": false,
+      "tenXEstablished": false
+    },
+    {
+      "name": "lpem-proof-estate",
+      "url": "https://github.com/Kamanaka5502/lpem-proof-estate",
+      "sourceSnapshotRelation": "bounded_boundary_source",
+      "targetVALane": "MEMORY_AND_CONTINUITY",
+      "sourceOwnerAtSnapshot": "Kamanaka5502",
+      "standing": "PUBLIC_SOURCE_REFERENCE_ONLY",
+      "nativeVAEvidence": false,
+      "implementationCopied": false,
+      "tenXEstablished": false
+    },
+    {
+      "name": "mission-control-customer-ops-runtime",
+      "url": "https://github.com/Kamanaka5502/mission-control-customer-ops-runtime",
+      "sourceSnapshotRelation": "domain_specific_public_surface",
+      "targetVALane": "CONSEQUENCE_CORRIDORS",
+      "sourceOwnerAtSnapshot": "Kamanaka5502",
+      "standing": "PUBLIC_SOURCE_REFERENCE_ONLY",
+      "nativeVAEvidence": false,
+      "implementationCopied": false,
+      "tenXEstablished": false
+    },
+    {
+      "name": "national-cyber-boundary",
+      "url": "https://github.com/Kamanaka5502/national-cyber-boundary",
+      "sourceSnapshotRelation": "domain_specific_public_surface",
+      "targetVALane": "CONSEQUENCE_CORRIDORS",
+      "sourceOwnerAtSnapshot": "Kamanaka5502",
+      "standing": "PUBLIC_SOURCE_REFERENCE_ONLY",
+      "nativeVAEvidence": false,
+      "implementationCopied": false,
+      "tenXEstablished": false
+    },
+    {
+      "name": "scope-expiry-gate",
+      "url": "https://github.com/Kamanaka5502/scope-expiry-gate",
+      "sourceSnapshotRelation": "bounded_boundary_source",
+      "targetVALane": "AUTHORITY_AND_STANDING",
+      "sourceOwnerAtSnapshot": "Kamanaka5502",
+      "standing": "PUBLIC_SOURCE_REFERENCE_ONLY",
+      "nativeVAEvidence": false,
+      "implementationCopied": false,
+      "tenXEstablished": false
+    },
+    {
+      "name": "standinggrid",
+      "url": "https://github.com/Kamanaka5502/standinggrid",
+      "sourceSnapshotRelation": "bounded_boundary_source",
+      "targetVALane": "AUTHORITY_AND_STANDING",
+      "sourceOwnerAtSnapshot": "Kamanaka5502",
+      "standing": "PUBLIC_SOURCE_REFERENCE_ONLY",
+      "nativeVAEvidence": false,
+      "implementationCopied": false,
+      "tenXEstablished": false
+    },
+    {
+      "name": "veritas-safechange",
+      "url": "https://github.com/Kamanaka5502/veritas-safechange",
+      "sourceSnapshotRelation": "bounded_boundary_source",
+      "targetVALane": "ORIGINAL_RECEIPT_REPLAY",
+      "sourceOwnerAtSnapshot": "Kamanaka5502",
+      "standing": "PUBLIC_SOURCE_REFERENCE_ONLY",
+      "nativeVAEvidence": false,
+      "implementationCopied": false,
+      "tenXEstablished": false
+    }
+  ],
+  "separateOrAdjacentReferences": [
+    {
+      "name": "creative-ops-ai-specialist-evaluation",
+      "url": "https://github.com/Kamanaka5502/creative-ops-ai-specialist-evaluation",
+      "relationship": "separate_or_adjacent_attribution",
+      "reason": "Separately or adjacently attributed; not assimilated into native V.A. without separately established lineage and rights."
+    },
+    {
+      "name": "invisible-middle-intelligence-layer",
+      "url": "https://github.com/Kamanaka5502/invisible-middle-intelligence-layer",
+      "relationship": "separate_or_adjacent_attribution",
+      "reason": "Separately or adjacently attributed; not assimilated into native V.A. without separately established lineage and rights."
+    },
+    {
+      "name": "Samantha-Revita-Elyria-Systems",
+      "url": "https://github.com/Kamanaka5502/Samantha-Revita-Elyria-Systems",
+      "relationship": "separate_or_adjacent_attribution",
+      "reason": "Separately or adjacently attributed; not assimilated into native V.A. without separately established lineage and rights."
+    }
+  ]
+}
