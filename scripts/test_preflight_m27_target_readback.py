@@ -33,8 +33,8 @@ def make_fixture(root):
     original.write_bytes(b'SYNTHETIC-NOT-A-NATIVE-VA-ORIGINAL')
     frozen = digest(original.read_bytes())
     cases = []
-    for kind, code, pre, post, ci in [('ALLOW', 'permit001', b'0', b'1', 'open'),
-                                     ('REFUSE', 'refuse001', b'1', b'1', 'revoked')]:
+    for kind, code, pre, post, ci in [('ALLOW', 'permit001', 'ABSENT', 'PRESENT', 'open'),
+                                     ('REFUSE', 'refuse001', 'ABSENT', 'ABSENT', 'revoked')]:
         base = 'cases/' + code + '/'
         condition = digest(ci.encode())
         item = {'kind': kind, 'caseId': code, 'candidateId': 'fixed_candidate',
@@ -48,8 +48,14 @@ def make_fixture(root):
             'originalFrozenSHA256': frozen,
             'decision': 'EXECUTE' if kind == 'ALLOW' else 'REFUSE'})
         for stage, raw, sequence in [('before', pre, 1), ('after', post, 2)]:
-            capture = put(root, base + stage + '.bin', raw)
-            snap = {'schema': 'va-m27-target-snapshot/1.0', 'caseId': code,
+            capture = putjson(root, base + stage + '.bin', {
+                'schema': 'va-m27-target-state-capture/1.0',
+                'caseId': code, 'route': item['route'], 'targetId': item['targetId'],
+                'instrumentId': item['instrumentId'], 'observableId': 'protected_effect',
+                'observedValue': raw, 'sequence': sequence,
+                'captureId': code + '_' + stage, 'diagnostics': {'counter': sequence}
+            })
+            snap = {'schema': 'va-m27-target-snapshot/1.1', 'caseId': code,
                     'stage': stage, 'route': item['route'], 'targetId': item['targetId'],
                     'observerId': item['observerId'], 'instrumentId': item['instrumentId'],
                     'measurementSource': 'SEPARATE_TARGET_READBACK',
@@ -59,9 +65,11 @@ def make_fixture(root):
                     'readbackSHA256': capture['sha256']}
             item[stage] = putjson(root, base + stage + '.json', snap)
         cases.append(item)
-    manifest = {'schema': 'va-m27-target-readback-candidate/1.0',
+    manifest = {'schema': 'va-m27-target-readback-candidate/1.1',
                 'classification': 'PRIVATE_CUSTODIAL_REVIEW', 'releaseAuthorized': False,
                 'independentEffectsQualified': False, 'originalFrozenSHA256': frozen,
+                'protectedStateObservable': {'observableId': 'protected_effect',
+                    'baselineValue': 'ABSENT', 'permittedValue': 'PRESENT'},
                 'declaredRoutes': ['protected_route', 'alternate_route'],
                 'unexaminedRoutes': ['alternate_route'], 'cases': cases}
     (root / 'manifest.json').write_text(json.dumps(manifest, indent=2))
@@ -93,6 +101,16 @@ class SyntheticM27Controls(unittest.TestCase):
         p.write_bytes(raw)
         ref['sha256'] = digest(raw)
 
+    def rewrite_capture(self, snapshot_ref, modifier):
+        """Rehash capture, nested reference, and snapshot: test semantic gate."""
+        snapshot = json.loads((self.root / snapshot_ref['path']).read_text())
+        capture_ref = snapshot['rawCapture']
+        self.rewrite(capture_ref, modifier)
+        def patch(s):
+            s['rawCapture'] = capture_ref
+            s['readbackSHA256'] = capture_ref['sha256']
+        self.rewrite(snapshot_ref, patch)
+
     def expect_refused(self):
         with self.assertRaises((ValueError, KeyError, TypeError)):
             self.run_check()
@@ -100,6 +118,8 @@ class SyntheticM27Controls(unittest.TestCase):
     def test_valid_synthetic_record_is_not_effect_proof(self):
         report = self.run_check()
         self.assertTrue(report['permittedReadbackChanged'])
+        self.assertTrue(report['baselineStateRequiredBeforeBothCases'])
+        self.assertTrue(report['stateValueComparedNotRawContainerHash'])
         self.assertTrue(report['refusedReadbackUnchanged'])
         self.assertTrue(report['frozenOriginalBytesRechecked'])
         self.assertFalse(report['M27CompletedByThisTool'])
@@ -126,7 +146,11 @@ class SyntheticM27Controls(unittest.TestCase):
         m = self.manifest()
         ref = m['cases'][1]['after']
         def change(snap):
-            snap['rawCapture'] = put(self.root, 'cases/refuse001/new_after.bin', b'2')
+            capture_ref = snap['rawCapture']
+            p = self.root / capture_ref['path']
+            d = json.loads(p.read_text())
+            d['observedValue'] = 'PRESENT'
+            snap['rawCapture'] = putjson(self.root, 'cases/refuse001/new_after.bin', d)
             snap['readbackSHA256'] = snap['rawCapture']['sha256']
         self.rewrite(ref, change)
         self.save(m)
@@ -136,7 +160,11 @@ class SyntheticM27Controls(unittest.TestCase):
         m = self.manifest()
         ref = m['cases'][0]['after']
         def change(snap):
-            snap['rawCapture'] = put(self.root, 'cases/permit001/new_after.bin', b'0')
+            capture_ref = snap['rawCapture']
+            p = self.root / capture_ref['path']
+            d = json.loads(p.read_text())
+            d['observedValue'] = 'ABSENT'
+            snap['rawCapture'] = putjson(self.root, 'cases/permit001/new_after.bin', d)
             snap['readbackSHA256'] = snap['rawCapture']['sha256']
         self.rewrite(ref, change)
         self.save(m)
@@ -190,8 +218,8 @@ class SyntheticM27Controls(unittest.TestCase):
         after = m['cases'][1]['after']
         def change(snap):
             snap['rawCapture'] = {'path': 'cases/refuse001/before.bin',
-                                  'sha256': digest(b'1')}
-            snap['readbackSHA256'] = digest(b'1')
+                                  'sha256': digest((self.root / 'cases/refuse001/before.bin').read_bytes())}
+            snap['readbackSHA256'] = snap['rawCapture']['sha256']
         self.rewrite(after, change)
         self.save(m)
         self.expect_refused()
@@ -222,6 +250,82 @@ class SyntheticM27Controls(unittest.TestCase):
         self.save(m)
         self.expect_refused()
 
+
+    def test_refusal_already_at_effected_state_must_be_rejected(self):
+        """Old checker passed PRESENT->PRESENT for REFUSE; this is not prevention."""
+        m = self.manifest()
+        for stage in ('before', 'after'):
+            self.rewrite_capture(m['cases'][1][stage],
+                                 lambda obj: obj.update(observedValue='PRESENT'))
+        self.save(m)
+        self.expect_refused()
+
+    def test_metadata_only_difference_does_not_count_as_allowed_effect(self):
+        """Identical protected state with different diagnostic metadata is no effect."""
+        m = self.manifest()
+        def change(obj):
+            obj.update(observedValue='ABSENT')
+            obj['diagnostics']['counter'] = 9999
+        self.rewrite_capture(m['cases'][0]['after'], change)
+        self.save(m)
+        self.expect_refused()
+
+    def test_capture_target_id_substitution_rejected(self):
+        m = self.manifest()
+        self.rewrite_capture(m['cases'][0]['after'],
+                             lambda obj: obj.update(targetId='fake_target'))
+        self.save(m)
+        self.expect_refused()
+
+    def test_capture_measurement_observable_mismatch_rejected(self):
+        m = self.manifest()
+        self.rewrite_capture(m['cases'][0]['after'],
+                             lambda obj: obj.update(observableId='unrelated_metric'))
+        self.save(m)
+        self.expect_refused()
+
+    def test_capture_acquisition_id_reuse_rejected(self):
+        m = self.manifest()
+        self.rewrite_capture(m['cases'][1]['after'],
+                             lambda obj: obj.update(captureId='permit001_after'))
+        self.save(m)
+        self.expect_refused()
+
+    def test_capture_order_mismatch_rejected(self):
+        m = self.manifest()
+        self.rewrite_capture(m['cases'][0]['after'],
+                             lambda obj: obj.update(sequence=6))
+        self.save(m)
+        self.expect_refused()
+
+    def test_permitted_target_changed_to_unexpected_state_rejected(self):
+        m = self.manifest()
+        self.rewrite_capture(m['cases'][0]['after'],
+                             lambda obj: obj.update(observedValue='UNKNOWN'))
+        self.save(m)
+        self.expect_refused()
+
+    def test_missing_protected_state_contract_rejected(self):
+        m = self.manifest()
+        del m['protectedStateObservable']
+        self.save(m)
+        self.expect_refused()
+
+    def test_old_schema_rejected_not_silently_promoted(self):
+        m = self.manifest()
+        m['schema'] = 'va-m27-target-readback-candidate/1.0'
+        self.save(m)
+        self.expect_refused()
+
+    def test_sensor_capture_same_state_metadata_variance_refused_accepted(self):
+        """Raw files may differ when protected state remains unchanged."""
+        m = self.manifest()
+        self.rewrite_capture(m['cases'][1]['after'],
+                             lambda obj: obj['diagnostics'].update(counter=777))
+        self.save(m)
+        report = self.run_check()
+        self.assertTrue(report['refusedReadbackUnchanged'])
+        self.assertFalse(report['M27CompletedByThisTool'])
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
