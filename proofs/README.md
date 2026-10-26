@@ -113,6 +113,8 @@ The [original engineering ZIP verification record](V1.2-ORIGINAL-SOURCE-VERIFICA
 
 ## Independent external consequence qualification — original proof and BYO workflows
 
+**October 26, 2026 — M27 external-consequence source checkpoint:** [Read the bounded source-examination HOLD record](M27-EXTERNAL-CONSEQUENCE-SOURCE-STATUS-2026-10-26.md). Historic pilot preparation, saved decision records, and validation planning were examined in private custody; these particular sources did not establish independently measured permitted effect plus refused non-effect. This is a source-review status only, not an original release, an independent witness qualification, a native V12 result, or authorization to enter M28.
+
 The [Milestone 15 independent effect-observation standard](INDEPENDENT-OBSERVATION-QUALIFICATION.md) provides a local [OpenSSL detached-signature preflight](../scripts/verify_independent_witnesses.py), requiring two separately signed original/receipt/condition-bound observations per ALLOW, REFUSE and CHANGED control; missing consequence routes remain explicit. The [qualification status register](INDEPENDENT-WITNESS-STATUS.json) retains authentic historical source findings without pretending public qualified witnesses already exist. A key signature is not proof of human identity, sensor truth, original freeze chronology or customer disclosure rights. This gate also applies to [Bring Your Own Workflow](../examiner/BYO-WORKFLOW-EVIDENCE.md) applicants.
 
 ## Milestone 16 — real external technical review originals, without source promotion
