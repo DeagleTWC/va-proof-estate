@@ -6,6 +6,8 @@
 
 **[Open the live V.A. Proof Estate](https://deagletwc.github.io/va-proof-estate/)**
 
+**CONTINUE FROM EXISTING WORK — [NEW-K operational continuity checkpoint](proofs/CONTINUATION-CHECKPOINT-2026-10-26.md).** Corrected NEW-K and True Zero remain the mathematical floor. Cycle 001 infrastructure is built and awaiting a genuine external participant freeze. The M27 HOLD below is a separate external-effect evidence qualification gate, **not** a project-wide stop or permission to restart, renumber, or replace the original work.
+
 **Current scientific sequence:** **M27 HOLD; M28 not opened.** [Milestone standing and numbering crosswalk](proofs/MILESTONE-LEDGER.md) explains the separate public-stage and research histories. The [M27 original-source status](proofs/M27-EXTERNAL-CONSEQUENCE-SOURCE-STATUS-2026-10-26.md) remains bounded; [v1.2 readback verification tooling](proofs/M27-TARGET-READBACK-PREFLIGHT.md), its out-of-packet freeze-anchor requirement and 39 synthetic tests do **not** establish qualified external consequences. “M27.1” was informal tooling-version shorthand, not an achieved additional scientific milestone.
 
 **[Original TMU-referenced historical staging evidence recovered](proofs/TMU-ORIGINAL-STAGING-EVIDENCE-REVIEW.md)** — seven unchanged original source attachments, including two source receipt records, have been privately reconciled. The original saved logs record five PASS gates and both permitted/refused paths. External live TMU operation, qualified independent effect measurement and public disclosure rights remain separate gates. [Bounded record](proofs/TMU-RECORDED-STAGING-CANDIDATE.json).
