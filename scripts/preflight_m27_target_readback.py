@@ -11,7 +11,7 @@ import os
 import re
 from pathlib import Path
 
-SCHEMA = 'va-m27-target-readback-candidate/1.1'
+SCHEMA = 'va-m27-target-readback-candidate/1.2'
 DIGEST = re.compile(r'^[0-9a-f]{64}$')
 TOKEN = re.compile(r'^[A-Za-z0-9][A-Za-z0-9_.-]{2,100}$')
 MAX_FILE = 2_000_000
@@ -25,6 +25,21 @@ def demand(ok, message):
 
 def sha(raw):
     return hashlib.sha256(raw).hexdigest()
+
+
+def strict_json(raw, label):
+    # Different readers can disagree on duplicated keys, even if bytes match.
+    def pairs(items):
+        obj = {}
+        for key, value in items:
+            demand(key not in obj, 'Duplicate JSON key in ' + label + ': ' + key)
+            obj[key] = value
+        return obj
+    try:
+        return json.loads(raw.decode('utf-8'), object_pairs_hook=pairs,
+                          parse_constant=lambda _: demand(False, 'Invalid number in ' + label))
+    except (ValueError, UnicodeError) as exc:
+        raise ValueError('Invalid/ambiguous JSON: ' + label) from exc
 
 
 def token(value, label):
@@ -58,10 +73,7 @@ def source(root, ref, label, used):
 
 def object_from(root, ref, label, used):
     raw = source(root, ref, label, used)
-    try:
-        value = json.loads(raw.decode('utf-8'))
-    except (ValueError, UnicodeError) as exc:
-        raise ValueError('Invalid JSON: ' + label) from exc
+    value = strict_json(raw, label)
     demand(isinstance(value, dict), 'JSON object required: ' + label)
     return value
 
@@ -87,14 +99,11 @@ def snapshot(root, ref, case, stage, used, observable_id, capture_ids):
     demand(item.get('readbackSHA256') == sha(raw), 'Snapshot/readback source disagreement')
     # Raw capture is a source-hashed, target-scoped sensor-export envelope. Its
     # diagnostic metadata may vary without indicating a changed protected state.
-    try:
-        capture = json.loads(raw.decode('utf-8'))
-    except (ValueError, UnicodeError) as exc:
-        raise ValueError('Unparseable protected-target capture') from exc
+    capture = strict_json(raw, 'protected-target capture')
     demand(isinstance(capture, dict) and
            capture.get('schema') == 'va-m27-target-state-capture/1.0',
            'Protected-target capture format is missing')
-    for k in ('caseId', 'route', 'targetId', 'instrumentId'):
+    for k in ('caseId', 'candidateId', 'route', 'targetId', 'instrumentId'):
         demand(capture.get(k) == case[k], 'Capture identity disagreement: ' + k)
     demand(capture.get('observableId') == observable_id,
            'Capture measures wrong protected-state observable')
@@ -109,14 +118,34 @@ def snapshot(root, ref, case, stage, used, observable_id, capture_ids):
     return item, value
 
 
-def inspect(packet, original=None):
+def inspect(packet, original=None, anchor=None):
     root = Path(packet).absolute()
     demand(root.is_dir() and not root.is_symlink(), 'Missing/linked packet root')
     root = root.resolve()
     mp = root / 'manifest.json'
     demand(mp.is_file() and not mp.is_symlink() and mp.stat().st_size <= MAX_FILE,
            'Missing/oversized/symlink manifest')
-    manifest = json.loads(mp.read_text(encoding='utf-8'))
+    # A packet's internal SHA-256 references are not a freeze. Require a
+    # separately held manifest digest, read from a path outside this packet.
+    demand(anchor is not None, 'Separate pre-existing anchor is required')
+    anchor_path = Path(anchor).absolute()
+    demand(anchor_path.is_file() and not anchor_path.is_symlink() and
+           anchor_path.stat().st_size <= MAX_FILE and
+           not anchor_path.resolve().is_relative_to(root),
+           'Freeze anchor must be a separate, non-linked external file')
+    anchor_record = strict_json(anchor_path.read_bytes(), 'external freeze anchor')
+    demand(isinstance(anchor_record, dict) and
+           anchor_record.get('schema') == 'va-m27-external-freeze-anchor/1.0' and
+           isinstance(anchor_record.get('anchorId'), str) and
+           TOKEN.fullmatch(anchor_record['anchorId']) and
+           anchor_record.get('nativeEffectQualified') is False and
+           anchor_record.get('publicationAuthorized') is False,
+           'Freeze anchor invalid or self-promoting')
+    manifest_bytes = mp.read_bytes()
+    demand(anchor_record.get('manifestSHA256') == sha(manifest_bytes) and
+           anchor_record.get('manifestByteCount') == len(manifest_bytes),
+           'Source manifest changed relative to separate freeze anchor')
+    manifest = strict_json(manifest_bytes, 'manifest')
     demand(isinstance(manifest, dict) and manifest.get('schema') == SCHEMA,
            'Wrong M27 packet schema')
     demand(manifest.get('classification') == 'PRIVATE_CUSTODIAL_REVIEW' and
@@ -126,6 +155,8 @@ def inspect(packet, original=None):
     frozen = manifest.get('originalFrozenSHA256')
     demand(isinstance(frozen, str) and DIGEST.fullmatch(frozen),
            'Missing original frozen SHA-256')
+    demand(anchor_record.get('originalFrozenSHA256') == frozen,
+           'Freeze anchor and claimed original identity disagree')
     original_checked = False
     if original is not None:
         p = Path(original).absolute()
@@ -193,7 +224,7 @@ def inspect(packet, original=None):
     demand(manifest.get('unexaminedRoutes') == gaps,
            'Unexamined effect routes not exactly declared')
     return {
-        'schema': 'va-m27-target-readback-preflight/1.1',
+        'schema': 'va-m27-target-readback-preflight/1.2',
         'result': 'SOURCE_RECORDS_INTERNALLY_CONSISTENT_HUMAN_QUALIFICATION_PENDING',
         'caseClassesChecked': ['ALLOW', 'REFUSE'],
         'sameCandidateRouteTarget': True,
@@ -203,6 +234,11 @@ def inspect(packet, original=None):
         'stateValueComparedNotRawContainerHash': True,
         'refusedReadbackUnchanged': True,
         'sourceFileRecordsVerified': len(used),
+        'outOfPacketManifestFreezeCompared': True,
+        'freezeAnchorIdentityAuthenticatedByThisTool': False,
+        'originalFreezeChronologyAuthenticatedByThisTool': False,
+        'duplicateJSONKeysRejected': True,
+        'captureCandidateIdentityBound': True,
         'frozenOriginalBytesRechecked': original_checked,
         'unexaminedEffectRoutes': gaps,
         'instrumentTruthAuthenticated': False,
@@ -212,7 +248,7 @@ def inspect(packet, original=None):
         'M27CompletedByThisTool': False,
         'M28AuthorizedByThisTool': False,
         'publicationAuthorized': False,
-        'note': ('This compares source-hashed protected-state readings rather than raw-file diffs; checks recorded ordering, receipts, '
+        'note': ('This checks an out-of-packet file digest, not independent freeze authority or chronology. It compares source-hashed protected-state readings rather than raw-file diffs; checks recorded ordering, receipts, '
                  'candidate/route identity and source hashes. A synthetic fixture can pass. '
                  'Human examiners must inspect actual sensor provenance, calibration, route '
                  'completeness, frozen native identity, observation independence, rights and '
@@ -224,10 +260,11 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--packet', required=True, help='Private candidate packet folder')
     p.add_argument('--original', help='Original frozen file for full-file digest check')
+    p.add_argument('--anchor', required=True, help='Previously held separate freeze anchor file, outside packet')
     p.add_argument('--out', help='Private new output file (exclusive create, outside packet)')
     a = p.parse_args()
     try:
-        result = inspect(a.packet, a.original)
+        result = inspect(a.packet, a.original, a.anchor)
         if a.out:
             dest = Path(a.out).absolute()
             demand(not dest.exists() and not dest.is_symlink() and
