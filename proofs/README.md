@@ -10,7 +10,7 @@ The [April 2026 original seven-attachment investigation](TMU-ORIGINAL-STAGING-EV
 
 
 
-**M27 examiner tooling (not effect proof):** [Original target readback byte-consistency preflight](M27-TARGET-READBACK-PREFLIGHT.md), [data-only checker](../scripts/preflight_m27_target_readback.py), and [18 local synthetic controls](../scripts/test_preflight_m27_target_readback.py). These establish a source-hash and before/after record validation procedure only; external sensing, human independence, native lineage, real-world effect, rights, M27 closure and M28 entry remain unqualified.
+**M27 examiner tooling (not effect proof):** [Original target readback byte-consistency preflight](M27-TARGET-READBACK-PREFLIGHT.md), [data-only checker](../scripts/preflight_m27_target_readback.py), and [28 local synthetic controls](../scripts/test_preflight_m27_target_readback.py). [M27 v1.1 qualification-hardening record](M27-READBACK-HARDENING-2026-10-26.md) documents the correction of affected-state refusal and metadata-only effect false positives. These establish a source-hash and protected-state before/after record validation procedure only; external sensing, human independence, native lineage, real-world effect, rights, M27 closure and M28 entry remain unqualified.
 
 ## Complete V.A. / The Shift end-to-end system representation — START HERE
 
