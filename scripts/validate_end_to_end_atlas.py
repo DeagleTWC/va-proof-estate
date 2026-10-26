@@ -57,10 +57,12 @@ def parse_html(text):
     return parser
 
 def local_link(href,source):
-    if href.startswith(("#","mailto:","tel:","javascript:")):
+    if href.startswith("#"):
         return None
     part=urlsplit(href)
-    if part.scheme or href.startswith("//"):return None
+    require(not href.startswith("//") and part.scheme in ("", "https", "http", "mailto", "tel"),
+            "Disallowed or unsafe link scheme: "+href)
+    if part.scheme:return None
     relative=unquote(part.path)
     require(relative and not relative.startswith("/"),"Atlas contains root-absolute relative link")
     root=(ROOT/source).parent.resolve()
@@ -151,8 +153,6 @@ def validate(data,atlas,home):
         if x.get("id") in expected_status:
             require(x.get("status")==expected_status[x["id"]],
                     "Historical or native proof stage inappropriately promoted")
-    require("not literal computational geometry" not in data.get("architectureSequenceRule","").lower()
-            or True,"architectural source rule") # actual check below
     require("not literal computational geometry" in data["architectureSequenceRule"].lower(),
             "Architecture review route may not be treated as constructed topology")
     doc=parse_html(atlas)
@@ -164,6 +164,13 @@ def validate(data,atlas,home):
             "Obsolete displayed capacity equation remains in the current homepage")
     require("39 of 39 sources visible" not in atlas and "srcSearch" not in atlas,
             "Historical outside-repository catalogue incorrectly remains the current system presentation")
+    require("39 ARCHIVED SOURCE REFERENCES" in atlas and
+            "39 PUBLIC SOURCE REPOSITORIES" not in atlas and
+            "proofs/END-TO-END-ESTATE-REGISTER.json" in doc.links,
+            "Archival provenance missing or historical sources misrepresented as native")
+    require("DEAGLE / PUBLIC-SAFE V.A. EXAMINATION MAP" in atlas and
+            "not a complete private mathematical or physical evidence release" in atlas,
+            "Atlas misstates the scope of publicly available evidence")
     require(not any(href.startswith(EXPECTED_KAMANAKA_BASE) for href in doc.links),
             "Public V.A. atlas must not route its native presentation to the superseded source network")
     for special in ("architecture","realization","evidence","applications","sources","examine"):
@@ -177,6 +184,9 @@ def validate(data,atlas,home):
             "end-to-end.html" in home_doc.links and
             "proofs/FULL-END-TO-END-REPRESENTATION.md" in home_doc.links,
             "Original homepage doesn't introduce full end-to-end architecture")
+    require("The entire foundation.<br/>Every consequential boundary.<br/>All evidence routes." not in home and
+            "The mathematical starting point.<br/>Declared consequence boundaries.<br/>Inspectable evidence routes." in home,
+            "Homepage overstates completeness of protected foundation or evidence")
     require("from" in atlas.lower() and "independent" in atlas.lower()
             and "historical" in atlas.lower() and "consequence" in atlas.lower(),
             "Complete end-to-end narrative absent")
