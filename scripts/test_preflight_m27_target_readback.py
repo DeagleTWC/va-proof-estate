@@ -51,7 +51,7 @@ def make_fixture(root):
             capture = putjson(root, base + stage + '.bin', {
                 'schema': 'va-m27-target-state-capture/1.0',
                 'caseId': code, 'route': item['route'], 'targetId': item['targetId'],
-                'instrumentId': item['instrumentId'], 'observableId': 'protected_effect',
+                'instrumentId': item['instrumentId'], 'candidateId': item['candidateId'], 'observableId': 'protected_effect',
                 'observedValue': raw, 'sequence': sequence,
                 'captureId': code + '_' + stage, 'diagnostics': {'counter': sequence}
             })
@@ -65,7 +65,7 @@ def make_fixture(root):
                     'readbackSHA256': capture['sha256']}
             item[stage] = putjson(root, base + stage + '.json', snap)
         cases.append(item)
-    manifest = {'schema': 'va-m27-target-readback-candidate/1.1',
+    manifest = {'schema': 'va-m27-target-readback-candidate/1.2',
                 'classification': 'PRIVATE_CUSTODIAL_REVIEW', 'releaseAuthorized': False,
                 'independentEffectsQualified': False, 'originalFrozenSHA256': frozen,
                 'protectedStateObservable': {'observableId': 'protected_effect',
@@ -83,9 +83,24 @@ class SyntheticM27Controls(unittest.TestCase):
         self.root = Path(self.temp.name) / 'packet'
         self.root.mkdir()
         self.original = make_fixture(self.root)
+        self.anchor = self.root.parent / 'held-separately-anchor.json'
+        self.refreeze()
+
+    def refreeze(self):
+        # Test fixture operation only: a real independent custodian must
+        # attest provenance/chronology and retain the anchor separately.
+        manifest = (self.root / 'manifest.json').read_bytes()
+        original = self.manifest()['originalFrozenSHA256']
+        self.anchor.write_text(json.dumps({
+            'schema': 'va-m27-external-freeze-anchor/1.0',
+            'anchorId': 'synthetic_ref_001', 'manifestSHA256': digest(manifest),
+            'manifestByteCount': len(manifest),
+            'originalFrozenSHA256': original,
+            'nativeEffectQualified': False, 'publicationAuthorized': False
+        }))
 
     def run_check(self):
-        return inspect(self.root, self.original)
+        return inspect(self.root, self.original, self.anchor)
 
     def manifest(self):
         return json.loads((self.root / 'manifest.json').read_text())
@@ -111,7 +126,11 @@ class SyntheticM27Controls(unittest.TestCase):
             s['readbackSHA256'] = capture_ref['sha256']
         self.rewrite(snapshot_ref, patch)
 
-    def expect_refused(self):
+    def expect_refused(self, refreeze=True):
+        # Re-anchor modified semantic tests so failures are about the intended
+        # semantic rule, not merely an outdated manifest freeze.
+        if refreeze:
+            self.refreeze()
         with self.assertRaises((ValueError, KeyError, TypeError)):
             self.run_check()
 
@@ -128,7 +147,7 @@ class SyntheticM27Controls(unittest.TestCase):
         self.assertEqual(report['unexaminedEffectRoutes'], ['alternate_route'])
 
     def test_missing_original_is_not_silently_claimed(self):
-        self.assertFalse(inspect(self.root)['frozenOriginalBytesRechecked'])
+        self.assertFalse(inspect(self.root, anchor=self.anchor)['frozenOriginalBytesRechecked'])
 
     def test_frozen_original_mutated(self):
         self.original.write_bytes(b'CHANGED')
@@ -323,9 +342,86 @@ class SyntheticM27Controls(unittest.TestCase):
         self.rewrite_capture(m['cases'][1]['after'],
                              lambda obj: obj['diagnostics'].update(counter=777))
         self.save(m)
+        self.refreeze()
         report = self.run_check()
         self.assertTrue(report['refusedReadbackUnchanged'])
         self.assertFalse(report['M27CompletedByThisTool'])
+
+
+    def test_no_freeze_anchor_rejected(self):
+        with self.assertRaises(ValueError):
+            inspect(self.root, self.original)
+
+    def test_packet_rehashed_after_anchor_does_not_pass(self):
+        # Attack: rewrite receipt and rehash every local reference and manifest;
+        # v1.1 would accept a self-consistent replacement packet.
+        m = self.manifest()
+        self.rewrite(m['cases'][0]['receipt'],
+                     lambda r: r.update(untrustedNote='altered despite valid local hashes'))
+        self.save(m)
+        self.expect_refused(refreeze=False)
+
+    def test_substituted_anchor_digest_rejected(self):
+        a = json.loads(self.anchor.read_text())
+        a['manifestSHA256'] = '0'*64
+        self.anchor.write_text(json.dumps(a))
+        self.expect_refused(refreeze=False)
+
+    def test_anchor_moved_into_source_packet_rejected(self):
+        internal = self.root / 'anchor.json'
+        internal.write_bytes(self.anchor.read_bytes())
+        with self.assertRaises(ValueError):
+            inspect(self.root, self.original, internal)
+
+    def test_anchor_symlink_rejected(self):
+        link = self.root.parent / 'anchor-link.json'
+        link.symlink_to(self.anchor)
+        with self.assertRaises(ValueError):
+            inspect(self.root, self.original, link)
+
+    def test_anchor_original_claim_mismatch_rejected(self):
+        a = json.loads(self.anchor.read_text())
+        a['originalFrozenSHA256'] = '0'*64
+        self.anchor.write_text(json.dumps(a))
+        self.expect_refused(refreeze=False)
+
+    def test_anchor_bytes_length_mismatch_rejected(self):
+        a = json.loads(self.anchor.read_text())
+        a['manifestByteCount'] += 1
+        self.anchor.write_text(json.dumps(a))
+        self.expect_refused(refreeze=False)
+
+    def test_anchor_cannot_self_qualify(self):
+        a = json.loads(self.anchor.read_text())
+        a['nativeEffectQualified'] = True
+        self.anchor.write_text(json.dumps(a))
+        self.expect_refused(refreeze=False)
+
+    def test_capture_candidate_swapped_but_fully_rehashed_rejected(self):
+        m = self.manifest()
+        self.rewrite_capture(m['cases'][0]['after'],
+                             lambda c: c.update(candidateId='other_candidate'))
+        self.save(m)
+        self.expect_refused()
+
+    def test_duplicate_json_keys_even_if_frozen_rejected(self):
+        m = self.manifest()
+        p = self.root / m['cases'][0]['receipt']['path']
+        # Add ambiguous duplicate JSON member and update its source digest.
+        contents = p.read_bytes().decode('utf-8')
+        p.write_text(contents[:-1] + ',"decision":"EXECUTE"}')
+        m['cases'][0]['receipt']['sha256'] = digest(p.read_bytes())
+        self.save(m)
+        self.expect_refused()
+
+    def test_valid_source_packet_anchor_has_no_witness_standing(self):
+        r = self.run_check()
+        self.assertTrue(r['outOfPacketManifestFreezeCompared'])
+        self.assertTrue(r['captureCandidateIdentityBound'])
+        self.assertFalse(r['freezeAnchorIdentityAuthenticatedByThisTool'])
+        self.assertFalse(r['originalFreezeChronologyAuthenticatedByThisTool'])
+        self.assertFalse(r['realWorldEffectIndependentlyProvedByThisTool'])
+        self.assertFalse(r['publicationAuthorized'])
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
