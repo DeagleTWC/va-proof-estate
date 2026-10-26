@@ -8,6 +8,10 @@ The [April 2026 original seven-attachment investigation](TMU-ORIGINAL-STAGING-EV
 
 **[TMU source status](TMU-PUBLIC-EVIDENCE-STATUS.json)** is currently **review eligible**, not automatically released or independently qualified: located shared draft matrices are not by themselves original completed TMU runs. The [public-interest pipeline](PUBLIC-INTEREST-EVIDENCE-PIPELINE.json) and [private exact-byte preflight](../scripts/preflight_public_interest_release.py) track explicit safety, custody and authorizations; the preflight checks structural declarations and hashes, never judges dangerousness, human authenticity or legal consent autonomously.
 
+
+
+**M27 examiner tooling (not effect proof):** [Original target readback byte-consistency preflight](M27-TARGET-READBACK-PREFLIGHT.md), [data-only checker](../scripts/preflight_m27_target_readback.py), and [18 local synthetic controls](../scripts/test_preflight_m27_target_readback.py). These establish a source-hash and before/after record validation procedure only; external sensing, human independence, native lineage, real-world effect, rights, M27 closure and M28 entry remain unqualified.
+
 ## Complete V.A. / The Shift end-to-end system representation — START HERE
 
 **[Deagle's complete visual End-to-End Atlas](../end-to-end.html)** | [twelve-stage technical account](FULL-END-TO-END-REPRESENTATION.md) | [public 39-source relationship and evidence register](END-TO-END-ESTATE-REGISTER.json).
