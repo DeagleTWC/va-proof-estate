@@ -6,7 +6,7 @@ The [existing historical run-lineage examiner](../scripts/verify_historical_run_
 
 ## Method and bounded result
 
-Use [`check_historical_receipt_revision.py`](../scripts/check_historical_receipt_revision.py) against two authorized, unchanged, private connected-environment ZIP originals. It reads but never executes source members. It requires a matching declared run ID, three captured decision classes, three distinct captured receipt identifiers per version, and safe archive and unambiguous JSON structure. For each receipt pair it distinguishes:
+Use [`check_historical_receipt_revision.py`](../scripts/check_historical_receipt_revision.py) against two authorized, unchanged, private connected-environment ZIP originals. It reads but never executes source members. It requires a matching declared run ID, three captured decision classes, three distinct captured receipt identifiers per version, matching decision, bounded latency and commit/bindability fields within each archived case, and safe archive and unambiguous JSON structure. For each receipt pair it distinguishes:
 
 - Identical serialized bytes versus changed original serialized bytes.
 - Reused receipt IDs, timestamps, opaque state-hash strings and opaque signature labels.
@@ -25,6 +25,8 @@ python3 scripts/check_historical_receipt_revision.py \
 
 The private report includes source hashes and must not be committed, attached to a public issue or uploaded to the Proof Estate without exact-byte permission and the [publication charter](PUBLIC-INTEREST-PUBLICATION-CHARTER.md)'s rights, privacy, custody and safety gates.
 
-Regression tests in [`test_historical_receipt_revision.py`](../scripts/test_historical_receipt_revision.py) generate synthetic local ZIPs and check changed/reused identity, unchanged receipt bytes, freshly assigned identifiers, nonmatching run ID, capture/receipt mismatch, duplicate receipt IDs, duplicate JSON keys and unsafe archive member paths. Passing controls establish this **examiner's behavior**, not historic native V.A. operation, a qualified external observer or a physical measurement.
+Regression tests in [`test_historical_receipt_revision.py`](../scripts/test_historical_receipt_revision.py) generate synthetic local ZIPs and check changed/reused identity, unchanged receipt bytes, freshly assigned identifiers, nonmatching run ID, capture/receipt mismatch, duplicate receipt IDs, duplicate JSON keys, unsafe archive member paths, inconsistent decision or captured outcome, inconsistent receipt/capture latency, contradictory consequence-boundary or bindability flags, absent identity fields, and invalid latency types. Passing controls establish this **examiner's behavior**, not historic native V.A. operation, a qualified external observer or a physical measurement.
 
 **Scientific continuity:** This tooling can advance documentation and independent source examinations while specific evidence questions remain under review. It must not be interpreted as a project-wide stop, a new pilot, or a new milestone.
+
+**Revision-integrity scope:** The extra field consistency controls do not prove the stored source fields are true observations. They refuse contradiction *within* one archived record. Changed archived receipt bytes, even with unchanged labels, still require qualified independent provenance review and may not be relabeled as an independently repeated run.
