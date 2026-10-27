@@ -16,9 +16,13 @@ def fixture(latencies, run_id="SYNTHETIC_RUN", ids=None):
     for c, ms, rid in zip(CASES, latencies, ids):
         x = {"receipt_id": rid, "decision": c, "timestamp": "SYNTHETIC_TIME",
              "state_hash": "SYNTHETIC_STATE_" + c, "receipt_sig": "SYNTHETIC_NOT_SIGNATURE_" + c,
+             "commit_boundary": "attending_signoff" if c == "EXECUTE" else "not_reached",
+             "bindability": {"commit_allowed": c == "EXECUTE"},
              "constraints": {"latency_ms": ms}}
         archive[c.lower() + "_receipt_connected.json"] = x
-        rows.append({"case": c, "receipt_id": rid})
+        rows.append({"case": c, "outcome": c, "receipt_id": rid,
+                     "latency_ms_observed": ms,
+                     "commit_boundary_reached": c == "EXECUTE"})
     archive["capture_completed.json"] = {"run_id": run_id, "cases": rows}
     return archive
 
@@ -81,7 +85,34 @@ def main():
             z.writestr("synthetic_private/same.json", "{}")
             z.writestr("synthetic_private/same.json", "{}")
         refused(p,q,"duplicate archive path")
-        print("PASS: 3 synthetic revision classifications + 6 synthetic negative controls")
+        # Real source structure is checked *inside each version*, not assumed
+        # from matching receipt IDs or revised source hashes.
+        more_tests = [
+            ("decision contradicts case", "refuse_receipt_connected.json",
+             lambda x: x.update(decision="EXECUTE")),
+            ("receipt latency contradicts capture", "execute_receipt_connected.json",
+             lambda x: x["constraints"].update(latency_ms=1111)),
+            ("captured effect boundary forged", "capture_completed.json",
+             lambda x: x["cases"][1].update(commit_boundary_reached=True)),
+            ("receipt binding contradicts case", "escalate_receipt_connected.json",
+             lambda x: x["bindability"].update(commit_allowed=True)),
+            ("receipt consequence boundary contradicts case", "execute_receipt_connected.json",
+             lambda x: x.update(commit_boundary="not_reached")),
+            ("signature-like label absent", "refuse_receipt_connected.json",
+             lambda x: x.pop("receipt_sig")),
+            ("timestamp absent", "execute_receipt_connected.json",
+             lambda x: x.pop("timestamp")),
+            ("invalid latency type", "capture_completed.json",
+             lambda x: x["cases"][0].update(latency_ms_observed=True)),
+        ]
+        for label, item, mutate in more_tests:
+            bad = copy.deepcopy(two)
+            mutate(bad[item])
+            pack(q, bad)
+            refused(p, q, label)
+        pack(q, two)
+        assert compare_revisions(p, q)["byteRevisionsUnderReusedReceiptIds"] == 3
+        print(f"PASS: 3 synthetic revision classifications + {6+len(more_tests)} synthetic negative controls")
         print("PASS: no original run, independent observer, external effect or signature qualified")
 
 if __name__ == "__main__":
