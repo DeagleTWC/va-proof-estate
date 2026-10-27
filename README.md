@@ -1,5 +1,7 @@
 # V.A. — The Proof Estate
 
+**New: [The Foundation, Explained — public reader's route](foundation.html)**. Start here for a plain-language account of True Zero, Elements Basin, corrected NEW K, URK, AHMR and Lawful Continuation, with direct links to source records and source-specific evidence standings. This is an explanation, not release of protected construction or a new independently measured proof.
+
 **Proof before power. Maximum verifiable function. Prevention of harm.**
 
 **[Controlling public-interest publication and harm-prevention charter](proofs/PUBLIC-INTEREST-PUBLICATION-CHARTER.md)** — publish the most independently checkable scientific, engineering, historical pilot and safety evidence lawfully possible, including eligible TMU run results and receipts, while protecting dangerous construction, private original records, customer rights and sensitive operational details. Commercial exclusivity alone does not justify withholding safe, authorized function evidence. [TMU evidence candidacy and current public standing](proofs/TMU-PUBLIC-EVIDENCE-STATUS.json) · [exact-byte private release review standard](proofs/RELEASE-REVIEW-PRIVATE-TEMPLATE.json).

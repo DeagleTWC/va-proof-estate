@@ -4,6 +4,8 @@
 
 **Primary question:** What movement may lawfully become protected consequence at all?
 
+**New public reader's route:** [The Foundation, Explained](../foundation.html) defines True Zero, Elements Basin, corrected NEW K, URK, AHMR and Lawful Continuation in ordinary language, then routes each claim to its appropriate proof standard. The page is explanatory and does not release protected mathematics or promote evidence.
+
 This is the public description of a **distinct formalized scientific and engineering discipline**, with engineered systems and domain embodiments. It is not an agent architecture, a permission tier, a wrapper around a preexisting model, or a set of compliance controls placed on an inherited executable world.
 
 This category was formalized from an existing mathematical, engineering and evidence corpus. The natural order and mathematical laws are described as *discovered and formalized*, not owned or invented. Engineered systems, authored records, custodial controls and licensed implementations are separately attributable. The discipline's founding record **does not claim institutional accreditation, regulatory approval, or independent validation of every object**.
