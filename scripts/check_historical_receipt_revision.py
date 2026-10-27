@@ -85,12 +85,46 @@ def compare_revisions(v1_path, v2_path):
         demand(isinstance(rows, list) and len(rows) == 3, "Three-case capture required")
         demand([r.get("case") for r in rows] == ["EXECUTE", "REFUSE", "ESCALATE"],
                "Expected three distinct decision classes")
-        rec_ids = [obj(archive[name]).get("receipt_id") for name in RECEIPTS if name in archive]
-        demand(len(rec_ids) == 3 and len(set(rec_ids)) == 3 and all(
+        demand(all(isinstance(row, dict) for row in rows),
+               "Each captured case must be an object")
+        demand(all(name in archive for name in RECEIPTS),
+               "Three original receipt members required")
+        receipts = [obj(archive[name]) for name in RECEIPTS]
+        rec_ids = [receipt.get("receipt_id") for receipt in receipts]
+        demand(len(set(rec_ids)) == 3 and all(
             isinstance(x, str) and bool(x.strip()) for x in rec_ids),
-            "Receipts must be present and uniquely identified")
+            "Receipts must be uniquely identified")
         demand([r.get("receipt_id") for r in rows] == rec_ids,
                "Capture/receipt ID mapping changed inside source")
+        for case, row, receipt in zip(("EXECUTE", "REFUSE", "ESCALATE"), rows, receipts):
+            # The revision checker must not approve an internally inconsistent
+            # record merely because the same textual identity survived.
+            permitted = case == "EXECUTE"
+            demand(row.get("outcome") == case and receipt.get("decision") == case,
+                   "Captured decision and original receipt disagree")
+            demand(type(row.get("commit_boundary_reached")) is bool and
+                   row["commit_boundary_reached"] is permitted,
+                   "Captured consequence boundary is inconsistent")
+            binding = receipt.get("bindability")
+            demand(isinstance(binding, dict) and
+                   type(binding.get("commit_allowed")) is bool and
+                   binding["commit_allowed"] is permitted,
+                   "Receipt binding status is inconsistent")
+            demand(receipt.get("commit_boundary") ==
+                   ("attending_signoff" if permitted else "not_reached"),
+                   "Receipt consequence boundary is inconsistent")
+            latency = row.get("latency_ms_observed")
+            constraints = receipt.get("constraints")
+            demand(type(latency) is int and 0 < latency < 120_000 and
+                   isinstance(constraints, dict) and
+                   type(constraints.get("latency_ms")) is int and
+                   constraints["latency_ms"] == latency,
+                   "Captured latency and receipt latency disagree")
+            for field in ("timestamp", "state_hash", "receipt_sig"):
+                value = receipt.get(field)
+                demand(isinstance(value, str) and bool(value.strip()),
+                       "Missing original receipt field: " + field)
+            # Presence of a hash-like label is not cryptographic verification.
     results = []
     for name in RECEIPTS:
         left, right = a[name], b[name]
