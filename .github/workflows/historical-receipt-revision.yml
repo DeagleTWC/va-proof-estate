@@ -1,0 +1,29 @@
+name: Historical Receipt Revision - Synthetic Controls
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/check_historical_receipt_revision.py'
+      - 'scripts/test_historical_receipt_revision.py'
+      - '.github/workflows/historical-receipt-revision.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/check_historical_receipt_revision.py'
+      - 'scripts/test_historical_receipt_revision.py'
+      - '.github/workflows/historical-receipt-revision.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  synthetic-revision-controls:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run synthetic-only identity and negative tests
+        run: python3 scripts/test_historical_receipt_revision.py
