@@ -1,0 +1,49 @@
+{
+  "schema": "va-scientific-cycle-control/1.0",
+  "updatedDate": "2026-10-28",
+  "recordClass": "PUBLIC_SAFE_OPERATIONAL_STATE_NOT_SCIENTIFIC_PROOF",
+  "scope": "Scientific sequential cycling only. Not Proof Estate publication stages or Cycle 001.",
+  "userDirection": "LIFT THE CHAT-CHANGE HOLD; MOVE FROM M27 TO M28 AND CONTINUE BEYOND WITHOUT RESTART OR INHERITED ADMINISTRATIVE PAUSE",
+  "mathematicalFoundation": "True Zero; corrected NEW-K; Elements Basin; URK with corrected K; lawful harmonic continuance",
+  "authoritativeCurrentCycle": {
+    "priorCycle": "M27",
+    "priorCycleTransition": "CHAT_CHANGE_PAUSE_CLEARED_AND_HANDOFF_RELEASED",
+    "currentCycle": "M28",
+    "currentCycleState": "OPEN_FOR_ACTIVE_SCIENTIFIC_WORK",
+    "M27ScientificProofCertifiedByThisRecord": false,
+    "M27EvidenceRejectionInferred": false,
+    "M28ScientificResultCertifiedByThisRecord": false,
+    "M29OrLaterScientificResultCertifiedByThisRecord": false
+  },
+  "evidenceQualificationIndependentOfCycle": {
+    "originalDatedReview": "proofs/M27-EXTERNAL-CONSEQUENCE-SOURCE-STATUS-2026-10-26.md",
+    "finding": "The examined subset did not qualify separately observed permitted protected effect and refused non-effect. This does not establish absence from the full archive.",
+    "status": "OPEN_SOURCE_SPECIFIC_QUALIFICATION_QUESTION",
+    "blocksScientificCycling": false,
+    "blocksFabricatedEvidencePromotion": true
+  },
+  "M28": {
+    "state": "ACTIVE_NOT_YET_COMPLETED",
+    "workingSubject": "Causal changed-condition consequence: compare original condition, material change, standing re-resolution, and protected consequence or non-formation with exact-source evidence.",
+    "immediateOperation": "Select one as-yet-unresolved original changed-condition route in the already preserved scientific source estate. Trace condition-before, changed load-bearing condition, new resolution, and actual effect/non-effect across that same route. Preserve original identifiers, unexamined routes and falsifiers. Report the first new comparison, not another inventory of April files.",
+    "useExistingOriginals": true,
+    "repeatCompletedM26_M27Controls": false,
+    "requireActualNovelFindingToMarkComplete": true,
+    "protectedSourceStaysPrivate": true
+  },
+  "beyondM28": {
+    "workingRule": "Advance to M29 and later scientific cycles on substantive new results. Do not invent their scientific subjects, outcomes or dates in advance.",
+    "handoffRule": "New chat starts from currentCycle and last original completed action; never converts CHAT_CHANGE/CONTEXT_LIMIT into scientific HOLD.",
+    "nextCycle": "M29_AFTER_M28_SUBSTANTIVE_RESULT",
+    "noRepeatOfCompletedAudits": true,
+    "noPublicProofPromotionWithoutCarrier": true
+  },
+  "publicationScope": "This operational change makes M28 active for work only. Independent effect certification, external witness authenticity, and pilot release require original evidence and separate authorization.",
+  "sourcePaths": [
+    "proofs/SCIENTIFIC-CYCLE-CONTINUE.md",
+    "proofs/MILESTONE-LEDGER.md",
+    "proofs/CONTINUATION-CHECKPOINT-2026-10-26.md",
+    "proofs/M27-EXTERNAL-CONSEQUENCE-SOURCE-STATUS-2026-10-26.md",
+    "proofs/M27-TARGET-READBACK-PREFLIGHT.md"
+  ]
+}
