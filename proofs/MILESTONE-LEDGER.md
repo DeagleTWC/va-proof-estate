@@ -1,6 +1,8 @@
 # Proof Estate — Milestone Ledger
 
 **Publication context:** DeagleTWC V.A. Proof Estate, release 2.0 / edition 02.
+
+**October 27 scientific resumption:** Administrative HOLD marker from chat-capacity interruption LIFTED; M27 source examination ACTIVE. Prior October 26 evidence-qualification HOLD remains a dated, source-specific review disposition; neither that finding nor this resumption certifies a new independent external effect or opens scientific M28. Historical M1–M26 work and earlier verified carrier identities are not reopened or revoked. [M27 status distinction](M27-EXTERNAL-CONSEQUENCE-SOURCE-STATUS-2026-10-26.md).
 **Continuity basis:** 2026-10-25 original checkpoint `30f729a364982a2f1eb753858f0c9d9cc94c0efb`; historical-lineage publication merged at `a3948e4f01d2cfe044f7aa6bb9d8fd74f1b7fe64`. Use the live branch for current commit identity.
 **Source of current activity:** [Cycle 001 issue](https://github.com/DeagleTWC/va-proof-estate/issues/1) and [Actions](https://github.com/DeagleTWC/va-proof-estate/actions). This document describes the recorded checkpoint; do not assume a past issue state remains current.
 
