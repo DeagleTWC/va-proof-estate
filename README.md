@@ -1,3 +1,5 @@
+> **CURRENT SCIENTIFIC WORK: M28 ACTIVE; M27 BOT-CHANGE HOLD CLEARED (2026-10-28).** [Current operational cycle](proofs/SCIENTIFIC-CYCLE-CURRENT.json) · [Resume M28 and beyond](proofs/SCIENTIFIC-CYCLE-CONTINUE.md). This is not a new independent-effect proof or public release of protected source.
+
 # V.A. — The Proof Estate
 
 **New: [The Foundation, Explained — public reader's route](foundation.html)**. Start here for a plain-language account of True Zero, Elements Basin, corrected NEW K, URK, AHMR and Lawful Continuation, with direct links to source records and source-specific evidence standings. This is an explanation, not release of protected construction or a new independently measured proof.
