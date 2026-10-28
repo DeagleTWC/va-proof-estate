@@ -1,5 +1,7 @@
 # NEW-K continuity checkpoint — 2026-10-26
 
+> **HISTORICAL CHECKPOINT, SUPERSEDED FOR OPERATIONAL CYCLING OCTOBER 28:** The user clarified that HOLD was solely a bot-change/context-capacity marker. It is RELEASED; **M28 IS NOW ACTIVE SCIENTIFIC WORK**. See [current cycle state](SCIENTIFIC-CYCLE-CURRENT.json) and [continue M28](SCIENTIFIC-CYCLE-CONTINUE.md). All October 26 source-review limitations remain as historical evidence standings, NOT a reason to freeze the science.
+
 **Record class:** Public-safe operational continuity and proof-gate crosswalk. **Not** a new scientific milestone, an independent result, original-source replacement, proof promotion, or release approval.
 
 **Primary rule:** True Zero and **corrected NEW-K only** govern current foundation references. Older source patterns, original comparison repos, public category illustrations, and superseded KCD equations are **not** promoted to current native mathematical construction. The protected operative source remains outside this public site.
