@@ -1,4 +1,4 @@
-**M27 scientific cycling resumed (October 27):** The chat-interruption administrative pause is lifted; ongoing source examination is active. The earlier October 26 external-effect qualification HOLD is a bounded finding on sources then inspected, not a total project freeze or claim that original evidence does not exist elsewhere. [Read the precise status distinction](M27-EXTERNAL-CONSEQUENCE-SOURCE-STATUS-2026-10-26.md). No independent-effect or M28 standing is newly conferred by this note.
+**CURRENT SCIENTIFIC CYCLING (OCTOBER 28): M28 ACTIVE; M27 bot-change HOLD CLEARED.** [Controlling operational cycle JSON](SCIENTIFIC-CYCLE-CURRENT.json) · [M28 next-action continuation](SCIENTIFIC-CYCLE-CONTINUE.md). The old M27 independent effect/non-effect source-subset qualification remains a dated, bounded review question; it is NOT a cycle stop, archive-wide absence finding, or an independent scientific PASS. No protected sources released.
 
 ## Newly recovered original TMU-referenced staging proof attachments
 
