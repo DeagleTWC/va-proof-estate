@@ -1,5 +1,7 @@
 # Milestone 27 — External consequence source-examination status
 
+> **Current operational continuation — October 27, 2026:** **M27 SCIENTIFIC CYCLING ACTIVE; ADMINISTRATIVE CHAT-INTERRUPTION PAUSE LIFTED.** Original work and source examination resume from the preserved M26→M27 checkpoint. The dated October 26 **HOLD** below records the *scope-limited result of examining a particular source subset for independent effect/non-effect qualification*; it does not mean M27 work was stopped, that the full archive lacks evidence, or that established preceding tests/pilots failed. That evidence-specific qualification is not silently promoted to PASS by resumption. M28 has not been opened by this status clarification. Protected originals remain private. See the [scientific continuation checkpoint](CONTINUATION-CHECKPOINT-2026-10-26.md).
+
 **Review checkpoint:** 2026-10-26  
 **Public disposition:** **HOLD — independent protected-effect and protected non-effect not yet qualified**  
 **Record class:** Public-safe status of a private historical-source examination; **not** an admitted original pilot packet, source extract, native execution proof, or independent witness result.
