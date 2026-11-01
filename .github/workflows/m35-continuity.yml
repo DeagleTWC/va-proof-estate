@@ -1,0 +1,26 @@
+name: M35 Proof Estate Continuity
+on:
+  push:
+    paths:
+      - 'milestones/**'
+      - 'proofs/**'
+      - 'examiner/**'
+      - 'scripts/validate_m34_continuity.py'
+      - '.github/workflows/m35-continuity.yml'
+  pull_request:
+    paths:
+      - 'milestones/**'
+      - 'proofs/**'
+      - 'examiner/**'
+      - 'scripts/validate_m34_continuity.py'
+      - '.github/workflows/m35-continuity.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  continuity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify public continuity index and linked carriers
+        run: python3 scripts/validate_m34_continuity.py
