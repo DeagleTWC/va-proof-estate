@@ -57,7 +57,11 @@ class PublicReleaseIdentityTests(unittest.TestCase):
 
     def test_foundation_page_cannot_use_stale_release(self):
         path = self.root / "foundation.html"
-        s = path.read_text(encoding="utf-8").replace("WEBSITE RELEASE 2.2", "RELEASE 2.0")
+        s = path.read_text(encoding="utf-8")
+        current = json.loads((self.root / "proof-estate-manifest.json").read_text(encoding="utf-8"))["release"]
+        label = f"WEBSITE RELEASE {current}"
+        self.assertIn(label, s, "Test must mutate the actual current release")
+        s = s.replace(label, "RELEASE 0.0", 1)
         path.write_text(s, encoding="utf-8")
         self.assertTrue(any("foundation.html lacks" in x for x in validate(self.root)))
 
