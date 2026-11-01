@@ -5,7 +5,7 @@
   "published": "2026-11-01",
   "scope": "V.A.-only native claim and public examination estate; separately labeled synthetic examiner, public True-Zero category primer, and prospective KCD Program A physical proof register (not native V.A. evidence).",
   "mainFile": "index.html",
-  "mainFileSHA256": "2707e265fd91399aaf62f0edb304e4a0e86d8852791893aec38e34341de0d3f2",
+  "mainFileSHA256": "474fe8f855e2a35e46e9971ac316c4c3a6dba9b3e2c591b76ed02a41641906b8",
   "publicEvidenceStatus": "DECLARED",
   "evidenceStatusVocabulary": [
     "DECLARED",
@@ -206,6 +206,13 @@
       "indexSourceCommit": "a5894401a95c8e9fdf002f17f9eff6d606734bda"
     }
   ],
-  "currentIndexSourceCommit": "35d1a0de8fd68d4752b7774f0e160163720dcda2",
-  "releaseHistoryVerification": "git show <pinned commit>:index.html SHA-256 must equal archived manifest digest; current pinned commit must equal released index digest; no network or source disclosure"
+  "currentIndexSourceCommit": "0a99b5852288f02403a4ce5f807f3832e906331c",
+  "releaseHistoryVerification": "git show <pinned commit>:index.html SHA-256 must equal archived manifest digest; current pinned commit must equal released index digest; no network or source disclosure",
+  "releaseCorrection": {
+    "release": "2.3",
+    "kind": "immediate correction before validation",
+    "reason": "Two inline formal-record identity strings contained an accidental bracket; repaired and checksum recomputed",
+    "previousInvalidIndexCommit": "35d1a0de8fd68d4752b7774f0e160163720dcda2",
+    "validated": false
+  }
 }
