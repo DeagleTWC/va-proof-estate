@@ -61,3 +61,7 @@ jobs:
         run: python3 scripts/validate_static_public_safety.py
       - name: Test negative controls for external runtime calls and uploads
         run: python3 scripts/test_validate_static_public_safety.py
+      - name: Verify scientific-cycle handoff and dated evidence snapshot scope
+        run: python3 scripts/validate_scientific_cycle_consistency.py
+      - name: Test stale HOLD and false-scientific-promotion negative controls
+        run: python3 scripts/test_validate_scientific_cycle_consistency.py
