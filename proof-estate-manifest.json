@@ -1,11 +1,11 @@
 {
   "site": "V.A. — The Proof Estate",
-  "release": "2.1",
-  "edition": "03",
+  "release": "2.2",
+  "edition": "04",
   "published": "2026-11-01",
   "scope": "V.A.-only native claim and public examination estate; separately labeled synthetic examiner, public True-Zero category primer, and prospective KCD Program A physical proof register (not native V.A. evidence).",
   "mainFile": "index.html",
-  "mainFileSHA256": "30dd04af6f4c032d959812bd872be9026672d56c77ceee9967f86bbb438e79bf",
+  "mainFileSHA256": "cb970f26b80b0b31de8d514e27279fd135944513001a7467c8d5a12464d84e80",
   "publicEvidenceStatus": "DECLARED",
   "evidenceStatusVocabulary": [
     "DECLARED",
@@ -84,10 +84,12 @@
     "versionIdentityRecord": "proofs/VERSION-IDENTITY.md"
   },
   "versionDisambiguation": {
-    "publicationRelease": "2.0",
+    "publicationRelease": "2.2",
     "historicalDeployBuild": "V1.2 (April 2026)",
     "scientificRecordEdition": "v1.2.3 (July 2026)",
-    "syntheticExaminerFixture": "VA-AD-001/SPEC-1.0"
+    "syntheticExaminerFixture": "VA-AD-001/SPEC-1.0",
+    "publicationEdition": "04",
+    "challengePacketSchema": "VA-CHALLENGE-2.0 (stable format; distinct from website release)"
   },
   "nativeV12EvidenceGate": "proofs/V12-EVIDENCE-STATUS.json",
   "nativeV12ExaminationRoute": "proofs/V12-REVIEW.md",
@@ -166,10 +168,10 @@
     "physicalEvidencePromotion": false
   },
   "previousWebsiteRelease": {
-    "release": "2.0",
-    "edition": "02",
-    "mainFileSHA256": "531250a456b46bc1b6917c44b3ff6e02c00ac0062fe5fb730a5c63b67247996d",
-    "publicationDate": "2026-10-23",
+    "release": "2.1",
+    "edition": "03",
+    "mainFileSHA256": "30dd04af6f4c032d959812bd872be9026672d56c77ceee9967f86bbb438e79bf",
+    "publicationDate": "2026-11-01",
     "preservedInGitHistory": true
   },
   "publicContinuityRoutes": {
@@ -178,5 +180,19 @@
     "documentationIndex": "milestones/M33-EVIDENCE-CONTINUITY.json",
     "scientificCycleRecord": "proofs/SCIENTIFIC-CYCLE-CURRENT.json",
     "scope": "Public navigation and provenance only; does not independently validate NEW-K runtime or certify external physical effects."
-  }
+  },
+  "releaseHistory": [
+    {
+      "release": "2.0",
+      "edition": "02",
+      "publicationDate": "2026-10-23",
+      "mainFileSHA256": "531250a456b46bc1b6917c44b3ff6e02c00ac0062fe5fb730a5c63b67247996d"
+    },
+    {
+      "release": "2.1",
+      "edition": "03",
+      "publicationDate": "2026-11-01",
+      "mainFileSHA256": "30dd04af6f4c032d959812bd872be9026672d56c77ceee9967f86bbb438e79bf"
+    }
+  ]
 }
