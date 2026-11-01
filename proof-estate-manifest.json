@@ -1,11 +1,11 @@
 {
   "site": "V.A. — The Proof Estate",
-  "release": "2.0",
-  "edition": "02",
-  "published": "2026-10-23",
+  "release": "2.1",
+  "edition": "03",
+  "published": "2026-11-01",
   "scope": "V.A.-only native claim and public examination estate; separately labeled synthetic examiner, public True-Zero category primer, and prospective KCD Program A physical proof register (not native V.A. evidence).",
   "mainFile": "index.html",
-  "mainFileSHA256": "531250a456b46bc1b6917c44b3ff6e02c00ac0062fe5fb730a5c63b67247996d",
+  "mainFileSHA256": "30dd04af6f4c032d959812bd872be9026672d56c77ceee9967f86bbb438e79bf",
   "publicEvidenceStatus": "DECLARED",
   "evidenceStatusVocabulary": [
     "DECLARED",
@@ -164,5 +164,19 @@
     "status": "OPEN_FOR_EXTERNAL_CANDIDATES__NO_INDEPENDENT_WITNESS_ATTACHED",
     "nativeEvidencePromotion": false,
     "physicalEvidencePromotion": false
+  },
+  "previousWebsiteRelease": {
+    "release": "2.0",
+    "edition": "02",
+    "mainFileSHA256": "531250a456b46bc1b6917c44b3ff6e02c00ac0062fe5fb730a5c63b67247996d",
+    "publicationDate": "2026-10-23",
+    "preservedInGitHistory": true
+  },
+  "publicContinuityRoutes": {
+    "homeSection": "index.html#evidence-continuity",
+    "historicalSourceCrosswalk": "proofs/HISTORICAL-PILOT-CARRIER-CROSSWALK.md",
+    "documentationIndex": "milestones/M33-EVIDENCE-CONTINUITY.json",
+    "scientificCycleRecord": "proofs/SCIENTIFIC-CYCLE-CURRENT.json",
+    "scope": "Public navigation and provenance only; does not independently validate NEW-K runtime or certify external physical effects."
   }
 }
