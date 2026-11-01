@@ -172,7 +172,8 @@
     "edition": "03",
     "mainFileSHA256": "30dd04af6f4c032d959812bd872be9026672d56c77ceee9967f86bbb438e79bf",
     "publicationDate": "2026-11-01",
-    "preservedInGitHistory": true
+    "preservedInGitHistory": true,
+    "indexSourceCommit": "e3f3172dcc4d8c24a526d4d57a64b9a5834af21a"
   },
   "publicContinuityRoutes": {
     "homeSection": "index.html#evidence-continuity",
@@ -186,13 +187,17 @@
       "release": "2.0",
       "edition": "02",
       "publicationDate": "2026-10-23",
-      "mainFileSHA256": "531250a456b46bc1b6917c44b3ff6e02c00ac0062fe5fb730a5c63b67247996d"
+      "mainFileSHA256": "531250a456b46bc1b6917c44b3ff6e02c00ac0062fe5fb730a5c63b67247996d",
+      "indexSourceCommit": "233a488642bb99941905dfd056399c0c019f11cd"
     },
     {
       "release": "2.1",
       "edition": "03",
       "publicationDate": "2026-11-01",
-      "mainFileSHA256": "30dd04af6f4c032d959812bd872be9026672d56c77ceee9967f86bbb438e79bf"
+      "mainFileSHA256": "30dd04af6f4c032d959812bd872be9026672d56c77ceee9967f86bbb438e79bf",
+      "indexSourceCommit": "e3f3172dcc4d8c24a526d4d57a64b9a5834af21a"
     }
-  ]
+  ],
+  "currentIndexSourceCommit": "a5894401a95c8e9fdf002f17f9eff6d606734bda",
+  "releaseHistoryVerification": "git show <pinned commit>:index.html SHA-256 must equal archived manifest digest; current pinned commit must equal released index digest; no network or source disclosure"
 }
