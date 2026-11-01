@@ -70,3 +70,7 @@ Start with the [V12 native evidence release path](proofs/V12-REVIEW.md), then th
 ## Scientific milestone continuation — M31
 
 The [M30 Proof Estate and Deagle expansion](milestones/M30-PROOF-ESTATE-DEAGLE-EXPANSION.md) is retained. [M31 public milestone navigation and Deagle continuity](milestones/M31-PUBLIC-NAVIGATION-AND-DEAGLE-CONTINUITY.md) provides the advancement ledger and direct routes to the existing proof registers and examination surfaces. Completed historical formalization and pilot work are not reset by this navigation update; public attachment status and evidence provenance remain independently identified.
+
+## M32 — Deagle continuity integration
+
+[M32 public integration record](milestones/M32-DEAGLE-CONTINUITY-INTEGRATION.md) connects the [cross-bot continuity JSON](milestones/DEAGLE-TRUE-ZERO-BOT-CONTINUITY.json), [M30](milestones/M30-PROOF-ESTATE-DEAGLE-EXPANSION.md), [M31](milestones/M31-PUBLIC-NAVIGATION-AND-DEAGLE-CONTINUITY.md), and the existing public evidence registers. Completed formalization and historical pilots remain in the project record without silently changing evidence-carrier classifications. The next requested advancement is M33.
