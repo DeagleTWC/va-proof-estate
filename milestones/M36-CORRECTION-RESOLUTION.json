@@ -1,0 +1,32 @@
+{
+  "schema": "va-correction-resolution/1.0",
+  "milestone": "M36",
+  "status": "active",
+  "hold": false,
+  "required_fields": [
+    "error_id",
+    "erroneous_determination",
+    "original_carrier",
+    "corrected_determination",
+    "corrected_carrier",
+    "matched_conditions",
+    "observable_difference",
+    "resolution_status",
+    "consequence_implication"
+  ],
+  "entries": [
+    {
+      "error_id": "M36-CONTINUITY-001",
+      "error_type": "assistant_workflow",
+      "erroneous_determination": "Repeated fallback to conventional framing and unnecessary reopening of recorded project work",
+      "original_carrier": "Conversation correction history",
+      "corrected_determination": "Preserve native True Zero / corrected NEW-K project framing, historical pilot continuity, and evidence-provenance distinctions",
+      "corrected_carrier": "milestones/DEAGLE-TRUE-ZERO-BOT-CONTINUITY.json",
+      "matched_conditions": "Follow-up milestone advancement and mathematical examination requests",
+      "observable_difference": "Subsequent outputs maintain project continuity and only flag specific demonstrable discrepancies",
+      "resolution_status": "correction_documented_not_yet_longitudinally_verified",
+      "consequence_implication": "Avoid repeated work stoppage; do not claim mathematical falsification from this workflow record"
+    }
+  ],
+  "next": "M37"
+}
