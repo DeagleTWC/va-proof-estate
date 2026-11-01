@@ -1,16 +1,16 @@
 # M31 — Public Milestone Navigation and Deagle Continuity
 
 **Date:** 2026-10-31  
-**Milestone:** M31 — active  
+**Milestone:** M31 — public documentation/navigation record (not a new scientific proof)  
 **Foundation:** Native True Zero / corrected NEW-K; completed formalization preserved.
 
 ## Milestone navigation
 
 | Record | Public entry | Continuity |
 |---|---|---|
-| M27 | [M30 continuity record](M30-PROOF-ESTATE-DEAGLE-EXPANSION.md) | Administrative HOLD lifted; earlier work preserved |
-| M28 | [M30 continuity record](M30-PROOF-ESTATE-DEAGLE-EXPANSION.md) | Analytical and engineering examinations retained, without resetting prior pilots |
-| M29 | [M30 continuity record](M30-PROOF-ESTATE-DEAGLE-EXPANSION.md) | Scientific advancement sequence continued |
+| M27 | [Dated scientific cycle control](../proofs/SCIENTIFIC-CYCLE-CURRENT.json) | October 28 chat-change pause cleared; distinct dated external-effect gate remains source-scoped |
+| M28 | [Dated scientific cycle control](../proofs/SCIENTIFIC-CYCLE-CURRENT.json) | Open for scientific work in the dated October 28 control; no certified new result inferred |
+| M29 | [Later continuity statement](M30-PROOF-ESTATE-DEAGLE-EXPANSION.md) | Later progression reported; original M29 result carrier not attached by this navigation record |
 | M30 | [M30 expansion](M30-PROOF-ESTATE-DEAGLE-EXPANSION.md) | Proof Estate and Deagle expansion record committed |
 | **M31** | **This document** | Public milestone navigation and evidence-provenance continuity |
 
@@ -20,6 +20,7 @@
 - [Claim-to-carrier register](../proofs/CLAIM-TO-CARRIER.json)
 - [Public source inventory](../proofs/SOURCE-ESTATE.md)
 - [Historical pilot release controls](../proofs/PILOT-EVIDENCE-RELEASE.md)
+- [Public historical pilot carrier crosswalk](../proofs/HISTORICAL-PILOT-CARRIER-CROSSWALK.md)
 - [Independent examiner](../examiner/README.md)
 - [Native V12 examination route](../proofs/V12-REVIEW.md)
 
