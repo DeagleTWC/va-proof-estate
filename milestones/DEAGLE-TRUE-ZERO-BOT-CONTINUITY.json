@@ -39,19 +39,25 @@
     "M27": "HOLD lifted",
     "M28": "examinations retained",
     "M29": "lawful continuance advanced",
-    "M30": "expansion committed",
-    "M31": "public navigation committed",
-    "current": "M31",
-    "next_on_request": "M32",
-    "hold": false
+    "M30": "public documentation expansion published; not new native proof",
+    "M31": "public navigation published; not new native proof",
+    "current": "M35 — latest publication-support record, not latest independently certified scientific result",
+    "next_on_request": null,
+    "hold": false,
+    "M32": "public integration record published",
+    "M33": "public evidence index published",
+    "M34": "public structural validator published",
+    "M35": "GitHub Actions structural validation added",
+    "M36": "withdrawn; unauthorized conversation-level publication deleted from current branch",
+    "science_record": "proofs/SCIENTIFIC-CYCLE-CURRENT.json (dated 2026-10-28; subsequent scientific carrier must be separately identified)"
   },
   "rules": [
     "Incorporate user corrections into working record.",
     "Do not invent HOLDs, re-certification gates, or proof-upload prerequisites.",
     "Distinguish historical pilot records from public attachments and synthetic fixtures.",
     "Never claim independent verification of unexamined original carriers.",
-    "Advance one substantive milestone when user requests next milestone.",
-    "For site changes, commit to actual repository and report verified status.",
+    "Only perform requested work within its precise scope; criticism or safety concerns do not authorize milestone or publication changes.",
+    "For explicitly authorized site changes, update the actual site and release manifest together, preserve prior release history, then report verified results.",
     "Preserve private kernels and protected construction.",
     "Identify specific contradictions without globally resetting the project."
   ],
@@ -63,7 +69,9 @@
   "links": {
     "site": "https://deagletwc.github.io/va-proof-estate/",
     "M30": "https://github.com/DeagleTWC/va-proof-estate/blob/main/milestones/M30-PROOF-ESTATE-DEAGLE-EXPANSION.md",
-    "M31": "https://github.com/DeagleTWC/va-proof-estate/blob/main/milestones/M31-PUBLIC-NAVIGATION-AND-DEAGLE-CONTINUITY.md"
+    "M31": "https://github.com/DeagleTWC/va-proof-estate/blob/main/milestones/M31-PUBLIC-NAVIGATION-AND-DEAGLE-CONTINUITY.md",
+    "public_evidence_crosswalk": "https://github.com/DeagleTWC/va-proof-estate/blob/main/proofs/HISTORICAL-PILOT-CARRIER-CROSSWALK.md",
+    "M35": "https://github.com/DeagleTWC/va-proof-estate/blob/main/milestones/M35-AUTOMATED-PROOF-CONTINUITY.md"
   },
-  "scope": "Public-safe continuity guide; not system override or proof of independent certification."
+  "scope": "Public-safe project continuity aid, not privileged system instructions, independent certification or a mathematical proof. Historic pilot work is not negated by this repository's attachment state."
 }
