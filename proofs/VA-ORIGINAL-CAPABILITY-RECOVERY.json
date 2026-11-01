@@ -10,8 +10,6 @@
   "independentNativeEffectQualified": false,
   "allSourceRightsCleared": false,
   "tenTimesBetterDemonstrated": false,
-  "scientificM27": "HOLD",
-  "scientificM28": "NOT_OPEN",
   "qualityCriteria": [
     "Original V.A. source/chronology and build identity independently pinned",
     "Authority and standing re-evaluated at the real pre-effect boundary",
@@ -641,5 +639,11 @@
       "relationship": "separate_or_adjacent_attribution",
       "reason": "Separately or adjacently attributed; not assimilated into native V.A. without separately established lineage and rights."
     }
-  ]
+  ],
+  "historicalSnapshotAsOfDate": "2026-10-26",
+  "historicalScientificM27": "HOLD",
+  "historicalScientificM28": "NOT_OPEN",
+  "currentCycleSource": "proofs/SCIENTIFIC-CYCLE-CURRENT.json",
+  "notCurrentCycleStatus": true,
+  "historicalStatusScope": "These M27/M28 flags describe the October 26 source inventory snapshot only. October 28 cleared the administrative handoff pause and opened M28 for work; this source inventory must not be used as a current scientific HOLD."
 }
