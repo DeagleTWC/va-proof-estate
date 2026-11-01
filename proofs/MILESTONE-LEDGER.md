@@ -1,6 +1,6 @@
 # Proof Estate — Milestone Ledger
 
-**Current publication context (2026-11-01):** DeagleTWC V.A. Proof Estate website release 2.4 / edition 06. Historical site release 2.0 / edition 02 retains its original checksum and commit history. This does not change the dated scientific-cycle record.
+**Current publication context (2026-11-01):** DeagleTWC V.A. Proof Estate website release 2.5 / edition 07. Historical site release 2.0 / edition 02 retains its original checksum and commit history. This does not change the dated scientific-cycle record.
 
 **CURRENT SCIENTIFIC CYCLE — OCTOBER 28, 2026: M27 CHAT-CHANGE MARKER CLEARED; M28 ACTIVE FOR WORK.** This is an operational transition, not independent effect certification or an M28 scientific PASS. Controlling [current machine-readable cycle](SCIENTIFIC-CYCLE-CURRENT.json) and [next-action continuation](SCIENTIFIC-CYCLE-CONTINUE.md). The dated October 26 source subset review remains preserved, never an archive-wide assertion that evidence does not exist.
 **Continuity basis:** 2026-10-25 original checkpoint `30f729a364982a2f1eb753858f0c9d9cc94c0efb`; historical-lineage publication merged at `a3948e4f01d2cfe044f7aa6bb9d8fd74f1b7fe64`. Use the live branch for current commit identity.
