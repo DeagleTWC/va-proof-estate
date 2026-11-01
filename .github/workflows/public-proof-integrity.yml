@@ -156,7 +156,7 @@ jobs:
           printf 'checked_out_commit=%s\nrun_id=%s\nrun_attempt=%s\n' "$GITHUB_SHA" "$GITHUB_RUN_ID" "$GITHUB_RUN_ATTEMPT" > "$RUNNER_TEMP/va-public-proof-integrity/run-identity.txt"
           python --version > "$RUNNER_TEMP/va-public-proof-integrity/python-version.txt" 2>&1
           sha256sum scripts/preflight_m27_target_readback.py scripts/test_preflight_m27_target_readback.py scripts/verify_va_original_capability_recovery.mjs scripts/test_va_original_capability_recovery.mjs proofs/VA-ORIGINAL-CAPABILITY-RECOVERY.json proofs/END-TO-END-ESTATE-REGISTER.json > "$RUNNER_TEMP/va-public-proof-integrity/public-source-sha256.txt"
-          printf '{"schema":"va-public-ci-observation/1.0","nativeVAEvidence":false,"externalEffectsQualified":false,"independentWitnessQualified":false,"M27Completed":false,"M28Authorized":false,"publicationAuthorized":false}\n' > "$RUNNER_TEMP/va-public-proof-integrity/standing-ceiling.json"
+          printf '{"schema":"va-public-ci-observation/1.1","recordType":"PUBLIC_CI_OBSERVATION_NOT_SCIENTIFIC_CYCLE_CONTROL","nativeVAEvidence":false,"externalEffectsQualified":false,"independentWitnessQualified":false,"M27CompletedByThisCI":false,"M28AuthorizedByThisCI":false,"datedOperationalCycleSource":"proofs/SCIENTIFIC-CYCLE-CURRENT.json","M28OpenedForResearchInDatedRecord":true,"publicationAuthorized":false}\n' > "$RUNNER_TEMP/va-public-proof-integrity/standing-ceiling.json"
       - name: Enforce M27 v1.2 original-readback evidence consistency (synthetic checks only)
         run: |
           set -o pipefail
