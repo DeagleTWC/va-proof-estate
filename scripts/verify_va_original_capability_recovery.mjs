@@ -10,7 +10,7 @@ const source = JSON.parse(readFileSync(resolve(repoRoot, 'proofs/END-TO-END-ESTA
 function validatePortfolio(m,src){
 const err=[];const fail=x=>err.push(x);
 if(m.schema!=="va-original-capability-recovery/1.0"||m.canonicalEstate!=="DeagleTWC/va-proof-estate")fail("schema_or_estate");
-if(m.scientificM27!=="HOLD"||m.scientificM28!=="NOT_OPEN")fail("milestone_promotion");
+if(m.historicalScientificM27!=="HOLD"||m.historicalScientificM28!=="NOT_OPEN"||m.historicalSnapshotAsOfDate!=="2026-10-26"||m.currentCycleSource!=="proofs/SCIENTIFIC-CYCLE-CURRENT.json"||m.notCurrentCycleStatus!==true)fail("historical_snapshot_tampering");
 if(m.nativeVABuildMigrated!==false||m.independentNativeEffectQualified!==false||m.allSourceRightsCleared!==false||m.tenTimesBetterDemonstrated!==false)fail("false_standing");
 if(!Array.isArray(m.qualityCriteria)||m.qualityCriteria.length!==10)fail("ten_quality_requirements");
 if(!Array.isArray(m.lanes)||m.lanes.length!==10)fail("lane_count");
