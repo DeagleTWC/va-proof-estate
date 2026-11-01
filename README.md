@@ -66,3 +66,7 @@ Start with the [V12 native evidence release path](proofs/V12-REVIEW.md), then th
 ### Native V12 evidence gate
 
 [Inspect the exact V12 public proof status](proofs/V12-EVIDENCE-STATUS.json). The [native V12 release standard](proofs/V12-REVIEW.md) and [automated promotion verifier](scripts/validate_v12_evidence.py) reject declarations of observed native runs or independent reproduction until the original release-cleared carriers, digests, observations and qualified examiner records are actually attached. This does not assess what may exist in protected custody.
+
+## Scientific milestone continuation — M31
+
+The [M30 Proof Estate and Deagle expansion](milestones/M30-PROOF-ESTATE-DEAGLE-EXPANSION.md) is retained. [M31 public milestone navigation and Deagle continuity](milestones/M31-PUBLIC-NAVIGATION-AND-DEAGLE-CONTINUITY.md) provides the advancement ledger and direct routes to the existing proof registers and examination surfaces. Completed historical formalization and pilot work are not reset by this navigation update; public attachment status and evidence provenance remain independently identified.
