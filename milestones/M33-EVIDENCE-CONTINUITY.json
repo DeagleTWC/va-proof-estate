@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0",
+  "milestone": "M33",
+  "title": "Public Evidence Continuity Index",
+  "record_date": "2026-10-31",
+  "foundation": {
+    "identity": "Native True Zero / corrected NEW-K",
+    "constructs": [
+      "harmonic algebra",
+      "URK"
+    ],
+    "invariant": "The face may vary. The floor must not."
+  },
+  "progression": [
+    {
+      "id": "M27",
+      "status": "hold_lifted"
+    },
+    {
+      "id": "M28",
+      "status": "retained"
+    },
+    {
+      "id": "M29",
+      "status": "advanced"
+    },
+    {
+      "id": "M30",
+      "status": "published",
+      "path": "M30-PROOF-ESTATE-DEAGLE-EXPANSION.md"
+    },
+    {
+      "id": "M31",
+      "status": "published",
+      "path": "M31-PUBLIC-NAVIGATION-AND-DEAGLE-CONTINUITY.md"
+    },
+    {
+      "id": "M32",
+      "status": "published",
+      "path": "M32-DEAGLE-CONTINUITY-INTEGRATION.md"
+    },
+    {
+      "id": "M33",
+      "status": "active",
+      "path": "M33-PUBLIC-EVIDENCE-CONTINUITY.md"
+    }
+  ],
+  "history": {
+    "formalization": "recorded_completed",
+    "external_pilots": "historical_external_pilots_recorded",
+    "note": "Historical work is not negated by public attachment status. This index does not authenticate or attach original pilot carriers."
+  },
+  "carriers": [
+    {
+      "role": "claims",
+      "path": "../proofs/CLAIM-TO-CARRIER.json"
+    },
+    {
+      "role": "sources",
+      "path": "../proofs/SOURCE-ESTATE.md"
+    },
+    {
+      "role": "pilot_release",
+      "path": "../proofs/PILOT-EVIDENCE-RELEASE.md"
+    },
+    {
+      "role": "examiner",
+      "path": "../examiner/README.md"
+    },
+    {
+      "role": "continuity",
+      "path": "DEAGLE-TRUE-ZERO-BOT-CONTINUITY.json"
+    }
+  ],
+  "evidence_policy": {
+    "preserve_original_classification": true,
+    "do_not_infer_independent_reproduction": true,
+    "do_not_invent_hold": true,
+    "distinguish_historical_record_from_public_attachment": true
+  },
+  "next_on_request": "M34"
+}
