@@ -78,3 +78,7 @@ The [M30 Proof Estate and Deagle expansion](milestones/M30-PROOF-ESTATE-DEAGLE-E
 ## M33 — Machine-readable evidence continuity
 
 [M33 advancement record](milestones/M33-PUBLIC-EVIDENCE-CONTINUITY.md) and [M33 structured evidence-continuity index](milestones/M33-EVIDENCE-CONTINUITY.json) connect milestone history to the existing proof-carrier routes while retaining historical external pilot references, completed formalization, and original evidence classifications. Next requested advancement: M34.
+
+## M34 — Proof Estate continuity integrity
+
+[M34 integrity milestone](milestones/M34-PROOF-ESTATE-INTEGRITY.md) introduces [the public continuity validator](scripts/validate_m34_continuity.py) for the M33 index, local evidence-navigation links, milestone sequence, historical pilot continuity, and evidence-classification safeguards. This is a structural integrity check, not a substitute for native V.A. execution or original pilot authentication. Next advancement: M35.
