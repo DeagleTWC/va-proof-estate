@@ -8,6 +8,7 @@ on:
       - 'examiner/**'
       - 'scripts/validate_m34_continuity.py'
       - 'scripts/test_validate_m34_continuity.py'
+      - 'scripts/validate_public_links.py'
       - 'README.md'
       - 'index.html'
       - 'proof-estate-manifest.json'
@@ -19,6 +20,7 @@ on:
       - 'examiner/**'
       - 'scripts/validate_m34_continuity.py'
       - 'scripts/test_validate_m34_continuity.py'
+      - 'scripts/validate_public_links.py'
       - 'README.md'
       - 'index.html'
       - 'proof-estate-manifest.json'
@@ -37,3 +39,5 @@ jobs:
         run: python3 scripts/validate_m34_continuity.py
       - name: Run tampering and stale-status negative controls
         run: python3 scripts/test_validate_m34_continuity.py
+      - name: Verify local links and anchor navigation across public estate
+        run: python3 scripts/validate_public_links.py
