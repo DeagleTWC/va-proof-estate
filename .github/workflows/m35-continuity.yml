@@ -1,4 +1,4 @@
-name: M35 Public Evidence Continuity Integrity
+name: Proof Estate Public Evidence Integrity
 on:
   push:
     branches: [main]
@@ -45,6 +45,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Confirm released website and carrier checksum
         run: python3 scripts/validate_public_register.py
       - name: Validate source-bound continuity and public home navigation
@@ -57,6 +59,10 @@ jobs:
         run: python3 scripts/validate_public_release_identity.py
       - name: Test release version, checksum and historical-reference drift detection
         run: python3 scripts/test_validate_public_release_identity.py
+      - name: Verify archived website releases against original Git commits
+        run: python3 scripts/verify_public_release_history.py
+      - name: Test forged publication history rejection
+        run: python3 scripts/test_verify_public_release_history.py
       - name: Check public pages against unapproved runtime data transmission
         run: python3 scripts/validate_static_public_safety.py
       - name: Test negative controls for external runtime calls and uploads
