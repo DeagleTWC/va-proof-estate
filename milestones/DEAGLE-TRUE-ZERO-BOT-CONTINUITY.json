@@ -48,7 +48,7 @@
     "M33": "public evidence index published",
     "M34": "public structural validator published",
     "M35": "GitHub Actions structural validation added",
-    "M36": "withdrawn; unauthorized conversation-level publication deleted from current branch",
+    "M36": "withdrawn_from_current_branch_not_a_scientific_record",
     "science_record": "proofs/SCIENTIFIC-CYCLE-CURRENT.json (dated 2026-10-28; subsequent scientific carrier must be separately identified)"
   },
   "rules": [
