@@ -5,7 +5,7 @@
   "published": "2026-11-01",
   "scope": "V.A.-only native claim and public examination estate; separately labeled synthetic examiner, public True-Zero category primer, and prospective KCD Program A physical proof register (not native V.A. evidence).",
   "mainFile": "index.html",
-  "mainFileSHA256": "61126e7e60433d3c96da7d852376bac19b16f4b7d7abcea8f01688f39e88d5aa",
+  "mainFileSHA256": "922d07c35e9cda9c0813dde40fc482a3e3961faa866f657f61a939956257ea20",
   "publicEvidenceStatus": "DECLARED",
   "evidenceStatusVocabulary": [
     "DECLARED",
@@ -217,26 +217,14 @@
       "indexSourceCommit": "0a99b5852288f02403a4ce5f807f3832e906331c"
     }
   ],
-  "currentIndexSourceCommit": "d172652a9210662024b3a0b856ff31aeabbd95bc",
+  "currentIndexSourceCommit": "6e55d6cde91106870dafa0e366b24b707e83727a",
   "releaseHistoryVerification": "git show <pinned commit>:index.html SHA-256 must equal archived manifest digest; current pinned commit must equal released index digest; no network or source disclosure",
   "releaseCorrection": {
-    "release": "2.3",
-    "kind": "immediate correction before validation",
-    "reason": "Two inline formal-record identity strings contained an accidental bracket; repaired and checksum recomputed",
-    "previousInvalidIndexCommit": "35d1a0de8fd68d4752b7774f0e160163720dcda2",
-    "validation": {
-      "status": "PASSED_FOR_RECORDED_COMMIT",
-      "checkedCommit": "c55026dad452227d18a442b8ec68be38ff6ae019",
-      "checks": [
-        "static public JavaScript syntax",
-        "formal source-to-carrier traceability",
-        "public website checksum",
-        "release-lineage integrity",
-        "historical status continuity"
-      ],
-      "workflow": "https://github.com/DeagleTWC/va-proof-estate/actions/runs/41299003858",
-      "scope": "GitHub CI structural/software validation only; not proof of protected NEW-K mathematical correctness or native execution"
-    }
+    "release": "2.4",
+    "kind": "corrected preflight syntax",
+    "incorrectSiteIndexCommit": "d172652a9210662024b3a0b856ff31aeabbd95bc",
+    "reason": "Seven duplicate separators inserted during claim source metadata edit; corrected before CI certification",
+    "status": "AWAITING_CI"
   },
   "sourceOriginalPdfSHA256Provenance": {
     "register": "proofs/SOURCE-ESTATE.md",
