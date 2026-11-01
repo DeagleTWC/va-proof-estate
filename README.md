@@ -82,3 +82,7 @@ The [M30 Proof Estate and Deagle expansion](milestones/M30-PROOF-ESTATE-DEAGLE-E
 ## M34 — Proof Estate continuity integrity
 
 [M34 integrity milestone](milestones/M34-PROOF-ESTATE-INTEGRITY.md) introduces [the public continuity validator](scripts/validate_m34_continuity.py) for the M33 index, local evidence-navigation links, milestone sequence, historical pilot continuity, and evidence-classification safeguards. This is a structural integrity check, not a substitute for native V.A. execution or original pilot authentication. Next advancement: M35.
+
+## M35 — Automated continuity monitoring
+
+[M35 milestone](milestones/M35-AUTOMATED-PROOF-CONTINUITY.md) adds a [GitHub Actions continuity workflow](.github/workflows/m35-continuity.yml) to run the [M34 structural validator](scripts/validate_m34_continuity.py) when public milestone, evidence, or examiner records change. A documentation check does not replace native evidence or reopen completed historical pilots. Next milestone on request: M36.
