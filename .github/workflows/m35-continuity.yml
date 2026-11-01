@@ -74,6 +74,10 @@ jobs:
         run: python3 scripts/verify_public_release_history.py
       - name: Test forged publication history rejection
         run: python3 scripts/test_verify_public_release_history.py
+      - name: Verify original public image bytes and preview dimensions
+        run: python3 scripts/validate_public_media_assets.py
+      - name: Reject tampered published media and missing icons
+        run: python3 scripts/test_validate_public_media_assets.py
       - name: Check public pages against unapproved runtime data transmission
         run: python3 scripts/validate_static_public_safety.py
       - name: Test negative controls for external runtime calls and uploads
