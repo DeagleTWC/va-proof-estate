@@ -33,9 +33,9 @@ jobs:
           python-version: '3.11'
       - name: Retrieve original public freeze comment
         env:
-          GH_TOKEN: \${{ github.token }}
-          COMMENT_ID: \${{ inputs.freeze_comment_id }}
-          REPOSITORY: \${{ github.repository }}
+          GH_TOKEN: ${{ github.token }}
+          COMMENT_ID: ${{ inputs.freeze_comment_id }}
+          REPOSITORY: ${{ github.repository }}
         run: |
           case "$COMMENT_ID" in
             ''|*[!0-9]*) echo "Comment ID must be numeric"; exit 1;;
@@ -43,12 +43,12 @@ jobs:
           gh api "repos/$REPOSITORY/issues/comments/$COMMENT_ID" > /tmp/cycle001-comment.json
       - name: Generate challenge after public freeze
         env:
-          ACTOR: \${{ github.actor }}
-          RUN_ID: \${{ github.run_id }}
-          ATTEMPT: \${{ github.run_attempt }}
-          HEAD_SHA: \${{ github.sha }}
-          FAMILY: \${{ inputs.family }}
-          ROUNDS: \${{ inputs.rounds }}
+          ACTOR: ${{ github.actor }}
+          RUN_ID: ${{ github.run_id }}
+          ATTEMPT: ${{ github.run_attempt }}
+          HEAD_SHA: ${{ github.sha }}
+          FAMILY: ${{ inputs.family }}
+          ROUNDS: ${{ inputs.rounds }}
         run: |
           python examiner/issue_cycle_challenge.py issue \
             --comment-json /tmp/cycle001-comment.json \
@@ -59,7 +59,7 @@ jobs:
       - name: Preserve issued synthetic challenge and source snapshot
         uses: actions/upload-artifact@v4
         with:
-          name: cycle-001-challenge-\${{ github.run_id }}-attempt-\${{ github.run_attempt }}
+          name: cycle-001-challenge-${{ github.run_id }}-attempt-${{ github.run_attempt }}
           path: |
             /tmp/cycle001-issuance/freeze.json
             /tmp/cycle001-issuance/challenge.json
@@ -69,8 +69,8 @@ jobs:
           retention-days: 90
       - name: Post issued challenge reference on Cycle 001
         env:
-          GH_TOKEN: \${{ github.token }}
-          REPOSITORY: \${{ github.repository }}
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
         run: |
           gh api -X POST "repos/$REPOSITORY/issues/1/comments" \
             -F body=@/tmp/cycle001-issuance/issue-reply.md

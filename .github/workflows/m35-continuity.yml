@@ -19,6 +19,7 @@ on:
       - '*.jpg'
       - '*.svg'
       - '.github/workflows/m35-continuity.yml'
+      - '.github/workflows/issue-fresh-challenge.yml'
   pull_request:
     paths:
       - 'milestones/**'
@@ -37,6 +38,7 @@ on:
       - '*.jpg'
       - '*.svg'
       - '.github/workflows/m35-continuity.yml'
+      - '.github/workflows/issue-fresh-challenge.yml'
   workflow_dispatch:
 permissions:
   contents: read
@@ -50,6 +52,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
+      - name: Check manual challenge syntax without triggering external issue comments
+        run: python3 scripts/test_issue_fresh_workflow_expressions.py
       - name: Parse public inline JavaScript without executing the site
         run: node scripts/validate_public_script_syntax.mjs
       - name: Test malformed-script and external-script negative controls
