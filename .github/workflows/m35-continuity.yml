@@ -47,6 +47,17 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Parse public inline JavaScript without executing the site
+        run: node scripts/validate_public_script_syntax.mjs
+      - name: Test malformed-script and external-script negative controls
+        run: node scripts/test_validate_public_script_syntax.mjs
+      - name: Confirm formal NEW-K source identities and exported claim carrier hashes
+        run: python3 scripts/validate_public_formal_sources.py
+      - name: Test original-PDF hash and formal-claim evidence boundaries
+        run: python3 scripts/test_validate_public_formal_sources.py
       - name: Confirm released website and carrier checksum
         run: python3 scripts/validate_public_register.py
       - name: Validate source-bound continuity and public home navigation
