@@ -49,7 +49,9 @@
     "M34": "public structural validator published",
     "M35": "GitHub Actions structural validation added",
     "M36": "withdrawn_from_current_branch_not_a_scientific_record",
-    "science_record": "proofs/SCIENTIFIC-CYCLE-CURRENT.json (dated 2026-10-28; subsequent scientific carrier must be separately identified)"
+    "science_record": "proofs/SCIENTIFIC-CYCLE-CURRENT.json (dated October 28 M28 opening; not a reset of later progression)",
+    "later_scientific_reference": "milestones/M33-EVIDENCE-CONTINUITY.json (M29 later progression reported; primary result not attached by this index)",
+    "no_reversion_to_M28_from_older_snapshot": true
   },
   "rules": [
     "Incorporate user corrections into working record.",

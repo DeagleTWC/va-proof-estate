@@ -36,6 +36,11 @@ def validate(root=ROOT):
     if record.get("M28ScientificResultCertifiedByThisRecord") is not False:
         errors.append("Dated M28 opening incorrectly promoted to certified scientific result")
 
+    dated = cycle.get("datedSnapshotInterpretation", {})
+    if dated.get("controlDate") != "2026-10-28" or dated.get("latestScientificStageDeterminedByThisFile") is not False:
+        errors.append("Dated October 28 control wrongly presented as current-stage evidence")
+    if dated.get("doNotResetLaterRecordedProgression") is not True or dated.get("noAutomaticHold") is not True:
+        errors.append("Later scientific work is not protected against dated-snapshot reset")
     snapshot = load("proofs/VA-ORIGINAL-CAPABILITY-RECOVERY.json")
     if snapshot.get("historicalSnapshotAsOfDate") != "2026-10-26":
         errors.append("Historical source inventory date missing")
@@ -70,6 +75,16 @@ def validate(root=ROOT):
             row.get("classification") != "publication_support_not_empirical_result"
         ):
             errors.append(f"{row['id']} publication activity promoted without empirical carrier")
+    timeline = index.get("datedScientificReconciliation", {})
+    later = timeline.get("laterM29", {})
+    if timeline.get("snapshotAsOf") != "2026-10-28" or later.get("status") != "LATER_PROGRESS_REPORTED":
+        errors.append("M28 dated snapshot and M29 later continuity no longer reconciled")
+    if timeline.get("noResetOfLaterWork") is not True or timeline.get("noNewCertification") is not True:
+        errors.append("M29 progression incorrectly reset or elevated to new proof")
+    if later.get("nativeResultCarrierAttachedByThisIndex") is not False:
+        errors.append("Secondary M29 reference incorrectly promoted to native evidence")
+    if not any(row.get("id") == "M29" and row.get("classification") == "secondary_continuity_reference" for row in rows):
+        errors.append("M29 later secondary reference missing or reclassified")
     return errors
 
 

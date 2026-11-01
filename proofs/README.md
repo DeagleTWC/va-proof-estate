@@ -1,4 +1,4 @@
-**CURRENT SCIENTIFIC CYCLING (OCTOBER 28): M28 ACTIVE; M27 bot-change HOLD CLEARED.** [Controlling operational cycle JSON](SCIENTIFIC-CYCLE-CURRENT.json) · [M28 next-action continuation](SCIENTIFIC-CYCLE-CONTINUE.md). The old M27 independent effect/non-effect source-subset qualification remains a dated, bounded review question; it is NOT a cycle stop, archive-wide absence finding, or an independent scientific PASS. No protected sources released.
+**DATED SCIENTIFIC CYCLING (OCTOBER 28): M28 OPEN FOR WORK; M27 bot-change HOLD CLEARED. The later M29 progression reference is preserved separately; this snapshot does not restore a HOLD.** [Controlling operational cycle JSON](SCIENTIFIC-CYCLE-CURRENT.json) · [M28 next-action continuation](SCIENTIFIC-CYCLE-CONTINUE.md). The old M27 independent effect/non-effect source-subset qualification remains a dated, bounded review question; it is NOT a cycle stop, archive-wide absence finding, or an independent scientific PASS. No protected sources released.
 
 ## Newly recovered original TMU-referenced staging proof attachments
 

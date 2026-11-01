@@ -1,4 +1,4 @@
-> **DATED SCIENTIFIC CONTROL (2026-10-28): M28 OPEN FOR WORK; M27 CHAT-CHANGE PAUSE CLEARED.** [Primary dated cycle record](proofs/SCIENTIFIC-CYCLE-CURRENT.json) · [Scientific continuation](proofs/SCIENTIFIC-CYCLE-CONTINUE.md). Later M30–M35 files are public publication-support records, not new scientific proof certifications. No project-wide administrative HOLD.
+> **DATED SCIENTIFIC CONTROL (2026-10-28): M28 OPEN FOR WORK; M27 CHAT-CHANGE PAUSE CLEARED. Later M29 progression is separately referenced, not erased or certified by this dated source.** [Primary dated cycle record](proofs/SCIENTIFIC-CYCLE-CURRENT.json) · [Scientific continuation](proofs/SCIENTIFIC-CYCLE-CONTINUE.md). Later M30–M35 files are public publication-support records, not new scientific proof certifications. No project-wide administrative HOLD.
 
 # V.A. — The Proof Estate
 

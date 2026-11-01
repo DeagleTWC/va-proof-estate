@@ -45,5 +45,17 @@
     "proofs/CONTINUATION-CHECKPOINT-2026-10-26.md",
     "proofs/M27-EXTERNAL-CONSEQUENCE-SOURCE-STATUS-2026-10-26.md",
     "proofs/M27-TARGET-READBACK-PREFLIGHT.md"
-  ]
+  ],
+  "datedSnapshotInterpretation": {
+    "controlDate": "2026-10-28",
+    "controlAtThatDate": "M27_CHAT_CHANGE_PAUSE_CLEARED_M28_OPEN_FOR_WORK",
+    "laterPublicContinuity": "milestones/M33-EVIDENCE-CONTINUITY.json",
+    "laterM29Reference": "SECONDARY_REPORTED_PROGRESSION_NOT_CERTIFIED_BY_THIS_OCTOBER_28_RECORD",
+    "latestScientificStageDeterminedByThisFile": false,
+    "latestScientificStageInferred": "NOT_DETERMINED_FROM_DATED_PUBLIC_FILES",
+    "doNotResetLaterRecordedProgression": true,
+    "doNotPromoteUnattachedEmpiricalEvidence": true,
+    "noAutomaticHold": true,
+    "explanation": "This is the October 28 recorded state, not an instruction to revert later M29-or-beyond work to M28. Later work must be interpreted from its own dated source; this record neither proves nor disproves later M29."
+  }
 }

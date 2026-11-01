@@ -1,6 +1,6 @@
-# Scientific cycling — M27 handoff released, M28 ACTIVE
+# Dated scientific cycling — October 28 M27 handoff released, M28 opened
 
-**Current as of October 28, 2026. This is the controlling *operational* continuation record for the scientific milestone sequence.** It does not rename or overwrite completed scientific results, replace original source bytes, open the public Cycle 001 challenge, or certify a scientific theorem or independent effect.
+**Operational snapshot dated October 28, 2026 — not a standing instruction to revert later M29-or-beyond work to M28.** The [later M29 reference and its evidence class](../milestones/M33-EVIDENCE-CONTINUITY.json) are preserved. The latest source-specific stage is not established by these public metadata records alone. It does not rename or overwrite completed scientific results, replace original source bytes, open the public Cycle 001 challenge, or certify a scientific theorem or independent effect.
 
 ## The interpretation error is closed
 
@@ -8,9 +8,9 @@
 
 The October 26 source review remains a **separate historical review conclusion about one inspected subset**: independent protected-target effect and non-effect were not qualified *from those particular sources*. It is not a new blocker to continued scientific work and it is not an archive-wide negative finding. Do not relabel it as independent proof or erase it.
 
-## Current executable instruction
+## October 28 executable instruction (date-scoped)
 
-**NEXT SCIENTIFIC WORK: M28 — ACTIVE.**
+**AS OF OCTOBER 28: M28 was opened for work.** This applies to that checkpoint; later M29 progression is not invalidated.
 
 Carry the previously established M1–M26 and M27 source results forward. Do not repeat the old M27 v1.2 tool build, 39 synthetic checks, email inventory or connected v1/v2 latency reconciliation.
 
@@ -20,7 +20,7 @@ If an authentic original cannot be accessed, record the *specific source and acq
 
 ## Scientific movement and proof certification are distinct
 
-| Subject | Current disposition |
+| Subject | Disposition at October 28 checkpoint |
 | --- | --- |
 | M27 chat-transition marker | **CLEARED / HANDOFF RELEASED** |
 | Prior M1–M26 engineering and source history | **PRESERVED — no retroactive restart** |
@@ -30,13 +30,13 @@ If an authentic original cannot be accessed, record the *specific source and acq
 | M29 and beyond | **CONTINUE after a substantive M28 result, with later subjects grounded in actual work rather than invented in advance** |
 | Protected NEW-K operators, customer/source construction | **REMAIN PRIVATE; no release is authorized by this note** |
 
-The live cycle state is [SCIENTIFIC-CYCLE-CURRENT.json](SCIENTIFIC-CYCLE-CURRENT.json). Where older dated notes say “M28 NOT OPEN,” they describe *their historical checkpoint* and are superseded for present **operational sequencing** by this newer, expressly authorized state. They do **not** become false evidence of a completed M28 scientific result.
+The October 28 M28 snapshot is [SCIENTIFIC-CYCLE-CURRENT.json](SCIENTIFIC-CYCLE-CURRENT.json). The [later M29 reference](../milestones/M33-EVIDENCE-CONTINUITY.json) is separate and subsequent. Where older dated notes say “M28 NOT OPEN,” they describe *their historical checkpoint* and are superseded for present **operational sequencing** by this newer, expressly authorized state. They do **not** become false evidence of a completed M28 scientific result.
 
 ## Mandatory next-assistant behavior
 
-1. Read the current cycle JSON and continue **M28**, not M27. No request to reauthorize lifting the hold.
+1. Read the October 28 cycle JSON **as a dated snapshot**. Preserve later M29-or-beyond progression where its source carriers support it. Do not automatically revert to M28 or reinstate M27's cleared chat pause.
 2. Carry all frozen originals and scientific results unchanged; current corrected NEW-K / True Zero govern.
-3. Work on the original changed-condition causal consequence relation. Produce a new bounded result or an exact, nonrepeating blocker and switch to other M28 work.
+3. For work scoped to the dated M28 task, follow the original changed-condition consequence relation. For later scientific work, use the corresponding later dated record rather than resetting previous results.
 4. Distinguish science, synthetic checks, historical engineering, operational observations, and independent reproduction.
 5. Proceed to M29+ on actual work. Never create a false PASS, a fabricated run, a retrospective freeze anchor or an unsafe public source transfer.
 

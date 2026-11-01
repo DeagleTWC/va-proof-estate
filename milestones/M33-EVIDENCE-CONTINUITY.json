@@ -115,5 +115,20 @@
     "no_privileged_instructions_or_disclosures": true
   },
   "scope": "Public navigation and evidence-carrier metadata. M30-M35 files are documentation/CI updates, NOT newly certified scientific outcomes.",
-  "last_published_support_milestone": "M35"
+  "last_published_support_milestone": "M35",
+  "datedScientificReconciliation": {
+    "source": "../proofs/SCIENTIFIC-CYCLE-CURRENT.json",
+    "snapshotAsOf": "2026-10-28",
+    "atSnapshot": "M28_OPEN_FOR_WORK_AFTER_M27_CHAT_PAUSE_CLEARED",
+    "laterM29": {
+      "record": "M30-PROOF-ESTATE-DEAGLE-EXPANSION.md",
+      "status": "LATER_PROGRESS_REPORTED",
+      "evidenceClass": "SECONDARY_CONTINUITY_REFERENCE",
+      "nativeResultCarrierAttachedByThisIndex": false
+    },
+    "latestScientificStateFromTheseFiles": "NOT_DETERMINED",
+    "noResetOfLaterWork": true,
+    "noNewCertification": true,
+    "explanation": "The dated M28 control and later M29 reference concern separate moments. Publication updates M30-M35 do not themselves certify scientific results."
+  }
 }

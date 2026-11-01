@@ -69,6 +69,20 @@ class CycleContinuityTests(unittest.TestCase):
         file.write_text(s, encoding="utf-8")
         self.assertTrue(any("unscoped scientific-cycle flags" in x for x in validate(self.root)))
 
+    def test_dated_m28_does_not_reset_later_work(self):
+        self.change_json("proofs/SCIENTIFIC-CYCLE-CURRENT.json",
+                         lambda d: d["datedSnapshotInterpretation"].update({
+                             "doNotResetLaterRecordedProgression": False
+                         }))
+        self.assertTrue(any("dated-snapshot reset" in x for x in validate(self.root)))
+
+    def test_m29_reference_not_promoted_into_native_result(self):
+        self.change_json("milestones/M33-EVIDENCE-CONTINUITY.json",
+                         lambda d: d["datedScientificReconciliation"]["laterM29"].update({
+                             "nativeResultCarrierAttachedByThisIndex": True
+                         }))
+        self.assertTrue(any("incorrectly promoted" in x for x in validate(self.root)))
+
 
 if __name__ == "__main__":
     unittest.main()
