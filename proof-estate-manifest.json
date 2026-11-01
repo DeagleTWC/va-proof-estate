@@ -1,11 +1,11 @@
 {
   "site": "V.A. — The Proof Estate",
-  "release": "2.3",
-  "edition": "05",
+  "release": "2.4",
+  "edition": "06",
   "published": "2026-11-01",
   "scope": "V.A.-only native claim and public examination estate; separately labeled synthetic examiner, public True-Zero category primer, and prospective KCD Program A physical proof register (not native V.A. evidence).",
   "mainFile": "index.html",
-  "mainFileSHA256": "474fe8f855e2a35e46e9971ac316c4c3a6dba9b3e2c591b76ed02a41641906b8",
+  "mainFileSHA256": "61126e7e60433d3c96da7d852376bac19b16f4b7d7abcea8f01688f39e88d5aa",
   "publicEvidenceStatus": "DECLARED",
   "evidenceStatusVocabulary": [
     "DECLARED",
@@ -87,11 +87,11 @@
     "versionIdentityRecord": "proofs/VERSION-IDENTITY.md"
   },
   "versionDisambiguation": {
-    "publicationRelease": "2.3",
+    "publicationRelease": "2.4",
     "historicalDeployBuild": "V1.2 (April 2026)",
     "scientificRecordEdition": "v1.2.3 (July 2026)",
     "syntheticExaminerFixture": "VA-AD-001/SPEC-1.0",
-    "publicationEdition": "05",
+    "publicationEdition": "06",
     "challengePacketSchema": "VA-CHALLENGE-2.0 (stable format; distinct from website release)"
   },
   "nativeV12EvidenceGate": "proofs/V12-EVIDENCE-STATUS.json",
@@ -171,11 +171,11 @@
     "physicalEvidencePromotion": false
   },
   "previousWebsiteRelease": {
-    "release": "2.2",
-    "edition": "04",
+    "release": "2.3",
+    "edition": "05",
     "publicationDate": "2026-11-01",
-    "mainFileSHA256": "cb970f26b80b0b31de8d514e27279fd135944513001a7467c8d5a12464d84e80",
-    "indexSourceCommit": "a5894401a95c8e9fdf002f17f9eff6d606734bda",
+    "mainFileSHA256": "474fe8f855e2a35e46e9971ac316c4c3a6dba9b3e2c591b76ed02a41641906b8",
+    "indexSourceCommit": "0a99b5852288f02403a4ce5f807f3832e906331c",
     "preservedInGitHistory": true
   },
   "publicContinuityRoutes": {
@@ -184,7 +184,8 @@
     "documentationIndex": "milestones/M33-EVIDENCE-CONTINUITY.json",
     "scientificCycleRecord": "proofs/SCIENTIFIC-CYCLE-CURRENT.json",
     "scope": "Public navigation and provenance only; does not independently validate NEW-K runtime or certify external physical effects.",
-    "formalClaimSourceIdentity": "VA-F01 / VA-F02 point to the existing public-safe v1.2.3 transcript and original PDF SHA-256; original PDF bytes and protected NEW-K construction remain withheld"
+    "formalClaimSourceIdentity": "VA-F01 / VA-F02 point to the existing public-safe v1.2.3 transcript and original PDF SHA-256; original PDF bytes and protected NEW-K construction remain withheld",
+    "claimSourceMetadata": "All nine visible native/formal/physical/historical V.A. claim entries identify public transcripts and original recorded PDF digest; public transcript is not original PDF or independent physical proof"
   },
   "releaseHistory": [
     {
@@ -207,9 +208,16 @@
       "publicationDate": "2026-11-01",
       "mainFileSHA256": "cb970f26b80b0b31de8d514e27279fd135944513001a7467c8d5a12464d84e80",
       "indexSourceCommit": "a5894401a95c8e9fdf002f17f9eff6d606734bda"
+    },
+    {
+      "release": "2.3",
+      "edition": "05",
+      "publicationDate": "2026-11-01",
+      "mainFileSHA256": "474fe8f855e2a35e46e9971ac316c4c3a6dba9b3e2c591b76ed02a41641906b8",
+      "indexSourceCommit": "0a99b5852288f02403a4ce5f807f3832e906331c"
     }
   ],
-  "currentIndexSourceCommit": "0a99b5852288f02403a4ce5f807f3832e906331c",
+  "currentIndexSourceCommit": "d172652a9210662024b3a0b856ff31aeabbd95bc",
   "releaseHistoryVerification": "git show <pinned commit>:index.html SHA-256 must equal archived manifest digest; current pinned commit must equal released index digest; no network or source disclosure",
   "releaseCorrection": {
     "release": "2.3",
