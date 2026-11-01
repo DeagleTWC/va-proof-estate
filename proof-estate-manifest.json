@@ -213,6 +213,18 @@
     "kind": "immediate correction before validation",
     "reason": "Two inline formal-record identity strings contained an accidental bracket; repaired and checksum recomputed",
     "previousInvalidIndexCommit": "35d1a0de8fd68d4752b7774f0e160163720dcda2",
-    "validated": false
+    "validation": {
+      "status": "PASSED_FOR_RECORDED_COMMIT",
+      "checkedCommit": "c55026dad452227d18a442b8ec68be38ff6ae019",
+      "checks": [
+        "static public JavaScript syntax",
+        "formal source-to-carrier traceability",
+        "public website checksum",
+        "release-lineage integrity",
+        "historical status continuity"
+      ],
+      "workflow": "https://github.com/DeagleTWC/va-proof-estate/actions/runs/41299003858",
+      "scope": "GitHub CI structural/software validation only; not proof of protected NEW-K mathematical correctness or native execution"
+    }
   }
 }
