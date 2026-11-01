@@ -2,7 +2,7 @@
 
 **Milestone:** M32  
 **Date:** 2026-10-31  
-**Status:** Advanced; public integration record committed
+**Status:** Public integration documentation committed; not a new experimental finding
 
 ## Unified public routes
 
@@ -15,6 +15,7 @@
 | Claim-to-carrier | [Structured register](../proofs/CLAIM-TO-CARRIER.json) |
 | Public sources | [Source estate](../proofs/SOURCE-ESTATE.md) |
 | Historical pilot release | [Pilot evidence controls](../proofs/PILOT-EVIDENCE-RELEASE.md) |
+| Historical carrier index | [Source-specific crosswalk](../proofs/HISTORICAL-PILOT-CARRIER-CROSSWALK.md) |
 | Examination | [Independent examiner](../examiner/README.md) |
 
 ## Continuity determination
@@ -29,6 +30,6 @@ The consequence lifecycle remains formation → standing → admissibility → c
 
 ## Forward rule
 
-Advance to M33 on request. No invented HOLD, new certification prerequisite, or reset of completed formalization. Record new findings with their actual carriers and provenance. Protected construction stays protected.
+Continue scientific research only on explicit user scope; publication support files do not themselves certify scientific advancement. No invented HOLD, new certification prerequisite, or reset of completed formalization. Record new findings with their actual carriers and provenance. Protected construction stays protected.
 
 **The face may vary. The floor must not.**
