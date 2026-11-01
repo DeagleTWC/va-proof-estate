@@ -73,7 +73,10 @@
   "sourceToClaimMap": "proofs/SOURCE-TO-CLAIM-MAP.md",
   "originalSourcePdfCopiesInRepository": 0,
   "sourceOriginalPdfSHA256": {
-    "The_Shift_Public_Proof_Path_Final_v2(1).pdf": "dd5a626e4ed5efafb49e70e987f61f151e220d793e35b96c55b05e59dc426ca6"
+    "The_Shift_Public_Proof_Path_Final_v2(1).pdf": "dd5a626e4ed5efafb49e70e987f61f151e220d793e35b96c55b05e59dc426ca6",
+    "THE_SHIFT_PUBLIC_PROOF_ESTATE_AND_CHALLENGE_STANDARD_V1(2).pdf": "3d355e5e67e1205833a39275c51370481bacfec234fd90aa73178683e137e5a6",
+    "True_Zero_Consequence_Systems_Science_Public_Record_v1_2_3_RELEASE(6).pdf": "b629104cbcb541f26e5b78a3468f0621ac759ed1f46da2903ad95315fa4b759c",
+    "Public_Independent_Reviewer_Qualification_Standard_v1.0(2).pdf": "a3a8dd7c9fd3fda44a62eba1c6ae116344853faef94ae4db5a76902e5681f9c9"
   },
   "systemVersionReference": {
     "designation": "V12",
@@ -226,5 +229,12 @@
       "workflow": "https://github.com/DeagleTWC/va-proof-estate/actions/runs/41299003858",
       "scope": "GitHub CI structural/software validation only; not proof of protected NEW-K mathematical correctness or native execution"
     }
+  },
+  "sourceOriginalPdfSHA256Provenance": {
+    "register": "proofs/SOURCE-ESTATE.md",
+    "historicalIdentityRecordDate": "2026-10-22",
+    "publishedDigestCount": 4,
+    "originalPDFCopiesPubliclyAttached": 0,
+    "scope": "Transcribed from existing original-PDF digest register. This edit does not remeasure absent original PDFs, independently certify their contents, disclose protected NEW-K, or change mathematical standing."
   }
 }
