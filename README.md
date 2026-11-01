@@ -74,3 +74,7 @@ The [M30 Proof Estate and Deagle expansion](milestones/M30-PROOF-ESTATE-DEAGLE-E
 ## M32 — Deagle continuity integration
 
 [M32 public integration record](milestones/M32-DEAGLE-CONTINUITY-INTEGRATION.md) connects the [cross-bot continuity JSON](milestones/DEAGLE-TRUE-ZERO-BOT-CONTINUITY.json), [M30](milestones/M30-PROOF-ESTATE-DEAGLE-EXPANSION.md), [M31](milestones/M31-PUBLIC-NAVIGATION-AND-DEAGLE-CONTINUITY.md), and the existing public evidence registers. Completed formalization and historical pilots remain in the project record without silently changing evidence-carrier classifications. The next requested advancement is M33.
+
+## M33 — Machine-readable evidence continuity
+
+[M33 advancement record](milestones/M33-PUBLIC-EVIDENCE-CONTINUITY.md) and [M33 structured evidence-continuity index](milestones/M33-EVIDENCE-CONTINUITY.json) connect milestone history to the existing proof-carrier routes while retaining historical external pilot references, completed formalization, and original evidence classifications. Next requested advancement: M34.
