@@ -40,7 +40,7 @@ The [read-only registry integrity gate](../scripts/verify_va_original_capability
 
 Work must be rebuilt from **authorized V.A. originals** and independently tested; no lateral copy, brand relabeling, reverse attribution or claimed third-party rights. Where an originating V.A. source is not available to inspect, its exact origin or implementation is **NOT ESTABLISHED** by this index, and private source material must be recovered under custody rather than reconstructed from later products.
 
-**Scientific milestone sequence remains M27 HOLD / M28 NOT OPEN.** [M27 examiner](M27-TARGET-READBACK-PREFLIGHT.md) and [signed witness preflight](INDEPENDENT-OBSERVATION-QUALIFICATION.md) are validation tooling, not native proof. Next engineering release needs genuine original-source and physical/external consequence qualification, not another stage number.
+**Historical inventory snapshot (October 26): M27 evidence review HOLD / M28 not yet open at that date. This is not the current scientific-cycle status.** The [October 28 controlling cycle record](SCIENTIFIC-CYCLE-CURRENT.json) clears the chat-change pause and opens M28 for work; it does not certify a new empirical result. [M27 examiner](M27-TARGET-READBACK-PREFLIGHT.md) and [signed witness preflight](INDEPENDENT-OBSERVATION-QUALIFICATION.md) are validation tooling, not native proof. Next engineering release needs genuine original-source and physical/external consequence qualification, not another stage number.
 
 **Use:** `node scripts/verify_va_original_capability_recovery.mjs`, then `node scripts/test_va_original_capability_recovery.mjs`.
 
