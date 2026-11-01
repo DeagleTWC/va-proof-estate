@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "milestone": "M33",
-  "title": "Public Evidence Continuity Index",
-  "record_date": "2026-10-31",
+  "title": "Historical progression and publication-support index",
+  "record_date": "2026-11-01",
   "foundation": {
     "identity": "Native True Zero / corrected NEW-K",
     "constructs": [
@@ -14,35 +14,57 @@
   "progression": [
     {
       "id": "M27",
-      "status": "hold_lifted"
+      "status": "historic_chat_change_pause_lifted",
+      "record": "../proofs/SCIENTIFIC-CYCLE-CURRENT.json",
+      "classification": "dated_scientific_cycle_control"
     },
     {
       "id": "M28",
-      "status": "retained"
+      "status": "opened_for_research_in_2026-10-28_control",
+      "record": "../proofs/SCIENTIFIC-CYCLE-CURRENT.json",
+      "classification": "dated_scientific_cycle_control"
     },
     {
       "id": "M29",
-      "status": "advanced"
+      "status": "later_progression_referenced_no_primary_result_attached_here",
+      "record": "M30-PROOF-ESTATE-DEAGLE-EXPANSION.md",
+      "classification": "secondary_continuity_reference"
     },
     {
       "id": "M30",
-      "status": "published",
-      "path": "M30-PROOF-ESTATE-DEAGLE-EXPANSION.md"
+      "status": "published_publication_support_only",
+      "path": "M30-PROOF-ESTATE-DEAGLE-EXPANSION.md",
+      "classification": "publication_support_not_empirical_result"
     },
     {
       "id": "M31",
-      "status": "published",
-      "path": "M31-PUBLIC-NAVIGATION-AND-DEAGLE-CONTINUITY.md"
+      "status": "published_publication_support_only",
+      "path": "M31-PUBLIC-NAVIGATION-AND-DEAGLE-CONTINUITY.md",
+      "classification": "publication_support_not_empirical_result"
     },
     {
       "id": "M32",
-      "status": "published",
-      "path": "M32-DEAGLE-CONTINUITY-INTEGRATION.md"
+      "status": "published_publication_support_only",
+      "path": "M32-DEAGLE-CONTINUITY-INTEGRATION.md",
+      "classification": "publication_support_not_empirical_result"
     },
     {
       "id": "M33",
-      "status": "active",
-      "path": "M33-PUBLIC-EVIDENCE-CONTINUITY.md"
+      "status": "published_publication_support_only",
+      "path": "M33-PUBLIC-EVIDENCE-CONTINUITY.md",
+      "classification": "publication_support_not_empirical_result"
+    },
+    {
+      "id": "M34",
+      "status": "published_publication_support_only",
+      "path": "M34-PROOF-ESTATE-INTEGRITY.md",
+      "classification": "publication_support_not_empirical_result"
+    },
+    {
+      "id": "M35",
+      "status": "published_publication_support_only",
+      "path": "M35-AUTOMATED-PROOF-CONTINUITY.md",
+      "classification": "publication_support_not_empirical_result"
     }
   ],
   "history": {
@@ -70,13 +92,28 @@
     {
       "role": "continuity",
       "path": "DEAGLE-TRUE-ZERO-BOT-CONTINUITY.json"
+    },
+    {
+      "role": "historical_pilot_crosswalk",
+      "path": "../proofs/HISTORICAL-PILOT-CARRIER-CROSSWALK.md"
+    },
+    {
+      "role": "dated_research_cycle",
+      "path": "../proofs/SCIENTIFIC-CYCLE-CURRENT.json"
+    },
+    {
+      "role": "native_public_evidence_status",
+      "path": "../proofs/V12-EVIDENCE-STATUS.json"
     }
   ],
   "evidence_policy": {
     "preserve_original_classification": true,
     "do_not_infer_independent_reproduction": true,
     "do_not_invent_hold": true,
-    "distinguish_historical_record_from_public_attachment": true
+    "distinguish_historical_record_from_public_attachment": true,
+    "no_scientific_completion_inferred_from_publication_milestone": true,
+    "no_privileged_instructions_or_disclosures": true
   },
-  "next_on_request": "M34"
+  "scope": "Public navigation and evidence-carrier metadata. M30-M35 files are documentation/CI updates, NOT newly certified scientific outcomes.",
+  "last_published_support_milestone": "M35"
 }
