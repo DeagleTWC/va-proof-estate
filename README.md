@@ -1,4 +1,4 @@
-> **CURRENT SCIENTIFIC WORK: M28 ACTIVE; M27 BOT-CHANGE HOLD CLEARED (2026-10-28).** [Current operational cycle](proofs/SCIENTIFIC-CYCLE-CURRENT.json) · [Resume M28 and beyond](proofs/SCIENTIFIC-CYCLE-CONTINUE.md). This is not a new independent-effect proof or public release of protected source.
+> **DATED SCIENTIFIC CONTROL (2026-10-28): M28 OPEN FOR WORK; M27 CHAT-CHANGE PAUSE CLEARED.** [Primary dated cycle record](proofs/SCIENTIFIC-CYCLE-CURRENT.json) · [Scientific continuation](proofs/SCIENTIFIC-CYCLE-CONTINUE.md). Later M30–M35 files are public publication-support records, not new scientific proof certifications. No project-wide administrative HOLD.
 
 # V.A. — The Proof Estate
 
@@ -10,9 +10,9 @@
 
 **[Open the live V.A. Proof Estate](https://deagletwc.github.io/va-proof-estate/)**
 
-**CONTINUE FROM EXISTING WORK — [NEW-K operational continuity checkpoint](proofs/CONTINUATION-CHECKPOINT-2026-10-26.md).** Corrected NEW-K and True Zero remain the mathematical floor. Cycle 001 infrastructure is built and awaiting a genuine external participant freeze. The M27 HOLD below is a separate external-effect evidence qualification gate, **not** a project-wide stop or permission to restart, renumber, or replace the original work.
+**[NEW-K operational continuity checkpoint](proofs/CONTINUATION-CHECKPOINT-2026-10-26.md).** Corrected NEW-K and True Zero remain the mathematical foundation. The previously recorded M27 external-effect evidence qualification question applies only to its dated, inspected source subset. It is **not** an administrative project-wide HOLD or permission to restart or erase the historical work.
 
-**Current scientific sequence:** **M27 HOLD; M28 not opened.** [Milestone standing and numbering crosswalk](proofs/MILESTONE-LEDGER.md) explains the separate public-stage and research histories. The [M27 original-source status](proofs/M27-EXTERNAL-CONSEQUENCE-SOURCE-STATUS-2026-10-26.md) remains bounded; [v1.2 readback verification tooling](proofs/M27-TARGET-READBACK-PREFLIGHT.md), its out-of-packet freeze-anchor requirement and 39 synthetic tests do **not** establish qualified external consequences. “M27.1” was informal tooling-version shorthand, not an achieved additional scientific milestone.
+**Dated scientific status:** [October 28 cycle record](proofs/SCIENTIFIC-CYCLE-CURRENT.json) opens M28 for work and clears the M27 chat-change pause; it does not certify a new empirical result. [Milestone/numbering crosswalk](proofs/MILESTONE-LEDGER.md) preserves the distinct research and public-site histories. The [October 26 M27 source-subset finding](proofs/M27-EXTERNAL-CONSEQUENCE-SOURCE-STATUS-2026-10-26.md) is a separate, bounded external-effect qualification issue, not an all-research stop. [Original readback v1.2](proofs/M27-TARGET-READBACK-PREFLIGHT.md) and its 39 synthetic tests do not claim qualified external physical effects.
 
 **[Original TMU-referenced historical staging evidence recovered](proofs/TMU-ORIGINAL-STAGING-EVIDENCE-REVIEW.md)** — seven unchanged original source attachments, including two source receipt records, have been privately reconciled. The original saved logs record five PASS gates and both permitted/refused paths. External live TMU operation, qualified independent effect measurement and public disclosure rights remain separate gates. [Bounded record](proofs/TMU-RECORDED-STAGING-CANDIDATE.json).
 
@@ -23,7 +23,7 @@
 The central public atlas spans the full foundational-to-consequence examination path, with **12 stages**, an evidence-classified review of genuine original historic engineering and recorded workflows, **39 source references** from the Kamanaka public estate classified by relationship and attribution, eight applied consequence corridors, and direct Bring Your Own Workflow and independent qualification entries. Deagle is the comprehensive public examination *home*; original independently authored and downstream sources keep their own source rights, custody and standing. See [full technical narrative](proofs/FULL-END-TO-END-REPRESENTATION.md) and [machine-readable end-to-end register](proofs/END-TO-END-ESTATE-REGISTER.json).
 
 
-This is the publication carrier for the V.A.-only evidence-routing interface, **release 2.0 / edition 02**. **The custodian identifies the current V.A. system as V12**; website release numbering is separate from system versioning. See the [version-identity and evidence-lineage record](proofs/VERSION-IDENTITY.md). V12 native build receipts are not attached to this public release. The code repository hosts the static website; the evidence interface is the public entry point.
+This is the publication carrier for the V.A.-only evidence-routing interface, **website release 2.1 / edition 03** (prior release 2.0 / edition 02 preserved by original SHA-256 in the manifest and Git history). **The custodian identifies the current V.A. system as V12**; website release numbering is separate from system versioning. See the [version-identity and evidence-lineage record](proofs/VERSION-IDENTITY.md). V12 native build receipts are not attached to this public release. The code repository hosts the static website; the evidence interface is the public entry point.
 
 The site differentiates **DECLARED**, **OBSERVED**, and **INDEPENDENTLY REPRODUCED** evidence, contains a claim-to-carrier ledger, native bounded witness specifications, separate physical-apparatus evidence requirements and negative controls, versioned challenge identities, and local one-click public-safe JSON challenge packets.
 
@@ -67,22 +67,12 @@ Start with the [V12 native evidence release path](proofs/V12-REVIEW.md), then th
 
 [Inspect the exact V12 public proof status](proofs/V12-EVIDENCE-STATUS.json). The [native V12 release standard](proofs/V12-REVIEW.md) and [automated promotion verifier](scripts/validate_v12_evidence.py) reject declarations of observed native runs or independent reproduction until the original release-cleared carriers, digests, observations and qualified examiner records are actually attached. This does not assess what may exist in protected custody.
 
-## Scientific milestone continuation — M31
+## Published documentation-support records (M30–M35)
 
-The [M30 Proof Estate and Deagle expansion](milestones/M30-PROOF-ESTATE-DEAGLE-EXPANSION.md) is retained. [M31 public milestone navigation and Deagle continuity](milestones/M31-PUBLIC-NAVIGATION-AND-DEAGLE-CONTINUITY.md) provides the advancement ledger and direct routes to the existing proof registers and examination surfaces. Completed historical formalization and pilot work are not reset by this navigation update; public attachment status and evidence provenance remain independently identified.
+The following are **public navigation, provenance, and CI-maintenance deliverables**, not six new scientific experiments or independent physical certifications: [M30 expansion](milestones/M30-PROOF-ESTATE-DEAGLE-EXPANSION.md), [M31 navigation](milestones/M31-PUBLIC-NAVIGATION-AND-DEAGLE-CONTINUITY.md), [M32 integration](milestones/M32-DEAGLE-CONTINUITY-INTEGRATION.md), [M33 continuity index](milestones/M33-EVIDENCE-CONTINUITY.json), [M34 structural validation](scripts/validate_m34_continuity.py), and [M35 CI workflow](.github/workflows/m35-continuity.yml).
 
-## M32 — Deagle continuity integration
+The [historical pilot/original-carrier crosswalk](proofs/HISTORICAL-PILOT-CARRIER-CROSSWALK.md) links each publicly identifiable lane to an actual source. Original historical work and formalization remain recorded; absent public original carrier attachments must not be converted into assertions that historical work never occurred. Neither can a source mention automatically certify a measured effect.
 
-[M32 public integration record](milestones/M32-DEAGLE-CONTINUITY-INTEGRATION.md) connects the [cross-bot continuity JSON](milestones/DEAGLE-TRUE-ZERO-BOT-CONTINUITY.json), [M30](milestones/M30-PROOF-ESTATE-DEAGLE-EXPANSION.md), [M31](milestones/M31-PUBLIC-NAVIGATION-AND-DEAGLE-CONTINUITY.md), and the existing public evidence registers. Completed formalization and historical pilots remain in the project record without silently changing evidence-carrier classifications. The next requested advancement is M33.
+**Repair record, November 1, 2026:** the assistant-generated M36 conversation-level files were withdrawn from the current branch because they were outside the authorized scientific publication scope. The machine-readable bot handoff no longer asserts an automatic next milestone. The actual [homepage evidence routes](index.html#evidence-continuity) were connected in website release 2.1 with the [updated public manifest](proof-estate-manifest.json); the previous release checksum remains recorded. See [source-status and release boundaries](proofs/PILOT-EVIDENCE-RELEASE.md).
 
-## M33 — Machine-readable evidence continuity
-
-[M33 advancement record](milestones/M33-PUBLIC-EVIDENCE-CONTINUITY.md) and [M33 structured evidence-continuity index](milestones/M33-EVIDENCE-CONTINUITY.json) connect milestone history to the existing proof-carrier routes while retaining historical external pilot references, completed formalization, and original evidence classifications. Next requested advancement: M34.
-
-## M34 — Proof Estate continuity integrity
-
-[M34 integrity milestone](milestones/M34-PROOF-ESTATE-INTEGRITY.md) introduces [the public continuity validator](scripts/validate_m34_continuity.py) for the M33 index, local evidence-navigation links, milestone sequence, historical pilot continuity, and evidence-classification safeguards. This is a structural integrity check, not a substitute for native V.A. execution or original pilot authentication. Next advancement: M35.
-
-## M35 — Automated continuity monitoring
-
-[M35 milestone](milestones/M35-AUTOMATED-PROOF-CONTINUITY.md) adds a [GitHub Actions continuity workflow](.github/workflows/m35-continuity.yml) to run the [M34 structural validator](scripts/validate_m34_continuity.py) when public milestone, evidence, or examiner records change. A documentation check does not replace native evidence or reopen completed historical pilots. Next milestone on request: M36.
+**Governing floor:** Native True Zero / corrected NEW-K, Elements Basin and URK. The public navigation files do not redefine the computational mathematics. **The face may vary. The floor must not.**
