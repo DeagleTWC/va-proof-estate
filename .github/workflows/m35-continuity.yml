@@ -1,11 +1,16 @@
-name: M35 Proof Estate Continuity
+name: M35 Public Evidence Continuity Integrity
 on:
   push:
+    branches: [main]
     paths:
       - 'milestones/**'
       - 'proofs/**'
       - 'examiner/**'
       - 'scripts/validate_m34_continuity.py'
+      - 'scripts/test_validate_m34_continuity.py'
+      - 'README.md'
+      - 'index.html'
+      - 'proof-estate-manifest.json'
       - '.github/workflows/m35-continuity.yml'
   pull_request:
     paths:
@@ -13,6 +18,10 @@ on:
       - 'proofs/**'
       - 'examiner/**'
       - 'scripts/validate_m34_continuity.py'
+      - 'scripts/test_validate_m34_continuity.py'
+      - 'README.md'
+      - 'index.html'
+      - 'proof-estate-manifest.json'
       - '.github/workflows/m35-continuity.yml'
   workflow_dispatch:
 permissions:
@@ -22,5 +31,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Verify public continuity index and linked carriers
+      - name: Confirm released website and carrier checksum
+        run: python3 scripts/validate_public_register.py
+      - name: Validate source-bound continuity and public home navigation
         run: python3 scripts/validate_m34_continuity.py
+      - name: Run tampering and stale-status negative controls
+        run: python3 scripts/test_validate_m34_continuity.py
