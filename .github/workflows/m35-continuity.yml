@@ -6,28 +6,36 @@ on:
       - 'milestones/**'
       - 'proofs/**'
       - 'examiner/**'
-      - 'scripts/validate_m34_continuity.py'
-      - 'scripts/test_validate_m34_continuity.py'
-      - 'scripts/validate_public_links.py'
-      - 'scripts/validate_public_release_identity.py'
-      - 'scripts/test_validate_public_release_identity.py'
+      - 'category/**'
+      - 'kcd/**'
+      - 'challenges/**'
+      - 'scripts/**'
       - 'README.md'
       - 'index.html'
+      - 'foundation.html'
+      - 'end-to-end.html'
       - 'proof-estate-manifest.json'
+      - '*.png'
+      - '*.jpg'
+      - '*.svg'
       - '.github/workflows/m35-continuity.yml'
   pull_request:
     paths:
       - 'milestones/**'
       - 'proofs/**'
       - 'examiner/**'
-      - 'scripts/validate_m34_continuity.py'
-      - 'scripts/test_validate_m34_continuity.py'
-      - 'scripts/validate_public_links.py'
-      - 'scripts/validate_public_release_identity.py'
-      - 'scripts/test_validate_public_release_identity.py'
+      - 'category/**'
+      - 'kcd/**'
+      - 'challenges/**'
+      - 'scripts/**'
       - 'README.md'
       - 'index.html'
+      - 'foundation.html'
+      - 'end-to-end.html'
       - 'proof-estate-manifest.json'
+      - '*.png'
+      - '*.jpg'
+      - '*.svg'
       - '.github/workflows/m35-continuity.yml'
   workflow_dispatch:
 permissions:
@@ -49,3 +57,7 @@ jobs:
         run: python3 scripts/validate_public_release_identity.py
       - name: Test release version, checksum and historical-reference drift detection
         run: python3 scripts/test_validate_public_release_identity.py
+      - name: Check public pages against unapproved runtime data transmission
+        run: python3 scripts/validate_static_public_safety.py
+      - name: Test negative controls for external runtime calls and uploads
+        run: python3 scripts/test_validate_static_public_safety.py
