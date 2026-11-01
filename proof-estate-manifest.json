@@ -1,11 +1,11 @@
 {
   "site": "V.A. — The Proof Estate",
-  "release": "2.4",
-  "edition": "06",
+  "release": "2.5",
+  "edition": "07",
   "published": "2026-11-01",
   "scope": "V.A.-only native claim and public examination estate; separately labeled synthetic examiner, public True-Zero category primer, and prospective KCD Program A physical proof register (not native V.A. evidence).",
   "mainFile": "index.html",
-  "mainFileSHA256": "922d07c35e9cda9c0813dde40fc482a3e3961faa866f657f61a939956257ea20",
+  "mainFileSHA256": "38677db692c3997e88dcdca2de4ad67755a0184d6eab804dd13b5e4f8adf1579",
   "publicEvidenceStatus": "DECLARED",
   "evidenceStatusVocabulary": [
     "DECLARED",
@@ -87,11 +87,11 @@
     "versionIdentityRecord": "proofs/VERSION-IDENTITY.md"
   },
   "versionDisambiguation": {
-    "publicationRelease": "2.4",
+    "publicationRelease": "2.5",
     "historicalDeployBuild": "V1.2 (April 2026)",
     "scientificRecordEdition": "v1.2.3 (July 2026)",
     "syntheticExaminerFixture": "VA-AD-001/SPEC-1.0",
-    "publicationEdition": "06",
+    "publicationEdition": "07",
     "challengePacketSchema": "VA-CHALLENGE-2.0 (stable format; distinct from website release)"
   },
   "nativeV12EvidenceGate": "proofs/V12-EVIDENCE-STATUS.json",
@@ -171,11 +171,11 @@
     "physicalEvidencePromotion": false
   },
   "previousWebsiteRelease": {
-    "release": "2.3",
-    "edition": "05",
+    "release": "2.4",
+    "edition": "06",
     "publicationDate": "2026-11-01",
-    "mainFileSHA256": "474fe8f855e2a35e46e9971ac316c4c3a6dba9b3e2c591b76ed02a41641906b8",
-    "indexSourceCommit": "0a99b5852288f02403a4ce5f807f3832e906331c",
+    "mainFileSHA256": "922d07c35e9cda9c0813dde40fc482a3e3961faa866f657f61a939956257ea20",
+    "indexSourceCommit": "6e55d6cde91106870dafa0e366b24b707e83727a",
     "preservedInGitHistory": true
   },
   "publicContinuityRoutes": {
@@ -185,7 +185,9 @@
     "scientificCycleRecord": "proofs/SCIENTIFIC-CYCLE-CURRENT.json",
     "scope": "Public navigation and provenance only; does not independently validate NEW-K runtime or certify external physical effects.",
     "formalClaimSourceIdentity": "VA-F01 / VA-F02 point to the existing public-safe v1.2.3 transcript and original PDF SHA-256; original PDF bytes and protected NEW-K construction remain withheld",
-    "claimSourceMetadata": "All nine visible native/formal/physical/historical V.A. claim entries identify public transcripts and original recorded PDF digest; public transcript is not original PDF or independent physical proof"
+    "claimSourceMetadata": "All nine visible native/formal/physical/historical V.A. claim entries identify public transcripts and original recorded PDF digest; public transcript is not original PDF or independent physical proof",
+    "scientificStageReconciliation": "milestones/M33-EVIDENCE-CONTINUITY.json",
+    "datedCycleInterpretation": "October 28 M28 opening is a historical operational snapshot; later M29 progression is preserved without manufacturing original experimental proof"
   },
   "releaseHistory": [
     {
@@ -215,9 +217,16 @@
       "publicationDate": "2026-11-01",
       "mainFileSHA256": "474fe8f855e2a35e46e9971ac316c4c3a6dba9b3e2c591b76ed02a41641906b8",
       "indexSourceCommit": "0a99b5852288f02403a4ce5f807f3832e906331c"
+    },
+    {
+      "release": "2.4",
+      "edition": "06",
+      "publicationDate": "2026-11-01",
+      "mainFileSHA256": "922d07c35e9cda9c0813dde40fc482a3e3961faa866f657f61a939956257ea20",
+      "indexSourceCommit": "6e55d6cde91106870dafa0e366b24b707e83727a"
     }
   ],
-  "currentIndexSourceCommit": "6e55d6cde91106870dafa0e366b24b707e83727a",
+  "currentIndexSourceCommit": "eb3ac171c920f5a67cba6c61a816b9c80e1dfc07",
   "releaseHistoryVerification": "git show <pinned commit>:index.html SHA-256 must equal archived manifest digest; current pinned commit must equal released index digest; no network or source disclosure",
   "releaseCorrection": {
     "release": "2.4",
@@ -238,5 +247,6 @@
     "publishedDigestCount": 4,
     "originalPDFCopiesPubliclyAttached": 0,
     "scope": "Transcribed from existing original-PDF digest register. This edit does not remeasure absent original PDFs, independently certify their contents, disclose protected NEW-K, or change mathematical standing."
-  }
+  },
+  "releaseChangeSummary": "Correct manual challenge workflow expressions, explicit claim filter selection, and source-date reconciliation of October 28 M28 and later M29. Original mathematical foundation and primary public source transcripts unchanged."
 }
