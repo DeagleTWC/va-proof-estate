@@ -9,7 +9,7 @@ const source=JSON.parse(readFileSync(resolve(repoRoot,'proofs/END-TO-END-ESTATE-
 function validatePortfolio(m,src){
 const err=[];const fail=x=>err.push(x);
 if(m.schema!=="va-original-capability-recovery/1.0"||m.canonicalEstate!=="DeagleTWC/va-proof-estate")fail("schema_or_estate");
-if(m.scientificM27!=="HOLD"||m.scientificM28!=="NOT_OPEN")fail("milestone_promotion");
+if(m.historicalScientificM27!=="HOLD"||m.historicalScientificM28!=="NOT_OPEN"||m.historicalSnapshotAsOfDate!=="2026-10-26"||m.currentCycleSource!=="proofs/SCIENTIFIC-CYCLE-CURRENT.json"||m.notCurrentCycleStatus!==true)fail("historical_snapshot_tampering");
 if(m.nativeVABuildMigrated!==false||m.independentNativeEffectQualified!==false||m.allSourceRightsCleared!==false||m.tenTimesBetterDemonstrated!==false)fail("false_standing");
 if(!Array.isArray(m.qualityCriteria)||m.qualityCriteria.length!==10)fail("ten_quality_requirements");
 if(!Array.isArray(m.lanes)||m.lanes.length!==10)fail("lane_count");
@@ -38,10 +38,10 @@ for(const g of m.lanes||[]){
 return {ok:err.length===0,errors:[...new Set(err)],sourceCount:m.sourceReferences?.length,excludedCount:m.separateOrAdjacentReferences?.length,lanes:m.lanes?.length,claimStanding:"CROSSWALK_ONLY_NO_NATIVE_MIGRATION_OR_10X_CLAIM"};
 }
 assert.equal(validatePortfolio(manifest,source).ok,true,'unmodified recovery register must be internally consistent');
-const tests=["native_promotion","tenx_claim","m28_skip","source_drop","source_duplicate","third_party_assimilation","wrong_url","bad_lane","original_claim","rights_assumed","mapping_tamper","criteria_removed","implementation_reuse"];
+const tests=["native_promotion","tenx_claim","historical_snapshot_tamper","source_drop","source_duplicate","third_party_assimilation","wrong_url","bad_lane","original_claim","rights_assumed","mapping_tamper","criteria_removed","implementation_reuse"];
 const mutations=[
  x=>x.nativeVABuildMigrated=true,x=>x.tenTimesBetterDemonstrated=true,
- x=>x.scientificM28='COMPLETE',x=>x.sourceReferences.pop(),
+ x=>x.historicalScientificM28='COMPLETE',x=>x.sourceReferences.pop(),
  x=>x.sourceReferences[1]=x.sourceReferences[0],x=>x.separateOrAdjacentReferences.pop(),
  x=>x.sourceReferences[0].url='https://example.com/fake',
  x=>x.sourceReferences[0].targetVALane='VA-UNDECLARED',
