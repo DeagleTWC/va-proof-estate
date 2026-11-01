@@ -224,7 +224,13 @@
     "kind": "corrected preflight syntax",
     "incorrectSiteIndexCommit": "d172652a9210662024b3a0b856ff31aeabbd95bc",
     "reason": "Seven duplicate separators inserted during claim source metadata edit; corrected before CI certification",
-    "status": "AWAITING_CI"
+    "validation": {
+      "status": "CI_PASSED_AT_CHECKED_COMMIT",
+      "sourceCommit": "2081a813ec5c670fffceaec5b9381497bd91869a",
+      "publicIntegrity": "https://github.com/DeagleTWC/va-proof-estate/actions/runs/41302345681",
+      "publicationIntegrity": "https://github.com/DeagleTWC/va-proof-estate/actions/runs/41302345802",
+      "scope": "Public site syntax, source identity, metadata, recorded original PDF hashes, negative controls and release history; protected mathematical computation not executed"
+    }
   },
   "sourceOriginalPdfSHA256Provenance": {
     "register": "proofs/SOURCE-ESTATE.md",
