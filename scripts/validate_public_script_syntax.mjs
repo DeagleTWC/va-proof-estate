@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-export const publicPages = ['index.html', 'foundation.html', 'end-to-end.html', 'reviewer-route.html'];
+export const publicPages = ['index.html', 'foundation.html', 'end-to-end.html', 'reviewer-route.html', 'source-reading.html'];
 
 export function validateInlineScripts(html, label = '(inline page)') {
   const errors = [];

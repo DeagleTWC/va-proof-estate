@@ -15,6 +15,7 @@ on:
       - 'foundation.html'
       - 'end-to-end.html'
       - 'reviewer-route.html'
+      - 'source-reading.html'
       - 'proof-estate-manifest.json'
       - '*.png'
       - '*.jpg'
@@ -35,6 +36,7 @@ on:
       - 'foundation.html'
       - 'end-to-end.html'
       - 'reviewer-route.html'
+      - 'source-reading.html'
       - 'proof-estate-manifest.json'
       - '*.png'
       - '*.jpg'
@@ -76,6 +78,8 @@ jobs:
         run: |
           python3 scripts/validate_reviewer_route.py
           python3 scripts/test_validate_reviewer_route.py
+          python3 scripts/validate_source_reading.py
+          python3 scripts/test_validate_source_reading.py
       - name: Verify website release identity and immutable checksum lineage
         run: python3 scripts/validate_public_release_identity.py
       - name: Test release version, checksum and historical-reference drift detection

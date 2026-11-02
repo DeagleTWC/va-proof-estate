@@ -78,3 +78,7 @@ The [historical pilot/original-carrier crosswalk](proofs/HISTORICAL-PILOT-CARRIE
 **Repair record, November 1, 2026:** two out-of-scope M36 draft files were withdrawn from the current branch; earlier commits remain in Git history. The machine-readable bot handoff no longer asserts an automatic next milestone. The actual [homepage evidence routes](index.html#evidence-continuity) were initially connected in website release 2.1 and corrected in release 2.2 with the [updated public manifest](proof-estate-manifest.json); the previous release checksum remains recorded. See [source-status and release boundaries](proofs/PILOT-EVIDENCE-RELEASE.md).
 
 **Governing floor:** Native True Zero / corrected NEW-K, Elements Basin and URK. The public navigation files do not redefine the computational mathematics. **The face may vary. The floor must not.**
+
+## Reader and source accessibility enhancement (November 2, 2026)
+
+[Evidence Reading Desk](source-reading.html) provides read-friendly links to the original public source and GitHub-rendered Markdown, while preserving each document's original source path, evidence category, and publication identity. The foundation page has keyboard skip navigation. This documentation-only improvement does **not** advance a milestone, independently reproduce a native run, or change the checksum of the published 2.6/08 homepage.
