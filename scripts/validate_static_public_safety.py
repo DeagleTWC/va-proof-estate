@@ -8,7 +8,7 @@ from pathlib import Path
 import re
 
 ROOT = Path(__file__).resolve().parents[1]
-PUBLIC_PAGES = ("index.html", "foundation.html", "end-to-end.html")
+PUBLIC_PAGES = ("index.html", "foundation.html", "end-to-end.html", "reviewer-route.html")
 NETWORK_JS = [
     re.compile(pattern, re.I)
     for pattern in (
