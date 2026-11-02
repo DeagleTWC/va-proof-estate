@@ -61,6 +61,14 @@ The V.A. custodian is willing to **personally guide an interested, qualified par
 
 **No commitment to purchase, license, integrate or disclose proprietary plans is necessary to start a public-safe conversation.**
 
+### A commercially accessible starting point
+
+**Initial conversations are exploratory, not a request for a large upfront technology purchase.** Where appropriate, V.A. aims to structure collaborations around a clearly scoped pilot and **commercial value established later**—for example, agreed evaluation milestones, a subsequent license, or deployment-stage arrangements. In many engagements, substantial commercial compensation can therefore be considered **after an application demonstrates a useful fit**, rather than requiring a substantial commitment before the parties have defined the opportunity.
+
+Each engagement is negotiated individually. Test expenses, engineering work, third-party costs, licensing terms and any deferred or contingent payments must be agreed in writing before they are incurred or relied upon. **No universal promise of a free pilot, success-only fee, guaranteed outcome or automatic license is made here.**
+
+The immediate aim is simple: **find out whether there is a meaningful technical and commercial fit before treating cost as an obstacle to a conversation.**
+
 ## What remains independent
 
 V.A. is **not** a battery product vendor and does not claim ownership of another company's engineering, customers or existing technology. It is not offering a dashboard, LLM agent or conventional software governance layer as a substitute for its native foundation.
