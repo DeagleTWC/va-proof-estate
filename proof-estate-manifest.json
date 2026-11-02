@@ -1,11 +1,11 @@
 {
   "site": "V.A. — The Proof Estate",
-  "release": "2.5",
-  "edition": "07",
-  "published": "2026-11-01",
+  "release": "2.6",
+  "edition": "08",
+  "published": "2026-11-02",
   "scope": "V.A.-only native claim and public examination estate; separately labeled synthetic examiner, public True-Zero category primer, and prospective KCD Program A physical proof register (not native V.A. evidence).",
   "mainFile": "index.html",
-  "mainFileSHA256": "38677db692c3997e88dcdca2de4ad67755a0184d6eab804dd13b5e4f8adf1579",
+  "mainFileSHA256": "65d5c51cc9d7e1cb6e6ff3290b172086c90530481b12ba4b7a2843e25ead79d1",
   "publicEvidenceStatus": "DECLARED",
   "evidenceStatusVocabulary": [
     "DECLARED",
@@ -87,11 +87,11 @@
     "versionIdentityRecord": "proofs/VERSION-IDENTITY.md"
   },
   "versionDisambiguation": {
-    "publicationRelease": "2.5",
+    "publicationRelease": "2.6",
     "historicalDeployBuild": "V1.2 (April 2026)",
     "scientificRecordEdition": "v1.2.3 (July 2026)",
     "syntheticExaminerFixture": "VA-AD-001/SPEC-1.0",
-    "publicationEdition": "07",
+    "publicationEdition": "08",
     "challengePacketSchema": "VA-CHALLENGE-2.0 (stable format; distinct from website release)"
   },
   "nativeV12EvidenceGate": "proofs/V12-EVIDENCE-STATUS.json",
@@ -171,11 +171,11 @@
     "physicalEvidencePromotion": false
   },
   "previousWebsiteRelease": {
-    "release": "2.4",
-    "edition": "06",
+    "release": "2.5",
+    "edition": "07",
     "publicationDate": "2026-11-01",
-    "mainFileSHA256": "922d07c35e9cda9c0813dde40fc482a3e3961faa866f657f61a939956257ea20",
-    "indexSourceCommit": "6e55d6cde91106870dafa0e366b24b707e83727a",
+    "mainFileSHA256": "38677db692c3997e88dcdca2de4ad67755a0184d6eab804dd13b5e4f8adf1579",
+    "indexSourceCommit": "eb3ac171c920f5a67cba6c61a816b9c80e1dfc07",
     "preservedInGitHistory": true
   },
   "publicContinuityRoutes": {
@@ -224,9 +224,16 @@
       "publicationDate": "2026-11-01",
       "mainFileSHA256": "922d07c35e9cda9c0813dde40fc482a3e3961faa866f657f61a939956257ea20",
       "indexSourceCommit": "6e55d6cde91106870dafa0e366b24b707e83727a"
+    },
+    {
+      "release": "2.5",
+      "edition": "07",
+      "publicationDate": "2026-11-01",
+      "mainFileSHA256": "38677db692c3997e88dcdca2de4ad67755a0184d6eab804dd13b5e4f8adf1579",
+      "indexSourceCommit": "eb3ac171c920f5a67cba6c61a816b9c80e1dfc07"
     }
   ],
-  "currentIndexSourceCommit": "eb3ac171c920f5a67cba6c61a816b9c80e1dfc07",
+  "currentIndexSourceCommit": "1e8b658260ca1e5e6f897597bf4047771579ff30",
   "releaseHistoryVerification": "git show <pinned commit>:index.html SHA-256 must equal archived manifest digest; current pinned commit must equal released index digest; no network or source disclosure",
   "releaseCorrection": {
     "release": "2.4",
@@ -248,5 +255,15 @@
     "originalPDFCopiesPubliclyAttached": 0,
     "scope": "Transcribed from existing original-PDF digest register. This edit does not remeasure absent original PDFs, independently certify their contents, disclose protected NEW-K, or change mathematical standing."
   },
-  "releaseChangeSummary": "Correct manual challenge workflow expressions, explicit claim filter selection, and source-date reconciliation of October 28 M28 and later M29. Original mathematical foundation and primary public source transcripts unchanged."
+  "releaseChangeSummary": "Correct manual challenge workflow expressions, explicit claim filter selection, and source-date reconciliation of October 28 M28 and later M29. Original mathematical foundation and primary public source transcripts unchanged.",
+  "publicReviewerRoute": {
+    "path": "reviewer-route.html",
+    "claimRegister": "proofs/CLAIM-TO-CARRIER.json",
+    "evidenceStanding": "UNCHANGED_SOURCE_BOUND_STANDINGS",
+    "publishedEntries": 17,
+    "syntheticObservedEntries": 1,
+    "independentlyReproducedNativeRunsAttached": 0,
+    "primaryFoundation": "True Zero / corrected NEW K / Elements Basin / URK",
+    "protectedConstructionPublished": false
+  }
 }
