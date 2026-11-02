@@ -42,6 +42,10 @@ The DeagleTWC publication is the canonical **public reading and examination loca
 
 **Category distinction:** [True-Zero category definition](../category/README.md) and the [separately registered KCD physical proof program](../kcd/README.md) are distinct from this **V.A.-only** claim register. No KCD formalization or synthetic test is silently promoted to a current native V.A. observed run or to a measured physical result.
 
+## Grid layer — domain partnership and bounded pilot route
+
+**[Read the public Grid Layer overview](GRID-LAYER-PUBLIC-OVERVIEW.md)** for the V.A. custodian's existing-grid-layer description and prospective industry-specific examination path, including battery storage, grid transitions and data-center power continuity. This is a **public-safe technical orientation** and an invitation to scope an authorized pilot, **not a newly recorded grid-specific experiment, native release, or independent qualification**. Protected construction, critical-infrastructure details and customer-controlled original evidence remain withheld under existing release rules.
+
 ## Begin here
 
 | Reader's objective | Exact entry point | What it provides |
