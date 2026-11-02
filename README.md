@@ -4,6 +4,8 @@
 
 **New: [The Foundation, Explained — public reader's route](foundation.html)**. Start here for a plain-language account of True Zero, Elements Basin, corrected NEW K, URK, AHMR and Lawful Continuation, with direct links to source records and source-specific evidence standings. This is an explanation, not release of protected construction or a new independently measured proof.
 
+**[Grid Layer — public technical orientation and supervised pilot pathway](proofs/GRID-LAYER-PUBLIC-OVERVIEW.md)** — public-safe explanation of the custodian-identified existing grid layer, candidate battery-storage and power-infrastructure applications, and a separately authorized route for partner-specific evaluation and licensing. The grid-specific original implementation and independently qualified result are **not attached to this public release**; no protected construction or operational permission is transferred.
+
 **Proof before power. Maximum verifiable function. Prevention of harm.**
 
 **[Controlling public-interest publication and harm-prevention charter](proofs/PUBLIC-INTEREST-PUBLICATION-CHARTER.md)** — publish the most independently checkable scientific, engineering, historical pilot and safety evidence lawfully possible, including eligible TMU run results and receipts, while protecting dangerous construction, private original records, customer rights and sensitive operational details. Commercial exclusivity alone does not justify withholding safe, authorized function evidence. [TMU evidence candidacy and current public standing](proofs/TMU-PUBLIC-EVIDENCE-STATUS.json) · [exact-byte private release review standard](proofs/RELEASE-REVIEW-PRIVATE-TEMPLATE.json).
