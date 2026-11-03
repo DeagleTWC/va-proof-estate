@@ -30,4 +30,36 @@ const renderer=homepage.slice(end,homepage.indexOf("byId('matrixFilter').onchang
 assert.ok(renderer.indexOf('activeLedger=selection.activeId')<renderer.indexOf('for(const record of selected)'));
 assert.ok(renderer.includes("tr.setAttribute('aria-selected'"));
 assert.ok(renderer.includes("byId('claimPacket').disabled=!activeLedger"));
+
+// Visual-only navigation checks: preserve every original section destination.
+const navStart=homepage.indexOf('<nav class="navlinks"');
+const navEnd=homepage.indexOf('</nav>',navStart);
+assert.ok(navStart>=0 && navEnd>navStart,'Primary navigation missing');
+const nav=homepage.slice(navStart,navEnd);
+const navLinks=[...nav.matchAll(/href="([^"]+)"/g)].map(x=>x[1]).sort();
+const expectedNav=[
+  'reviewer-route.html','end-to-end.html','#systems-category','#kcd-next',
+  '#floor','#witness','#claims','#physical','#challenge','#proof-desk',
+  '#runnable-proof','#byo-seam'
+].sort();
+assert.deepEqual(navLinks,expectedNav,'Original public navigation routes must be retained');
+assert.ok(nav.includes('<details class="nav-more">') && nav.includes('<summary>Explore sections'),
+          'Accessible native section menu missing');
+assert.equal([...nav.matchAll(/<details\b/g)].length,1,'Only one section menu is expected');
+assert.ok(homepage.includes("const labels=['Bounded claim','Carrier and identity','Evidence class','Current public standing','Falsification condition']"),
+          'Mobile labels must preserve the source table headings');
+assert.ok(homepage.includes('cell.dataset.label=labels[i]'),
+          'Ledger renderer must attach corresponding accessible mobile labels');
+assert.ok(homepage.includes('content:attr(data-label)'),
+          'Narrow-screen claim labels must remain visible');
+assert.ok(homepage.includes('.matrix tbody tr.is-selected'),
+          'Mobile card selection affordance must remain visible');
+// Negative controls: changed navigation or label wiring must not pass source checks.
+const hasOriginalRoutes=(s)=>{
+  const n=s.slice(s.indexOf('<nav class="navlinks"'),s.indexOf('</nav>',s.indexOf('<nav class="navlinks"')));
+  return [...n.matchAll(/href="([^"]+)"/g)].map(x=>x[1]).sort().join('|')===expectedNav.join('|');
+};
+assert.equal(hasOriginalRoutes(homepage.replace('href="#claims"','href="#removed-claim-link"')),false);
+assert.equal(homepage.replace('cell.dataset.label=labels[i]','').includes('cell.dataset.label=labels[i]'),false);
+
 process.stdout.write('PASS: inline JavaScript parser and 3 negative controls\n');

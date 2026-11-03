@@ -5,7 +5,7 @@
   "published": "2026-11-02",
   "scope": "V.A.-only native claim and public examination estate; separately labeled synthetic examiner, public True-Zero category primer, and prospective KCD Program A physical proof register (not native V.A. evidence).",
   "mainFile": "index.html",
-  "mainFileSHA256": "f6daabac5cc32f9ab5c1eabbfab2ffa9bfbca008a30484c6ac60363780bd67ce",
+  "mainFileSHA256": "b366dd6394d421745fb2b3bf45f09ced177332507a68e8ca2265c30a672aafe3",
   "publicEvidenceStatus": "DECLARED",
   "evidenceStatusVocabulary": [
     "DECLARED",
@@ -233,7 +233,7 @@
       "indexSourceCommit": "eb3ac171c920f5a67cba6c61a816b9c80e1dfc07"
     }
   ],
-  "currentIndexSourceCommit": "8040559f18a4dbbd8d99cbffce52ccfe4551a72e",
+  "currentIndexSourceCommit": "32bfc2b70e7fb49548a91b595da2d4980cdb79aa",
   "releaseHistoryVerification": "git show <pinned commit>:index.html SHA-256 must equal archived manifest digest; current pinned commit must equal released index digest; no network or source disclosure",
   "releaseCorrection": {
     "release": "2.4",
@@ -255,7 +255,7 @@
     "originalPDFCopiesPubliclyAttached": 0,
     "scope": "Transcribed from existing original-PDF digest register. This edit does not remeasure absent original PDFs, independently certify their contents, disclose protected NEW-K, or change mathematical standing."
   },
-  "releaseChangeSummary": "Unified all five static Proof Estate HTML pages under the original obsidian/antique-gold V.A. brand treatment. Shared SVG emblem and typography; unchanged proof carriers, release version, technical navigation, scientific standings and protected source.",
+  "releaseChangeSummary": "Presentation-only navigation and mobile readability refinement: original twelve homepage destinations preserved through three direct routes and a native Explore sections menu; published claim ledger rows receive responsive labeled-card layout with unchanged record values, standing, selection behavior and exports. Obsidian/gold identity and protected foundation unchanged.",
   "publicReviewerRoute": {
     "path": "reviewer-route.html",
     "claimRegister": "proofs/CLAIM-TO-CARRIER.json",
@@ -285,6 +285,18 @@
     ],
     "noNewEvidenceClassifications": true,
     "homepageBasePaletteAligned": true,
-    "sharedVisualContract": "Warm obsidian/gold palette and existing subtle V.A. motif applied across original homepage CSS, lower-section inline styles, and all four internal pages."
+    "sharedVisualContract": "Warm obsidian/gold palette and existing subtle V.A. motif applied across original homepage CSS, lower-section inline styles, and all four internal pages.",
+    "navigationRefinement": {
+      "scope": "PRESENTATION_ONLY",
+      "originalHomepageRoutesPreserved": 12,
+      "primaryRoutes": [
+        "reviewer-route.html",
+        "end-to-end.html",
+        "#claims"
+      ],
+      "secondaryGroup": "Explore sections",
+      "mobileClaimLedger": "EXISTING_FIVE_COLUMN_RECORDS_AS_LABELED_CARDS",
+      "recordValuesUnchanged": true
+    }
   }
 }
