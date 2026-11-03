@@ -42,12 +42,28 @@ for(const [path,scenario,prefix] of htmlPages){
   ]) assert.ok(html.includes(required),path+': missing '+required);
   assert.ok(html.includes('role="status"'),path+': loading fallback must be accessible');
   assert.ok(html.includes('<noscript>'),path+': original records must remain accessible without JS');
-  assert.ok(html.includes('social-card-1200x630.jpg'),path+': brand preview missing');
+  const caseImage = path.endsWith('standing.html') ? 'challenge/standing-1200x630.png' :
+    path.endsWith('alternate-route.html') ? 'challenge/alternate-route-1200x630.png' :
+    'challenge/authority-1200x630.png';
+  assert.ok(html.includes('https://deagletwc.github.io/va-proof-estate/'+caseImage),
+    path+': unique gold social preview missing');
+  assert.ok(html.includes('<meta property="og:image:type" content="image/png">'),
+    path+': PNG social metadata missing');
+  assert.ok(!html.includes('social-card-1200x630.jpg'),
+    path+': stale shared social image retained');
+  assert.ok(html.includes('<meta name="twitter:image:alt"'),
+    path+': accessible social preview description missing');
   assert.ok(!/https?:\/\/(?:cdn|fonts|unpkg|analytics)[\w.-]*\//i.test(html),path+': external dependency');
   assert.equal([...html.matchAll(/<script\b/g)].length,1,path+': unexpected additional scripts');
 }
 const titles=htmlPages.map(([p])=>read(p).match(/<meta property="og:title" content="([^"]+)"/)[1]);
 assert.equal(new Set(titles).size,4,'Social links must have distinct share preview titles');
+assert.ok(js.includes("app.querySelector('[data-case=\"'+selected+'\"]')?.focus()"),
+  'Challenge selection must retain keyboard focus');
+assert.ok(js.includes("app.querySelector('[data-prediction=\"'+predicted+'\"]')?.focus()"),
+  'Prediction selection must retain keyboard focus');
+assert.ok(js.includes('Share this source-linked challenge'),
+  'Revealed examination must lead to sharing its source');
 assert.ok(js.includes('navigator.share') && js.includes('navigator.clipboard'),
   'Native share and local copy fallback required');
 assert.ok(js.includes('canvas.toBlob') && js.includes('image/png'),
