@@ -1,0 +1,56 @@
+name: Proof in Motion Browser and Social Preview QA
+on:
+  pull_request:
+    paths:
+      - "consequence-challenge.*"
+      - "challenge/**"
+      - "scripts/test_challenge_previews.py"
+      - "scripts/test_consequence_browser.mjs"
+      - "scripts/test_consequence_challenge.mjs"
+      - ".github/workflows/consequence-challenge-browser.yml"
+  push:
+    branches: [main]
+    paths:
+      - "consequence-challenge.*"
+      - "challenge/**"
+      - "scripts/test_challenge_previews.py"
+      - "scripts/test_consequence_browser.mjs"
+      - "scripts/test_consequence_challenge.mjs"
+      - ".github/workflows/consequence-challenge-browser.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  static-preview-verification:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Check source-grounded challenge, negative controls and original evidence ceilings
+        run: node scripts/test_consequence_challenge.mjs
+      - name: Verify three actual distinct PNG previews and all social sharing metadata
+        run: python3 scripts/test_challenge_previews.py
+
+  real-browser-examination:
+    needs: static-preview-verification
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install isolated test browser only (no public-site dependencies)
+        run: |
+          npm install --no-save --ignore-scripts playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Test real browser share, local PNG/JSON exports, 320px mobile and independent record view
+        run: node scripts/test_consequence_browser.mjs

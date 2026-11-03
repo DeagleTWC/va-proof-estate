@@ -162,7 +162,8 @@
       '<p><strong>Actual native outcome:</strong> NOT ESTABLISHED BY THIS PUBLIC ENTRY. '+safe(scenario.boundary)+'</p>'+
       '<p><strong>What would falsify this bounded claim?</strong> '+safe(scenario.falsifier)+'</p>'+
       '<p class="cc-source-note">'+statusBadge(record)+' '+safe(record.id)+' / '+safe(record.class)+
-      ' · This badge describes public record standing, not your prediction.</p></div>':'';
+      ' · This badge describes public record standing, not your prediction.</p>'+ 
+      '<p><a class="cc-link" href="#cc-share-title">Share this source-linked challenge ↓</a></p></div>':'';
     document.body.classList.toggle('cc-examiner-mode',state.examinerMode);
     app.innerHTML=
       '<div class="cc-view-switch" role="group" aria-label="Reading mode">'+
@@ -222,16 +223,21 @@
       '<a class="cc-link" href="https://github.com/DeagleTWC/va-proof-estate/issues/1">Submit a bounded public challenge</a></div></div></section>';
 
     app.querySelectorAll('[data-mode]').forEach(button=>button.addEventListener('click',()=>{
-      state.examinerMode=button.dataset.mode==='examiner';state.message='';render();
+      const mode=button.dataset.mode;
+      state.examinerMode=mode==='examiner';state.message='';render();
+      app.querySelector('[data-mode="'+mode+'"]')?.focus();
     }));
     app.querySelectorAll('[data-case]').forEach(button=>button.addEventListener('click',()=>{
-      state.current=button.dataset.case;state.predicted=null;state.revealed=false;state.message='';
-      // Keep this document URL fixed so its relative sources and links remain valid.
-      // The share action uses the selected scenario's own permanent URL.
+      const selected=button.dataset.case;
+      state.current=selected;state.predicted=null;state.revealed=false;state.message='';
+      // This document URL stays fixed; share actions supply case-specific permanent URLs.
       render();
+      app.querySelector('[data-case="'+selected+'"]')?.focus();
     }));
     app.querySelectorAll('[data-prediction]').forEach(button=>button.addEventListener('click',()=>{
-      state.predicted=button.dataset.prediction;state.revealed=false;state.message='';render();
+      const predicted=button.dataset.prediction;
+      state.predicted=predicted;state.revealed=false;state.message='';render();
+      app.querySelector('[data-prediction="'+predicted+'"]')?.focus();
     }));
     app.querySelector('#cc-reveal-button').addEventListener('click',()=>{
       if (!state.predicted) return;
@@ -263,7 +269,7 @@
     const payload={title:'V.A. | '+scenario.shareTitle,
       text:scenario.question+' Examine the public claim record and its evidence standing.',
       url:shareURL(scenario)};
-    if(navigator.share){try{await navigator.share(payload);toast('Share sheet opened for the source-linked challenge.');return;}
+    if(navigator.share){try{await navigator.share(payload);toast('Source-linked challenge share completed.');return;}
       catch(e){if(e.name==='AbortError')return;}}
     await copyChallenge(scenario);
   }

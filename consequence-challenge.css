@@ -115,3 +115,47 @@ body.cc-examiner-mode .cc-orbit-spin{animation:none}
 body.cc-examiner-mode .cc-context{background:#100d09}
 body.cc-examiner-mode .cc-choice:hover{transform:none}
 @media(max-width:680px){.cc-view-switch{width:100%}.cc-view-button{flex:1;text-align:center}}
+
+/* A+ mobile and keyboard pass: readable at 320–760px, native focus and 44px targets. */
+.cc-panel,.cc-inquiry>*,
+.cc-evidence,.cc-raw-record{min-width:0}
+.cc-action,.cc-option,.cc-view-button,.cc-header nav a{min-height:44px}
+.cc-action,.cc-view-button,.cc-option{display:inline-flex;align-items:center;justify-content:center}
+.cc-option{justify-content:flex-start}
+.cc-choice{min-height:156px}
+.cc-choice:focus-visible,.cc-action:focus-visible,.cc-option:focus-visible,
+.cc-view-button:focus-visible,.cc-header a:focus-visible,
+.cc-link:focus-visible{outline:3px solid #f4cc83;outline-offset:3px}
+.cc-export button{min-width:170px}
+.cc-footer{overflow-wrap:anywhere}
+.cc-reveal a{font-weight:650}
+@media(max-width:760px){
+  .cc-choice{min-height:86px;padding:17px 18px}
+  .cc-choice strong{font-size:19px}
+  .cc-choice small{font-size:13px}
+  .cc-question{font-size:clamp(23px,5vw,31px)}
+  .cc-inquiry{gap:14px}
+  .cc-evidence-grid{gap:11px}
+  .cc-evidence{padding:19px}
+  .cc-view-button{min-width:0}
+  .cc-raw-record{font-size:11px;max-height:360px}
+}
+@media(max-width:380px){
+  .cc-shell{width:calc(100% - 28px)}
+  .cc-header{gap:9px}
+  .cc-header nav{gap:6px 12px}
+  .cc-header nav a{min-height:40px;font-size:10px;display:inline-flex;align-items:center}
+  .cc-hero-inner{padding:39px 0 43px}
+  .cc-hero h1{font-size:clamp(38px,11.5vw,44px)}
+  .cc-hero p{font-size:14px}
+  .cc-content{padding-top:26px;padding-bottom:52px}
+  .cc-heading h2{font-size:27px}
+  .cc-view-switch{gap:4px;padding:4px}
+  .cc-view-button{font-size:10px;padding:8px 9px}
+  .cc-panel{padding:17px}
+  .cc-reveal{padding:17px}
+  .cc-export button{min-width:0}
+}
+@media(hover:none){
+  .cc-choice:hover{transform:none}
+}
