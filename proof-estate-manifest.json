@@ -5,7 +5,7 @@
   "published": "2026-11-02",
   "scope": "V.A.-only native claim and public examination estate; separately labeled synthetic examiner, public True-Zero category primer, and prospective KCD Program A physical proof register (not native V.A. evidence).",
   "mainFile": "index.html",
-  "mainFileSHA256": "65d5c51cc9d7e1cb6e6ff3290b172086c90530481b12ba4b7a2843e25ead79d1",
+  "mainFileSHA256": "59581860e76eb9d7aec9018d6bb7f9ceb91cb40bced6198d292b6ddd1bd7a81d",
   "publicEvidenceStatus": "DECLARED",
   "evidenceStatusVocabulary": [
     "DECLARED",
@@ -233,7 +233,7 @@
       "indexSourceCommit": "eb3ac171c920f5a67cba6c61a816b9c80e1dfc07"
     }
   ],
-  "currentIndexSourceCommit": "1e8b658260ca1e5e6f897597bf4047771579ff30",
+  "currentIndexSourceCommit": "bbe4d4ab134b070ee0f217c1e103dca581be5845",
   "releaseHistoryVerification": "git show <pinned commit>:index.html SHA-256 must equal archived manifest digest; current pinned commit must equal released index digest; no network or source disclosure",
   "releaseCorrection": {
     "release": "2.4",
@@ -255,7 +255,7 @@
     "originalPDFCopiesPubliclyAttached": 0,
     "scope": "Transcribed from existing original-PDF digest register. This edit does not remeasure absent original PDFs, independently certify their contents, disclose protected NEW-K, or change mathematical standing."
   },
-  "releaseChangeSummary": "Correct manual challenge workflow expressions, explicit claim filter selection, and source-date reconciliation of October 28 M28 and later M29. Original mathematical foundation and primary public source transcripts unchanged.",
+  "releaseChangeSummary": "Visual-only obsidian-and-gold Proof Estate branding refresh: geometric V.A. mark, responsive header and hero, and restrained gold theming of existing evidence interfaces. All claim carriers, protected construction boundaries, release identifiers and evidence standings remain unchanged.",
   "publicReviewerRoute": {
     "path": "reviewer-route.html",
     "claimRegister": "proofs/CLAIM-TO-CARRIER.json",
@@ -265,5 +265,15 @@
     "independentlyReproducedNativeRunsAttached": 0,
     "primaryFoundation": "True Zero / corrected NEW K / Elements Basin / URK",
     "protectedConstructionPublished": false
+  },
+  "visualFaceRefresh": {
+    "date": "2026-11-03",
+    "scope": "PUBLIC_PRESENTATION_ONLY",
+    "design": "Integrated obsidian-and-gold website styling with original CSS/SVG geometric motif; no pasted image, external script or media upload",
+    "previousIndexSHA256": "65d5c51cc9d7e1cb6e6ff3290b172086c90530481b12ba4b7a2843e25ead79d1",
+    "sourceOfPreservedRecords": "No source/claim/evidence/document modification",
+    "nativeFoundationUnchanged": true,
+    "releaseIdentityUnchanged": true,
+    "sourceStandingUnchanged": true
   }
 }

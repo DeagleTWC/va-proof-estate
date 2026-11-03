@@ -122,13 +122,256 @@
 @media(max-width:580px){.full-estate-matrix{grid-template-columns:1fr}.full-estate-gateway{padding:54px 0}}
 
 .skip-to-main{position:fixed;left:12px;top:-120px;z-index:1000;padding:11px 17px;background:var(--mint);color:#05110d;font-weight:800;border-radius:7px}.skip-to-main:focus{top:12px}
+
+/* V.A. Proof Estate / Obsidian & Gold face — visual layer only.
+   No claim, evidence standing, source route, action, or protected floor changes. */
+:root{
+  --bg:#090807;--bg2:#110e0a;--raised:#17120e;--raised2:#211910;
+  --ink:#f5ebdb;--muted:#b9aa94;--mint:#f3cb80;--mintdeep:#bd8b40;
+  --orange:#edbd78;--red:#e8a29c;--stroke:#4b3925;--stroke2:#3a2c1e;
+  --shadow:0 22px 80px rgba(0,0,0,.48)
+}
+body{
+  background:radial-gradient(ellipse at 50% 0%,rgba(93,54,13,.16),transparent 45%),
+             linear-gradient(180deg,#090807,#100c09 55%,#090807);
+  color:var(--ink)
+}
+::selection{background:#d5aa5c;color:#110d08}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
+  outline-color:#f7ce80
+}
+.nav{
+  background:rgba(8,7,6,.96);border-bottom:1px solid rgba(214,156,65,.34);
+  box-shadow:0 12px 40px rgba(0,0,0,.26)
+}
+.nav-inner{min-height:88px;height:auto;padding-top:12px;padding-bottom:12px;gap:18px}
+.brand{gap:14px;flex-shrink:0}
+.mark{
+  display:grid;place-items:center;flex-shrink:0;width:46px;height:48px;
+  border:0;border-radius:0;background:none;color:#efc272;
+  font-size:0;filter:drop-shadow(0 0 9px rgba(219,151,40,.33))
+}
+.mark svg{display:block;width:100%;height:100%}
+.brand-name{
+  color:#f5dfb4;font-family:Georgia,"Times New Roman",serif;
+  font-size:17px;font-weight:500;letter-spacing:.035em;line-height:1.15
+}
+.brand-caption{
+  color:#c9a26b;letter-spacing:.17em;font-size:9px;
+  margin-top:5px;text-transform:uppercase
+}
+.navlinks{
+  gap:20px;overflow-x:auto;max-width:min(60vw,820px);scrollbar-width:thin;
+  scrollbar-color:#795a31 transparent;flex:1;min-width:150px;padding:9px 0
+}
+.navlinks a{color:#d0bea1;font-size:10px;letter-spacing:.11em}
+.navlinks a:hover{color:#ffe2a5}
+.nav-flag{
+  border-color:rgba(221,168,82,.43);color:#edc68a;
+  background:rgba(89,57,24,.14);border-radius:18px
+}
+.eyebrow,.foundation .num,.cap .tiny-id{color:#e6b967}
+.eyebrow.muted{color:#b4a18b}
+.hero{
+  min-height:820px;
+  border-bottom:1px solid rgba(214,159,70,.5);
+  background:
+    radial-gradient(ellipse at 50% 34%,rgba(134,78,22,.36),transparent 43%),
+    radial-gradient(ellipse at 50% 102%,rgba(231,143,37,.33),transparent 37%),
+    radial-gradient(ellipse at 6% 75%,rgba(122,75,20,.19),transparent 34%),
+    radial-gradient(ellipse at 94% 75%,rgba(122,75,20,.19),transparent 34%),
+    linear-gradient(180deg,#070706 0%,#140e08 57%,#090807 100%)
+}
+.hero::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    repeating-radial-gradient(circle at 50% 45%,transparent 0 132px,
+      rgba(242,175,65,.09) 133px,transparent 135px),
+    repeating-linear-gradient(90deg,transparent 0 149px,
+      rgba(229,163,69,.055) 150px,transparent 151px);
+  mask-image:linear-gradient(to bottom,#000 0%,#000 72%,transparent 97%)
+}
+.hero::after{
+  content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;opacity:.78;
+  transform:translateX(-50%);pointer-events:none;
+  background:linear-gradient(180deg,transparent 1%,#9c6322 13%,#ffe1a0 48%,#c77d28 82%,transparent);
+  box-shadow:0 0 14px rgba(255,185,82,.68),0 0 54px rgba(225,133,31,.27)
+}
+.hero-architecture{
+  position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none
+}
+.hero-architecture::before,.hero-architecture::after{
+  content:"";position:absolute;top:13%;bottom:7%;width:10%;
+  background:linear-gradient(95deg,rgba(8,7,6,.96),rgba(47,32,17,.78) 84%,rgba(230,166,72,.46) 99%,rgba(8,7,6,.7));
+  border-right:1px solid rgba(240,165,67,.28);
+  box-shadow:0 0 42px rgba(201,130,41,.12);
+  clip-path:polygon(0 0,66% 0,100% 12%,100% 100%,0 100%)
+}
+.hero-architecture::before{left:0}
+.hero-architecture::after{right:0;transform:scaleX(-1)}
+.hero .orb{
+  width:min(930px,95vw);height:min(930px,95vw);
+  right:50%;top:5%;transform:translateX(50%);opacity:.77
+}
+.hero .orb circle,.hero .orb ellipse{stroke:#b6873b;opacity:.38}
+.hero .orb ellipse:nth-child(odd){stroke:#efb85f;opacity:.49}
+.hero .orb .dot{fill:#ffd489;opacity:.87}
+.hero .orb svg{animation-duration:125s}
+.hero-crest{
+  position:absolute;top:92px;left:50%;z-index:1;transform:translateX(-50%);
+  width:175px;height:175px;color:#edb95e;opacity:.34;pointer-events:none;
+  filter:drop-shadow(0 0 29px rgba(236,164,56,.4))
+}
+.hero-crest svg{width:100%;height:100%}
+.hero-horizon{
+  position:absolute;left:-4%;right:-4%;bottom:-205px;height:345px;
+  z-index:1;pointer-events:none;transform:perspective(500px) rotateX(60deg);
+  transform-origin:top center;
+  border-top:1px solid rgba(255,189,90,.75);
+  background:repeating-radial-gradient(ellipse at 50% 0%,transparent 0 78px,
+    rgba(228,163,66,.27) 79px,transparent 81px,transparent 120px),
+    linear-gradient(180deg,rgba(196,123,37,.12),rgba(5,5,4,.9))
+}
+.hero-inner{
+  position:relative;z-index:2;
+  padding-top:293px;padding-bottom:135px;
+  display:flex;flex-direction:column;align-items:center;text-align:center
+}
+.hero .eyebrow{color:#e8c38a;letter-spacing:.23em;text-shadow:0 0 15px rgba(215,151,55,.22)}
+.hero h1{
+  max-width:1100px;color:#f7e1b3;
+  font-size:clamp(57px,7.2vw,108px);letter-spacing:-.058em;line-height:1.08;
+  text-shadow:0 3px 30px rgba(215,142,48,.3)
+}
+.hero h1 em{color:#ffd27b;font-style:normal}
+.hero .lead{
+  max-width:850px;color:#ddd0bb;
+  font-size:clamp(16px,1.45vw,19px);
+  line-height:1.72;margin:26px 0 29px
+}
+.hero-cta{justify-content:center;gap:11px;max-width:990px}
+.btn{
+  border-color:#c38e42;border-radius:7px;
+  color:#180e07;background:linear-gradient(145deg,#ffe0a1,#c88d37);
+  box-shadow:0 5px 23px rgba(169,109,31,.18);
+  transition:transform .18s,box-shadow .18s,background .18s
+}
+.btn:hover{
+  color:#180e07;background:linear-gradient(145deg,#ffe9b9,#eab65d);
+  box-shadow:0 6px 28px rgba(199,131,34,.35)
+}
+.btn.alt{background:rgba(8,7,6,.73);color:#f5d8a0;border-color:#986d32}
+.btn.alt:hover{background:#2a1e12;color:#ffe4b1}
+.top-note{justify-content:center;color:#c3ad89;margin-top:30px}
+.top-note .pip{background:#d2a15a}
+.statline{
+  background:linear-gradient(180deg,#100c09,#18110a);
+  border-top:1px solid #694925;border-bottom:1px solid #52391f
+}
+.stat{border-color:#4c3724}
+.stat strong{color:#f6dfb2}
+.stat span{color:#bca68b}
+section.area{scroll-margin-top:110px}
+#evidence-continuity,.mission-charter,#tmu-source-original-recovery{
+  background:linear-gradient(120deg,#171009,#0d0b08)!important;
+  border-color:#674626!important
+}
+.foundation,.cap,.note-card,.desk-card,.physical-card,.legend-unit,
+.full-estate-matrix article,.case-board,.matrix-wrap{
+  background:linear-gradient(145deg,#21180f,#100d09)!important;
+  border-color:#594123!important
+}
+.foundation::before{border-color:#ac7735;box-shadow:0 0 0 35px rgba(193,135,58,.07),0 0 0 70px rgba(193,135,58,.03)}
+.foundation .num,.cap .tiny-id{color:#deb171}
+.foundation h3,.cap h3,.note-card h4{color:#f6e6c9}
+.foundation p,.cap p,.note-card p{color:#beaf98}
+.mathnote{background:#1c150d;border-left-color:#c08e48}
+.mathnote .formula{color:#ffdfa8}
+.mathnote p{color:#b6a791}
+.witness,.physical-area,.matrix-section,.systems-category,.kcd-next-area{
+  background:linear-gradient(155deg,#17120c,#0b0a08)!important;
+  border-color:#47331d
+}
+.case-btn{background:#1c160f;color:#dcc8a9}
+.case-btn:hover,.case-btn.active{background:#2d2011;border-color:#b4823d;color:#fce8c5}
+.case-id,.case-sub,.status-label,.board-bar span,.step .k{color:#caa36c}
+.case-board{background:radial-gradient(ellipse at 70% 15%,#503116,transparent 50%),#13100b!important}
+.board-bar,.board-footer,.step{border-color:#72502d}
+.board-lead,.step .v{color:#e5d6bf}
+.status-word{color:#f5cf82}
+.status-word.deny{color:var(--red)}
+.status-word.hold{color:var(--orange)}
+.full-estate-gateway{
+  background:radial-gradient(ellipse at 70% 15%,rgba(112,74,23,.26),transparent 55%),
+             linear-gradient(120deg,#1c140a,#0b0a08)!important;
+  border-color:#644524
+}
+.full-estate-gateway h2,.full-estate-matrix strong{color:#f6dfb8}
+.full-estate-gateway p,.full-estate-matrix span{color:#cbbb9e}
+.matrix th{background:#322313;color:#f2d6a4}
+.matrix td{border-color:#49331e;color:#c7b9a3}
+.matrix td:first-child{color:#f9e9cc}
+.matrix .carrier-id,.matrix .type{color:#d6af71}
+.matrix tbody tr:hover td,.matrix tbody tr.is-selected td{background:#332415}
+.matrix-tools select{background:#21170e;color:#f4dec3;border-color:#79562c}
+.band{background:linear-gradient(100deg,#edc27a,#bd8434);color:#181007}
+.band p{color:#493119}
+.band .eyebrow{color:#4e3216}
+.physical-steps,.physical-step,.challenge-meta,.claim-ceiling{
+  background:#21180f;border-color:#6b4b27;color:#e8d2b2
+}
+.physical-step b,.custody-addendum{color:#f3ce87}
+.matrix-caption,.small{color:#b8a68b}
+:where(.foundation,.cap,.desk-card,.note-card,.physical-card,.full-estate-matrix article){
+  box-shadow:inset 0 1px 0 rgba(255,209,135,.05),0 12px 42px rgba(0,0,0,.12)
+}
+:where(.foundation,.cap,.desk-card,.note-card,.physical-card,.full-estate-matrix article):hover{
+  border-color:#916b36!important
+}
+@media(max-width:1050px){
+  .nav-inner{flex-wrap:wrap;gap:10px}
+  .navlinks{order:3;flex:0 0 100%;max-width:100%;width:100%;padding:7px 0}
+  .hero{min-height:720px}
+  .hero-inner{padding-top:235px;padding-bottom:115px}
+  .hero-crest{top:65px;width:145px;height:145px}
+  .hero-architecture::before,.hero-architecture::after{width:6%}
+}
+@media(max-width:680px){
+  .nav-inner{padding:10px 18px}
+  .brand{gap:8px}
+  .brand-name{font-size:14px}
+  .brand-caption{font-size:8px;letter-spacing:.09em}
+  .mark{width:37px;height:39px}
+  .nav-flag{font-size:9px;padding:6px 9px}
+  .navlinks{gap:18px;scrollbar-width:thin}
+  .hero{min-height:660px}
+  .hero .orb{width:620px;height:620px;top:2%}
+  .hero-architecture{display:none}
+  .hero-crest{top:54px;width:124px;height:124px}
+  .hero-inner{padding-top:199px;padding-bottom:88px}
+  .hero h1{font-size:clamp(46px,12vw,68px)}
+  .hero .lead{font-size:15px;line-height:1.6}
+  .hero-cta{gap:9px}
+  .hero-cta .btn{width:100%;max-width:350px}
+  .hero-horizon{bottom:-230px}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero .orb svg{animation:none}
+  .btn{transition:none}
+}
+@media print{
+  .hero::before,.hero::after,.hero-architecture,.hero-crest,.hero-horizon{display:none!important}
+  .hero{background:#fff!important}
+  .hero h1,.hero .lead{color:#111!important;text-shadow:none!important}
+}
+
 </style>
 </head>
 <body>
 <a class="skip-to-main" href="#top">Skip to main content</a>
-<header class="nav"><div class="shell nav-inner"><a class="brand" href="#top" aria-label="V.A. Proof Estate home"><div class="mark">V·A</div><div><div class="brand-name">VERITAS AEGIS</div><div class="brand-caption">THE PROOF ESTATE</div></div></a><nav class="navlinks" aria-label="Main navigation"><a href="reviewer-route.html">Start reviewing</a><a href="end-to-end.html" title="Complete end-to-end V.A. representation">Full End-to-End</a><a href="#systems-category">The category</a><a href="#kcd-next">KCD next</a><a href="#floor">The floor</a><a href="#witness">Witness</a><a href="#claims">Claim ledger</a><a href="#physical">Physical</a><a href="#challenge">Challenge</a><a href="#proof-desk">Proof desk</a><a href="#runnable-proof">Runnable proof</a><a href="#byo-seam">Bring your work</a></nav><div class="nav-flag">PUBLIC-SAFE · V2.6</div></div></header>
+<header class="nav"><div class="shell nav-inner"><a class="brand" href="#top" aria-label="V.A. Proof Estate home"><span class="mark mark-sigil"><svg viewBox="0 0 72 72" focusable="false" aria-hidden="true"><path d="M8 14 24 42 36 18 48 42 64 14" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="miter"/><path d="M36 17 14 57h11l11-20 11 20h11L36 17Z" fill="none" stroke="currentColor" stroke-width="2.8"/><path d="m36 53 8 13-8 5-8-5z" fill="currentColor" opacity=".72"/></svg></span><div><div class="brand-name">V.A. — The Proof Estate</div><div class="brand-caption">Veritas Aegis · Proof Before Power</div></div></a><nav class="navlinks" aria-label="Main navigation"><a href="reviewer-route.html">Start reviewing</a><a href="end-to-end.html" title="Complete end-to-end V.A. representation">Full End-to-End</a><a href="#systems-category">The category</a><a href="#kcd-next">KCD next</a><a href="#floor">The floor</a><a href="#witness">Witness</a><a href="#claims">Claim ledger</a><a href="#physical">Physical</a><a href="#challenge">Challenge</a><a href="#proof-desk">Proof desk</a><a href="#runnable-proof">Runnable proof</a><a href="#byo-seam">Bring your work</a></nav><div class="nav-flag">PUBLIC-SAFE · V2.6</div></div></header>
 <main id="top">
-<section class="hero"><div class="orb" aria-hidden="true"><svg viewBox="0 0 900 900"><circle cx="450" cy="450" r="340"/><circle cx="450" cy="450" r="265"/><circle cx="450" cy="450" r="190"/><circle cx="450" cy="450" r="108"/><ellipse cx="450" cy="450" rx="410" ry="170" transform="rotate(35 450 450)"/><ellipse cx="450" cy="450" rx="400" ry="165" transform="rotate(100 450 450)"/><ellipse cx="450" cy="450" rx="370" ry="175" transform="rotate(-31 450 450)"/><circle class="dot" cx="114" cy="410" r="5"/><circle class="dot" cx="751" cy="282" r="5"/><circle class="dot" cx="630" cy="615" r="4"/></svg></div><div class="shell hero-inner"><div class="eyebrow">V.A. / Public proof estate / Edition 08</div><h1 class="serif display">Proof<br/>before <em>power.</em></h1><p class="lead">Before candidate movement may bind protected consequence, its standing must hold. Examine the V.A. mathematical lineage and native record. Every public claim must terminate in an identified carrier, falsification condition, and evidence standing.</p><div class="hero-cta"><a class="btn" href="reviewer-route.html">Start a source-bound review <span aria-hidden="true">↗</span></a><a class="btn alt" href="end-to-end.html">Explore the entire V.A. estate <span aria-hidden="true">↗</span></a><a class="btn alt" href="#claims">Inspect the claims <span aria-hidden="true">↗</span></a><a class="btn alt" href="#native">What is V.A. <span aria-hidden="true">→</span></a><a class="btn alt" href="foundation.html">Understand the foundation <span aria-hidden="true">↗</span></a></div><div class="top-note"><span class="pip"></span> PUBLIC OBSERVATION, NOT SOURCE TRANSFER <span>·</span><span class="pip"></span> PROTECTED CONSTRUCTION WITHHELD</div></div></section>
+<section class="hero"><div class="hero-architecture" aria-hidden="true"></div><div class="hero-crest" aria-hidden="true"><svg viewBox="0 0 72 72" focusable="false" aria-hidden="true"><path d="M8 14 24 42 36 18 48 42 64 14" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="miter"/><path d="M36 17 14 57h11l11-20 11 20h11L36 17Z" fill="none" stroke="currentColor" stroke-width="2.8"/><path d="m36 53 8 13-8 5-8-5z" fill="currentColor" opacity=".72"/></svg></div><div class="hero-horizon" aria-hidden="true"></div><div class="orb" aria-hidden="true"><svg viewBox="0 0 900 900"><circle cx="450" cy="450" r="340"/><circle cx="450" cy="450" r="265"/><circle cx="450" cy="450" r="190"/><circle cx="450" cy="450" r="108"/><ellipse cx="450" cy="450" rx="410" ry="170" transform="rotate(35 450 450)"/><ellipse cx="450" cy="450" rx="400" ry="165" transform="rotate(100 450 450)"/><ellipse cx="450" cy="450" rx="370" ry="175" transform="rotate(-31 450 450)"/><circle class="dot" cx="114" cy="410" r="5"/><circle class="dot" cx="751" cy="282" r="5"/><circle class="dot" cx="630" cy="615" r="4"/></svg></div><div class="shell hero-inner"><div class="eyebrow">V.A. / Public proof estate / Edition 08</div><h1 class="serif display">Proof<br/>before <em>power.</em></h1><p class="lead">Before candidate movement may bind protected consequence, its standing must hold. Examine the V.A. mathematical lineage and native record. Every public claim must terminate in an identified carrier, falsification condition, and evidence standing.</p><div class="hero-cta"><a class="btn" href="reviewer-route.html">Start a source-bound review <span aria-hidden="true">↗</span></a><a class="btn alt" href="end-to-end.html">Explore the entire V.A. estate <span aria-hidden="true">↗</span></a><a class="btn alt" href="#claims">Inspect the claims <span aria-hidden="true">↗</span></a><a class="btn alt" href="#native">What is V.A. <span aria-hidden="true">→</span></a><a class="btn alt" href="foundation.html">Understand the foundation <span aria-hidden="true">↗</span></a></div><div class="top-note"><span class="pip"></span> PUBLIC OBSERVATION, NOT SOURCE TRANSFER <span>·</span><span class="pip"></span> PROTECTED CONSTRUCTION WITHHELD</div></div></section>
 <section id="evidence-continuity" aria-label="Public evidence and scientific continuity" style="padding:42px 0;background:#101c20;border-top:1px solid #334c4b;border-bottom:1px solid #334c4b">
 <div class="shell">
 <div class="eyebrow">PUBLIC-SAFE PROOF ROUTES · VERIFIED PUBLICATION NAVIGATION</div>
@@ -353,7 +596,7 @@
 </section>
 
 </main>
-<footer class="footer"><div class="shell footer-inner"><div><div class="brand"><div class="mark" style="width:29px;height:29px;font-size:11px">V·A</div><div class="brand-name">V.A. / VERITAS AEGIS</div></div><p>Proof before power. Every claim terminates in a carrier. Negative controls and actual consequences decide.</p><p>Scope: native V.A. formal records and engineering claims only; separate physical apparatus class. No converted brands or downstream systems included. Unattached historical evidence is not simulated.</p></div><div style="text-align:right"><div class="eyebrow muted">V.A. Public Proof Estate v2.6</div><p style="max-width:310px">Static, self-contained. No telemetry, third-party scripts, private data upload, or connection to a protected runtime.</p></div></div></footer>
+<footer class="footer"><div class="shell footer-inner"><div><div class="brand"><span class="mark mark-sigil" style="width:29px;height:29px"><svg viewBox="0 0 72 72" focusable="false" aria-hidden="true"><path d="M8 14 24 42 36 18 48 42 64 14" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="miter"/><path d="M36 17 14 57h11l11-20 11 20h11L36 17Z" fill="none" stroke="currentColor" stroke-width="2.8"/><path d="m36 53 8 13-8 5-8-5z" fill="currentColor" opacity=".72"/></svg></span><div class="brand-name">V.A. / VERITAS AEGIS</div></div><p>Proof before power. Every claim terminates in a carrier. Negative controls and actual consequences decide.</p><p>Scope: native V.A. formal records and engineering claims only; separate physical apparatus class. No converted brands or downstream systems included. Unattached historical evidence is not simulated.</p></div><div style="text-align:right"><div class="eyebrow muted">V.A. Public Proof Estate v2.6</div><p style="max-width:310px">Static, self-contained. No telemetry, third-party scripts, private data upload, or connection to a protected runtime.</p></div></div></footer>
 <div id="toast" class="toast" role="status"></div>
 <script>
 'use strict';
