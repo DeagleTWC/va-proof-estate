@@ -52,7 +52,7 @@
   const initial = document.body.dataset.scenario || 'authority';
   const state = {current:SCENARIOS.some(s=>s.id===initial)?initial:'authority',
                  predicted:null, revealed:false, register:null, registerHash:null,
-                 loading:true, error:null, message:''};
+                 loading:true, error:null, message:'', examinerMode:false};
 
   function safe(x) {
     return String(x === undefined || x === null ? '' : x)
@@ -163,7 +163,15 @@
       '<p><strong>What would falsify this bounded claim?</strong> '+safe(scenario.falsifier)+'</p>'+
       '<p class="cc-source-note">'+statusBadge(record)+' '+safe(record.id)+' / '+safe(record.class)+
       ' · This badge describes public record standing, not your prediction.</p></div>':'';
+    document.body.classList.toggle('cc-examiner-mode',state.examinerMode);
     app.innerHTML=
+      '<div class="cc-view-switch" role="group" aria-label="Reading mode">'+
+      '<button type="button" class="cc-view-button" data-mode="visitor" aria-pressed="'+(!state.examinerMode)+'">Visual examination</button>'+
+      '<button type="button" class="cc-view-button" data-mode="examiner" aria-pressed="'+state.examinerMode+'">Examiner mode · exact record</button></div>'+
+      (state.examinerMode?
+      '<section class="cc-section cc-examiner-detail"><div class="cc-heading"><h2>Original register entry</h2>'+
+      '<p>Exact source JSON fields. No generated native result.</p></div>'+
+      '<pre class="cc-raw-record" tabindex="0">'+safe(JSON.stringify(record,null,2))+'</pre></section>':'')+
       '<section class="cc-section" aria-labelledby="cc-select-title"><div class="cc-heading"><div>'+
       '<div class="cc-kicker">01 / Select a condition</div><h2 id="cc-select-title">Choose your challenge.</h2></div>'+
       '<p>No score or artificial proof animation. Each choice points to an identified public record.</p></div>'+
@@ -213,10 +221,13 @@
       '<a class="cc-link" href="'+safe(ROOT+'examiner/INDEPENDENT-CHALLENGE.md')+'">Read the fresh-challenge protocol</a>'+
       '<a class="cc-link" href="https://github.com/DeagleTWC/va-proof-estate/issues/1">Submit a bounded public challenge</a></div></div></section>';
 
+    app.querySelectorAll('[data-mode]').forEach(button=>button.addEventListener('click',()=>{
+      state.examinerMode=button.dataset.mode==='examiner';state.message='';render();
+    }));
     app.querySelectorAll('[data-case]').forEach(button=>button.addEventListener('click',()=>{
       state.current=button.dataset.case;state.predicted=null;state.revealed=false;state.message='';
       const next=getScenario(state.current);
-      try{history.replaceState(null,'',ROOT+next.page.replace(/^challenge\//,'challenge/'));}catch(_){}
+      try{history.replaceState(null,'',WEBSITE+next.page);}catch(_){}
       render();
     }));
     app.querySelectorAll('[data-prediction]').forEach(button=>button.addEventListener('click',()=>{
