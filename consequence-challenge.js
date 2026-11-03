@@ -226,8 +226,8 @@
     }));
     app.querySelectorAll('[data-case]').forEach(button=>button.addEventListener('click',()=>{
       state.current=button.dataset.case;state.predicted=null;state.revealed=false;state.message='';
-      const next=getScenario(state.current);
-      try{history.replaceState(null,'',WEBSITE+next.page);}catch(_){}
+      // Keep this document URL fixed so its relative sources and links remain valid.
+      // The share action uses the selected scenario's own permanent URL.
       render();
     }));
     app.querySelectorAll('[data-prediction]').forEach(button=>button.addEventListener('click',()=>{
