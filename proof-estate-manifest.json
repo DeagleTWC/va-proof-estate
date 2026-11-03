@@ -5,7 +5,7 @@
   "published": "2026-11-02",
   "scope": "V.A.-only native claim and public examination estate; separately labeled synthetic examiner, public True-Zero category primer, and prospective KCD Program A physical proof register (not native V.A. evidence).",
   "mainFile": "index.html",
-  "mainFileSHA256": "b366dd6394d421745fb2b3bf45f09ced177332507a68e8ca2265c30a672aafe3",
+  "mainFileSHA256": "8702640ff07509a6bc3eb64d036e3c079179c46f4a69bbd972692a3054f7076a",
   "publicEvidenceStatus": "DECLARED",
   "evidenceStatusVocabulary": [
     "DECLARED",
@@ -233,7 +233,7 @@
       "indexSourceCommit": "eb3ac171c920f5a67cba6c61a816b9c80e1dfc07"
     }
   ],
-  "currentIndexSourceCommit": "32bfc2b70e7fb49548a91b595da2d4980cdb79aa",
+  "currentIndexSourceCommit": "e86b282fd0ef227e312e527ac093e332972bb3d9",
   "releaseHistoryVerification": "git show <pinned commit>:index.html SHA-256 must equal archived manifest digest; current pinned commit must equal released index digest; no network or source disclosure",
   "releaseCorrection": {
     "release": "2.4",
@@ -255,7 +255,7 @@
     "originalPDFCopiesPubliclyAttached": 0,
     "scope": "Transcribed from existing original-PDF digest register. This edit does not remeasure absent original PDFs, independently certify their contents, disclose protected NEW-K, or change mathematical standing."
   },
-  "releaseChangeSummary": "Presentation-only navigation and mobile readability refinement: original twelve homepage destinations preserved through three direct routes and a native Explore sections menu; published claim ledger rows receive responsive labeled-card layout with unchanged record values, standing, selection behavior and exports. Obsidian/gold identity and protected foundation unchanged.",
+  "releaseChangeSummary": "New source-linked public Proof in Motion interaction: three permanent challenge cases, gold local share-image export, evidence-bound visitor Proof Passport, direct original source identity and optional examiner view. The homepage and reviewer navigation link to the new experience. Exact homepage SHA-256 and index source commit updated, original public register, evidence standings, release 2.6/edition 08 and private construction unchanged.",
   "publicReviewerRoute": {
     "path": "reviewer-route.html",
     "claimRegister": "proofs/CLAIM-TO-CARRIER.json",
@@ -298,5 +298,46 @@
       "mobileClaimLedger": "EXISTING_FIVE_COLUMN_RECORDS_AS_LABELED_CARDS",
       "recordValuesUnchanged": true
     }
+  },
+  "interactiveChallenge": {
+    "label": "V.A. — Proof in Motion / The Consequence Challenge",
+    "scope": "PUBLIC_SAFE_INTERACTIVE_EXAMINATION_NOT_NATIVE_EXECUTION",
+    "entryPages": [
+      "consequence-challenge.html",
+      "challenge/standing.html",
+      "challenge/authority.html",
+      "challenge/alternate-route.html"
+    ],
+    "publicSourceRegister": "proofs/CLAIM-TO-CARRIER.json",
+    "governingExaminerStandard": "proofs/EXAMINATION-STANDARD.md",
+    "supportingExaminerProtocol": "examiner/INDEPENDENT-CHALLENGE.md",
+    "examinationCases": [
+      {
+        "id": "standing",
+        "claim": "VA-N01",
+        "page": "challenge/standing.html"
+      },
+      {
+        "id": "authority",
+        "claim": "VA-N02",
+        "page": "challenge/authority.html"
+      },
+      {
+        "id": "alternate-route",
+        "claim": "VA-P02",
+        "page": "challenge/alternate-route.html"
+      }
+    ],
+    "sharePreviews": "Distinct case-bound OG title and description; original V.A. gold social-card JPEG retained unchanged",
+    "visitorGoldCards": "Each case card exported locally as PNG on user request; not a run or a witness",
+    "proofPassport": "Local JSON source hash and declared public standing; unsigned and not a V.A. receipt",
+    "examinerMode": "Original public JSON entry with no decorative runtime result representation",
+    "noTelemetry": true,
+    "noDataUploads": true,
+    "nativeExecutionClaimed": false,
+    "independenceClaimed": false,
+    "observedPhysicalConsequenceClaimed": false,
+    "existingEvidenceStatusesUnchanged": true,
+    "privateKernelUnchanged": true
   }
 }
