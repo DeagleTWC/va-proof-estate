@@ -255,7 +255,7 @@
     "originalPDFCopiesPubliclyAttached": 0,
     "scope": "Transcribed from existing original-PDF digest register. This edit does not remeasure absent original PDFs, independently certify their contents, disclose protected NEW-K, or change mathematical standing."
   },
-  "releaseChangeSummary": "New source-linked public Proof in Motion interaction: three permanent challenge cases, gold local share-image export, evidence-bound visitor Proof Passport, direct original source identity and optional examiner view. The homepage and reviewer navigation link to the new experience. Exact homepage SHA-256 and index source commit updated, original public register, evidence standings, release 2.6/edition 08 and private construction unchanged.",
+  "releaseChangeSummary": "A+ presentation refinement of existing Proof in Motion: three individually branded PNG social previews on permanent pages; improved 320px mobile accessibility, keyboard focus continuity, precise reveal-to-share CTA, and real-browser download/PNG/passport verification. The underlying 17-entry claim register, existing source PDFs/hashes, native evidence standing, and all protected mathematical construction remain untouched.",
   "publicReviewerRoute": {
     "path": "reviewer-route.html",
     "claimRegister": "proofs/CLAIM-TO-CARRIER.json",
@@ -328,7 +328,7 @@
         "page": "challenge/alternate-route.html"
       }
     ],
-    "sharePreviews": "Distinct case-bound OG title and description; original V.A. gold social-card JPEG retained unchanged",
+    "sharePreviews": "Three separate, case-specific gold 1200x630 PNG images with canonical Open Graph/Twitter metadata; locally generated PNG export remains distinct",
     "visitorGoldCards": "Each case card exported locally as PNG on user request; not a run or a witness",
     "proofPassport": "Local JSON source hash and declared public standing; unsigned and not a V.A. receipt",
     "examinerMode": "Original public JSON entry with no decorative runtime result representation",
@@ -338,6 +338,33 @@
     "independenceClaimed": false,
     "observedPhysicalConsequenceClaimed": false,
     "existingEvidenceStatusesUnchanged": true,
-    "privateKernelUnchanged": true
+    "privateKernelUnchanged": true,
+    "socialAssets": [
+      {
+        "claim": "VA-N01",
+        "page": "challenge/standing.html",
+        "image": "challenge/standing-1200x630.png",
+        "format": "image/png",
+        "width": 1200,
+        "height": 630
+      },
+      {
+        "claim": "VA-N02",
+        "page": "challenge/authority.html",
+        "image": "challenge/authority-1200x630.png",
+        "format": "image/png",
+        "width": 1200,
+        "height": 630
+      },
+      {
+        "claim": "VA-P02",
+        "page": "challenge/alternate-route.html",
+        "image": "challenge/alternate-route-1200x630.png",
+        "format": "image/png",
+        "width": 1200,
+        "height": 630
+      }
+    ],
+    "browserQualityAssurance": "Real-browser keyboard focus, mobile viewport, clipboard/share fallback, locally exported PNG and source-bound JSON Passport; separate CI workflow"
   }
 }
