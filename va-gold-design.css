@@ -1,0 +1,171 @@
+/* V.A. — The Proof Estate | shared internal-page design language
+   Unified visual identity: obsidian, antique gold, ivory.
+   Public presentation only. No evidence, mathematical, or runtime changes. */
+:root{
+  --va-obsidian:#090807;
+  --va-deep:#110d09;
+  --va-surface:#20170f;
+  --va-gold:#f3cb80;
+  --va-antique:#bd8b40;
+  --va-ivory:#f5ebdb;
+  --va-muted:#b9aa94;
+  --va-line:#5b4126;
+  color-scheme:dark;
+}
+body.va-gold-site{
+  color:var(--va-ivory);
+  background:
+    radial-gradient(ellipse at 50% -8%,rgba(117,74,24,.15),transparent 45%),
+    linear-gradient(180deg,#090807,#120e09 48%,#090807);
+  -webkit-font-smoothing:antialiased;
+}
+body.va-gold-site ::selection{background:#dbaf65;color:#140c07}
+body.va-gold-site :is(a,button,select,input,textarea):focus-visible{
+  outline:2px solid var(--va-gold);
+  outline-offset:4px;
+}
+body.va-gold-site header{
+  border-bottom-color:rgba(208,153,69,.40);
+  box-shadow:0 12px 35px rgba(0,0,0,.13);
+}
+body.va-gold-site header.nav{
+  background:rgba(9,7,6,.96);
+  box-shadow:0 12px 35px rgba(0,0,0,.24);
+}
+body.va-gold-site .va-brand{
+  display:inline-flex;
+  align-items:center;
+  gap:13px;
+  min-width:0;
+  color:var(--va-ivory);
+  text-decoration:none;
+}
+body.va-gold-site .va-sigil{
+  display:grid;
+  place-items:center;
+  height:45px;
+  width:45px;
+  flex:none;
+  color:#edbf74;
+  filter:drop-shadow(0 0 7px rgba(206,143,44,.27));
+}
+body.va-gold-site .va-sigil svg{display:block;width:100%;height:100%}
+body.va-gold-site .va-name{
+  display:block;
+  color:#f6dfb3;
+  font:500 17px/1.12 Georgia,"Times New Roman",serif;
+  letter-spacing:.025em;
+}
+body.va-gold-site .va-tagline{
+  display:block;
+  margin-top:5px;
+  color:#c9a16b;
+  font:600 9px/1.3 ui-monospace,Consolas,monospace;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+body.va-gold-site header :is(nav,.links){
+  align-items:center;
+  gap:16px;
+}
+body.va-gold-site header :is(nav,.links) a{
+  color:#d5c3a6;
+  text-decoration:none;
+  font:650 11px/1.5 ui-monospace,Consolas,monospace;
+  letter-spacing:.035em;
+  transition:color .2s ease;
+}
+body.va-gold-site header :is(nav,.links) a:hover,
+body.va-gold-site footer a:hover{color:#ffe1a3}
+body.va-gold-site :is(.hero,section.hero){
+  position:relative;
+  isolation:isolate;
+  background:
+    radial-gradient(ellipse at 79% 36%,rgba(165,107,37,.20),transparent 43%),
+    radial-gradient(ellipse at 8% 92%,rgba(102,68,29,.12),transparent 44%),
+    linear-gradient(180deg,#100c08,#171008 58%,#0a0907);
+  border-color:rgba(169,113,46,.33);
+}
+body.va-gold-site :is(.hero,section.hero)::before{
+  content:"";
+  pointer-events:none;
+  position:absolute;
+  z-index:-1;
+  width:clamp(280px,46vw,610px);
+  height:clamp(280px,46vw,610px);
+  top:-23%;
+  right:-9%;
+  border:1px solid rgba(232,173,81,.14);
+  border-radius:50%;
+  box-shadow:
+    0 0 0 44px rgba(195,130,45,.03),
+    0 0 0 107px rgba(196,134,53,.025),
+    inset 0 0 66px rgba(191,113,25,.045);
+}
+body.va-gold-site :is(h1,h2){
+  color:#f6e4c6;
+  text-wrap:balance;
+}
+body.va-gold-site h1 em{color:#f3c878;font-style:normal}
+body.va-gold-site :is(.eyebrow,.tag){color:#dcb072}
+body.va-gold-site :is(.hero,.section,.card,.claim,.term,.stage,.resource,.sector,.closing-card,.hero-figure,.callout,.path div,li){
+  scroll-margin-top:100px;
+}
+body.va-gold-site :is(.card,.claim,.term,.stage,.resource,.sector,.closing-card,.hero-figure,.callout,.path div,li){
+  border-color:#604628;
+  background:linear-gradient(145deg,#21180f 0%,#13100b 100%);
+  box-shadow:inset 0 1px 0 rgba(255,213,147,.035),0 13px 33px rgba(0,0,0,.11);
+}
+body.va-gold-site :is(.card,.claim,.term,.stage,.resource,.sector,.closing-card,.path div,li):hover{
+  border-color:#986f37;
+}
+body.va-gold-site :is(.btn,.cta):not(.alt):not(.secondary){
+  background:linear-gradient(145deg,#f8d797,#c99344);
+  border-color:#bd8840;
+  color:#150e08;
+  box-shadow:0 6px 22px rgba(155,96,28,.13);
+}
+body.va-gold-site :is(.btn.alt,.cta.secondary){
+  border:1px solid #8c6634;
+  color:#f1d3a0;
+  background:rgba(20,14,8,.56);
+}
+body.va-gold-site :is(.btn,.cta):hover{
+  filter:brightness(1.08);
+}
+body.va-gold-site :is(.note,.rule,.boundary-note){
+  background:#271c10;
+  border-color:#a37940;
+  color:#e9d6b7;
+}
+body.va-gold-site :is(.status,.ev-class,.meta,.small){
+  text-decoration:none;
+}
+body.va-gold-site footer{border-top-color:#614628;color:#baa98e}
+body.va-gold-site :is(select,input){
+  background:#21180f;
+  color:#f5ebdb;
+  border-color:#70512c;
+}
+@media(max-width:920px){
+  body.va-gold-site header :is(nav,.links){gap:11px}
+  body.va-gold-site .va-name{font-size:15px}
+}
+@media(max-width:680px){
+  body.va-gold-site .va-sigil{width:38px;height:38px}
+  body.va-gold-site .va-name{font-size:14px}
+  body.va-gold-site .va-tagline{font-size:8px;letter-spacing:.1em}
+  body.va-gold-site :is(.hero,section.hero)::before{
+    top:-5%;right:-43%;width:450px;height:450px;opacity:.58
+  }
+  body.va-gold-site header :is(nav,.links){gap:13px}
+}
+@media(prefers-reduced-motion:reduce){
+  body.va-gold-site header :is(nav,.links) a{transition:none}
+}
+@media print{
+  body.va-gold-site{background:#fff!important;color:#111!important}
+  body.va-gold-site :is(.hero,section.hero)::before{display:none}
+  body.va-gold-site :is(.hero,section.hero){background:#fff!important}
+  body.va-gold-site :is(h1,h2,h3){color:#111!important}
+}
