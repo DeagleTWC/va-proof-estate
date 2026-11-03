@@ -255,7 +255,7 @@
     "originalPDFCopiesPubliclyAttached": 0,
     "scope": "Transcribed from existing original-PDF digest register. This edit does not remeasure absent original PDFs, independently certify their contents, disclose protected NEW-K, or change mathematical standing."
   },
-  "releaseChangeSummary": "Visual-only obsidian-and-gold Proof Estate branding refresh: geometric V.A. mark, responsive header and hero, and restrained gold theming of existing evidence interfaces. All claim carriers, protected construction boundaries, release identifiers and evidence standings remain unchanged.",
+  "releaseChangeSummary": "Unified all five static Proof Estate HTML pages under the original obsidian/antique-gold V.A. brand treatment. Shared SVG emblem and typography; unchanged proof carriers, release version, technical navigation, scientific standings and protected source.",
   "publicReviewerRoute": {
     "path": "reviewer-route.html",
     "claimRegister": "proofs/CLAIM-TO-CARRIER.json",
@@ -268,12 +268,21 @@
   },
   "visualFaceRefresh": {
     "date": "2026-11-03",
-    "scope": "PUBLIC_PRESENTATION_ONLY",
-    "design": "Integrated obsidian-and-gold website styling with original CSS/SVG geometric motif; no pasted image, external script or media upload",
+    "scope": "ALL_FIVE_STATIC_HTML_PAGES__PRESENTATION_ONLY",
+    "design": "Unified site-wide obsidian/antique-gold design: existing homepage visual identity plus shared CSS and matching SVG wordmarks on the four internal pages; no external fonts, scripts or pasted raster decoration",
     "previousIndexSHA256": "65d5c51cc9d7e1cb6e6ff3290b172086c90530481b12ba4b7a2843e25ead79d1",
     "sourceOfPreservedRecords": "No source/claim/evidence/document modification",
     "nativeFoundationUnchanged": true,
     "releaseIdentityUnchanged": true,
-    "sourceStandingUnchanged": true
+    "sourceStandingUnchanged": true,
+    "stylesheet": "va-gold-design.css",
+    "publicPages": [
+      "index.html",
+      "foundation.html",
+      "reviewer-route.html",
+      "end-to-end.html",
+      "source-reading.html"
+    ],
+    "noNewEvidenceClassifications": true
   }
 }
