@@ -103,3 +103,15 @@ body.va-gold-site{font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif;c
  .cc-panel,.cc-evidence{background:#fff;color:#111;border-color:#777}
  body.va-gold-site{background:#fff;color:#111}
 }
+
+/* A genuinely source-first examiner reading face, not an animated status claim. */
+.cc-view-switch{display:flex;gap:7px;flex-wrap:wrap;margin:0 0 34px;padding:5px;border:1px solid #604526;border-radius:10px;width:max-content;max-width:100%;background:#160f0b}
+.cc-view-button{cursor:pointer;padding:9px 13px;border:1px solid transparent;background:transparent;border-radius:7px;color:#d7bc91;font:650 11px/1.4 ui-monospace,Consolas,monospace}
+.cc-view-button[aria-pressed="true"]{border-color:#9a703c;background:#332212;color:#f9d99d}
+.cc-examiner-detail{border-bottom:1px solid #694b28;padding-bottom:28px}
+.cc-raw-record{padding:20px;background:#0c0a08;border:1px solid #72512a;border-radius:12px;max-height:460px;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;color:#e5d7bd;font:12px/1.7 ui-monospace,Consolas,monospace}
+body.cc-examiner-mode .cc-hero::before,body.cc-examiner-mode .cc-hero::after{display:none}
+body.cc-examiner-mode .cc-orbit-spin{animation:none}
+body.cc-examiner-mode .cc-context{background:#100d09}
+body.cc-examiner-mode .cc-choice:hover{transform:none}
+@media(max-width:680px){.cc-view-switch{width:100%}.cc-view-button{flex:1;text-align:center}}
