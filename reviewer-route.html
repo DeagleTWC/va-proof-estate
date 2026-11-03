@@ -8,28 +8,29 @@
 <title>Start Reviewing | V.A. Proof Estate</title>
 <link rel="icon" type="image/png" href="favicon.png">
 <style>
-:root{color-scheme:dark;--bg:#080e12;--panel:#13201f;--text:#edf4f0;--muted:#b5cbc2;--accent:#b6f2d4;--line:#39534a;--gold:#f2cc97}
+:root{color-scheme:dark;--bg:#090807;--panel:#17120e;--text:#f5ebdb;--muted:#b9aa94;--accent:#f3cb80;--line:#5b4126;--gold:#f3cb80}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--text);font:16px/1.7 system-ui,-apple-system,"Segoe UI",sans-serif;margin:0}
 a{color:var(--accent)}a:focus-visible,select:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
-.skip{position:absolute;left:12px;top:-100px;background:var(--accent);color:#081410;padding:9px 14px;z-index:10}.skip:focus{top:12px}
+.skip{position:absolute;left:12px;top:-100px;background:var(--accent);color:#140e08;padding:9px 14px;z-index:10}.skip:focus{top:12px}
 header,main,footer{max-width:1120px;margin:auto;padding:26px clamp(18px,4vw,46px)}
 header{display:flex;flex-wrap:wrap;justify-content:space-between;gap:15px;border-bottom:1px solid var(--line)}
 .brand{font-weight:800;color:var(--text);text-decoration:none;letter-spacing:.08em}nav{display:flex;gap:18px;flex-wrap:wrap}nav a{text-decoration:none}
 .hero{padding:65px 0 40px}.eyebrow{text-transform:uppercase;font:700 12px/1.4 ui-monospace,monospace;letter-spacing:.13em;color:var(--accent)}
 h1{font:400 clamp(48px,7vw,86px)/1.04 Georgia,serif;letter-spacing:-.05em;margin:14px 0 24px;max-width:840px}h2{font:400 clamp(29px,4vw,43px)/1.2 Georgia,serif;margin:14px 0 22px}h3{font-size:17px;margin:10px 0 9px;text-transform:capitalize}
-.lead{color:var(--muted);font-size:19px;max-width:780px}.rule{border-left:3px solid var(--gold);padding:16px 20px;background:#26231b;margin:25px 0;color:#f0e1c8}
+.lead{color:var(--muted);font-size:19px;max-width:780px}.rule{border-left:3px solid var(--gold);padding:16px 20px;background:#271c10;margin:25px 0;color:#efdfc2}
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.card,.claim{border:1px solid var(--line);border-radius:12px;padding:23px;background:var(--panel)}.card p,.claim p{color:var(--muted);margin:0 0 16px}.card a,.claim a{font-weight:700}
-section{padding:38px 0;border-top:1px solid #243e36}.claim-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
-.claim-head{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}.status{font:700 10px/1.4 ui-monospace,monospace;border:1px solid #756345;border-radius:20px;padding:6px 10px;color:#f2d5a9}.observed{color:#cef3df;border-color:#598870}
-.meta{font-size:12px;color:#bdcdbf;margin-bottom:10px}.claim[hidden]{display:none}
-select{font:inherit;background:#1c302b;color:white;border:1px solid #789682;padding:12px;border-radius:7px;max-width:100%}.filter{display:flex;align-items:center;gap:15px;flex-wrap:wrap;margin-bottom:24px}label{font-weight:700}
+section{padding:38px 0;border-top:1px solid #4e3620}.claim-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.claim-head{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}.status{font:700 10px/1.4 ui-monospace,monospace;border:1px solid #967040;border-radius:20px;padding:6px 10px;color:#f6d4a0}.observed{color:#eee2c9;border-color:#77664e}
+.meta{font-size:12px;color:#c5b8a2;margin-bottom:10px}.claim[hidden]{display:none}
+select{font:inherit;background:#251a10;color:white;border:1px solid #96764e;padding:12px;border-radius:7px;max-width:100%}.filter{display:flex;align-items:center;gap:15px;flex-wrap:wrap;margin-bottom:24px}label{font-weight:700}
 footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px}footer a{color:var(--accent)}
 @media(max-width:740px){.grid,.claim-grid{grid-template-columns:1fr}.hero{padding-top:38px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
+<link rel="stylesheet" href="va-gold-design.css">
 </head>
-<body>
+<body class="va-gold-site">
 <a class="skip" href="#main">Skip to main content</a>
-<header><a class="brand" href="index.html">V.A. / THE PROOF ESTATE</a><nav aria-label="Review navigation"><a href="source-reading.html">Read sources</a><a href="index.html">Home</a><a href="foundation.html">Foundation</a><a href="end-to-end.html">Full atlas</a><a href="#claims">Evidence register</a></nav></header>
+<header><a class="brand va-brand" href="index.html" aria-label="V.A. Proof Estate home"><span class="va-sigil"><svg viewBox="0 0 72 72" focusable="false" aria-hidden="true"><path d="M8 14 24 42 36 18 48 42 64 14" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="miter"/><path d="M36 17 14 57h11l11-20 11 20h11L36 17Z" fill="none" stroke="currentColor" stroke-width="2.8"/><path d="m36 53 8 13-8 5-8-5z" fill="currentColor" opacity=".72"/></svg></span><span class="va-brand-copy"><span class="va-name">V.A. — The Proof Estate</span><span class="va-tagline">Proof Before Power</span></span></a><nav aria-label="Review navigation"><a href="source-reading.html">Read sources</a><a href="index.html">Home</a><a href="foundation.html">Foundation</a><a href="end-to-end.html">Full atlas</a><a href="#claims">Evidence register</a></nav></header>
 <main id="main">
 <div class="hero"><div class="eyebrow">Reader / engineer / examiner · public-safe entry</div><h1>Start with the claim.<br>Follow the carrier.</h1>
 <p class="lead">The V.A. foundation is True Zero → Elements Basin → corrected NEW K → URK → lawful continuance → consequence custody. This route shows the recorded work, the published evidence class, and where independent examination can begin.</p>
