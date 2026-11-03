@@ -40,7 +40,7 @@ const navLinks=[...nav.matchAll(/href="([^"]+)"/g)].map(x=>x[1]).sort();
 const expectedNav=[
   'reviewer-route.html','end-to-end.html','#systems-category','#kcd-next',
   '#floor','#witness','#claims','#physical','#challenge','#proof-desk',
-  '#runnable-proof','#byo-seam'
+  '#runnable-proof','#byo-seam','consequence-challenge.html'
 ].sort();
 assert.deepEqual(navLinks,expectedNav,'Original public navigation routes must be retained');
 assert.ok(nav.includes('<details class="nav-more">') && nav.includes('<summary>Explore sections'),
