@@ -12,6 +12,8 @@ on:
       - 'scripts/**'
       - 'README.md'
       - 'index.html'
+      - 'consequence-challenge.*'
+      - 'challenge/**'
       - 'foundation.html'
       - 'end-to-end.html'
       - 'reviewer-route.html'
@@ -33,6 +35,8 @@ on:
       - 'scripts/**'
       - 'README.md'
       - 'index.html'
+      - 'consequence-challenge.*'
+      - 'challenge/**'
       - 'foundation.html'
       - 'end-to-end.html'
       - 'reviewer-route.html'
@@ -62,6 +66,8 @@ jobs:
         run: node scripts/validate_public_script_syntax.mjs
       - name: Test malformed-script and external-script negative controls
         run: node scripts/test_validate_public_script_syntax.mjs
+      - name: Validate source-bound Proof in Motion, share links and negative controls
+        run: node scripts/test_consequence_challenge.mjs
       - name: Confirm formal NEW-K source identities and exported claim carrier hashes
         run: python3 scripts/validate_public_formal_sources.py
       - name: Test original-PDF hash and formal-claim evidence boundaries

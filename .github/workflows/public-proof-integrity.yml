@@ -9,6 +9,8 @@ on:
       - ".github/ISSUE_TEMPLATE/**"
       - "proof-estate-manifest.json"
       - "index.html"
+      - "consequence-challenge.*"
+      - "challenge/**"
       - "end-to-end.html"
       - "foundation.html"
       - "reviewer-route.html"
@@ -50,6 +52,8 @@ on:
       - ".github/ISSUE_TEMPLATE/**"
       - "proof-estate-manifest.json"
       - "index.html"
+      - "consequence-challenge.*"
+      - "challenge/**"
       - "end-to-end.html"
       - "foundation.html"
       - "reviewer-route.html"
@@ -184,6 +188,8 @@ jobs:
         run: |
           python scripts/validate_visual_identity.py
           python scripts/test_validate_visual_identity.py
+      - name: Check public interactive challenge source custody and exports
+        run: node scripts/test_consequence_challenge.mjs
       - name: Verify public manifest and claim-register integrity
         run: python scripts/validate_public_register.py
       - name: Preserve source-bound public CI logs (not native effect proof)
