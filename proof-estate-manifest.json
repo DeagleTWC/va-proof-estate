@@ -5,7 +5,7 @@
   "published": "2026-11-03",
   "scope": "V.A.-only native claim and public examination estate; separately labeled synthetic examiner, public True-Zero category primer, and prospective KCD Program A physical proof register (not native V.A. evidence).",
   "mainFile": "index.html",
-  "mainFileSHA256": "cc7427d40121064ccbb32118b40a541fc739bbee598457ea860be75209cb7718",
+  "mainFileSHA256": "3271e084473b1e951d759cbab7bc9228bfa9c2381bd5ef0799f09dfc06eccf68",
   "publicEvidenceStatus": "DECLARED",
   "evidenceStatusVocabulary": [
     "DECLARED",
@@ -240,7 +240,7 @@
       "indexSourceCommit": "e86b282fd0ef227e312e527ac093e332972bb3d9"
     }
   ],
-  "currentIndexSourceCommit": "5311c061313762d39d0d59175bd53f8149a124b6",
+  "currentIndexSourceCommit": "677e9a566c987a43b85f45f7d90c6cb03ded3cd5",
   "releaseHistoryVerification": "git show <pinned commit>:index.html SHA-256 must equal archived manifest digest; current pinned commit must equal released index digest; no network or source disclosure",
   "releaseCorrection": {
     "release": "2.4",
