@@ -2,6 +2,9 @@
 
 # V.A. — The Proof Estate
 
+**Consequence Aperture — public examiner workbench (Stage A):** [Open the interface](consequence-aperture.html) · [Read the data-only protocol and offline original-byte verifier](aperture/README.md). Prepare an unissued examiner request and locally check submitted evidence originals against SHA-256. No native execution, independent effects, or witness standing are inferred by this interface. Earlier historical pilots and protected True Zero / corrected NEW K / URK construction are unchanged.
+
+
 **New: [The Foundation, Explained — public reader's route](foundation.html)**. Start here for a plain-language account of True Zero, Elements Basin, corrected NEW K, URK, AHMR and Lawful Continuation, with direct links to source records and source-specific evidence standings. This is an explanation, not release of protected construction or a new independently measured proof.
 
 **[Grid Layer — public technical orientation and supervised pilot pathway](proofs/GRID-LAYER-PUBLIC-OVERVIEW.md)** — public-safe explanation of the custodian-identified existing grid layer, candidate battery-storage and power-infrastructure applications, and a separately authorized route for partner-specific evaluation and licensing. The grid-specific original implementation and independently qualified result are **not attached to this public release**; no protected construction or operational permission is transferred.
@@ -25,7 +28,7 @@
 The central public atlas spans the full foundational-to-consequence examination path, with **12 stages**, an evidence-classified review of genuine original historic engineering and recorded workflows, **39 source references** from the Kamanaka public estate classified by relationship and attribution, eight applied consequence corridors, and direct Bring Your Own Workflow and independent qualification entries. Deagle is the comprehensive public examination *home*; original independently authored and downstream sources keep their own source rights, custody and standing. See [full technical narrative](proofs/FULL-END-TO-END-REPRESENTATION.md) and [machine-readable end-to-end register](proofs/END-TO-END-ESTATE-REGISTER.json).
 
 
-This is the publication carrier for the V.A.-only evidence-routing interface, **website release 2.6 / edition 08** (releases 2.0 / 02 through 2.5 / 07 preserved by original SHA-256 and pinned commits in the manifest and Git history). **The custodian identifies the current V.A. system as V12**; website release numbering is separate from system versioning. See the [version-identity and evidence-lineage record](proofs/VERSION-IDENTITY.md). V12 native build receipts are not attached to this public release. The code repository hosts the static website; the evidence interface is the public entry point.
+This is the publication carrier for the V.A.-only evidence-routing interface, **website release 2.7 / edition 09** (releases 2.0 / 02 through 2.6 / 08 preserved by original SHA-256 and pinned commits in the manifest and Git history). **The custodian identifies the current V.A. system as V12**; website release numbering is separate from system versioning. See the [version-identity and evidence-lineage record](proofs/VERSION-IDENTITY.md). V12 native build receipts are not attached to this public release. The code repository hosts the static website; the evidence interface is the public entry point.
 
 The site differentiates **DECLARED**, **OBSERVED**, and **INDEPENDENTLY REPRODUCED** evidence, contains a claim-to-carrier ledger, native bounded witness specifications, separate physical-apparatus evidence requirements and negative controls, versioned challenge identities, and local one-click public-safe JSON challenge packets.
 

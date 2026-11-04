@@ -31,7 +31,7 @@ assert.ok(renderer.indexOf('activeLedger=selection.activeId')<renderer.indexOf('
 assert.ok(renderer.includes("tr.setAttribute('aria-selected'"));
 assert.ok(renderer.includes("byId('claimPacket').disabled=!activeLedger"));
 
-// Visual-only navigation checks: preserve every original section destination.
+// Public navigation checks: preserve every original section destination and the two Stage A entry links.
 const navStart=homepage.indexOf('<nav class="navlinks"');
 const navEnd=homepage.indexOf('</nav>',navStart);
 assert.ok(navStart>=0 && navEnd>navStart,'Primary navigation missing');
@@ -40,7 +40,8 @@ const navLinks=[...nav.matchAll(/href="([^"]+)"/g)].map(x=>x[1]).sort();
 const expectedNav=[
   'reviewer-route.html','end-to-end.html','#systems-category','#kcd-next',
   '#floor','#witness','#claims','#physical','#challenge','#proof-desk',
-  '#runnable-proof','#byo-seam','consequence-challenge.html'
+  '#runnable-proof','#byo-seam','consequence-challenge.html',
+  'consequence-aperture.html','consequence-aperture.html'
 ].sort();
 assert.deepEqual(navLinks,expectedNav,'Original public navigation routes must be retained');
 assert.ok(nav.includes('<details class="nav-more">') && nav.includes('<summary>Explore sections'),

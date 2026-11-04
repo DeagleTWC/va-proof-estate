@@ -1,0 +1,58 @@
+name: Consequence Aperture Public Examination QA
+on:
+  pull_request:
+    paths:
+      - "consequence-aperture.*"
+      - "aperture/**"
+      - "index.html"
+      - "reviewer-route.html"
+      - "consequence-challenge.html"
+      - "proof-estate-manifest.json"
+      - ".github/workflows/consequence-aperture.yml"
+  push:
+    branches: [main]
+    paths:
+      - "consequence-aperture.*"
+      - "aperture/**"
+      - "index.html"
+      - "reviewer-route.html"
+      - "consequence-challenge.html"
+      - "proof-estate-manifest.json"
+      - ".github/workflows/consequence-aperture.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  data-only-negative-controls:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Independent byte preflight and falsification controls
+        run: python aperture/test_verify_packet.py -v
+      - name: Public source identity, non-promotion, navigation, and JavaScript syntax
+        run: node aperture/test_site.mjs
+  real-browser-aperture:
+    needs: data-only-negative-controls
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Install isolated Chromium for CI examination only
+        run: |
+          npm install --no-save --ignore-scripts playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Verify real browser request download and original-byte tamper refusal
+        run: node aperture/test_browser.mjs
