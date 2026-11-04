@@ -2,6 +2,9 @@
 
 # V.A. — The Proof Estate
 
+**Consequence Aperture — public examiner workbench (Stage A):** [Open the interface](consequence-aperture.html) · [Read the data-only protocol and offline original-byte verifier](aperture/README.md). Prepare an unissued examiner request and locally check submitted evidence originals against SHA-256. No native execution, independent effects, or witness standing are inferred by this interface. Earlier historical pilots and protected True Zero / corrected NEW K / URK construction are unchanged.
+
+
 **New: [The Foundation, Explained — public reader's route](foundation.html)**. Start here for a plain-language account of True Zero, Elements Basin, corrected NEW K, URK, AHMR and Lawful Continuation, with direct links to source records and source-specific evidence standings. This is an explanation, not release of protected construction or a new independently measured proof.
 
 **[Grid Layer — public technical orientation and supervised pilot pathway](proofs/GRID-LAYER-PUBLIC-OVERVIEW.md)** — public-safe explanation of the custodian-identified existing grid layer, candidate battery-storage and power-infrastructure applications, and a separately authorized route for partner-specific evaluation and licensing. The grid-specific original implementation and independently qualified result are **not attached to this public release**; no protected construction or operational permission is transferred.
