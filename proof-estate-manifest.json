@@ -1,11 +1,11 @@
 {
   "site": "V.A. — The Proof Estate",
-  "release": "2.6",
-  "edition": "08",
-  "published": "2026-11-02",
+  "release": "2.7",
+  "edition": "09",
+  "published": "2026-11-03",
   "scope": "V.A.-only native claim and public examination estate; separately labeled synthetic examiner, public True-Zero category primer, and prospective KCD Program A physical proof register (not native V.A. evidence).",
   "mainFile": "index.html",
-  "mainFileSHA256": "8702640ff07509a6bc3eb64d036e3c079179c46f4a69bbd972692a3054f7076a",
+  "mainFileSHA256": "cc7427d40121064ccbb32118b40a541fc739bbee598457ea860be75209cb7718",
   "publicEvidenceStatus": "DECLARED",
   "evidenceStatusVocabulary": [
     "DECLARED",
@@ -171,11 +171,11 @@
     "physicalEvidencePromotion": false
   },
   "previousWebsiteRelease": {
-    "release": "2.5",
-    "edition": "07",
-    "publicationDate": "2026-11-01",
-    "mainFileSHA256": "38677db692c3997e88dcdca2de4ad67755a0184d6eab804dd13b5e4f8adf1579",
-    "indexSourceCommit": "eb3ac171c920f5a67cba6c61a816b9c80e1dfc07",
+    "release": "2.6",
+    "edition": "08",
+    "publicationDate": "2026-11-02",
+    "mainFileSHA256": "8702640ff07509a6bc3eb64d036e3c079179c46f4a69bbd972692a3054f7076a",
+    "indexSourceCommit": "e86b282fd0ef227e312e527ac093e332972bb3d9",
     "preservedInGitHistory": true
   },
   "publicContinuityRoutes": {
@@ -231,9 +231,16 @@
       "publicationDate": "2026-11-01",
       "mainFileSHA256": "38677db692c3997e88dcdca2de4ad67755a0184d6eab804dd13b5e4f8adf1579",
       "indexSourceCommit": "eb3ac171c920f5a67cba6c61a816b9c80e1dfc07"
+    },
+    {
+      "release": "2.6",
+      "edition": "08",
+      "publicationDate": "2026-11-02",
+      "mainFileSHA256": "8702640ff07509a6bc3eb64d036e3c079179c46f4a69bbd972692a3054f7076a",
+      "indexSourceCommit": "e86b282fd0ef227e312e527ac093e332972bb3d9"
     }
   ],
-  "currentIndexSourceCommit": "e86b282fd0ef227e312e527ac093e332972bb3d9",
+  "currentIndexSourceCommit": "5311c061313762d39d0d59175bd53f8149a124b6",
   "releaseHistoryVerification": "git show <pinned commit>:index.html SHA-256 must equal archived manifest digest; current pinned commit must equal released index digest; no network or source disclosure",
   "releaseCorrection": {
     "release": "2.4",
@@ -255,7 +262,7 @@
     "originalPDFCopiesPubliclyAttached": 0,
     "scope": "Transcribed from existing original-PDF digest register. This edit does not remeasure absent original PDFs, independently certify their contents, disclose protected NEW-K, or change mathematical standing."
   },
-  "releaseChangeSummary": "A+ presentation refinement of existing Proof in Motion: three individually branded PNG social previews on permanent pages; improved 320px mobile accessibility, keyboard focus continuity, precise reveal-to-share CTA, and real-browser download/PNG/passport verification. The underlying 17-entry claim register, existing source PDFs/hashes, native evidence standing, and all protected mathematical construction remain untouched.",
+  "releaseChangeSummary": "Consequence Aperture Stage A: public examiner challenge-request draft and local original-evidence SHA-256 preflight, exact four-role positive/negative/changed/replay records, public offline verifier, adversarial negatives, and direct Proof Estate entry. No native URK system connected, no native or physical consequence verified, no independent claimant identity certified. Original scientific/source carriers and existing standing remain unchanged.",
   "publicReviewerRoute": {
     "path": "reviewer-route.html",
     "claimRegister": "proofs/CLAIM-TO-CARRIER.json",
@@ -366,5 +373,31 @@
       }
     ],
     "browserQualityAssurance": "Real-browser keyboard focus, mobile viewport, clipboard/share fallback, locally exported PNG and source-bound JSON Passport; separate CI workflow"
+  },
+  "consequenceAperture": {
+    "title": "V.A. Consequence Aperture",
+    "status": "STAGE_A_PUBLIC_EXAMINER_WORKBENCH",
+    "url": "consequence-aperture.html",
+    "source": [
+      "consequence-aperture.html",
+      "consequence-aperture.css",
+      "consequence-aperture.js",
+      "aperture/README.md",
+      "aperture/verify_packet.py",
+      "aperture/test_verify_packet.py"
+    ],
+    "challengeStatus": "DRAFT_UNISSUED; EXAMINER ISSUANCE REQUIRES DISTINCT ACTOR AFTER FROZEN SOURCE",
+    "preflight": "LOCAL STRUCTURE AND ORIGINAL BYTE SHA-256 VERIFICATION ONLY",
+    "packetStandingCeiling": "DECLARED_ONLY",
+    "nativeExecutionConnected": false,
+    "independentlyMeasuredExternalEffectAttached": false,
+    "independentNativeReproductionAttached": false,
+    "productionAuthorization": false,
+    "protectedMathOrPrivateKernelReleased": false,
+    "noTelemetry": true,
+    "noUploads": true,
+    "existingClaimToCarrierRegisterUnchanged": true,
+    "stageB": "CONTROLLED FACILITY AND AUTHORIZED NATIVE RUNTIME WITH SEPARATELY INSTRUMENTED EFFECT — NOT CONNECTED",
+    "stageC": "SOURCE-QUALIFIED INDEPENDENT WITNESS AND PHYSICAL EFFECT RELEASE — NOT ESTABLISHED HERE"
   }
 }
