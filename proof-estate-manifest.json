@@ -5,7 +5,7 @@
   "published": "2026-11-03",
   "scope": "V.A.-only native claim and public examination estate; separately labeled synthetic examiner, public True-Zero category primer, and prospective KCD Program A physical proof register (not native V.A. evidence).",
   "mainFile": "index.html",
-  "mainFileSHA256": "3271e084473b1e951d759cbab7bc9228bfa9c2381bd5ef0799f09dfc06eccf68",
+  "mainFileSHA256": "85f9df06066f6c0af26c42981eb8584c99d0a5ee9c437e1a6c0e565f7ebc908d",
   "publicEvidenceStatus": "DECLARED",
   "evidenceStatusVocabulary": [
     "DECLARED",
@@ -87,11 +87,11 @@
     "versionIdentityRecord": "proofs/VERSION-IDENTITY.md"
   },
   "versionDisambiguation": {
-    "publicationRelease": "2.6",
+    "publicationRelease": "2.7",
     "historicalDeployBuild": "V1.2 (April 2026)",
     "scientificRecordEdition": "v1.2.3 (July 2026)",
     "syntheticExaminerFixture": "VA-AD-001/SPEC-1.0",
-    "publicationEdition": "08",
+    "publicationEdition": "09",
     "challengePacketSchema": "VA-CHALLENGE-2.0 (stable format; distinct from website release)"
   },
   "nativeV12EvidenceGate": "proofs/V12-EVIDENCE-STATUS.json",
@@ -240,7 +240,7 @@
       "indexSourceCommit": "e86b282fd0ef227e312e527ac093e332972bb3d9"
     }
   ],
-  "currentIndexSourceCommit": "677e9a566c987a43b85f45f7d90c6cb03ded3cd5",
+  "currentIndexSourceCommit": "2f7674cb3ca25e78d47624e61e35bebee709ce73",
   "releaseHistoryVerification": "git show <pinned commit>:index.html SHA-256 must equal archived manifest digest; current pinned commit must equal released index digest; no network or source disclosure",
   "releaseCorrection": {
     "release": "2.4",
