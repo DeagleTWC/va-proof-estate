@@ -31,7 +31,7 @@ def validate(root=ROOT):
         return [f"Invalid release manifest JSON: {exc}"]
     version = manifest.get("release")
     edition = manifest.get("edition")
-    declared_sha = manifest.get("mainFileSHA256", "")
+    declared_sha = manifest.get("currentSiteIndexSHA256", manifest.get("mainFileSHA256", ""))
     html = load("index.html")
     if not HEX_SHA.fullmatch(str(declared_sha)):
         errors.append("Current website SHA-256 is absent or invalid")
