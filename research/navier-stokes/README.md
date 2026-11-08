@@ -1,26 +1,31 @@
-# Classical Navier–Stokes — Open Research Examination Record
+# Classical Navier–Stokes — open mathematical source and bounded reproducibility
 
-**Author:** Terry Allen Snyder  
-**Release preparation:** 2026-11-08  
-**Public status:** Bibliographic record, scoped source description, and checksums published. The exact 28-page PDF has been prepared for upload but is **not yet hosted here**.
+Author: Terry Allen Snyder  
+Public release date: 2026-11-08  
 
-The author's formula-first correlated proof reader contains classical Navier–Stokes equations, stated hypotheses, theorems, and proofs. This public release isolates **pages 1–28** of the original 80-page review PDF: three orientation/source-map pages and the original classical mathematics body (pages 4–28). Mathematical page content was not rewritten. The separate native NEW K / URK source section and native generators are excluded from this release.
+## Mathematical manuscript
 
-## Primary prepared public file
+`Snyder_Classical_Navier_Stokes_Proof_Extract_11pp.pdf` is **exactly the original rendered pages 5–15** of the original 80-page correlated proof reader. Those pages form **Part A, classical formulation and proof sequence**, with unchanged printed theorem numbers, equations, and mathematical statements. The original 80-page source reader is not published as part of this public-safe classical release because it includes separate native mathematics.
 
-- `Snyder_Classical_Navier_Stokes_Proof_Reader_28pp.pdf` — **prepared locally; binary upload pending**.
-- SHA-256: `8168d1b5e52b85848cd043326ea27af3b8fc97e8e8eaa3a22944ecf79af86b25`
-- Full 80-page source-reader SHA-256: `3d2ec03f400030d8a140af6139f2db1b44a1787b797c661d852b89110310703c`
-- [Machine-readable manifest](PUBLIC_RELEASE_MANIFEST.json).
+`ORIGINAL_PART_II_CLASSICAL_TEX_EXCERPT.tex` is an exact-text extraction of the manuscript's original *Part II* LaTeX source, excluding native Part I and constructed Part III. It is a partial source with original cross-references and is provided for reading/source comparison; it is **not** claimed to compile independently.
 
-## Independent review
+This release does not supply a native NEW K / URK kernel, operators, generators, or protected construction.
 
-Examine the equations, stated hypotheses, mathematical dependencies, and each theorem's conclusion using the original PDF. Finite numerical replays and file-integrity checks establish only their bounded computational/file-integrity targets, not mathematical correctness of an unrestricted three-dimensional global-regularity result.
+## Conventional numerical reproduction
 
-Reviewers are invited to report a theorem/lemma/equation reference, the exact alleged mathematical defect with a derivation or counterexample, and whether it affects a stated result. Avoid broad, unsupported assertions of success or failure.
+The file `05_REPRODUCIBILITY/independent_midpoint_replay.py` reconstructs **finite** 122- and 250-mode periodic Fourier-Galerkin examples and compares against the 16-step saved endpoint records. The results are **bounded computational evidence**, not a proof of unrestricted global regularity or an original URK implementation.
 
-This publication record **does not assert that Clay Mathematics Institute has accepted, certified, or awarded any prize**. Publication here is independent of any journal or prize process.
+From the extracted release directory:
 
-**Mathematics archive:** [Browse mathematics](../../mathematics.html)  
-**Site:** [Open research record](../../navier-stokes.html)  
-**Separate foundation:** [V.A. Proof Estate](../../README.md)
+```bash
+python -m pip install -r 05_REPRODUCIBILITY/requirements-replay.txt
+python 05_REPRODUCIBILITY/independent_midpoint_replay.py --output independent_replay_result.json
+```
+
+The saved comparisons and six-mode seed are included verbatim from the November 8 repaired referee archive. The original protected generator and native proof sources are deliberately omitted.
+
+## Examination and standing
+
+Review the complete stated hypotheses, definitions, equations, and proofs against the original mathematical manuscript. Reviewers should cite the specific theorem or equation and provide derivations or counterexamples when reporting an alleged defect. This is an author-produced open artifact, with an independent-review invitation; neither Clay recognition nor journal acceptance nor third-party certification is claimed.
+
+Hashes in `SHA256SUMS.txt` cover the exact released files. Bibliographic DOI: **not assigned**.

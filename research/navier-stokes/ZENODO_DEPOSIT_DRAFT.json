@@ -1,0 +1,21 @@
+{
+  "title": "Classical Three-Dimensional Navier–Stokes: Formula and Proof Examination",
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "creators": [
+    {
+      "name": "Snyder, Terry Allen"
+    }
+  ],
+  "description": "Author-submitted classical three-dimensional Navier–Stokes mathematical source excerpt with original equations and proofs, plus a finite-mode Fourier–Galerkin numerical reproduction package. Independent mathematical examination invited. No third-party certification, journal acceptance, or unrestricted regularity conclusion is asserted by these computational checks.",
+  "keywords": [
+    "Navier–Stokes",
+    "three-dimensional incompressible flow",
+    "partial differential equations",
+    "Fourier–Galerkin",
+    "mathematical proof",
+    "numerical reproducibility"
+  ],
+  "publication_date": "2026-11-08",
+  "notes": "Metadata draft for optional external DOI deposit; DOI has not been assigned. Confirm licensing and upload rights before depositing."
+}

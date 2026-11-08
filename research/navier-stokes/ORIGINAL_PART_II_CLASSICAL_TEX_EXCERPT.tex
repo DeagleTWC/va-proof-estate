@@ -1,0 +1,566 @@
+% Verbatim Part II span from Terry Allen Snyder v11 primary LaTeX manuscript, 2026-11-05.
+% Source is partial and relies on definitions/macros and cross references in the original manuscript.
+\phantomsection\part*{Part II. Explicit three-dimensional periodic-flow specialization}
+\addcontentsline{toc}{part}{Part II. Explicit three-dimensional periodic-flow specialization}
+
+\section{Setting, definitions, and scope}
+Let $\TT=(\RR/2\pi\ZZ)^3$ and use normalized spatial integration $\langle f\rangle=(2\pi)^{-3}\int_{\TT}f(x)\,dx$. Fix kinematic viscosity $\nu>0$. A real, mean-zero, divergence-free vector field has representation
+\begin{equation}\label{eq:series}
+u(t,x)=\sum_{k\in\ZZ^3\setminus\{0\}}U_k(t)e^{ik\cdot x},\qquad U_{-k}=\overline{U_k},\qquad k\cdot U_k=0.
+\end{equation}
+Here $U_k\in\CC^3$; Fourier sums are first interpreted for finite support, or for regular enough sequences to justify the operations. The original equations are
+\begin{equation}\label{eq:NS}
+\partial_tu+(u\cdot\grad)u+\grad p=\nu\Delta u,\qquad \grad\cdot u=0,\qquad u(0)=u_0.
+\end{equation}
+For nonzero $k$ define
+\begin{equation}\label{eq:phase}
+S_k(U,V)=\sum_{\ell+m=k}(U_\ell\cdot m)V_m,\quad
+\Pk v=v-\frac{k(k\cdot v)}{|k|^2},\quad
+N_k(U,V)=-i\Pk S_k(U,V),\quad N_k(U)=N_k(U,U).
+\end{equation}
+A zero mode is excluded throughout. Divergence-free modes imply $U_\ell\cdot(-\ell)=0$, so $S_0(U,U)=0$ whenever the sum is well defined. Fourier transformation of \eqref{eq:NS} yields
+\begin{equation}\label{eq:evolution}
+\dot U_k+\nu|k|^2U_k=N_k(U),\qquad
+p_k=-\frac{k\cdot S_k(U,U)}{|k|^2},\quad k\ne0.
+\end{equation}
+Conversely, if a solution of \eqref{eq:evolution} has enough decay for termwise differentiation, it solves \eqref{eq:NS} with this pressure (normalized to have zero mean). This establishes the correspondence between the quantitative harmonic interaction studied here and the unchanged fluid equations.
+
+For a finite symmetric set $\Lambda\subset\ZZ^3\setminus\{0\}$, set $U_k=0$ off $\Lambda$ and retain the output projection onto $\Lambda$. The resulting system is denoted $U^{\Lambda}$. Complete Galerkin cutoffs $\Lambda_N=\{k\ne0:|k|\le N\}$ (or nested finite symmetric sets exhausting the lattice) are used for continuum limits; all these systems retain the full output projection and the real/divergence-free constraints.
+
+Define the kinetic energy and dissipation density by
+\begin{equation}\label{eq:energydef}
+K_\Lambda(t)=\frac12\sum_{k\in\Lambda}|U_k(t)|^2,
+\qquad D_\Lambda(t)=\sum_{k\in\Lambda}|k|^2|U_k(t)|^2.
+\end{equation}
+The time-integrated viscous dissipation is $\nu\int D_\Lambda$. The word ``heat'' below refers only to this accounted conversion of kinetic energy into dissipation; it is not an independently modeled temperature field.
+
+\begin{remark}[Mathematical scope and attribution]
+The native resolving and basin objects are defined and used in Part I. Their displayed finite-carrier specialization is not asserted to exhaust the broader original mathematical corpus. Part II separately derives and analyzes the quantitative harmonic equations (\ref{eq:phase})--(\ref{eq:evolution}) and their standard fluid correspondence. The exact conservation-level connection between the parts is Proposition~\ref{prop:accountbridge}; a universal successor-generation equivalence is not proved. This manuscript is attributed to Terry Allen Snyder; original jointly authored source records retain their original credits. No claim concerning gravity or cosmology follows from the periodic-fluid calculations alone.
+\end{remark}
+
+\section{Global solutions for an explicit small analytic class}
+For $\rho>0$ define the Banach-space norm
+\begin{equation}\label{eq:Xnorm}
+\norm{U}_{X_\rho}=\sum_{k\ne0}|k|e^{\rho|k|}
+\sup_{t\ge0}e^{\nu t/2}|U_k(t)|,
+\quad \varepsilon=\sum_{k\ne0}|k|e^{\rho|k|}|U_k(0)|.
+\end{equation}
+The mild evolution map is
+\begin{equation}\label{eq:mild}
+(\mathcal TU)_k(t)=e^{-\nu|k|^2t}U_k(0)+\int_0^t e^{-\nu|k|^2(t-s)}N_k(U(s))\,ds.
+\end{equation}
+\begin{lemma}[Bilinear estimate]\label{lem:bilinear}
+For the integral bilinear map $\mathcal B(U,V)$ obtained by replacing $N_k(U)$ with $N_k(U,V)$ in \eqref{eq:mild},
+\begin{equation}\label{eq:bilinear}
+\norm{\mathcal B(U,V)}_{X_\rho}\le\frac2\nu\norm{U}_{X_\rho}\norm{V}_{X_\rho}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+The orthogonal projection has operator norm one. For $|k|\ge1$, the time response obeys
+\[
+\sup_{t\ge0} e^{\nu t/2}\int_0^t e^{-\nu|k|^2(t-s)}e^{-\nu s}\,ds
+\le\frac1{\nu|k|^2-\nu/2}.
+\]
+Moreover $|S_k(U,V)|\le\sum_{\ell+m=k}|m||U_\ell||V_m|$ and
+$e^{\rho|\ell+m|}\le e^{\rho|\ell|}e^{\rho|m|}$. Inserting these inequalities and using
+$|k|/(\nu|k|^2-\nu/2)\le2/\nu$ gives
+\[
+\norm{\mathcal B(U,V)}_{X_\rho}\le\frac2\nu
+\sum_{\ell,m\ne0} e^{\rho|\ell|}|U_\ell|_{*,t}
+\,|m|e^{\rho|m|}|V_m|_{*,t},
+\]
+where $|U_\ell|_{*,t}=\sup_{s\ge0}e^{\nu s/2}|U_\ell(s)|$. Since $|\ell|\ge1$, the last sum is at most $\norm U_{X_\rho}\norm V_{X_\rho}$. This proves the bound.
+\end{proof}
+\begin{theorem}[All-time small-data analytic solution]\label{thm:small}
+Suppose $u_0$ is real, mean-zero, divergence-free, and $\varepsilon<\nu/8$ in \eqref{eq:Xnorm}. Then \eqref{eq:mild} has a unique fixed point in $\{U:\norm U_{X_\rho}\le2\varepsilon\}$ for all $t\ge0$. Its reconstructed solution of \eqref{eq:NS} is smooth for every finite time and satisfies
+\begin{equation}\label{eq:analytic}
+\sum_{k\ne0}|k|e^{\rho|k|}|U_k(t)|\le2\varepsilon e^{-\nu t/2}.
+\end{equation}
+\end{theorem}
+\begin{proof}
+The linear evolution has $X_\rho$-norm at most $\varepsilon$ because $|k|^2\ge1$. Let $R=2\varepsilon$. By Lemma \ref{lem:bilinear}, on the closed ball of radius $R$,
+\[
+\norm{\mathcal TU}_{X_\rho}\le\varepsilon+\frac{2R^2}{\nu}
+=\varepsilon+\frac{8\varepsilon^2}{\nu}\le R.
+\]
+For $U,V$ in this ball,
+\[
+\norm{\mathcal TU-\mathcal TV}_{X_\rho}\le\frac2\nu
+(\norm U_{X_\rho}+\norm V_{X_\rho})\norm{U-V}_{X_\rho}
+\le\frac{8\varepsilon}{\nu}\norm{U-V}_{X_\rho}.
+\]
+The last coefficient is less than one. The closed ball is complete, so Banach's contraction theorem yields the unique fixed point there. Conjugate symmetry and transversality are preserved by $\mathcal T$, hence by the fixed point. Exponential Fourier decay gives derivatives of all orders on each finite time interval and justifies the equation--pressure correspondence. Inequality \eqref{eq:analytic} follows from the norm bound.
+\end{proof}
+\begin{corollary}[Exact local kinetic/dissipation balance]\label{cor:local}
+For the solution in Theorem \ref{thm:small}, put $e=|u|^2/2$, $g=\nu|\grad u|^2$, and $h(t,x)=h_0(x)+\int_0^t g(s,x)\,ds$ with $h_0\ge0$. Then
+\begin{equation}\label{eq:local}
+\partial_t(e+h)+\grad\cdot\big((e+p)u-\nu\grad e\big)=0,
+\qquad 0\le h(t,x)-h_0(x)\le4\varepsilon^2.
+\end{equation}
+\end{corollary}
+\begin{proof}
+The $u$-inner product of \eqref{eq:NS} gives
+$\partial_t e+\grad\cdot((e+p)u-\nu\grad e)=-\nu|\grad u|^2$.
+Add $\partial_t h=\nu|\grad u|^2$. From \eqref{eq:analytic}, $|\grad u(t,x)|\le2\varepsilon e^{-\nu t/2}$, hence
+$\int_0^t\nu|\grad u|^2 ds\le4\nu\varepsilon^2\int_0^\infty e^{-\nu s}ds=4\varepsilon^2$.
+\end{proof}
+
+\section{Finite systems and exact energy accounting}
+\begin{theorem}[Global finite Galerkin evolution]\label{thm:finite}
+For every finite symmetric set $\Lambda$ and admissible initial Fourier state, the projected equation \eqref{eq:evolution} has a unique global smooth finite-dimensional solution satisfying
+\begin{equation}\label{eq:finiteenergy}
+K_\Lambda(t)+\nu\int_0^t D_\Lambda(s)\,ds=K_\Lambda(0).
+\end{equation}
+\end{theorem}
+\begin{proof}
+The quadratic right side is locally Lipschitz in the finite-dimensional phase space. Let $u_\Lambda=\sum_{k\in\Lambda}U_ke^{ik\cdot x}$. Since the output projection is orthogonal,
+\[
+\operatorname{Re}\sum_{k\in\Lambda}\overline{U_k}\cdot N_k(U)
+=-\langle u_\Lambda\cdot(u_\Lambda\cdot\grad)u_\Lambda\rangle
+=-\tfrac12\langle u_\Lambda\cdot\grad|u_\Lambda|^2\rangle=0.
+\]
+Taking the real scalar product of the ODE with $U$ gives $\dot K_\Lambda=-\nu D_\Lambda$, proving \eqref{eq:finiteenergy}. Therefore all coefficients stay bounded; a locally Lipschitz finite-dimensional solution cannot terminate in finite time without norm blowup. The divergence and reality constraints are preserved by the projected equation.
+\end{proof}
+\begin{proposition}[Implicit midpoint identity]\label{prop:mid}
+Let $U^{n+1}$ be an exact solution of the finite-dimensional midpoint equation
+\[
+\frac{U^{n+1}-U^n}{\Delta t}=-\nu|k|^2U^{n+1/2}_k+N_k(U^{n+1/2}),
+\qquad U^{n+1/2}=\tfrac12(U^{n+1}+U^n).
+\]
+Then for $Q_n=\Delta t\,\nu D_\Lambda(U^{n+1/2})$,
+\begin{equation}\label{eq:mid}
+K_\Lambda(U^{n+1})+Q_n=K_\Lambda(U^n).
+\end{equation}
+With $H_{n+1}=H_n+Q_n$, the sum $K_\Lambda(U^n)+H_n$ is constant.
+\end{proposition}
+\begin{proof}
+Take the real inner product with $U^{n+1/2}$ and sum. The advection contribution vanishes by the same cancellation as in Theorem \ref{thm:finite}. The left side is $[K(U^{n+1})-K(U^n)]/\Delta t$ by polarization. The remaining term is $-\nu D(U^{n+1/2})$, giving \eqref{eq:mid}; summing proves the second statement. A numerically approximate midpoint solve satisfies the identity up to solver and rounding error.
+\end{proof}
+
+\section{Uniform-in-cutoff estimates and weak-limit construction}
+Fix one real, mean-zero, divergence-free datum $u_0\in L^2(\TT)$. Use its Fourier projections on nested complete symmetric cutoffs $\Lambda_N$ and write $K_0=\tfrac12\norm{u_0}_{L^2}^2$ in the normalized spatial convention. From \eqref{eq:finiteenergy}, uniformly in $N$,
+\begin{equation}\label{eq:basebound}
+K_N(t)\le K_0,\qquad \nu\int_0^\infty D_N(t)\,dt\le K_0.
+\end{equation}
+\begin{theorem}[Entire-future weighted time-derivative bound]\label{thm:weighted}
+For any $p>3$ let $W_p=\sum_{k\in\ZZ^3\setminus\{0\}}(1+|k|)^{-p}<\infty$. Then
+\begin{equation}\label{eq:weighted}
+\boxed{\quad \sup_N\int_0^\infty\sum_{k\in\Lambda_N}
+\frac{|\dot U^{(N)}_k(t)|^2}{(1+|k|)^p}\,dt
+\le\frac{4K_0^2W_p}{\nu}+2\nu K_0.\quad}
+\end{equation}
+In particular this proves the recorded bound with $64K_0^2W_p/\nu$ in place of the first term above.
+\end{theorem}
+\begin{proof}
+For every $k$, Cauchy--Schwarz in the convolution yields
+\[
+|N_k(U)|\le\sum_{\ell+m=k}|U_\ell|\,|m|\,|U_m|
+\le\Big(\sum_\ell|U_\ell|^2\Big)^{1/2}
+\Big(\sum_m|m|^2|U_m|^2\Big)^{1/2}
+=\sqrt{2K_ND_N}.
+\]
+Thus, using $|a+b|^2\le2|a|^2+2|b|^2$ in \eqref{eq:evolution},
+\[
+\sum_k\frac{|\dot U_k|^2}{(1+|k|)^p}
+\le2\nu^2\sum_k\frac{|k|^4|U_k|^2}{(1+|k|)^p}
++4K_ND_NW_p
+\le2\nu^2D_N+4K_ND_NW_p,
+\]
+because $|k|^2\le(1+|k|)^p$ for $p>3$. Integrate and use \eqref{eq:basebound}. Finally $W_p<\infty$ follows by counting $O(n^2)$ integer lattice points in each maximum-norm shell $\norm{k}_\infty=n$. All constants are independent of $N$ and terminal time.
+\end{proof}
+\begin{proposition}[High-mode residence and fixed-mode influence]\label{prop:tail}
+For $R>0$ and $K_{>R,N}(t)=\tfrac12\sum_{|m|>R}|U_m^{(N)}(t)|^2$,
+\begin{equation}\label{eq:residence}
+\sup_N\int_0^\infty K_{>R,N}(t)\,dt\le\frac{K_0}{2\nu R^2}.
+\end{equation}
+For each fixed nonzero output $k$, let $N_k^{>R}$ be the part of $N_k$ containing a pair with at least one input frequency $>R$. Then, for $\kappa=\inf_{k\ne0}|k|=1$,
+\begin{equation}\label{eq:coarse}
+\sup_N\int_0^\infty|N_k^{>R}(t)|\,dt
+\le\frac{4|k|K_0}{\nu\kappa R}.
+\end{equation}
+The safe factor $4$ in \eqref{eq:coarse} counts both possible high-input positions; it corrects the smaller constant in the prior manuscript's printed argument.
+\end{proposition}
+\begin{proof}
+For residence, $\sum_{|m|>R}|U_m|^2\le D_N/R^2$. Integrate and apply \eqref{eq:basebound}. For the interaction estimate, $\ell+m=k$ and $\ell\cdot U_\ell=0$ imply $U_\ell\cdot m=U_\ell\cdot k$. Hence
+\[
+|N_k^{>R}|\le |k|\sum_{\ell+m=k}
+(\mathbf 1_{|\ell|>R}+\mathbf 1_{|m|>R})|U_\ell|\,|U_m|.
+\]
+For the first sum, Cauchy--Schwarz in space--time and \eqref{eq:basebound} yield
+\[
+\int_0^\infty\sum_{|\ell|>R}|U_\ell|\,|U_{k-\ell}|\,dt
+\le\Big(\frac{2K_0}{\nu R^2}\Big)^{1/2}
+\Big(\frac{2K_0}{\nu\kappa^2}\Big)^{1/2}
+=\frac{2K_0}{\nu\kappa R}.
+\]
+The same estimate holds with $|m|>R$; sum the two. The bounds involve fixed $k$ and say nothing uniform about $|k|\to\infty$.
+\end{proof}
+\begin{theorem}[Strong space--time convergence and a global weak limit]\label{thm:weak}
+For each finite $T>0$, a subsequence of the projected solutions converges strongly in $L^2((0,T)\times\TT)$ to a divergence-free field $u$. A single diagonal subsequence works on every bounded time interval, and
+\[
+u^{(N_j)}\otimes u^{(N_j)}\longrightarrow u\otimes u
+\quad\text{in }L^1((0,T)\times\TT).
+\]
+The limit is a global finite-energy weak solution of \eqref{eq:NS} with initial datum $u_0$, satisfying the usual energy inequality. Smoothness and uniqueness are not concluded.
+\end{theorem}
+\begin{proof}
+Fix an integer $R$. There are finitely many phases with $|k|\le R$. Their amplitudes are uniformly bounded by \eqref{eq:basebound}, and their derivatives are bounded in $L^2(0,T)$ by \eqref{eq:weighted}. Therefore each such coefficient family is precompact in $L^2(0,T)$ (indeed in $C([0,T])$ along a subsequence, by one-dimensional $H^1$ compactness). Extract successively for every integer $R$ and $T$. The high-frequency remainder satisfies
+\[
+\int_0^T\sum_{|k|>R}|U_k^{(N)}(t)|^2\,dt
+\le\frac{K_0}{\nu R^2},
+\]
+uniformly in $N$, from \eqref{eq:basebound}. Thus low-mode compactness plus a vanishing uniformly controlled tail proves strong convergence of the entire Fourier sequence in $L^2(0,T;\ell^2)$. Parseval gives strong physical $L^2$ convergence, and
+\[
+\norm{u_N\otimes u_N-u\otimes u}_{L^1}
+\le(\norm{u_N}_{L^2}+\norm{u}_{L^2})\norm{u_N-u}_{L^2}\longrightarrow0.
+\]
+Testing the finite equations against smooth divergence-free test fields and passing to the limit gives the distributional equation. The viscous terms converge weakly by the uniform $L^2(0,T;H^1)$ bound, and the initial trace is inherited through the low-mode $H^1$ convergence. Weak lower semicontinuity passes the energy identity to an inequality. The diagonal argument extends the limit to all finite times.
+\end{proof}
+
+\section{Local strain identity and spatial basin refinement}
+Let $D(u)=\tfrac12(\grad u+\grad u^{\mathsf T})$ be the symmetric strain tensor.
+\begin{proposition}[Thermal--geometric identity]\label{prop:strain}
+For any smooth divergence-free $u$, with $J=\nu(u\cdot\grad)u$,
+\begin{equation}\label{eq:strain}
+2\nu|D(u)|^2=\nu|\grad u|^2+\grad\cdot J.
+\end{equation}
+For every bounded regular basin $B\subset\TT$,
+\begin{equation}\label{eq:basin}
+Q(B,t)=\int_B2\nu|D(u)|^2dx-\int_{\partial B}J\cdot n\,dS
+=\nu\int_B|\grad u|^2dx\ge0.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Expanding $D$ yields
+$2|D|^2-|\grad u|^2=\sum_{i,j}(\partial_i u_j)(\partial_j u_i)$.
+By incompressibility,
+$\sum_{i,j}(\partial_i u_j)(\partial_j u_i)=\sum_j\partial_j[(u\cdot\grad)u_j]$,
+because $u_i\partial_i(\partial_j u_j)=0$. This proves \eqref{eq:strain}; integrate over $B$ and use the divergence theorem for \eqref{eq:basin}.
+\end{proof}
+\begin{proposition}[Nested-partition gradient identity]\label{prop:partition}
+Let $\mathcal B_n$ be nested finite partitions of $\TT$ into regular cells whose largest diameter tends to zero. For continuous $\grad u(t,\cdot)$ define
+\[
+G_n(t)=\max_{B\in\mathcal B_n}\sqrt{\frac{Q(B,t)}{\nu |B|}}.
+\]
+Then $G_{n+1}(t)\ge G_n(t)$ and $G_n(t)\uparrow\norm{\grad u(t)}_{L^\infty}$. Consequently, as an equality of possibly infinite nonnegative quantities,
+\begin{equation}\label{eq:telescoping}
+\int_0^T\norm{\grad u(t)}_{L^\infty}\,dt
+=\int_0^TG_0(t)\,dt+\sum_{n=0}^\infty\int_0^T[G_{n+1}(t)-G_n(t)]\,dt.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Equation \eqref{eq:basin} shows that the squared burden density of a parent cell is the volume-weighted mean of the squared densities of its children. Its maximum cannot exceed the maximum child density, hence monotonicity. Since cells shrink and $|\grad u(t,\cdot)|^2$ is continuous on the compact torus, the maximum of cell averages approaches the pointwise supremum. Integrating the finite telescoping equality and passing to the limit by monotone convergence proves \eqref{eq:telescoping}. The equality does not by itself estimate its right-hand side.
+\end{proof}
+
+\section{An exact heat-scale criterion for maximum-gradient control}
+For $j=0,1,2,\ldots$ let $A_j=\{k\in\ZZ^3\setminus\{0\}:2^j\le|k|<2^{j+1}\}$ and define the dissipated heat at scale $j$ by
+\begin{equation}\label{eq:Hj}
+H_{j,N}(T)=\nu\int_0^T\sum_{k\in A_j\cap\Lambda_N}|k|^2|U_k^{(N)}(t)|^2\,dt\ge0.
+\end{equation}
+Equation \eqref{eq:basebound} ensures $\sum_jH_{j,N}(T)\le K_0$; it does not enforce decay with $j$.
+\begin{theorem}[Heat-tail sufficient condition]\label{thm:heattail}
+Fix one initial datum $u_0$, $T<\infty$, and $\nu>0$. Suppose that for some $q>3$ and a finite $A_T$, independent of $N$,
+\begin{equation}\label{eq:q}
+\sup_N H_{j,N}(T)\le A_T2^{-qj}\qquad\text{for every }j\ge0.
+\end{equation}
+Then
+\begin{equation}\label{eq:gradtail}
+\boxed{\quad\sup_N\int_0^T\norm{\grad u_N(t)}_{L^\infty}\,dt
+\le\frac{C_{\mathrm{lat}}\sqrt{T A_T/\nu}}{1-2^{-(q-3)/2}}<\infty.\quad}
+\end{equation}
+Here $C_{\mathrm{lat}}$ depends only on the three-dimensional lattice; no cutoff parameter occurs on the right.
+\end{theorem}
+\begin{proof}
+At each time, Fourier triangle inequality and Cauchy--Schwarz in each annulus give
+\[
+\norm{\grad u_N(t)}_{L^\infty}\le\sum_{j\ge0}\sum_{k\in A_j\cap\Lambda_N}|k||U_k(t)|
+\le\sum_{j\ge0}|A_j|^{1/2}
+\Big(\sum_{k\in A_j\cap\Lambda_N}|k|^2|U_k(t)|^2\Big)^{1/2}.
+\]
+Integrating and applying Cauchy--Schwarz in time gives
+\[
+\int_0^T\norm{\grad u_N(t)}_{L^\infty}dt
+\le\sqrt{T/\nu}\sum_{j\ge0}|A_j|^{1/2}H_{j,N}(T)^{1/2}.
+\]
+A volume comparison of cubic lattice shells gives $|A_j|^{1/2}\le C_{\mathrm{lat}}2^{3j/2}$. Insert \eqref{eq:q}, sum the geometric series with ratio $2^{-(q-3)/2}<1$, and take the supremum in $N$. This proves \eqref{eq:gradtail}.
+\end{proof}
+\begin{corollary}[The heat tail holds for the analytic class]\label{cor:analytictail}
+Under Theorem \ref{thm:small}, every Galerkin projection obeys
+\begin{equation}\label{eq:analyticH}
+H_{j,N}(T)\le4\varepsilon^2(1-e^{-\nu T})e^{-2\rho2^j}.
+\end{equation}
+For any fixed $q>3$ this implies \eqref{eq:q} with a finite $A_T$ independent of $N$.
+\end{corollary}
+\begin{proof}
+The contraction estimate in Lemma \ref{lem:bilinear} is unchanged when the output is projected onto a finite symmetric cutoff, so the finite solution obeys the same analytic estimate \eqref{eq:analytic}. Hence
+\[
+\sum_{k\in A_j\cap\Lambda_N}|k|^2|U_k(t)|^2
+\le\left(\sum_{k\in A_j\cap\Lambda_N}|k||U_k(t)|\right)^2
+\le4\varepsilon^2e^{-\nu t}e^{-2\rho2^j}.
+\]
+Multiply by $\nu$, integrate from $0$ to $T$, and observe that $\sup_{j\ge0}2^{qj}e^{-2\rho2^j}<\infty$.
+\end{proof}
+
+\section{Exact shear solutions: why the energy and action bounds alone do not suffice}
+\begin{theorem}[Failure of a data-uniform gradient bound from energy and weighted action]\label{thm:counter}
+Fix $\nu,T>0$. There are smooth, mean-zero, divergence-free exact solutions $u^{(J)}$ of the full unforced three-dimensional equations \eqref{eq:NS} for which
+\begin{equation}\label{eq:counterE}
+\sup_J K^{(J)}(0)\le\frac{\pi^2}{24},\qquad
+\sup_J\int_0^\infty\sum_{k\ne0}\frac{|\partial_tU_k^{(J)}(t)|^2}{(1+|k|)^p}\,dt\le\frac{\nu\pi^2}{24}\quad(p\ge2),
+\end{equation}
+but
+\begin{equation}\label{eq:counterGrad}
+\int_0^T\norm{\grad u^{(J)}(t)}_{L^\infty}\,dt\longrightarrow\infty\quad\text{as }J\to\infty.
+\end{equation}
+The data vary with $J$; no single datum is shown to develop a singularity.
+\end{theorem}
+\begin{proof}
+Let
+\[
+S_j=\{(m,n)\in\ZZ^2:2^j\le m<2^{j+1},\ 0\le n<2^j\},\quad
+|S_j|=2^{2j},\qquad a_j=1/j.
+\]
+Define the initial velocity by
+\[
+ u^{(J)}(0,x)=(0,0,f_J(0,x_1,x_2)),\quad
+ f_J(0,x_1,x_2)=\sum_{j=1}^J\frac{a_j}{2^j}
+\sum_{(m,n)\in S_j}\sin(mx_1+nx_2).
+\]
+This finite Fourier sum is smooth, mean zero and divergence free. Since
+$u^{(J)}\cdot\grad u^{(J)}=f_J\partial_{x_3}u^{(J)}=0$, it solves \eqref{eq:NS} with constant pressure and
+\[
+f_J(t,x_1,x_2)=\sum_{j=1}^J\frac{a_j}{2^j}
+\sum_{(m,n)\in S_j}e^{-\nu(m^2+n^2)t}\sin(mx_1+nx_2).
+\]
+All trigonometric frequencies are distinct up to sign. With normalized integration,
+$\langle\sin^2(mx_1+nx_2)\rangle=1/2$. Hence
+\[
+K^{(J)}(0)=\frac14\sum_{j=1}^Ja_j^2\le\frac{\pi^2}{24}.
+\]
+Each Fourier coefficient decays as $e^{-\nu|k|^2t}$. Direct integration yields
+\[
+\int_0^\infty\sum_{k\ne0}
+\frac{|\partial_tU_k^{(J)}|^2}{(1+|k|)^p}dt
+=\frac\nu2\sum_{k\ne0}\frac{|k|^2|U_k^{(J)}(0)|^2}{(1+|k|)^p}
+\le\nu K^{(J)}(0)
+\]
+for $p\ge2$, since $|k|^2/(1+|k|)^p\le1$.
+At $(x_1,x_2)=(0,0)$, all terms in $\partial_{x_1}f_J$ are positive. Therefore
+\begin{align*}
+\int_0^T\norm{\grad u^{(J)}(t)}_{L^\infty}dt
+&\ge\int_0^T\partial_{x_1}f_J(t,0,0)dt\\
+&=\sum_{j=1}^J\frac{a_j}{2^j}
+\sum_{(m,n)\in S_j}\frac{m\big(1-e^{-\nu(m^2+n^2)T}\big)}{\nu(m^2+n^2)}.
+\end{align*}
+Here $m\ge2^j$, $m^2+n^2\le5\cdot2^{2j}$ and $|S_j|=2^{2j}$. Also $m^2+n^2\ge2^{2j}$. Consequently
+\[
+\int_0^T\norm{\grad u^{(J)}(t)}_{L^\infty}dt
+\ge\frac1{5\nu}\sum_{j=1}^J\frac{1-e^{-\nu 2^{2j}T}}{j}.
+\]
+The numerator is eventually at least $1/2$ for every fixed $T>0$, while $\sum_jj^{-1}$ diverges. This proves \eqref{eq:counterGrad}.
+\end{proof}
+\begin{remark}
+This is a family of globally smooth exact solutions. It disproves an energy-only \emph{data-uniform} bound on the integrated maximum gradient, even after adding the negatively weighted action bound. It does not contradict possible estimates depending on higher norms of each \emph{fixed} smooth initial datum, and it is not a finite-time blowup example.
+\end{remark}
+
+\section{Conditional global smooth continuation and its exact boundary}
+\begin{theorem}[Integrated maximum-gradient continuation criterion]\label{thm:conditional}
+Let $u_0$ be a fixed smooth real, mean-zero, divergence-free datum. Suppose that for each finite $T$, the compatible Galerkin solutions satisfy a bound
+\begin{equation}\label{eq:goal}
+\sup_N\int_0^T\norm{\grad u_N(t)}_{L^\infty}\,dt\le M_T(u_0)<\infty.
+\end{equation}
+Then a subsequence converges to a global smooth solution of \eqref{eq:NS} with initial datum $u_0$. In particular the conclusion holds whenever the quantitative heat-tail hypothesis \eqref{eq:q} is known for that datum on every bounded time interval.
+\end{theorem}
+\begin{proof}
+For integer $s\ge4$, apply derivatives up to order $s$ to the projected equation, pair with the corresponding derivatives of $u_N$, and integrate. Orthogonality of the Fourier projection removes projection terms in the paired expression. The highest-order transport contribution vanishes by $\grad\cdot u_N=0$. To control the remaining terms, for every $|\alpha|\le s$ expand
+\[
+[\partial^\alpha,u_N\cdot\grad]u_N
+=\sum_{0<\beta\le\alpha}\binom{\alpha}{\beta}
+(\partial^\beta u_N)\cdot\grad\partial^{\alpha-\beta}u_N.
+\]
+For $|\alpha|=s$, each product contains derivatives of orders $j=|\beta|$ and $s-j+1$; periodic Gagliardo--Nirenberg interpolation between $\norm{\grad u_N}_{L^\infty}$ and $\norm{u_N}_{H^s}$ gives
+\[
+\norm{\grad^j u_N}_{L^{p_j}}
+\le C_s\norm{\grad u_N}_{L^\infty}^{1-\theta_j}
+\norm{u_N}_{H^s}^{\theta_j},\quad
+\theta_j=\frac{j-1}{s-1},\quad \frac1{p_j}=\frac{\theta_j}{2},
+\]
+with the usual endpoint interpretation for $j=1$ and $j=s$. For the second factor the exponent is $1-\theta_j$, so Holder's inequality puts the product in $L^2$ and bounds it by $C_s\norm{\grad u_N}_{L^\infty}\norm{u_N}_{H^s}$. Lower orders are controlled identically (or directly using the inhomogeneous Sobolev norm). After taking the $H^s$ energy pairing, summing over all derivatives and discarding nonnegative viscous dissipation, this yields
+\[
+\frac{d}{dt}\norm{u_N(t)}_{H^s}^2
+\le C_s\norm{\grad u_N(t)}_{L^\infty}\norm{u_N(t)}_{H^s}^2.
+\]
+Gronwall and \eqref{eq:goal} yield
+\[
+\sup_{0\le t\le T}\norm{u_N(t)}_{H^s}^2
+\le\norm{u_0}_{H^s}^2e^{C_sM_T(u_0)},
+\]
+independently of $N$. Uniform high Sobolev bounds and the equations supply compactness in lower Sobolev spaces and permit passage to the limit in the nonlinear term, producing a classical solution on $[0,T]$. A diagonal sequence for $T=1,2,\ldots$ gives a smooth global solution. The last statement follows by applying Theorem \ref{thm:heattail} at each horizon.
+\end{proof}
+\begin{remark}[Precise status]
+Theorems \ref{thm:finite}, \ref{thm:weighted}, \ref{thm:weak}, \ref{thm:heattail}, and \ref{thm:counter} are unconditional statements with the assumptions printed in them. The condition \eqref{eq:goal}, or a sufficient quantitative heat-tail estimate, has not been proved here for every smooth initial datum. Weighted time regularity and the total energy identity do not by themselves supply it. Consequently this manuscript does not prove unrestricted global three-dimensional regularity.
+\end{remark}
+
+
+
+\section{Source-exact refinement closure from Continuation 89}\label{sec:source89}
+This section integrates the already recorded Continuation 89 theorem rather than replacing it with a new condition. It uses the thermal--geometric basin receipt of Proposition~\ref{prop:strain}. Fix one smooth, divergence-free datum $u_0$ and its compatible symmetric Galerkin solutions $u_N$. For each $N$ and time $t$, let $\{\mathcal B_n\}_{n\ge0}$ be nested finite partitions of $\TT$ with cell diameters tending to zero. Write
+\begin{equation}\label{eq:final-receipts}
+Q_N(B,t)=\int_B2\nu|D(u_N)|^2\,dx-\int_{\partial B}\nu(u_N\cdot\nabla)u_N\cdot n\,dS
+=\nu\int_B|\nabla u_N|^2\,dx.
+\end{equation}
+Here $D(u_N)=(\nabla u_N+\nabla u_N^{\mathsf T})/2$ and $dx$ denotes the same volume normalization in both integrals. Define
+\begin{equation}\label{eq:final-gn}
+G_{n,N}(t):=\max_{B\in\mathcal B_n}\left(\frac{Q_N(B,t)}{\nu|B|}\right)^{1/2},\qquad
+r_{n,N}(t):=G_{n+1,N}(t)-G_{n,N}(t).
+\end{equation}
+\begin{theorem}[Exact all-scale refinement identity; source Theorem 89.1]\label{thm:final-refinement}
+For every $N$ and $t$ one has $r_{n,N}(t)\ge0$ and
+\begin{equation}\label{eq:final-grad}
+\norm{\nabla u_N(t)}_{L^\infty}
+=G_{0,N}(t)+\sum_{n=0}^\infty r_{n,N}(t).
+\end{equation}
+For every $T<\infty$, the exact integrated identity is
+\begin{equation}\label{eq:final-integrated}
+\int_0^T\norm{\nabla u_N(t)}_{L^\infty}\,dt
+=\int_0^T G_{0,N}(t)\,dt+\sum_{n=0}^\infty\int_0^T r_{n,N}(t)\,dt.
+\end{equation}
+\end{theorem}
+\begin{proof}
+By~\eqref{eq:final-receipts}, the square of each parent-cell average is a volume-weighted average of the children's squares, so the maximum does not decrease under refinement. Since $|\nabla u_N(t,\cdot)|^2$ is continuous on the compact torus and the cell diameters vanish, the largest cell average tends to its pointwise supremum. The sum of nonnegative increments telescopes to $G_{n,N}-G_{0,N}$, giving~\eqref{eq:final-grad} upon taking $n\to\infty$. Monotone convergence gives~\eqref{eq:final-integrated}. This is an identity and does not assign a numerical upper bound to the increments.
+\end{proof}
+\begin{theorem}[Exact continuation implication; source Theorem 89.2]\label{thm:final-source-89}
+For each fixed smooth divergence-free $u_0$, suppose that for every $T<\infty$ the source-generated trajectories coincide with the equation-faithful Galerkin trajectories above and a finite number $M_T(u_0)$, independent of $N$, satisfies
+\begin{equation}\label{eq:final-89-6}
+\boxed{\qquad
+\sup_N\left[\int_0^T G_{0,N}(t)\,dt
++\sum_{n=0}^\infty\int_0^T r_{n,N}(t)\,dt\right]\le M_T(u_0)<\infty.\qquad}
+\end{equation}
+Then the corresponding continuum limit is smooth on every finite interval and solves the original unforced incompressible three-dimensional equations globally in time with datum $u_0$.
+\end{theorem}
+\begin{proof}
+Theorem~\ref{thm:final-refinement} converts~\eqref{eq:final-89-6} exactly into
+\[
+\sup_N\int_0^T\norm{\nabla u_N(t)}_{L^\infty}\,dt\le M_T(u_0).
+\]
+For each integer $s\ge4$, the derivative/commutator energy estimate of Theorem~\ref{thm:conditional}, whose proof is included above, gives
+\[
+\frac{d}{dt}\norm{u_N(t)}_{H^s}^2
+\le C_s\norm{\nabla u_N(t)}_{L^\infty}\norm{u_N(t)}_{H^s}^2.
+\]
+Gronwall and the same projected datum yield
+\[
+\sup_{t\in[0,T]}\norm{u_N(t)}_{H^s}^2
+\le\norm{u_0}_{H^s}^2\exp\big(C_sM_T(u_0)\big).
+\]
+These bounds hold uniformly in cutoff, for every $s\ge4$ and finite $T$. Time derivatives are controlled in lower Sobolev orders by the projected equations; compactness then produces a smooth limit on $[0,T]$ obeying the unchanged equation. Uniqueness of smooth solutions makes the limits compatible as $T$ increases. This proves the asserted implication for all finite times.
+\end{proof}
+\begin{proposition}[Exact source example with computable refinement remainder]\label{prop:final-shear}
+For $a\in\RR$ and $\nu>0$, set
+\[
+u(t,x,y,z)=a e^{-\nu t}\sin z\,(1,0,0),\qquad p=0.
+\]
+This solves the unforced three-dimensional equations exactly and has
+\[
+G_0(t)=|a|e^{-\nu t}/\sqrt 2,\qquad
+\lim_{n\to\infty}G_n(t)=|a|e^{-\nu t}.
+\]
+For dyadic cubes of side $h_n=2\pi/2^n$ and $n\ge3$,
+\begin{equation}\label{eq:final-shearerror}
+0\le \lim_{m\to\infty}G_m(t)-G_n(t)
+\le \frac{|a|e^{-\nu t}h_n^2}{3}.
+\end{equation}
+Consequently
+\[
+\int_0^T\norm{\nabla u(t)}_{L^\infty}\,dt
+=\frac{|a|}{\nu}\big(1-e^{-\nu T}\big).
+\]
+\end{proposition}
+\begin{proof}
+The field is divergence free and $(u\cdot\nabla)u=0$. Its time derivative equals $\nu\Delta u$, so it solves the full equation with constant pressure. The only nonzero velocity derivative is $\partial_z u_1=a e^{-\nu t}\cos z$. Hence~\eqref{eq:final-receipts} reduces to $\nu a^2e^{-2\nu t}\int_B\cos^2 z\,dx$. The average of $\cos^2z$ over the whole torus is $1/2$, whereas its maximum is $1$. On the cell adjacent to $z=0$, $\cos^2z\ge1-z^2$ gives a cell average at least $1-h_n^2/3$. Therefore $G_n(t)\ge|a|e^{-\nu t}\sqrt{1-h_n^2/3}$; $1-\sqrt{1-x}\le x$ proves~\eqref{eq:final-shearerror}. Direct time integration proves the last identity.
+\end{proof}
+\begin{remark}[Source-to-theorem boundary]
+Equation~\eqref{eq:final-89-6} is a stated hypothesis in the preserved Continuation 89 proof. Neither the set-valued standing operator of Part I nor the two-carrier semigroup of Section~\ref{sec:continuumnative} derives this inequality for arbitrary fluid data. The result proved here is the exact implication from the displayed source certificate to regularity, and the exact finite-depth certificate for the stated shear solution. No additional physical transfer law has been fabricated to convert that hypothesis into a general theorem.
+\end{remark}
+
+
+\section{Exact meaning of the refinement certificate}
+\label{sec:exact-certificate}
+This section records the final source audit of the bound in
+\eqref{eq:final-89-6}. It separates an identity that is proved at every
+resolution from an independent estimate that would control its value.
+
+\begin{theorem}[Equivalence of the refinement certificate and integrated
+maximum-gradient control]\label{thm:certificate-equivalence}
+For a fixed smooth divergence-free datum $u_0$, let $u_N$ be the
+associated finite symmetric Galerkin trajectories, and let $G_{n,N}$
+and $r_{n,N}$ be exactly the thermal--geometric basin quantities in
+\eqref{eq:final-receipts}--\eqref{eq:final-gn}. For every finite $T$,
+\begin{equation}\label{eq:exact-equivalence}
+\boxed{\quad
+\sup_N\left[\int_0^T G_{0,N}(t)\,dt+
+ \sum_{n\ge0}\int_0^T r_{n,N}(t)\,dt\right]
+ =\sup_N\int_0^T\|\nabla u_N(t)\|_{L^\infty}\,dt.
+\quad}
+\end{equation}
+In particular, the finite-bound hypothesis of Theorem~\ref{thm:final-source-89}
+is equivalent to the already stated integrated-gradient continuation criterion.
+The exact refinement identities alone neither imply nor refute the finiteness
+of this quantity uniformly in cutoff.
+\end{theorem}
+\begin{proof}
+For each fixed $N$ and $t$, Theorem~\ref{thm:final-refinement}
+identifies the integrand $G_{0,N}+\sum_{n\ge0}r_{n,N}$ with
+$\|\nabla u_N(t)\|_{L^\infty}$. The increments $r_{n,N}$ are
+nonnegative. Tonelli's theorem therefore permits interchange of the
+infinite sum with the time integral, including when either side takes
+value $+\infty$. Taking the supremum over $N$ gives
+\eqref{eq:exact-equivalence}. The remaining assertions follow directly.
+\end{proof}
+
+\begin{proposition}[Positive basin standing does not bound concentration
+by itself]\label{prop:capacity-countermodel}
+There is a conservative dyadic three-dimensional basin hierarchy with
+positive capacity residual in every finite basin, and with exact
+parent--child no-loss accounting, whose carried-content density on a
+nested sequence of basins is unbounded.
+\end{proposition}
+\begin{proof}
+Start with one unit of nonnegative content in the unit-volume root cube.
+At refinement level $n$, send half of the content in the cube containing
+the origin to its origin-containing child, and distribute the other half
+equally among its seven other children. In all other parent cubes,
+split content equally among the eight children. Parent content equals
+the sum of its child contents at every step. Along the origin-containing
+branch the content is $Q_n=2^{-n}$ and the cell volume is $2^{-3n}$,
+so its average density is $Q_n/|B_n|=2^{2n}\to\infty$.
+For each finite basin $B$ choose zero additional burden and capacity
+$C(B)=Q(B)+1$. The residual $C(B)-Q(B)$ then equals $1>0$,
+with nonnegative content and exact conservation at every refinement.
+Hence the standing and no-loss conditions asserted in the proposition
+hold even though no scale-independent density bound follows.
+\end{proof}
+
+\begin{remark}[Source scope and correspondence]
+The proposition is an abstract three-dimensional basin construction,
+\emph{not} a Navier--Stokes solution or blow-up example. It formalizes
+the distinction already identified in the preserved Continuation 64.
+The global three-dimensional thermal semigroup of Continuation 73
+(Section~\ref{sec:continuumnative}) proves a valid all-time result
+for its defined scalar carriers, but no equality between those
+carriers and the velocity-gradient receipt of the periodic fluid equation
+is specified by the underlying source law. Thus neither the
+nonnegative standing residual nor the carrier semigroup alone furnishes
+a numerical bound for the right-hand side of
+\eqref{eq:exact-equivalence} for arbitrary smooth $u_0$.
+\end{remark}
+
+\section{Relation to the unrestricted three-dimensional regularity question}
+The original unforced periodic three-dimensional Navier--Stokes existence-and-smoothness problem asks whether, for every smooth periodic divergence-free $u_0$ and every $\nu>0$, there are velocity and pressure fields smooth for all $t\ge0$ solving~\eqref{eq:NS} with that datum. This paper provides a global solution of the full equation for the explicitly stated analytic small-data class, a weak solution for arbitrary finite-energy data, and a sufficient criterion for upgrading an arbitrary \emph{fixed} smooth datum to a globally smooth solution. Its heat-tail and native basin estimates are mathematically different objects: the defined carrier semigroup does not by itself supply the estimate~\eqref{eq:goal} for every fluid datum.
+
+The two necessary logical steps for a broader claim are (i) a source-derived map from the native evolving state to the exact velocity--pressure solution for arbitrary smooth data, not merely a matching conservation receipt, and (ii) a proof that the resulting evolution remains smooth for all finite time (or a valid different resolution of the official problem). These steps are not assumed and do not follow from finite-mode conservation or a negatively weighted time-derivative bound alone. The statements in this article are exact within their displayed hypotheses; neither a universal solution nor a counterexample to the unrestricted problem is asserted.
+
+\section{Numerical tests and reproducibility boundary}
+The archived 122- and 250-mode summaries report 16-step projected periodic-flow trajectories, with source-derived Fourier rates. The recorded initial-rate difference at 122 modes was $5.30\times10^{-23}$ and the saved kinetic-to-heat receipt residual was on the order of $10^{-18}$. An optional, separately written classical Galerkin midpoint solver reconstructed both stored endpoints from the public six-mode seed and the displayed Fourier equation to numerical precision, as documented in Evidence Appendix B.1; it does not adjudicate NEW-K/URK statements. This new implementation is not the missing historical integrator or a protected native URK/NEW-K successor. Finite-dimensional numerical agreement does not prove smoothness for unrestricted continuum data; the mathematical theorems rest on their analytic arguments.
+
+\clearpage

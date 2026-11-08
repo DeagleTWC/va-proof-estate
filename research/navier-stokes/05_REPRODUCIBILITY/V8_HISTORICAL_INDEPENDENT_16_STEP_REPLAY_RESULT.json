@@ -1,0 +1,143 @@
+{
+  "status": "PASS",
+  "scope": "Independent finite-mode Galerkin midpoint reconstruction from public Fourier equations; not the original trajectory integrator, protected URK/NEW-K source, or a continuum regularity proof",
+  "model": "Unforced incompressible periodic three-dimensional Fourier Galerkin with viscosity 1; source seed reproduced without modification",
+  "runtime": {
+    "python": "3.13.5",
+    "numpy": "2.3.5"
+  },
+  "counts": {
+    "passed": 17,
+    "failed": 0,
+    "total": 17
+  },
+  "checks": [
+    {
+      "name": "seed-validity",
+      "passed": true,
+      "detail": "six original public seed modes"
+    },
+    {
+      "name": "negative-control-missing-conjugate",
+      "passed": true,
+      "detail": "intentionally incomplete input rejected"
+    },
+    {
+      "name": "negative-control-violated-divergence",
+      "passed": true,
+      "detail": "intentionally non-solenoidal input rejected"
+    },
+    {
+      "name": "122-geometry",
+      "passed": true,
+      "detail": "122 modes; 6642 ordered triads"
+    },
+    {
+      "name": "122-saved-endpoint",
+      "passed": true,
+      "detail": "max amplitude absolute error 6.9474e-16"
+    },
+    {
+      "name": "122-energy",
+      "passed": true,
+      "detail": "absolute final-energy difference 2.2356e-19"
+    },
+    {
+      "name": "122-heat",
+      "passed": true,
+      "detail": "absolute accumulated-heat difference 1.0660e-18"
+    },
+    {
+      "name": "122-independent-custody",
+      "passed": true,
+      "detail": "reconstructed K(0)-K(T)-H = 4.2352e-22"
+    },
+    {
+      "name": "122-numerical-invariants",
+      "passed": true,
+      "detail": "divergence 9.926e-24; reality 1.881e-37; midpoint eq 9.995e-20"
+    },
+    {
+      "name": "122-timestep-refinement",
+      "passed": true,
+      "detail": "16-step vs 32-step final-energy difference 6.2425e-11; not continuum convergence"
+    },
+    {
+      "name": "250-geometry",
+      "passed": true,
+      "detail": "250 modes; 28938 ordered triads"
+    },
+    {
+      "name": "250-saved-endpoint",
+      "passed": true,
+      "detail": "max amplitude absolute error 6.9481e-16"
+    },
+    {
+      "name": "250-energy",
+      "passed": true,
+      "detail": "absolute final-energy difference 2.2351e-19"
+    },
+    {
+      "name": "250-heat",
+      "passed": true,
+      "detail": "absolute accumulated-heat difference 1.0658e-18"
+    },
+    {
+      "name": "250-independent-custody",
+      "passed": true,
+      "detail": "reconstructed K(0)-K(T)-H = 6.3527e-22"
+    },
+    {
+      "name": "250-numerical-invariants",
+      "passed": true,
+      "detail": "divergence 3.309e-24; reality 3.309e-24; midpoint eq 9.826e-20"
+    },
+    {
+      "name": "250-timestep-refinement",
+      "passed": true,
+      "detail": "16-step vs 32-step final-energy difference 6.2425e-11; not continuum convergence"
+    }
+  ],
+  "runs": [
+    {
+      "cutoff_radius_squared": 9,
+      "modes": 122,
+      "triads": 6642,
+      "steps": 16,
+      "dt": 0.0125,
+      "saved_final_energy": 4.2885100241375115e-07,
+      "independent_final_energy": 4.288510024139747e-07,
+      "absolute_final_energy_difference": 2.235637585159319e-19,
+      "saved_total_heat": 1.0016604721943338e-06,
+      "independent_total_heat": 1.0016604721953998e-06,
+      "absolute_heat_difference": 1.065990964119537e-18,
+      "max_saved_mode_amplitude_difference": 6.947431996015552e-16,
+      "independent_energy_ledger_residual": 4.235164736271502e-22,
+      "max_midpoint_equation_residual": 9.994988777600744e-20,
+      "max_reality_residual": 1.88079096131566e-37,
+      "max_divergence_residual": 9.926167350636332e-24,
+      "max_fixed_point_iterations": 3,
+      "double_resolution_energy_difference": 6.242480038998646e-11
+    },
+    {
+      "cutoff_radius_squared": 14,
+      "modes": 250,
+      "triads": 28938,
+      "steps": 16,
+      "dt": 0.0125,
+      "saved_final_energy": 4.2885100244964857e-07,
+      "independent_final_energy": 4.288510024498721e-07,
+      "absolute_final_energy_difference": 2.235108189567285e-19,
+      "saved_total_heat": 1.0016604721584365e-06,
+      "independent_total_heat": 1.0016604721595023e-06,
+      "absolute_heat_difference": 1.0657792058827234e-18,
+      "max_saved_mode_amplitude_difference": 6.948109622373355e-16,
+      "independent_energy_ledger_residual": 6.352747104407253e-22,
+      "max_midpoint_equation_residual": 9.825582188149884e-20,
+      "max_reality_residual": 3.308722450212111e-24,
+      "max_divergence_residual": 3.308722450212111e-24,
+      "max_fixed_point_iterations": 3,
+      "double_resolution_energy_difference": 6.242479781892382e-11
+    }
+  ]
+}
