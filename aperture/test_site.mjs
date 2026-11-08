@@ -33,6 +33,6 @@ assert.equal(manifest.consequenceAperture.existingClaimToCarrierRegisterUnchange
 assert.equal(manifest.nativeRuntimeReceiptsAttached,0);
 assert.equal(manifest.independentlyReproducedRunsAttached,0);
 assert.equal(manifest.instrumentedPhysicalRunsAttached,0);
-assert.equal(createHash('sha256').update(Buffer.from(home,'utf8')).digest('hex'),manifest.mainFileSHA256);
+assert.equal(createHash('sha256').update(Buffer.from(home,'utf8')).digest('hex'),manifest.currentSiteIndexSHA256 ?? manifest.mainFileSHA256);
 assert.ok(read('aperture/README.md').includes('DECLARED_ONLY'));
 console.log('Consequence Aperture static/manifest/source integrity: PASS');

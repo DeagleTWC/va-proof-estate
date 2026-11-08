@@ -57,6 +57,16 @@ class ReleaseGitHistoryTests(unittest.TestCase):
         self.save()
         self.assertTrue(any("Unable to read Git source" in x for x in validate(self.root)))
 
+    def test_append_only_current_site_hash_preserves_prior_release(self):
+        site_content = b"additive Mathematics navigation\n"
+        (self.root / "index.html").write_bytes(site_content)
+        self.manifest["currentSiteIndexSHA256"] = hashlib.sha256(site_content).hexdigest()
+        self.save()
+        self.assertEqual(validate(self.root), [])
+        self.manifest["currentSiteIndexSHA256"] = "0" * 64
+        self.save()
+        self.assertTrue(any("Current website source differs" in x for x in validate(self.root)))
+
     def test_current_unpinned_changes_fail(self):
         (self.root / "index.html").write_text("mutation", encoding="utf-8")
         self.assertTrue(any("Current website source differs" in x for x in validate(self.root)))

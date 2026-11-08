@@ -50,7 +50,7 @@ def validate(root=ROOT):
             problems.append(f"Historic source digest mismatch for {version}: {measured}")
     try:
         current = hashlib.sha256((root / "index.html").read_bytes()).hexdigest()
-        if current != manifest.get("mainFileSHA256"):
+        if current != manifest.get("currentSiteIndexSHA256", manifest.get("mainFileSHA256")):
             problems.append("Current website source differs from current publication digest")
     except OSError as exc:
         problems.append(f"Missing current index: {exc}")

@@ -15,7 +15,7 @@ def verify():
     manifest = read_json("proof-estate-manifest.json")
     index = ROOT / manifest["mainFile"]
     current_sha = hashlib.sha256(index.read_bytes()).hexdigest()
-    assert current_sha == manifest["mainFileSHA256"], (
+    assert current_sha == manifest.get("currentSiteIndexSHA256", manifest["mainFileSHA256"]), (
         f"Website release checksum mismatch: {current_sha}"
     )
 
