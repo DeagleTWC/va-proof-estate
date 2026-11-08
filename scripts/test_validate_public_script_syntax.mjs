@@ -31,7 +31,7 @@ assert.ok(renderer.indexOf('activeLedger=selection.activeId')<renderer.indexOf('
 assert.ok(renderer.includes("tr.setAttribute('aria-selected'"));
 assert.ok(renderer.includes("byId('claimPacket').disabled=!activeLedger"));
 
-// Public navigation checks: preserve every original section destination and the two Stage A entry links.
+// Public navigation checks: preserve every original destination and verify newly published Mathematics entries.
 const navStart=homepage.indexOf('<nav class="navlinks"');
 const navEnd=homepage.indexOf('</nav>',navStart);
 assert.ok(navStart>=0 && navEnd>navStart,'Primary navigation missing');
@@ -41,9 +41,14 @@ const expectedNav=[
   'reviewer-route.html','end-to-end.html','#systems-category','#kcd-next',
   '#floor','#witness','#claims','#physical','#challenge','#proof-desk',
   '#runnable-proof','#byo-seam','consequence-challenge.html',
-  'consequence-aperture.html','consequence-aperture.html'
+  'consequence-aperture.html','consequence-aperture.html',
+  'mathematics.html','navier-stokes.html'
 ].sort();
-assert.deepEqual(navLinks,expectedNav,'Original public navigation routes must be retained');
+assert.deepEqual(navLinks,expectedNav,'Original navigation plus Mathematics routes must be retained');
+assert.ok(readFileSync(resolve(root,'mathematics.html'),'utf8').includes('navier-stokes.html'),
+          'Mathematics archive must link to its first research record');
+assert.ok(readFileSync(resolve(root,'navier-stokes.html'),'utf8').includes('Snyder_Classical_Navier_Stokes_Proof_Extract_11pp.pdf'),
+          'Navier–Stokes record must link to the published proof extract');
 assert.ok(nav.includes('<details class="nav-more">') && nav.includes('<summary>Explore sections'),
           'Accessible native section menu missing');
 assert.equal([...nav.matchAll(/<details\b/g)].length,1,'Only one section menu is expected');

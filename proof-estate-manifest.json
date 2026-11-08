@@ -5,7 +5,7 @@
   "published": "2026-11-03",
   "scope": "V.A.-only native claim and public examination estate; separately labeled synthetic examiner, public True-Zero category primer, and prospective KCD Program A physical proof register (not native V.A. evidence).",
   "mainFile": "index.html",
-  "mainFileSHA256": "85f9df06066f6c0af26c42981eb8584c99d0a5ee9c437e1a6c0e565f7ebc908d",
+  "mainFileSHA256": "3e5b9df36103010546bc15a13cb87cbd4dadf12d56b98411d47ed0f86b0dbc23",
   "publicEvidenceStatus": "DECLARED",
   "evidenceStatusVocabulary": [
     "DECLARED",
@@ -399,5 +399,17 @@
     "existingClaimToCarrierRegisterUnchanged": true,
     "stageB": "CONTROLLED FACILITY AND AUTHORIZED NATIVE RUNTIME WITH SEPARATELY INSTRUMENTED EFFECT — NOT CONNECTED",
     "stageC": "SOURCE-QUALIFIED INDEPENDENT WITNESS AND PHYSICAL EFFECT RELEASE — NOT ESTABLISHED HERE"
+  },
+  "mathematicsPublicationAddendum": {
+    "date": "2026-11-08",
+    "scope": "Separately labeled classical mathematics research archive and Navier–Stokes source extract; no changes to V.A. native proof standing, V12 evidence, or frozen original scientific material.",
+    "indexPath": "mathematics.html",
+    "articlePath": "navier-stokes.html",
+    "researchIndexPath": "research/mathematics/INDEX.json",
+    "classicalProofPdf": "research/navier-stokes/Snyder_Classical_Navier_Stokes_Proof_Extract_11pp.pdf",
+    "originalRelease2_7IndexSHA256": "85f9df06066f6c0af26c42981eb8584c99d0a5ee9c437e1a6c0e565f7ebc908d",
+    "currentSiteIndexSHA256": "3e5b9df36103010546bc15a13cb87cbd4dadf12d56b98411d47ed0f86b0dbc23",
+    "standing": "Author-produced public research artifact, not independent mathematical certification.",
+    "preservedOriginalReleaseIdentity": "2.7 / edition 09 — prior release hash preserved above, extended site surface identified as an addendum."
   }
 }
