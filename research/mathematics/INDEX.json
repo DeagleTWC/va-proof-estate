@@ -1,0 +1,17 @@
+{
+  "schema": "deagle-mathematics-index/v1",
+  "updated": "2026-11-08",
+  "owner": "Terry Allen Snyder",
+  "entries": [
+    {
+      "id": "navier-stokes-2026-11-08",
+      "title": "Classical Navier–Stokes: Formula and Proof Examination",
+      "record": "navier-stokes.html",
+      "manifest": "research/navier-stokes/PUBLIC_RELEASE_MANIFEST.json",
+      "pdf_filename": "Snyder_Classical_Navier_Stokes_Proof_Reader_28pp.pdf",
+      "pdf_sha256": "8168d1b5e52b85848cd043326ea27af3b8fc97e8e8eaa3a22944ecf79af86b25",
+      "pdf_hosted": false,
+      "status": "Record published. PDF prepared; upload pending. Mathematical independent examination invited."
+    }
+  ]
+}

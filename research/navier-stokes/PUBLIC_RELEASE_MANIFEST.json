@@ -6,7 +6,7 @@
   "title": "Classical Navier–Stokes: Formula-First Correlated Proof Section",
   "prepared_artifact": {
     "filename": "Snyder_Classical_Navier_Stokes_Proof_Reader_28pp.pdf",
-    "sha256": "062e4219b3be5c20de4b188d6f3fd090bd0e70d04bb36e34f9c2abb7d5089641",
+    "sha256": "8168d1b5e52b85848cd043326ea27af3b8fc97e8e8eaa3a22944ecf79af86b25",
     "page_count": 28,
     "pages_taken_from_original": "1–28",
     "hosted_in_repo": false
@@ -19,5 +19,9 @@
   "scope": "Original 3 orientation pages and all 25 original classical proof pages. Native NEW K / URK source sections and generators excluded.",
   "originality": "Page content is unchanged; PDF wrapper was regenerated for the extract.",
   "examination_status": "Not independently certified as unrestricted 3D Navier–Stokes solution. Independent mathematical examination invited.",
-  "binary_publication_status": "Prepared but not uploaded to GitHub in this commit"
+  "binary_publication_status": "Prepared but not uploaded to GitHub in this commit",
+  "checksum_correction": {
+    "date": "2026-11-08",
+    "reason": "Corrected to the SHA-256 of the prepared 532086-byte 28-page PDF; earlier page metadata was inconsistent with this exact file."
+  }
 }

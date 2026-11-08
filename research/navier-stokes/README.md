@@ -9,7 +9,7 @@ The author's formula-first correlated proof reader contains classical Navier–S
 ## Primary prepared public file
 
 - `Snyder_Classical_Navier_Stokes_Proof_Reader_28pp.pdf` — **prepared locally; binary upload pending**.
-- SHA-256: `062e4219b3be5c20de4b188d6f3fd090bd0e70d04bb36e34f9c2abb7d5089641`
+- SHA-256: `8168d1b5e52b85848cd043326ea27af3b8fc97e8e8eaa3a22944ecf79af86b25`
 - Full 80-page source-reader SHA-256: `3d2ec03f400030d8a140af6139f2db1b44a1787b797c661d852b89110310703c`
 - [Machine-readable manifest](PUBLIC_RELEASE_MANIFEST.json).
 
@@ -21,5 +21,6 @@ Reviewers are invited to report a theorem/lemma/equation reference, the exact al
 
 This publication record **does not assert that Clay Mathematics Institute has accepted, certified, or awarded any prize**. Publication here is independent of any journal or prize process.
 
+**Mathematics archive:** [Browse mathematics](../../mathematics.html)  
 **Site:** [Open research record](../../navier-stokes.html)  
 **Separate foundation:** [V.A. Proof Estate](../../README.md)
