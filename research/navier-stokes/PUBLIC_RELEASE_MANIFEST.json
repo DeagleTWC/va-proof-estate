@@ -47,12 +47,17 @@
     "Snyder_Classical_Navier_Stokes_Proof_Extract_11pp.pdf": {
       "sha256": "fdcffd808b3fa49c51eed62fe800614142945966990cfdc3b526e954013e3f71",
       "bytes": 334496
+    },
+    "CITATION.cff": {
+      "sha256": "b759818e9bafb7f1e3113c00402b1f92513b2b6eeb85955a69d73835c8d75db0",
+      "bytes": 498
     }
   },
   "public_pdf_url": "https://deagletwc.github.io/va-proof-estate/research/navier-stokes/Snyder_Classical_Navier_Stokes_Proof_Extract_11pp.pdf",
   "public_zip_url": "https://deagletwc.github.io/va-proof-estate/research/navier-stokes/Deagle_Navier_Stokes_Classical_Public_2026-11-08.zip",
-  "published_zip_sha256": "31e388f2b7b34523bd2ee6639d2cd45830ac02a3bd13a36f991803e551650aa5",
+  "published_zip_sha256": "199fa8673ad85348046578aeb0ad9c9e77fd51ddaf38dd78991896af385bf236",
   "published_pdf_git_blob_sha1": "19c410d08d346f8df7868e4b3d25a27a5aea5bda",
-  "published_zip_git_blob_sha1": "2f9502cc2f49ef61e383c952771b26ca152859a4",
-  "publication_correction": "The previously indexed 28-page draft included native research sections; the revised 11-page extract retains only the original classical mathematical proof pages 5-15. The earlier draft PDF was not hosted in the repository."
+  "published_zip_git_blob_sha1": "ac69d5e8029a80f365890d91edd8619979e94bb9",
+  "publication_correction": "The previously indexed 28-page draft included native research sections; the revised 11-page extract retains only the original classical mathematical proof pages 5-15. The earlier draft PDF was not hosted in the repository.",
+  "archive_digest_location": "Public site manifest only; the ZIP's embedded manifest sets published_zip_sha256 to null to avoid a circular checksum."
 }

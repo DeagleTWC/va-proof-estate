@@ -14,7 +14,7 @@
       "status": "Published classical author manuscript; exact 11-page PDF and reproducibility files available. Independent mathematical examination invited.",
       "pdf_url": "research/navier-stokes/Snyder_Classical_Navier_Stokes_Proof_Extract_11pp.pdf",
       "supporting_archive": "research/navier-stokes/Deagle_Navier_Stokes_Classical_Public_2026-11-08.zip",
-      "supporting_archive_sha256": "31e388f2b7b34523bd2ee6639d2cd45830ac02a3bd13a36f991803e551650aa5",
+      "supporting_archive_sha256": "199fa8673ad85348046578aeb0ad9c9e77fd51ddaf38dd78991896af385bf236",
       "source_tex_url": "research/navier-stokes/ORIGINAL_PART_II_CLASSICAL_TEX_EXCERPT.tex",
       "source_selection": "Correlated 80-page proof reader original pages 5–15 inclusive (Part A classical proof sequence)."
     }
