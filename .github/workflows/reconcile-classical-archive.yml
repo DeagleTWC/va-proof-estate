@@ -1,0 +1,32 @@
+name: Reconcile classical mathematics archive (one-shot)
+on:
+  push:
+    paths:
+      - ".github/workflows/reconcile-classical-archive.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  correct-public-bundle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Verify public mathematics inputs and reconcile embedded publication status
+        run: python3 scripts/reconcile_classical_archive.py
+      - name: Commit exact corrected archive and matching public digests
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research/navier-stokes/Deagle_Navier_Stokes_Classical_Public_2026-11-08.zip
+          git add research/navier-stokes/PUBLIC_RELEASE_MANIFEST.json
+          git add research/mathematics/INDEX.json
+          git add navier-stokes.html
+          if ! git diff --cached --quiet; then
+            git commit -m "Reconcile public Navier–Stokes archive status, checksum and citation"
+            git push origin HEAD:main
+          fi
