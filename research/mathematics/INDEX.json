@@ -32,7 +32,9 @@
         "public_replay": "research/navier-stokes/VERIFY_PUBLIC_EDGE_WITNESS.py",
         "original_source_preserved": true,
         "private_native_urk_excluded": true
-      }
+      },
+      "catalog_number": "001",
+      "index_kind": "published_mathematical_research"
     },
     {
       "id": "yang-mills-2026-11-11",
@@ -56,7 +58,9 @@
         "manifest": "research/yang-mills/PUBLIC_RELEASE_MANIFEST.json"
       },
       "formula_proof_correspondence": "research/yang-mills/URK_GENERATED_FORMULA_TO_PROOF_CORRESPONDENCE.md",
-      "proof_chain_status": "research/yang-mills/URK_PROOF_CHAIN_STATUS.json"
+      "proof_chain_status": "research/yang-mills/URK_PROOF_CHAIN_STATUS.json",
+      "catalog_number": "002",
+      "index_kind": "published_mathematical_research"
     },
     {
       "id": "admissibility-debt-geometry-2026-11-11",
@@ -73,7 +77,9 @@
       "supporting_archive_sha256": "96683a83906d33bb1bbf37b4237f8c949e8624af620810e398c996c043ba8599",
       "source_preserved": true,
       "source_sha256": "789779f75e72400ecb807019cb4c8a55cc5e08969cdcf2d5dc998621899efaa7",
-      "status": "Author-produced mathematical research record with exact conditional debt, first-hit, no-return, singular-edge and tensor theorems. Five exact rational example certificates, linked receipts, and preserved original source are included."
+      "status": "Author-produced mathematical research record with exact conditional debt, first-hit, no-return, singular-edge and tensor theorems. Five exact rational example certificates, linked receipts, and preserved original source are included.",
+      "catalog_number": "003",
+      "index_kind": "published_mathematical_research"
     }
   ],
   "release_correction": "Prior 28-page draft record superseded before public PDF upload; that draft contained native mathematical sections and was not published on Deagle.",
@@ -84,7 +90,8 @@
       "index_state": "public navigation only — original mathematical carrier not yet linked in this repository",
       "carrier_status": "not represented by a public PDF/source/replay manifest in this mathematics index",
       "scope_note": "Indexing does not regrade or negate existing examination lineage; no unrestricted RH proof is certified by this index entry.",
-      "public_status_document": "research/mathematics/PUBLICATION-STATUS.md"
+      "public_status_document": "research/mathematics/PUBLICATION-STATUS.md",
+      "index_kind": "named_research_examination_lineage"
     },
     {
       "id": "p-versus-np",
@@ -100,7 +107,8 @@
       "examination_archive_sha256": "def3711578a6ae9b5d804ba782b45b8f3fd7f8c122377a869e47d5d22b348fec",
       "archived_original_publicly_mirrored": false,
       "bounded_checks_reproduced": 65795,
-      "bounded_checks_total": 65795
+      "bounded_checks_total": 65795,
+      "index_kind": "named_research_examination_lineage"
     }
   ],
   "native_foundation": {
@@ -113,5 +121,7 @@
     "publication_not_proof_certification": true
   },
   "coverage_document": "research/mathematics/PUBLICATION-STATUS.md",
-  "publication_map": "research-publication.html"
+  "publication_map": "research-publication.html",
+  "review_evidence_crosswalk": "research/mathematics/REVIEW-CROSSWALK.md",
+  "index_structure": "Mathematics landing page is research discovery; publication map is public carrier availability; review crosswalk separates mathematical proofs, replay and independent peer-review status. Catalog numbers only apply to published research entries."
 }
