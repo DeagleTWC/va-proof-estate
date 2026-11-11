@@ -104,5 +104,6 @@
     "protected_native_math_released": false,
     "publication_not_proof_certification": true
   },
-  "coverage_document": "research/mathematics/PUBLICATION-STATUS.md"
+  "coverage_document": "research/mathematics/PUBLICATION-STATUS.md",
+  "publication_map": "research-publication.html"
 }
