@@ -1,0 +1,113 @@
+{
+  "schema": "deagle-math-yang-mills-public/v1.1",
+  "date": "2026-11-11",
+  "author": "Terry Allen Snyder",
+  "supersedes": "v1.0 methodology/order, does not delete or alter original file",
+  "record": "https://deagletwc.github.io/va-proof-estate/yang-mills.html",
+  "scope": "Public disclosure-safe generator→generated kernel/formula→input→witness→theorem correspondence with exact bounded SU(2) source proofs; physical continuum Yang–Mills mass gap not established by released records",
+  "release_file_sha256": {
+    "02_SOURCE_PROOFS/STAGE49_MATHEMATICAL_NOTE.md": {
+      "sha256": "0961cb649a13045c957679ea38dfd71fcffb39189d6279f3f8ed220a90443788",
+      "bytes": 10390
+    },
+    "02_SOURCE_PROOFS/STAGE53_MATHEMATICAL_NOTE.md": {
+      "sha256": "508450802213eec60e9064e8adc3b902db79f44c5c35c364e927e1c0d59a2dbb",
+      "bytes": 9571
+    },
+    "02_SOURCE_PROOFS/STAGE54_MATHEMATICAL_NOTE.md": {
+      "sha256": "96dc656fb8fb9c7b6bfce43d12b844b67d6224b248f03bf7c3401164b33d2d6a",
+      "bytes": 7262
+    },
+    "02_SOURCE_PROOFS/STAGE69_MATHEMATICAL_NOTE.md": {
+      "sha256": "7718869e97d08d56b743652ba06aa40360f9dfa3babf03cedd645202565a0df8",
+      "bytes": 9241
+    },
+    "02_SOURCE_PROOFS/STAGE70_MATHEMATICAL_NOTE.md": {
+      "sha256": "8302f9a4df91bb9502efe37883041ea97d0b4697188ed4b2c0897d31922576fc",
+      "bytes": 8502
+    },
+    "02_SOURCE_PROOFS/STAGE71_MATHEMATICAL_NOTE.md": {
+      "sha256": "d9f87dc7ac41c930a8d195a05e7de0176ee46fd588e90472651d2e408c826c92",
+      "bytes": 7687
+    },
+    "02_SOURCE_PROOFS/STAGE72_MATHEMATICAL_NOTE.md": {
+      "sha256": "6df2439ad30ee9fcef1c81129de0ed9111734d118f59e9dc79691445590ca2ed",
+      "bytes": 8799
+    },
+    "02_SOURCE_PROOFS/STAGE73_MATHEMATICAL_NOTE.md": {
+      "sha256": "d28a72a94aaf61bc27306f1ec822f889f8f81a2c00de6969e58f6faa0aa1cb45",
+      "bytes": 6562
+    },
+    "02_SOURCE_PROOFS/STAGE78_MATHEMATICAL_NOTE.md": {
+      "sha256": "661ca3b8f969a85d4a0664be57883f6ff69caf84117738e420fccddf6aeb2f27",
+      "bytes": 4726
+    },
+    "02_SOURCE_PROOFS/STAGE79_MATHEMATICAL_NOTE.md": {
+      "sha256": "76b6d2369e80bc34320a507ce4ce7fdfc4ed0af84b58547f5741eda97052bfe5",
+      "bytes": 5411
+    },
+    "03_REPRODUCIBILITY/ORIGINAL_STAGE79_VERIFIER_REQUIRES_PARENT_ARCHIVES.py": {
+      "sha256": "b82221290693be6d269efc9745fa494a47d5df0ea75bde254aad6bf1f5a105e1",
+      "bytes": 5146
+    },
+    "03_REPRODUCIBILITY/PUBLIC_REPLAY_RESULTS.json": {
+      "sha256": "b08cc822ad22115648b14a05c3e6ddda387d8060aed66710a244fec3f0b8fe49",
+      "bytes": 918
+    },
+    "03_REPRODUCIBILITY/STAGE72_MEDIATOR_LEDGER.json": {
+      "sha256": "a6209231f4e5f7a14ea713c33910301c4fbfa194e89bb34355392d127cc24bc3",
+      "bytes": 658427
+    },
+    "03_REPRODUCIBILITY/STAGE72_RESULTS.json": {
+      "sha256": "8f6dd48ef7818c0308ac9e5df27932c0ac7c1e18862446aa034854ffc9b27cb5",
+      "bytes": 2520
+    },
+    "03_REPRODUCIBILITY/STAGE79_ARCHIVED_RESULTS.json": {
+      "sha256": "d2c99c3ac2026a1ffe2408c8c19d11c30dd60b45a9a3e6b19c4a51ffcde264e9",
+      "bytes": 1861
+    },
+    "03_REPRODUCIBILITY/verify_public_incidence.py": {
+      "sha256": "25ef8d038e39c2782ee381014f1874a4b7da52eeab3e2c3011775644a5acf342",
+      "bytes": 4143
+    },
+    "CITATION.cff": {
+      "sha256": "c1b71969164fc8f61e16109e9adc9bdb0ff3a13e3e52704159bbaf66536f2d80",
+      "bytes": 463
+    },
+    "README.md": {
+      "sha256": "f76fb2ed48fc4ac9f1bb6d40e9febcf16823a0a8988ab73c35d6165c8d334821",
+      "bytes": 1419
+    },
+    "STAGE_LINEAGE_INDEX.csv": {
+      "sha256": "17daabfa96552ee031a83f5dd33c21316dcb9f677ce63f7e7465501cff824704",
+      "bytes": 19370
+    },
+    "Snyder_Yang_Mills_Proposed_Answer_Generated_Formula_Proofs_v1.1_2026-11-11.html": {
+      "sha256": "cd3a1789da0656eed9920075b1f5222f04c139ff1ead5d9b167a38a6d9300bed",
+      "bytes": 29690
+    },
+    "Snyder_Yang_Mills_Proposed_Answer_Generated_Formula_Proofs_v1.1_2026-11-11.md": {
+      "sha256": "4ac40570a6b089e7e5e3fcbe5b8ee6f632c2849dace048cf99f6da8a0a5b618b",
+      "bytes": 17831
+    },
+    "Snyder_Yang_Mills_Proposed_Answer_Generated_Formula_Proofs_v1.1_2026-11-11.pdf": {
+      "sha256": "ef67294bcdcc10455d1f1b8907d415f0f90ad365681e71fe1d69b552b24d85aa",
+      "bytes": 92714
+    },
+    "URK_GENERATED_FORMULA_TO_PROOF_CORRESPONDENCE.md": {
+      "sha256": "4d94739ad6ad3aab7e41b28e6884e7320f84a230355953d9713ebf476cc6be4f",
+      "bytes": 4978
+    },
+    "URK_PROOF_CHAIN_STATUS.json": {
+      "sha256": "af40e6bc825941c9d4727c682c34413df0da9143787b4fda07a4b4124f9682cf",
+      "bytes": 2677
+    },
+    "verify_public_proof_chain.py": {
+      "sha256": "222983803a620d2094ce44472ad5d2d006d3f090f64031cf0404998e35af9d01",
+      "bytes": 1005
+    }
+  },
+  "protected_urk_generator_zip_sha256": "5b3b635195fc5fb49db53f3a35b44d670ac5c57cfc4018358f7220da4b7ba30c",
+  "harmonic_companion_zip_sha256": "e120794f8597b9e0c3622729e7f63727e66f202378fbb95f66594fa505eb1187",
+  "full_original_stage83_master_sha256": "5945414cdf8492e3ac4ade6ada354898e385a09d73c131c2e19b15205c70a58d"
+}

@@ -20,17 +20,27 @@
     },
     {
       "id": "yang-mills-2026-11-11",
-      "title": "Yang–Mills: Proposed Answer and Exact SU(2) Finite-Lattice Proofs",
+      "title": "Yang–Mills: Proposed Answer, Generated Formula and Proof Evidence (v1.1)",
       "record": "yang-mills.html",
-      "manifest": "research/yang-mills/PUBLIC_RELEASE_MANIFEST.json",
-      "pdf_filename": "Snyder_Yang_Mills_Proposed_Answer_and_Proofs_2026-11-11.pdf",
-      "pdf_sha256": "567e0aeed66e8124773a3186e68616f96609e9cbedda50de72907616f793238e",
+      "manifest": "research/yang-mills/PUBLIC_RELEASE_MANIFEST_v1.1.json",
+      "pdf_filename": "Snyder_Yang_Mills_Proposed_Answer_Generated_Formula_Proofs_v1.1_2026-11-11.pdf",
+      "pdf_sha256": "ef67294bcdcc10455d1f1b8907d415f0f90ad365681e71fe1d69b552b24d85aa",
       "pdf_hosted": true,
-      "status": "Published author-proposed affirmative Yang–Mills answer, exact finite-lattice SU(2) mathematical source proofs and reproducibility. Unrestricted positive continuum mass-gap theorem not established by the attached record.",
-      "pdf_url": "research/yang-mills/Snyder_Yang_Mills_Proposed_Answer_and_Proofs_2026-11-11.pdf",
-      "supporting_archive": "research/yang-mills/Snyder_Yang_Mills_Public_Proof_Package_2026-11-11.zip",
-      "supporting_archive_sha256": "02e60697f22d4feb78f5c522f6eeb87b9d743f60eb5b7aac9fc6ffdc745d495f",
-      "source_selection": "Source notes from original Stages 49, 53, 54, 69–73, 78–79; exact Stage 72 ledger and Stage 79 bounded reproducibility. Protected native generators excluded."
+      "status": "Public author-proposed affirmative Yang–Mills answer. v1.1 corrects the original publication's exposition: URK generator produces the domain kernel/formula, then data and execution generate proof witnesses; published finite SU(2) source proofs and checks remain bounded and do not constitute an authenticated full continuum mass-gap proof.",
+      "pdf_url": "research/yang-mills/Snyder_Yang_Mills_Proposed_Answer_Generated_Formula_Proofs_v1.1_2026-11-11.pdf",
+      "supporting_archive": "research/yang-mills/Snyder_Yang_Mills_URK_Proof_Chain_Repair_v1.1_2026-11-11.zip",
+      "supporting_archive_sha256": "5e94fb44a29ae04c397e405e455e9c540c619dc5b1843fc0420d24ea1a0842aa",
+      "source_selection": "Source notes from original Stages 49, 53, 54, 69–73, 78–79; exact Stage 72 ledger and Stage 79 bounded reproducibility. Protected native generators excluded.",
+      "original_v1_0": {
+        "pdf_filename": "Snyder_Yang_Mills_Proposed_Answer_and_Proofs_2026-11-11.pdf",
+        "pdf_sha256": "567e0aeed66e8124773a3186e68616f96609e9cbedda50de72907616f793238e",
+        "pdf_url": "research/yang-mills/Snyder_Yang_Mills_Proposed_Answer_and_Proofs_2026-11-11.pdf",
+        "supporting_archive": "research/yang-mills/Snyder_Yang_Mills_Public_Proof_Package_2026-11-11.zip",
+        "supporting_archive_sha256": "02e60697f22d4feb78f5c522f6eeb87b9d743f60eb5b7aac9fc6ffdc745d495f",
+        "manifest": "research/yang-mills/PUBLIC_RELEASE_MANIFEST.json"
+      },
+      "formula_proof_correspondence": "research/yang-mills/URK_GENERATED_FORMULA_TO_PROOF_CORRESPONDENCE.md",
+      "proof_chain_status": "research/yang-mills/URK_PROOF_CHAIN_STATUS.json"
     }
   ],
   "release_correction": "Prior 28-page draft record superseded before public PDF upload; that draft contained native mathematical sections and was not published on Deagle."

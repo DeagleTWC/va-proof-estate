@@ -1,0 +1,49 @@
+{
+  "schema": "va-urk-generated-formula-proof-chain/v1.1",
+  "date": "2026-11-11",
+  "release": "yang-mills-v1.1",
+  "correction": "Generated kernel IS the mathematical formula; input is executed through it to yield results and proof witnesses. 1.0 presented downstream results first.",
+  "proof_inference_rule": "An executable result is not automatically a theorem at unrestricted domain scope; verify mathematical hypotheses and quantifiers.",
+  "carriers": [
+    {
+      "id": "urk-generator-v1",
+      "source_sha256": "5b3b635195fc5fb49db53f3a35b44d670ac5c57cfc4018358f7220da4b7ba30c",
+      "kernel_formula": "eight generated domain-kernel specifications",
+      "input_data": "doctrine source map / demo state",
+      "observed_result": "original 12/12 unit tests passed; demo BIND",
+      "mathematical_scope": "native doctrine/domain kernel compilation",
+      "yang_mills_proof_binding": "not located"
+    },
+    {
+      "id": "harmonic-edge-companion",
+      "source_sha256": "e120794f8597b9e0c3622729e7f63727e66f202378fbb95f66594fa505eb1187",
+      "kernel_formula": "Navier-Stokes 3D Fourier amplitude and signed kinetic energy rate",
+      "input_data": "original supplied Fourier mode snapshot",
+      "observed_result": {
+        "edges": 30,
+        "epsilon": 0.04695630968816916,
+        "energy_residual": 0
+      },
+      "mathematical_scope": "finite input snapshot 3D Navier-Stokes, numerical companion",
+      "yang_mills_proof_binding": "not applicable"
+    },
+    {
+      "id": "yang-mills-finite-sources",
+      "kernel_formula": "SU(2) Wilson lattice and shell-covariance mathematical identities",
+      "input_data": "specified (Z/4Z)^4 link configuration and staged ledger",
+      "observed_result": "original finite-lattice source proofs; Stage 72 ledger + Stage 79 14/14 public replay",
+      "mathematical_scope": "finite SU(2) lattice, conditional identities",
+      "yang_mills_proof_binding": "analytic source demonstrated; direct native URK generator-to-SU2 kernel identity not located"
+    },
+    {
+      "id": "continuum-mass-gap",
+      "kernel_formula": "Yang-Mills domain kernel formula to be authenticated against preserved original",
+      "input_data": "not attached as generator-linked continuum proof input",
+      "observed_result": "no matched generator → Yang-Mills kernel → data → analytic continuum witness chain in inspected material",
+      "mathematical_scope": "physical 4D YM continuum, all compact simple gauge groups for official statement",
+      "yang_mills_proof_binding": "author-proposed; not certified by released sources"
+    }
+  ],
+  "private_sources_disclosed": false,
+  "original_v1_preserved": true
+}
