@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "Please cite the author-proposed mathematical answer and specify the theorem or evidence record examined."
+type: dataset
+title: "Yang–Mills: Proposed Answer and Exact SU(2) Finite-Lattice Proofs"
+authors:
+  - family-names: Snyder
+    given-names: Terry Allen
+date-released: "2026-11-11"
+version: "1.0"
+url: "https://deagletwc.github.io/va-proof-estate/yang-mills.html"
+repository-code: "https://github.com/DeagleTWC/va-proof-estate"

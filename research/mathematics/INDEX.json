@@ -1,6 +1,6 @@
 {
   "schema": "deagle-mathematics-index/v1",
-  "updated": "2026-11-08",
+  "updated": "2026-11-11",
   "owner": "Terry Allen Snyder",
   "entries": [
     {
@@ -17,6 +17,20 @@
       "supporting_archive_sha256": "199fa8673ad85348046578aeb0ad9c9e77fd51ddaf38dd78991896af385bf236",
       "source_tex_url": "research/navier-stokes/ORIGINAL_PART_II_CLASSICAL_TEX_EXCERPT.tex",
       "source_selection": "Correlated 80-page proof reader original pages 5–15 inclusive (Part A classical proof sequence)."
+    },
+    {
+      "id": "yang-mills-2026-11-11",
+      "title": "Yang–Mills: Proposed Answer and Exact SU(2) Finite-Lattice Proofs",
+      "record": "yang-mills.html",
+      "manifest": "research/yang-mills/PUBLIC_RELEASE_MANIFEST.json",
+      "pdf_filename": "Snyder_Yang_Mills_Proposed_Answer_and_Proofs_2026-11-11.pdf",
+      "pdf_sha256": "567e0aeed66e8124773a3186e68616f96609e9cbedda50de72907616f793238e",
+      "pdf_hosted": true,
+      "status": "Published author-proposed affirmative Yang–Mills answer, exact finite-lattice SU(2) mathematical source proofs and reproducibility. Unrestricted positive continuum mass-gap theorem not established by the attached record.",
+      "pdf_url": "research/yang-mills/Snyder_Yang_Mills_Proposed_Answer_and_Proofs_2026-11-11.pdf",
+      "supporting_archive": "research/yang-mills/Snyder_Yang_Mills_Public_Proof_Package_2026-11-11.zip",
+      "supporting_archive_sha256": "02e60697f22d4feb78f5c522f6eeb87b9d743f60eb5b7aac9fc6ffdc745d495f",
+      "source_selection": "Source notes from original Stages 49, 53, 54, 69–73, 78–79; exact Stage 72 ledger and Stage 79 bounded reproducibility. Protected native generators excluded."
     }
   ],
   "release_correction": "Prior 28-page draft record superseded before public PDF upload; that draft contained native mathematical sections and was not published on Deagle."

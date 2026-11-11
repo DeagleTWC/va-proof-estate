@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Research lineage: Terry Allen Snyder · V.A. / URK" />
+  <meta name="dcterms.date" content="2026-11-11" />
+  <title>Yang–Mills: Our Proposed Answer and the Proofs You Can Check</title>
+  <style>
+    html {
+      font-size: 10pt;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <style>
+  :root{--ink:#192434;--muted:#5e6d7d;--line:#d9e2e8;--accent:#265b87;--cream:#f8fafc}
+  *{box-sizing:border-box}body{font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:var(--ink);font-size:17px;line-height:1.68;max-width:840px;margin:40px auto;padding:0 24px;background:white}h1{font-size:clamp(2rem,5vw,3rem);line-height:1.18;letter-spacing:-.04em;margin:1.4em 0 .4em}h2{font-size:1.55rem;letter-spacing:-.025em;border-top:1px solid var(--line);padding-top:1.1em;margin-top:2em}h3{font-size:1.1rem}p{margin:1.1em 0}a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px}strong{font-weight:690}blockquote{padding:10px 20px;border-left:3px solid var(--accent);background:var(--cream)}table{font-size:.87em;border-collapse:collapse;width:100%;display:block;overflow-x:auto;line-height:1.45}th,td{border-bottom:1px solid var(--line);padding:12px 13px;text-align:left;vertical-align:top}th{background:var(--cream);font-weight:700}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace} .math.display{display:block;overflow-x:auto;padding:12px 10px;margin:1.4em 0;background:var(--cream);border-radius:6px;text-align:center}header#title-block-header{border-bottom:2px solid #233f5f;padding-bottom:1.5em;margin-bottom:2em}header .title{font-size:2.6em;line-height:1.1;margin:.5em 0}header .subtitle{color:var(--muted)}header .author,header .date{font-size:.85em;color:var(--muted)}p:first-of-type strong{color:var(--accent)}@media print{body{font-size:10.3pt;max-width:none;margin:0;padding:0}h1,h2{break-after:avoid}table{display:table}a{color:var(--ink)} .math.display{background:#fafbfc}}
+  </style>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="/usr/share/javascript/mathjax/MathJax.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Yang–Mills: Our Proposed Answer and the Proofs You Can
+Check</h1>
+<p class="subtitle">V.A. / URK public mathematical research release</p>
+<p class="author">Research lineage: Terry Allen Snyder · V.A. / URK</p>
+<p class="date">11 November 2026</p>
+</header>
+<p><strong>OPEN AUTHOR-PROPOSED MATHEMATICAL ANSWER — PUBLIC RESEARCH
+RELEASE</strong><br />
+<strong>Standing:</strong> Author-proposed affirmative Yang–Mills
+answer; several exact finite-lattice theorems and reproduced checks;
+<strong>not yet an established proof of the full continuum mass
+gap</strong>. The distinction is part of the evidence, not a dismissal
+of the work.</p>
+<h1 id="the-answer-in-everyday-language">The answer, in everyday
+language</h1>
+<p><strong>Our proposed answer is yes: a nontrivial four-dimensional
+quantum Yang–Mills theory should exist and possess a positive mass
+gap.</strong> A mass gap means there is a strictly positive lower bound
+on excitation energy above the vacuum—no sequence of genuine excitations
+can creep down toward zero energy.</p>
+<p>We are making the mathematics open to examination rather than asking
+readers to accept an assertion or wait for a prize committee. This
+release explains what the retained URK/SU(2) calculations prove, shows
+the equations, and identifies the bridge needed for the complete
+quantum-field-theoretic conclusion. <strong>Reproducible calculations
+support their stated finite-lattice claims; they do not automatically
+settle the continuum problem.</strong></p>
+<p>The official problem is broader than one gauge group: it asks for a
+nontrivial theory and a positive gap for <em>every</em> compact simple
+gauge group. Our identified lattice evidence concerns
+<strong>SU(2)</strong>. The official wording and scope can be checked at
+the <a
+href="https://www.claymath.org/millennium/yang-mills-the-maths-gap/">Clay
+Mathematics Institute</a>.</p>
+<h1 id="the-idea">The idea</h1>
+<p>Imagine a four-dimensional lattice, with a little <strong>SU(2)
+matrix on each link</strong>. Travel around a square (a
+<em>plaquette</em>), multiply its link matrices in order, and you obtain
+the plaquette’s holonomy. The Wilson weight assigns relative probability
+to configurations using all such squares at once. Nearby variables
+cannot be treated as independent just because they do not share a square
+directly.</p>
+<p>Our examination isolates a precisely defined <strong>six-plaquette
+component</strong>, follows its boundary and the exterior gauge
+variables, and derives the <em>actual conditioned probability</em> of
+its pivotal shell. This exact conditioning is the central safeguard: it
+prevents an apparently attractive but incorrect independence shortcut
+from entering the proposed mass-gap argument.</p>
+<h1 id="proof-1-a-real-globally-consistent-su2-configuration">Proof 1 —
+A real, globally consistent SU(2) configuration</h1>
+<p>On the periodic lattice</p>
+<p><span class="math display">\[\Lambda=(\mathbb Z/4\mathbb
+Z)^4,\]</span></p>
+<p>there are <strong>1,024 oriented positive links</strong> and
+<strong>1,536 plaquettes</strong>. Set every link equal to the identity
+except two:</p>
+<p><span class="math display">\[U_2(e_1)=n^{-1},\qquad
+U_1(-e_2)=-n,\qquad n=(3/5,4/5,0,0),\]</span></p>
+<p>using the standard unit-quaternion representation of SU(2). Stage 49
+computes all plaquettes from these actual links (rather than prescribing
+plaquette values independently). Exactly six plaquettes have scalar
+holonomy <span class="math inline">\(-3/5\)</span>, six have <span
+class="math inline">\(+3/5\)</span>, and the rest have <span
+class="math inline">\(1\)</span>.</p>
+<p>For the Wilson-action convention</p>
+<p><span
+class="math display">\[S_W(U)=\beta\sum_p\bigl(1-\tfrac12\operatorname{ReTr}U_p\bigr),\]</span></p>
+<p>we obtain</p>
+<p><span
+class="math display">\[\boxed{S_W(U^*)=\beta\,[6(1+3/5)+6(1-3/5)]=12\beta.}\]</span></p>
+<p><strong>Why this is a proof:</strong> the complete field is
+constructed from link variables, so the non-Abelian lattice Bianchi
+compatibility identities follow from the edge-product cancellations. The
+inherited Stage 49 component enumeration finds one six-plaquette
+<em>bad</em> component with <strong>66 adjoining boundary
+plaquettes</strong>: one on the pivotal threshold, the other <strong>65
+strictly good</strong>. The finite-volume coarea argument then gives
+<strong>positive pivotal-surface weight at each finite <span
+class="math inline">\(\beta&gt;0\)</span></strong> on a nonempty patch
+of the level set.</p>
+<p><strong>What it proves:</strong> the pivotal event is a genuine,
+compatible SU(2) configuration and not a fictitious independent
+collection of squares. <strong>What it does not prove:</strong> a
+volume-uniform estimate or a continuum gap.</p>
+<h1
+id="proof-2-the-exact-conditioned-probability-without-a-shortcut">Proof
+2 — The exact conditioned probability, without a shortcut</h1>
+<p>Let <span class="math inline">\(c\)</span> be a regular
+target-plaquette value, <span class="math inline">\(b\)</span> the
+exterior link data, and <span class="math inline">\(\sigma_c\)</span>
+the conditional Haar probability on the target’s four-link shell. Define
+the full Wilson shell factor <span
+class="math inline">\(A_b(c)&gt;0\)</span> and its exact-component
+contribution <span class="math inline">\(A_{\Gamma,b}(c)\)</span>:</p>
+<p><span class="math display">\[\begin{aligned}
+A_b(c)&amp;=\int e^{\beta Y_b(U_B)}\,d\sigma_c(U_B),\\
+A_{\Gamma,b}(c)&amp;=\int e^{\beta
+Y_b(U_B)}\chi_\Gamma(U_B,b;c)\,d\sigma_c(U_B).
+\end{aligned}\]</span></p>
+<p>Here <span class="math inline">\(\chi_\Gamma\)</span> checks the
+<strong>whole event</strong>, including component connectivity,
+strict-good boundary faces and the pivotal condition. Put <span
+class="math inline">\(p_\Gamma(b,c)=A_{\Gamma,b}(c)/A_b(c)\)</span>, and
+let <span class="math inline">\(\mathbb E_0\)</span> mean expectation
+under the stated reference exterior measure. The exact conditioned
+fraction is</p>
+<p><span class="math display">\[\boxed{\Pi_\Gamma(c)=\frac{\mathbb
+E_0[A_{\Gamma,b}(c)]}{\mathbb E_0[A_b(c)]}.}\]</span></p>
+<p><strong>Proof:</strong> first condition on the target plaquette’s
+value. Integrate its four-link fibre against the full Wilson weight,
+both with and without the complete event indicator. Then integrate the
+exterior links. Dividing the event’s shell density by the unrestricted
+shell density gives the displayed ratio. There is <strong>no
+assumption</strong> that crossing plaquettes or exterior links
+factorize. This is the exact Stage 53 disintegration identity.</p>
+<p>Equivalently, introduce the <em>size-biased</em> exterior measure</p>
+<p><span
+class="math display">\[\frac{d\nu_c}{d\mu_0}(b)=\frac{A_b(c)}{\mathbb
+E_0[A_b(c)]},\qquad
+\Pi_\Gamma(c)=\mathbb E_{\nu_c}[p_\Gamma(b,c)].\]</span></p>
+<p><strong>Why this matters:</strong> configurations with a larger shell
+normalizer count more heavily. Omitting that weight would change the
+question being solved.</p>
+<h1 id="proof-3-the-exact-correction-for-correlated-exterior-data">Proof
+3 — The exact correction for correlated exterior data</h1>
+<p>The Stage 54 identity quantifies precisely how the conditioned answer
+differs from the unweighted exterior average:</p>
+<p><span class="math display">\[\boxed{\Pi_\Gamma(c)-\mathbb
+E_0[p_\Gamma]
+=\frac{\operatorname{Cov}_0(A_b,p_\Gamma)}{\mathbb
+E_0[A_b]}.}\]</span></p>
+<p><strong>Proof:</strong> use <span class="math inline">\(\mathbb
+E_0[A_bp_\Gamma]=\mathbb E_0[A_b]\,\mathbb
+E_0[p_\Gamma]+\operatorname{Cov}_0(A_b,p_\Gamma)\)</span>, and divide by
+<span class="math inline">\(\mathbb E_0[A_b]\)</span>. Because <span
+class="math inline">\(0\le p_\Gamma\le1\)</span>, Cauchy–Schwarz also
+gives the explicit bound</p>
+<p><span class="math display">\[\boxed{\Pi_\Gamma\le m_\Gamma+
+\frac{\sqrt{v_A\,m_\Gamma(1-m_\Gamma)}}{a},}\]</span></p>
+<p>where <span class="math inline">\(a=\mathbb E_0[A_b]\)</span>, <span
+class="math inline">\(v_A=\operatorname{Var}_0(A_b)\)</span> and <span
+class="math inline">\(m_\Gamma=\mathbb E_0[p_\Gamma]\)</span>.</p>
+<p><strong>Why this matters:</strong> the difficult dependence is not
+swept away; it becomes a specific covariance quantity that an eventual
+uniform estimate must control. The identity is proved. <strong>A volume-
+and weak-coupling-uniform estimate does not follow from the identity
+alone.</strong></p>
+<h1
+id="proof-4-exact-exterior-geometry-and-independently-repeatable-enumeration">Proof
+4 — Exact exterior geometry and independently repeatable
+enumeration</h1>
+<p>For the particular six-plaquette configuration, the recovered
+enumeration produces an exterior collar graph with <strong>237
+links</strong>, <strong>114 vertices</strong>, and <strong>two connected
+components</strong>. The number of independent graph cycles is
+therefore</p>
+<p><span class="math display">\[\boxed{237-114+2=125.}\]</span></p>
+<p><strong>Proof:</strong> a spanning forest of a graph with <span
+class="math inline">\(V\)</span> vertices and <span
+class="math inline">\(k\)</span> connected components has <span
+class="math inline">\(V-k\)</span> edges. The remaining <span
+class="math inline">\(E-(V-k)\)</span> edges generate its independent
+fundamental cycles. Here the forest has <span
+class="math inline">\(112\)</span> edges and the graph has <span
+class="math inline">\(125\)</span> chords. This is an exact finite graph
+theorem, not a physical mass measurement.</p>
+<p>Stage 72 reconstructs <strong>380 shared mediators</strong> (96
+internal, 284 exterior) and <strong>1,375 chord–mediator
+incidences</strong>. Stage 79 then verifies a <strong>connected
+221-vertex</strong> internal incidence graph with <strong>491
+incidences</strong>. Shared mediators explain why a naive claim of
+independent exterior variables would be unjustified.</p>
+<p>The preserved Stage 72 original verifier recorded <strong>2,029
+assertions</strong>, with byte-matching regenerated JSON outputs in the
+archived replay. The original Stage 79 verifier was re-executed during
+publication preparation: <strong>14 of 14 structural checks
+passed</strong>, and the regenerated JSON matched the archived file
+<em>byte for byte</em>.</p>
+<h1 id="the-bridge-from-correlations-to-a-genuine-mass-gap">The bridge
+from correlations to a genuine mass gap</h1>
+<p>Here is the <em>precise logical difference</em> between a collection
+of finite-lattice proofs and the full proposed solution.</p>
+<p>Suppose a nontrivial continuum Yang–Mills theory is rigorously
+reconstructed with vacuum <span class="math inline">\(\Omega\)</span>,
+nonnegative Hamiltonian <span class="math inline">\(H\)</span> and the
+needed positivity properties. Suppose, moreover, that for a dense
+collection of vacuum-orthogonal vectors <span
+class="math inline">\(\psi=A\Omega\)</span>, the corresponding positive
+Euclidean-time correlations obey a <strong>common physical decay
+rate</strong> <span class="math inline">\(m&gt;0\)</span>:</p>
+<p><span class="math display">\[\langle\psi,e^{-tH}\psi\rangle\le C_\psi
+e^{-mt}\qquad(t\ge0).\]</span></p>
+<p>Then the spectrum above the vacuum has a gap of at least <span
+class="math inline">\(m\)</span>.</p>
+<p><strong>Short proof of this conditional implication:</strong> by the
+spectral theorem, the left side is <span
+class="math inline">\(\int_0^\infty e^{-tE}\,d\mu_\psi(E)\)</span> for a
+positive spectral measure. If <span
+class="math inline">\(\mu_\psi([0,m-\varepsilon])&gt;0\)</span>, it
+would force a lower bound proportional to <span
+class="math inline">\(e^{-(m-\varepsilon)t}\)</span>, contradicting the
+stated faster upper bound as <span
+class="math inline">\(t\to\infty\)</span>. Thus every such vector has no
+spectral weight below <span class="math inline">\(m\)</span>. Density
+transfers this exclusion to the whole vacuum-orthogonal Hilbert space.
+<span class="math inline">\(\square\)</span></p>
+<p><strong>This implication is a conditional mathematical lemma, not a
+claim that our archive has already established its hypotheses.</strong>
+In particular, the currently reconciled SU(2) source material has not
+supplied a checked proof of the required uniform continuum
+reconstruction and physical-rate bound. The edge-rate generator’s
+successful Navier–Stokes example is real and reproducible, but is not
+itself that SU(2) theorem.</p>
+<h1 id="evidence-anyone-can-ask-to-inspect">Evidence anyone can ask to
+inspect</h1>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Item</th>
+<th style="text-align: left;">Evidence</th>
+<th style="text-align: left;">Standing</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Global SU(2) component, Wilson action,
+finite pivotal shell</td>
+<td style="text-align: left;">Original Stage 49 mathematical
+construction</td>
+<td style="text-align: left;"><strong>Source theorem</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Exact shell-size-biased identity</td>
+<td style="text-align: left;">Stage 53 proof</td>
+<td style="text-align: left;"><strong>Source theorem</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Covariance correction and its bound</td>
+<td style="text-align: left;">Stage 54 proof</td>
+<td style="text-align: left;"><strong>Source theorem</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">125 exterior cycles, 380 mediators</td>
+<td style="text-align: left;">Stages 69–72 enumerators and records</td>
+<td style="text-align: left;"><strong>Finite exact
+enumeration</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">221-vertex internal incidence graph</td>
+<td style="text-align: left;">Stage 79 original verifier</td>
+<td style="text-align: left;"><strong>14/14 checks rerun; byte-identical
+result</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">URK kernel generator</td>
+<td style="text-align: left;">Original package and recorded test
+run</td>
+<td style="text-align: left;"><strong>12/12 unit tests, different
+mathematical scope</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">URK harmonic edge-rate generator</td>
+<td style="text-align: left;">Original package and reproduced
+example</td>
+<td style="text-align: left;"><strong>Numerical reproduction;
+Navier–Stokes specialization</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Full four-dimensional continuum theory and
+positive gap</td>
+<td style="text-align: left;">Requires a complete corresponding theorem
+and proof</td>
+<td style="text-align: left;"><strong>Proposed conclusion; not yet
+established by this evidence packet</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The protected kernel internals and original nested master archives
+are not included in this public package. The release contains
+public-safe source notes, a finite graph ledger, runnable bounded
+verification, and SHA-256 custody records.</p>
+<h1 id="our-invitation-to-the-mathematical-community">Our invitation to
+the mathematical community</h1>
+<p>We are placing the reasoning and evidence where people can examine it
+openly. Readers are invited to reproduce the exact finite checks, verify
+the shell-conditioning and covariance proofs, identify a valid continuum
+closure if it appears elsewhere in the completed record, or demonstrate
+a specific error by pointing to an equation or counterexample.
+<strong>This is an open author-proposed answer with proved intermediate
+results; not a declaration of independent certification or prize
+recognition.</strong></p>
+<p>We want the strongest correct mathematical answer that the evidence
+can carry—and we want people to be able to check it.</p>
+<hr />
+<p><strong>Source custody:</strong> URK Yang–Mills original Stages 49,
+53, 54, 69, 72 and 79. Public-safe source notes and finite combinatorial
+ledger are included with unchanged source-byte hashes. The full
+cumulative archive remains preserved separately. The archived and rerun
+<strong>Stage 79 result JSON files</strong> have matching SHA-256
+<code>d2c99c3ac2026a1ffe2408c8c19d11c30dd60b45a9a3e6b19c4a51ffcde264e9</code>.
+Original Stage 72 ZIP SHA-256
+<code>78bb9777a2edf658a2c6bfb7fdc13e50dd22270ade8b582e560b7def990eb9f1</code>.</p>
+<p><strong>Release record:</strong> Public author-proposed mathematical
+answer, released 11 November 2026 with source-to-result correspondence
+and independently inspectable finite-lattice evidence. Publication
+itself is not verification of the unrestricted Yang–Mills mass gap.</p>
+</body>
+</html>
