@@ -1,0 +1,199 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[margin=.89in,headheight=15pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,booktabs,enumitem,microtype,fancyhdr,xcolor,hyperref,array,longtable}
+\hypersetup{colorlinks=true,linkcolor=[rgb]{.50,.31,.08},urlcolor=[rgb]{.50,.31,.08},pdftitle={GRID-K1: Infrastructure Continuity Geometry, Exact Cut Certificates and Admission Proofs},pdfauthor={Terry Allen Snyder}}
+\definecolor{gold}{RGB}{125,84,31}\definecolor{muted}{RGB}{85,75,66}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\pagestyle{fancy}\fancyhf{}\lhead{\small\textcolor{muted}{V.A. / DEAGLE MATHEMATICS}}\rhead{\small\textcolor{muted}{Public research edition}}\cfoot{\small\thepage}
+\setlength{\parindent}{0pt}\setlength{\parskip}{5pt}
+\setlist[itemize]{topsep=3pt,itemsep=2pt,leftmargin=*}
+\setlist[enumerate]{topsep=3pt,itemsep=3pt,leftmargin=*}
+\newcommand{\R}{\mathbb R}\newcommand{\dd}{\mathrm d}\newcommand{\pos}{\mathbb R_{\ge0}}\newcommand{\ind}{\mathbf 1}
+\begin{document}
+\begin{center}
+{\small\color{gold}\MakeUppercase{Deagle Mathematical Research / Formalization 002}}\\[10pt]
+{\LARGE\bfseries GRID-K1: Infrastructure Continuity Geometry}\\[5pt]
+{\large Admissible Transitions, Exact Cut Certificates,\; Cumulative Debt and Proof Receipts}\\[11pt]
+{\large Terry Allen Snyder}\\[4pt]
+{\small V.A. / Deagle Mathematical Research \quad 11 November 2026}\\[8pt]
+{\small\color{muted}Source-preserving mathematical derivation | public research edition | v1.0}
+\end{center}
+\vspace{5pt}\hrule\vspace{11pt}
+\begin{abstract}
+The author-held \emph{World Kernel Atlas} identifies GRID-K1 as an infrastructure continuity kernel, and the separate \emph{Critical Infrastructure Continuity Kernel v1.0} describes authority-bound continuation, degradation, rerouting, escalation, halt and refusal across coupled power, water, telecommunications and civic services. This manuscript extracts a precise, testable mathematical layer without treating the source design proposal as already-proved deployment. We introduce a finite directed service-capacity network with dependency constraints, nonnegative cumulative debt, freshness and authority predicates, and a pre-effect admissibility guard. We prove a necessary cut-capacity obstruction, give a constructive sufficiency certificate through admissible flows, prove conditional invariant preservation under enforced guards, and show no return to a strict debt reserve absent an explicit reset law. A frozen seven-case synthetic example is computed with exact rational arithmetic, seven proposition-scoped certificates and seven chained receipts. These results certify the specified finite model and example; they do not establish the behavior of a physical electrical grid, an installed protection controller or an unrestricted universal cascade-prevention theorem.
+\end{abstract}
+\textbf{Source status and custody.} The parent infrastructure kernel is labeled \texttt{approval\_draft} in its original source. Both original Library documents are retained unchanged in the \emph{author-review} evidence archive. The \emph{public-safe} companion excludes those full drafts pending author disclosure approval; it includes their hashes and an itemized formula-to-source crosswalk. This is not a claim that the protected URK generator has been reproduced.
+
+\section{Source problem and mathematical target}
+The continuity proposal asks whether a coupled transition may take effect under live authority and interdependent state, and whether degradation or rerouting could shift a shortfall into an adjacent corridor. It identifies six decision categories, \textsc{Continue}, \textsc{Degrade}, \textsc{Reroute}, \textsc{Escalate}, \textsc{Halt}, and \textsc{Refuse}; only the first three represent positive service transitions in the finite model below. The remaining three are control dispositions whose legal and physical implementation are not implied by flow arithmetic.
+
+We formalize one bounded question: \emph{Given a prepared graph, capacities, service demands, debt increments, dependency flags and trustworthy authority/evidence predicates, can a proposed mode be admitted without violating any of those declared mathematical constraints?} The example models generic transferable service capacity, not Kirchhoff power flow, voltage, frequency, inertia, protection coordination or restoration dynamics.
+
+\section{Finite network and admissible continuity}
+\begin{definition}[Coupled corridor network]\label{def:network}
+Let $G=(V,E)$ be a finite directed graph with a distinguished source $s$, sink set $L\subset V\setminus\{s\}$ and capacities $c_e(m,\xi)\in\pos$ determined by a proposed mode $m$ and an attested state $\xi$. Let $q_\ell\ge0$ be the exact target service delivered to $\ell\in L$, and $f_e\ge0$ the proposed edge flow. Write $\delta^+(v)$ and $\delta^-(v)$ for outward and inward edges. A \emph{flow witness} satisfies
+\begin{align}
+0\le f_e &\le c_e(m,\xi) && (e\in E),\label{eq:cap}\\
+\sum_{e\in\delta^-(v)}f_e-\sum_{e\in\delta^+(v)}f_e &= q_v &&(v\ne s),\label{eq:balance}\\
+\sum_{e\in\delta^+(s)}f_e-\sum_{e\in\delta^-(s)}f_e &=\sum_{\ell\in L}q_\ell,\label{eq:source}
+\end{align}
+where $q_v=0$ for nonsinks. This abstraction assumes a single conserved nonnegative commodity, with no unmodeled store, loss, gain or incompatible commodity conversion.
+\end{definition}
+\begin{definition}[Cross-domain prerequisites and debt]\label{def:dependency}
+Let $P\subseteq V\times V$ be a declared prerequisite relation: $(u,v)\in P$ means an active service at $v$ requires the attested service state of $u$ to be active. Let $z_v\in\{0,1\}$ denote the verified availability flag. For each monitored resource $e\in I\subseteq E$, let $d_e\ge0$ denote cumulative debt, $\Delta_e\ge0$ a declared increment and $B_e>0$ its budget. The prepared candidate must satisfy
+\begin{equation}\label{eq:depdebt}
+q_v>0\implies z_u=1\quad ((u,v)\in P),\qquad d_e^+=d_e+\Delta_e < B_e \quad (e\in I).
+\end{equation}
+The strict inequality is an operating \emph{reserve} convention; equality reaches the mathematical reserve boundary. It does not automatically constitute physical failure.
+\end{definition}
+\begin{definition}[Authority-bound admission guard]\label{def:guard}
+Let $A(m,\xi)$ mean that a trusted authority checker has validated scope, signature, action rights and time window; let $F(\xi)$ mean that relevant evidence, synchronization and interlock attestations are sufficiently fresh. Let $M(m,q)$ denote prepared mode obligations: for \textsc{Continue} and \textsc{Reroute}, $q=q^{\rm base}$; for \textsc{Degrade}, $q\ge q^{\min}$ componentwise. Let $\mathcal C_{\rm flow}$, $\mathcal C_{\rm prereq}$ and $\mathcal C_{\rm debt}$ denote satisfaction of all flow constraints \eqref{eq:cap}--\eqref{eq:source} and the corresponding two conditions in \eqref{eq:depdebt}. Define
+\begin{equation}\label{eq:guard}
+\mathsf{Admit}(m,\xi,f,q,d^+)\iff
+A(m,\xi)\wedge F(\xi)\wedge M(m,q)\wedge \mathcal C_{\rm flow}\wedge \mathcal C_{\rm prereq}\wedge \mathcal C_{\rm debt}.
+\end{equation}
+Every term is a stated Boolean condition, not a reference number standing in for a theorem. \textsc{Refuse}, \textsc{Escalate} and \textsc{Halt} are non-admission outcomes, not additional feasible flows.
+\end{definition}
+\begin{remark}[Limits of an attestation input]
+A Boolean claim of ``fresh'' or ``authorized'' is not itself a cryptographic verification. Admission may rely on such a predicate only if a separately trusted implementation actually establishes it. Likewise, asserting a single governed path does not prove there is no bypass path in deployed equipment.
+\end{remark}
+
+\section{Cut obstruction, constructive feasibility and non-export}
+\begin{theorem}[Necessary service-cut inequality]\label{th:cut}
+Assume \eqref{eq:cap}--\eqref{eq:source}. For every subset $U\subset V$ with $s\in U$ and $U\cap L=\varnothing$,
+\begin{equation}\label{eq:cut}
+\sum_{\ell\in L}q_\ell\le\sum_{e\in\delta^+(U)}c_e(m,\xi).
+\end{equation}
+A violated cut is therefore an exact certificate that the specified full-demand flow cannot exist.
+\end{theorem}
+\begin{proof}
+Sum the balance equations over $V\setminus U$. Internal edge flows cancel, leaving total demand equal to flow entering $V\setminus U$ from $U$ minus flow returning to $U$. Because return flows are nonnegative, and forward flows do not exceed their capacities, the total demand cannot exceed the outward cut capacity.
+\end{proof}
+\begin{corollary}[Full cut characterization in the stated single-commodity model]\label{cor:maxflow}
+Add a super-sink $t$ and edges $\ell\to t$ with capacity $q_\ell$. If every $s$--$t$ cut in this augmented graph has capacity at least $Q=\sum_{\ell\in L}q_\ell$, then a flow satisfying all demands exists. For rational capacities a rational feasible flow exists.
+\end{corollary}
+\begin{proof}
+By the max-flow/min-cut theorem, a flow of value $Q$ exists. The total capacity of the sink arcs equals $Q$, so each sink arc is saturated, delivering exactly $q_\ell$. With rational capacities, scaling by a common denominator reduces to an integral-capacity network, giving a rational flow after rescaling. This does not imply feasibility of multi-commodity or AC electrical-network constraints.
+\end{proof}
+\begin{proposition}[Local reroute checks are insufficient]\label{prop:export}
+Checking capacity only on the \emph{new} path does not ensure a lawful reroute in a shared network. If all participating corridors are represented in $G$, however, a witness satisfying \eqref{eq:cap}--\eqref{eq:source} cannot overload any \emph{represented} edge or conjure net flow at a nonsource vertex.
+\end{proposition}
+\begin{proof}
+The second assertion is exactly the componentwise capacity and node-balance equations. For the first, take a shared edge of capacity $5$ carrying $3$ existing units and a proposed rerouted $3$ units. The new route alone uses $3\le5$, but the combined requirement is $6>5$. Thus an isolated local check would accept a globally impossible transfer.
+\end{proof}
+
+\section{Invariant preservation and debt-bound continuity}
+\begin{theorem}[Conditional pre-effect preservation]\label{th:invariant}
+Let $X$ be the set of model states satisfying the prepared debt, dependency and service invariants. Suppose for each proposed transition $x\mapsto x^+$ (i) the admission guard checks the \emph{entire} next-state witness against $X$, (ii) the attested data are correct for that transition, and (iii) any permitted implementation follows the certified transition without an alternate actuation path. Then
+\begin{equation}\label{eq:induction}
+x_0\in X\quad\Longrightarrow\quad x_n\in X\quad\text{for every completed admitted step }n.
+\end{equation}
+\end{theorem}
+\begin{proof}
+At $n=0$ the hypothesis holds. If $x_n\in X$ and the next step is admitted, the guard has verified the asserted next state $x_{n+1}\in X$; the exact-execution hypothesis makes the executed next state equal to this witnessed state. Induction completes the proof.
+\end{proof}
+\begin{remark}[The critical deployment boundary]
+Theorem \ref{th:invariant} is conditional, not an assertion that physical cascading failures are impossible. State estimation, model completeness, adversarial inputs, software atomicity, fail-safe implementation, protection equipment and unmodeled physical dynamics remain independent proof obligations. A negative gate decision also does not, by itself, establish that an immediate physical shutdown is safe.
+\end{remark}
+\begin{theorem}[No return of monotone debt to a strict reserve]\label{th:debt}
+Let $d(t)=d(0)+\int_0^t k(u)\,\dd u$ with $k\ge0$ locally integrable and strict reserve $d<B$. If $\tau_B=\inf\{t:d(t)\ge B\}<\infty$, then $d(t)\ge B$ for every $t\ge\tau_B$ in the model interval. For discrete steps with $\Delta_e\ge0$, if $d_{e,n}\ge B_e$ at a step, no later nonnegative increment can restore $d_{e,n}<B_e$.
+\end{theorem}
+\begin{proof}
+The integral, respectively each partial sum of nonnegative increments, is nondecreasing. Consequently debt cannot decrease below an already reached threshold. A service reset or repair mechanism would require an additional explicit state transition law and cannot be inferred here.
+\end{proof}
+\begin{corollary}[Debt reserve test for a prepared step]\label{cor:reserve}
+If $d_e=3/4$, $B_e=1$ and $\Delta_e=1/8$, the next debt is $7/8<1$ and this particular guard passes. If $\Delta_e=3/8$, the next debt is $9/8>1$ and it fails. These are exact rational comparisons, not predicted equipment deterioration rates.
+\end{corollary}
+\begin{proof}Compute the sums in $\mathbb Q$.\end{proof}
+
+\section{One frozen synthetic network: seven exact cases}
+Consider the finite network shown by the edge-capacity table. The source $S$ routes a generic capacity resource through primary $A$, secondary $B$ and a normally disabled standby route $C$ toward water-service node $W$ and telecom-service node $T$. The labels identify coupled \emph{service obligations}; a unit is an abstract conserved unit, not a MW, water volume or bandwidth conversion. The seven-case contract instantiates no nonempty prerequisite relation $P$; it tests shared-network conservation, capacity, mode requirements, cumulative debt and declared authority/freshness inputs, not cross-domain prerequisite attestation.
+\begin{center}\small
+\begin{tabular}{@{}lrrrrrrrr@{}}\toprule
+Edge & $S\!\to\!A$&$S\!\to\!B$&$S\!\to\!C$&$A\!\to\!W$&$A\!\to\!T$&$B\!\to\!W$&$B\!\to\!T$&$C\!\to\!T$\\\midrule
+Normal cap.&6&5&0&4&2&4&3&0\\
+Fault, standby off&3&5&0&4&2&4&3&0\\
+Fault, standby on&3&5&4&4&2&4&3&4\\\bottomrule
+\end{tabular}
+\end{center}
+The baseline obligations are $(q_W,q_T)=(6,5)$; the authorized degradation minimum is $(6,2)$. For the monitored $S\to A$ edge, $d_0=3/4$ with strict cap $B=1$. The proposed increments are $1/8$ except in the dedicated overbudget negative case.
+\begin{example}[Baseline full service]
+Use $f_{SA}=6$, $f_{SB}=5$, $f_{AW}=4$, $f_{AT}=2$, $f_{BW}=2$, $f_{BT}=3$. Each edge respects capacity and delivers $(6,5)$. Subject to fresh authority and the reserve check, \textsc{Continue} is admitted.
+\end{example}
+\begin{example}[Fault cut certificate]
+After the primary capacity drops from $6$ to $3$ with standby disabled, the cut $U=\{S\}$ has outward capacity $3+5+0=8$, while baseline service requires $6+5=11$. By Theorem \ref{th:cut}, full-demand continuation is impossible; the deficit is exactly $3$ units. An unmodified $6$-unit flow along $S\to A$ also violates the primary edge capacity. The proposed action is \textsc{Refuse}.
+\end{example}
+\begin{example}[Authorized degradation]
+With standby off and the fault present, set $f_{SA}=3$, $f_{SB}=5$, $f_{AW}=3$, $f_{BW}=3$, $f_{BT}=2$, and all other flows zero. This exactly delivers $(6,2)$ and respects the cut of capacity $8$. Provided the prepared degraded minima and authority are valid, the result is \textsc{Degrade}.
+\end{example}
+\begin{example}[Authorized reroute]
+Activate the \emph{already modeled} standby $S\to C\to T$ corridor; set $f_{SA}=3$, $f_{SB}=5$, $f_{SC}=3$, $f_{AW}=3$, $f_{BW}=3$, $f_{BT}=2$, $f_{CT}=3$. The sinks receive $(6,5)$ and the source sends $11$ units through an available $12$-unit source cut. The entire shared graph is checked: \textsc{Reroute} is admissible if its activation right and live attestations hold.
+\end{example}
+Three further checks reject the same nominal reroute on stale evidence, reject a permitted degradation when the exact debt increment becomes $3/8$, and reject the full reroute when its activating permission is absent. Importantly, a mathematically feasible flow is \emph{not} automatically an admissible authorized action.
+
+\begin{center}\small
+\begin{tabular}{@{}p{.31\linewidth}p{.18\linewidth}p{.41\linewidth}@{}}\toprule
+Prepared case & Decision & Precise basis\\\midrule
+C01 Healthy baseline & \textsc{Continue} & 11 delivered, 11 source cut, fresh authority\\
+C02 Fault/full demand & \textsc{Refuse} & Source cut 8 $<$ required 11; primary overload\\
+C03 Fault/degraded & \textsc{Degrade} & 8 delivered, all edge and minima checks pass\\
+C04 Fault/backup & \textsc{Reroute} & 11 delivered, source cut 12, full witness passes\\
+C05 Stale backup & \textsc{Refuse} & Evidence freshness predicate false\\
+C06 Debt exhaustion & \textsc{Refuse} & Next debt $9/8$ exceeds strict cap $1$\\
+C07 Permission absent & \textsc{Refuse} & Reroute authorization not present\\\bottomrule
+\end{tabular}
+\end{center}
+The exact result objects, contract hashes and receipt chain are frozen in the companion files. No case actuates or contacts live equipment.
+
+\section{Prepared generation, certificates and reproducible replay}
+The sequence is \emph{source custody $\to$ frozen mathematical contract $\to$ one identified exact run $\to$ seven arithmetic witnesses $\to$ seven certificates $\to$ seven chained receipts $\to$ separate read-only verification}. The public code is a transparent arithmetic reference implementation. It is not the protected URK parent generator or a production GRID-K1 runtime.
+
+Each witness records the proposed flow, modeled capacity and conservation checks, authority/freshness predicates, mode minima, exact debt comparison and a source-cut certificate. Its certificate is deliberately limited to the proposition: \emph{the decision follows from the declared finite scenario and guard}. The receipt binds a run ID, certificate hash, prior receipt hash, recorded decision and failed constraints. A separate read-only program recomputes the rational constraints without importing the execution program, checks the source and contract digests when originals are present, validates the linked receipts and rejects a deliberately altered record. Hashes bind the frozen record against changes relative to its published digest; without an external trust anchor or signatures, replacing an entire bundle and all its hashes is not ruled out.
+
+The source's words ``failure classes closed'' and ``no side path'' are design intentions until supported by separate installation, threat-model and physical integration tests. Seven example certificates do not establish those broader statements.
+
+\section{Research claims, limits and examination invitation}
+The contributions established here are: an explicit mathematical admission contract for a single-commodity coupled-service abstraction; a proof that a violated cut rules out a demanded flow; constructive exact rational flow witnesses for degraded and rerouted modes; and a conditional stepwise invariant theorem with cumulative-debt refusal. These are formalizations applying standard conservation, max-flow/min-cut and induction arguments, not claims that those classical theorems were newly invented.
+
+\textbf{Not established:} a complete grid-state observer; AC/DC electric feasibility; operational security; signature verification; an installed no-bypass control path; field-safe halting; actual physical cascade suppression; universal sufficiency of this capacity abstraction; or an external certification. Physical grid validation requires its own equations, measurements and deployment proof.
+
+A reviewer can challenge any exact step by citing the stated theorem, graph edge, scenario, contract field or receipt. The review request is for \emph{mathematical examination}, not for prior permission to continue research.
+
+\appendix
+\section{Original source-to-proof crosswalk}
+\small
+\begin{longtable}{@{}p{.24\linewidth}p{.37\linewidth}p{.27\linewidth}@{}}\toprule
+Source object / assertion & Current mathematical carrier & Present standing\\\midrule\endhead
+World Kernel Atlas: GRID-K1 & Infrastructure continuity across power, water, telecom; degrading service without unmodeled cross-domain harm & Original index declaration\\
+Corridor profile & Graph, demands, dependencies, capacities, modes & Formal definition and prepared example\\
+Authority envelope & $A(m,\xi)$ with permission, scope and validity & Assumed input; not cryptographic proof\\
+Live-state surface & Capacity/mode flags and freshness predicate $F(\xi)$ & Modeled input, not field attestation\\
+Maintenance debt & Monotone $d_e$ and strict reserve $d_e^+<B_e$ & Conditional theorem and rational examples\\
+Continue / Degrade / Reroute & Positive admitted modes and conservation witnesses & Seven-case demonstration\\
+Escalate / Halt / Refuse & Non-admission dispositions & \textsc{Refuse} modeled; other behaviors untested\\
+Continuity receipt & Run/case IDs, source/contract hashes, linked certificates and receipts & Generated and replay-checked\\
+``No side path'' / ``failure classes closed'' & Global enforcement of guard on every physical actuation path & Open implementation obligation\\
+``Before cascading failure'' & Cut obstruction and conditional invariant preservation & Formal model only, not physical claim\\\bottomrule
+\end{longtable}
+\normalsize
+\section{Reproduce the synthetic evidence}
+With the included public-safe evidence folder:
+\begin{verbatim}
+python reproducibility/verify_exact_output.py
+\end{verbatim}
+This verifies the released deterministic arithmetic records and performs a tamper negative control. The author-only archive additionally contains the two original Library source files for source-byte verification. To intentionally produce another run, prepare a new contract with a new run ID and retain both versions; do not overwrite the frozen release.
+
+\section{References and source boundary}
+\begin{enumerate}
+\item T. A. Snyder, \emph{Critical Infrastructure Continuity Kernel v1.0}, source-held JSON, Library record (2026), with status \texttt{approval\_draft}. Original SHA-256 in the manifest.
+\item T. A. Snyder, \emph{World Kernel Atlas}, source-held DOCX, \texttt{GRID-K1} entry, Library record (2026). Original SHA-256 in the manifest.
+\item T. A. Snyder, \emph{Admissibility--Debt Geometry: Boundary Hitting, Cumulative Debt, Irreversibility, and Exact Proof Witnesses}, Deagle public mathematical record (11 November 2026).
+\item L. R. Ford, Jr., and D. R. Fulkerson, ``Maximal Flow Through a Network,'' \emph{Canadian Journal of Mathematics} \textbf{8} (1956), 399--404.
+\end{enumerate}
+\end{document}

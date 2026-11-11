@@ -80,6 +80,24 @@
       "status": "Author-produced mathematical research record with exact conditional debt, first-hit, no-return, singular-edge and tensor theorems. Five exact rational example certificates, linked receipts, and preserved original source are included.",
       "catalog_number": "003",
       "index_kind": "published_mathematical_research"
+    },
+    {
+      "id": "grid-k1-2026-11-11",
+      "title": "GRID-K1: Infrastructure Continuity Geometry — Admissible Transitions, Exact Cut Certificates, Cumulative Debt and Proof Receipts",
+      "record": "grid-k1-infrastructure-continuity.html",
+      "manifest": "research/grid-k1/PUBLIC_RELEASE_MANIFEST.json",
+      "date": "2026-11-11",
+      "author": "Terry Allen Snyder",
+      "version": "1.0",
+      "pdf_filename": "Snyder_GRID_K1_Infrastructure_Continuity_Formal_Proofs_2026-11-11.pdf",
+      "pdf_url": "research/grid-k1/Snyder_GRID_K1_Infrastructure_Continuity_Formal_Proofs_2026-11-11.pdf",
+      "pdf_hosted": true,
+      "pdf_sha256": "57ae364ba9ddc398ac8b8b02c19ad04ed0ec2c1b3478d28d642e677412308ddc",
+      "supporting_archive": "research/grid-k1/Snyder_GRID_K1_Exact_Proofs_and_Receipts_2026-11-11.zip",
+      "supporting_archive_sha256": "6fbe4b24f1f8d356b82b0f4e9ac249cecb682abfe7e05f60c6609d00780f3587",
+      "original_sources_public": false,
+      "source_provenance_retained": true,
+      "status": "Public source-preserving mathematical model for generic coupled infrastructure continuity. Exact finite cut obstruction, constructive flow examples, conditional admission invariance, and monotone debt reserve. Seven rational scenario checks, scoped certificates and linked receipts; not field validation or proof of physical cascade prevention."
     }
   ],
   "release_correction": "Prior 28-page draft record superseded before public PDF upload; that draft contained native mathematical sections and was not published on Deagle.",

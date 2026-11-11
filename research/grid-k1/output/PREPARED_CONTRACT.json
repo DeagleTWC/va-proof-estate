@@ -1,0 +1,264 @@
+{
+  "baseline_demand": {
+    "T": 5,
+    "W": 6
+  },
+  "contract_schema": "deagle.grid_k1.synthetic_continuity.v1",
+  "contract_sha256": "865b96bbd80d8a2be30131bd10144a23f5ab60f7060cff264b7b0b3a8c41167f",
+  "critical_minimum_degraded": {
+    "T": 2,
+    "W": 6
+  },
+  "cumulative_debt": {
+    "edge": "S>A",
+    "initial": "3/4",
+    "strict_budget": "1"
+  },
+  "description": "Synthetic directed single-commodity service-capacity abstraction, NOT a physical AC power-flow solver or deployed control kernel.",
+  "edge_capacities_normal": {
+    "A>T": 2,
+    "A>W": 4,
+    "B>T": 3,
+    "B>W": 4,
+    "C>T": 4,
+    "S>A": 6,
+    "S>B": 5,
+    "S>C": 4
+  },
+  "edge_capacities_standby_off": {
+    "C>T": 0,
+    "S>C": 0
+  },
+  "frozen_date": "2026-11-11",
+  "guard_contract": {
+    "all_sink_demand_exact": true,
+    "authority": true,
+    "evidence_freshness": true,
+    "flow_capacity": true,
+    "flow_nonnegative": true,
+    "mode_minimums": true,
+    "node_conservation": true,
+    "permission": true,
+    "strict_debt_reserve": true
+  },
+  "nodes": [
+    "S",
+    "A",
+    "B",
+    "C",
+    "W",
+    "T"
+  ],
+  "prepared_before_execution": true,
+  "proof_obligations": [
+    "flow_conservation_and_capacity",
+    "cut_capacity_certificate",
+    "mode_service_minima",
+    "cumulative_debt_reserve",
+    "authority_freshness_and_permissions",
+    "receipt_and_replay_integrity"
+  ],
+  "run_id": "GRID-K1-EXAM-001-2026-11-11",
+  "scenarios": [
+    {
+      "action": "CONTINUE",
+      "authority_valid": true,
+      "backup_activated": false,
+      "debt_increment_SA": "1/8",
+      "demand": {
+        "T": 5,
+        "W": 6
+      },
+      "effective_A_capacity": 6,
+      "flow": {
+        "A>T": 2,
+        "A>W": 4,
+        "B>T": 3,
+        "B>W": 2,
+        "S>A": 6,
+        "S>B": 5
+      },
+      "fresh_evidence": true,
+      "id": "C01_HEALTHY_CONTINUE",
+      "permissions": [
+        "CONTINUE",
+        "DEGRADE",
+        "REROUTE"
+      ]
+    },
+    {
+      "action": "CONTINUE",
+      "authority_valid": true,
+      "backup_activated": false,
+      "debt_increment_SA": "1/8",
+      "demand": {
+        "T": 5,
+        "W": 6
+      },
+      "effective_A_capacity": 3,
+      "flow": {
+        "A>T": 2,
+        "A>W": 4,
+        "B>T": 3,
+        "B>W": 2,
+        "S>A": 6,
+        "S>B": 5
+      },
+      "fresh_evidence": true,
+      "id": "C02_FAULT_FULL_DEMAND",
+      "permissions": [
+        "CONTINUE",
+        "DEGRADE",
+        "REROUTE"
+      ]
+    },
+    {
+      "action": "DEGRADE",
+      "authority_valid": true,
+      "backup_activated": false,
+      "debt_increment_SA": "1/8",
+      "demand": {
+        "T": 2,
+        "W": 6
+      },
+      "effective_A_capacity": 3,
+      "flow": {
+        "A>W": 3,
+        "B>T": 2,
+        "B>W": 3,
+        "S>A": 3,
+        "S>B": 5
+      },
+      "fresh_evidence": true,
+      "id": "C03_FAULT_DEGRADE",
+      "permissions": [
+        "CONTINUE",
+        "DEGRADE",
+        "REROUTE"
+      ]
+    },
+    {
+      "action": "REROUTE",
+      "authority_valid": true,
+      "backup_activated": true,
+      "debt_increment_SA": "1/8",
+      "demand": {
+        "T": 5,
+        "W": 6
+      },
+      "effective_A_capacity": 3,
+      "flow": {
+        "A>W": 3,
+        "B>T": 2,
+        "B>W": 3,
+        "C>T": 3,
+        "S>A": 3,
+        "S>B": 5,
+        "S>C": 3
+      },
+      "fresh_evidence": true,
+      "id": "C04_FAULT_BACKUP_REROUTE",
+      "permissions": [
+        "CONTINUE",
+        "DEGRADE",
+        "REROUTE"
+      ]
+    },
+    {
+      "action": "REROUTE",
+      "authority_valid": true,
+      "backup_activated": true,
+      "debt_increment_SA": "1/8",
+      "demand": {
+        "T": 5,
+        "W": 6
+      },
+      "effective_A_capacity": 3,
+      "flow": {
+        "A>W": 3,
+        "B>T": 2,
+        "B>W": 3,
+        "C>T": 3,
+        "S>A": 3,
+        "S>B": 5,
+        "S>C": 3
+      },
+      "fresh_evidence": false,
+      "id": "C05_STALE_BACKUP_REROUTE",
+      "permissions": [
+        "CONTINUE",
+        "DEGRADE",
+        "REROUTE"
+      ]
+    },
+    {
+      "action": "DEGRADE",
+      "authority_valid": true,
+      "backup_activated": false,
+      "debt_increment_SA": "3/8",
+      "demand": {
+        "T": 2,
+        "W": 6
+      },
+      "effective_A_capacity": 3,
+      "flow": {
+        "A>W": 3,
+        "B>T": 2,
+        "B>W": 3,
+        "S>A": 3,
+        "S>B": 5
+      },
+      "fresh_evidence": true,
+      "id": "C06_DEBT_EXHAUSTION",
+      "permissions": [
+        "CONTINUE",
+        "DEGRADE",
+        "REROUTE"
+      ]
+    },
+    {
+      "action": "REROUTE",
+      "authority_valid": true,
+      "backup_activated": true,
+      "debt_increment_SA": "1/8",
+      "demand": {
+        "T": 5,
+        "W": 6
+      },
+      "effective_A_capacity": 3,
+      "flow": {
+        "A>W": 3,
+        "B>T": 2,
+        "B>W": 3,
+        "C>T": 3,
+        "S>A": 3,
+        "S>B": 5,
+        "S>C": 3
+      },
+      "fresh_evidence": true,
+      "id": "C07_UNAUTHORIZED_BACKUP",
+      "permissions": [
+        "CONTINUE",
+        "DEGRADE"
+      ]
+    }
+  ],
+  "service_sinks": [
+    "W",
+    "T"
+  ],
+  "source": "S",
+  "source_boundary": "Full Library drafts included in author-only review archive; separate public-ready archive excludes them pending author release approval.",
+  "source_custody": {
+    "continuity_kernel_json_sha256": "412413bf87a35e578c3ee0928932514456ca8fa7d651fdeed929056fa4496c77",
+    "world_kernel_atlas_docx_sha256": "ae5cc0f954aca8046ac26edf4c327caa7637686b0a39182b428a7f961226908b"
+  },
+  "source_notes": {
+    "A": "primary corridor",
+    "B": "secondary corridor",
+    "C": "pre-existing standby corridor",
+    "S": "upstream power/continuity resource",
+    "T": "telecom service",
+    "W": "water pumping service"
+  }
+}

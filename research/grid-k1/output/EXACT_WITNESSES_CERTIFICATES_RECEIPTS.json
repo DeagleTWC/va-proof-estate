@@ -1,0 +1,467 @@
+{
+  "certificates": [
+    {
+      "certificate_sha256": "235ac696285571a0b969330ce87add18eb1f84c5c4e5b8ae02167d9444ff3159",
+      "ordinal": 1,
+      "proposition": "The reported decision follows from all explicitly modeled guard checks for the specified finite synthetic scenario.",
+      "scenario_input_sha256": "ab119ead05ec670966851c43e604ed648a76be0b100ccf85d18b792862afc3b7",
+      "witness": {
+        "action": "CONTINUE",
+        "admitted": true,
+        "demand": {
+          "T": "5/1",
+          "W": "6/1"
+        },
+        "failed_constraints": [],
+        "flow": {
+          "A>T": "2/1",
+          "A>W": "4/1",
+          "B>T": "3/1",
+          "B>W": "2/1",
+          "S>A": "6/1",
+          "S>B": "5/1"
+        },
+        "next_debt_SA": "7/8",
+        "outcome": "CONTINUE",
+        "required_service": "11/1",
+        "scenario_id": "C01_HEALTHY_CONTINUE",
+        "scope": "exact synthetic scenario arithmetic; not a universal physical safety proof",
+        "source_cut_capacity": "11/1",
+        "source_cut_deficit": "0/1",
+        "source_outflow": "11/1",
+        "strict_budget_SA": "1/1"
+      }
+    },
+    {
+      "certificate_sha256": "b45aa6cbdd08e491c4232c15646f7806d4cb59f904f2a8af26be03a25d1c8a3e",
+      "ordinal": 2,
+      "proposition": "The reported decision follows from all explicitly modeled guard checks for the specified finite synthetic scenario.",
+      "scenario_input_sha256": "280bf7ec24edf1f4acad370dfcb5a8faa46741ab0ee0b0ea7d197da9b50b3a1c",
+      "witness": {
+        "action": "CONTINUE",
+        "admitted": false,
+        "demand": {
+          "T": "5/1",
+          "W": "6/1"
+        },
+        "failed_constraints": [
+          "capacity:S>A",
+          "source_cut_shortfall"
+        ],
+        "flow": {
+          "A>T": "2/1",
+          "A>W": "4/1",
+          "B>T": "3/1",
+          "B>W": "2/1",
+          "S>A": "6/1",
+          "S>B": "5/1"
+        },
+        "next_debt_SA": "7/8",
+        "outcome": "REFUSE",
+        "required_service": "11/1",
+        "scenario_id": "C02_FAULT_FULL_DEMAND",
+        "scope": "exact synthetic scenario arithmetic; not a universal physical safety proof",
+        "source_cut_capacity": "8/1",
+        "source_cut_deficit": "3/1",
+        "source_outflow": "11/1",
+        "strict_budget_SA": "1/1"
+      }
+    },
+    {
+      "certificate_sha256": "88c925f0c544e8e40c6af1f6029153643d69e5cbe3d71ccddc78a9cc934bb14c",
+      "ordinal": 3,
+      "proposition": "The reported decision follows from all explicitly modeled guard checks for the specified finite synthetic scenario.",
+      "scenario_input_sha256": "9542d1fb28bb9bb475426efbc84c4754e740b41c33ed9d0b371b7ec2d55a5423",
+      "witness": {
+        "action": "DEGRADE",
+        "admitted": true,
+        "demand": {
+          "T": "2/1",
+          "W": "6/1"
+        },
+        "failed_constraints": [],
+        "flow": {
+          "A>W": "3/1",
+          "B>T": "2/1",
+          "B>W": "3/1",
+          "S>A": "3/1",
+          "S>B": "5/1"
+        },
+        "next_debt_SA": "7/8",
+        "outcome": "DEGRADE",
+        "required_service": "8/1",
+        "scenario_id": "C03_FAULT_DEGRADE",
+        "scope": "exact synthetic scenario arithmetic; not a universal physical safety proof",
+        "source_cut_capacity": "8/1",
+        "source_cut_deficit": "0/1",
+        "source_outflow": "8/1",
+        "strict_budget_SA": "1/1"
+      }
+    },
+    {
+      "certificate_sha256": "90a3d3d5bdc86747e4cdafd50faba078bc796fbf46c52a8e4e557251fdbdcf8a",
+      "ordinal": 4,
+      "proposition": "The reported decision follows from all explicitly modeled guard checks for the specified finite synthetic scenario.",
+      "scenario_input_sha256": "7c1a8fa3ad30561dec2d0db524462dc928affd4b2968e9d4542b2e35537fb43b",
+      "witness": {
+        "action": "REROUTE",
+        "admitted": true,
+        "demand": {
+          "T": "5/1",
+          "W": "6/1"
+        },
+        "failed_constraints": [],
+        "flow": {
+          "A>W": "3/1",
+          "B>T": "2/1",
+          "B>W": "3/1",
+          "C>T": "3/1",
+          "S>A": "3/1",
+          "S>B": "5/1",
+          "S>C": "3/1"
+        },
+        "next_debt_SA": "7/8",
+        "outcome": "REROUTE",
+        "required_service": "11/1",
+        "scenario_id": "C04_FAULT_BACKUP_REROUTE",
+        "scope": "exact synthetic scenario arithmetic; not a universal physical safety proof",
+        "source_cut_capacity": "12/1",
+        "source_cut_deficit": "0/1",
+        "source_outflow": "11/1",
+        "strict_budget_SA": "1/1"
+      }
+    },
+    {
+      "certificate_sha256": "bcbc0cc2a5d05463cc2b1b21e94e52d183536facd671c5733994729704ee064d",
+      "ordinal": 5,
+      "proposition": "The reported decision follows from all explicitly modeled guard checks for the specified finite synthetic scenario.",
+      "scenario_input_sha256": "f4abd602a9e3ddc4728fc4ae9bc59fea6a1e6ae59a8c8dafafc719668a1125cc",
+      "witness": {
+        "action": "REROUTE",
+        "admitted": false,
+        "demand": {
+          "T": "5/1",
+          "W": "6/1"
+        },
+        "failed_constraints": [
+          "evidence_freshness"
+        ],
+        "flow": {
+          "A>W": "3/1",
+          "B>T": "2/1",
+          "B>W": "3/1",
+          "C>T": "3/1",
+          "S>A": "3/1",
+          "S>B": "5/1",
+          "S>C": "3/1"
+        },
+        "next_debt_SA": "7/8",
+        "outcome": "REFUSE",
+        "required_service": "11/1",
+        "scenario_id": "C05_STALE_BACKUP_REROUTE",
+        "scope": "exact synthetic scenario arithmetic; not a universal physical safety proof",
+        "source_cut_capacity": "12/1",
+        "source_cut_deficit": "0/1",
+        "source_outflow": "11/1",
+        "strict_budget_SA": "1/1"
+      }
+    },
+    {
+      "certificate_sha256": "98a5998afe5ea269db156995bc280eca8400f01e6cffa28e1aa2a2da430b1b7b",
+      "ordinal": 6,
+      "proposition": "The reported decision follows from all explicitly modeled guard checks for the specified finite synthetic scenario.",
+      "scenario_input_sha256": "fc467cf2995f4b5562a304ab5a28e367926af53d73f64bd210927fb5e84eaf69",
+      "witness": {
+        "action": "DEGRADE",
+        "admitted": false,
+        "demand": {
+          "T": "2/1",
+          "W": "6/1"
+        },
+        "failed_constraints": [
+          "strict_debt_reserve"
+        ],
+        "flow": {
+          "A>W": "3/1",
+          "B>T": "2/1",
+          "B>W": "3/1",
+          "S>A": "3/1",
+          "S>B": "5/1"
+        },
+        "next_debt_SA": "9/8",
+        "outcome": "REFUSE",
+        "required_service": "8/1",
+        "scenario_id": "C06_DEBT_EXHAUSTION",
+        "scope": "exact synthetic scenario arithmetic; not a universal physical safety proof",
+        "source_cut_capacity": "8/1",
+        "source_cut_deficit": "0/1",
+        "source_outflow": "8/1",
+        "strict_budget_SA": "1/1"
+      }
+    },
+    {
+      "certificate_sha256": "302e136ecf733d0f6c5b3ebc0f7607fbfd7b28eca19b8f249bb2c0ac03fd2aff",
+      "ordinal": 7,
+      "proposition": "The reported decision follows from all explicitly modeled guard checks for the specified finite synthetic scenario.",
+      "scenario_input_sha256": "344076c7d960415b4743781ec7a4d0626aa2b03ed4854dc76b36e67656bf30cd",
+      "witness": {
+        "action": "REROUTE",
+        "admitted": false,
+        "demand": {
+          "T": "5/1",
+          "W": "6/1"
+        },
+        "failed_constraints": [
+          "permission"
+        ],
+        "flow": {
+          "A>W": "3/1",
+          "B>T": "2/1",
+          "B>W": "3/1",
+          "C>T": "3/1",
+          "S>A": "3/1",
+          "S>B": "5/1",
+          "S>C": "3/1"
+        },
+        "next_debt_SA": "7/8",
+        "outcome": "REFUSE",
+        "required_service": "11/1",
+        "scenario_id": "C07_UNAUTHORIZED_BACKUP",
+        "scope": "exact synthetic scenario arithmetic; not a universal physical safety proof",
+        "source_cut_capacity": "12/1",
+        "source_cut_deficit": "0/1",
+        "source_outflow": "11/1",
+        "strict_budget_SA": "1/1"
+      }
+    }
+  ],
+  "contract_sha256": "865b96bbd80d8a2be30131bd10144a23f5ab60f7060cff264b7b0b3a8c41167f",
+  "final_receipt_sha256": "fa64e3588ee198231a1d0ad53dbedca10396433ac31736c628f6f3ba0ba0a886",
+  "method": "prepared, single pass, exact fractions",
+  "receipts": [
+    {
+      "authority_basis": {
+        "action_permitted_input": true,
+        "authority_valid_input": true,
+        "fresh_evidence_input": true
+      },
+      "case_id": "C01_HEALTHY_CONTINUE",
+      "certificate_sha256": "235ac696285571a0b969330ce87add18eb1f84c5c4e5b8ae02167d9444ff3159",
+      "corridor_id": "SYNTHETIC-POWER-WATER-TELECOM-001",
+      "decision": "CONTINUE",
+      "decision_id": "GRID-K1-EXAM-001-2026-11-11:C01_HEALTHY_CONTINUE",
+      "decision_outcome": "CONTINUE",
+      "failed_constraint_if_any": [],
+      "failed_constraints": [],
+      "ordinal": 1,
+      "participating_domains": [
+        "power",
+        "water",
+        "telecommunications"
+      ],
+      "prev_receipt_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "proposed_transition": "CONTINUE",
+      "receipt_sha256": "bdc47b4c66bfc61ba3d1fcc4c6765579d29c668149c39b26a9fa900346f01df4",
+      "reroute_or_degrade_mode_if_any": null,
+      "run_id": "GRID-K1-EXAM-001-2026-11-11",
+      "state_snapshot_ref": "ab119ead05ec670966851c43e604ed648a76be0b100ccf85d18b792862afc3b7",
+      "timestamp_source": "execution_host_clock_not_attested",
+      "timestamp_utc": "2026-11-11T22:17:09+00:00"
+    },
+    {
+      "authority_basis": {
+        "action_permitted_input": true,
+        "authority_valid_input": true,
+        "fresh_evidence_input": true
+      },
+      "case_id": "C02_FAULT_FULL_DEMAND",
+      "certificate_sha256": "b45aa6cbdd08e491c4232c15646f7806d4cb59f904f2a8af26be03a25d1c8a3e",
+      "corridor_id": "SYNTHETIC-POWER-WATER-TELECOM-001",
+      "decision": "REFUSE",
+      "decision_id": "GRID-K1-EXAM-001-2026-11-11:C02_FAULT_FULL_DEMAND",
+      "decision_outcome": "REFUSE",
+      "failed_constraint_if_any": [
+        "capacity:S>A",
+        "source_cut_shortfall"
+      ],
+      "failed_constraints": [
+        "capacity:S>A",
+        "source_cut_shortfall"
+      ],
+      "ordinal": 2,
+      "participating_domains": [
+        "power",
+        "water",
+        "telecommunications"
+      ],
+      "prev_receipt_sha256": "bdc47b4c66bfc61ba3d1fcc4c6765579d29c668149c39b26a9fa900346f01df4",
+      "proposed_transition": "CONTINUE",
+      "receipt_sha256": "e55a5cd3bd733eb64aa91b2ba6e82e020194730082aa5fcc1a0a0429cccb777c",
+      "reroute_or_degrade_mode_if_any": null,
+      "run_id": "GRID-K1-EXAM-001-2026-11-11",
+      "state_snapshot_ref": "280bf7ec24edf1f4acad370dfcb5a8faa46741ab0ee0b0ea7d197da9b50b3a1c",
+      "timestamp_source": "execution_host_clock_not_attested",
+      "timestamp_utc": "2026-11-11T22:17:09+00:00"
+    },
+    {
+      "authority_basis": {
+        "action_permitted_input": true,
+        "authority_valid_input": true,
+        "fresh_evidence_input": true
+      },
+      "case_id": "C03_FAULT_DEGRADE",
+      "certificate_sha256": "88c925f0c544e8e40c6af1f6029153643d69e5cbe3d71ccddc78a9cc934bb14c",
+      "corridor_id": "SYNTHETIC-POWER-WATER-TELECOM-001",
+      "decision": "DEGRADE",
+      "decision_id": "GRID-K1-EXAM-001-2026-11-11:C03_FAULT_DEGRADE",
+      "decision_outcome": "DEGRADE",
+      "failed_constraint_if_any": [],
+      "failed_constraints": [],
+      "ordinal": 3,
+      "participating_domains": [
+        "power",
+        "water",
+        "telecommunications"
+      ],
+      "prev_receipt_sha256": "e55a5cd3bd733eb64aa91b2ba6e82e020194730082aa5fcc1a0a0429cccb777c",
+      "proposed_transition": "DEGRADE",
+      "receipt_sha256": "21a38aed0b7d256b93808bc647e5c22076499aa7c4f4cc4ca6a29fc83c709300",
+      "reroute_or_degrade_mode_if_any": "DEGRADE",
+      "run_id": "GRID-K1-EXAM-001-2026-11-11",
+      "state_snapshot_ref": "9542d1fb28bb9bb475426efbc84c4754e740b41c33ed9d0b371b7ec2d55a5423",
+      "timestamp_source": "execution_host_clock_not_attested",
+      "timestamp_utc": "2026-11-11T22:17:09+00:00"
+    },
+    {
+      "authority_basis": {
+        "action_permitted_input": true,
+        "authority_valid_input": true,
+        "fresh_evidence_input": true
+      },
+      "case_id": "C04_FAULT_BACKUP_REROUTE",
+      "certificate_sha256": "90a3d3d5bdc86747e4cdafd50faba078bc796fbf46c52a8e4e557251fdbdcf8a",
+      "corridor_id": "SYNTHETIC-POWER-WATER-TELECOM-001",
+      "decision": "REROUTE",
+      "decision_id": "GRID-K1-EXAM-001-2026-11-11:C04_FAULT_BACKUP_REROUTE",
+      "decision_outcome": "REROUTE",
+      "failed_constraint_if_any": [],
+      "failed_constraints": [],
+      "ordinal": 4,
+      "participating_domains": [
+        "power",
+        "water",
+        "telecommunications"
+      ],
+      "prev_receipt_sha256": "21a38aed0b7d256b93808bc647e5c22076499aa7c4f4cc4ca6a29fc83c709300",
+      "proposed_transition": "REROUTE",
+      "receipt_sha256": "d745a8db633fc9d6c168bf7fef4e84898dee83ea2fd5ae4e0a44e092921cb8dc",
+      "reroute_or_degrade_mode_if_any": "REROUTE",
+      "run_id": "GRID-K1-EXAM-001-2026-11-11",
+      "state_snapshot_ref": "7c1a8fa3ad30561dec2d0db524462dc928affd4b2968e9d4542b2e35537fb43b",
+      "timestamp_source": "execution_host_clock_not_attested",
+      "timestamp_utc": "2026-11-11T22:17:09+00:00"
+    },
+    {
+      "authority_basis": {
+        "action_permitted_input": true,
+        "authority_valid_input": true,
+        "fresh_evidence_input": false
+      },
+      "case_id": "C05_STALE_BACKUP_REROUTE",
+      "certificate_sha256": "bcbc0cc2a5d05463cc2b1b21e94e52d183536facd671c5733994729704ee064d",
+      "corridor_id": "SYNTHETIC-POWER-WATER-TELECOM-001",
+      "decision": "REFUSE",
+      "decision_id": "GRID-K1-EXAM-001-2026-11-11:C05_STALE_BACKUP_REROUTE",
+      "decision_outcome": "REFUSE",
+      "failed_constraint_if_any": [
+        "evidence_freshness"
+      ],
+      "failed_constraints": [
+        "evidence_freshness"
+      ],
+      "ordinal": 5,
+      "participating_domains": [
+        "power",
+        "water",
+        "telecommunications"
+      ],
+      "prev_receipt_sha256": "d745a8db633fc9d6c168bf7fef4e84898dee83ea2fd5ae4e0a44e092921cb8dc",
+      "proposed_transition": "REROUTE",
+      "receipt_sha256": "be2edb6e77eca2aaf166eb6dd59116a7671e1754d71538dd6ea66832c5654335",
+      "reroute_or_degrade_mode_if_any": "REROUTE",
+      "run_id": "GRID-K1-EXAM-001-2026-11-11",
+      "state_snapshot_ref": "f4abd602a9e3ddc4728fc4ae9bc59fea6a1e6ae59a8c8dafafc719668a1125cc",
+      "timestamp_source": "execution_host_clock_not_attested",
+      "timestamp_utc": "2026-11-11T22:17:09+00:00"
+    },
+    {
+      "authority_basis": {
+        "action_permitted_input": true,
+        "authority_valid_input": true,
+        "fresh_evidence_input": true
+      },
+      "case_id": "C06_DEBT_EXHAUSTION",
+      "certificate_sha256": "98a5998afe5ea269db156995bc280eca8400f01e6cffa28e1aa2a2da430b1b7b",
+      "corridor_id": "SYNTHETIC-POWER-WATER-TELECOM-001",
+      "decision": "REFUSE",
+      "decision_id": "GRID-K1-EXAM-001-2026-11-11:C06_DEBT_EXHAUSTION",
+      "decision_outcome": "REFUSE",
+      "failed_constraint_if_any": [
+        "strict_debt_reserve"
+      ],
+      "failed_constraints": [
+        "strict_debt_reserve"
+      ],
+      "ordinal": 6,
+      "participating_domains": [
+        "power",
+        "water",
+        "telecommunications"
+      ],
+      "prev_receipt_sha256": "be2edb6e77eca2aaf166eb6dd59116a7671e1754d71538dd6ea66832c5654335",
+      "proposed_transition": "DEGRADE",
+      "receipt_sha256": "5a8049eeae3d79f8878128f3caf37a095ab055bb4b4c2db283c29553f491d327",
+      "reroute_or_degrade_mode_if_any": "DEGRADE",
+      "run_id": "GRID-K1-EXAM-001-2026-11-11",
+      "state_snapshot_ref": "fc467cf2995f4b5562a304ab5a28e367926af53d73f64bd210927fb5e84eaf69",
+      "timestamp_source": "execution_host_clock_not_attested",
+      "timestamp_utc": "2026-11-11T22:17:09+00:00"
+    },
+    {
+      "authority_basis": {
+        "action_permitted_input": false,
+        "authority_valid_input": true,
+        "fresh_evidence_input": true
+      },
+      "case_id": "C07_UNAUTHORIZED_BACKUP",
+      "certificate_sha256": "302e136ecf733d0f6c5b3ebc0f7607fbfd7b28eca19b8f249bb2c0ac03fd2aff",
+      "corridor_id": "SYNTHETIC-POWER-WATER-TELECOM-001",
+      "decision": "REFUSE",
+      "decision_id": "GRID-K1-EXAM-001-2026-11-11:C07_UNAUTHORIZED_BACKUP",
+      "decision_outcome": "REFUSE",
+      "failed_constraint_if_any": [
+        "permission"
+      ],
+      "failed_constraints": [
+        "permission"
+      ],
+      "ordinal": 7,
+      "participating_domains": [
+        "power",
+        "water",
+        "telecommunications"
+      ],
+      "prev_receipt_sha256": "5a8049eeae3d79f8878128f3caf37a095ab055bb4b4c2db283c29553f491d327",
+      "proposed_transition": "REROUTE",
+      "receipt_sha256": "fa64e3588ee198231a1d0ad53dbedca10396433ac31736c628f6f3ba0ba0a886",
+      "reroute_or_degrade_mode_if_any": "REROUTE",
+      "run_id": "GRID-K1-EXAM-001-2026-11-11",
+      "state_snapshot_ref": "344076c7d960415b4743781ec7a4d0626aa2b03ed4854dc76b36e67656bf30cd",
+      "timestamp_source": "execution_host_clock_not_attested",
+      "timestamp_utc": "2026-11-11T22:17:09+00:00"
+    }
+  ],
+  "run_id": "GRID-K1-EXAM-001-2026-11-11",
+  "schema": "deagle.grid_k1.exact_witnesses.v1",
+  "timestamp_source": "execution_host_utc_not_independently_attested"
+}

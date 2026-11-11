@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this mathematical research record, cite the author's public manuscript and release."
+title: "GRID-K1: Infrastructure Continuity Geometry — Admissible Transitions, Exact Cut Certificates, Cumulative Debt and Proof Receipts"
+authors:
+  - family-names: Snyder
+    given-names: Terry Allen
+date-released: 2026-11-11
+version: "1.0"
+url: https://deagletwc.github.io/va-proof-estate/grid-k1-infrastructure-continuity.html
