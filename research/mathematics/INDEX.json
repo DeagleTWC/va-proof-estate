@@ -89,10 +89,18 @@
     {
       "id": "p-versus-np",
       "title": "P versus NP",
-      "index_state": "public navigation only — original mathematical carrier not yet linked in this repository",
-      "carrier_status": "not represented by a public PDF/source/replay manifest in this mathematics index",
-      "scope_note": "Indexing does not regrade or negate existing examination lineage; native-to-classical decision correspondence and complexity bounds require source-specific evidence; no unrestricted conclusion is certified by this index entry.",
-      "public_status_document": "research/mathematics/PUBLICATION-STATUS.md"
+      "index_state": "public E91 bounded examination status published; original nested source archive not mirrored",
+      "carrier_status": "source-inspected Examination 91 summary and SHA-256 register; six member hashes matched; local 65,795/65,795 Boolean/source-custody checks",
+      "scope_note": "Restricted-domain predicate classification, abstract transition-preservation obligations and Boolean countermodel; original native source and full executable semantics not authenticated here. No unrestricted P-versus-NP resolution.",
+      "public_status_document": "research/p-versus-np/EXAMINATION-91-PUBLIC-STATUS.md",
+      "record": "p-versus-np.html",
+      "examination_number": 91,
+      "examination_date": "2026-11-09",
+      "public_index_date": "2026-11-11",
+      "examination_archive_sha256": "def3711578a6ae9b5d804ba782b45b8f3fd7f8c122377a869e47d5d22b348fec",
+      "archived_original_publicly_mirrored": false,
+      "bounded_checks_reproduced": 65795,
+      "bounded_checks_total": 65795
     }
   ],
   "native_foundation": {
