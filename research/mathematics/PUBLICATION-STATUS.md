@@ -11,14 +11,14 @@ This file tracks **what has been indexed for public reading in this repository**
 | Three-dimensional Navier–Stokes | [Mathematical examination](../../navier-stokes.html) | Dated v1.1 PDF, preserved original classical extract, source and bounded reproducibility bundle | Scope limited as specified by the [source status](../navier-stokes/URK_PROOF_CHAIN_STATUS_v1.1.json) |
 | Four-dimensional Yang–Mills | [Mathematical examination](../../yang-mills.html) | Dated v1.1 PDF, finite SU(2) proof material, Stage 79 graph checks and reproducibility bundle | Scope limited as specified by the [source status](../yang-mills/URK_PROOF_CHAIN_STATUS.json) |
 
-## Named research lines not yet linked to public proof carriers here
+## Additional research lines: published examination status or pending original carriers
 
-These names identify research **publication/indexing tracks**, not claims of unrestricted theorem resolution. Private archives, connected accounts, completed historical cycles, and preserved source custody are **not** invalidated or downgraded by absence from this public repository.
+These names identify research **publication/indexing tracks**, not claims of unrestricted theorem resolution. Private archives, connected accounts, completed historical cycles, and preserved source custody are **not** invalidated or downgraded by absence from this public repository. An authorized public-safe *status record* may be available even where an original nested mathematical archive remains private.
 
-| Research line | Public Deagle index status | Before adding a proof-carrier link |
+| Research line | Public Deagle index status | Evidence and publication boundary |
 | --- | --- | --- |
 | Riemann Hypothesis (RH) | Public landing/index entry; source packet not mirrored in this repository's mathematics directory | Identify the authorized public edition, exact artifact, SHA-256, its already-recorded mathematical claim scope and its reproducibility/review record |
-| P versus NP | Public landing/index entry; source packet not mirrored in this repository's mathematics directory | Identify the authorized public edition, exact original proof material, necessary computational correspondence and complexity statement, its existing claim status and reproducibility/review record |
+| P versus NP | [Native Examination 91 public-safe status](../../p-versus-np.html) now available; original nested archive not mirrored | 2026-11-09 source: all declared hashes matched, locally reproduced 65,795/65,795 bounded Boolean/source-custody checks; restricted-domain coverage, successor-preservation obligations and an abstract countermodel. Original archive custody retained; no unrestricted P-versus-NP resolution. [Exact status and archive SHA-256](../p-versus-np/EXAMINATION-91-PUBLIC-STATUS.md) |
 
 **Not a new proof requirement:** The table is a safe-publication checklist, not a demand to repeat historical pilots or examinations. A named manuscript, archive or review cannot be asserted to be independently published, refereed or verified merely because it exists in private custody.
 
