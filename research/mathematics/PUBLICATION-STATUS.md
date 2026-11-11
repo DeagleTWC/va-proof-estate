@@ -10,6 +10,7 @@ This file tracks **what has been indexed for public reading in this repository**
 | --- | --- | --- | --- |
 | Three-dimensional Navier–Stokes | [Mathematical examination](../../navier-stokes.html) | Dated v1.1 PDF, preserved original classical extract, source and bounded reproducibility bundle | Scope limited as specified by the [source status](../navier-stokes/URK_PROOF_CHAIN_STATUS_v1.1.json) |
 | Four-dimensional Yang–Mills | [Mathematical examination](../../yang-mills.html) | Dated v1.1 PDF, finite SU(2) proof material, Stage 79 graph checks and reproducibility bundle | Scope limited as specified by the [source status](../yang-mills/URK_PROOF_CHAIN_STATUS.json) |
+| Admissibility–Debt Geometry | [Mathematical examination](../../admissibility-debt-geometry.html) | Dated v1.0 PDF, exact rational witnesses, source preservation and tamper negative control | Conditional model theorem scope per [public release manifest](../admissibility-debt-geometry/PUBLIC_RELEASE_MANIFEST.json); third-party review not claimed |
 
 ## Additional research lines: published examination status or pending original carriers
 
@@ -40,4 +41,4 @@ The public explanations do not disclose proprietary operators or give recipients
 - **DECLARED, OBSERVED, and INDEPENDENTLY REPRODUCED** are not interchangeable.
 - Public index changes are publication/navigation changes, **not** scientific revalidation, peer review, regrading, or a new native run.
 
-For objections, identify the exact statement, source version, hypotheses and mathematical counterexample or derivation. [Independent examination route](../../reviewer-route.html).
+For objections, identify the exact statement, source version, hypotheses and mathematical counterexample or derivation. [Independent examination route](../../reviewer-route.html) · [Mathematical reviewer crosswalk](REVIEW-CROSSWALK.md).
