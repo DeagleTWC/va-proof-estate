@@ -1,0 +1,2465 @@
+{
+  "title": "URK Harmonic Edge Numerical Rates \u2014 Continuation 77 specialization",
+  "provenance": {
+    "original_URK_source": "UNIVERSAL RESOLVING KERNEL GENERATOR v0.1 (Samantha Revita & Terry Snyder)",
+    "quantitative_law": "NAV\u2013URK Continuation 77, equations (77.1),(77.2),(77.5)\u2013(77.7)",
+    "not_claimed": "Native protected NEW-K law, universal URK generator, unrestricted 3D regularity proof, or certified real-world consequence"
+  },
+  "definitions": {
+    "edge": "ordered (ell,m) -> k=ell+m",
+    "amplitude_rate": "-i * P_k[(U_ell dot m) U_m]",
+    "signed_child_energy_rate": "Re(conjugate(U_k) dot edge_amplitude_rate), zero if U_k=0",
+    "heat_rate": "nu |k|^2 |U_k|^2 per mode (normalized periodic-volume average)",
+    "time": "instantaneous snapshot; all rates per unit of the model time"
+  },
+  "input_description": "Continuation 77 exact three-axis initial seed, eta=1/1024",
+  "input_mode_count": 6,
+  "generated_ordered_edge_count": 30,
+  "numerical_consistency": {
+    "divergence_error": 0.0,
+    "conjugacy_error": 0.0,
+    "nonlinear_energy_transfer_sum": 0.0,
+    "nonlinear_energy_transfer_balance_pass": true,
+    "total_kinetic_decay_rate": -1.33514404296875e-05,
+    "total_viscous_heat_conversion_rate": 1.33514404296875e-05,
+    "kinetic_heat_balance_residual": 0.0,
+    "note": "Finite current-state algebraic consistency only; no time propagation performed."
+  },
+  "candidate_classification": "DREAM_OR_PAUSE_PENDING_ORIGINAL_URK_INVARIANT_CHECKS",
+  "small_data_reference": {
+    "only_if_input_is_exact_initial_field": true,
+    "epsilon": 0.04695630968816916,
+    "threshold_nu_over_8": 0.125,
+    "continuation_77_smallness_test_pass": true,
+    "conditional_future_heat_increment_ceiling_4_epsilon_squared": 0.008819580078124997,
+    "scope": "Continuation 77 analytically weighted, mean-zero, divergence-free periodic initial data only; conditional on its theorem, not a new proof"
+  },
+  "edges": [
+    {
+      "from_phase": [
+        -1,
+        0,
+        0
+      ],
+      "with_phase": [
+        -1,
+        0,
+        0
+      ],
+      "to_phase": [
+        -2,
+        0,
+        0
+      ],
+      "candidate_complex_amplitude_rate": [
+        [
+          0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          -0.0
+        ]
+      ],
+      "amplitude_rate_magnitude": 0.0,
+      "signed_child_kinetic_energy_rate": 0.0,
+      "status": "GENERATED_CANDIDATE_NOT_PROMOTED"
+    },
+    {
+      "from_phase": [
+        -1,
+        0,
+        0
+      ],
+      "with_phase": [
+        0,
+        -2,
+        0
+      ],
+      "to_phase": [
+        -1,
+        -2,
+        0
+      ],
+      "candidate_complex_amplitude_rate": [
+        [
+          -3.814697265625e-07,
+          0.0
+        ],
+        [
+          1.9073486328125e-07,
+          -0.0
+        ],
+        [
+          0.0,
+          -4.76837158203125e-07
+        ]
+      ],
+      "amplitude_rate_magnitude": 6.397441799640054e-07,
+      "signed_child_kinetic_energy_rate": 0.0,
+      "status": "GENERATED_CANDIDATE_NOT_PROMOTED"
+    },
+    {
+      "from_phase": [
+        -1,
+        0,
+        0
+      ],
+      "with_phase": [
+        0,
+        0,
+        -3
+      ],
+      "to_phase": [
+        -1,
+        0,
+        -3
+      ],
+      "candidate_complex_amplitude_rate": [
+        [
+          -6.437301635742188e-07,
+          0.0
+        ],
+        [
+          0.0,
+          7.152557373046875e-07
+        ],
+        [
+          2.1457672119140623e-07,
+          -0.0
+        ]
+      ],
+      "amplitude_rate_magnitude": 9.85911995322005e-07,
+      "signed_child_kinetic_energy_rate": 0.0,
+      "status": "GENERATED_CANDIDATE_NOT_PROMOTED"
+    },
+    {
+      "from_phase": [
+        -1,
+        0,
+        0
+      ],
+      "with_phase": [
+        0,
+        0,
+        3
+      ],
+      "to_phase": [
+        -1,
+        0,
+        3
+      ],
+      "candidate_complex_amplitude_rate": [
+        [
+          -6.437301635742188e-07,
+          0.0
+        ],
+        [
+          0.0,
+          -7.152557373046875e-07
+        ],
+        [
+          -2.1457672119140623e-07,
+          0.0
+        ]
+      ],
+      "amplitude_rate_magnitude": 9.85911995322005e-07,
+      "signed_child_kinetic_energy_rate": 0.0,
+      "status": "GENERATED_CANDIDATE_NOT_PROMOTED"
+    },
+    {
+      "from_phase": [
+        -1,
+        0,
+        0
+      ],
+      "with_phase": [
+        0,
+        2,
+        0
+      ],
+      "to_phase": [
+        -1,
+        2,
+        0
+      ],
+      "candidate_complex_amplitude_rate": [
+        [
+          3.814697265625e-07,
+          -0.0
+        ],
+        [
+          1.9073486328125e-07,
+          -0.0
+        ],
+        [
+          0.0,
+          -4.76837158203125e-07
+        ]
+      ],
+      "amplitude_rate_magnitude": 6.397441799640054e-07,
+      "signed_child_kinetic_energy_rate": 0.0,
+      "status": "GENERATED_CANDIDATE_NOT_PROMOTED"
+    },
+    {
+      "from_phase": [
+        0,
+        -2,
+        0
+      ],
+      "with_phase": [
+        -1,
+        0,
+        0
+      ],
+      "to_phase": [
+        -1,
+        -2,
+        0
+      ],
+      "candidate_complex_amplitude_rate": [
+        [
+          9.5367431640625e-08,
+          -0.0
+        ],
+        [
+          -4.768371582031249e-08,
+          0.0
+        ],
+        [
+          0.0,
+          2.384185791015625e-07
+        ]
+      ],
+      "amplitude_rate_magnitude": 2.611744678045111e-07,
+      "signed_child_kinetic_energy_rate": 0.0,
+      "status": "GENERATED_CANDIDATE_NOT_PROMOTED"
+    },
+    {
+      "from_phase": [
+        0,
+        -2,
+        0
+      ],
+      "with_phase": [
+        0,
+        -2,
+        0
+      ],
+      "to_phase": [
+        0,
+        -4,
+        0
+      ],
+      "candidate_complex_amplitude_rate": [
+        [
+          0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          -0.0
+        ]
+      ],
+      "amplitude_rate_magnitude": 0.0,
+      "signed_child_kinetic_energy_rate": 0.0,
+      "status": "GENERATED_CANDIDATE_NOT_PROMOTED"
+    },
+    {
+      "from_phase": [
+        0,
+        -2,
+        0
+      ],
+      "with_phase": [
+        0,
+        0,
+        -3
+      ],
+      "to_phase": [
+        0,
+        -2,
+        -3
+      ],
+      "candidate_complex_amplitude_rate": [
+        [
+          0.0,
+          -7.152557373046875e-07
+        ],
+        [
+          -4.951770489032451e-07,
+          0.0
+        ],
+        [
+          3.3011803260216345e-07,
+          -0.0
+        ]
+      ],
+      "amplitude_rate_magnitude": 9.304670842952598e-07,
+      "signed_child_kinetic_energy_rate": 0.0,
+      "status": "GENERATED_CANDIDATE_NOT_PROMOTED"
+    },
+    {
+      "from_phase": [
+        0,
+        -2,
+        0
+      ],
+      "with_phase": [
+        0,
+        0,
+        3
+      ],
+      "to_phase": [
+        0,
+        -2,
+        3
+      ],
+      "candidate_complex_amplitude_rate": [
+        [
+          0.0,
+          -7.152557373046875e-07
+        ],
+        [
+          4.951770489032451e-07,
+          -0.0
+        ],
+        [
+          3.3011803260216345e-07,
+          -0.0
+        ]
+      ],
+      "amplitude_rate_magnitude": 9.304670842952598e-07,
+      "signed_child_kinetic_energy_rate": 0.0,
+      "status": "GENERATED_CANDIDATE_NOT_PROMOTED"
+    },
+    {
+      "from_phase": [
+        0,
+        -2,
+        0
+      ],
+      "with_phase": [
+        1,
+        0,
+        0
+      ],
+      "to_phase": [
+        1,
+        -2,
+        0
+      ],
+      "candidate_complex_amplitude_rate": [
+        [
+          -9.5367431640625e-08,
+          0.0
+        ],
+        [
+          -4.768371582031249e-08,
+          0.0
+        ],
+        [
+          0.0,
+          -2.384185791015625e-07
+        ]
+      ],
+      "amplitude_rate_magnitude": 2.611744678045111e-07,
+      "signed_child_kinetic_energy_rate": 0.0,
+      "status": "GENERATED_CANDIDATE_NOT_PROMOTED"
+    },
+    {
+      "from_phase": [
+        0,
+        0,
+        -3
+      ],
+      "with_phase": [
+        -1,
+        0,
+        0
+      ],
+      "to_phase": [
+        -1,
+        0,
+        -3
+      ],
+      "candidate_complex_amplitude_rate": [
+        [
+          7.152557373046875e-08,
+          -0.0
+        ],
+        [
+          0.0,
+          -2.384185791015625e-07
+        ],
+        [
+          -2.384185791015627e-08,
+          0.0
+        ]
+      ],
+      "amplitude_rate_magnitude": 2.5005551532987395e-07,
+      "signed_child_kinetic_energy_rate": 0.0,
+      "status": "GENERATED_CANDIDATE_NOT_PROMOTED"
+    },
+    {
+      "from_phase": [
+        0,
+        0,
+        -3
+      ],
+      "with_phase": [
+        0,
+        -2,
+        0
+      ],
+      "to_phase": [
+        0,
+        -2,
+        -3
+      ],
+      "candidate_complex_amplitude_rate": [
+        [
+          0.0,
+          4.76837158203125e-07
+        ],
+        [
+          2.2007868840144232e-07,
+          -0.0
+        ],
+        [
+          -1.4671912560096155e-07,
+          0.0
+        ]
+      ],
+      "amplitude_rate_magnitude": 5.452841519325882e-07,
+      "signed_child_kinetic_energy_rate": 0.0,
+      "status": "GENERATED_CANDIDATE_NOT_PROMOTED"
+    },
+    {
+      "from_phase": [
+        0,
+        0,
+        -3
+      ],
+      "with_phase": [
+        0,
+        0,
+        -3
+      ],
+      "to_phase": [
+        0,
+        0,
+        -6
+      ],
+      "candidate_complex_amplitude_rate": [
+        [
+          0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          -0.0
+        ]
+      ],
+      "amplitude_rate_magnitude": 0.0,
+      "signed_child_kinetic_energy_rate": 0.0,
+      "status": "GENERATED_CANDIDATE_NOT_PROMOTED"
+    },
+    {
+      "from_phase": [
+        0,
+        0,
+        -3
+      ],
+      "with_phase": [
+        0,
+        2,
+        0
+      ],
+      "to_phase": [
+        0,
+        2,
+        -3
+      ],
+      "candidate_complex_amplitude_rate": [
+        [
+          0.0,
+          -4.76837158203125e-07
+        ],
+        [
+          -2.2007868840144232e-07,
+          0.0
+        ],
+        [
+          -1.4671912560096155e-07,
+          0.0
+        ]
+      ],
+      "amplitude_rate_magnitude": 5.452841519325882e-07,
+      "signed_child_kinetic_energy_rate": 0.0,
+      "status": "GENERATED_CANDIDATE_NOT_PROMOTED"
+    },
+    {
+      "from_phase": [
+        0,
+        0,
+        -3
+      ],
+      "with_phase": [
+        1,
+        0,
+        0
+      ],
+      "to_phase": [
+        1,
+        0,
+        -3
+      ],
+      "candidate_complex_amplitude_rate": [
+        [
+          7.152557373046875e-08,
+          -0.0
+        ],
+        [
+          0.0,
+          -2.384185791015625e-07
+        ],
+        [
+          2.384185791015627e-08,
+          -0.0
+        ]
+      ],
+      "amplitude_rate_magnitude": 2.5005551532987395e-07,
+      "signed_child_kinetic_energy_rate": 0.0,
+      "status": "GENERATED_CANDIDATE_NOT_PROMOTED"
+    },
+    {
+      "from_phase": [
+        0,
+        0,
+        3
+      ],
+      "with_phase": [
+        -1,
+        0,
+        0
+      ],
+      "to_phase": [
+        -1,
+        0,
+        3
+      ],
+      "candidate_complex_amplitude_rate": [
+        [
+          7.152557373046875e-08,
+          -0.0
+        ],
+        [
+          0.0,
+          2.384185791015625e-07
+        ],
+        [
+          2.384185791015627e-08,
+          -0.0
+        ]
+      ],
+      "amplitude_rate_magnitude": 2.5005551532987395e-07,
+      "signed_child_kinetic_energy_rate": 0.0,
+      "status": "GENERATED_CANDIDATE_NOT_PROMOTED"
+    },
+    {
+      "from_phase": [
+        0,
+        0,
+        3
+      ],
+      "with_phase": [
+        0,
+        -2,
+        0
+      ],
+      "to_phase": [
+        0,
+        -2,
+        3
+      ],
+      "candidate_complex_amplitude_rate": [
+        [
+          0.0,
+          4.76837158203125e-07
+        ],
+        [
+          -2.2007868840144232e-07,
+          0.0
+        ],
+        [
+          -1.4671912560096155e-07,
+          0.0
+        ]
+      ],
+      "amplitude_rate_magnitude": 5.452841519325882e-07,
+      "signed_child_kinetic_energy_rate": 0.0,
+      "status": "GENERATED_CANDIDATE_NOT_PROMOTED"
+    },
+    {
+      "from_phase": [
+        0,
+        0,
+        3
+      ],
+      "with_phase": [
+        0,
+        0,
+        3
+      ],
+      "to_phase": [
+        0,
+        0,
+        6
+      ],
+      "candidate_complex_amplitude_rate": [
+        [
+          0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          -0.0
+        ]
+      ],
+      "amplitude_rate_magnitude": 0.0,
+      "signed_child_kinetic_energy_rate": 0.0,
+      "status": "GENERATED_CANDIDATE_NOT_PROMOTED"
+    },
+    {
+      "from_phase": [
+        0,
+        0,
+        3
+      ],
+      "with_phase": [
+        0,
+        2,
+        0
+      ],
+      "to_phase": [
+        0,
+        2,
+        3
+      ],
+      "candidate_complex_amplitude_rate": [
+        [
+          0.0,
+          -4.76837158203125e-07
+        ],
+        [
+          2.2007868840144232e-07,
+          -0.0
+        ],
+        [
+          -1.4671912560096155e-07,
+          0.0
+        ]
+      ],
+      "amplitude_rate_magnitude": 5.452841519325882e-07,
+      "signed_child_kinetic_energy_rate": 0.0,
+      "status": "GENERATED_CANDIDATE_NOT_PROMOTED"
+    },
+    {
+      "from_phase": [
+        0,
+        0,
+        3
+      ],
+      "with_phase": [
+        1,
+        0,
+        0
+      ],
+      "to_phase": [
+        1,
+        0,
+        3
+      ],
+      "candidate_complex_amplitude_rate": [
+        [
+          7.152557373046875e-08,
+          -0.0
+        ],
+        [
+          0.0,
+          2.384185791015625e-07
+        ],
+        [
+          -2.384185791015627e-08,
+          0.0
+        ]
+      ],
+      "amplitude_rate_magnitude": 2.5005551532987395e-07,
+      "signed_child_kinetic_energy_rate": 0.0,
+      "status": "GENERATED_CANDIDATE_NOT_PROMOTED"
+    },
+    {
+      "from_phase": [
+        0,
+        2,
+        0
+      ],
+      "with_phase": [
+        -1,
+        0,
+        0
+      ],
+      "to_phase": [
+        -1,
+        2,
+        0
+      ],
+      "candidate_complex_amplitude_rate": [
+        [
+          -9.5367431640625e-08,
+          0.0
+        ],
+        [
+          -4.768371582031249e-08,
+          0.0
+        ],
+        [
+          0.0,
+          2.384185791015625e-07
+        ]
+      ],
+      "amplitude_rate_magnitude": 2.611744678045111e-07,
+      "signed_child_kinetic_energy_rate": 0.0,
+      "status": "GENERATED_CANDIDATE_NOT_PROMOTED"
+    },
+    {
+      "from_phase": [
+        0,
+        2,
+        0
+      ],
+      "with_phase": [
+        0,
+        0,
+        -3
+      ],
+      "to_phase": [
+        0,
+        2,
+        -3
+      ],
+      "candidate_complex_amplitude_rate": [
+        [
+          0.0,
+          7.152557373046875e-07
+        ],
+        [
+          4.951770489032451e-07,
+          -0.0
+        ],
+        [
+          3.3011803260216345e-07,
+          -0.0
+        ]
+      ],
+      "amplitude_rate_magnitude": 9.304670842952598e-07,
+      "signed_child_kinetic_energy_rate": 0.0,
+      "status": "GENERATED_CANDIDATE_NOT_PROMOTED"
+    },
+    {
+      "from_phase": [
+        0,
+        2,
+        0
+      ],
+      "with_phase": [
+        0,
+        0,
+        3
+      ],
+      "to_phase": [
+        0,
+        2,
+        3
+      ],
+      "candidate_complex_amplitude_rate": [
+        [
+          0.0,
+          7.152557373046875e-07
+        ],
+        [
+          -4.951770489032451e-07,
+          0.0
+        ],
+        [
+          3.3011803260216345e-07,
+          -0.0
+        ]
+      ],
+      "amplitude_rate_magnitude": 9.304670842952598e-07,
+      "signed_child_kinetic_energy_rate": 0.0,
+      "status": "GENERATED_CANDIDATE_NOT_PROMOTED"
+    },
+    {
+      "from_phase": [
+        0,
+        2,
+        0
+      ],
+      "with_phase": [
+        0,
+        2,
+        0
+      ],
+      "to_phase": [
+        0,
+        4,
+        0
+      ],
+      "candidate_complex_amplitude_rate": [
+        [
+          0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          -0.0
+        ]
+      ],
+      "amplitude_rate_magnitude": 0.0,
+      "signed_child_kinetic_energy_rate": 0.0,
+      "status": "GENERATED_CANDIDATE_NOT_PROMOTED"
+    },
+    {
+      "from_phase": [
+        0,
+        2,
+        0
+      ],
+      "with_phase": [
+        1,
+        0,
+        0
+      ],
+      "to_phase": [
+        1,
+        2,
+        0
+      ],
+      "candidate_complex_amplitude_rate": [
+        [
+          9.5367431640625e-08,
+          -0.0
+        ],
+        [
+          -4.768371582031249e-08,
+          0.0
+        ],
+        [
+          0.0,
+          -2.384185791015625e-07
+        ]
+      ],
+      "amplitude_rate_magnitude": 2.611744678045111e-07,
+      "signed_child_kinetic_energy_rate": 0.0,
+      "status": "GENERATED_CANDIDATE_NOT_PROMOTED"
+    },
+    {
+      "from_phase": [
+        1,
+        0,
+        0
+      ],
+      "with_phase": [
+        0,
+        -2,
+        0
+      ],
+      "to_phase": [
+        1,
+        -2,
+        0
+      ],
+      "candidate_complex_amplitude_rate": [
+        [
+          3.814697265625e-07,
+          -0.0
+        ],
+        [
+          1.9073486328125e-07,
+          -0.0
+        ],
+        [
+          0.0,
+          4.76837158203125e-07
+        ]
+      ],
+      "amplitude_rate_magnitude": 6.397441799640054e-07,
+      "signed_child_kinetic_energy_rate": 0.0,
+      "status": "GENERATED_CANDIDATE_NOT_PROMOTED"
+    },
+    {
+      "from_phase": [
+        1,
+        0,
+        0
+      ],
+      "with_phase": [
+        0,
+        0,
+        -3
+      ],
+      "to_phase": [
+        1,
+        0,
+        -3
+      ],
+      "candidate_complex_amplitude_rate": [
+        [
+          -6.437301635742188e-07,
+          0.0
+        ],
+        [
+          0.0,
+          7.152557373046875e-07
+        ],
+        [
+          -2.1457672119140623e-07,
+          0.0
+        ]
+      ],
+      "amplitude_rate_magnitude": 9.85911995322005e-07,
+      "signed_child_kinetic_energy_rate": 0.0,
+      "status": "GENERATED_CANDIDATE_NOT_PROMOTED"
+    },
+    {
+      "from_phase": [
+        1,
+        0,
+        0
+      ],
+      "with_phase": [
+        0,
+        0,
+        3
+      ],
+      "to_phase": [
+        1,
+        0,
+        3
+      ],
+      "candidate_complex_amplitude_rate": [
+        [
+          -6.437301635742188e-07,
+          0.0
+        ],
+        [
+          0.0,
+          -7.152557373046875e-07
+        ],
+        [
+          2.1457672119140623e-07,
+          -0.0
+        ]
+      ],
+      "amplitude_rate_magnitude": 9.85911995322005e-07,
+      "signed_child_kinetic_energy_rate": 0.0,
+      "status": "GENERATED_CANDIDATE_NOT_PROMOTED"
+    },
+    {
+      "from_phase": [
+        1,
+        0,
+        0
+      ],
+      "with_phase": [
+        0,
+        2,
+        0
+      ],
+      "to_phase": [
+        1,
+        2,
+        0
+      ],
+      "candidate_complex_amplitude_rate": [
+        [
+          -3.814697265625e-07,
+          0.0
+        ],
+        [
+          1.9073486328125e-07,
+          -0.0
+        ],
+        [
+          0.0,
+          4.76837158203125e-07
+        ]
+      ],
+      "amplitude_rate_magnitude": 6.397441799640054e-07,
+      "signed_child_kinetic_energy_rate": 0.0,
+      "status": "GENERATED_CANDIDATE_NOT_PROMOTED"
+    },
+    {
+      "from_phase": [
+        1,
+        0,
+        0
+      ],
+      "with_phase": [
+        1,
+        0,
+        0
+      ],
+      "to_phase": [
+        2,
+        0,
+        0
+      ],
+      "candidate_complex_amplitude_rate": [
+        [
+          0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          -0.0
+        ]
+      ],
+      "amplitude_rate_magnitude": 0.0,
+      "signed_child_kinetic_energy_rate": 0.0,
+      "status": "GENERATED_CANDIDATE_NOT_PROMOTED"
+    }
+  ],
+  "phases": [
+    {
+      "phase": [
+        -2,
+        0,
+        0
+      ],
+      "originally_occupied": false,
+      "nonlinear_amplitude_rate": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "pressure_carrier_from_77_2": [
+        -0.0,
+        0.0
+      ],
+      "nonlinear_amplitude_rate_magnitude": 0.0,
+      "linear_damping_amplitude_rate": [
+        [
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          0.0
+        ]
+      ],
+      "total_instantaneous_amplitude_rate": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "signed_nonlinear_kinetic_energy_rate": 0.0,
+      "viscous_heat_conversion_rate": 0.0,
+      "total_kinetic_energy_rate": 0.0
+    },
+    {
+      "phase": [
+        -1,
+        -2,
+        0
+      ],
+      "originally_occupied": false,
+      "nonlinear_amplitude_rate": [
+        [
+          -2.8610229492187504e-07,
+          0.0
+        ],
+        [
+          1.4305114746093752e-07,
+          0.0
+        ],
+        [
+          0.0,
+          -2.384185791015625e-07
+        ]
+      ],
+      "pressure_carrier_from_77_2": [
+        -0.0,
+        -1.9073486328125e-07
+      ],
+      "nonlinear_amplitude_rate_magnitude": 3.989505894346598e-07,
+      "linear_damping_amplitude_rate": [
+        [
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          0.0
+        ]
+      ],
+      "total_instantaneous_amplitude_rate": [
+        [
+          -2.8610229492187504e-07,
+          0.0
+        ],
+        [
+          1.4305114746093752e-07,
+          0.0
+        ],
+        [
+          0.0,
+          -2.384185791015625e-07
+        ]
+      ],
+      "signed_nonlinear_kinetic_energy_rate": 0.0,
+      "viscous_heat_conversion_rate": 0.0,
+      "total_kinetic_energy_rate": 0.0,
+      "new_child_energy_second_derivative_at_initial_instant": 1.5916157281026248e-13
+    },
+    {
+      "phase": [
+        -1,
+        0,
+        -3
+      ],
+      "originally_occupied": false,
+      "nonlinear_amplitude_rate": [
+        [
+          -5.722045898437501e-07,
+          0.0
+        ],
+        [
+          0.0,
+          4.76837158203125e-07
+        ],
+        [
+          1.9073486328124996e-07,
+          0.0
+        ]
+      ],
+      "pressure_carrier_from_77_2": [
+        -0.0,
+        -1.430511474609375e-07
+      ],
+      "nonlinear_amplitude_rate_magnitude": 7.688768146799612e-07,
+      "linear_damping_amplitude_rate": [
+        [
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          0.0
+        ]
+      ],
+      "total_instantaneous_amplitude_rate": [
+        [
+          -5.722045898437501e-07,
+          0.0
+        ],
+        [
+          0.0,
+          4.76837158203125e-07
+        ],
+        [
+          1.9073486328124996e-07,
+          0.0
+        ]
+      ],
+      "signed_nonlinear_kinetic_energy_rate": 0.0,
+      "viscous_heat_conversion_rate": 0.0,
+      "total_kinetic_energy_rate": 0.0,
+      "new_child_energy_second_derivative_at_initial_instant": 5.911715561524035e-13
+    },
+    {
+      "phase": [
+        -1,
+        0,
+        0
+      ],
+      "originally_occupied": true,
+      "nonlinear_amplitude_rate": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "pressure_carrier_from_77_2": [
+        -0.0,
+        0.0
+      ],
+      "nonlinear_amplitude_rate_magnitude": 0.0,
+      "linear_damping_amplitude_rate": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.00048828125
+        ],
+        [
+          -0.00048828125,
+          0.0
+        ]
+      ],
+      "total_instantaneous_amplitude_rate": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -0.00048828125
+        ],
+        [
+          -0.00048828125,
+          0.0
+        ]
+      ],
+      "signed_nonlinear_kinetic_energy_rate": 0.0,
+      "viscous_heat_conversion_rate": 4.76837158203125e-07,
+      "total_kinetic_energy_rate": -4.76837158203125e-07
+    },
+    {
+      "phase": [
+        -1,
+        0,
+        3
+      ],
+      "originally_occupied": false,
+      "nonlinear_amplitude_rate": [
+        [
+          -5.722045898437501e-07,
+          0.0
+        ],
+        [
+          0.0,
+          -4.76837158203125e-07
+        ],
+        [
+          -1.9073486328124996e-07,
+          0.0
+        ]
+      ],
+      "pressure_carrier_from_77_2": [
+        -0.0,
+        -1.430511474609375e-07
+      ],
+      "nonlinear_amplitude_rate_magnitude": 7.688768146799612e-07,
+      "linear_damping_amplitude_rate": [
+        [
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          0.0
+        ]
+      ],
+      "total_instantaneous_amplitude_rate": [
+        [
+          -5.722045898437501e-07,
+          0.0
+        ],
+        [
+          0.0,
+          -4.76837158203125e-07
+        ],
+        [
+          -1.9073486328124996e-07,
+          0.0
+        ]
+      ],
+      "signed_nonlinear_kinetic_energy_rate": 0.0,
+      "viscous_heat_conversion_rate": 0.0,
+      "total_kinetic_energy_rate": 0.0,
+      "new_child_energy_second_derivative_at_initial_instant": 5.911715561524035e-13
+    },
+    {
+      "phase": [
+        -1,
+        2,
+        0
+      ],
+      "originally_occupied": false,
+      "nonlinear_amplitude_rate": [
+        [
+          2.8610229492187504e-07,
+          0.0
+        ],
+        [
+          1.4305114746093752e-07,
+          0.0
+        ],
+        [
+          0.0,
+          -2.384185791015625e-07
+        ]
+      ],
+      "pressure_carrier_from_77_2": [
+        0.0,
+        1.9073486328125e-07
+      ],
+      "nonlinear_amplitude_rate_magnitude": 3.989505894346598e-07,
+      "linear_damping_amplitude_rate": [
+        [
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          0.0
+        ]
+      ],
+      "total_instantaneous_amplitude_rate": [
+        [
+          2.8610229492187504e-07,
+          0.0
+        ],
+        [
+          1.4305114746093752e-07,
+          0.0
+        ],
+        [
+          0.0,
+          -2.384185791015625e-07
+        ]
+      ],
+      "signed_nonlinear_kinetic_energy_rate": 0.0,
+      "viscous_heat_conversion_rate": 0.0,
+      "total_kinetic_energy_rate": 0.0,
+      "new_child_energy_second_derivative_at_initial_instant": 1.5916157281026248e-13
+    },
+    {
+      "phase": [
+        0,
+        -4,
+        0
+      ],
+      "originally_occupied": false,
+      "nonlinear_amplitude_rate": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "pressure_carrier_from_77_2": [
+        -0.0,
+        0.0
+      ],
+      "nonlinear_amplitude_rate_magnitude": 0.0,
+      "linear_damping_amplitude_rate": [
+        [
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          0.0
+        ]
+      ],
+      "total_instantaneous_amplitude_rate": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "signed_nonlinear_kinetic_energy_rate": 0.0,
+      "viscous_heat_conversion_rate": 0.0,
+      "total_kinetic_energy_rate": 0.0
+    },
+    {
+      "phase": [
+        0,
+        -2,
+        -3
+      ],
+      "originally_occupied": false,
+      "nonlinear_amplitude_rate": [
+        [
+          0.0,
+          -2.384185791015625e-07
+        ],
+        [
+          -2.750983605018028e-07,
+          0.0
+        ],
+        [
+          1.833989070012019e-07,
+          0.0
+        ]
+      ],
+      "pressure_carrier_from_77_2": [
+        -0.0,
+        -2.2007868840144232e-07
+      ],
+      "nonlinear_amplitude_rate_magnitude": 4.076244422269393e-07,
+      "linear_damping_amplitude_rate": [
+        [
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          0.0
+        ]
+      ],
+      "total_instantaneous_amplitude_rate": [
+        [
+          0.0,
+          -2.384185791015625e-07
+        ],
+        [
+          -2.750983605018028e-07,
+          0.0
+        ],
+        [
+          1.833989070012019e-07,
+          0.0
+        ]
+      ],
+      "signed_nonlinear_kinetic_energy_rate": 0.0,
+      "viscous_heat_conversion_rate": 0.0,
+      "total_kinetic_energy_rate": 0.0,
+      "new_child_energy_second_derivative_at_initial_instant": 1.6615768590082337e-13
+    },
+    {
+      "phase": [
+        0,
+        -2,
+        0
+      ],
+      "originally_occupied": true,
+      "nonlinear_amplitude_rate": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "pressure_carrier_from_77_2": [
+        -0.0,
+        0.0
+      ],
+      "nonlinear_amplitude_rate_magnitude": 0.0,
+      "linear_damping_amplitude_rate": [
+        [
+          -0.001953125,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.001953125
+        ]
+      ],
+      "total_instantaneous_amplitude_rate": [
+        [
+          -0.001953125,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -0.001953125
+        ]
+      ],
+      "signed_nonlinear_kinetic_energy_rate": 0.0,
+      "viscous_heat_conversion_rate": 1.9073486328125e-06,
+      "total_kinetic_energy_rate": -1.9073486328125e-06
+    },
+    {
+      "phase": [
+        0,
+        -2,
+        3
+      ],
+      "originally_occupied": false,
+      "nonlinear_amplitude_rate": [
+        [
+          0.0,
+          -2.384185791015625e-07
+        ],
+        [
+          2.750983605018028e-07,
+          0.0
+        ],
+        [
+          1.833989070012019e-07,
+          0.0
+        ]
+      ],
+      "pressure_carrier_from_77_2": [
+        0.0,
+        2.2007868840144232e-07
+      ],
+      "nonlinear_amplitude_rate_magnitude": 4.076244422269393e-07,
+      "linear_damping_amplitude_rate": [
+        [
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          0.0
+        ]
+      ],
+      "total_instantaneous_amplitude_rate": [
+        [
+          0.0,
+          -2.384185791015625e-07
+        ],
+        [
+          2.750983605018028e-07,
+          0.0
+        ],
+        [
+          1.833989070012019e-07,
+          0.0
+        ]
+      ],
+      "signed_nonlinear_kinetic_energy_rate": 0.0,
+      "viscous_heat_conversion_rate": 0.0,
+      "total_kinetic_energy_rate": 0.0,
+      "new_child_energy_second_derivative_at_initial_instant": 1.6615768590082337e-13
+    },
+    {
+      "phase": [
+        0,
+        0,
+        -6
+      ],
+      "originally_occupied": false,
+      "nonlinear_amplitude_rate": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "pressure_carrier_from_77_2": [
+        -0.0,
+        0.0
+      ],
+      "nonlinear_amplitude_rate_magnitude": 0.0,
+      "linear_damping_amplitude_rate": [
+        [
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          0.0
+        ]
+      ],
+      "total_instantaneous_amplitude_rate": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "signed_nonlinear_kinetic_energy_rate": 0.0,
+      "viscous_heat_conversion_rate": 0.0,
+      "total_kinetic_energy_rate": 0.0
+    },
+    {
+      "phase": [
+        0,
+        0,
+        -3
+      ],
+      "originally_occupied": true,
+      "nonlinear_amplitude_rate": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "pressure_carrier_from_77_2": [
+        -0.0,
+        0.0
+      ],
+      "nonlinear_amplitude_rate_magnitude": 0.0,
+      "linear_damping_amplitude_rate": [
+        [
+          -0.0,
+          -0.00439453125
+        ],
+        [
+          -0.00439453125,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "total_instantaneous_amplitude_rate": [
+        [
+          0.0,
+          -0.00439453125
+        ],
+        [
+          -0.00439453125,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "signed_nonlinear_kinetic_energy_rate": 0.0,
+      "viscous_heat_conversion_rate": 4.291534423828125e-06,
+      "total_kinetic_energy_rate": -4.291534423828125e-06
+    },
+    {
+      "phase": [
+        0,
+        0,
+        3
+      ],
+      "originally_occupied": true,
+      "nonlinear_amplitude_rate": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "pressure_carrier_from_77_2": [
+        -0.0,
+        0.0
+      ],
+      "nonlinear_amplitude_rate_magnitude": 0.0,
+      "linear_damping_amplitude_rate": [
+        [
+          0.0,
+          0.00439453125
+        ],
+        [
+          -0.00439453125,
+          0.0
+        ],
+        [
+          -0.0,
+          0.0
+        ]
+      ],
+      "total_instantaneous_amplitude_rate": [
+        [
+          0.0,
+          0.00439453125
+        ],
+        [
+          -0.00439453125,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "signed_nonlinear_kinetic_energy_rate": 0.0,
+      "viscous_heat_conversion_rate": 4.291534423828125e-06,
+      "total_kinetic_energy_rate": -4.291534423828125e-06
+    },
+    {
+      "phase": [
+        0,
+        0,
+        6
+      ],
+      "originally_occupied": false,
+      "nonlinear_amplitude_rate": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "pressure_carrier_from_77_2": [
+        -0.0,
+        0.0
+      ],
+      "nonlinear_amplitude_rate_magnitude": 0.0,
+      "linear_damping_amplitude_rate": [
+        [
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          0.0
+        ]
+      ],
+      "total_instantaneous_amplitude_rate": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "signed_nonlinear_kinetic_energy_rate": 0.0,
+      "viscous_heat_conversion_rate": 0.0,
+      "total_kinetic_energy_rate": 0.0
+    },
+    {
+      "phase": [
+        0,
+        2,
+        -3
+      ],
+      "originally_occupied": false,
+      "nonlinear_amplitude_rate": [
+        [
+          0.0,
+          2.384185791015625e-07
+        ],
+        [
+          2.750983605018028e-07,
+          0.0
+        ],
+        [
+          1.833989070012019e-07,
+          0.0
+        ]
+      ],
+      "pressure_carrier_from_77_2": [
+        -0.0,
+        -2.2007868840144232e-07
+      ],
+      "nonlinear_amplitude_rate_magnitude": 4.076244422269393e-07,
+      "linear_damping_amplitude_rate": [
+        [
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          0.0
+        ]
+      ],
+      "total_instantaneous_amplitude_rate": [
+        [
+          0.0,
+          2.384185791015625e-07
+        ],
+        [
+          2.750983605018028e-07,
+          0.0
+        ],
+        [
+          1.833989070012019e-07,
+          0.0
+        ]
+      ],
+      "signed_nonlinear_kinetic_energy_rate": 0.0,
+      "viscous_heat_conversion_rate": 0.0,
+      "total_kinetic_energy_rate": 0.0,
+      "new_child_energy_second_derivative_at_initial_instant": 1.6615768590082337e-13
+    },
+    {
+      "phase": [
+        0,
+        2,
+        0
+      ],
+      "originally_occupied": true,
+      "nonlinear_amplitude_rate": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "pressure_carrier_from_77_2": [
+        -0.0,
+        0.0
+      ],
+      "nonlinear_amplitude_rate_magnitude": 0.0,
+      "linear_damping_amplitude_rate": [
+        [
+          -0.001953125,
+          0.0
+        ],
+        [
+          -0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.001953125
+        ]
+      ],
+      "total_instantaneous_amplitude_rate": [
+        [
+          -0.001953125,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.001953125
+        ]
+      ],
+      "signed_nonlinear_kinetic_energy_rate": 0.0,
+      "viscous_heat_conversion_rate": 1.9073486328125e-06,
+      "total_kinetic_energy_rate": -1.9073486328125e-06
+    },
+    {
+      "phase": [
+        0,
+        2,
+        3
+      ],
+      "originally_occupied": false,
+      "nonlinear_amplitude_rate": [
+        [
+          0.0,
+          2.384185791015625e-07
+        ],
+        [
+          -2.750983605018028e-07,
+          0.0
+        ],
+        [
+          1.833989070012019e-07,
+          0.0
+        ]
+      ],
+      "pressure_carrier_from_77_2": [
+        0.0,
+        2.2007868840144232e-07
+      ],
+      "nonlinear_amplitude_rate_magnitude": 4.076244422269393e-07,
+      "linear_damping_amplitude_rate": [
+        [
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          0.0
+        ]
+      ],
+      "total_instantaneous_amplitude_rate": [
+        [
+          0.0,
+          2.384185791015625e-07
+        ],
+        [
+          -2.750983605018028e-07,
+          0.0
+        ],
+        [
+          1.833989070012019e-07,
+          0.0
+        ]
+      ],
+      "signed_nonlinear_kinetic_energy_rate": 0.0,
+      "viscous_heat_conversion_rate": 0.0,
+      "total_kinetic_energy_rate": 0.0,
+      "new_child_energy_second_derivative_at_initial_instant": 1.6615768590082337e-13
+    },
+    {
+      "phase": [
+        0,
+        4,
+        0
+      ],
+      "originally_occupied": false,
+      "nonlinear_amplitude_rate": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "pressure_carrier_from_77_2": [
+        -0.0,
+        0.0
+      ],
+      "nonlinear_amplitude_rate_magnitude": 0.0,
+      "linear_damping_amplitude_rate": [
+        [
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          0.0
+        ]
+      ],
+      "total_instantaneous_amplitude_rate": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "signed_nonlinear_kinetic_energy_rate": 0.0,
+      "viscous_heat_conversion_rate": 0.0,
+      "total_kinetic_energy_rate": 0.0
+    },
+    {
+      "phase": [
+        1,
+        -2,
+        0
+      ],
+      "originally_occupied": false,
+      "nonlinear_amplitude_rate": [
+        [
+          2.8610229492187504e-07,
+          0.0
+        ],
+        [
+          1.4305114746093752e-07,
+          0.0
+        ],
+        [
+          0.0,
+          2.384185791015625e-07
+        ]
+      ],
+      "pressure_carrier_from_77_2": [
+        -0.0,
+        -1.9073486328125e-07
+      ],
+      "nonlinear_amplitude_rate_magnitude": 3.989505894346598e-07,
+      "linear_damping_amplitude_rate": [
+        [
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          0.0
+        ]
+      ],
+      "total_instantaneous_amplitude_rate": [
+        [
+          2.8610229492187504e-07,
+          0.0
+        ],
+        [
+          1.4305114746093752e-07,
+          0.0
+        ],
+        [
+          0.0,
+          2.384185791015625e-07
+        ]
+      ],
+      "signed_nonlinear_kinetic_energy_rate": 0.0,
+      "viscous_heat_conversion_rate": 0.0,
+      "total_kinetic_energy_rate": 0.0,
+      "new_child_energy_second_derivative_at_initial_instant": 1.5916157281026248e-13
+    },
+    {
+      "phase": [
+        1,
+        0,
+        -3
+      ],
+      "originally_occupied": false,
+      "nonlinear_amplitude_rate": [
+        [
+          -5.722045898437501e-07,
+          0.0
+        ],
+        [
+          0.0,
+          4.76837158203125e-07
+        ],
+        [
+          -1.9073486328124996e-07,
+          0.0
+        ]
+      ],
+      "pressure_carrier_from_77_2": [
+        0.0,
+        1.430511474609375e-07
+      ],
+      "nonlinear_amplitude_rate_magnitude": 7.688768146799612e-07,
+      "linear_damping_amplitude_rate": [
+        [
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          0.0
+        ]
+      ],
+      "total_instantaneous_amplitude_rate": [
+        [
+          -5.722045898437501e-07,
+          0.0
+        ],
+        [
+          0.0,
+          4.76837158203125e-07
+        ],
+        [
+          -1.9073486328124996e-07,
+          0.0
+        ]
+      ],
+      "signed_nonlinear_kinetic_energy_rate": 0.0,
+      "viscous_heat_conversion_rate": 0.0,
+      "total_kinetic_energy_rate": 0.0,
+      "new_child_energy_second_derivative_at_initial_instant": 5.911715561524035e-13
+    },
+    {
+      "phase": [
+        1,
+        0,
+        0
+      ],
+      "originally_occupied": true,
+      "nonlinear_amplitude_rate": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "pressure_carrier_from_77_2": [
+        -0.0,
+        0.0
+      ],
+      "nonlinear_amplitude_rate_magnitude": 0.0,
+      "linear_damping_amplitude_rate": [
+        [
+          -0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.00048828125
+        ],
+        [
+          -0.00048828125,
+          0.0
+        ]
+      ],
+      "total_instantaneous_amplitude_rate": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.00048828125
+        ],
+        [
+          -0.00048828125,
+          0.0
+        ]
+      ],
+      "signed_nonlinear_kinetic_energy_rate": 0.0,
+      "viscous_heat_conversion_rate": 4.76837158203125e-07,
+      "total_kinetic_energy_rate": -4.76837158203125e-07
+    },
+    {
+      "phase": [
+        1,
+        0,
+        3
+      ],
+      "originally_occupied": false,
+      "nonlinear_amplitude_rate": [
+        [
+          -5.722045898437501e-07,
+          0.0
+        ],
+        [
+          0.0,
+          -4.76837158203125e-07
+        ],
+        [
+          1.9073486328124996e-07,
+          0.0
+        ]
+      ],
+      "pressure_carrier_from_77_2": [
+        0.0,
+        1.430511474609375e-07
+      ],
+      "nonlinear_amplitude_rate_magnitude": 7.688768146799612e-07,
+      "linear_damping_amplitude_rate": [
+        [
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          0.0
+        ]
+      ],
+      "total_instantaneous_amplitude_rate": [
+        [
+          -5.722045898437501e-07,
+          0.0
+        ],
+        [
+          0.0,
+          -4.76837158203125e-07
+        ],
+        [
+          1.9073486328124996e-07,
+          0.0
+        ]
+      ],
+      "signed_nonlinear_kinetic_energy_rate": 0.0,
+      "viscous_heat_conversion_rate": 0.0,
+      "total_kinetic_energy_rate": 0.0,
+      "new_child_energy_second_derivative_at_initial_instant": 5.911715561524035e-13
+    },
+    {
+      "phase": [
+        1,
+        2,
+        0
+      ],
+      "originally_occupied": false,
+      "nonlinear_amplitude_rate": [
+        [
+          -2.8610229492187504e-07,
+          0.0
+        ],
+        [
+          1.4305114746093752e-07,
+          0.0
+        ],
+        [
+          0.0,
+          2.384185791015625e-07
+        ]
+      ],
+      "pressure_carrier_from_77_2": [
+        0.0,
+        1.9073486328125e-07
+      ],
+      "nonlinear_amplitude_rate_magnitude": 3.989505894346598e-07,
+      "linear_damping_amplitude_rate": [
+        [
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          0.0
+        ]
+      ],
+      "total_instantaneous_amplitude_rate": [
+        [
+          -2.8610229492187504e-07,
+          0.0
+        ],
+        [
+          1.4305114746093752e-07,
+          0.0
+        ],
+        [
+          0.0,
+          2.384185791015625e-07
+        ]
+      ],
+      "signed_nonlinear_kinetic_energy_rate": 0.0,
+      "viscous_heat_conversion_rate": 0.0,
+      "total_kinetic_energy_rate": 0.0,
+      "new_child_energy_second_derivative_at_initial_instant": 1.5916157281026248e-13
+    },
+    {
+      "phase": [
+        2,
+        0,
+        0
+      ],
+      "originally_occupied": false,
+      "nonlinear_amplitude_rate": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "pressure_carrier_from_77_2": [
+        -0.0,
+        0.0
+      ],
+      "nonlinear_amplitude_rate_magnitude": 0.0,
+      "linear_damping_amplitude_rate": [
+        [
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          0.0
+        ]
+      ],
+      "total_instantaneous_amplitude_rate": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "signed_nonlinear_kinetic_energy_rate": 0.0,
+      "viscous_heat_conversion_rate": 0.0,
+      "total_kinetic_energy_rate": 0.0
+    }
+  ]
+}

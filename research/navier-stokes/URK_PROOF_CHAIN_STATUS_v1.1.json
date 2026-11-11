@@ -1,0 +1,50 @@
+{
+  "schema": "va-navier-stokes-urk-proof-correspondence/v1.1",
+  "date": "2026-11-11",
+  "original_release": "2026-11-08",
+  "classification": "author-proposed; public-scope numerical witness and exact classical finite-mode identity; unrestricted global smoothness not authenticated",
+  "method": [
+    "URK generator",
+    "generated mathematical kernel/formula",
+    "admissible input",
+    "execution",
+    "result and witness",
+    "hypothesis-checked theorem"
+  ],
+  "sources": {
+    "protected_native_generator": {
+      "disclosed": false,
+      "navier_stokes_generated_kernel_execution_located": false,
+      "note": "The public companion is not the original protected URK generator."
+    },
+    "urk_domain_compiler_v1": {
+      "sha256": "5b3b635195fc5fb49db53f3a35b44d670ac5c57cfc4018358f7220da4b7ba30c",
+      "checks_passed": 12,
+      "checks_total": 12,
+      "scope": "domain doctrine compilation; not located as Navier\u2013Stokes generated differential kernel"
+    },
+    "harmonic_edge_public_companion": {
+      "parent_zip_sha256": "e120794f8597b9e0c3622729e7f63727e66f202378fbb95f66594fa505eb1187",
+      "source_sha256": "baad535857070231eabcadcbb13b5b44f365fee2568fb2cbf75a4eaf1ad167e8",
+      "input_sha256": "9ed1612238f7685cdf250fe2e79191279d84974665c37120b52dccf8f1fa9692",
+      "archived_output_sha256": "3be2cad99b8b66441b9ca62a3db7dfec53a59bc56201f8636556076282496258",
+      "byte_identical_replay": true,
+      "modes": 6,
+      "edges": 30,
+      "epsilon": 0.04695630968816916,
+      "heat_rate": 1.33514404296875e-05,
+      "kinetic_heat_residual": 0.0,
+      "scope": "3D periodic finite Fourier initial snapshot"
+    },
+    "original_classical_public_v1_0": {
+      "pdf_sha256": "fdcffd808b3fa49c51eed62fe800614142945966990cfdc3b526e954013e3f71",
+      "archive_sha256": "199fa8673ad85348046578aeb0ad9c9e77fd51ddaf38dd78991896af385bf236",
+      "independent_finite_comparator_passed": 17,
+      "independent_finite_comparator_total": 17,
+      "scope": "original classical proof extract and separate finite Fourier replay; original unchanged"
+    }
+  },
+  "protected_source_disclosed": false,
+  "complete_unrestricted_3d_regularities_proved_by_public_companion": false,
+  "original_v1_0_preserved": true
+}

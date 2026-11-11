@@ -5,18 +5,34 @@
   "entries": [
     {
       "id": "navier-stokes-2026-11-08",
-      "title": "Classical Navier–Stokes: Formula and Proof Examination",
+      "title": "Navier–Stokes: Generated Formula and Proof-Evidence Correspondence (v1.1)",
       "record": "navier-stokes.html",
-      "manifest": "research/navier-stokes/PUBLIC_RELEASE_MANIFEST.json",
-      "pdf_filename": "Snyder_Classical_Navier_Stokes_Proof_Extract_11pp.pdf",
-      "pdf_sha256": "fdcffd808b3fa49c51eed62fe800614142945966990cfdc3b526e954013e3f71",
+      "manifest": "research/navier-stokes/PUBLIC_RELEASE_MANIFEST_v1.1.json",
+      "pdf_filename": "Snyder_Navier_Stokes_Generated_Formula_Proof_Correspondence_v1.1_2026-11-11.pdf",
+      "pdf_sha256": "56ced9622b6c30dd137bdce1834fe91c81f3f223e68e40a690e2ecc788506307",
       "pdf_hosted": true,
-      "status": "Published classical author manuscript; exact 11-page PDF and reproducibility files available. Independent mathematical examination invited.",
-      "pdf_url": "research/navier-stokes/Snyder_Classical_Navier_Stokes_Proof_Extract_11pp.pdf",
-      "supporting_archive": "research/navier-stokes/Deagle_Navier_Stokes_Classical_Public_2026-11-08.zip",
-      "supporting_archive_sha256": "199fa8673ad85348046578aeb0ad9c9e77fd51ddaf38dd78991896af385bf236",
+      "status": "Public version 1.1 addendum corrects the native methodology: URK generator produces a domain mathematical kernel/formula; data run through it to yield results and proof witnesses. Public companion finite Fourier replay reproduced 11/11 checks and archived bytes; original 11-page classical mathematical source and historical 17/17 comparison preserved. Unrestricted 3D global regularity not established by these public witnesses.",
+      "pdf_url": "research/navier-stokes/Snyder_Navier_Stokes_Generated_Formula_Proof_Correspondence_v1.1_2026-11-11.pdf",
+      "supporting_archive": "research/navier-stokes/Snyder_Navier_Stokes_URK_Proof_Chain_Repair_v1.1_2026-11-11.zip",
+      "supporting_archive_sha256": "0a114227d6b41a9e39009e41c7708aa559af53e1e9093f8b03863b93f41591ca",
       "source_tex_url": "research/navier-stokes/ORIGINAL_PART_II_CLASSICAL_TEX_EXCERPT.tex",
-      "source_selection": "Correlated 80-page proof reader original pages 5–15 inclusive (Part A classical proof sequence)."
+      "source_selection": "Correlated 80-page proof reader original pages 5–15 inclusive (Part A classical proof sequence).",
+      "original_v1_0": {
+        "pdf_filename": "Snyder_Classical_Navier_Stokes_Proof_Extract_11pp.pdf",
+        "pdf_sha256": "fdcffd808b3fa49c51eed62fe800614142945966990cfdc3b526e954013e3f71",
+        "pdf_url": "research/navier-stokes/Snyder_Classical_Navier_Stokes_Proof_Extract_11pp.pdf",
+        "supporting_archive": "research/navier-stokes/Deagle_Navier_Stokes_Classical_Public_2026-11-08.zip",
+        "supporting_archive_sha256": "199fa8673ad85348046578aeb0ad9c9e77fd51ddaf38dd78991896af385bf236",
+        "manifest": "research/navier-stokes/PUBLIC_RELEASE_MANIFEST.json"
+      },
+      "methodology_addendum_v1_1": {
+        "date": "2026-11-11",
+        "crosswalk": "research/navier-stokes/URK_FORMULA_TO_PROOF_CORRESPONDENCE.md",
+        "scope_status": "research/navier-stokes/URK_PROOF_CHAIN_STATUS_v1.1.json",
+        "public_replay": "research/navier-stokes/VERIFY_PUBLIC_EDGE_WITNESS.py",
+        "original_source_preserved": true,
+        "private_native_urk_excluded": true
+      }
     },
     {
       "id": "yang-mills-2026-11-11",
