@@ -23,7 +23,7 @@ V.A. is presented here through its **True-Zero foundation, corrected NEW K / URK
 | [Foundation, explained](https://deagletwc.github.io/va-proof-estate/foundation.html) | [Public proof register](proofs/README.md) | [Bring your own workflow](examiner/README.md) |
 | [End-to-end architecture](https://deagletwc.github.io/va-proof-estate/end-to-end.html) | [Evidence examination standard](proofs/EXAMINATION-STANDARD.md) | [Consequence Aperture](https://deagletwc.github.io/va-proof-estate/consequence-aperture.html) |
 | [Public category definition](category/README.md) | [V12 public evidence status](proofs/V12-EVIDENCE-STATUS.json) | [Reviewer route](https://deagletwc.github.io/va-proof-estate/reviewer-route.html) |
-| [Mathematics & open research](https://deagletwc.github.io/va-proof-estate/mathematics.html) | [Mathematics publication coverage](research/mathematics/PUBLICATION-STATUS.md) | [Research source register](research/mathematics/INDEX.json) |
+| [Mathematics & open research](https://deagletwc.github.io/va-proof-estate/mathematics.html) | [Mathematics publication map](https://deagletwc.github.io/va-proof-estate/research-publication.html) | [Research source register](research/mathematics/INDEX.json) |
 
 **How to read the evidence:** The estate distinguishes **DECLARED**, **OBSERVED**, and **INDEPENDENTLY REPRODUCED** material. Synthetic public fixtures, historical pilot records, and protected native-system evidence have different standings; do not treat one as a substitute for another.
 
