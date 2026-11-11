@@ -57,6 +57,23 @@
       },
       "formula_proof_correspondence": "research/yang-mills/URK_GENERATED_FORMULA_TO_PROOF_CORRESPONDENCE.md",
       "proof_chain_status": "research/yang-mills/URK_PROOF_CHAIN_STATUS.json"
+    },
+    {
+      "id": "admissibility-debt-geometry-2026-11-11",
+      "title": "Admissibility–Debt Geometry: Boundary Hitting, Cumulative Debt, Irreversibility, and Exact Proof Witnesses",
+      "record": "admissibility-debt-geometry.html",
+      "manifest": "research/admissibility-debt-geometry/PUBLIC_RELEASE_MANIFEST.json",
+      "date": "2026-11-11",
+      "author": "Terry Allen Snyder",
+      "pdf_filename": "Snyder_Admissibility_Debt_Geometry_Formal_Proofs_2026-11-11.pdf",
+      "pdf_url": "research/admissibility-debt-geometry/Snyder_Admissibility_Debt_Geometry_Formal_Proofs_2026-11-11.pdf",
+      "pdf_hosted": true,
+      "pdf_sha256": "d5efe3dd89c8a7cca5e097292a8276df7884383d7ec0154a81f7d9b5ebe81e57",
+      "supporting_archive": "research/admissibility-debt-geometry/Snyder_Admissibility_Debt_Geometry_Source_Proofs_Witnesses_2026-11-11.zip",
+      "supporting_archive_sha256": "96683a83906d33bb1bbf37b4237f8c949e8624af620810e398c996c043ba8599",
+      "source_preserved": true,
+      "source_sha256": "789779f75e72400ecb807019cb4c8a55cc5e08969cdcf2d5dc998621899efaa7",
+      "status": "Author-produced mathematical research record with exact conditional debt, first-hit, no-return, singular-edge and tensor theorems. Five exact rational example certificates, linked receipts, and preserved original source are included."
     }
   ],
   "release_correction": "Prior 28-page draft record superseded before public PDF upload; that draft contained native mathematical sections and was not published on Deagle.",

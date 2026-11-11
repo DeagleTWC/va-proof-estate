@@ -1,0 +1,36 @@
+{
+  "schema": "deagle-mathematics-public-release/v1",
+  "publication_date": "2026-11-11",
+  "publication_status": "PUBLIC_RESEARCH_RECORD",
+  "author": "Terry Allen Snyder",
+  "version": "1.0",
+  "title": "Admissibility-Debt Geometry: Boundary Hitting, Cumulative Debt, Irreversibility, and Exact Proof Witnesses",
+  "formula": "d(t)=d_0+integral_0^t k(s) ds; tau_B=inf{t:d(t)>=B}",
+  "source": "MATH SOLUTIONS.txt",
+  "source_preserved": true,
+  "original_source_sha256": "789779f75e72400ecb807019cb4c8a55cc5e08969cdcf2d5dc998621899efaa7",
+  "scope": "Exact conditional model theorems stated in manuscript; five rational-example checks; no claim of universal physical collapse or unconditional stability.",
+  "evidence_status": {
+    "exact_rational_witnesses": 5,
+    "example_certificates": 5,
+    "linked_receipts": 5,
+    "tamper_negative_control": "PASS",
+    "third_party_review": "not claimed"
+  },
+  "formula_to_proof": "FORMULA_TO_PROOF_CROSSWALK.md in supporting archive",
+  "public_safety": "Original source is preserved; protected native generator code excluded.",
+  "files": {
+    "Snyder_Admissibility_Debt_Geometry_Formal_Proofs_2026-11-11.pdf": {
+      "sha256": "d5efe3dd89c8a7cca5e097292a8276df7884383d7ec0154a81f7d9b5ebe81e57",
+      "bytes": 302294
+    },
+    "Snyder_Admissibility_Debt_Geometry_Source_Proofs_Witnesses_2026-11-11.zip": {
+      "sha256": "96683a83906d33bb1bbf37b4237f8c949e8624af620810e398c996c043ba8599",
+      "bytes": 315740
+    },
+    "CITATION.cff": {
+      "sha256": "74cd086e03a141948d5af85773110eeba1c1c640f9739149c83e893781ed917e",
+      "bytes": 346
+    }
+  }
+}

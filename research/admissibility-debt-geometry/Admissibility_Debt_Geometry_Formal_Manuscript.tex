@@ -1,0 +1,270 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[margin=0.91in,headheight=14pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathrsfs,mathtools,booktabs,enumitem,microtype,fancyhdr,xcolor,hyperref,longtable}
+\hypersetup{colorlinks=true,linkcolor=[rgb]{0.54,0.34,0.1},urlcolor=[rgb]{0.54,0.34,0.1},pdftitle={Admissibility--Debt Geometry: A Formal Mathematical Framework},pdfauthor={Terry Allen Snyder}}
+\definecolor{gold}{RGB}{125,84,31}\definecolor{muted}{RGB}{85,75,66}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\pagestyle{fancy}\fancyhf{}\lhead{\small\textcolor{muted}{V.A. / DEAGLE MATHEMATICS}}\rhead{\small\textcolor{muted}{Public research edition}}\cfoot{\small\thepage}
+\setlength{\parindent}{0pt}\setlength{\parskip}{5pt}
+\setlist[itemize]{topsep=3pt,itemsep=2pt,leftmargin=*}
+\setlist[enumerate]{topsep=3pt,itemsep=3pt,leftmargin=*}
+\newcommand{\R}{\mathbb R}\newcommand{\dd}{\mathrm d}\newcommand{\ess}{\operatorname{ess}}
+\begin{document}
+\begin{center}
+{\small\color{gold}\MakeUppercase{Deagle Mathematical Research / Formalization 001}}\\[10pt]
+{\LARGE\bfseries Admissibility--Debt Geometry}\\[5pt]
+{\large Boundary Hitting, Cumulative Debt, Irreversibility, and Exact Proof Witnesses}\\[11pt]
+{\large Terry Allen Snyder}\\[4pt]
+{\small V.A. / Deagle Mathematical Research \quad 11 November 2026}\\[7pt]
+{\small\color{muted}Source-preserving mathematical formalization and proof record}
+\end{center}
+\vspace{5pt}\hrule\vspace{11pt}
+\begin{abstract}
+The source framework \emph{Admissibility--Debt Geometry} proposes that allowable evolution is constrained by an admissible region and cumulative curvature or stress debt. This paper retains that premise while separating (i) the original formulation from (ii) additional mathematical hypotheses needed for precise propositions. The central model is an augmented state $(x,d)$ with nonnegative locally integrable stress $k(t)$ and an accumulated debt $d(t)=d_0+\int_0^t k(s)\,\dd s$. Within this model we prove debt monotonicity, exact first-hitting and no-return properties, comparison bounds for hitting time, a logarithmic singularity criterion, and an eigenvalue threshold theorem for symmetric tensor debt. We give a counterexample to the unqualified assertion that admissibility alone implies Lyapunov stability, and determine precisely what subtracting mean ghost noise accomplishes. A reproducible exact-rational worked example emits scope-limited certificates and linked receipts. The results are mathematical statements within the specified model; identifying their hypotheses in a physical application is a separate task.
+\end{abstract}
+\noindent\textbf{Source custody.} This is a formalization of the supplied \texttt{MATH SOLUTIONS.txt}, preserved byte-for-byte in the companion evidence archive. Source section numbers are retained in the crosswalk (Appendix A). No inaccessible or protected native mathematics is reconstructed or disclosed here.
+
+\section{Original mathematical proposal and precision boundary}
+The source starts with $\mathcal S\subseteq\R^n$, a nonnegative admissibility functional $D:\mathcal S\to\R_{\geq0}$, a threshold $D_{\max}>0$, and a region
+\begin{equation}\label{eq:state-A}
+\mathcal A=\{x\in\mathcal S:D(x)\leq D_{\max}\}.
+\end{equation}
+It then proposes debt dynamics along $x(t)$ of the form $\dot D=\kappa(x(t))\geq0$. The proposal is retained, but two mathematically distinct readings need to be distinguished: a state functional $D(x)$, and a cumulative trajectory variable $d(t)$. They coincide only under a compatibility condition. Likewise, an arbitrary sublevel set need not be a smooth manifold. These are precision statements, not redefinitions of the source.
+
+\section{Generated admissibility geometry and cumulative debt}
+\begin{definition}[Augmented debt system]\label{def:model}
+Let $\mathcal S\subseteq\R^n$, let $x:[0,T)\to\mathcal S$ be an absolutely continuous trajectory, let $d_0\geq0$, and let $k:[0,T)\to[0,\infty)$ be measurable and locally integrable. Where a state stress map exists, write $k(t)=\kappa(x(t))$. Define the \emph{cumulative debt} and threshold $B> d_0$ by
+\begin{equation}\label{eq:debt}
+ d(t)=d_0+\int_0^t k(s)\,\dd s,\qquad
+ \mathscr A^{\circ}=\{(x,d)\in\mathcal S\times[0,\infty):d<B\},\quad
+ \overline{\mathscr A}=\{(x,d):d\leq B\}.
+\end{equation}
+The \emph{debt boundary} is the level $d=B$. Other state-dependent constraints can be intersected with $\mathscr A^\circ$.
+\end{definition}
+\begin{theorem}[Existence, monotonicity, and uniqueness of cumulative debt]\label{th:basic}
+Under Definition \ref{def:model}, $d$ is locally absolutely continuous and is the unique locally absolutely continuous function satisfying $d(0)=d_0$ and $\dot d(t)=k(t)$ almost everywhere. For $0\leq s\leq t<T$,
+\begin{equation}\label{eq:monotone}
+d(t)-d(s)=\int_s^t k(u)\,\dd u\geq0.
+\end{equation}
+\end{theorem}
+\begin{proof}
+The indefinite integral of a locally integrable function is locally absolutely continuous and has almost-everywhere derivative $k$. The fundamental theorem for absolutely continuous functions proves both the displayed identity and uniqueness by applying it to the difference of two solutions. Nonnegativity of $k$ proves monotonicity.
+\end{proof}
+\begin{proposition}[When state-only and path debt agree]\label{prop:potential}
+Suppose $D$ is continuously differentiable on an open neighborhood of the trajectory and $x$ is absolutely continuous. The identity $D(x(t))=d(t)$ holds on a trajectory, assuming $D(x(0))=d_0$, if and only if
+\begin{equation}\label{eq:compat}
+\nabla D(x(t))\cdot\dot x(t)=k(t)\quad\text{for almost every }t.
+\end{equation}
+If this equality is required for every trajectory of $\dot x=f(x)$, it requires $\nabla D(x)\cdot f(x)=\kappa(x)$ on the reachable domain.
+\end{proposition}
+\begin{proof}
+The chain rule for absolutely continuous curves yields $\frac{\dd}{\dd t}D(x(t))=\nabla D(x(t))\cdot\dot x(t)$ almost everywhere. Compare with Theorem \ref{th:basic}, match initial values and integrate. The last statement substitutes $f(x)$ for $\dot x$.
+\end{proof}
+\begin{remark}[Path-dependence is substantive]
+Take $x(t)=(\cos t,\sin t)$ and $k(t)=1$. Then $x(0)=x(2\pi)$ but $d(2\pi)=d_0+2\pi\ne d_0$. No single-valued $D(x)$ can represent this debt along the entire closed orbit. The augmented coordinate in \eqref{eq:debt} therefore preserves the intended cumulative information.
+\end{remark}
+\begin{proposition}[Geometric boundary of a state sublevel set]\label{prop:boundary}
+If $\mathcal S$ is open, $D:\mathcal S\to\R$ is continuous, and $\mathcal A$ is as in \eqref{eq:state-A}, then its \emph{relative} topological boundary obeys
+$\partial_{\mathcal S}\mathcal A\subseteq\{x\in\mathcal S:D(x)=D_{\max}\}$.
+If $D$ is $C^1$ and $D_{\max}$ is a regular value (no vanishing gradient at the level), the nonempty level set is locally a smooth hypersurface and agrees locally with the boundary.
+\end{proposition}
+\begin{proof}
+Continuity makes $\{D<D_{\max}\}$ relatively open inside $\mathcal A$ and $\{D>D_{\max}\}$ relatively open outside. Thus a boundary point can satisfy neither strict inequality. At a regular level, the implicit-function theorem supplies local coordinates in which $D-D_{\max}$ has both positive and negative sides.
+\end{proof}
+
+\section{Boundary hitting and exact lifetime laws}
+\begin{definition}[First boundary-hitting time]
+For cumulative debt \eqref{eq:debt}, define
+\begin{equation}\label{eq:tau}
+\tau_B=\inf\{t\in[0,T):d(t)\geq B\},\qquad\inf\varnothing=+\infty.
+\end{equation}
+This is the first exhaustion of the \emph{strict} debt reserve $d<B$. It is a mathematical threshold event; a physical collapse requires an explicit model linking this event to physical failure.
+\end{definition}
+\begin{theorem}[First-hit criterion and exact threshold identity]\label{th:hit}
+Under Definition \ref{def:model}, $\tau_B$ is finite if and only if there is a finite time $t<T$ for which $\int_0^t k(s)\,\dd s\geq B-d_0$. In that case
+\begin{equation}\label{eq:hit}
+ d(\tau_B)=B,\qquad \int_0^{\tau_B}k(s)\,\dd s=B-d_0.
+\end{equation}
+If no such finite time exists, the boundary is not hit in the observation interval, even if $d(t)\to B$ asymptotically.
+\end{theorem}
+\begin{proof}
+The criterion follows directly from the defining set in \eqref{eq:tau}. If finite, continuity of $d$, $d_0<B$, and the first-hitting definition force equality at the first hit: a strict inequality would imply an earlier crossing by the intermediate-value theorem. Substitute \eqref{eq:debt}.
+\end{proof}
+\begin{theorem}[Two-sided boundary-time bounds]\label{th:bounds}
+Assume $T=+\infty$ and, for almost every $t\geq0$, $0<m\leq k(t)\leq M<+\infty$. Then $\tau_B<+\infty$ and
+\begin{equation}\label{eq:bounds}
+\boxed{\frac{B-d_0}{M}\leq \tau_B\leq\frac{B-d_0}{m}}.
+\end{equation}
+\end{theorem}
+\begin{proof}
+Integrating yields $mt\leq d(t)-d_0\leq Mt$. At $t=(B-d_0)/M$ the upper bound prevents an earlier hit; at $t=(B-d_0)/m$ the lower bound guarantees a hit. Apply Theorem \ref{th:hit}.
+\end{proof}
+\begin{corollary}[Constant-stress regime]\label{cor:constant}
+If $k(t)=k_0>0$ for all $t\geq0$, then $d(t)=d_0+k_0t$ and
+$\tau_B=(B-d_0)/k_0$. If $k_0=0$ and $d_0<B$, then $\tau_B=+\infty$.
+\end{corollary}
+\begin{proof}Immediate integration and the first-hit definition.\end{proof}
+\begin{theorem}[No return to strictly admissible debt after first hit]\label{th:noreturn}
+If $\tau_B<+\infty$ and $k\geq0$ almost everywhere, then $d(t)\geq B$ for every $t\in[\tau_B,T)$. Thus the enlarged trajectory $(x(t),d(t))$ cannot re-enter $\mathscr A^\circ$ after the first hit.
+\end{theorem}
+\begin{proof}
+By Theorem \ref{th:basic}, $d(t)\geq d(\tau_B)=B$.
+\end{proof}
+\begin{remark}[Threshold versus physical collapse]
+The original source uses $D\leq D_{\max}$ for admissibility. Under that weak inequality, the point $d=B$ \emph{remains in the closed admissible set}; reaching it does not mean $d>B$. The no-return theorem concerns the strict reserve $d<B$. Physical destruction, permanent failure, or any recovery in other state coordinates does not follow without an explicit application law. This distinction avoids silently changing the source's boundary convention.
+\end{remark}
+
+\section{Singular edges and logarithmic debt}
+\begin{theorem}[Critical-rate integrability test]\label{th:singular}
+Suppose $T<+\infty$ and for $t$ sufficiently near $T$ there are positive constants $c_1,c_2$ and $\alpha\in\R$ such that
+\begin{equation}\label{eq:power}
+ c_1(T-t)^{-\alpha}\leq k(t)\leq c_2(T-t)^{-\alpha}.
+\end{equation}
+Then $\int_0^T k(t)\,\dd t$ diverges when $\alpha\geq1$ and its \emph{terminal tail} is finite when $\alpha<1$. For $\alpha=1$, the divergent part is bounded above and below by positive multiples of $-\log(T-t)$.
+\end{theorem}
+\begin{proof}
+Integrate the lower and upper power functions on $(T-\varepsilon,T-\delta)$ and let $\delta\downarrow0$. Their integrals converge exactly for $\alpha<1$; for $\alpha=1$ they are logarithms, and for $\alpha>1$ they diverge by a power law.
+\end{proof}
+\begin{corollary}[State-space $1/|x-x_c|$ stress along transverse approach]\label{cor:edge}
+Suppose $|x(t)-x_c|/(T-t)\to v\in(0,\infty)$ and $\kappa(x)\,|x-x_c|\to c\in(0,\infty)$ along the trajectory. Then
+\begin{equation}\label{eq:log}
+ k(t)\sim\frac{c}{v(T-t)},\qquad
+ d(t)\sim\frac{c}{v}\log\frac1{T-t}\quad(t\uparrow T),
+\end{equation}
+where the last equivalence concerns the divergent leading term.
+\end{corollary}
+\begin{proof}
+Multiply the two asymptotic relations to obtain the stress rate, then integrate and apply the comparison principle to the leading logarithmic term.
+\end{proof}
+\begin{remark}
+A spatial stress singularity alone does not determine a time-integrated debt divergence: the rate at which $x(t)$ approaches $x_c$ is indispensable. A finite cap $B$ is crossed at some time before $T$ whenever the accumulated debt diverges.
+\end{remark}
+
+\section{The stability distinction}
+The supplied source proposes: ``Any trajectory entirely contained within $\mathcal A$ is stable regardless of local dynamics.'' This general Lyapunov claim is not implied by admissibility.
+\begin{proposition}[Counterexample: admissible does not imply Lyapunov-stable]\label{prop:counter}
+Let $\mathcal S=[-1,1]$, $\dot x=x(1-x^2)$, $d_0=0$, $k(t)\equiv0$ and $B=1$. Every trajectory with $x(0)\in(-1,1)$ stays within $\mathcal S$ and satisfies $d(t)<B$ for all finite $t\geq0$. Yet the equilibrium $x=0$ is Lyapunov unstable.
+\end{proposition}
+\begin{proof}
+For $x_0\in(0,1)$, the vector field is positive and the solution increases toward $1$; for $x_0\in(-1,0)$ it decreases toward $-1$. The endpoints and $0$ are equilibria, so uniqueness prevents finite-time exit from $[-1,1]$. Stress is zero, hence debt remains zero. Given $\varepsilon=1/2$, every $\delta>0$ admits $0<x_0<\min(\delta,1/2)$ whose trajectory eventually exceeds $1/2$, disproving Lyapunov stability of $0$.
+\end{proof}
+\begin{remark}[What follows rigorously]
+Theorems \ref{th:basic}--\ref{th:noreturn} establish reserve persistence, threshold conditions, and debt-coordinate irreversibility. Lyapunov stability, global asymptotic stability, and physical collapse are separate properties requiring their own dynamical conditions. The original text is preserved in the source archive; this paper does not silently treat its unqualified stability assertion as proved.
+\end{remark}
+
+\section{Ghost-signal subtraction}
+\begin{proposition}[Precisely what mean ghost subtraction proves]\label{prop:ghost}
+Let $S_m=S_t+G$ be integrable random variables, with $\mu_G=\mathbb E G$ known. Define $S_f=S_m-\mu_G$. Then
+\begin{equation}\label{eq:ghost}
+\mathbb E S_f=\mathbb E S_t.
+\end{equation}
+If all variables have finite second moments, then $\operatorname{Var}(S_f)=\operatorname{Var}(S_m)$; subtracting the constant mean alone does not decrease variance.
+\end{proposition}
+\begin{proof}
+Apply linearity of expectation. Variance is translation-invariant, giving the second identity.
+\end{proof}
+\begin{remark}
+The source's formula is valid as a mean-bias correction. Increased signal depth or improved boundary detection requires further hypotheses or a different filtering estimator. This distinction specifies the test a generated child must perform instead of certifying a performance gain from the mean subtraction alone.
+\end{remark}
+
+\section{Tensor debt and eigenvalue thresholds}
+\begin{definition}[Symmetric tensor cumulative debt]
+Let $H_0\in\R^{n\times n}$ be symmetric, and $K:[0,T)\to\R^{n\times n}$ locally integrable, symmetric and positive semidefinite almost everywhere. Define
+\begin{equation}\label{eq:tensor}
+H(t)=H_0+\int_0^t K(s)\,\dd s,\quad L(t)=\lambda_{\max}(H(t)),\quad
+\tau_B^H=\inf\{t:L(t)\geq B\}.
+\end{equation}
+\end{definition}
+\begin{theorem}[Eigenvalue monotonicity and no-return]\label{th:tensor}
+Under the tensor definition \eqref{eq:tensor}, $L(t)$ is continuous and nondecreasing. If $L(0)<B$ and $\tau_B^H<\infty$, then $L(\tau_B^H)=B$ and $L(t)\geq B$ for all $t\in[\tau_B^H,T)$. If also $T=+\infty$ and $mI\preceq K(t)\preceq MI$ almost everywhere with $0<m\leq M$, then
+\begin{equation}\label{eq:tensorbounds}
+\frac{B-L(0)}{M}\leq\tau_B^H\leq\frac{B-L(0)}{m}.
+\end{equation}
+\end{theorem}
+\begin{proof}
+For $t\geq s$, $H(t)-H(s)=\int_s^t K(u)\,\dd u$ is positive semidefinite. Thus $H(t)\succeq H(s)$; the Rayleigh quotient characterization shows $L(t)\geq L(s)$. Entrywise continuity implies eigenvalue continuity. Boundary equality and no-return follow as in Theorem \ref{th:hit}. Under the matrix bounds, $H_0+mtI\preceq H(t)\preceq H_0+MtI$, hence $L(0)+mt\leq L(t)\leq L(0)+Mt$, which proves \eqref{eq:tensorbounds}.
+\end{proof}
+\begin{remark}
+For a tensor not assumed symmetric, $\lambda_{\max}$ need not be a real-valued order statistic. A negative-semidefinite or indefinite rate can also destroy monotonicity. The positivity and symmetry conditions are explicit mathematical requirements, not hidden assumptions.
+\end{remark}
+
+\section{The variational proposal as a separate mathematical problem}
+The source proposes minimizing $\int_0^T\kappa(x(t))\,\dd t$ over admissible paths. A law of motion alone does not force this minimization: it is an optimization principle to be imposed or derived for a specific domain.
+\begin{proposition}[Existence under an explicit compactness condition]\label{prop:var}
+Let $\mathcal P$ be a nonempty compact set of feasible paths in a specified topology, and suppose $J:\mathcal P\to\R$, $J(x)=\int_0^T\kappa(x(t))\,\dd t$, is finite and continuous on $\mathcal P$. Then there exists $x_*\in\mathcal P$ such that
+\begin{equation}\label{eq:var}
+ J(x_*)=\min_{x\in\mathcal P}J(x).
+\end{equation}
+\end{proposition}
+\begin{proof}
+By the extreme-value theorem, a continuous real-valued function on a nonempty compact set attains its minimum.
+\end{proof}
+\begin{remark}
+In infinite-dimensional path spaces, compactness and lower semicontinuity must be proved or appropriately weakened. Neither this existence theorem nor the cumulative-debt law alone establishes that natural dynamics follow a minimum-debt path or supersede energy principles.
+\end{remark}
+
+\section{Exact rational example and proof-witness output}
+The companion script calculates the following without floating-point rounding. Let $d_0=1/3$, $B=10/3$, and
+\begin{equation}\label{eq:piecewise}
+ k(t)=\begin{cases}\tfrac12&0\leq t<2,\\[2pt]\tfrac32&t\geq2.\end{cases}
+\qquad
+ d(2)=\tfrac43,\quad\tau_B=2+\frac{10/3-4/3}{3/2}=\boxed{\tfrac{10}{3}},\quad d(4)=\tfrac{13}{3}.
+\end{equation}
+For $m=1/2$, $M=3/2$, Theorem \ref{th:bounds} predicts $2\leq\tau_B\leq6$, consistent with the exact crossing. At constant stress $k_0=3/4$, the same initial debt and cap give $\tau_B=4$.
+
+For the commuting tensor example
+\begin{equation}\label{eq:tensorex}
+H_0=\begin{pmatrix}1/3&0\\0&2/3\end{pmatrix},\quad
+K=\begin{pmatrix}1/2&0\\0&1/4\end{pmatrix},\quad B=5/3,
+\qquad\tau_B^H=\boxed{\tfrac83}.
+\end{equation}
+These are \emph{worked examples}, not replacements for the analytic proofs in Sections 2--8. The machine-readable output contains five exact witnesses, five proposition-scoped example certificates, and five chained receipts, bound to the unchanged source hash and the prepared calculation contract. Each certificate explicitly says that it certifies its example only.
+
+\section{Kernel production contract and reproducibility}
+The one-run proof-witness pattern is implemented here as a transparent \emph{example record}, not as a claim to reproduce a protected native URK generator. A future domain-native parent kernel can use the following formalized objects as a preparation contract:
+\begin{enumerate}
+\item \textbf{Prepare:} source identity; $\mathcal S$ and any state constraints; $d_0,B$; $k$ or $\kappa$; optional tensor $H_0,K$; interval domain; exact propositions to be examined.
+\item \textbf{Generate:} debt and first-hit formulae, state/trajectory compatibility tests, edge-integrability tests, tensor spectral conditions, and the exact output schema.
+\item \textbf{Run:} evaluate all prepared calculations with witnesses, including zero-stress and non-hitting conditions.
+\item \textbf{Record:} emit proposition identifiers, results, assumptions, exact or rigorously bounded enclosures, source and input hashes, and a contemporaneous linked receipt chain.
+\item \textbf{Assemble:} preserve the author's original source, the separate formalization, derivations, example outputs, and a proof-to-output crosswalk.
+\end{enumerate}
+A certificate for a finite instance is not silently promoted to a universal theorem. Conversely, failure of one unproved domain-specific physical hypothesis is not a negation of a separately proved mathematical identity. The framework and the proved results are offered for mathematical examination under the explicit hypotheses stated here. These results do not, without further application laws, imply physical collapse or general Lyapunov stability.
+
+\section*{Conclusion}
+The mathematical core of Admissibility--Debt Geometry is explicit: accumulated nonnegative debt is monotone; its first boundary-hitting time satisfies exact integral and comparison formulae; the debt coordinate cannot return to the strict reserve after first hit; time-rate singularities admit a sharp integrability criterion; and symmetric positive-semidefinite tensor accumulation inherits eigenvalue threshold laws. These proved statements preserve the substantive premise of the supplied framework. Other source claims, including unconditional Lyapunov stability and automatic signal-depth gains, require modification of their hypotheses, and the original statements remain available in the source record for examination.
+
+\appendix
+\section{Source-to-formalization crosswalk}
+\small
+\begin{longtable}{@{}p{0.19\linewidth}p{0.45\linewidth}p{0.29\linewidth}@{}}
+\toprule Original source & Formal treatment here & Mathematical standing\\\midrule\endhead
+\S1 state space & $D(x)$ sublevel and regular-level boundary; augmented $(x,d)$ & Proposition \ref{prop:boundary}; explicit conditions\\
+\S2 accumulation & $d(t)=d_0+\int k$, with potential compatibility & Theorem \ref{th:basic}, Prop. \ref{prop:potential}\\
+\S3 boundary hitting & first hitting of strict reserve, exact threshold equality & Theorems \ref{th:hit}, \ref{th:noreturn}\\
+\S4 constant stress & corrected $d_0$ offset and $k_0=0$ case & Corollary \ref{cor:constant}\\
+\S5 singular debt & temporal integrability and transverse approach & Theorem \ref{th:singular}, Cor. \ref{cor:edge}\\
+\S6 irreversibility & no-return for debt coordinate & Theorem \ref{th:noreturn}\\
+\S7 stability & original unconditional stability assertion tested & Counterexample \ref{prop:counter}\\
+\S8 ghost filtering & expectation and variance of mean-subtracted signal & Proposition \ref{prop:ghost}\\
+\S9 tensor & symmetric positive-semidefinite matrix accumulation & Theorem \ref{th:tensor}\\
+\S10 variational & compact feasible path set, continuous cost & Proposition \ref{prop:var}\\
+\S11 domain independence & conditional modeling applicability & Not stated as universal theorem\\
+\bottomrule
+\end{longtable}
+\normalsize
+\section{Evidence and authorship register}
+\begin{itemize}
+\item \textbf{Original source:} \texttt{source/MATH\_SOLUTIONS\_original\_unchanged.txt}. The source is the author-supplied mathematical framework; no original statements were deleted or rewritten in that file.
+\item \textbf{Derived paper:} This manuscript and its LaTeX source; all added mathematical assumptions appear in definitions, theorems, or named remarks.
+\item \textbf{Worked example:} \path{reproducibility/run_exact_examples.py}, \path{output/PREPARED_CONTRACT.json}, and \path{output/EXACT_EXAMPLE_CERTIFICATES_AND_RECEIPTS.json}.
+\item \textbf{Public-safety boundary:} No protected URK source, unpublished domain kernels, private mathematical formulae, or third-party review certificates are included.
+\item \textbf{Release identity:} This publication is the dated author-produced mathematical research record; public hashes and source references identify the released files. Corrections are to be issued as separately dated revisions.
+\end{itemize}
+\end{document}

@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: If you use this mathematical framework, cite the public mathematical research record.
+title: 'Admissibility-Debt Geometry: Boundary Hitting, Cumulative Debt, Irreversibility, and Exact Proof Witnesses'
+authors:
+  - family-names: Snyder
+    given-names: Terry Allen
+version: 1.0
+date-released: 2026-11-11
+type: article

@@ -1,0 +1,147 @@
+{
+  "certificates": [
+    {
+      "certificate_id": "ADG-EX-01",
+      "claim": "piecewise debt and exact first hitting time",
+      "parent_contract_sha256": "9f27968e7aa106aefcc3b8681e51278bab240a9fb75523fbf0547d5b017e8a77",
+      "run_id": "5505d871cc7bcd73a3600aae707f1c2409e833e2c1c93c25031fb5358e52eb26",
+      "scope": "exact rational example only",
+      "witness_sha256": "93e51121a13d4476f3a407bf197ca8638abce9ccb89f4159dfe8025c574572b3"
+    },
+    {
+      "certificate_id": "ADG-EX-02",
+      "claim": "comparison time bounds",
+      "parent_contract_sha256": "9f27968e7aa106aefcc3b8681e51278bab240a9fb75523fbf0547d5b017e8a77",
+      "run_id": "5505d871cc7bcd73a3600aae707f1c2409e833e2c1c93c25031fb5358e52eb26",
+      "scope": "exact rational example only",
+      "witness_sha256": "c8d0f321d38114755ba32a33f7777acc4082551a8ccf1eaa54dafb9f38e97ef1"
+    },
+    {
+      "certificate_id": "ADG-EX-03",
+      "claim": "constant-stress time formula",
+      "parent_contract_sha256": "9f27968e7aa106aefcc3b8681e51278bab240a9fb75523fbf0547d5b017e8a77",
+      "run_id": "5505d871cc7bcd73a3600aae707f1c2409e833e2c1c93c25031fb5358e52eb26",
+      "scope": "exact rational example only",
+      "witness_sha256": "920a32dbdbc062911d0b0c778270df4d8f466d4426596a25c632233b17f60902"
+    },
+    {
+      "certificate_id": "ADG-EX-04",
+      "claim": "tensor eigenvalue first crossing: exact diagonal example",
+      "parent_contract_sha256": "9f27968e7aa106aefcc3b8681e51278bab240a9fb75523fbf0547d5b017e8a77",
+      "run_id": "5505d871cc7bcd73a3600aae707f1c2409e833e2c1c93c25031fb5358e52eb26",
+      "scope": "exact rational example only",
+      "witness_sha256": "2e0e36b4655ad2ffa1c4b57e6a3520f6718abf4ff8a0d00e8cdf11fc4c6b3fd8"
+    },
+    {
+      "certificate_id": "ADG-EX-05",
+      "claim": "strict pre/post crossing and no-return on the computed horizon",
+      "parent_contract_sha256": "9f27968e7aa106aefcc3b8681e51278bab240a9fb75523fbf0547d5b017e8a77",
+      "run_id": "5505d871cc7bcd73a3600aae707f1c2409e833e2c1c93c25031fb5358e52eb26",
+      "scope": "exact rational example only",
+      "witness_sha256": "34fbfa2fcd6be6d191211fdb99a785c2198b405a96c64323616774c7292fe0f1"
+    }
+  ],
+  "final_receipt_sha256": "9d8843e9e469400709e0ef2e6c9dbd4bb17644eac50cba8804bd467ccb63164f",
+  "receipts": [
+    {
+      "claim_id": "EX-01",
+      "prev_receipt_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "receipt_no": 1,
+      "receipt_sha256": "c38734487082ddc2f4005da8926aa1cfb662d5f335ee2d9dff0cdd8088617ded",
+      "run_id": "5505d871cc7bcd73a3600aae707f1c2409e833e2c1c93c25031fb5358e52eb26",
+      "witness_sha256": "93e51121a13d4476f3a407bf197ca8638abce9ccb89f4159dfe8025c574572b3"
+    },
+    {
+      "claim_id": "EX-02",
+      "prev_receipt_sha256": "c38734487082ddc2f4005da8926aa1cfb662d5f335ee2d9dff0cdd8088617ded",
+      "receipt_no": 2,
+      "receipt_sha256": "a27142ae4e0c53ba1856d59d10b371da5a1350454f2ad8fda26f0cac0d6a860b",
+      "run_id": "5505d871cc7bcd73a3600aae707f1c2409e833e2c1c93c25031fb5358e52eb26",
+      "witness_sha256": "c8d0f321d38114755ba32a33f7777acc4082551a8ccf1eaa54dafb9f38e97ef1"
+    },
+    {
+      "claim_id": "EX-03",
+      "prev_receipt_sha256": "a27142ae4e0c53ba1856d59d10b371da5a1350454f2ad8fda26f0cac0d6a860b",
+      "receipt_no": 3,
+      "receipt_sha256": "efa8414cc7e1c4937cb331475c343b103d7001aa7d8d2ca2a8864eef08feacf4",
+      "run_id": "5505d871cc7bcd73a3600aae707f1c2409e833e2c1c93c25031fb5358e52eb26",
+      "witness_sha256": "920a32dbdbc062911d0b0c778270df4d8f466d4426596a25c632233b17f60902"
+    },
+    {
+      "claim_id": "EX-04",
+      "prev_receipt_sha256": "efa8414cc7e1c4937cb331475c343b103d7001aa7d8d2ca2a8864eef08feacf4",
+      "receipt_no": 4,
+      "receipt_sha256": "d746e41e4be0c9de380f2ecf037876fbd12f1495203dd575536c59c4203a2b6c",
+      "run_id": "5505d871cc7bcd73a3600aae707f1c2409e833e2c1c93c25031fb5358e52eb26",
+      "witness_sha256": "2e0e36b4655ad2ffa1c4b57e6a3520f6718abf4ff8a0d00e8cdf11fc4c6b3fd8"
+    },
+    {
+      "claim_id": "EX-05",
+      "prev_receipt_sha256": "d746e41e4be0c9de380f2ecf037876fbd12f1495203dd575536c59c4203a2b6c",
+      "receipt_no": 5,
+      "receipt_sha256": "9d8843e9e469400709e0ef2e6c9dbd4bb17644eac50cba8804bd467ccb63164f",
+      "run_id": "5505d871cc7bcd73a3600aae707f1c2409e833e2c1c93c25031fb5358e52eb26",
+      "witness_sha256": "34fbfa2fcd6be6d191211fdb99a785c2198b405a96c64323616774c7292fe0f1"
+    }
+  ],
+  "run": {
+    "claim_count": 5,
+    "engine": "CPython fractions.Fraction exact arithmetic",
+    "run_id": "5505d871cc7bcd73a3600aae707f1c2409e833e2c1c93c25031fb5358e52eb26",
+    "run_time_utc": "2026-11-11T21:22:58.167246+00:00",
+    "source_sha256": "789779f75e72400ecb807019cb4c8a55cc5e08969cdcf2d5dc998621899efaa7",
+    "spec_sha256": "9f27968e7aa106aefcc3b8681e51278bab240a9fb75523fbf0547d5b017e8a77"
+  },
+  "witnesses": [
+    {
+      "claim": "piecewise debt and exact first hitting time",
+      "claim_id": "EX-01",
+      "value": {
+        "d_0": "1/3",
+        "d_2": "4/3",
+        "d_4": "13/3",
+        "d_at_hit": "10/3",
+        "t_first_hit": "10/3"
+      },
+      "verified": true
+    },
+    {
+      "claim": "comparison time bounds",
+      "claim_id": "EX-02",
+      "value": {
+        "lower": "2",
+        "observed": "10/3",
+        "upper": "6"
+      },
+      "verified": true
+    },
+    {
+      "claim": "constant-stress time formula",
+      "claim_id": "EX-03",
+      "value": {
+        "kappa": "3/4",
+        "t_first_hit": "4"
+      },
+      "verified": true
+    },
+    {
+      "claim": "tensor eigenvalue first crossing: exact diagonal example",
+      "claim_id": "EX-04",
+      "value": {
+        "t_first_hit": "8/3",
+        "threshold": "5/3"
+      },
+      "verified": true
+    },
+    {
+      "claim": "strict pre/post crossing and no-return on the computed horizon",
+      "claim_id": "EX-05",
+      "value": {
+        "after_hit": "2009/600",
+        "before_hit": "1991/600",
+        "end_debt": "13/3"
+      },
+      "verified": true
+    }
+  ]
+}
