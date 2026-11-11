@@ -25,6 +25,7 @@ V.A. is presented here through its **True-Zero foundation, corrected NEW K / URK
 | [Public category definition](category/README.md) | [V12 public evidence status](proofs/V12-EVIDENCE-STATUS.json) | [Reviewer route](https://deagletwc.github.io/va-proof-estate/reviewer-route.html) |
 | [Mathematics & open research](https://deagletwc.github.io/va-proof-estate/mathematics.html) | [Mathematics publication map](https://deagletwc.github.io/va-proof-estate/research-publication.html) | [Research source register](research/mathematics/INDEX.json) |
 | [P versus NP — Examination 91](https://deagletwc.github.io/va-proof-estate/p-versus-np.html) | [Source-bound E91 evidence status](research/p-versus-np/EXAMINATION-91-PUBLIC-STATUS.md) | [Research archive custody and scope](research/mathematics/PUBLICATION-STATUS.md) |
+| [Published mathematical records](https://deagletwc.github.io/va-proof-estate/mathematics.html#public-mathematics) | [Mathematical reviewer evidence crosswalk](research/mathematics/REVIEW-CROSSWALK.md) | [Review standards](proofs/EXAMINATION-STANDARD.md) |
 
 **How to read the evidence:** The estate distinguishes **DECLARED**, **OBSERVED**, and **INDEPENDENTLY REPRODUCED** material. Synthetic public fixtures, historical pilot records, and protected native-system evidence have different standings; do not treat one as a substitute for another.
 
