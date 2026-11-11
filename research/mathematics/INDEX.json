@@ -59,5 +59,33 @@
       "proof_chain_status": "research/yang-mills/URK_PROOF_CHAIN_STATUS.json"
     }
   ],
-  "release_correction": "Prior 28-page draft record superseded before public PDF upload; that draft contained native mathematical sections and was not published on Deagle."
+  "release_correction": "Prior 28-page draft record superseded before public PDF upload; that draft contained native mathematical sections and was not published on Deagle.",
+  "publication_tracks": [
+    {
+      "id": "riemann-hypothesis",
+      "title": "Riemann Hypothesis",
+      "index_state": "public navigation only — original mathematical carrier not yet linked in this repository",
+      "carrier_status": "not represented by a public PDF/source/replay manifest in this mathematics index",
+      "scope_note": "Indexing does not regrade or negate existing examination lineage; no unrestricted RH proof is certified by this index entry.",
+      "public_status_document": "research/mathematics/PUBLICATION-STATUS.md"
+    },
+    {
+      "id": "p-versus-np",
+      "title": "P versus NP",
+      "index_state": "public navigation only — original mathematical carrier not yet linked in this repository",
+      "carrier_status": "not represented by a public PDF/source/replay manifest in this mathematics index",
+      "scope_note": "Indexing does not regrade or negate existing examination lineage; native-to-classical decision correspondence and complexity bounds require source-specific evidence; no unrestricted conclusion is certified by this index entry.",
+      "public_status_document": "research/mathematics/PUBLICATION-STATUS.md"
+    }
+  ],
+  "native_foundation": {
+    "category": "separate formalized mathematical and computational discipline",
+    "public_foundation": "foundation.html",
+    "category_source": "category/README.md",
+    "scientific_source": "proofs/sources/true-zero-consequence-systems-science-v1.2.3-extracted.md",
+    "public_examination": "reviewer-route.html",
+    "protected_native_math_released": false,
+    "publication_not_proof_certification": true
+  },
+  "coverage_document": "research/mathematics/PUBLICATION-STATUS.md"
 }
