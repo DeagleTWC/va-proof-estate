@@ -1,6 +1,39 @@
+# V.A. — The Proof Estate
+
+<p align="center">
+  <a href="https://deagletwc.github.io/va-proof-estate/">
+    <img src="social-card-1200x630.jpg" alt="Official V.A. Proof Estate artwork — Proof Before Power" width="780">
+  </a>
+</p>
+
+<p align="center"><strong>Proof Before Power · Maximum Verifiable Function · Prevention of Harm</strong></p>
+
+<p align="center">
+  <a href="https://deagletwc.github.io/va-proof-estate/">Open the Proof Estate</a> ·
+  <a href="https://deagletwc.github.io/va-proof-estate/foundation.html">Understand the Foundation</a> ·
+  <a href="https://deagletwc.github.io/va-proof-estate/reviewer-route.html">Start an Examination</a>
+</p>
+
+V.A. is presented here through its **True-Zero foundation, corrected NEW K / URK mathematics, native consequence formation, and evidence-based examination**. This repository is the **public proof and review surface**, not a release of the protected native kernel or the entirety of the historical pilot record.
+
+## Start here
+
+| Discover the system | Examine the evidence | Challenge a boundary |
+| :--- | :--- | :--- |
+| [Foundation, explained](https://deagletwc.github.io/va-proof-estate/foundation.html) | [Public proof register](proofs/README.md) | [Bring your own workflow](examiner/README.md) |
+| [End-to-end architecture](https://deagletwc.github.io/va-proof-estate/end-to-end.html) | [Evidence examination standard](proofs/EXAMINATION-STANDARD.md) | [Consequence Aperture](https://deagletwc.github.io/va-proof-estate/consequence-aperture.html) |
+| [Public category definition](category/README.md) | [V12 public evidence status](proofs/V12-EVIDENCE-STATUS.json) | [Reviewer route](https://deagletwc.github.io/va-proof-estate/reviewer-route.html) |
+
+**How to read the evidence:** The estate distinguishes **DECLARED**, **OBSERVED**, and **INDEPENDENTLY REPRODUCED** material. Synthetic public fixtures, historical pilot records, and protected native-system evidence have different standings; do not treat one as a substitute for another.
+
+**Version identity:** Website release **2.7 / edition 09** and custodian-identified native **V.A. V12** refer to different version lineages. Refer to the [version-identity record](proofs/VERSION-IDENTITY.md) before drawing conclusions about native build status.
+
+---
+
+## Dated control and detailed source record
+
 > **DATED SCIENTIFIC CONTROL (2026-10-28): M28 OPEN FOR WORK; M27 CHAT-CHANGE PAUSE CLEARED. Later M29 progression is separately referenced, not erased or certified by this dated source.** [Primary dated cycle record](proofs/SCIENTIFIC-CYCLE-CURRENT.json) · [Scientific continuation](proofs/SCIENTIFIC-CYCLE-CONTINUE.md). Later M30–M35 files are public publication-support records, not new scientific proof certifications. No project-wide administrative HOLD.
 
-# V.A. — The Proof Estate
 
 **Consequence Aperture — public examiner workbench (Stage A):** [Open the interface](consequence-aperture.html) · [Read the data-only protocol and offline original-byte verifier](aperture/README.md). Prepare an unissued examiner request and locally check submitted evidence originals against SHA-256. No native execution, independent effects, or witness standing are inferred by this interface. Earlier historical pilots and protected True Zero / corrected NEW K / URK construction are unchanged.
 
