@@ -2,9 +2,9 @@
 
 **Author:** Terry Allen Snyder · V.A. / Deagle  
 **Prepared:** 11 November 2026  
-**Standing:** Author-review draft; not a published Deagle research record.
+**Standing:** Public research release v1.0 (11 November 2026). Author-produced conditional mathematical formalization and exact synthetic witnesses; independent operational or universal proof certification is not established.
 
-Original Library sources are unchanged, identified by exact SHA-256. The author-custody archive retains both originals. **The public-ready bundle intentionally excludes the full source JSON and World Kernel Atlas DOCX** because they include draft architecture and other kernels; their disclosure remains the author's decision. This crosswalk is not a replacement for either original source.
+Original Library sources are unchanged, identified by exact SHA-256. The author-custody archive retains both originals. **The published public-safe bundle excludes the full source JSON and World Kernel Atlas DOCX** because they include draft architecture and other kernels; their disclosure remains the author's decision. This crosswalk is not a replacement for either original source.
 
 | Source | Source statement / field | Mathematically formalized carrier | Evidence status |
 |---|---|---|---|
