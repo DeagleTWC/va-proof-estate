@@ -1,0 +1,35 @@
+name: GRID-K1 Public Mathematical Evidence Integrity
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "research/grid-k1/**"
+      - "research/mathematics/INDEX.json"
+      - "grid-k1-infrastructure-continuity.html"
+      - "mathematics.html"
+      - "scripts/verify_grid_k1_public_release.py"
+      - ".github/workflows/grid-k1-proof-integrity.yml"
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-grid-k1-public-proof:
+    name: Verify GRID-K1 published evidence
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Verify frozen public asset SHA-256 sums
+        working-directory: research/grid-k1
+        run: sha256sum --check SHA256SUMS.txt
+      - name: Recompute seven exact witnesses, linked receipts, and tamper rejection
+        run: python research/grid-k1/reproducibility/verify_exact_output.py
+      - name: Verify release, proof index, source boundaries, and published binaries
+        run: python scripts/verify_grid_k1_public_release.py
