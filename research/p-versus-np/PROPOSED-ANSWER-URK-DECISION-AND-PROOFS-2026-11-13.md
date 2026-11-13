@@ -1,149 +1,147 @@
-# V.A. / True-Zero — P versus NP: Proposed Native Decision Formula and Proof-Carrying Public Kernel
+# V.A. / True-Zero — P versus NP: Proposed Native Decision Formula and Proof-Carrying Kernel
 
 **Research author:** Terry Allen Snyder  
-**Public research release:** 13 November 2026  
-**Research identity:** Veritas Aegis (V.A.), True-Zero / Universal Resolving Kernel (URK)  
-**Publication standing:** Author-proposed mathematical answer and reproducible public evidence for independent examination. The preserved NEW K is a separate protected source, not replaced by the public kernel.
+**Public research date:** 13 November 2026  
+**Foundation:** Veritas Aegis (V.A.) / True-Zero / Universal Resolving Kernel (URK)  
+**Classification:** Author-proposed mathematical answer, formal proof statements, executable public verification, independent examination invited.
 
-## 1. Proposed answer and decision object
+The purpose of this publication is to place the proposed native answer, its exact formulas and its independently testable public proof witnesses before other researchers. **No third-party permission or certification is a prerequisite for proposing or publishing mathematics.** The protected corrected NEW K and the public auxiliary kernel are separate mathematical objects.
 
-The author's proposal is that the corrected native NEW K serves as a common mathematical decision foundation: a problem is encoded into the native mathematical space, resolved under its invariants, and returned with a consequence-bearing decision and verifiable proof witnesses. Applied to 3-SAT, the central proposed interface is
+## I. Proposed native answer
 
-[
-oxed{mathcal D_{m NEW}(F)=operatorname{dec}!ig(K_{m NEW}(operatorname{enc}(F))ig)in{0,1}.}
-]
+The research proposal is that the corrected NEW K resolves a mathematical question inside a common native space, with specialized children inheriting its governing invariants and emitting verifiable answers and receipts.
 
-Here (F) is *arbitrary* finite 3-CNF, not a limited test suite. The proposed semantic correspondence is
+For an arbitrary finite 3-CNF formula $F$, define the proposed native interface:
 
-[
-oxed{orall Fin3mathrm{CNF}:quad
-mathcal D_{m NEW}(F)=1iff F	ext{ has a satisfying Boolean assignment}.}
-]
+$$
+\boxed{\mathcal D_{\mathrm{NEW}}(F)
+=\operatorname{dec}\bigl(K_{\mathrm{NEW}}(\operatorname{enc}(F))\bigr)
+\in\{0,1\}.}
+\tag{1}
+$$
 
-The public route below exposes exact decision mathematics, SAT/UNSAT proof witnesses, and test procedures without disclosing the original protected NEW K. This release does not ascribe a particular unconditional P=NP or P≠NP verdict to the protected source without quoting and evaluating its actual theorem.
+The proposed correspondence to classical SAT is
 
-## 2. Exact generating formula
+$$
+\boxed{\forall F\in 3\mathrm{CNF},\quad
+\mathcal D_{\mathrm{NEW}}(F)=1
+\iff F \text{ admits a satisfying Boolean assignment}.}
+\tag{2}
+$$
 
-For (F=igwedge_{j=1}^{m} C_j) on (n) Boolean variables and assignment (ain{0,1}^n), let (v_a(ell)) be the truth value of literal (ell) and define
+Equation (2) is the central native *proposal* for independent examination. The original private kernel must be evaluated on its own actual source and derivations; this public note does not replace it with the classical auxiliary kernel.
 
-[
-e_j(a)=prod_{ellin C_j}(1-v_a(ell)),qquad
-N(F)=sum_{ain{0,1}^n}prod_{j=1}^{m}ig(1-e_j(a)ig).
-]
+## II. Exact parent formula and proof
 
-The empty-clause product is 1, as required. Then (N(F)) is **exactly the number of satisfying assignments**, and therefore
+Let $F=\bigwedge_{j=1}^m C_j$ use $n$ variables. For a Boolean assignment $a$ and literal $\ell$, let $v_a(\ell)$ be its truth value. Define
 
-[
-oxed{mathcal D(F)=mathbf 1[N(F)>0].}
-	ag{A}
-]
+$$
+e_j(a)=\prod_{\ell\in C_j}(1-v_a(\ell)),\qquad
+N(F)=\sum_{a\in\{0,1\}^n}\prod_{j=1}^{m}(1-e_j(a)).
+\tag{3}
+$$
 
-*Proof:* For each assignment, (e_j(a)=1) exactly if clause (C_j) is false. Hence (prod_j(1-e_j(a))) equals 1 exactly for a satisfying assignment. Summing counts all such assignments once.
+A product over an empty clause equals one. Each $e_j(a)$ is one exactly when clause $j$ is false; therefore the product over clauses is one exactly when *all* clauses are true. This proves that $N(F)$ is the exact count of satisfying assignments, giving
 
-Equation (A) specifies the desired answer for every finite 3-SAT instance. Evaluation by raw summation is exponential; a more efficient evaluator must be justified independently.
+$$
+\boxed{\mathcal D(F)=\mathbf 1\{N(F)>0\}.}
+\tag{4}
+$$
 
-## 3. Public proof-carrying child kernel
+Equation (4) is an exact decision specification, but naive enumeration of all $2^n$ assignments is not itself a polynomial-time method.
 
-The source-preserved public v3 code performs Davis–Putnam variable elimination, with independent SAT assignment or UNSAT resolution certificates.
+## III. Public child kernel and mathematically checkable answers
 
-Partition clauses into (G) (not mentioning (x)), ({xee A_i}) and ({
-eg xee B_j}). Then
+For any variable $x$, partition clauses as $G$ (clauses omitting $x$), $x\vee A_i$ and $\neg x\vee B_j$. Exact Davis–Putnam elimination gives
 
-[
-oxed{exists x,Fiff Glandigwedge_{i,j}(A_iee B_j).}
-	ag{B}
-]
+$$
+\boxed{\exists x\,F\iff
+G\land\bigwedge_{i,j}(A_i\vee B_j).}
+\tag{5}
+$$
 
-*Proof:* Every assignment satisfying the left side makes each resolvent true. Conversely, from any assignment satisfying the right side, set (x=1) if a positive residual (A_i) is false, and (x=0) otherwise. The resolvents guarantee all remaining clauses are satisfied.
+**Proof.** A satisfying assignment of $F$ satisfies all resolvents $A_i\vee B_j$. Conversely, if the right side is satisfied, set $x=1$ when any positive residual $A_i$ is false; the resolvents then force all $B_j$ true. Otherwise set $x=0$. All removed clauses are satisfied. Repeating this operation preserves satisfiability.
 
-Repeated application of (B) either yields a valid assignment (reconstructed in reverse elimination order) or an empty-clause resolution refutation. A verifier checks proof steps and the final Boolean decision independently. These are genuine mathematical certificates, not screenshots or success counters.
+The [public v3 kernel](./width_kernel_v3.py) returns one of two proof-carrying outcomes:
 
-## 4. Derived structural complexity theorem
+- **SAT:** a complete Boolean assignment that satisfies every original clause.
+- **UNSAT:** a finite directed sequence of resolution steps deriving the empty clause from the input axioms.
 
-For a fixed elimination order (pi), let (w_i) be the number of as-yet-uneliminated neighbors of variable (i) in the filled primal graph, and (w=max_i w_i). Since each neighbor has three clause-presence states (positive, negative, absent), a deduplicating eliminator encounters at most (3^{w_i}) different positive residual clauses and (3^{w_i}) negative residual clauses.
+The [independent verifier](./independent_verify_v3.py) replays the answer and resolution work without trusting the self-reported verdict or counters. Neither file exposes or claims to execute protected NEW K.
 
-Consequently, for this specified public algorithm,
+## IV. Mathematical complexity result for the public child
 
-[
-oxed{P(F,pi)le sum_i9^{w_i}le n9^w,}
-quad
-oxed{S(F,pi)le sum_i3^{w_i},}
-	ag{C}
-]
+Fix a supplied variable-elimination order $\pi$. Let $w_i$ denote the number of later neighbors of eliminated variable $i$ in its filled primal graph and $w=\max_i w_i$. A residual clause on $w_i$ Boolean variables has at most $3^{w_i}$ distinct, non-tautological signed support patterns. Thus the positive and negative clause buckets each have at most $3^{w_i}$ members. The exact resolution-pair count and number of new distinct proof steps satisfy
 
-where (P) is the number of resolution-pair checks and (S) is the number of newly derived distinct non-tautological resolution clauses. With appropriate polynomial-cost data structures, the decision method has bit-complexity (operatorname{poly}(|F|)9^w). When an elimination order of logarithmic induced width is supplied, this is polynomial in input size.
+$$
+\boxed{P(F,\pi)\le\sum_i9^{w_i}\le n9^w,}
+\tag{6}
+$$
 
-This width-parameterized result is established SAT mathematics; its contribution here is the V.A. explicit proof, test receipts, and independent replay interface. Equation (C) does *not* assert that arbitrary 3-CNF always has logarithmic width.
+$$
+\boxed{S(F,\pi)\le\sum_i3^{w_i}.}
+\tag{7}
+$$
 
-## 5. Exact native-prediction bridge
+With polynomial-cost data structures, this particular algorithm admits a bit-complexity bound of the form $\operatorname{poly}(|F|)9^w$. Given an elimination order with $w=O(\log |F|)$, that bound is polynomial. This is width-parameterized SAT mathematics, not a lower bound against every competing algorithm, and it does not assert arbitrary instances have logarithmic width.
 
-Set
+## V. Exact prediction bridge for corrected NEW K
 
-[
-M_F=rac{N(F)}{2^n}.
-]
+Set $M_F=N(F)/2^n$. Since $N(F)$ is a nonnegative integer, $M_F=0$ for UNSAT or $M_F\ge2^{-n}$ for SAT. Therefore
 
-Either (M_F=0) (UNSAT) or (M_Fge 2^{-n}) (SAT). Thus any exact or rigorously bounded approximation satisfying
+$$
+\boxed{|\widehat M_F-M_F|<2^{-(n+1)}
+\quad\Longrightarrow\quad
+\mathcal D(F)=\mathbf 1\{\widehat M_F>2^{-(n+1)}\}.}
+\tag{8}
+$$
 
-[
-oxed{|widehat M_F-M_F|<2^{-(n+1)}}
-	ag{D}
-]
+**Proof.** In the UNSAT case the strict error is less than the midpoint, so the output lies below the threshold. In the SAT case the smallest positive count places the approximation strictly above the midpoint.
 
-permits the exact decision
+A precise sufficient theorem for a classical $P=NP$ conclusion is:
 
-[
-oxed{mathcal D(F)=mathbf 1[widehat M_F>2^{-(n+1)}].}
-	ag{E}
-]
+> **Conditional theorem.** If a corrected native NEW K produces, for *every* finite 3-CNF $F$, either the exact decision in (4) or an approximation satisfying (8), and if the total deterministic bit-operation cost of encoding, native evaluation and decoding is bounded by $c(1+|F|)^d$ for fixed constants $c,d$ independent of $F$, then 3-SAT lies in P, hence $P=NP$.
 
-*Proof:* In the UNSAT case, (D) implies (widehat M_F<2^{-(n+1)}). In the SAT case, (D) and (M_Fge2^{-n}) imply (widehat M_F>2^{-(n+1)}). The strict inequality matters.
+This implication is proved; whether the protected native source satisfies its antecedent is a separate source-specific mathematical examination. A proposed $P\ne NP$ conclusion requires a proof excluding *every* deterministic polynomial-time 3-SAT algorithm, not merely a high cost for the published child.
 
-This is the precise public interface for testing a claimed NEW K prediction result: supply the approximation, its interval/error witness, a sound encoding and decoding, and a uniform accounting of bit operations.
+## VI. Execution evidence already recorded
 
-### Consequence theorem (explicit quantifiers)
+The preserved November 12 public v3 research archive records:
 
-If the corrected native NEW K can, for every encoded finite 3-CNF (F), compute (mathcal D(F)) exactly—or calculate (widehat M_F) obeying (D)—with **uniform deterministic polynomial bit-time**, including native encoding, computation, and decoding, then 3-SAT belongs to P and hence (P=NP). This is a rigorously proved **conditional implication**, not a claim that the antecedent follows from the public v3 evaluator.
-
-A proposed (P
-e NP) route would instead require a universal lower-bound argument against all deterministic polynomial-time 3-SAT deciders, not only this particular eliminator. This release does not silently switch between the two routes.
-
-## 6. Executed public evidence
-
-The preserved November 12 v3 public package reports, for its own new checks (not the private historical examinations):
-
-| Witness | Recorded outcome |
-|---|---|
-| Independently verified SAT/UNSAT certificates | 364 / 364 |
-| SAT cases / UNSAT cases | 134 / 230 |
-| Negative-control tampering attempts rejected | 10 / 10 |
+| Public witness | Recorded result |
+|---|---:|
+| Independently replayed SAT/UNSAT certificates | 364 / 364 |
+| SAT / UNSAT cases | 134 / 230 |
+| Rehashed tampering controls rejected | 10 / 10 |
 | Exact rational midpoint perturbation checks | 360 / 360 |
-| Maximum size of the sparse test formulas | 512 variables |
-| Public v3 resolution-pair checks in these cases | 1,950 |
-| Public v3 derived proof steps in these cases | 1,518 |
+| Maximum sparse formula size | 512 variables |
+| Resolution-pair checks in recorded new tests | 1,950 |
+| Distinct derived steps in recorded new tests | 1,518 |
 
-These counts support reproducibility and the tested scope, not by themselves a universal polynomial-time result. Historical native examinations, including their protected nested source and private mathematical claims, retain independent custody; this publication neither re-executes nor revises them.
+These counts establish the recorded finite public exercise scope. They are not being reclassified as a universal proof merely by publishing them. The prior native examinations and their original protected source retain their separate standing.
 
-**Reproduce the public kernel:** see [public v3 kernel](./width_kernel_v3.py) and [independent verifier](./independent_verify_v3.py). The verifier supports a JSON list of receipts generated by the kernel. This publication deliberately excludes proprietary NEW K code and unpublished source records.
+## VII. Independent examination and public replication
 
-## 7. Independent examination invitation
+Run the source-disclosed public kernel on an arbitrary submitted 3-CNF and independently verify the returned receipt. Example:
 
-Examiners are invited to challenge or extend the work with a concrete formula, counterexample, a failed line of proof, an alternative native-to-classical correspondence, or an independently reproducible complexity witness.
+\`\`\`python
+from width_kernel_v3 import solve
+from independent_verify_v3 import audit_receipt
 
-Questions to test:
-- Does each returned SAT assignment satisfy its source clauses, or does each UNSAT certificate derive the empty clause?
-- Are the public resource bounds valid for their stated elimination order?
-- Does an asserted corrected NEW K evaluator preserve the exact SAT decision for *every* 3-CNF?
-- Is the claimed complexity measured in uniform classical bit operations, including all native transformations?
+F = {"n": 1, "clauses": [[1], [-1]]}
+receipt = solve(F)
+assert receipt["decision"] == "UNSAT"
+assert audit_receipt(receipt)
+print(receipt["decision"])
+\`\`\`
 
-**Proof Before Power.** The objective is to make the author's proposed answer inspectable and extensible, not to require prior institutional acceptance.
+Reviewers may test the formulas, the width/step bounds, proof soundness, generated witnesses and the proposed native-to-classical correspondence. They are invited to submit explicit counterexamples, mathematical corrections, compatible native witnesses or constructive extensions.
 
-## 8. Custody and limitations of this release
+## VIII. Provenance and publication boundary
 
-- Original NEW K/URK mathematical internals are protected and not published here.
-- The public proof-carrying v3 kernel is an independently described auxiliary evaluator, not the original NEW K.
-- Later private native examinations are neither invalidated nor certified by the contents of this public addendum.
-- This addendum states the author's **proposed program**, exact supporting mathematical identities, public soundness theorem, and verified finite evidence. It makes no assertion of an independently authenticated unrestricted complexity conclusion without the corresponding source theorem.
-- The prior published [Examination 91 custody note](./EXAMINATION-91-PUBLIC-STATUS.md) remains unchanged.
+- Author's proposed URK/NEW K research is preserved as authored, not overwritten by a conventional SAT implementation.
+- The linked public v3 auxiliary code and verifier are source-disclosed; the protected NEW K is **not** included.
+- The historically published [Examination 91 status record](./EXAMINATION-91-PUBLIC-STATUS.md) is unchanged. It does not purport to summarize later native examinations.
+- This document is an *author-proposed mathematical publication*. It reports exactly which supporting formulas are proven within the public artifact and which native conclusion is proposed for examination.
 
-**Researcher contact and independent review:** [V.A. Proof Estate](../../reviewer-route.html).
+**Proof Before Power.** [V.A. Proof Estate independent examiner route](../../reviewer-route.html).
