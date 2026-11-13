@@ -1,6 +1,6 @@
 {
   "schema": "deagle-mathematics-index/v1",
-  "updated": "2026-11-11",
+  "updated": "2026-11-13",
   "owner": "Terry Allen Snyder",
   "entries": [
     {
@@ -98,6 +98,26 @@
       "original_sources_public": false,
       "source_provenance_retained": true,
       "status": "Public source-preserving mathematical model for generic coupled infrastructure continuity. Exact finite cut obstruction, constructive flow examples, conditional admission invariance, and monotone debt reserve. Seven rational scenario checks, scoped certificates and linked receipts; not field validation or proof of physical cascade prevention."
+    },
+    {
+      "id": "consequence-signature-calculus-v1-2026-04-30",
+      "title": "Consequence Signature Calculus v1 — Native Mathematical Formalization",
+      "record": "consequence-signature-calculus.html",
+      "manifest": "research/consequence-signature-calculus/PUBLIC_RELEASE_MANIFEST.json",
+      "original_date": "2026-04-30",
+      "public_release_date": "2026-11-13",
+      "original_title": "Universal Resolving Structure — Consequence Signature Calculus v1",
+      "original_attribution": "Prepared for Terry Snyder",
+      "pdf_filename": "Universal_Resolving_Structure_Consequence_Signature_Calculus_v1_2026-04-30.pdf",
+      "pdf_url": "research/consequence-signature-calculus/Universal_Resolving_Structure_Consequence_Signature_Calculus_v1_2026-04-30.pdf",
+      "pdf_sha256": "e17250eca29c37e708b131795f43431510e4ae8e49dafcaaa6fc92f48a766e61",
+      "pdf_bytes": 128780,
+      "pages": 6,
+      "pdf_hosted": true,
+      "source_unchanged": true,
+      "status": "Original source-preserving mathematical formalization: consequence signature, model-defined admissibility and binding, breach and restart classification. Independent external review and claims of physical universality are not included.",
+      "catalog_number": "005",
+      "index_kind": "published_mathematical_research"
     }
   ],
   "release_correction": "Prior 28-page draft record superseded before public PDF upload; that draft contained native mathematical sections and was not published on Deagle.",

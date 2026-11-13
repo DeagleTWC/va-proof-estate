@@ -1,0 +1,27 @@
+{
+  "schema": "deagle.mathematics.public_release_manifest.v1",
+  "release_id": "DEAGLE-MATH-CSC-005-2026-11-13",
+  "title": "Universal Resolving Structure — Consequence Signature Calculus v1",
+  "research_custodian": "Terry Allen Snyder / V.A. Proof Estate",
+  "source_title_date": "2026-04-30",
+  "publication_date": "2026-11-13",
+  "source_note": "The source PDF states 'Prepared for Terry Snyder'.",
+  "original_source_unchanged": true,
+  "source_pdf": "research/consequence-signature-calculus/Universal_Resolving_Structure_Consequence_Signature_Calculus_v1_2026-04-30.pdf",
+  "source_sha256": "e17250eca29c37e708b131795f43431510e4ae8e49dafcaaa6fc92f48a766e61",
+  "source_bytes": 128780,
+  "pages": 6,
+  "record": "consequence-signature-calculus.html",
+  "mathematical_scope": "A formal consequence-signature model with defined admissibility, viability, authority, breach and coherence predicates, and its model-level consequences.",
+  "stated_core_relation": "Bind(x) iff Phi(x)>=0 and A(x)>=0 and U(x)=1 and x in Viab(R) and B(x)=0 and H(x)>=H_min",
+  "limitations": [
+    "No independently attached review certificate",
+    "No claim of empirical universality",
+    "No protected original kernel executable supplied",
+    "Not a formal proof that real-world consequences satisfy all stated predicates"
+  ],
+  "publication_class": "Original mathematical formalization",
+  "evidence_kind": "Original historical authored-source manuscript; no new execution performed for release",
+  "private_source_disclosed": false,
+  "original_drive_file_id": "1v1iGu1bu6A9WkPGarqbSJ7zYRuP1997o"
+}
