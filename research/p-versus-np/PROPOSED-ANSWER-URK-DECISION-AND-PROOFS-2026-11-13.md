@@ -124,7 +124,7 @@ These counts establish the recorded finite public exercise scope. They are not b
 
 Run the source-disclosed public kernel on an arbitrary submitted 3-CNF and independently verify the returned receipt. Example:
 
-\`\`\`python
+```python
 from width_kernel_v3 import solve
 from independent_verify_v3 import audit_receipt
 
@@ -133,7 +133,7 @@ receipt = solve(F)
 assert receipt["decision"] == "UNSAT"
 assert audit_receipt(receipt)
 print(receipt["decision"])
-\`\`\`
+```
 
 Reviewers may test the formulas, the width/step bounds, proof soundness, generated witnesses and the proposed native-to-classical correspondence. They are invited to submit explicit counterexamples, mathematical corrections, compatible native witnesses or constructive extensions.
 
