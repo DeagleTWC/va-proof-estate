@@ -33,6 +33,15 @@ def main():
  if len(data)!=size or sha!=expected:raise SystemExit("Source does not match release manifest; STOP")
  sess=requests.Session()
  sess.headers.update({"Authorization":"Bearer "+token,"User-Agent":"VA-Public-Research-Transfer/1.0 (+https://github.com/DeagleTWC/va-proof-estate)"})
+ # Check token identity through non-mutating authenticated endpoints before any upload.
+ checks=[
+   ("legacy-deposits","https://zenodo.org/api/deposit/depositions?page=1&size=1"),
+   ("user-records","https://zenodo.org/api/user/records?size=1"),
+   ("profile","https://zenodo.org/api/me")
+ ]
+ for label,url in checks:
+  rr=sess.get(url,timeout=30)
+  print("AUTH_CHECK",label,rr.status_code,rr.text[:160] if rr.status_code>=400 else "accessible")
  base=f"{URL}/{rid}/draft"
  d=sess.get(base,timeout=40)
  print("Zenodo draft read HTTP",d.status_code)
