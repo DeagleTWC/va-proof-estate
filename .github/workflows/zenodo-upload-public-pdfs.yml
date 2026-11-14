@@ -1,0 +1,30 @@
+name: Zenodo upload original public research PDFs
+
+on:
+  workflow_dispatch:
+    inputs:
+      research:
+        description: "Existing Zenodo record to attach its original manuscript PDF"
+        type: choice
+        options:
+          - grid-k1
+          - adg
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout original public research
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Verify and upload original PDF to existing Zenodo draft
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+          RESEARCH: ${{ inputs.research }}
+        run: python scripts/zenodo_upload_existing_public_pdfs.py "$RESEARCH"
