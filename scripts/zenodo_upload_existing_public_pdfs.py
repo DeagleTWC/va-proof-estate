@@ -1,100 +1,85 @@
 #!/usr/bin/env python3
-"""Upload the two already-public mathematical manuscripts to their EXISTING Zenodo drafts.
-Does not create records or publish. Verification prevents substituting other files.
+"""Attach only original public PDFs to two existing Zenodo RDM draft records.
+Official current InvenioRDM file upload protocol; does NOT publish records.
 """
-import hashlib
-import os
-import pathlib
-import sys
-import requests
+import hashlib, os, pathlib, sys, requests
 
-API = "https://zenodo.org/api"
 ROOT = pathlib.Path(__file__).resolve().parents[1]
+API = "https://zenodo.org/api/records"
 TARGETS = {
-    "grid-k1": (
-        24194644,
+    "grid-k1": (24194644,
         "research/grid-k1/Snyder_GRID_K1_Infrastructure_Continuity_Formal_Proofs_2026-11-11.pdf",
         "57ae364ba9ddc398ac8b8b02c19ad04ed0ec2c1b3478d28d642e677412308ddc",
-        320368,
-        "GRID-K1",
-    ),
-    "adg": (
-        24194875,
+        320368, "GRID-K1"),
+    "adg": (24194875,
         "research/admissibility-debt-geometry/Snyder_Admissibility_Debt_Geometry_Formal_Proofs_2026-11-11.pdf",
         "d5efe3dd89c8a7cca5e097292a8276df7884383d7ec0154a81f7d9b5ebe81e57",
-        302294,
-        "Admissibility",
-    ),
+        302294, "Admissibility"),
 }
 
+def expect(response, action, ok=(200, 201, 202)):
+    print(action, "HTTP", response.status_code)
+    if response.status_code not in ok:
+        print("Zenodo error:", response.text[:900])
+        raise SystemExit("Zenodo operation failed: " + action)
+    return response.json()
+
+def files_list(result):
+    entries = result.get("entries", result) if isinstance(result,dict) else result
+    if isinstance(entries, dict):
+        return [dict(x, key=k) if isinstance(x,dict) and not x.get("key") else x for k,x in entries.items()]
+    return entries if isinstance(entries,list) else []
+
 def main():
-    if len(sys.argv) != 2 or sys.argv[1] not in TARGETS:
-        raise SystemExit("Select one of: grid-k1 or adg")
-    token = os.environ.get("ZENODO_TOKEN")
-    if not token:
-        raise SystemExit("Missing ZENODO_TOKEN; no upload attempted")
-
-    target_id, file_rel, expected_sha, expected_size, title_word = TARGETS[sys.argv[1]]
-    path = ROOT / file_rel
-    data = path.read_bytes()
-    sha = hashlib.sha256(data).hexdigest()
-    if len(data) != expected_size or sha != expected_sha:
-        raise SystemExit("Source bytes failed frozen release-manifest SHA-256/size; upload ABORTED.")
-
-    sess = requests.Session()
+    if len(sys.argv)!=2 or sys.argv[1] not in TARGETS:
+        raise SystemExit("Choose grid-k1 or adg")
+    token=os.environ.get("ZENODO_TOKEN")
+    if not token: raise SystemExit("Missing authenticated GitHub Zenodo secret; no upload")
+    rid, rel_path, sha, size, title_prefix=TARGETS[sys.argv[1]]
+    p=ROOT/rel_path
+    data=p.read_bytes()
+    if len(data)!=size or hashlib.sha256(data).hexdigest()!=sha:
+        raise SystemExit("Original public PDF hash or size mismatch; NO UPLOAD.")
+    sess=requests.Session()
     sess.headers.update({
-        "Authorization": "Bearer " + token,
-        "User-Agent": "VA-Proof-Estate-Zenodo-Transfer/1.0 (+https://github.com/DeagleTWC/va-proof-estate)",
+        "Authorization":"Bearer "+token,
+        "User-Agent":"VA-Public-Research-Zenodo-PDF-Transfer/1.0 (+https://github.com/DeagleTWC/va-proof-estate)"
     })
-    resp = sess.get(f"{API}/deposit/depositions/{target_id}", timeout=45)
-    resp.raise_for_status()
-    draft = resp.json()
-    title = draft.get("metadata", {}).get("title", "")
-    if title_word.lower() not in title.lower():
-        raise SystemExit(f"Wrong record title for target {target_id}; upload ABORTED.")
-    if draft.get("submitted") or draft.get("state") in ("done", "published", "submitted"):
-        raise SystemExit("Deposit is already published; do not alter it.")
-    existing = draft.get("files") or []
-    name = path.name
-    previous = [f for f in existing if f.get("filename", f.get("key", f.get("name"))) == name]
-    if previous:
-        print("Already listed in draft:", name)
+    base=f"{API}/{rid}/draft"
+    draft=expect(sess.get(base,timeout=35),"GET current Zenodo draft")
+    title=draft.get("metadata",{}).get("title","")
+    if title_prefix.lower() not in title.lower() or str(draft.get("id"))!=str(rid):
+        raise SystemExit(f"Wrong Zenodo draft identity or title: id={rid} title={title!r}")
+    print("Verified draft title:",title)
+    files_base=base+"/files"
+    entries=files_list(expect(sess.get(files_base,timeout=35),"GET current draft file list"))
+    name=p.name
+    existing=[f for f in entries if f.get("key",f.get("filename",f.get("name")))==name]
+    if existing:
+        if existing[0].get("status")!="completed":
+            raise SystemExit("Same-name file is in unfinished state; do not overwrite.")
+        print("Existing completed file; verifying.")
     else:
-        bucket = draft.get("links", {}).get("bucket", "")
-        if not bucket.startswith("https://zenodo.org/api/files/"):
-            raise SystemExit("Missing authenticated Zenodo file-bucket URL.")
-        result = sess.put(
-            f"{bucket}/{name}",
-            data=data,
-            headers={"Content-Type": "application/pdf"},
-            timeout=120,
-        )
-        if result.status_code not in (200, 201):
-            print("Upload HTTP status:", result.status_code, result.text[:600])
-            raise SystemExit("Zenodo rejected file PUT.")
-        file_result = result.json()
-        if int(file_result.get("size", -1)) != len(data):
-            raise SystemExit("Zenodo uploaded byte count mismatch; STOP.")
-        print("Uploaded", file_result.get("key"), file_result.get("size"), "bytes")
+        expect(sess.post(files_base,json=[{"key":name}],timeout=35),"POST initialize PDF")
+        expect(sess.put(files_base+"/"+name+"/content",data=data,
+                 headers={"Content-Type":"application/octet-stream"},
+                 timeout=90),"PUT original PDF bytes",ok=(200,201))
+        committed=expect(sess.post(files_base+"/"+name+"/commit",timeout=90),"POST commit PDF")
+        print("Commit status",committed.get("status"),"size",committed.get("size"))
+    state=files_list(expect(sess.get(files_base,timeout=35),"GET verify committed PDF"))
+    matches=[f for f in state if f.get("key",f.get("filename",f.get("name")))==name]
+    if not matches: raise SystemExit("PDF missing from Zenodo draft.")
+    remote=matches[0]
+    if remote.get("status")!="completed":
+        raise SystemExit("Zenodo has not committed PDF (status "+str(remote.get("status"))+")")
+    if int(remote.get("size",-1))!=size:
+        raise SystemExit("Remote committed file size mismatch")
+    md5=str(remote.get("checksum","")).split(":")[-1]
+    if md5 and md5 != hashlib.md5(data).hexdigest():
+        raise SystemExit("Remote MD5 checksum mismatch")
+    print("PDF VERIFIED AND ATTACHED to draft",rid, name, size,"bytes.")
+    print("SHA256",sha)
+    print("DRAFT_URL",f"https://zenodo.org/uploads/{rid}")
+    print("NOTICE: NOT YET PUBLISHED. Publication requires final copyright review.")
 
-    verified = sess.get(f"{API}/deposit/depositions/{target_id}/files", timeout=45)
-    verified.raise_for_status()
-    files = verified.json()
-    hits = [f for f in files if f.get("filename", f.get("key", f.get("name"))) == name]
-    if not hits:
-        raise SystemExit("Uploaded PDF absent from Zenodo file listing.")
-    found = hits[0]
-    remote_bytes = found.get("filesize", found.get("size"))
-    if int(remote_bytes) != expected_size:
-        raise SystemExit("Zenodo file size differs from original.")
-    remote_checksum = str(found.get("checksum", "")).split(":")[-1]
-    if remote_checksum and remote_checksum != hashlib.md5(data).hexdigest():
-        raise SystemExit("Zenodo remote file checksum differs from original.")
-    print("UPLOAD VERIFIED: draft", target_id)
-    print("File:", name)
-    print("Size:", expected_size, "SHA-256:", sha)
-    print("Draft URL:", f"https://zenodo.org/uploads/{target_id}")
-    print("Publication deliberately not triggered here; verify copyright settings in Zenodo UI.")
-
-if __name__ == "__main__":
-    main()
+if __name__=="__main__":main()
