@@ -1,3 +1,5 @@
+# Existing pilot, layer and freeze lineage — public publication index
+
 ## TMU-referenced original recorded staging source and two receipts recovered
 
 [April original saved source review](TMU-ORIGINAL-STAGING-EVIDENCE-REVIEW.md) and [machine-readable candidate ledger](TMU-RECORDED-STAGING-CANDIDATE.json) establish a seven-file historical email-attachment source set from April 2026, including the original two-record receipt bundle referred to by saved test reports. The five logged source gate reports say PASS, with an EXECUTE and REFUSE source outcome and two saved replay comparisons. A private byte audit reconciles receipt case identifiers, state strings and timing subspan totals. This is not a separately authenticated native V.A. production run, independent externally sensed effect or approved release of a TMU partner's private data. Original source bytes and private fingerprints remain outside the public site.
@@ -6,7 +8,6 @@
 
 The [Deagle whole-system atlas](../end-to-end.html), [twelve-stage technical evidence map](FULL-END-TO-END-REPRESENTATION.md), and [39-public-source classified provenance register](END-TO-END-ESTATE-REGISTER.json) now unite the earlier public proof routes under one public reading/examination home. Each source retains its publisher, frozen revision where independently known, commercial attribution and proof scope; records elsewhere in this index are not retrospectively reclassified as native V12 proof by appearance in the atlas.
 
-# Existing pilot, layer and freeze lineage — public publication index
 
 **Purpose:** Keep earlier V.A. / The Shift engineering, tests, pilots, freezes and independent review records distinct from newly introduced public-site milestone work. **Cycle 001 is a fresh public external examination lane, not the origin of V.A. engineering or its earlier pilot/testing history.**
 
@@ -83,7 +84,11 @@ The [Milestone 09 multi-pilot and real-workflow evidence path](MULTI-PILOT-EVIDE
 
 Before release clearance, use the [Milestone 08 private inventory utility](historical/LOCAL-INVENTORY.md) to fingerprint unchanged local source bytes and prepare a *private, incomplete* candidate. It never infers original freeze dates from file metadata or independently certifies outcomes. **Do not publish its file list or candidate.** This tool does not enumerate every historical pilot or freeze until their original records are reviewed.
 
-## Release-cleared original-carrier intake\n\nHistorical evidence that predates October 2026 is admitted only through the [historical original/public-extract procedure](historical/ADMISSION-GUIDE.md). The [public historical carrier register](historical/PUBLIC-CARRIER-REGISTER.json) currently holds no individual released original run packets; this is **not** a count of prior freezes or pilots. The [intentionally incomplete example entry](historical/CARRIER-ENTRY-TEMPLATE.json) documents required fields but is not proof and must fail preflight until real release-cleared sources are supplied. Original date and digest remain unchanged; later cleared extract receives a distinct digest/date. CI refuses missing bytes or false evidence promotion.\n\n## Carrier-level inventory: add originals without overwriting lineage
+## Release-cleared original-carrier intake
+
+Historical evidence that predates October 2026 is admitted only through the [historical original/public-extract procedure](historical/ADMISSION-GUIDE.md). The [public historical carrier register](historical/PUBLIC-CARRIER-REGISTER.json) currently holds no individual released original run packets; this is **not** a count of prior freezes or pilots. The [intentionally incomplete example entry](historical/CARRIER-ENTRY-TEMPLATE.json) documents required fields but is not proof and must fail preflight until real release-cleared sources are supplied. Original date and digest remain unchanged; later cleared extract receives a distinct digest/date. CI refuses missing bytes or false evidence promotion.
+
+## Carrier-level inventory: add originals without overwriting lineage
 
 A public entry for each safely releasable historic artifact should preserve:
 
