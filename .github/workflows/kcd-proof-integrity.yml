@@ -6,12 +6,14 @@ on:
       - 'category/**'
       - 'kcd/**'
       - 'scripts/validate_kcd_register.py'
+      - 'scripts/test_validate_kcd_register.py'
       - '.github/workflows/kcd-proof-integrity.yml'
   pull_request:
     paths:
       - 'category/**'
       - 'kcd/**'
       - 'scripts/validate_kcd_register.py'
+      - 'scripts/test_validate_kcd_register.py'
       - '.github/workflows/kcd-proof-integrity.yml'
   workflow_dispatch:
 permissions:
@@ -26,6 +28,8 @@ jobs:
           python-version: '3.11'
       - name: Verify exact KCD public source lineage and no unearned physical evidence promotion
         run: python scripts/validate_kcd_register.py
+      - name: Reject synthetic status promotion, forged packets, and standing inheritance
+        run: python scripts/test_validate_kcd_register.py
       - name: Check separate physical category files
         run: |
           test -s category/README.md
