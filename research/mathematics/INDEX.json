@@ -1,6 +1,6 @@
 {
   "schema": "deagle-mathematics-index/v1",
-  "updated": "2026-11-13",
+  "updated": "2026-11-14",
   "owner": "Terry Allen Snyder",
   "entries": [
     {
@@ -72,6 +72,8 @@
       "pdf_filename": "Snyder_Admissibility_Debt_Geometry_Formal_Proofs_2026-11-11.pdf",
       "pdf_url": "research/admissibility-debt-geometry/Snyder_Admissibility_Debt_Geometry_Formal_Proofs_2026-11-11.pdf",
       "pdf_hosted": true,
+      "zenodo_doi": "10.5281/zenodo.24194875",
+      "zenodo_url": "https://doi.org/10.5281/zenodo.24194875",
       "pdf_sha256": "d5efe3dd89c8a7cca5e097292a8276df7884383d7ec0154a81f7d9b5ebe81e57",
       "supporting_archive": "research/admissibility-debt-geometry/Snyder_Admissibility_Debt_Geometry_Source_Proofs_Witnesses_2026-11-11.zip",
       "supporting_archive_sha256": "96683a83906d33bb1bbf37b4237f8c949e8624af620810e398c996c043ba8599",
@@ -92,6 +94,8 @@
       "pdf_filename": "Snyder_GRID_K1_Infrastructure_Continuity_Formal_Proofs_2026-11-11.pdf",
       "pdf_url": "research/grid-k1/Snyder_GRID_K1_Infrastructure_Continuity_Formal_Proofs_2026-11-11.pdf",
       "pdf_hosted": true,
+      "zenodo_doi": "10.5281/zenodo.24194644",
+      "zenodo_url": "https://doi.org/10.5281/zenodo.24194644",
       "pdf_sha256": "57ae364ba9ddc398ac8b8b02c19ad04ed0ec2c1b3478d28d642e677412308ddc",
       "supporting_archive": "research/grid-k1/Snyder_GRID_K1_Exact_Proofs_and_Receipts_2026-11-11.zip",
       "supporting_archive_sha256": "6fbe4b24f1f8d356b82b0f4e9ac249cecb682abfe7e05f60c6609d00780f3587",
