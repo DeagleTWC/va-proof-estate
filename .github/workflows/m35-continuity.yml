@@ -12,6 +12,8 @@ on:
       - 'scripts/**'
       - 'README.md'
       - 'index.html'
+      - '*.html'
+      - 'va-gold-design.css'
       - 'consequence-challenge.*'
       - 'challenge/**'
       - 'foundation.html'
@@ -35,6 +37,8 @@ on:
       - 'scripts/**'
       - 'README.md'
       - 'index.html'
+      - '*.html'
+      - 'va-gold-design.css'
       - 'consequence-challenge.*'
       - 'challenge/**'
       - 'foundation.html'
@@ -98,6 +102,10 @@ jobs:
         run: python3 scripts/validate_public_media_assets.py
       - name: Reject tampered published media and missing icons
         run: python3 scripts/test_validate_public_media_assets.py
+      - name: Check V.A. visual identity, all top-level favicons and palette tamper controls
+        run: |
+          python3 scripts/validate_visual_identity.py
+          python3 scripts/test_validate_visual_identity.py
       - name: Check public pages against unapproved runtime data transmission
         run: python3 scripts/validate_static_public_safety.py
       - name: Test negative controls for external runtime calls and uploads

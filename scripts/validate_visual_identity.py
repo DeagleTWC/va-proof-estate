@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -74,6 +75,23 @@ def verify(root: Path = ROOT) -> list[str]:
         ):
             if token not in html:
                 errors.append("inconsistent site-wide brand: " + page + " " + token)
+    # Browser-tab identity applies to every top-level public route, not
+    # only the five pages covered by the shared gold stylesheet.
+    for page_file in sorted(root.glob("*.html")):
+        try:
+            html = page_file.read_text(encoding="utf-8")
+        except OSError:
+            errors.append("public browser icon page unreadable: " + page_file.name)
+            continue
+        icon_links = [
+            tag for tag in re.findall(r"<link[^>]*>", html, re.IGNORECASE)
+            if 'rel="icon"' in tag.lower()
+        ]
+        if len(icon_links) != 1 or not (
+            'href="favicon.png"' in icon_links[0]
+            or 'href="/va-proof-estate/favicon.png"' in icon_links[0]
+        ):
+            errors.append("missing or inconsistent V.A. browser icon: " + page_file.name)
     return errors
 
 

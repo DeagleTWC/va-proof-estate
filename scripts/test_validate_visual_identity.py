@@ -23,6 +23,12 @@ def run() -> None:
         assert any("missing or duplicate shared gold stylesheet" in x for x in verify(root))
         page.write_text(text, encoding="utf-8")
 
+        icon = '<link rel="icon" type="image/png" href="favicon.png">'
+        assert icon in text
+        page.write_text(text.replace(icon, "", 1), encoding="utf-8")
+        assert any("missing or inconsistent V.A. browser icon" in x for x in verify(root))
+        page.write_text(text, encoding="utf-8")
+
         page = root / "reviewer-route.html"
         text = page.read_text(encoding="utf-8")
         page.write_text(text.replace('class="va-sigil"', 'class="old-logo"', 1), encoding="utf-8")
