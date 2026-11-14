@@ -60,6 +60,15 @@ try{
  await page.locator('#ap-verify-form button').click();
  await page.locator('#ap-result[data-status=fail]').waitFor();
  assert.match(await page.locator('#ap-result').innerText(),/SHA-256 mismatch: neg-sensor.txt/);
+ // The witness declaration cannot be recycled as a measurement or receipt.
+ const reusedWitness=JSON.parse(JSON.stringify(packet));
+ reusedWitness.controls[1].receipt_file='witness.txt';
+ await page.locator('#ap-packet').setInputFiles({name:'witness-reuse.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(reusedWitness))});
+ await page.locator('#ap-originals').setInputFiles(originals);
+ await page.locator('#ap-verify-form button').click();
+ await page.waitForFunction(()=>document.querySelector('#ap-result')?.textContent?.includes('Original reused across roles: witness.txt'));
+ assert.equal(await page.locator('#ap-result').getAttribute('data-status'),'fail');
+ assert.match(await page.locator('#ap-result').innerText(),/Original reused across roles: witness.txt/);
  await page.setViewportSize({width:320,height:730});
  await page.waitForTimeout(150);
  const overflow=await page.evaluate(()=>({documentWidth:document.documentElement.scrollWidth,viewport:innerWidth}));

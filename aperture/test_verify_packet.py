@@ -97,6 +97,16 @@ class ApertureTests(unittest.TestCase):
         p = copy.deepcopy(self.packet)
         p["controls"][1]["receipt_file"] = "pos-receipt.txt"
         self.assertFalse(self.verify(p)["ok"])
+    def test_witness_statement_cannot_be_reused_as_measurement_or_receipt(self):
+        for field in ("measurement_file", "receipt_file"):
+            with self.subTest(field=field):
+                p = copy.deepcopy(self.packet)
+                p["controls"][0][field] = "witness-statement.txt"
+                result = self.verify(p)
+                self.assertFalse(result["ok"], result)
+                self.assertTrue(any("Original reused across roles:" in err
+                                    for err in result["errors"]), result)
+
     def test_no_independent_identity_conferred(self):
         p = copy.deepcopy(self.packet)
         p["challenge"]["examiner_id"] = "applicant"

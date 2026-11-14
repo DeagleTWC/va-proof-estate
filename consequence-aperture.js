@@ -48,7 +48,7 @@ function structure(p,errors){
   require(typeof r.measured_effect==='boolean','Measured-effect observation is required for '+r.kind,errors);
   for(const fld of ['measurement_file','receipt_file']){
    require(nameOK(r[fld])&&originals.has(r[fld]),r.kind+' '+fld+' requires named original.',errors);
-   if(nameOK(r[fld])){if(used.has(r[fld]))errors.push('Original reused across control roles: '+r[fld]);used.add(r[fld])}
+   if(nameOK(r[fld])){if(used.has(r[fld])||r[fld]===w.statement_file)errors.push('Original reused across roles: '+r[fld]);used.add(r[fld])}
   }
   require(r.measurement_file!==r.receipt_file,r.kind+' receipt cannot be its own measurement.',errors);
  }
