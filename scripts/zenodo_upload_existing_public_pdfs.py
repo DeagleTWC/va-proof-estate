@@ -46,7 +46,24 @@ def main():
         "User-Agent":"VA-Public-Research-Zenodo-PDF-Transfer/1.0 (+https://github.com/DeagleTWC/va-proof-estate)"
     })
     base=f"{API}/{rid}/draft"
-    draft=expect(sess.get(base,timeout=35),"GET current Zenodo draft")
+    response=sess.get(base,timeout=35)
+    if response.status_code != 200:
+        print("Draft lookup status", response.status_code, "message", response.text[:260])
+        me=sess.get("https://zenodo.org/api/me",timeout=25)
+        print("Zenodo token account test", me.status_code)
+        # Summarize only public research record IDs and titles; no account email/token in logs.
+        listing=sess.get("https://zenodo.org/api/user/records?is_published=false&size=100",timeout=35)
+        print("Zenodo user draft listing status",listing.status_code)
+        if listing.ok:
+            body=listing.json()
+            hits=body.get("hits",{}).get("hits",[]) if isinstance(body,dict) else []
+            print("Available draft count",len(hits))
+            for obj in hits:
+                title=str(obj.get("metadata",{}).get("title",""))
+                if any(word.lower() in title.lower() for word in ("GRID-K1","Admissibility")):
+                    print("Matching user draft",obj.get("id"),title[:100])
+        raise SystemExit("Target draft not visible through Zenodo API; no file upload attempted")
+    draft=response.json()
     title=draft.get("metadata",{}).get("title","")
     if title_prefix.lower() not in title.lower() or str(draft.get("id"))!=str(rid):
         raise SystemExit(f"Wrong Zenodo draft identity or title: id={rid} title={title!r}")
