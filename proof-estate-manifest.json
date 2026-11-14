@@ -408,10 +408,10 @@
     "researchIndexPath": "research/mathematics/INDEX.json",
     "classicalProofPdf": "research/navier-stokes/Snyder_Classical_Navier_Stokes_Proof_Extract_11pp.pdf",
     "originalRelease2_7IndexSHA256": "85f9df06066f6c0af26c42981eb8584c99d0a5ee9c437e1a6c0e565f7ebc908d",
-    "currentSiteIndexSHA256": "75d8658544208f20b1f29c6aaaebe9c4c7a90f46632a8dc7e5ccb57336d39d41",
+    "currentSiteIndexSHA256": "a061050213a5ef42574627dbdd15a049ba0a2f4540148b55652be49e0121f1b8",
     "standing": "Author-produced public research artifact, not independent mathematical certification.",
     "preservedOriginalReleaseIdentity": "2.7 / edition 09 — prior release hash preserved above, extended site surface identified as an addendum.",
     "verificationMethod": "Historical pinned release 2.7 digest remains sealed in mainFileSHA256; mutable deployed-site index is verified independently via currentSiteIndexSHA256."
   },
-  "currentSiteIndexSHA256": "75d8658544208f20b1f29c6aaaebe9c4c7a90f46632a8dc7e5ccb57336d39d41"
+  "currentSiteIndexSHA256": "a061050213a5ef42574627dbdd15a049ba0a2f4540148b55652be49e0121f1b8"
 }
