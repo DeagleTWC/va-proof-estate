@@ -47,8 +47,12 @@ def main():
     })
     # Read-only authentication preflight using Zenodo's documented legacy endpoint.
     # Print status codes only; never log bearer token or personal account fields.
+    public=requests.get("https://zenodo.org/api/records",params={"size":1},headers={"User-Agent":"VA-Public-Research-Zenodo-Diagnostic/1.0"},timeout=35)
+    print("ZENODO_PUBLIC_API_NO_AUTH_STATUS",public.status_code)
+    if not public.ok: print("ZENODO_PUBLIC_ERROR",public.text[:350].replace("\\n"," "))
     legacy=sess.get("https://zenodo.org/api/deposit/depositions",timeout=35)
     print("ZENODO_LEGACY_API_AUTH_STATUS",legacy.status_code)
+    if not legacy.ok: print("ZENODO_LEGACY_ERROR",legacy.text[:350].replace("\\n"," "))
     if legacy.ok:
         deposits=legacy.json()
         print("ZENODO_LEGACY_DEPOSIT_COUNT",len(deposits) if isinstance(deposits,list) else "nonlist")
