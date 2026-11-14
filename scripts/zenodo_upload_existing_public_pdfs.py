@@ -25,6 +25,7 @@ def main():
   raise SystemExit("Choose grid-k1 or adg")
  token=os.environ.get("ZENODO_TOKEN")
  if not token:raise SystemExit("No Zenodo token")
+ print("ZENODO_TOKEN_SHAPE", "length",len(token), "alphanumeric",token.isalnum(),"64_chars",len(token)==64)
  rid,rel,expected,size,word=TARGETS[sys.argv[1]]
  path=ROOT/rel
  data=path.read_bytes()
