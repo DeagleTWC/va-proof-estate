@@ -45,6 +45,21 @@ def main():
         "Authorization":"Bearer "+token,
         "User-Agent":"VA-Public-Research-Zenodo-PDF-Transfer/1.0 (+https://github.com/DeagleTWC/va-proof-estate)"
     })
+    # Read-only authentication preflight using Zenodo's documented legacy endpoint.
+    # Print status codes only; never log bearer token or personal account fields.
+    legacy=sess.get("https://zenodo.org/api/deposit/depositions",timeout=35)
+    print("ZENODO_LEGACY_API_AUTH_STATUS",legacy.status_code)
+    if legacy.ok:
+        deposits=legacy.json()
+        print("ZENODO_LEGACY_DEPOSIT_COUNT",len(deposits) if isinstance(deposits,list) else "nonlist")
+    current=sess.get("https://zenodo.org/api/user/records",timeout=35)
+    print("ZENODO_CURRENT_USER_RECORDS_STATUS",current.status_code)
+    if current.ok:
+        hits=current.json().get("hits",{}).get("hits",[])
+        print("ZENODO_CURRENT_USER_RECORDS_COUNT",len(hits))
+        for d in hits:
+            if str(d.get("id"))==str(rid):
+                print("ZENODO_TARGET_ID_IN_USER_RECORDS","yes")
     base=f"{API}/{rid}/draft"
     response=sess.get(base,timeout=35)
     if response.status_code != 200:
