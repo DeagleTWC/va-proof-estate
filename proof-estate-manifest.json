@@ -413,5 +413,5 @@
     "preservedOriginalReleaseIdentity": "2.7 / edition 09 — prior release hash preserved above, extended site surface identified as an addendum.",
     "verificationMethod": "Historical pinned release 2.7 digest remains sealed in mainFileSHA256; mutable deployed-site index is verified independently via currentSiteIndexSHA256."
   },
-  "currentSiteIndexSHA256": "a061050213a5ef42574627dbdd15a049ba0a2f4540148b55652be49e0121f1b8"
+  "currentSiteIndexSHA256": "4bc8efb49978417f35d7598e9f59292becc2f3efc6b9bd48bb1c70e2444ec21c"
 }
