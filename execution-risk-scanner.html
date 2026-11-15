@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>V.A. | Free Execution Risk Scanner — Proof Before Power</title>
+<meta name="description" content="Free, private-in-your-browser V.A. public-safe AI execution risk self-assessment. Twelve questions, instant classification, and downloadable report.">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src 'none'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<style>
+body{margin:0;background:#07090d;color:#f4f6f9;font-family:Arial,Helvetica,sans-serif}
+.wrap{max-width:1000px;margin:auto;padding:24px}
+.card{background:#101722;border:1px solid #2a3445;border-radius:22px;padding:22px;margin:18px 0}
+h1{font-size:38px;margin:0 0 10px} h2{margin:0 0 12px}
+p{color:#aeb8c8;line-height:1.55}
+.badge{display:inline-block;background:#2b2310;color:#ffe2a0;border:1px solid #8f7536;border-radius:999px;padding:7px 11px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}
+label{display:block;margin:15px 0;padding:14px;border:1px solid #2a3445;border-radius:16px;background:#0b111a}
+button{background:#151f2d;color:#f4f6f9;border:1px solid #46566f;border-radius:12px;padding:9px 13px;margin:8px 8px 0 0;cursor:pointer}
+button.active{background:#3b2f12;border-color:#d8b768;color:#ffe2a0}
+button.primary{background:#3b2f12;border-color:#d8b768;color:#ffe2a0;font-weight:bold}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.box{background:#0b111a;border:1px solid #2a3445;border-radius:16px;padding:16px}
+.big{font-size:32px;font-weight:bold;color:#ffe2a0}
+.gap{background:#080d14;border:1px solid #2a3445;border-radius:14px;padding:12px;margin:10px 0}
+small{color:#8390a3} pre{white-space:pre-wrap;background:#05070a;border:1px solid #2a3445;border-radius:16px;padding:15px;max-height:420px;overflow:auto}
+input{width:100%;box-sizing:border-box;background:#0b111a;color:#f4f6f9;border:1px solid #2a3445;border-radius:12px;padding:12px;margin:6px 0 12px}
+@media(max-width:800px){.grid{grid-template-columns:1fr}h1{font-size:30px}}
+
+:root{color-scheme:dark;--bg:#090807;--card:#120e0a;--ink:#f5ebdb;--muted:#c1ae8e;--gold:#f3cb80;--border:#574027}
+*{box-sizing:border-box}
+body{background:radial-gradient(ellipse at 80% 0%,#22180e 0%,transparent 40%),var(--bg);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+.wrap{max-width:1100px;padding:0 24px 72px}
+.card{background:var(--card);border-color:var(--border);border-radius:16px;padding:30px;margin:22px 0}
+h1{font-size:clamp(30px,5vw,51px);letter-spacing:-.04em;line-height:1.1}
+h2{font-size:22px;letter-spacing:-.025em}
+p,small{color:var(--muted)}
+a{color:var(--gold)}a:hover{text-decoration:underline}
+header{display:flex;gap:20px;align-items:center;justify-content:space-between;padding:22px 0 10px}
+.brand{display:flex;gap:12px;align-items:center;color:var(--ink);text-decoration:none}
+.mark{display:grid;place-items:center;width:45px;height:45px;border:1px solid var(--gold);border-radius:10px;font-weight:850;letter-spacing:-.08em;color:var(--gold);background:#1c150e}
+.brand-name{display:block;font-weight:780;letter-spacing:.14em;font-size:13px}.brand-sub{display:block;color:var(--muted);font-size:12px}
+.nav-actions{display:flex;gap:14px;align-items:center;font-size:13px}
+.badge{background:#2b2310;color:var(--gold);border-color:#9a7540}
+label{border-color:#463521;background:#17120d}
+button{border-color:#88633b;color:var(--ink);background:#1c160f}
+button:hover{border-color:var(--gold)}button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+button.active,button.primary{background:#483317;color:var(--gold);border-color:var(--gold)}
+.box,.gap,input,pre{background:#0e0a07;border-color:#463521;color:var(--ink)}
+.big{color:var(--gold)}
+.intro{font-size:17px;max-width:770px}
+.readme-note{border-left:2px solid var(--gold);padding-left:14px;color:var(--muted);font-size:13px}
+.pill{display:inline-block;border:1px solid #6a5131;border-radius:99px;padding:5px 10px;color:var(--gold);font-size:11px;margin:0 7px 7px 0}
+footer{font-size:12px;line-height:1.8;color:var(--muted);padding:18px 0}
+.progress{color:var(--gold);font-weight:700;font-size:12px}
+@media(max-width:800px){.grid{grid-template-columns:1fr}h1{font-size:34px}header{align-items:flex-start;flex-direction:column}.card{padding:20px}.wrap{padding:0 14px 36px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><a class="brand" href="https://deagletwc.github.io/va-proof-estate/"><span class="mark">V.A.</span><span><span class="brand-name">VERITAS AEGIS</span><span class="brand-sub">Proof Before Power · Public-safe examination</span></span></a><nav class="nav-actions" aria-label="Navigation"><a href="https://deagletwc.github.io/va-proof-estate/">Proof Estate</a><a href="https://deagletwc.github.io/va-proof-estate/reviewer-route.html">Reviewer route</a></nav></header>
+<div class="card">
+<div class="badge">Free visitor tool · No account required</div>
+<h1>V.A. Execution Risk Scanner</h1>
+<p class="intro"><b>12 questions. Instant indicative risk and governance capability scores, top gaps, and a downloadable self-assessment.</b></p>
+<div><span class="pill">Works in your browser</span><span class="pill">No account</span><span class="pill">No data submitted</span><span class="pill">Offline copy available</span></div>
+<p class="readme-note">Self-reported screening only: not a native V.A. execution, independent verification, audit, certification, or proof of safety. Do not enter secrets, personal information, or confidential customer details.</p>
+<p>Core question: can this AI system create consequence before governance catches it?</p>
+</div>
+
+<div class="card">
+<h2>Workflow</h2>
+<p>Answer for the system as it operates today, not its intended future state. All twelve Yes/No answers are required for a complete result.</p>
+<p class="progress" id="progress" aria-live="polite">0 of 12 answered</p>
+<input id="industry" maxlength="100" aria-label="Industry (optional)" placeholder="Industry (optional, e.g. manufacturing)">
+<input id="usecase" maxlength="180" aria-label="Use case (optional)" placeholder="Use case (optional; do not enter confidential details)">
+<div id="questions"></div>
+</div>
+
+<div class="card">
+<h2>Instant indicative result</h2>
+<div class="grid">
+<div class="box"><small>Indicative exposure band</small><div class="big" id="riskLevel">Incomplete</div></div>
+<div class="box"><small>Self-reported governance class</small><div class="big" id="layer">Incomplete</div></div>
+<div class="box"><small>Heuristic exposure score</small><div class="big" id="riskScore">—</div></div>
+<div class="box"><small>Self-reported control score</small><div class="big" id="capScore">—</div></div>
+</div>
+<p class="readme-note">These scores summarize user answers with fixed published weights. They do not measure actual effect formation, prove control effectiveness, or determine compliance.</p>
+</div>
+
+<div class="card">
+<h2>Top Gaps</h2>
+<div id="gaps">Complete the questions to see gaps.</div>
+</div>
+
+<div class="card">
+<h2>Report</h2>
+<button class="primary" onclick="makeReport()">Generate Report</button>
+<button onclick="copyReport()">Copy Report</button>
+<button onclick="downloadReport()">Download Report</button>
+<button onclick="resetAll()">Reset</button>
+<button onclick="downloadOffline()" title="Save a self-contained HTML copy of this public scanner">Download offline scanner</button>
+<pre id="report" tabindex="0" aria-label="Generated self-assessment report"></pre>
+<p class="readme-note">All questionnaire calculations run on your device. The site does not submit the form to a server; report files are created in your browser. Use the <a href="https://deagletwc.github.io/va-proof-estate/reviewer-route.html">reviewer route</a> for evidence-based examination.</p>
+</div>
+<footer>V.A. · Veritas Aegis · Proof Before Power. Source lineage: May 2026 public AI Execution Governance Risk Scanner; V.A. customer-facing presentation. <a href="https://deagletwc.github.io/va-proof-estate/">Back to the Proof Estate</a>. Protected native mathematics and implementation excluded.</footer>
+</div>
+
+<script>
+const qs=[
+["external","Can the AI trigger external systems, records, messages, payments, workflow changes, or operational actions?","risk",16],
+["sensitive","Does the system handle clinical, financial, legal, identity, employment, infrastructure, or sensitive data?","risk",12],
+["consequence","Can the system affect a customer, patient, employee, account, eligibility decision, legal position, or regulated record?","risk",18],
+["autonomy","Can the system expand tasks, tools, agents, data access, or pathways without renewed approval?","risk",16],
+["human_after","Does human review happen after operational consequence is already created?","risk",16],
+["blur","Can recommendation, approval, authorization, execution, and consequence be confused?","risk",12],
+["authority","Is authority verified at the moment of effect?","control",18],
+["scope","Is role, institution, jurisdiction, supervision, protocol, and use-case scope checked before effect?","control",15],
+["explicit","Is explicit authorization required before execution, instead of inferred conversational intent?","control",14],
+["refusal","Can the system explicitly REFUSE, HALT, NARROW, or ESCALATE before execution?","control",20],
+["receipt","Does the system emit deterministic evidence for admitted and refused outcomes?","control",15],
+["changed","Can stale authority, stale evidence, stale scope, or expired policy block continuation before effect?","control",18]
+];
+const rec={
+external:"Treat external action capability as consequence exposure requiring a pre-effect boundary.",
+sensitive:"Bind sensitive data paths to current authority and scope.",
+consequence:"Separate output generation from consequence-forming action.",
+autonomy:"Require renewed approval before expanding tools, agents, scope, or execution pathways.",
+human_after:"Move human authority checks before consequence formation.",
+blur:"Separate recommendation, approval, authorization, execution, and consequence as distinct states.",
+authority:"Add moment-of-effect authority verification.",
+scope:"Verify current scope before effect.",
+explicit:"Require explicit authorization. Do not infer execution authority from conversation.",
+refusal:"Add first-class REFUSE, HALT, NARROW, and ESCALATE outcomes before execution.",
+receipt:"Create deterministic evidence for admitted and refused outcomes.",
+changed:"Treat stale authority, evidence, scope, and expired policy as blockers."
+};
+let answers={};
+function draw(){
+document.getElementById("questions").innerHTML=qs.map((q,i)=>`<label><b>${i+1}. ${q[1]}</b><br><button class="${answers[q[0]]===true?'active':''}" onclick="ans('${q[0]}',true);return false;">Yes</button><button class="${answers[q[0]]===false?'active':''}" onclick="ans('${q[0]}',false);return false;">No</button></label>`).join("");
+update();
+}
+function ans(id,v){answers[id]=v;draw();}
+function calc(){
+let complete=Object.keys(answers).length===qs.length;
+let riskMax=qs.filter(q=>q[2]=="risk").reduce((s,q)=>s+q[3],0);
+let controlMax=qs.filter(q=>q[2]=="control").reduce((s,q)=>s+q[3],0);
+let risk=qs.filter(q=>q[2]=="risk"&&answers[q[0]]===true).reduce((s,q)=>s+q[3],0);
+let missing=qs.filter(q=>q[2]=="control"&&answers[q[0]]===false).reduce((s,q)=>s+q[3],0);
+let controls=qs.filter(q=>q[2]=="control"&&answers[q[0]]===true).reduce((s,q)=>s+q[3],0);
+let riskScore=complete?Math.round(((risk+missing)/(riskMax+controlMax))*100):null;
+let cap=complete?Math.round((controls/controlMax)*100):null;
+let layer="Incomplete";
+if(complete){
+ if(cap>=85 && answers.changed) layer="Class 5";
+ else if(cap>=65 && answers.authority && answers.refusal && answers.receipt) layer="Class 4";
+ else if(cap>=50) layer="Class 3";
+ else if(cap>=35) layer="Class 2";
+ else if(cap>=20) layer="Class 1";
+ else layer="Class 0";
+}
+let level="Incomplete";
+if(complete){ if(riskScore>=81)level="Critical"; else if(riskScore>=66)level="High"; else if(riskScore>=46)level="Material Gap"; else if(riskScore>=21)level="Managed / Incomplete"; else level="Low Exposure"; }
+let gaps=qs.filter(q=> q[2]=="risk"?answers[q[0]]===true:answers[q[0]]===false).slice(0,5);
+return {complete,riskScore,cap,layer,level,gaps};
+}
+function update(){
+document.getElementById("progress").textContent=`${Object.keys(answers).length} of ${qs.length} answered`;
+let r=calc();
+document.getElementById("riskLevel").textContent=r.level;
+document.getElementById("layer").textContent=r.layer;
+document.getElementById("riskScore").textContent=r.complete?r.riskScore:"—";
+document.getElementById("capScore").textContent=r.complete?r.cap:"—";
+document.getElementById("gaps").innerHTML=r.gaps.length?r.gaps.map(g=>`<div class="gap"><b>${g[1]}</b><br><small>${rec[g[0]]}</small></div>`).join(""):"Complete the questions to see gaps.";
+}
+function reportText(){
+let r=calc();
+let industry=document.getElementById("industry").value;
+let usecase=document.getElementById("usecase").value;
+return `V.A. Execution Risk Scanner — Public Self-Assessment
+Self-reported heuristic; not independent evidence or native execution.
+
+Industry: ${industry}
+Use case: ${usecase}
+
+Risk Level: ${r.level}
+Risk Score: ${r.complete?r.riskScore:"Incomplete"}/100
+Governance Capability Score: ${r.complete?r.cap:"Incomplete"}/100
+Governance Layer: ${r.layer}
+
+Top Gaps:
+${r.gaps.length?r.gaps.map((g,i)=>`${i+1}. ${g[1]}
+   Recommendation: ${rec[g[0]]}`).join("\n"):"Complete all questions to identify gaps."}
+
+Public-safe recommendations:
+- Separate recommendation from authorization.
+- Verify authority at the moment of effect.
+- Treat stale authority, stale evidence, stale scope, and expired policy as blockers.
+- Require refusal, halt, narrow, or escalation outcomes before execution.
+- Preserve deterministic evidence for admitted and refused outcomes.
+
+Scoring notice:
+Scores and bands are fixed heuristics based only on selected answers. They are not measured risk probabilities, safety proof, certification, compliance assessment, or independent verification.
+
+Protected boundary notice:
+This scanner suggests governance screening classifications. It does not disclose protected runtime architecture, proof-object design, proprietary admissibility mechanics, corridor design, or implementation internals.`;
+}
+function makeReport(){let r=calc();document.getElementById("report").textContent=r.complete?reportText():`Please answer all 12 questions first (${Object.keys(answers).length}/12 complete).`; }
+async function copyReport(){makeReport();if(!calc().complete)return;try{await navigator.clipboard.writeText(reportText());}catch(e){document.getElementById("report").focus();}}
+function downloadReport(){if(!calc().complete){makeReport();return;}let b=new Blob([reportText()],{type:"text/markdown"});let u=URL.createObjectURL(b);let a=document.createElement("a");a.href=u;a.download="VA-execution-risk-self-assessment.md";a.click();URL.revokeObjectURL(u);}
+function downloadOffline(){let b=new Blob(["<!doctype html>\n"+document.documentElement.outerHTML],{type:"text/html;charset=utf-8"});let u=URL.createObjectURL(b);let a=document.createElement("a");a.href=u;a.download="VA-Execution-Risk-Scanner-Offline.html";a.click();setTimeout(()=>URL.revokeObjectURL(u),3000);}
+function resetAll(){answers={};document.getElementById("industry").value="";document.getElementById("usecase").value="";document.getElementById("report").textContent="";draw();}
+draw();
+</script>
+</body>
+</html>
