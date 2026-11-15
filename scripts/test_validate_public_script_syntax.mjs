@@ -42,7 +42,7 @@ const expectedNav=[
   '#floor','#witness','#claims','#physical','#challenge','#proof-desk',
   '#runnable-proof','#byo-seam','consequence-challenge.html',
   'consequence-aperture.html','consequence-aperture.html',
-  'mathematics.html','navier-stokes.html'
+  'mathematics.html','navier-stokes.html','execution-risk-scanner.html'
 ].sort();
 assert.deepEqual(navLinks,expectedNav,'Original navigation plus Mathematics routes must be retained');
 assert.ok(readFileSync(resolve(root,'mathematics.html'),'utf8').includes('navier-stokes.html'),
