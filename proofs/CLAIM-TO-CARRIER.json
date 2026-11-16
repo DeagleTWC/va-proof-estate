@@ -21,11 +21,11 @@
       "standing": "DECLARED",
       "carrier": null,
       "source": "proofs/SOURCE-ESTATE.md",
-      "scope": "True Zero formalization; exact primary PDF not mirrored",
+      "scope": "True Zero formalization; exact primary public scientific PDF now attached",
       "nativeVAEvidence": false,
       "sourceTextCarrier": "proofs/sources/true-zero-consequence-systems-science-v1.2.3-extracted.md",
       "sourcePdfSHA256": "b629104cbcb541f26e5b78a3468f0621ac759ed1f46da2903ad95315fa4b759c",
-      "sourceScope": "Public formal record text only; source not proof of measured operational consequences",
+      "sourceScope": "Original public mathematical record and searchable transcription; not proof of measured operational consequences",
       "publicFormalSourceText": "proofs/sources/true-zero-consequence-systems-science-v1.2.3-extracted.md"
     },
     {
@@ -34,11 +34,11 @@
       "standing": "DECLARED",
       "carrier": null,
       "source": "proofs/SOURCE-ESTATE.md",
-      "scope": "Elements Basin/corrected K public record; exact primary proof carrier not mirrored",
+      "scope": "Elements Basin/corrected K public record; exact reviewed public scientific PDF now attached (protected operators excluded)",
       "nativeVAEvidence": false,
       "sourceTextCarrier": "proofs/sources/true-zero-consequence-systems-science-v1.2.3-extracted.md",
       "sourcePdfSHA256": "b629104cbcb541f26e5b78a3468f0621ac759ed1f46da2903ad95315fa4b759c",
-      "sourceScope": "Public formal record text only; source not proof of measured operational consequences",
+      "sourceScope": "Original public formal record and searchable transcription; protected construction not disclosed or independently proven by publication",
       "publicFormalSourceText": "proofs/sources/true-zero-consequence-systems-science-v1.2.3-extracted.md"
     },
     {

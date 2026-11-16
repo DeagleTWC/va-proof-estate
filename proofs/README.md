@@ -55,7 +55,7 @@ The DeagleTWC publication is the canonical **public reading and examination loca
 | **Examine a result now** | [VA-AD-001](VA-AD-001/README.md) | Python-only, local synthetic test; before/after mock effect, authority change, receipt hashes, replay and [independent verifier script](VA-AD-001/verify.py) |
 | **Inspect all public standing** | [Machine-readable claim-to-carrier ledger](CLAIM-TO-CARRIER.json) | 17 precisely identified objects, each with status, carrier/absence and bounded scope |
 | **Apply the evidence bar** | [Seven-part examination standard](EXAMINATION-STANDARD.md) | Claim, carrier, conditions, controls, change/replay, route/witness |
-| **Find the original source record** | [Hashed public source estate](SOURCE-ESTATE.md) | Four public-release PDF identities with the original-file SHA-256 values; PDFs not yet mirrored |
+| **Find the original source record** | [Hashed public source estate](SOURCE-ESTATE.md) | Four exact original public PDFs attached with registered byte sizes and SHA-256 digests; searchable transcripts remain separate |
 | **Review pilot evidence correctly** | [Pilot release and custody standard](PILOT-EVIDENCE-RELEASE.md) | January 2026 and other historical pilot evidence intake; publication-permission boundaries |
 
 ## Independent examination without proprietary access
@@ -65,7 +65,7 @@ A qualified reviewer can use the [blank examination packet](REVIEWER-PACKET-TEMP
 
 ## Primary public text now present
 
-Four source-grounded, page-labeled transcriptions have been published here: [July 2026 Proof Estate and Challenge Standard](sources/shift-proof-estate-challenge-standard-v1-extracted.md), [True-Zero Consequence Systems Science v1.2.3](sources/true-zero-consequence-systems-science-v1.2.3-extracted.md), [Independent Reviewer Qualification Standard](sources/independent-reviewer-standard-v1-extracted.md), and [The Shift Public Proof Path v2](sources/shift-public-proof-path-v2-extracted.md). The [page-to-claim crosswalk](SOURCE-TO-CLAIM-MAP.md) identifies where each major bounded statement appears. Original PDF hashes are preserved in the [source estate](SOURCE-ESTATE.md); the originals' binary bytes are not yet hosted here. The True-Zero text extraction begins on PDF page 2.
+Four source-grounded, page-labeled transcriptions have been published here: [July 2026 Proof Estate and Challenge Standard](sources/shift-proof-estate-challenge-standard-v1-extracted.md), [True-Zero Consequence Systems Science v1.2.3](sources/true-zero-consequence-systems-science-v1.2.3-extracted.md), [Independent Reviewer Qualification Standard](sources/independent-reviewer-standard-v1-extracted.md), and [The Shift Public Proof Path v2](sources/shift-public-proof-path-v2-extracted.md). The [page-to-claim crosswalk](SOURCE-TO-CLAIM-MAP.md) identifies where each major bounded statement appears. Original PDF hashes are preserved in the [source estate](SOURCE-ESTATE.md); the four exact original public PDF files are hosted under `proofs/sources/` and linked in the [source estate](SOURCE-ESTATE.md). The True-Zero text extraction begins on PDF page 2.
 
 ### Additional original review route
 

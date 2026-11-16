@@ -1,0 +1,48 @@
+{
+  "schema": "deagle-public-original-pdf-release/1.0",
+  "release_date": "2026-11-16",
+  "repository": "DeagleTWC/va-proof-estate",
+  "publication_class": "EXACT_ORIGINAL_PUBLIC_SOURCE_DOCUMENTS",
+  "description": "Original previously registered public PDF carriers added without modifying their bytes; documentary availability is not new native V.A. runtime or independent-effect evidence.",
+  "registry_source": "proofs/SOURCE-ESTATE.md",
+  "documents": [
+    {
+      "file": "proofs/sources/The_Shift_Public_Proof_Path_Final_v2(1).pdf",
+      "original_filename": "The_Shift_Public_Proof_Path_Final_v2(1).pdf",
+      "role": "July 2026 public proof path v2",
+      "size_bytes": 71495,
+      "sha256": "dd5a626e4ed5efafb49e70e987f61f151e220d793e35b96c55b05e59dc426ca6",
+      "github_blob_sha": "fa80aceb3d6b490e66fec2887be4146a0c5a4da1",
+      "public_source_record": true
+    },
+    {
+      "file": "proofs/sources/THE_SHIFT_PUBLIC_PROOF_ESTATE_AND_CHALLENGE_STANDARD_V1(2).pdf",
+      "original_filename": "THE_SHIFT_PUBLIC_PROOF_ESTATE_AND_CHALLENGE_STANDARD_V1(2).pdf",
+      "role": "July 2026 public Proof Estate and Challenge Standard v1",
+      "size_bytes": 93105,
+      "sha256": "3d355e5e67e1205833a39275c51370481bacfec234fd90aa73178683e137e5a6",
+      "github_blob_sha": "a6580fabbd18bd1c9841e02de19f50279ba9f8a7",
+      "public_source_record": true
+    },
+    {
+      "file": "proofs/sources/True_Zero_Consequence_Systems_Science_Public_Record_v1_2_3_RELEASE(6).pdf",
+      "original_filename": "True_Zero_Consequence_Systems_Science_Public_Record_v1_2_3_RELEASE(6).pdf",
+      "role": "18 July 2026 True-Zero public reviewed scientific record v1.2.3",
+      "size_bytes": 460125,
+      "sha256": "b629104cbcb541f26e5b78a3468f0621ac759ed1f46da2903ad95315fa4b759c",
+      "github_blob_sha": "8da7010f9725d9c6725a69cd536098cf0680def1",
+      "public_source_record": true
+    },
+    {
+      "file": "proofs/sources/Public_Independent_Reviewer_Qualification_Standard_v1.0(2).pdf",
+      "original_filename": "Public_Independent_Reviewer_Qualification_Standard_v1.0(2).pdf",
+      "role": "Public Independent Reviewer Qualification Standard v1.0",
+      "size_bytes": 131428,
+      "sha256": "a3a8dd7c9fd3fda44a62eba1c6ae116344853faef94ae4db5a76902e5681f9c9",
+      "github_blob_sha": "c5164b8c7f8343be4fa1fc04888444fc57c68018",
+      "public_source_record": true
+    }
+  ],
+  "evidence_promotion": false,
+  "private_sources_included": false
+}
