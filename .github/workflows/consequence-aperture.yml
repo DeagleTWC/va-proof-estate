@@ -40,7 +40,8 @@ jobs:
         run: node aperture/test_site.mjs
   real-browser-aperture:
     needs: data-only-negative-controls
-    runs-on: ubuntu-latest
+    # Playwright 1.56.1 Chromium does not support Ubuntu 26.04 images.
+    runs-on: ubuntu-24.04
     timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
