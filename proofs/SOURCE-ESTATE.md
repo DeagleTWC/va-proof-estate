@@ -4,10 +4,19 @@ The following identities and SHA-256 digests were obtained from the actual PDF b
 
 | Original named source | Edition and content | Size (bytes) | SHA-256 |
 | --- | --- | ---: | --- |
-| [The_Shift_Public_Proof_Path_Final_v2(1).pdf](sources/The_Shift_Public_Proof_Path_Final_v2%281%29.pdf) | July 2026, reviewer proof-path v2, six distinct bounded public examination surfaces | 71495 | `dd5a626e4ed5efafb49e70e987f61f151e220d793e35b96c55b05e59dc426ca6` |
-| [THE_SHIFT_PUBLIC_PROOF_ESTATE_AND_CHALLENGE_STANDARD_V1(2).pdf](sources/THE_SHIFT_PUBLIC_PROOF_ESTATE_AND_CHALLENGE_STANDARD_V1%282%29.pdf) | July 2026, v1.0; public evidence ladder, bounded proof path, review challenge, publication boundary | 93105 | `3d355e5e67e1205833a39275c51370481bacfec234fd90aa73178683e137e5a6` |
-| [True_Zero_Consequence_Systems_Science_Public_Record_v1_2_3_RELEASE(6).pdf](sources/True_Zero_Consequence_Systems_Science_Public_Record_v1_2_3_RELEASE%286%29.pdf) | July 18, 2026, v1.2.3 reviewed public record; scientific statements, test obligations, corpus-recorded pilot descriptions | 460125 | `b629104cbcb541f26e5b78a3468f0621ac759ed1f46da2903ad95315fa4b759c` |
-| [Public_Independent_Reviewer_Qualification_Standard_v1.0(2).pdf](sources/Public_Independent_Reviewer_Qualification_Standard_v1.0%282%29.pdf) | v1.0 public release; self-check vs independently qualified design check and reproduction | 131428 | `a3a8dd7c9fd3fda44a62eba1c6ae116344853faef94ae4db5a76902e5681f9c9` |
+| `The_Shift_Public_Proof_Path_Final_v2(1).pdf` | July 2026, reviewer proof-path v2, six distinct bounded public examination surfaces | 71495 | `dd5a626e4ed5efafb49e70e987f61f151e220d793e35b96c55b05e59dc426ca6` |
+| `THE_SHIFT_PUBLIC_PROOF_ESTATE_AND_CHALLENGE_STANDARD_V1(2).pdf` | July 2026, v1.0; public evidence ladder, bounded proof path, review challenge, publication boundary | 93105 | `3d355e5e67e1205833a39275c51370481bacfec234fd90aa73178683e137e5a6` |
+| `True_Zero_Consequence_Systems_Science_Public_Record_v1_2_3_RELEASE(6).pdf` | July 18, 2026, v1.2.3 reviewed public record; scientific statements, test obligations, corpus-recorded pilot descriptions | 460125 | `b629104cbcb541f26e5b78a3468f0621ac759ed1f46da2903ad95315fa4b759c` |
+| `Public_Independent_Reviewer_Qualification_Standard_v1.0(2).pdf` | v1.0 public release; self-check vs independently qualified design check and reproduction | 131428 | `a3a8dd7c9fd3fda44a62eba1c6ae116344853faef94ae4db5a76902e5681f9c9` |
+
+## Exact attached public PDF originals
+
+- [The_Shift_Public_Proof_Path_Final_v2(1).pdf](sources/The_Shift_Public_Proof_Path_Final_v2%281%29.pdf)
+- [THE_SHIFT_PUBLIC_PROOF_ESTATE_AND_CHALLENGE_STANDARD_V1(2).pdf](sources/THE_SHIFT_PUBLIC_PROOF_ESTATE_AND_CHALLENGE_STANDARD_V1%282%29.pdf)
+- [True_Zero_Consequence_Systems_Science_Public_Record_v1_2_3_RELEASE(6).pdf](sources/True_Zero_Consequence_Systems_Science_Public_Record_v1_2_3_RELEASE%286%29.pdf)
+- [Public_Independent_Reviewer_Qualification_Standard_v1.0(2).pdf](sources/Public_Independent_Reviewer_Qualification_Standard_v1.0%282%29.pdf)
+
+All four links preserve the previously recorded public release document bytes. Hash checks verify artifact identity only; no protected construction or new native runtime results are represented by this publication.
 
 ## What the originals substantiate as a source record
 

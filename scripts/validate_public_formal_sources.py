@@ -6,6 +6,7 @@ Does not execute, replace, or certify corrected NEW-K / native True Zero mathema
 """
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 from pathlib import Path
@@ -56,8 +57,42 @@ def validate(root=ROOT):
     provenance = manifest.get("sourceOriginalPdfSHA256Provenance", {})
     if provenance.get("publishedDigestCount") != len(expected_pdf):
         errors.append("Published original PDF digest count disagrees with source register")
-    if provenance.get("originalPDFCopiesPubliclyAttached") != 0 or manifest.get("originalSourcePdfCopiesInRepository") != 0:
-        errors.append("This audit has no basis for claiming attached original PDF bytes")
+    if provenance.get("originalPDFCopiesPubliclyAttached") != len(expected_pdf) or manifest.get("originalSourcePdfCopiesInRepository") != len(expected_pdf):
+        errors.append("Attached public original PDF count disagrees with registered source inventory")
+    for name, expected_digest in expected_pdf.items():
+        target = (root / "proofs/sources" / name).resolve()
+        if not target.is_relative_to(root) or not target.is_file():
+            errors.append(f"missing original PDF: {name}")
+            continue
+        original_bytes = target.read_bytes()
+        if hashlib.sha256(original_bytes).hexdigest() != expected_digest:
+            errors.append(f"original PDF sha256 mismatch: {name}")
+    try:
+        original_release = json.loads(read("proofs/sources/ORIGINAL-PUBLIC-PDF-MANIFEST.json"))
+        original_docs = original_release.get("documents", [])
+        if len(original_docs) != len(expected_pdf):
+            errors.append("Public original PDF release manifest count mismatch")
+        paths = [item.get("file") for item in original_docs]
+        if len(paths) != len(set(paths)):
+            errors.append("Duplicate path in original PDF release manifest")
+        for item in original_docs:
+            rel = item.get("file", "")
+            name = Path(rel).name
+            if rel != f"proofs/sources/{name}" or name not in expected_pdf:
+                errors.append(f"Unexpected release PDF path: {rel}")
+                continue
+            if item.get("sha256") != expected_pdf[name]:
+                errors.append(f"Original release PDF digest differs from source register: {name}")
+            target = (root / rel).resolve()
+            if target.is_relative_to(root) and target.is_file():
+                data = target.read_bytes()
+                if item.get("size_bytes") != len(data):
+                    errors.append(f"Original release PDF size mismatch: {name}")
+                git_sha = hashlib.sha1(b"blob " + str(len(data)).encode() + b"\0" + data).hexdigest()
+                if item.get("github_blob_sha") != git_sha:
+                    errors.append(f"Original release Git blob digest mismatch: {name}")
+    except (ValueError, AttributeError, TypeError) as exc:
+        errors.append(f"Original PDF release manifest cannot be parsed: {exc}")
     if provenance.get("register") != "proofs/SOURCE-ESTATE.md":
         errors.append("PDF hash provenance no longer names the source estate")
 

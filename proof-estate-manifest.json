@@ -71,7 +71,7 @@
     "proofs/sources/shift-public-proof-path-v2-extracted.md"
   ],
   "sourceToClaimMap": "proofs/SOURCE-TO-CLAIM-MAP.md",
-  "originalSourcePdfCopiesInRepository": 0,
+  "originalSourcePdfCopiesInRepository": 4,
   "sourceOriginalPdfSHA256": {
     "The_Shift_Public_Proof_Path_Final_v2(1).pdf": "dd5a626e4ed5efafb49e70e987f61f151e220d793e35b96c55b05e59dc426ca6",
     "THE_SHIFT_PUBLIC_PROOF_ESTATE_AND_CHALLENGE_STANDARD_V1(2).pdf": "3d355e5e67e1205833a39275c51370481bacfec234fd90aa73178683e137e5a6",
@@ -184,7 +184,7 @@
     "documentationIndex": "milestones/M33-EVIDENCE-CONTINUITY.json",
     "scientificCycleRecord": "proofs/SCIENTIFIC-CYCLE-CURRENT.json",
     "scope": "Public navigation and provenance only; does not independently validate NEW-K runtime or certify external physical effects.",
-    "formalClaimSourceIdentity": "VA-F01 / VA-F02 point to the existing public-safe v1.2.3 transcript and original PDF SHA-256; original PDF bytes and protected NEW-K construction remain withheld",
+    "formalClaimSourceIdentity": "VA-F01 / VA-F02 point to the published public v1.2.3 original PDF and searchable transcript; protected corrected NEW-K construction and original native run packets remain withheld.",
     "claimSourceMetadata": "All nine visible native/formal/physical/historical V.A. claim entries identify public transcripts and original recorded PDF digest; public transcript is not original PDF or independent physical proof",
     "scientificStageReconciliation": "milestones/M33-EVIDENCE-CONTINUITY.json",
     "datedCycleInterpretation": "October 28 M28 opening is a historical operational snapshot; later M29 progression is preserved without manufacturing original experimental proof"
@@ -259,8 +259,8 @@
     "register": "proofs/SOURCE-ESTATE.md",
     "historicalIdentityRecordDate": "2026-10-22",
     "publishedDigestCount": 4,
-    "originalPDFCopiesPubliclyAttached": 0,
-    "scope": "Transcribed from existing original-PDF digest register. This edit does not remeasure absent original PDFs, independently certify their contents, disclose protected NEW-K, or change mathematical standing."
+    "originalPDFCopiesPubliclyAttached": 4,
+    "scope": "The exact original PDF bytes were matched to the previously registered SHA-256 values and mirrored publicly on 2026-11-16. This confirms source identity, not native mathematical or measured-effect verification."
   },
   "releaseChangeSummary": "Consequence Aperture Stage A: public examiner challenge-request draft and local original-evidence SHA-256 preflight, exact four-role positive/negative/changed/replay records, public offline verifier, adversarial negatives, and direct Proof Estate entry. No native URK system connected, no native or physical consequence verified, no independent claimant identity certified. Original scientific/source carriers and existing standing remain unchanged.",
   "publicReviewerRoute": {
@@ -413,5 +413,6 @@
     "preservedOriginalReleaseIdentity": "2.7 / edition 09 — prior release hash preserved above, extended site surface identified as an addendum.",
     "verificationMethod": "Historical pinned release 2.7 digest remains sealed in mainFileSHA256; mutable deployed-site index is verified independently via currentSiteIndexSHA256."
   },
-  "currentSiteIndexSHA256": "4bc8efb49978417f35d7598e9f59292becc2f3efc6b9bd48bb1c70e2444ec21c"
+  "currentSiteIndexSHA256": "4bc8efb49978417f35d7598e9f59292becc2f3efc6b9bd48bb1c70e2444ec21c",
+  "sourceOriginalPdfPublicManifest": "proofs/sources/ORIGINAL-PUBLIC-PDF-MANIFEST.json"
 }

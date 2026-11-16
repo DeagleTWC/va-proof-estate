@@ -17,6 +17,11 @@ SOURCE_PATHS = [
     "proofs/sources/shift-proof-estate-challenge-standard-v1-extracted.md",
     "proofs/sources/shift-public-proof-path-v2-extracted.md",
     "proofs/sources/independent-reviewer-standard-v1-extracted.md",
+    "proofs/sources/ORIGINAL-PUBLIC-PDF-MANIFEST.json",
+    "proofs/sources/The_Shift_Public_Proof_Path_Final_v2(1).pdf",
+    "proofs/sources/THE_SHIFT_PUBLIC_PROOF_ESTATE_AND_CHALLENGE_STANDARD_V1(2).pdf",
+    "proofs/sources/True_Zero_Consequence_Systems_Science_Public_Record_v1_2_3_RELEASE(6).pdf",
+    "proofs/sources/Public_Independent_Reviewer_Qualification_Standard_v1.0(2).pdf",
 ]
 SOURCE_HASH = "b629104cbcb541f26e5b78a3468f0621ac759ed1f46da2903ad95315fa4b759c"
 
@@ -84,6 +89,15 @@ class SourceLinkedClaimsTests(unittest.TestCase):
     def test_malformed_claim_object_separator_rejected(self):
         self.alter_text("index.html", "',sourceTextCarrier:", "',,sourceTextCarrier:", count=3)
         self.assertTrue(any("malformed JavaScript separator" in x for x in validate(self.root)))
+
+    def test_missing_attached_original_pdf_rejected(self):
+        (self.root / "proofs/sources/The_Shift_Public_Proof_Path_Final_v2(1).pdf").unlink()
+        self.assertTrue(any("missing original PDF" in e for e in validate(self.root)))
+
+    def test_tampered_attached_original_pdf_rejected(self):
+        path = self.root / "proofs/sources/THE_SHIFT_PUBLIC_PROOF_ESTATE_AND_CHALLENGE_STANDARD_V1(2).pdf"
+        path.write_bytes(path.read_bytes() + b"\n")
+        self.assertTrue(any("original PDF sha256 mismatch" in e for e in validate(self.root)))
 
 
 if __name__ == "__main__":
