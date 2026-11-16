@@ -183,6 +183,28 @@ function guide(){return `ZERO-X PUBLIC EXAMINER QUICK GUIDE
 No proof of native V.A. formation, physical effects, or CEOS/ZERO execution is conferred by this browser demo.
 OPEN EVIDENCE. PROTECTED CONSTRUCTION. PROOF BEFORE POWER.
 `;}
+function runMariaChallenge(injectFailure){
+ workflow=clone(DEFAULT);
+ workflow.identity.name='Maria Kollia CEOS & ZERO context — independent changed-standing challenge';
+ workflow.identity.owner='Independent examiner (synthetic public challenge)';
+ workflow.identity.protected_effect='Allocate 120 abstract AI workload units across six facilities without forming an invalid consequence after local water veto, evidence conflict, or authority loss';
+ invalidateEvidence(false);
+ loadTop();
+ lastResponses=referenceResponses();
+ if(injectFailure){
+  const bad=lastResponses.find(r=>r.id==='M01');
+  if(!bad)throw Error('Missing negative control M01');
+  bad.decision='NO_BIND';
+  bad.effect_request={site:'A',units:120};
+ }
+ lastSource=injectFailure?'deliberate_negative_control':'sample';
+ setReport(evaluate(lastResponses,injectFailure?'DELIBERATELY_UNSAFE_SYNTHETIC_RESPONSE':'INCLUDED_CONVENTIONAL_SAMPLE_NOT_VA'));
+ renderResults(report);
+ msg(injectFailure?'Negative control complete: inspect the detected refusal-with-effect and downstream findings.':'Maria-context bounded case complete. Inspect each mock before/after observation and the conservation ledger.');
+ $('results').scrollIntoView({behavior:'smooth',block:'start'});
+}
+$('mariaChallengeBtn').addEventListener('click',guard(()=>runMariaChallenge(false)));
+$('mariaFailureBtn').addEventListener('click',guard(()=>runMariaChallenge(true)));
 $('runDemoBtn').addEventListener('click',guard(()=>{saveTop();invalidateEvidence(false);lastResponses=referenceResponses();lastSource='sample';setReport(evaluate(lastResponses,'INCLUDED_CONVENTIONAL_SAMPLE_NOT_VA'));renderResults(report);msg('Synthetic example completed. Inspect case-by-case results; this is not a native V.A. execution.');}));
 $('loadWorkflowBtn').addEventListener('click',()=>$('workflowFile').click());$('loadResponsesBtn').addEventListener('click',()=>$('responsesFile').click());
 $('workflowFile').addEventListener('change',importWorkflow);$('responsesFile').addEventListener('change',importResponses);

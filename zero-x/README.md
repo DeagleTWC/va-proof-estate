@@ -1,5 +1,12 @@
 # V.A. ZERO-X — public interactive consequence examiner
 
+## CEOS & ZERO research-context challenge
+
+The public page provides a dedicated, one-click [bounded changed-standing case](https://deagletwc.github.io/va-proof-estate/zero-x/#maria-challenge), motivated by Maria Kollia's published questions and invitation to examine independently observable non-formation. It retains six synthetic facilities, eight modeled routes, 21 ordered examination events, and 120 abstract workload units. The intentional negative control injects a mock unauthorized effect despite a NO_BIND response so an examiner can see an actual FAIL.
+
+**This is not a CEOS/ZERO implementation, endorsement, joint collaboration result or native V.A. runtime.** Maria and every other examiner may provide their own bounded workflow and response records without disclosing proprietary internals. Browser outputs are simulated local states only. For actual external or native consequence claims, separately observed effects, route coverage and native evidence are required.
+
+
 This is a static, browser-local site intended for GitHub Pages. No server, account, API, proprietary native kernel or Python installation is required for the on-page demo.
 
 **Start:** Visit `/va-proof-estate/zero-x/` (or open the separate offline ZIP), describe a hypothetical consequential workflow, run the sample, edit authority/capacity/water/route conditions, inspect before/after *mock* state and download your report. You can import responses from your own offline system as JSON. No visitor workflow inputs are transmitted by this page (ordinary web hosting traffic remains subject to GitHub Pages' infrastructure).
