@@ -63,6 +63,10 @@ The DeagleTWC publication is the canonical **public reading and examination loca
 A qualified reviewer can use the [blank examination packet](REVIEWER-PACKET-TEMPLATE.md), examine the [bounded evidence standard](EXAMINATION-STANDARD.md), and submit a public [fixed-carrier challenge](https://github.com/DeagleTWC/va-proof-estate/issues/new?template=bounded-proof-review.md). The issue template is a review intake, **not permission to publish protected information or run tests on third-party systems**. Independent status is conferred only by a genuinely separate examiner's completed evidence, not by the existence of a submission form.
 
 
+## Additional original public-release editions
+
+Five further public-safe, author-attributed PDF originals are now attached under [the public source estate](SOURCE-ESTATE.md): the July 2026 final public scientific record, founding declaration, category packet, reviewer orientation and Snyder–Revita brochure. Their original files, fixed SHA-256 digests, dates and source credits remain unchanged. They are not replacements for the four canonical reviewed/public proof-standard PDFs or evidence of new native execution.
+
 ## Primary public text now present
 
 Four source-grounded, page-labeled transcriptions have been published here: [July 2026 Proof Estate and Challenge Standard](sources/shift-proof-estate-challenge-standard-v1-extracted.md), [True-Zero Consequence Systems Science v1.2.3](sources/true-zero-consequence-systems-science-v1.2.3-extracted.md), [Independent Reviewer Qualification Standard](sources/independent-reviewer-standard-v1-extracted.md), and [The Shift Public Proof Path v2](sources/shift-public-proof-path-v2-extracted.md). The [page-to-claim crosswalk](SOURCE-TO-CLAIM-MAP.md) identifies where each major bounded statement appears. Original PDF hashes are preserved in the [source estate](SOURCE-ESTATE.md); the four exact original public PDF files are hosted under `proofs/sources/` and linked in the [source estate](SOURCE-ESTATE.md). The True-Zero text extraction begins on PDF page 2.

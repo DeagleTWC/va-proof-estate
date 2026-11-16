@@ -38,6 +38,18 @@ Where another repository contains a public implementation or demonstration, tran
 
 **The four listed original public PDFs are attached; private historical execution carriers remain outside this repository.**
 
+## Additional unchanged public-safe original editions — 16 November 2026
+
+The following older or additional public-release editions were preserved with their original file bytes and attributions. They are distinct documents from the four canonical PDFs in the historical source hash register above; they do not replace that register or automatically promote operational evidence.
+
+- [The Shift — public-safe category packet v1](sources/The_Shift_Public_Category_Packet_v1%285%29.pdf) — 92463 bytes; SHA-256 `d7e9f7ccaf019a54bcd0692b09b107f888aa445755dec5052a73de961cf0ef1d`. Original attribution: The Shift public-safe category publication.
+- [True-Zero Consequence Systems Science — final public release (July 2026)](sources/True_Zero_Consequence_Systems_Science_FINAL_PUBLIC_RELEASE.pdf) — 849529 bytes; SHA-256 `5464e90e95a9c8152f53d3a5d642749f4e535e9ecaaf9fd73b7510f7900b9453`. Original attribution: Terry Allen Snyder and Samantha Revita, as identified in original.
+- [True-Zero Consequence Systems Science — public-safe founding declaration](sources/True_Zero_Consequence_Systems_Science_Founding_Declaration.pdf) — 218137 bytes; SHA-256 `b125a8de83098a1cfd87b6eb3b50445546041fe2010ce6119e51bde9e98ca3fd`. Original attribution: Terry Allen Snyder; Samantha Revita development partnership, as identified in original.
+- [Snyder–Revita consequence-boundary public brochure v1.1](sources/SNYDER_REVITA_CONSEQUENCE_BOUNDARY_PUBLIC_BROCHURE_v1_1_PROFESSIONAL%282%29.pdf) — 16933 bytes; SHA-256 `6e1f49e7bd6d0a1cdffe77d24571226404217256129070785972161f8f84f806`. Original attribution: Snyder–Revita public brochure.
+- [The Shift — public-safe proof-path reviewer orientation v1](sources/The_Shift_Public_Proof_Path_Reviewer_Orientation_v1%281%29.pdf) — 68864 bytes; SHA-256 `1e23a7b6758607b7a78241ef6b42ab7d8f8f9ba3ea6012aab2fbe9d81d003e95`. Original attribution: The Shift reviewer-orientation public-safe edition.
+
+[Additional release manifest](sources/ADDITIONAL-PUBLIC-PDF-MANIFEST-2026-11-16.json) records the exact bytes and Git blob IDs. No protected kernel, private pilot packet, or collaborator source code was uploaded in this edition.
+
 ## Searchable source transcripts
 
 - [Proof Estate and Challenge Standard — pages 1–15](sources/shift-proof-estate-challenge-standard-v1-extracted.md)
