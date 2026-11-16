@@ -50,6 +50,27 @@ The following older or additional public-release editions were preserved with th
 
 [Additional release manifest](sources/ADDITIONAL-PUBLIC-PDF-MANIFEST-2026-11-16.json) records the exact bytes and Git blob IDs. No protected kernel, private pilot packet, or collaborator source code was uploaded in this edition.
 
+## Further exact original public records — 16 November 2026
+
+The following nine original public-safe publications and historical released editions were recovered from the owner's Library, compared with the repository, and deposited without rewriting their original PDF bytes. History files preserve the exact earlier public edition and do **not** supersede the 18 July v1.2.3 canonical reviewed technical record or the final public release.
+
+### Historical released scientific editions
+
+- [Historical v1.1 reviewed public technical record](sources/history/True_Zero_Consequence_Systems_Science_Public_Record_v1_1_REVIEWED.pdf) — 313122 bytes; SHA-256 `c3d7903ad076714c1c44c972cb7c16195871abfb3c12579419665e787514855e`.
+- [Historical v1.2 reviewed public technical record](sources/history/True_Zero_Consequence_Systems_Science_Public_Record_v1_2_REVIEWED.pdf) — 408878 bytes; SHA-256 `72170647f5657017281f3a5a97fd19c15df98460a39b9afc8409d51197885954`.
+- [Historical v1.2.1 reviewed public technical release](sources/history/True_Zero_Consequence_Systems_Science_Public_Record_v1_2_1_RELEASE.pdf) — 451974 bytes; SHA-256 `bdf14dbed2f644c3a92d1c174d742dc60e0df9533c7f6a9faae03c4fa4f0bad3`.
+- [Historical v1.2.2 reviewed public technical release](sources/history/True_Zero_Consequence_Systems_Science_Public_Record_v1_2_2_RELEASE.pdf) — 459167 bytes; SHA-256 `8c5529c4d3a26bf5cc59f2e5179f3f9d4b225f8abba78a81be7e7f10dee3bf15`.
+- [Historical public scientific record v8](sources/history/True_Zero_Consequence_Systems_Science_Public_Scientific_Record_v8.pdf) — 458174 bytes; SHA-256 `6e3a7d2b6fdc811f5096e8ff57871cf21d95e6f863ec38bdf90184385e470663`.
+
+### Public-safe foundation and category publications
+
+- [LiveAI Foundation — public-safe unified white paper](sources/LiveAI_Foundation_Public_Safe_Release.pdf) — 135143 bytes; SHA-256 `ea6094212a5909a617a2c4b6169317364897121f8ea9f9b4d62398d944d51a4e`.
+- [LiveAI Foundation — public-safe release statement v1](sources/LiveAI_Foundation_Public_Safe_Release_v1.pdf) — 145377 bytes; SHA-256 `92b9d9905c17131fbd1e00f0fc20b896bd8c0a6531394eb9d1959da87c33704b`.
+- [The Shift — standalone public category primer v1](sources/The_Shift_Public_Category_Primer_v1.pdf) — 97884 bytes; SHA-256 `8fafc9e2288c84328e08ca1cb210fc870daef7e0062d0de912cad1a6a4632668`.
+- [Lawful Movement Geometry v2 — formal public surface](sources/Lawful_Movement_Geometry_v2_Formal_Public_Surface_Snyder_Revita.pdf) — 67436 bytes; SHA-256 `fce5ca58c5df6b0290e724b7c7d4d80beba3afbabbf1d801c02e11d40d5e92ff`.
+
+[Exact original-file source manifest](sources/LIBRARY-PUBLIC-RELEASES-2026-11-16.json). Protected original mathematical operators, private builds, commercial and customer data, and non-public pilot packets are excluded from this publication.
+
 ## Searchable source transcripts
 
 - [Proof Estate and Challenge Standard — pages 1–15](sources/shift-proof-estate-challenge-standard-v1-extracted.md)

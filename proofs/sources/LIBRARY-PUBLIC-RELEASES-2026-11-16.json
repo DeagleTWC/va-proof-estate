@@ -1,0 +1,94 @@
+{
+  "schema": "deagle-owner-library-public-release/1.0",
+  "publication_date": "2026-11-16",
+  "owner_repository": "DeagleTWC/va-proof-estate",
+  "source": "Owner Library: original public-safe PDF files",
+  "scope": "Preserve original public editions and mathematical/engineering lineage without regrading existing evidence, modifying PDFs or releasing private protected mechanisms.",
+  "new_pdf_count": 9,
+  "historical_edition_count": 5,
+  "originals": [
+    {
+      "path": "proofs/sources/history/True_Zero_Consequence_Systems_Science_Public_Record_v1_1_REVIEWED.pdf",
+      "original_filename": "True_Zero_Consequence_Systems_Science_Public_Record_v1_1_REVIEWED.pdf",
+      "display_title": "Historical v1.1 reviewed public technical record",
+      "source_class": "HISTORICAL_PUBLIC_EDITION",
+      "size_bytes": 313122,
+      "sha256": "c3d7903ad076714c1c44c972cb7c16195871abfb3c12579419665e787514855e",
+      "github_blob_sha": "e6fc6b0c85b2824c1bf1419c7c8eba3195c2a6e1"
+    },
+    {
+      "path": "proofs/sources/history/True_Zero_Consequence_Systems_Science_Public_Record_v1_2_REVIEWED.pdf",
+      "original_filename": "True_Zero_Consequence_Systems_Science_Public_Record_v1_2_REVIEWED.pdf",
+      "display_title": "Historical v1.2 reviewed public technical record",
+      "source_class": "HISTORICAL_PUBLIC_EDITION",
+      "size_bytes": 408878,
+      "sha256": "72170647f5657017281f3a5a97fd19c15df98460a39b9afc8409d51197885954",
+      "github_blob_sha": "babdc54204c580746e6aca5fd1b5ba6972583ec2"
+    },
+    {
+      "path": "proofs/sources/history/True_Zero_Consequence_Systems_Science_Public_Record_v1_2_1_RELEASE.pdf",
+      "original_filename": "True_Zero_Consequence_Systems_Science_Public_Record_v1_2_1_RELEASE.pdf",
+      "display_title": "Historical v1.2.1 reviewed public technical release",
+      "source_class": "HISTORICAL_PUBLIC_EDITION",
+      "size_bytes": 451974,
+      "sha256": "bdf14dbed2f644c3a92d1c174d742dc60e0df9533c7f6a9faae03c4fa4f0bad3",
+      "github_blob_sha": "69944805cab7701924f89c758cd4bb1cf88f7a94"
+    },
+    {
+      "path": "proofs/sources/history/True_Zero_Consequence_Systems_Science_Public_Record_v1_2_2_RELEASE.pdf",
+      "original_filename": "True_Zero_Consequence_Systems_Science_Public_Record_v1_2_2_RELEASE.pdf",
+      "display_title": "Historical v1.2.2 reviewed public technical release",
+      "source_class": "HISTORICAL_PUBLIC_EDITION",
+      "size_bytes": 459167,
+      "sha256": "8c5529c4d3a26bf5cc59f2e5179f3f9d4b225f8abba78a81be7e7f10dee3bf15",
+      "github_blob_sha": "87fff9f843ec84a457429aba367c5ea973d56626"
+    },
+    {
+      "path": "proofs/sources/history/True_Zero_Consequence_Systems_Science_Public_Scientific_Record_v8.pdf",
+      "original_filename": "True_Zero_Consequence_Systems_Science_Public_Scientific_Record_v8.pdf",
+      "display_title": "Historical public scientific record v8",
+      "source_class": "HISTORICAL_PUBLIC_EDITION",
+      "size_bytes": 458174,
+      "sha256": "6e3a7d2b6fdc811f5096e8ff57871cf21d95e6f863ec38bdf90184385e470663",
+      "github_blob_sha": "d6c67b8d5e5211bf866dd940215738254c1a512e"
+    },
+    {
+      "path": "proofs/sources/LiveAI_Foundation_Public_Safe_Release.pdf",
+      "original_filename": "LiveAI_Foundation_Public_Safe_Release.pdf",
+      "display_title": "LiveAI Foundation — public-safe unified white paper",
+      "source_class": "PUBLIC_SAFE_ORIGINAL",
+      "size_bytes": 135143,
+      "sha256": "ea6094212a5909a617a2c4b6169317364897121f8ea9f9b4d62398d944d51a4e",
+      "github_blob_sha": "6931e5e8ee758c73b42178a19971cd6f87e7836a"
+    },
+    {
+      "path": "proofs/sources/LiveAI_Foundation_Public_Safe_Release_v1.pdf",
+      "original_filename": "LiveAI_Foundation_Public_Safe_Release_v1.pdf",
+      "display_title": "LiveAI Foundation — public-safe release statement v1",
+      "source_class": "PUBLIC_SAFE_ORIGINAL",
+      "size_bytes": 145377,
+      "sha256": "92b9d9905c17131fbd1e00f0fc20b896bd8c0a6531394eb9d1959da87c33704b",
+      "github_blob_sha": "40002fe20a2c66a3fd9934578fdb7bb5f18a075e"
+    },
+    {
+      "path": "proofs/sources/The_Shift_Public_Category_Primer_v1.pdf",
+      "original_filename": "The_Shift_Public_Category_Primer_v1.pdf",
+      "display_title": "The Shift — standalone public category primer v1",
+      "source_class": "PUBLIC_SAFE_ORIGINAL",
+      "size_bytes": 97884,
+      "sha256": "8fafc9e2288c84328e08ca1cb210fc870daef7e0062d0de912cad1a6a4632668",
+      "github_blob_sha": "2d2e14f3298750aa95b8c69061514b5d2eaaf496"
+    },
+    {
+      "path": "proofs/sources/Lawful_Movement_Geometry_v2_Formal_Public_Surface_Snyder_Revita.pdf",
+      "original_filename": "Lawful_Movement_Geometry_v2_Formal_Public_Surface_Snyder_Revita.pdf",
+      "display_title": "Lawful Movement Geometry v2 — formal public surface",
+      "source_class": "PUBLIC_SAFE_ORIGINAL",
+      "size_bytes": 67436,
+      "sha256": "fce5ca58c5df6b0290e724b7c7d4d80beba3afbabbf1d801c02e11d40d5e92ff",
+      "github_blob_sha": "2c8ba2c32754064969850400ca2fcd5fb252c676"
+    }
+  ],
+  "protected_operational_sources_released": false,
+  "native_execution_or_independent_verification_promoted": false
+}

@@ -416,5 +416,7 @@
   "currentSiteIndexSHA256": "4bc8efb49978417f35d7598e9f59292becc2f3efc6b9bd48bb1c70e2444ec21c",
   "sourceOriginalPdfPublicManifest": "proofs/sources/ORIGINAL-PUBLIC-PDF-MANIFEST.json",
   "additionalPublicOriginalPdfManifest": "proofs/sources/ADDITIONAL-PUBLIC-PDF-MANIFEST-2026-11-16.json",
-  "additionalPublicOriginalPdfCount": 5
+  "additionalPublicOriginalPdfCount": 5,
+  "libraryPublicReleasesManifest": "proofs/sources/LIBRARY-PUBLIC-RELEASES-2026-11-16.json",
+  "libraryPublicReleasesCount": 9
 }

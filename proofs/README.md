@@ -63,6 +63,10 @@ The DeagleTWC publication is the canonical **public reading and examination loca
 A qualified reviewer can use the [blank examination packet](REVIEWER-PACKET-TEMPLATE.md), examine the [bounded evidence standard](EXAMINATION-STANDARD.md), and submit a public [fixed-carrier challenge](https://github.com/DeagleTWC/va-proof-estate/issues/new?template=bounded-proof-review.md). The issue template is a review intake, **not permission to publish protected information or run tests on third-party systems**. Independent status is conferred only by a genuinely separate examiner's completed evidence, not by the existence of a submission form.
 
 
+## Further unchanged original public-safe document editions
+
+Nine further originals are available at the [Source Estate](SOURCE-ESTATE.md): five dated historical True-Zero public scientific editions, two LiveAI Foundation public-safe releases, the standalone Shift category primer and Lawful Movement Geometry v2's formal public surface. Their original bytes, chronology and distinct editions remain intact; no protected source, new execution result or independent measurement is implied.
+
 ## Additional original public-release editions
 
 Five further public-safe, author-attributed PDF originals are now attached under [the public source estate](SOURCE-ESTATE.md): the July 2026 final public scientific record, founding declaration, category packet, reviewer orientation and Snyder–Revita brochure. Their original files, fixed SHA-256 digests, dates and source credits remain unchanged. They are not replacements for the four canonical reviewed/public proof-standard PDFs or evidence of new native execution.
