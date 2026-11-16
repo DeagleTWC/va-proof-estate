@@ -185,7 +185,7 @@ OPEN EVIDENCE. PROTECTED CONSTRUCTION. PROOF BEFORE POWER.
 `;}
 function runMariaChallenge(injectFailure){
  workflow=clone(DEFAULT);
- workflow.identity.name='Maria Kollia CEOS & ZERO context — independent changed-standing challenge';
+ workflow.identity.name='ZERO-X independent changed-standing examination';
  workflow.identity.owner='Independent examiner (synthetic public challenge)';
  workflow.identity.protected_effect='Allocate 120 abstract AI workload units across six facilities without forming an invalid consequence after local water veto, evidence conflict, or authority loss';
  invalidateEvidence(false);
@@ -200,7 +200,7 @@ function runMariaChallenge(injectFailure){
  lastSource=injectFailure?'deliberate_negative_control':'sample';
  setReport(evaluate(lastResponses,injectFailure?'DELIBERATELY_UNSAFE_SYNTHETIC_RESPONSE':'INCLUDED_CONVENTIONAL_SAMPLE_NOT_VA'));
  renderResults(report);
- msg(injectFailure?'Negative control complete: inspect the detected refusal-with-effect and downstream findings.':'Maria-context bounded case complete. Inspect each mock before/after observation and the conservation ledger.');
+ msg(injectFailure?'Negative control complete: an unauthorized mock effect is shown despite refusal. Inspect the findings.':'Bounded example complete. Explore the before/after mock states, conditions, and conserved workload.');
  $('results').scrollIntoView({behavior:'smooth',block:'start'});
 }
 $('mariaChallengeBtn').addEventListener('click',guard(()=>runMariaChallenge(false)));

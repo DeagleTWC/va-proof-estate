@@ -1,10 +1,10 @@
 # V.A. ZERO-X — public interactive consequence examiner
 
-## CEOS & ZERO research-context challenge
+## An open invitation to independent examiners
 
-The public page provides a dedicated, one-click [bounded changed-standing case](https://deagletwc.github.io/va-proof-estate/zero-x/#maria-challenge), motivated by Maria Kollia's published questions and invitation to examine independently observable non-formation. It retains six synthetic facilities, eight modeled routes, 21 ordered examination events, and 120 abstract workload units. The intentional negative control injects a mock unauthorized effect despite a NO_BIND response so an examiner can see an actual FAIL.
+The [bounded changed-standing examination](https://deagletwc.github.io/va-proof-estate/zero-x/#maria-challenge) was prepared following Maria Kollia's invitation to explore a reproducible case with measurable outcomes while preserving the independence of CEOS, ZERO, and V.A. It contains six synthetic facilities, eight modeled routes, 21 ordered events, and 120 abstract workload units. A deliberate negative control shows what happens when a system records NO_BIND but still produces a mock effect: the examiner marks the violation, rather than calling the refusal a success.
 
-**This is not a CEOS/ZERO implementation, endorsement, joint collaboration result or native V.A. runtime.** Maria and every other examiner may provide their own bounded workflow and response records without disclosing proprietary internals. Browser outputs are simulated local states only. For actual external or native consequence claims, separately observed effects, route coverage and native evidence are required.
+To make participation easy, start with [the short examiner invitation](INVITATION_TO_EXAMINERS.md). The test does **not** run CEOS, ZERO, or protected native V.A. code, nor imply Maria's endorsement or participation. Imported decisions are compared with synthetic state transitions; independent external proof requires separately observed effects and original carriers.
 
 
 This is a static, browser-local site intended for GitHub Pages. No server, account, API, proprietary native kernel or Python installation is required for the on-page demo.
