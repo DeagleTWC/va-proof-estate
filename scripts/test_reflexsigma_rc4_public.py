@@ -66,6 +66,15 @@ class PublicReflexSigmaTests(unittest.TestCase):
         self.assertGreaterEqual(workflow.count('"reflexsigma-rc4/**"'), 2)
         self.assertIn('python scripts/test_reflexsigma_rc4_public.py', workflow)
 
+    def test_gold_corridor_is_recorded_and_reduced_motion_safe(self):
+        self.assertIn('class="corridor-rail"', self.page)
+        self.assertIn('VISUAL GUIDE · RECORDED, NOT LIVE', self.page)
+        for node in ['SOURCE', 'STANDING', 'BOUNDARY', 'RECEIPT']:
+            self.assertIn(f'data-stage="{node.lower()}"', self.page)
+        self.assertIn('data-state="HOLD"', self.page)
+        self.assertIn("document.querySelector('.demo').dataset.state=run.outcome", self.page)
+        self.assertIn('prefers-reduced-motion: reduce', self.page)
+
 
 if __name__ == '__main__':
     unittest.main()
