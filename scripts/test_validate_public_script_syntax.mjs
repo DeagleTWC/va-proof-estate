@@ -42,9 +42,15 @@ const expectedNav=[
   '#floor','#witness','#claims','#physical','#challenge','#proof-desk',
   '#runnable-proof','#byo-seam','consequence-challenge.html',
   'consequence-aperture.html','consequence-aperture.html',
-  'mathematics.html','navier-stokes.html','execution-risk-scanner.html'
+  'mathematics.html','navier-stokes.html','execution-risk-scanner.html',
+  'aar-examination/'
 ].sort();
-assert.deepEqual(navLinks,expectedNav,'Original navigation plus Mathematics routes must be retained');
+// Navigation is additive: older required routes must survive a new public exhibit.
+// Preserve multiplicities (the deliberate duplicate aperture route matters), and
+// allow new destinations to be added without weakening the missing-route test.
+const hasRequiredRoutes=(links)=>expectedNav.every((route)=>
+  links.filter((x)=>x===route).length>=expectedNav.filter((x)=>x===route).length);
+assert.ok(hasRequiredRoutes(navLinks),'Original navigation, AAR and Mathematics routes must be retained');
 assert.ok(readFileSync(resolve(root,'mathematics.html'),'utf8').includes('navier-stokes.html'),
           'Mathematics archive must link to its first research record');
 assert.ok(readFileSync(resolve(root,'navier-stokes.html'),'utf8').includes('Snyder_Classical_Navier_Stokes_Proof_Extract_11pp.pdf'),
@@ -63,9 +69,10 @@ assert.ok(homepage.includes('.matrix tbody tr.is-selected'),
 // Negative controls: changed navigation or label wiring must not pass source checks.
 const hasOriginalRoutes=(s)=>{
   const n=s.slice(s.indexOf('<nav class="navlinks"'),s.indexOf('</nav>',s.indexOf('<nav class="navlinks"')));
-  return [...n.matchAll(/href="([^"]+)"/g)].map(x=>x[1]).sort().join('|')===expectedNav.join('|');
+  return hasRequiredRoutes([...n.matchAll(/href="([^"]+)"/g)].map(x=>x[1]));
 };
 assert.equal(hasOriginalRoutes(homepage.replace('href="#claims"','href="#removed-claim-link"')),false);
+assert.equal(hasOriginalRoutes(homepage.replace('href="aar-examination/"','href="deleted-route/"')),false);
 assert.equal(homepage.replace('cell.dataset.label=labels[i]','').includes('cell.dataset.label=labels[i]'),false);
 
 process.stdout.write('PASS: inline JavaScript parser and 3 negative controls\n');
