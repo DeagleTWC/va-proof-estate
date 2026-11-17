@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - "proofs/**"
+      - "reflexsigma-rc4/**"
       - "scripts/**"
       - "examiner/**"
       - ".github/ISSUE_TEMPLATE/**"
@@ -47,6 +48,7 @@ on:
   pull_request:
     paths:
       - "proofs/**"
+      - "reflexsigma-rc4/**"
       - "scripts/**"
       - "examiner/**"
       - ".github/ISSUE_TEMPLATE/**"
@@ -81,6 +83,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+      - name: Validate ReflexSigma RC4 public evidence and publication ceiling
+        run: python scripts/test_reflexsigma_rc4_public.py
       - name: Reproduce and check bounded synthetic proof
         run: python proofs/VA-AD-001/verify.py
       - name: Verify original-source transcript identity and page coverage
