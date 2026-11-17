@@ -65,6 +65,37 @@
     .scope{background:linear-gradient(90deg,#302114,#1a140e)}.btn.primary{color:#191109}
     .resourcebar{display:flex;gap:14px;flex-wrap:wrap;margin:0 0 62px}.resourcebar .btn{font-size:10px}
     @media(max-width:650px){.official-mark{max-width:46px;max-height:46px}.brandlabel{font-size:8px;letter-spacing:.13em}}
+    /* Evidence corridor: presentation of a frozen run, never live telemetry. */
+    .demo{position:relative;isolation:isolate;border-color:#886034;box-shadow:0 35px 105px #000a,0 0 0 1px #d5a35b1a}
+    .scenario.active{background:linear-gradient(135deg,#493018,#25190f)}.scenario.active strong{color:#ffe2a4}
+    .corridor-rail{position:relative;overflow:hidden;padding:24px 32px 28px;background:linear-gradient(145deg,#281c11,#110e0a 78%);border-bottom:1px solid #644829}
+    .corridor-rail:before{content:"";position:absolute;pointer-events:none;inset:0;background:repeating-linear-gradient(115deg,transparent 0,transparent 36px,#eec47f05 37px,#eec47f05 38px)}
+    .rail-kicker{position:relative;display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:22px;color:#d2aa6e;font-size:10px;letter-spacing:.19em;text-transform:uppercase;font-weight:800}
+    .rail-kicker span:last-child{color:#ae9372;font-weight:600;letter-spacing:.12em}
+    .corridor-flow{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 38px minmax(0,1fr) 38px minmax(0,1fr) 38px minmax(0,1fr);align-items:center;gap:9px}
+    .rail-stage{display:flex;gap:12px;align-items:center;min-width:0}
+    .stage-index{position:relative;display:grid;place-items:center;flex:0 0 43px;width:43px;height:43px;border:1px solid #9e7741;border-radius:50%;color:#f1c778;font-family:Georgia,serif;font-size:17px;background:#2b1d10;box-shadow:inset 0 0 18px #c18a271e}
+    .rail-stage strong,.rail-stage small{display:block;line-height:1.35}.rail-stage strong{color:#f6dec0;font-size:10px;letter-spacing:.15em}.rail-stage small{color:#ae967a;font-size:10px;margin-top:4px}
+    .rail-stage[data-stage="boundary"] .stage-index{border:1px solid #f3cb80;box-shadow:0 0 0 6px #f3cb800d,0 0 26px #dfaa4d35,inset 0 0 15px #f3cb8022}
+    .rail-connector{height:1px;min-width:0;background:linear-gradient(90deg,#8d5b2f,#ffd68c,#866039);position:relative;overflow:hidden}
+    .rail-connector:after{content:"";position:absolute;inset:-2px auto -2px -35%;width:35%;background:linear-gradient(90deg,transparent,#fff1c2,transparent);filter:blur(1px);animation:gold-trace 4.8s ease-in-out infinite}
+    .rail-connector:nth-of-type(2):after{animation-delay:.55s}.rail-connector:nth-of-type(3):after{animation-delay:1.1s}
+    @keyframes gold-trace{0%,14%{transform:translateX(0);opacity:0}24%{opacity:.85}65%,100%{transform:translateX(450%);opacity:0}}
+    .determination{position:relative;overflow:hidden;isolation:isolate;border-left:1px solid #6d4827}
+    .determination:before{content:"";position:absolute;z-index:-1;inset:0;background:radial-gradient(circle at 79% 42%,#d6a35338 0,transparent 45%);opacity:.85;animation:gold-breathe 6s ease-in-out infinite}
+    .determination:after{content:"";position:absolute;z-index:-1;width:205px;height:205px;right:-35px;top:24px;border-radius:50%;border:1px solid #f0c17857;box-shadow:0 0 0 28px #e3ac3b0b,0 0 0 58px #e3ac3b08,inset 0 0 60px #cc91301a;pointer-events:none}
+    @keyframes gold-breathe{0%,100%{opacity:.65;transform:scale(.98)}50%{opacity:1;transform:scale(1.06)}}
+    .determination .verdict{position:relative;font-size:clamp(39px,4.4vw,63px);text-shadow:0 0 42px #d59a3447;max-width:95%}
+    .resultmark{background:#bcd4a810;border-color:#c8d9a272}
+    .demo[data-state="ESCALATE_NO_BIND"] .determination:before{background:radial-gradient(circle at 79% 42%,#c47d3b4d 0,transparent 45%)}
+    .demo[data-state="REFUSE"] .determination:before{background:radial-gradient(circle at 79% 42%,#ad5f493c 0,transparent 45%)}
+    .demo[data-state="REFUSE"] .determination:after{border-color:#d6a1895e;box-shadow:0 0 0 28px #d6a1890c,0 0 0 58px #d6a18908}
+    .demo[data-state="REFUSE"] .verdict{color:#efb5a2;text-shadow:0 0 38px #b36a4c36}
+    .demo[data-state="ESCALATE_NO_BIND"] .verdict{color:#e8b575}
+    .receiptpanel{border-top:1px solid #81613b;background:linear-gradient(105deg,#130e09,#21180f)}
+    @media(max-width:980px){.corridor-flow{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.rail-connector{display:none}.rail-stage{gap:8px}.stage-index{flex-basis:36px;width:36px;height:36px}.rail-stage strong{font-size:9px}}
+    @media(max-width:650px){.corridor-rail{padding:20px 17px}.rail-kicker{display:block;font-size:9px}.rail-kicker span{display:block;margin-top:5px}.corridor-flow{grid-template-columns:repeat(2,minmax(0,1fr));gap:17px 10px}.rail-stage{gap:9px}.determination{border-left:0}.determination:after{width:145px;height:145px;right:-27px;top:33px}.determination .verdict{font-size:clamp(35px,8vw,48px)}}
+    @media (prefers-reduced-motion: reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
   </style>
 </head>
 <body>
@@ -103,13 +134,25 @@
         <div><div class="fine">01 / Recorded decision corridor</div><h2 id="corridor-title">What formed. What did not.</h2></div>
         <p>Choose a recorded condition. The outcome and receipt below come from the RC4 software carrier, not a scripted claim of physical effect.</p>
       </div>
-      <div class="demo">
+      <div class="demo" data-state="HOLD">
         <div class="demotop"><span class="fine">SOURCE-EXECUTED / NONBINDING CORRIDOR</span><span class="safe-label">RECORDED SOFTWARE EVIDENCE</span></div>
         <div class="scenario-tabs" role="tablist" aria-label="Recorded conditions">
           <button class="scenario active" type="button" role="tab" aria-selected="true" data-run="0"><span>01 / BASELINE</span><strong>Original review</strong></button>
           <button class="scenario" type="button" role="tab" aria-selected="false" data-run="1"><span>02 / REPLAY</span><strong>Same conditions</strong></button>
           <button class="scenario" type="button" role="tab" aria-selected="false" data-run="2"><span>03 / ROUTE</span><strong>Actuation attempt</strong></button>
           <button class="scenario" type="button" role="tab" aria-selected="false" data-run="3"><span>04 / CHANGE</span><strong>Authority revoked</strong></button>
+        </div>
+        <div class="corridor-rail" role="img" aria-label="Decorative sequence of recorded software evidence: source, standing, no-bind boundary and receipt. This is not live system telemetry.">
+          <div class="rail-kicker"><span>VISUAL GUIDE · RECORDED, NOT LIVE</span><span>CONDITION → DETERMINATION → CUSTODY</span></div>
+          <div class="corridor-flow" aria-hidden="true">
+            <div class="rail-stage" data-stage="source"><span class="stage-index">01</span><span><strong>SOURCE</strong><small>Frozen condition</small></span></div>
+            <span class="rail-connector"></span>
+            <div class="rail-stage" data-stage="standing"><span class="stage-index">02</span><span><strong>STANDING</strong><small>Source evaluated</small></span></div>
+            <span class="rail-connector"></span>
+            <div class="rail-stage" data-stage="boundary"><span class="stage-index">03</span><span><strong>BOUNDARY</strong><small>No bind</small></span></div>
+            <span class="rail-connector"></span>
+            <div class="rail-stage" data-stage="receipt"><span class="stage-index">04</span><span><strong>RECEIPT</strong><small>SHA-256 custody</small></span></div>
+          </div>
         </div>
         <div class="witness">
           <div class="condition">
@@ -182,6 +225,7 @@
     const fields={'case-number':'number','state-title':'title','state-description':'description','run-id':'run','outcome':'outcome','outcome-reason':'reason','receipt-hash':'receipt','decision-hash':'decision'};
     function setRun(index){
       const run=recordedRuns[index];
+      document.querySelector('.demo').dataset.state=run.outcome;
       for(const id in fields){document.getElementById(id).textContent=run[fields[id]];}
       for(const button of document.querySelectorAll('[data-run]')){
         const selected=Number(button.dataset.run)===index;
