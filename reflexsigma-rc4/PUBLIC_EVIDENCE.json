@@ -1,0 +1,51 @@
+{
+  "schema": "VA-REFLEXSIGMA-RC4-PUBLIC-EVIDENCE-1",
+  "product": "V.A. ReflexSigma",
+  "candidateRelease": "1.0.0-rc.4",
+  "recordDate": "2026-11-17",
+  "evidenceClass": "OBSERVED_INTERNAL_SOFTWARE",
+  "publicDisplayType": "RECORDED_PLAYBACK_ONLY",
+  "evidenceProvenance": "Source-recorded own-run verification; no independent examiner certification",
+  "softwareDisposition": "CANDIDATE_SOFTWARE_PASS_NATIVE_AND_PHYSICAL_HOLD",
+  "privateReleaseArchiveSHA256": "ed7a9dfe2c7cfc7d3cd27e539f55c24f8aa5baa432fd2eb30df5e51e232b8ec2",
+  "originalRC6ArchiveSHA256": "9c3c9e70cb422560c4ce62729a69df3fa960e0be9a9293fa0f08d4f14fd41faf",
+  "rc6SoftwareTests": {"passed": 274, "total": 274},
+  "rc4SoftwareTests": {"passed": 39, "total": 39},
+  "rc6SourceCustody": {"passed": 389, "total": 389},
+  "originalFusionV8Acceptance": {"passed": 4, "total": 9},
+  "originalFusionV8StrictSourceAcceptance": {"passed": 3, "total": 9},
+  "qualificationCeilings": {
+    "nativeCorrectedNewKQualification": "NOT_ESTABLISHED",
+    "physicalEquipmentQualification": "NOT_ESTABLISHED",
+    "independentExaminerAttestation": "NOT_ESTABLISHED"
+  },
+  "recordedSoftwareRuns": [
+    {
+      "number": "01", "runID": "baseline-source-review", "condition": "Original Fusion v8 source-review acceptance remains incomplete", "outcome": "HOLD", "noBind": true,
+      "decisionSHA256": "d55836223f6e7347c985505810469c80e37b9af8e07939b135e815dba21beffa",
+      "receiptSHA256": "599efbe3a51dd407e0baad637678058cc6041ef550de5f437cfee6603963b56e"
+    },
+    {
+      "number": "02", "runID": "same-condition-replay", "condition": "Unchanged proposal and authority; new recorded attempt", "outcome": "HOLD", "noBind": true,
+      "decisionSHA256": "d55836223f6e7347c985505810469c80e37b9af8e07939b135e815dba21beffa",
+      "receiptSHA256": "9a5f13705b666dcb4a02871ccb8978b2a8dfb4961f500f7f52e8fa1e08f143e2"
+    },
+    {
+      "number": "03", "runID": "prohibited-actuation-route", "condition": "Attempted route associated with physical actuation in nonbinding software", "outcome": "ESCALATE_NO_BIND", "noBind": true,
+      "decisionSHA256": "1f7b7a8130ce9155d12729e23209a7903875b05d5473d4d667cb5a24f4cfb6d1",
+      "receiptSHA256": "fc3bcd8582cddb50f14c1d583b930cf957a8482dd2683d6ace889d42416da47d"
+    },
+    {
+      "number": "04", "runID": "authority-revoked-changed-condition", "condition": "Authority revoked under changed conditions", "outcome": "REFUSE", "noBind": true,
+      "decisionSHA256": "583a6e3e47bdfb91a33281f8200b66e7d2c9f176235cc7a9b8c42bde6329cb30",
+      "receiptSHA256": "b8683aa0c3db79d1214bb11109733c2598ae7eb11b2966d5424cd95dfc00f87e"
+    }
+  ],
+  "publicSafety": {
+    "actuationAuthorized": false,
+    "containsPrivateExecutableOrKernel": false,
+    "publicRecordIsRawWitness": false,
+    "sourceCarrierAvailability": "Private; only SHA256 identity is public",
+    "interpretation": "Recorded software custody and bounded simulation do not constitute native corrected NEW K or independently instrumented physical qualification"
+  }
+}

@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>V.A. — ReflexSigma RC4 | Public Proof Estate</title>
+  <meta name="description" content="V.A. ReflexSigma RC4: public-safe recorded software proof surface, four source-recorded no-bind decisions, receipts, replay and explicit native and physical qualification limits.">
+  <meta name="theme-color" content="#090807">
+  <style>
+    :root{--ink:#101618;--ink2:#172023;--panel:#1b2426;--line:#344044;--gold:#e0c284;--mutedgold:#b49868;--cream:#f0eee7;--muted:#aab5b2;--green:#8ed2b1;--red:#f1aa9d;--blue:#95b6ca}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ink);color:var(--cream);font-family:Arial,Helvetica,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+    body:before{content:"";position:absolute;inset:0 0 auto;height:820px;z-index:-1;background:radial-gradient(ellipse 65% 45% at 82% 14%,#3e3b2b75,transparent 75%),linear-gradient(#121a1c,#101618)}
+    a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+    .shell{max-width:1290px;margin:auto;padding:0 48px}.fine{font-size:11px;text-transform:uppercase;letter-spacing:.19em;font-weight:700}.gold{color:var(--gold)}.muted{color:var(--muted)}
+    .topline{height:5px;background:linear-gradient(90deg,#846f40,var(--gold),#67582f)}.topnav{border-bottom:1px solid #ffffff1c;background:#11191cd9;position:sticky;top:0;z-index:10;backdrop-filter:blur(20px)}
+    .navinner{height:82px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:flex;align-items:center;gap:14px;white-space:nowrap}.wordmark{font-family:Georgia,serif;font-size:36px;font-weight:700;letter-spacing:-.07em;color:var(--gold);line-height:1}
+    .brandlabel{border-left:1px solid #9a8961;padding-left:14px;font-size:10px;letter-spacing:.27em;line-height:1.8;font-weight:700}.links{display:flex;gap:32px;font-size:12px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:#bdc6c3}.links a:hover{color:var(--gold)}
+    .navflag{border:1px solid #8e7c564e;padding:9px 13px;color:var(--gold);font-size:10px;letter-spacing:.16em;white-space:nowrap}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:end;padding:92px 0 84px}
+    .eyebrow{display:flex;align-items:center;gap:13px;color:var(--gold)}.eyebrow:before{content:"";height:1px;width:28px;background:var(--gold)}
+    h1,h2,h3,p{margin-top:0}h1,h2{font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-spacing:-.046em}h1{font-size:clamp(64px,7.1vw,105px);line-height:.99;margin:28px 0 34px}h1 em{color:var(--gold);font-style:normal}
+    .lead{font-size:18px;line-height:1.78;color:#c2cac6;max-width:640px;margin-bottom:32px}.heroactions{display:flex;gap:13px;flex-wrap:wrap}
+    .btn{display:inline-flex;justify-content:center;align-items:center;gap:12px;border:1px solid #6c756f;padding:14px 19px;text-transform:uppercase;font-size:11px;font-weight:800;letter-spacing:.13em;transition:.2s}
+    .btn.primary{background:var(--gold);border-color:var(--gold);color:#101618}.btn.primary:hover{background:#f3daa8}.btn.ghost{background:transparent;color:var(--cream)}.btn.ghost:hover{border-color:var(--gold);color:var(--gold)}
+    .notice{background:linear-gradient(145deg,#212b2b,#151d1f);border:1px solid #61664e73;padding:34px 36px 30px;position:relative;box-shadow:0 28px 75px #05090b70}
+    .notice:before,.notice:after{content:"";position:absolute;width:18px;height:18px;border-color:var(--gold);border-style:solid}.notice:before{top:-1px;left:-1px;border-width:1px 0 0 1px}.notice:after{bottom:-1px;right:-1px;border-width:0 1px 1px 0}
+    .noticehead{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:28px}.live-dot{width:7px;height:7px;border-radius:50%;background:var(--green);display:inline-block;box-shadow:0 0 0 4px #8ed2b117;margin-right:9px}
+    .notice-title{font-family:Georgia,serif;font-size:29px;line-height:1.2;margin-bottom:12px}.notice-copy{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:25px}
+    .metricset{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);padding-top:23px;gap:10px}.metric strong{display:block;font-size:31px;letter-spacing:-.055em;font-weight:500;color:var(--cream)}.metric span{display:block;font-size:10px;letter-spacing:.1em;color:var(--muted);line-height:1.5}
+    .chapter{padding:35px 0 26px;border-top:1px solid #52605d6b;display:flex;gap:40px;align-items:flex-end;justify-content:space-between}.chapter .fine{color:var(--gold);margin-bottom:10px}.chapter h2{font-size:clamp(35px,3.7vw,53px);margin:0;line-height:1.1}.chapter p{max-width:430px;color:var(--muted);font-size:14px;margin:0}
+    .demo{border:1px solid var(--line);background:#182124;box-shadow:0 32px 90px #060a0b8c}.demotop{padding:22px 30px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:15px;background:#1d2729}
+    .demotop .fine{color:#c8d0cd}.safe-label{color:var(--gold);border:1px solid #8f7b534b;padding:7px 12px;font-size:10px;letter-spacing:.13em}
+    .scenario-tabs{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line)}.scenario{color:#9da9a7;min-height:105px;text-align:left;padding:20px 22px;background:#152022;border:0;border-right:1px solid var(--line);position:relative;transition:background .2s}
+    .scenario:last-child{border-right:0}.scenario span{display:block;color:#839493;font-size:11px;letter-spacing:.13em;margin-bottom:10px}.scenario strong{display:block;font-size:12px;letter-spacing:.015em;font-weight:700}.scenario:hover{background:#273234}.scenario.active{color:var(--cream);background:#26302e}
+    .scenario.active:after{content:"";position:absolute;bottom:-1px;left:0;right:0;height:3px;background:var(--gold)}
+    .witness{display:grid;grid-template-columns:1fr 1fr;min-height:345px}.condition{padding:40px 42px;border-right:1px solid var(--line)}.determination{padding:40px 42px;background:linear-gradient(155deg,#242e30,#192326)}
+    .tinyline{font-size:11px;text-transform:uppercase;letter-spacing:.19em;color:var(--muted);margin-bottom:18px}.state-title{font-family:Georgia,serif;font-size:36px;line-height:1.15;letter-spacing:-.025em;margin-bottom:14px}
+    .explain{color:#b7c1bd;font-size:14px;line-height:1.8;max-width:455px;min-height:75px}.keyvalue{display:grid;grid-template-columns:140px 1fr;gap:8px;font-size:12px;padding:11px 0;border-top:1px solid #ffffff13}.keyvalue span:first-child{color:#889c97}.keyvalue span:last-child{color:#dbe2dd;text-align:right}
+    .verdict{font-family:Georgia,serif;font-size:clamp(35px,4vw,57px);line-height:1.05;letter-spacing:-.038em;color:var(--gold);margin:0 0 16px;overflow-wrap:anywhere}.resultmark{display:inline-flex;align-items:center;gap:8px;color:var(--green);border:1px solid #8ed2b153;padding:7px 12px;font-size:11px;letter-spacing:.16em;font-weight:800}
+    .resultmark:before{content:"";width:6px;height:6px;background:var(--green);border-radius:50%}.reason{font-size:14px;color:#b9c3bf;line-height:1.7;margin-top:26px;max-width:420px}.receiptpanel{background:#11191c;padding:21px 30px 24px;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:35px}
+    .receiptpanel .tinyline{margin:0 0 8px}.hash{font-family:"Courier New",monospace;font-size:12px;color:#d7dece;overflow-wrap:anywhere;word-break:break-all}.footnote{color:#869692;font-size:12px;line-height:1.55;margin-top:12px}
+    .replay{margin:34px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:18px}.replaybox{border:1px solid var(--line);background:#182124;padding:29px 31px}.replaybox h3{font-family:Georgia,serif;font-size:27px;font-weight:400;letter-spacing:-.024em;margin:12px 0 8px}.replaybox p{font-size:13px;color:var(--muted);max-width:480px;margin-bottom:18px}.smallresult{display:flex;align-items:center;gap:12px;flex-wrap:wrap;color:var(--green);font-size:12px;font-weight:800;letter-spacing:.05em}.minitag{font-size:10px;color:var(--gold);border:1px solid #6e785e;padding:4px 8px;text-transform:uppercase;letter-spacing:.09em}
+    .evidencegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:10px}.evidencecard{padding:30px 27px;background:#1c2628;border:1px solid var(--line);min-height:228px}.evidencecard .count{font-family:Georgia,serif;font-size:43px;line-height:1.15;color:var(--gold);margin:13px 0}.evidencecard p{font-size:13px;color:var(--muted);margin:0}.track{background:#131c1e;border:1px solid var(--line);padding:26px 30px;margin-top:18px;display:flex;align-items:center;gap:22px;justify-content:space-between}
+    .track b{font-size:12px;font-weight:500;letter-spacing:.1em}.track .trace{display:flex;align-items:center;gap:7px;flex-wrap:wrap;font-family:"Courier New",monospace;color:var(--muted);font-size:11px}.track .trace span{background:#263130;border:1px solid #4d5d55;padding:8px 11px;color:#d9dfd6}
+    .controlarea{padding-bottom:66px}.controlgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.control{background:#1d282a;border:1px solid var(--line);padding:23px 21px;min-height:174px}.control .fine{font-size:10px;color:var(--red)}.control h3{margin:15px 0 8px;font-size:15px}.control p{font-size:12px;line-height:1.65;color:var(--muted);margin:0}
+    .scope{margin-bottom:60px;border:1px solid #8f7b514c;background:linear-gradient(90deg,#252a25,#1a2223);padding:28px 31px;display:flex;align-items:center;justify-content:space-between;gap:25px}.scope h3{font-family:Georgia,serif;font-weight:400;font-size:27px;margin:7px 0}.scope p{font-size:13px;color:var(--muted);margin:0;max-width:700px}.scope .pill{flex:none;border:1px solid #b79969;color:var(--gold);padding:11px 14px;letter-spacing:.12em;font-size:10px;font-weight:700}
+    .footer{border-top:1px solid var(--line);padding:31px 0 44px;color:#95a39f;display:flex;justify-content:space-between;gap:30px;font-size:11px;letter-spacing:.07em}
+    @media(max-width:980px){.shell{padding:0 25px}.links{display:none}.hero{grid-template-columns:1fr;gap:35px;padding:70px 0}.scenario strong{font-size:11px}.condition,.determination{padding:28px}.controlgrid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:650px){.shell{padding:0 18px}.navinner{height:70px}.navflag{display:none}h1{font-size:58px}.lead{font-size:16px}.chapter{display:block;padding-top:35px}.chapter p{margin-top:16px}.notice{padding:24px}.metric strong{font-size:25px}.scenario-tabs{grid-template-columns:repeat(2,1fr)}.scenario{min-height:88px}.scenario:nth-child(2){border-right:0}.scenario:nth-child(-n+2){border-bottom:1px solid var(--line)}.demotop{padding:16px}.safe-label{font-size:8px}.witness,.receiptpanel,.replay,.evidencegrid{grid-template-columns:1fr}.condition{border-right:0;border-bottom:1px solid var(--line)}.condition,.determination{padding:28px 22px}.receiptpanel{gap:23px;padding:22px}.state-title{font-size:30px}.verdict{font-size:39px}.controlgrid{grid-template-columns:1fr}.track{display:block}.track .trace{margin-top:14px}.scope{display:block}.scope .pill{display:inline-block;margin-top:20px}.footer{display:block}.footer span{display:block;margin-bottom:12px}}
+    /* The Proof Estate's actual obsidian / antique gold / ivory identity. */
+    :root{--ink:#090807;--ink2:#110d09;--panel:#20170f;--line:#5b4126;--gold:#f3cb80;--mutedgold:#bd8b40;--cream:#f5ebdb;--muted:#b9aa94;--green:#b6d7a8;--red:#e5a098;--blue:#bba78f}
+    body:before{background:radial-gradient(ellipse 70% 44% at 82% 14%,#73522947,transparent 78%),linear-gradient(#110d09,#090807)}
+    .topnav{background:#110d09ec;border-bottom:1px solid var(--line)}
+    .topline{background:linear-gradient(90deg,#68451f,var(--gold),#68451f)}
+    .brand{gap:16px}.official-mark{display:block;max-width:61px;max-height:61px;width:auto;height:auto;object-fit:contain}
+    .brandlabel{border-color:#7b5c38;color:var(--gold)}.links{color:#cbbca6}.navflag{border-color:#745633}
+    .lead,.explain,.reason,.links,.keyvalue span:last-child{color:#dccfbc}
+    .notice{background:linear-gradient(145deg,#241a10,#130f0a);border-color:#80603b;box-shadow:0 28px 75px #0008}
+    .demo{background:#1b140e;box-shadow:0 32px 90px #0008}.demotop{background:#251a11}.demotop .fine{color:#e4d5c0}
+    .scenario{background:#18110b;color:#b8a995}.scenario span{color:#bca47e}.scenario:hover{background:#302216}.scenario.active{background:#332414}
+    .determination{background:linear-gradient(155deg,#2e2115,#19120c)}
+    .keyvalue{border-color:#ffffff17}.keyvalue span:first-child{color:#bba589}
+    .receiptpanel{background:#130e09}.hash{color:#f1dfbf}.footnote{color:#b7a78f}
+    .replaybox,.evidencecard,.control{background:#20170f}.track{background:#140f0a}.track .trace span{background:#2b1f13;border-color:#735333;color:#f0dfc6}
+    .scope{background:linear-gradient(90deg,#302114,#1a140e)}.btn.primary{color:#191109}
+    .resourcebar{display:flex;gap:14px;flex-wrap:wrap;margin:0 0 62px}.resourcebar .btn{font-size:10px}
+    @media(max-width:650px){.official-mark{max-width:46px;max-height:46px}.brandlabel{font-size:8px;letter-spacing:.13em}}
+  </style>
+</head>
+<body>
+  <div class="topline"></div>
+  <header class="topnav">
+    <div class="shell navinner">
+      <a class="brand" href="../index.html" aria-label="V.A. The Shift, return to the Proof Estate"><img id="vaOfficialLogo" class="official-mark" alt="Official V.A. mark" hidden><span class="brandlabel">V.A. / THE SHIFT<br>PROOF BEFORE POWER</span></a>
+      <nav class="links" aria-label="Page sections"><a href="#corridor">Recorded surface</a><a href="#evidence">Evidence</a><a href="#examiner">Falsification</a></nav>
+      <div class="navflag">RC4 / PUBLIC SOFTWARE RECORD</div>
+    </div>
+  </header>
+  <main id="top" class="shell">
+    <section class="hero">
+      <div>
+        <div class="eyebrow fine">V.A. REFLEXSIGMA · EVIDENCE SURFACE 01</div>
+        <h1>Proof before<br><em>power.</em></h1>
+        <p class="lead">Four source-recorded decisions. Four separate receipts. One bounded software corridor tested across unchanged authority, prohibited routing, and revoked standing.</p>
+        <div class="heroactions">
+          <a class="btn primary" href="#corridor">Explore the recorded run <span aria-hidden="true">→</span></a>
+          <a class="btn ghost" href="#evidence">Examine the evidence</a>
+        </div>
+      </div>
+      <aside class="notice" aria-label="Software evidence summary">
+        <div class="noticehead"><span class="fine gold">SOURCE-RECORDED · OWN-RUN VERIFICATION</span><span class="fine muted">OFFLINE · NOT LIVE</span></div>
+        <h2 class="notice-title">One corridor.<br>Recorded custody.</h2>
+        <p class="notice-copy">This page displays frozen RC4 software evidence as a recorded playback. It is not a live controller, physical apparatus, independently witnessed run, or native corrected NEW K execution.</p>
+        <div class="metricset">
+          <div class="metric"><strong>274<span style="display:inline;font-size:17px;color:var(--gold)">/274</span></strong><span>RC6 SOFTWARE<br>TESTS PASS</span></div>
+          <div class="metric"><strong>39<span style="display:inline;font-size:17px;color:var(--gold)">/39</span></strong><span>RC4 TESTS<br>PASS</span></div>
+          <div class="metric"><strong>389<span style="display:inline;font-size:17px;color:var(--gold)">/389</span></strong><span>RC6 SOURCE<br>HASHES PASS</span></div>
+        </div>
+      </aside>
+    </section>
+    <section id="corridor" aria-labelledby="corridor-title">
+      <div class="chapter">
+        <div><div class="fine">01 / Recorded decision corridor</div><h2 id="corridor-title">What formed. What did not.</h2></div>
+        <p>Choose a recorded condition. The outcome and receipt below come from the RC4 software carrier, not a scripted claim of physical effect.</p>
+      </div>
+      <div class="demo">
+        <div class="demotop"><span class="fine">SOURCE-EXECUTED / NONBINDING CORRIDOR</span><span class="safe-label">RECORDED SOFTWARE EVIDENCE</span></div>
+        <div class="scenario-tabs" role="tablist" aria-label="Recorded conditions">
+          <button class="scenario active" type="button" role="tab" aria-selected="true" data-run="0"><span>01 / BASELINE</span><strong>Original review</strong></button>
+          <button class="scenario" type="button" role="tab" aria-selected="false" data-run="1"><span>02 / REPLAY</span><strong>Same conditions</strong></button>
+          <button class="scenario" type="button" role="tab" aria-selected="false" data-run="2"><span>03 / ROUTE</span><strong>Actuation attempt</strong></button>
+          <button class="scenario" type="button" role="tab" aria-selected="false" data-run="3"><span>04 / CHANGE</span><strong>Authority revoked</strong></button>
+        </div>
+        <div class="witness">
+          <div class="condition">
+            <div class="tinyline">Governing condition / <span id="case-number">01</span></div>
+            <div class="state-title" id="state-title">Source review gate</div>
+            <p class="explain" id="state-description">Original Fusion v8 source-review acceptance remains incomplete. The bounded software corridor records no permission to bind.</p>
+            <div class="keyvalue"><span>Record identity</span><span id="run-id">baseline-source-review</span></div>
+            <div class="keyvalue"><span>Source class</span><span>RC6-derived / unchanged</span></div>
+            <div class="keyvalue"><span>Effect boundary</span><span>NONBINDING</span></div>
+          </div>
+          <div class="determination">
+            <div class="tinyline">Source-recorded determination</div>
+            <div class="verdict" id="outcome" aria-live="polite">HOLD</div>
+            <span class="resultmark">NO_BIND · TRUE</span>
+            <p class="reason" id="outcome-reason">The original engineering gate did not meet its declared acceptance conditions. The software records HOLD without authorizing a physical effect.</p>
+          </div>
+        </div>
+        <div class="receiptpanel">
+          <div><div class="tinyline">Receipt SHA256 / private source carrier</div><div class="hash" id="receipt-hash">599efbe3a51dd407e0baad637678058cc6041ef550de5f437cfee6603963b56e</div></div>
+          <div><div class="tinyline">Deterministic decision SHA256</div><div class="hash" id="decision-hash">d55836223f6e7347c985505810469c80e37b9af8e07939b135e815dba21beffa</div></div>
+        </div>
+      </div>
+      <div class="replay">
+        <article class="replaybox"><div class="fine gold">02 / SAME STATE</div><h3>Same decision. Distinct receipt.</h3><p>Runs 01 and 02 preserve the identical source decision SHA256 and create distinct receipt hashes in the SQLite-backed custody chain.</p><div class="smallresult"><span class="minitag">OBSERVED</span> DECISION MATCH · RECEIPTS DISTINCT</div></article>
+        <article class="replaybox"><div class="fine gold">04 / CHANGED STATE</div><h3>Authority removed. Refusal recorded.</h3><p>The changed-condition run records the authority-revocation check and a source-backed REFUSE result. No consequence was bound.</p><div class="smallresult"><span class="minitag">OBSERVED</span> AUTHORITY REVOKED · NO_BIND</div></article>
+      </div>
+    </section>
+    <section id="evidence" aria-labelledby="evidence-title">
+      <div class="chapter" style="margin-top:66px">
+        <div><div class="fine">02 / Claim to carrier</div><h2 id="evidence-title">Evidence has a class.</h2></div>
+        <p>Separate what the archive executes and records from what has not been established. Internal receipts are not independent physical observations.</p>
+      </div>
+      <div class="evidencegrid">
+        <article class="evidencecard"><div class="fine gold">OBSERVED · INTERNAL SOFTWARE</div><div class="count">4 / 4</div><p>Four source-produced outcomes; SQLite ledger, JSONL export, individual receipts and replay verified within the private source package.</p></article>
+        <article class="evidencecard"><div class="fine gold">OBSERVED · ADVERSARIAL</div><div class="count">39 / 39</div><p>RC4 regression and hostile evidence mutation checks pass; forged provenance and fully rehashed decision forgery are rejected.</p></article>
+        <article class="evidencecard"><div class="fine" style="color:var(--red)">NOT ESTABLISHED</div><div class="count" style="font-size:29px;padding-top:10px">Native / physical</div><p>Authentic protected corrected NEW K witness, measured physical effects, independent examiner attestation and equipment qualification are outside this carrier.</p></article>
+      </div>
+      <div class="track"><b>CONTEMPORANEOUS RECEIPT LINEAGE</b><div class="trace"><span>GENESIS</span>→<span>HOLD</span>→<span>HOLD</span>→<span>ESCALATE</span>→<span>REFUSE</span></div></div>
+    </section>
+    <section id="examiner" class="controlarea" aria-labelledby="examiner-title">
+      <div class="chapter" style="margin-top:66px">
+        <div><div class="fine">03 / Falsification protocol</div><h2 id="examiner-title">Try to change the evidence.</h2></div>
+        <p>These are recorded test outcomes, not a live attack interface. The release auditor rejects the altered carriers.</p>
+      </div>
+      <div class="controlgrid">
+        <article class="control"><span class="fine">REJECTED / TEST</span><h3>Forged provenance</h3><p>Rewrite source/verification descriptions; recompute the evidence index.</p></article>
+        <article class="control"><span class="fine">REJECTED / TEST</span><h3>Rehashed decision forgery</h3><p>Rebuild receipts, SQLite, exports, report hashes and index consistently.</p></article>
+        <article class="control"><span class="fine">REJECTED / TEST</span><h3>Altered source custody</h3><p>Mutate a source byte; verification refuses the changed source manifest.</p></article>
+        <article class="control"><span class="fine">REJECTED / TEST</span><h3>False qualification</h3><p>Promote an engineering failure or claim independent attestation without evidence.</p></article>
+      </div>
+    </section>
+    <aside class="scope" aria-label="Important scope boundary">
+      <div><div class="fine gold">GOVERNING SCOPE</div><h3>Software proof surface. Not physical qualification.</h3><p>Original Fusion v8 numerical acceptance remains 4/9; five original failures remain. Corrected protected NEW K and independently instrumented physical effect are not represented as passing. No physical actuation is authorized.</p></div>
+      <span class="pill">NATIVE / PHYSICAL: HOLD</span>
+    </aside>
+    <div class="resourcebar" aria-label="Public examiner resources">
+      <a class="btn primary" href="PUBLIC_EVIDENCE.json">Review the public evidence register <span aria-hidden="true">↗</span></a>
+      <a class="btn ghost" href="README.md">Read source and claim boundaries <span aria-hidden="true">↗</span></a>
+      <a class="btn ghost" href="../index.html">Return to the Proof Estate <span aria-hidden="true">↗</span></a>
+    </div>
+  </main>
+  <footer class="footer shell"><span>V.A. / THE SHIFT · PROOF BEFORE POWER · PUBLIC-SAFE RECORDED PLAYBACK</span><span>RC4 · BOUNDED SOFTWARE WITNESS · 2026-11-17</span></footer>
+  <script>
+    const recordedRuns = [
+      {number:'01',title:'Source review gate',description:'Original Fusion v8 source-review acceptance remains incomplete. The bounded software corridor records no permission to bind.',run:'baseline-source-review',outcome:'HOLD',reason:'The original engineering gate did not meet its declared acceptance conditions. The software records HOLD without authorizing a physical effect.',receipt:'599efbe3a51dd407e0baad637678058cc6041ef550de5f437cfee6603963b56e',decision:'d55836223f6e7347c985505810469c80e37b9af8e07939b135e815dba21beffa'},
+      {number:'02',title:'Unchanged governing state',description:'The same source proposal and authority conditions are re-executed. This is a new recorded attempt with a distinct internal receipt.',run:'same-condition-replay',outcome:'HOLD',reason:'Same-state execution produces the identical decision envelope as Run 01. The software creates another custody receipt while maintaining no bind.',receipt:'9a5f13705b666dcb4a02871ccb8978b2a8dfb4961f500f7f52e8fa1e08f143e2',decision:'d55836223f6e7347c985505810469c80e37b9af8e07939b135e815dba21beffa'},
+      {number:'03',title:'Prohibited actuation route',description:'A proposal attempts a route associated with physical actuation. This bounded offline carrier has no authorization to produce that effect.',run:'prohibited-actuation-route',outcome:'ESCALATE_NO_BIND',reason:'The controller records escalation without binding a physical action. The route attempt and its disposition remain in the receipt chain.',receipt:'fc3bcd8582cddb50f14c1d583b930cf957a8482dd2683d6ace889d42416da47d',decision:'1f7b7a8130ce9155d12729e23209a7903875b05d5473d4d667cb5a24f4cfb6d1'},
+      {number:'04',title:'Authority revoked',description:'Governing authority has changed from the earlier run. A stale or revoked authorization cannot acquire standing for this proposal.',run:'authority-revoked-changed-condition',outcome:'REFUSE',reason:'The source-recorded AUTHORITY_STALE_OR_REVOKED check is present. The attempted consequence is refused with no bind and a durable receipt.',receipt:'b8683aa0c3db79d1214bb11109733c2598ae7eb11b2966d5424cd95dfc00f87e',decision:'583a6e3e47bdfb91a33281f8200b66e7d2c9f176235cc7a9b8c42bde6329cb30'}
+    ];
+    const fields={'case-number':'number','state-title':'title','state-description':'description','run-id':'run','outcome':'outcome','outcome-reason':'reason','receipt-hash':'receipt','decision-hash':'decision'};
+    function setRun(index){
+      const run=recordedRuns[index];
+      for(const id in fields){document.getElementById(id).textContent=run[fields[id]];}
+      for(const button of document.querySelectorAll('[data-run]')){
+        const selected=Number(button.dataset.run)===index;
+        button.classList.toggle('active',selected);
+        button.setAttribute('aria-selected',selected?'true':'false');
+      }
+    }
+    document.querySelectorAll('[data-run]').forEach(button=>button.addEventListener('click',()=>setRun(Number(button.dataset.run))));
+    document.querySelectorAll('[role=tab]').forEach(button=>button.addEventListener('keydown',event=>{
+      if(event.key!=='ArrowRight'&&event.key!=='ArrowLeft')return;
+      event.preventDefault();
+      const next=(Number(button.dataset.run)+(event.key==='ArrowRight'?1:3))%4;
+      document.querySelector('[data-run="'+next+'"]').focus();
+      setRun(next);
+    }));
+    (async function displayExactOfficialMark(){
+      const element=document.getElementById('vaOfficialLogo');
+      try{
+        const names=Array.from({length:12},(_,i)=>'../zero-x/assets/logo-parts/logo.part.'+String(i).padStart(2,'0')+'.b64');
+        const parts=await Promise.all(names.map(async name=>{const response=await fetch(name,{cache:'force-cache'});if(!response.ok)throw Error('Missing official-logo part');return (await response.text()).replace(/\s+/g,'');}));
+        const binary=atob(parts.join(''));
+        const bytes=new Uint8Array(binary.length);
+        for(let i=0;i<binary.length;i++)bytes[i]=binary.charCodeAt(i);
+        const hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),x=>x.toString(16).padStart(2,'0')).join('');
+        if(hash!=='c18391f95a487ea8b11141bc4ebe7781aaa33e767ed8003f854e52a49e68eace')throw Error('Official V.A. logo integrity check failed');
+        const url=URL.createObjectURL(new Blob([bytes],{type:'image/png'}));
+        element.addEventListener('load',()=>URL.revokeObjectURL(url),{once:true});
+        element.src=url;element.hidden=false;
+      }catch(error){console.error('Official V.A. logo unavailable; no substitute displayed',error);}
+    })();
+  </script>
+</body>
+</html>
