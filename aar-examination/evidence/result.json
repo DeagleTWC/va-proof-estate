@@ -1,0 +1,21 @@
+{
+  "aar_owner_reviewed": false,
+  "case_count": 20,
+  "duplicate_effects": 0,
+  "external_effects": false,
+  "failed": 0,
+  "mock_effects": 3,
+  "native_va_weave": false,
+  "origin": "independent public examiner, not AAR source code",
+  "passed": 20,
+  "production_system": false,
+  "real_timebase": false,
+  "receipt_chain_verified": true,
+  "receipts": 18,
+  "route_scope": "one in-process declared route + one synthetic attempted bypass",
+  "rule": "EXAMINER-ILLUSTRATIVE-001/1.0",
+  "run_id": "AAR-FACING-2026-11-17-SYN-001",
+  "schema": "aar-facing-public-fixture/1",
+  "status": "PASS / SYNTHETIC EXAMINER ONLY",
+  "third_party_reproduced": false
+}

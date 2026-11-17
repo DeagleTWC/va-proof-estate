@@ -1,0 +1,314 @@
+[
+  {
+    "condition_sha256": "3e77cd288d07eddd829a78301ce15e1b274ffa2b702d88b37d0a5a9395b28f8b",
+    "decision": "ALLOW",
+    "effect_after_sha256": "fdec233de0f59211cebd581fbb1230bf23663e060ac4cf1b2bfed4f09d7c7162",
+    "effect_before_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "effect_delta": 1,
+    "expected": "ALLOW",
+    "expected_effect_delta": 1,
+    "id": "01-authorized",
+    "mock": true,
+    "pass": true,
+    "reasons": [],
+    "receipt_id": "PUB-RCP-0001"
+  },
+  {
+    "condition_sha256": "cd514bfb290ede0c4fecb262f9927904551e259e2b0d36a30e1bd2c59f0d7082",
+    "decision": "ALLOW",
+    "effect_after_sha256": "fdec233de0f59211cebd581fbb1230bf23663e060ac4cf1b2bfed4f09d7c7162",
+    "effect_before_sha256": "fdec233de0f59211cebd581fbb1230bf23663e060ac4cf1b2bfed4f09d7c7162",
+    "effect_delta": 0,
+    "expected": "ALLOW",
+    "expected_effect_delta": 0,
+    "id": "02-retry-no-double-effect",
+    "mock": true,
+    "pass": true,
+    "reasons": [],
+    "receipt_id": "PUB-RCP-0002"
+  },
+  {
+    "condition_sha256": "afac859d898034707eb9e82ab5f9470da0087294c2e389bd1d9d9647a6b56acc",
+    "decision": "BLOCK",
+    "effect_after_sha256": "fdec233de0f59211cebd581fbb1230bf23663e060ac4cf1b2bfed4f09d7c7162",
+    "effect_before_sha256": "fdec233de0f59211cebd581fbb1230bf23663e060ac4cf1b2bfed4f09d7c7162",
+    "effect_delta": 0,
+    "expected": "BLOCK",
+    "expected_effect_delta": 0,
+    "id": "03-revoked",
+    "mock": true,
+    "pass": true,
+    "reasons": [
+      "authority_absent_or_revoked"
+    ],
+    "receipt_id": "PUB-RCP-0003"
+  },
+  {
+    "condition_sha256": "d777234d173ab5a02d0c6699c698c46c82134b9d3a432899d9870cce2a5074f5",
+    "decision": "BLOCK",
+    "effect_after_sha256": "fdec233de0f59211cebd581fbb1230bf23663e060ac4cf1b2bfed4f09d7c7162",
+    "effect_before_sha256": "fdec233de0f59211cebd581fbb1230bf23663e060ac4cf1b2bfed4f09d7c7162",
+    "effect_delta": 0,
+    "expected": "BLOCK",
+    "expected_effect_delta": 0,
+    "id": "04-absent-authority",
+    "mock": true,
+    "pass": true,
+    "reasons": [
+      "authority_absent_or_revoked"
+    ],
+    "receipt_id": "PUB-RCP-0004"
+  },
+  {
+    "condition_sha256": "4b799aa6b97219b1feb4d2eb2c7c57abe2d2fa67354116f5675a53ce345f6ff8",
+    "decision": "BLOCK",
+    "effect_after_sha256": "fdec233de0f59211cebd581fbb1230bf23663e060ac4cf1b2bfed4f09d7c7162",
+    "effect_before_sha256": "fdec233de0f59211cebd581fbb1230bf23663e060ac4cf1b2bfed4f09d7c7162",
+    "effect_delta": 0,
+    "expected": "BLOCK",
+    "expected_effect_delta": 0,
+    "id": "05-corrupt-evidence",
+    "mock": true,
+    "pass": true,
+    "reasons": [
+      "evidence_invalid"
+    ],
+    "receipt_id": "PUB-RCP-0005"
+  },
+  {
+    "condition_sha256": "f0e94fb840eb87d08265a25521c8309cfd4d1c7f17cea9a4706f4722823b823d",
+    "decision": "BLOCK",
+    "effect_after_sha256": "fdec233de0f59211cebd581fbb1230bf23663e060ac4cf1b2bfed4f09d7c7162",
+    "effect_before_sha256": "fdec233de0f59211cebd581fbb1230bf23663e060ac4cf1b2bfed4f09d7c7162",
+    "effect_delta": 0,
+    "expected": "BLOCK",
+    "expected_effect_delta": 0,
+    "id": "06-empty-evidence",
+    "mock": true,
+    "pass": true,
+    "reasons": [
+      "evidence_invalid"
+    ],
+    "receipt_id": "PUB-RCP-0006"
+  },
+  {
+    "condition_sha256": "283de6648843b81549d0df31037b397a6144e3167a4b234d2ae8d96f6c9a7c41",
+    "decision": "BLOCK",
+    "effect_after_sha256": "fdec233de0f59211cebd581fbb1230bf23663e060ac4cf1b2bfed4f09d7c7162",
+    "effect_before_sha256": "fdec233de0f59211cebd581fbb1230bf23663e060ac4cf1b2bfed4f09d7c7162",
+    "effect_delta": 0,
+    "expected": "BLOCK",
+    "expected_effect_delta": 0,
+    "id": "07-alternate-route",
+    "mock": true,
+    "pass": true,
+    "reasons": [
+      "alternate_route_not_authorized"
+    ],
+    "receipt_id": "PUB-RCP-0007"
+  },
+  {
+    "condition_sha256": "ea461e22b36f70dfc162e6c640dfd608a526b763eb828435c392e1ff9cfbb3cb",
+    "decision": "HOLD",
+    "effect_after_sha256": "fdec233de0f59211cebd581fbb1230bf23663e060ac4cf1b2bfed4f09d7c7162",
+    "effect_before_sha256": "fdec233de0f59211cebd581fbb1230bf23663e060ac4cf1b2bfed4f09d7c7162",
+    "effect_delta": 0,
+    "expected": "HOLD",
+    "expected_effect_delta": 0,
+    "id": "08-over-capacity",
+    "mock": true,
+    "pass": true,
+    "reasons": [
+      "insufficient_capacity"
+    ],
+    "receipt_id": "PUB-RCP-0008"
+  },
+  {
+    "condition_sha256": "3a37f4680056b8295a9fb642ec373371f0be5b5a6dad239122bcc87cf6485293",
+    "decision": "HOLD",
+    "effect_after_sha256": "fdec233de0f59211cebd581fbb1230bf23663e060ac4cf1b2bfed4f09d7c7162",
+    "effect_before_sha256": "fdec233de0f59211cebd581fbb1230bf23663e060ac4cf1b2bfed4f09d7c7162",
+    "effect_delta": 0,
+    "expected": "HOLD",
+    "expected_effect_delta": 0,
+    "id": "09-over-cost",
+    "mock": true,
+    "pass": true,
+    "reasons": [
+      "illustrative_cost_ceiling"
+    ],
+    "receipt_id": "PUB-RCP-0009"
+  },
+  {
+    "condition_sha256": "f567b27f7564e70f8f9debf3f3a568f6653768ef7da310f432e90fcd04810046",
+    "decision": "HOLD",
+    "effect_after_sha256": "fdec233de0f59211cebd581fbb1230bf23663e060ac4cf1b2bfed4f09d7c7162",
+    "effect_before_sha256": "fdec233de0f59211cebd581fbb1230bf23663e060ac4cf1b2bfed4f09d7c7162",
+    "effect_delta": 0,
+    "expected": "HOLD",
+    "expected_effect_delta": 0,
+    "id": "10-exploratory",
+    "mock": true,
+    "pass": true,
+    "reasons": [
+      "illustrative_exploratory_pattern"
+    ],
+    "receipt_id": "PUB-RCP-0010"
+  },
+  {
+    "condition_sha256": "322abbabf0357869af797774549e5720e61e1619c691fdfd36c78a8cfc6b4717",
+    "decision": "HOLD",
+    "effect_after_sha256": "fdec233de0f59211cebd581fbb1230bf23663e060ac4cf1b2bfed4f09d7c7162",
+    "effect_before_sha256": "fdec233de0f59211cebd581fbb1230bf23663e060ac4cf1b2bfed4f09d7c7162",
+    "effect_delta": 0,
+    "expected": "HOLD",
+    "expected_effect_delta": 0,
+    "id": "11-limited-mandate",
+    "mock": true,
+    "pass": true,
+    "reasons": [
+      "mandate_insufficient"
+    ],
+    "receipt_id": "PUB-RCP-0011"
+  },
+  {
+    "condition_sha256": "c10dd6d2d1c153c624cd51b217aaad028f939ccbf4f7a832cbbcb22bcd4dc0a2",
+    "decision": "HOLD",
+    "effect_after_sha256": "fdec233de0f59211cebd581fbb1230bf23663e060ac4cf1b2bfed4f09d7c7162",
+    "effect_before_sha256": "fdec233de0f59211cebd581fbb1230bf23663e060ac4cf1b2bfed4f09d7c7162",
+    "effect_delta": 0,
+    "expected": "HOLD",
+    "expected_effect_delta": 0,
+    "id": "12-wrong-scope",
+    "mock": true,
+    "pass": true,
+    "reasons": [
+      "mandate_insufficient"
+    ],
+    "receipt_id": "PUB-RCP-0012"
+  },
+  {
+    "condition_sha256": "b44880eb52a4c7fbabf5bbc6f11864b3a4bed0a7826e8a6e45530a909cd4d4eb",
+    "decision": "ALLOW",
+    "effect_after_sha256": "cb4fdbc84f48d81fe46423be239f39a904c9115cfccbb6380628426446dfe0f3",
+    "effect_before_sha256": "fdec233de0f59211cebd581fbb1230bf23663e060ac4cf1b2bfed4f09d7c7162",
+    "effect_delta": 1,
+    "expected": "ALLOW",
+    "expected_effect_delta": 1,
+    "id": "13-changed-condition-authorized",
+    "mock": true,
+    "pass": true,
+    "reasons": [],
+    "receipt_id": "PUB-RCP-0013"
+  },
+  {
+    "condition_sha256": "0f7f0ecf18c4392c7b2fea929cb6e3eb850539645669cfb9b665236b99aa5479",
+    "decision": "HOLD",
+    "effect_after_sha256": "cb4fdbc84f48d81fe46423be239f39a904c9115cfccbb6380628426446dfe0f3",
+    "effect_before_sha256": "cb4fdbc84f48d81fe46423be239f39a904c9115cfccbb6380628426446dfe0f3",
+    "effect_delta": 0,
+    "expected": "HOLD",
+    "expected_effect_delta": 0,
+    "id": "14-same-condition-replay",
+    "mock": true,
+    "pass": true,
+    "reasons": [
+      "insufficient_capacity"
+    ],
+    "receipt_id": "PUB-RCP-0014"
+  },
+  {
+    "condition_sha256": "c7bf0b947b49346035638cd2e29f6f7af962ebd66e5ee52e112c93d67dfb52b0",
+    "decision": "BLOCK",
+    "effect_after_sha256": "cb4fdbc84f48d81fe46423be239f39a904c9115cfccbb6380628426446dfe0f3",
+    "effect_before_sha256": "cb4fdbc84f48d81fe46423be239f39a904c9115cfccbb6380628426446dfe0f3",
+    "effect_delta": 0,
+    "expected": "BLOCK",
+    "expected_effect_delta": 0,
+    "id": "15-revoked-after-allow",
+    "mock": true,
+    "pass": true,
+    "reasons": [
+      "authority_absent_or_revoked"
+    ],
+    "receipt_id": "PUB-RCP-0015"
+  },
+  {
+    "condition_sha256": "0989f5cabccfec3da8e13356d10ee646d8eb3b6911e620bb6a400e59a85266dd",
+    "decision": "ALLOW",
+    "effect_after_sha256": "f3b707c9289f48d6043abefa99e0aced035995949f594944662e3dc59c6a6a1b",
+    "effect_before_sha256": "cb4fdbc84f48d81fe46423be239f39a904c9115cfccbb6380628426446dfe0f3",
+    "effect_delta": 1,
+    "expected": "ALLOW",
+    "expected_effect_delta": 1,
+    "id": "16-independent-valid",
+    "mock": true,
+    "pass": true,
+    "reasons": [],
+    "receipt_id": "PUB-RCP-0016"
+  },
+  {
+    "condition_sha256": "b82448d76d309f852a8749880c0d6f95d63dae665cab11d422fea7d0464aecfe",
+    "decision": "ERROR_HOLD",
+    "effect_after_sha256": "f3b707c9289f48d6043abefa99e0aced035995949f594944662e3dc59c6a6a1b",
+    "effect_before_sha256": "f3b707c9289f48d6043abefa99e0aced035995949f594944662e3dc59c6a6a1b",
+    "effect_delta": 0,
+    "expected": "ERROR_HOLD",
+    "expected_effect_delta": 0,
+    "id": "17-receipt-write-fault",
+    "mock": true,
+    "pass": true,
+    "reasons": [
+      "injected_receipt_failure"
+    ],
+    "receipt_id": null
+  },
+  {
+    "condition_sha256": "f8fe2595b1ef56bc2ec4be371964f69d6b2d5f84c7ea143817591ae62d28d162",
+    "decision": "ERROR_HOLD",
+    "effect_after_sha256": "f3b707c9289f48d6043abefa99e0aced035995949f594944662e3dc59c6a6a1b",
+    "effect_before_sha256": "f3b707c9289f48d6043abefa99e0aced035995949f594944662e3dc59c6a6a1b",
+    "effect_delta": 0,
+    "expected": "ERROR_HOLD",
+    "expected_effect_delta": 0,
+    "id": "18-effect-commit-fault",
+    "mock": true,
+    "pass": true,
+    "reasons": [
+      "injected_effect_failure"
+    ],
+    "receipt_id": null
+  },
+  {
+    "condition_sha256": "6b1894a585ae07f090e104a6bec9d9a175986685fc0ba30b59bf3e4409bb4d78",
+    "decision": "HOLD",
+    "effect_after_sha256": "f3b707c9289f48d6043abefa99e0aced035995949f594944662e3dc59c6a6a1b",
+    "effect_before_sha256": "f3b707c9289f48d6043abefa99e0aced035995949f594944662e3dc59c6a6a1b",
+    "effect_delta": 0,
+    "expected": "HOLD",
+    "expected_effect_delta": 0,
+    "id": "19-conflicting-capacity",
+    "mock": true,
+    "pass": true,
+    "reasons": [
+      "capacity_conflict"
+    ],
+    "receipt_id": "PUB-RCP-0017"
+  },
+  {
+    "condition_sha256": "4c5ced79b75cd3b3b85efb03c67dc7ebb16a4bbc5f7faca0e4a9c7e413fbaa0b",
+    "decision": "BLOCK",
+    "effect_after_sha256": "f3b707c9289f48d6043abefa99e0aced035995949f594944662e3dc59c6a6a1b",
+    "effect_before_sha256": "f3b707c9289f48d6043abefa99e0aced035995949f594944662e3dc59c6a6a1b",
+    "effect_delta": 0,
+    "expected": "BLOCK",
+    "expected_effect_delta": 0,
+    "id": "20-unknown-authority",
+    "mock": true,
+    "pass": true,
+    "reasons": [
+      "unknown_authority"
+    ],
+    "receipt_id": "PUB-RCP-0018"
+  }
+]

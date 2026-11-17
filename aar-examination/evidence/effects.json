@@ -1,0 +1,17 @@
+{
+  "A": {
+    "condition_sha256": "3e77cd288d07eddd829a78301ce15e1b274ffa2b702d88b37d0a5a9395b28f8b",
+    "effect_key": "A",
+    "evidence": "SYNTHETIC-A"
+  },
+  "B": {
+    "condition_sha256": "b44880eb52a4c7fbabf5bbc6f11864b3a4bed0a7826e8a6e45530a909cd4d4eb",
+    "effect_key": "B",
+    "evidence": "REPAIRED-B"
+  },
+  "C": {
+    "condition_sha256": "0989f5cabccfec3da8e13356d10ee646d8eb3b6911e620bb6a400e59a85266dd",
+    "effect_key": "C",
+    "evidence": "SYNTHETIC-C"
+  }
+}
