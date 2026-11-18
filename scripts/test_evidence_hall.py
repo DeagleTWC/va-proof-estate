@@ -95,6 +95,38 @@ class EvidenceHallTests(unittest.TestCase):
             path.write_text(json.dumps(report))
             self.assertTrue(any("recorded mock observation mismatch" in e for e in validate_hall(root)))
 
+    def test_validator_rejects_displayed_evidence_promotion(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = pathlib.Path(tmp)
+            self._copy_fixture(root)
+            page = root / "evidence-hall.html"
+            html = page.read_text()
+            self.assertIn("DECLARED · NATIVE", html)
+            page.write_text(html.replace("DECLARED · NATIVE", "INDEPENDENTLY REPRODUCED · NATIVE", 1))
+            self.assertTrue(any("Displayed exhibit badge" in e for e in validate_hall(root)))
+
+    def test_validator_rejects_incorrect_visible_mock_table(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = pathlib.Path(tmp)
+            self._copy_fixture(root)
+            page = root / "evidence-hall.html"
+            html = page.read_text()
+            self.assertIn('<td><span class="eh-table-refuse">REFUSE</span></td><td>No</td><td>Unchanged</td>', html)
+            page.write_text(html.replace('<td><span class="eh-table-refuse">REFUSE</span></td><td>No</td><td>Unchanged</td>',
+                                         '<td><span class="eh-table-admit">ADMIT</span></td><td>Yes</td><td>Changed</td>', 1))
+            self.assertTrue(any("Displayed mock witness table" in e for e in validate_hall(root)))
+
+    def test_validator_rejects_fixture_independence_promotion_in_footer(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = pathlib.Path(tmp)
+            self._copy_fixture(root)
+            page = root / "evidence-hall.html"
+            html = page.read_text()
+            self.assertIn("independent reproduction: NOT ATTESTED", html)
+            page.write_text(html.replace("independent reproduction: NOT ATTESTED",
+                                         "independent reproduction: INDEPENDENTLY REPRODUCED", 1))
+            self.assertTrue(any("Displayed fixture standing" in e for e in validate_hall(root)))
+
     @staticmethod
     def _copy_fixture(root):
         for path in ["proofs/EVIDENCE-HALL-REGISTER.json", "evidence-hall.html", "evidence-hall.css", "va-gold-design.css"]:
