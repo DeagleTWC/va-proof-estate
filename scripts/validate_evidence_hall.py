@@ -15,13 +15,50 @@ class HallParser(HTMLParser):
         super().__init__()
         self.sections = {}
         self.links = []
+        self.badges = {}
+        self.rows = []
+        self._exhibit = None
+        self._badge_text = None
+        self._in_body = False
+        self._row = None
+        self._cell = None
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
         if tag == "section" and attrs.get("data-exhibit"):
-            self.sections[attrs["data-exhibit"]] = attrs.get("data-standing")
+            self._exhibit = attrs["data-exhibit"]
+            self.sections[self._exhibit] = attrs.get("data-standing")
+        if tag == "span" and self._exhibit and "eh-badge" in attrs.get("class", "").split():
+            self._badge_text = []
+        if tag == "tbody":
+            self._in_body = True
+        if tag == "tr" and self._in_body:
+            self._row = []
+        if tag in ("th", "td") and self._row is not None:
+            self._cell = []
         if tag == "a" and attrs.get("href"):
             self.links.append(attrs["href"])
+
+    def handle_data(self, data):
+        if self._badge_text is not None:
+            self._badge_text.append(data)
+        if self._cell is not None:
+            self._cell.append(data)
+
+    def handle_endtag(self, tag):
+        if tag == "span" and self._badge_text is not None:
+            self.badges.setdefault(self._exhibit, []).append(" ".join("".join(self._badge_text).split()))
+            self._badge_text = None
+        if tag in ("th", "td") and self._cell is not None:
+            self._row.append(" ".join("".join(self._cell).split()))
+            self._cell = None
+        if tag == "tr" and self._row is not None:
+            self.rows.append(tuple(self._row))
+            self._row = None
+        if tag == "tbody":
+            self._in_body = False
+        if tag == "section" and self._exhibit is not None:
+            self._exhibit = None
 
 
 def validate_hall(repo_root: Path) -> list[str]:
@@ -64,11 +101,13 @@ def validate_hall(repo_root: Path) -> list[str]:
         path = fixture.get(field, "")
         if not isinstance(path, str) or not path.startswith("proofs/VA-AD-001/") or not (repo_root / path).is_file():
             errors.append(f"Missing local fixture {field}")
+    report_cases = {}
     report_path = fixture.get("record", "")
     if isinstance(report_path, str) and (repo_root / report_path).is_file():
         try:
             report = json.loads((repo_root / report_path).read_text(encoding="utf-8"))
             cases = {c["case"]: c for c in report["cases"]}
+            report_cases = cases
             expected = {
                 "positive-authorized": ("ADMIT", True, False),
                 "negative-never-authorized": ("REFUSE", False, True),
@@ -89,6 +128,28 @@ def validate_hall(repo_root: Path) -> list[str]:
     parser.feed(html)
     if parser.sections != {ex["id"]: "DECLARED" for ex in exhibits}:
         errors.append("Displayed exhibits differ from documented evidence statuses")
+    if parser.badges != {ex["id"]: ["DECLARED · NATIVE"] for ex in exhibits}:
+        errors.append("Displayed exhibit badge differs from source-qualified standing")
+    if ("OBSERVED · LOCAL SYNTHETIC FIXTURE" not in html
+            or "Self-hashed mock receipt integrity: PASS" not in html
+            or "same-condition replay: PASS" not in html
+            or "independent reproduction: NOT ATTESTED" not in html):
+        errors.append("Displayed fixture standing differs from bounded mock source record")
+    labels = {
+        "positive-authorized": "Approved · active authority · valid evidence",
+        "negative-never-authorized": "Authority missing",
+        "changed-condition-revoked": "Authority revoked",
+        "negative-stale-evidence": "Evidence stale",
+    }
+    if len(report_cases) == len(labels):
+        expected_rows = [
+            (labels[key], report_cases[key]["decision"],
+             "Yes" if report_cases[key]["observed_mock_effect"] else "No",
+             "Unchanged" if report_cases[key]["before_state_sha256"] == report_cases[key]["after_state_sha256"] else "Changed")
+            for key in labels
+        ]
+        if parser.rows != expected_rows:
+            errors.append("Displayed mock witness table differs from archived report")
     expected_links = {s["path"] for ex in exhibits for s in ex["sources"]}
     for required in expected_links:
         if required not in parser.links:
