@@ -13,6 +13,8 @@ on:
       - "consequence-challenge.*"
       - "challenge/**"
       - "end-to-end.html"
+      - "evidence-hall.html"
+      - "evidence-hall.css"
       - "foundation.html"
       - "reviewer-route.html"
       - "source-reading.html"
@@ -57,6 +59,8 @@ on:
       - "consequence-challenge.*"
       - "challenge/**"
       - "end-to-end.html"
+      - "evidence-hall.html"
+      - "evidence-hall.css"
       - "foundation.html"
       - "reviewer-route.html"
       - "source-reading.html"
@@ -85,6 +89,10 @@ jobs:
           python-version: "3.11"
       - name: Validate ReflexSigma RC4 public evidence and publication ceiling
         run: python scripts/test_reflexsigma_rc4_public.py
+      - name: Validate gold Evidence Hall source custody and non-promotion
+        run: |
+          python scripts/validate_evidence_hall.py
+          python -m unittest discover -s scripts -p 'test_evidence_hall.py' -v
       - name: Reproduce and check bounded synthetic proof
         run: python proofs/VA-AD-001/verify.py
       - name: Verify original-source transcript identity and page coverage
