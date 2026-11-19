@@ -1,0 +1,88 @@
+{
+  "schema": "va-gold-evidence-hall/1.0",
+  "created": "2026-11-18",
+  "canonical_estate": "DeagleTWC/va-proof-estate",
+  "source_custody": "Existing public-safe V.A. original PDFs and locally authored bounded examiner fixture; source bytes unchanged",
+  "evidence_levels": ["DECLARED", "OBSERVED", "INDEPENDENTLY REPRODUCED"],
+  "native_v12_run_attached": false,
+  "native_independent_reproduction_attached": false,
+  "protected_construction_included": false,
+  "fixture": {
+    "id": "VA-AD-001",
+    "standing": "OBSERVED",
+    "scope": "Local in-process synthetic mock effect only; not native V.A., independently instrumented, or a historical pilot",
+    "record": "proofs/VA-AD-001/local-fixture-report.json",
+    "runner": "proofs/VA-AD-001/run.py",
+    "verifier": "proofs/VA-AD-001/verify.py",
+    "positive_mock_effect": true,
+    "never_authorized_mock_effect": false,
+    "revoked_mock_effect": false,
+    "stale_evidence_mock_effect": false,
+    "archived_same_condition_replay": "PASS",
+    "independent_reproduction": "NOT ATTESTED"
+  },
+  "exhibits": [
+    {
+      "id": "pre-effect",
+      "title": "Proof Before Power",
+      "standing": "DECLARED",
+      "native_run_attached": false,
+      "scope": "Published V.A. pre-effect formation and refusal requirements; native effect readback not attached",
+      "fixture_related": true,
+      "sources": [
+        {"path": "proofs/sources/THE_SHIFT_PUBLIC_PROOF_ESTATE_AND_CHALLENGE_STANDARD_V1(2).pdf", "role": "Original public challenge standard"},
+        {"path": "proofs/VA-AD-001/local-fixture-report.json", "role": "Observed local mock-state specimen"}
+      ]
+    },
+    {
+      "id": "authority",
+      "title": "Authority Revoked",
+      "standing": "DECLARED",
+      "native_run_attached": false,
+      "scope": "Original native authority-continuity claim documented; separately, the local fixture records a revoked-authority mock refusal",
+      "fixture_related": true,
+      "sources": [
+        {"path": "proofs/sources/The_Shift_Public_Proof_Path_Final_v2(1).pdf", "role": "Original six-surface public proof path"},
+        {"path": "proofs/VA-AD-001/README.md", "role": "Bounded local mock methodology"},
+        {"path": "proofs/VA-AD-001/local-fixture-report.json", "role": "Archived revoked-authority mock result"}
+      ]
+    },
+    {
+      "id": "scope",
+      "title": "Scope Expired",
+      "standing": "DECLARED",
+      "native_run_attached": false,
+      "scope": "Original proof-path statement includes an expired-scope examination route; original native run and independent effect witness not attached here",
+      "fixture_related": false,
+      "sources": [
+        {"path": "proofs/sources/THE_SHIFT_PUBLIC_PROOF_ESTATE_AND_CHALLENGE_STANDARD_V1(2).pdf", "role": "Original public inspection route"},
+        {"path": "proofs/CLAIM-TO-CARRIER.json", "role": "Current evidence status ceiling"}
+      ]
+    },
+    {
+      "id": "changed-condition",
+      "title": "Conditions Changed",
+      "standing": "DECLARED",
+      "native_run_attached": false,
+      "scope": "Documented changed-condition re-resolution; separately, synthetic stale-evidence and revocation negative controls",
+      "fixture_related": true,
+      "sources": [
+        {"path": "proofs/sources/True_Zero_Consequence_Systems_Science_Public_Record_v1_2_3_RELEASE(6).pdf", "role": "Original True-Zero public record"},
+        {"path": "proofs/VA-AD-001/local-fixture-report.json", "role": "Observed in-process changed-condition specimen"}
+      ]
+    },
+    {
+      "id": "continuance",
+      "title": "Lawful Continuance & Replay",
+      "standing": "DECLARED",
+      "native_run_attached": false,
+      "scope": "Published lawful-continuance and replay requirements; separately, one local synthetic positive control and same-condition replay",
+      "fixture_related": true,
+      "sources": [
+        {"path": "proofs/sources/True_Zero_Consequence_Systems_Science_FINAL_PUBLIC_RELEASE.pdf", "role": "Original final public scientific release"},
+        {"path": "proofs/VA-AD-001/verify.py", "role": "Local fixture replay verifier"},
+        {"path": "proofs/VA-AD-001/local-fixture-report.json", "role": "Archived mock positive control and replay record"}
+      ]
+    }
+  ]
+}
