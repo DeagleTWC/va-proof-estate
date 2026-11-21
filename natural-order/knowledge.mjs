@@ -69,7 +69,7 @@ export const TOPICS = Object.freeze([
     summary:'The public AHMR description distinguishes durable ascent, threshold-preserved continuance, review-gated states, and stop-domain states. The declared closure is bounded by its stated invariants. Continuance includes refusal and stop where standing fails.',
     connection:'Where does your field distinguish lawful continuation from merely allowing a process to keep running?',
     question:'After a material condition changes, which earlier standing must be reconsidered?',
-    grade:'DECLARED', keywords:['ahmr','continuance','continuation','threshold','renewal','stop domain','harmonic'],
+    grade:'DECLARED', keywords:['ahmr','continuance','continuation','threshold','renewal','stop domain','harmonic','conditions change','condition changes','changed conditions','changed condition'],
     sources:[source('AHMR in the foundation','../foundation.html'),source('Continuance source checkpoint','../proofs/CONTINUATION-CHECKPOINT-2026-10-26.md')],
   },
   {
@@ -93,7 +93,7 @@ export const TOPICS = Object.freeze([
     summary:'The public estate preserves historical engineering and pilot source paths, separates recorded observations from declarations, and identifies native original packets that are not attached to this particular public release. Neither a missing public attachment nor a synthetic run settles a broader claim.',
     connection:'In your field, how do you identify the exact operating conditions, original run, and independent examiner for a pilot?',
     question:'What one bounded observation could an outsider reproduce without needing access to a private build?',
-    grade:'HISTORICAL', keywords:['pilot','piloted','historical','original','record','deployment','production','real world','real-world','release'],
+    grade:'HISTORICAL', keywords:['pilot','piloted','historical','original','record','deployment','production','real world','real-world','release','pilot evidence','pilot records','hospital pilot'],
     sources:[source('Historical evidence index','../proofs/HISTORICAL-EVIDENCE-INDEX.md'),source('Public pilot evidence release route','../proofs/PILOT-EVIDENCE-RELEASE.md')],
   },
   {
