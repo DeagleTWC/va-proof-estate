@@ -1,5 +1,5 @@
-import {TOPICS} from './knowledge.mjs?v=20261121-natural-order-5';
-import {teach,publicHref} from './engine.mjs?v=20261121-natural-order-5';
+import {TOPICS} from './knowledge.mjs?v=20261121-natural-order-6';
+import {teach,publicHref} from './engine.mjs?v=20261121-natural-order-6';
 
 const byId = id => document.getElementById(id);
 const form=byId('learning-form');
@@ -44,6 +44,23 @@ function sourceList(sources) {
   }
 }
 
+function showMapOptions(ids) {
+  const options=byId('map-options');
+  options.replaceChildren();
+  const choices=Array.isArray(ids) ? ids.map(id=>TOPICS.find(topic=>topic.id===id)).filter(Boolean) : [];
+  byId('map-explanation').textContent=choices.length
+    ? 'Your question connects to more than one public subject. Choose which one you want to examine first.'
+    : 'The public catalog has no direct answer for those words. Pick a subject below, or narrow your question. We will not invent a result.';
+  for (const topic of choices) {
+    const button=document.createElement('button');
+    button.type='button';
+    button.className='map-choice';
+    button.textContent=topic.title;
+    button.addEventListener('click',()=>startTopic(topic.id));
+    options.append(button);
+  }
+}
+
 function present(result,{scroll=true}={}) {
   currentTopic=null;
   switch(result.kind){
@@ -63,7 +80,7 @@ function present(result,{scroll=true}={}) {
       break;
     }
     case 'access': showPanel('access'); break;
-    case 'map': showPanel('map'); break;
+    case 'map': showMapOptions(result.options); showPanel('map'); break;
     case 'empty': showPanel('placeholder'); question.focus(); break;
   }
   if(scroll && result.kind!=='empty') {
