@@ -1,7 +1,10 @@
 import {TOPICS} from './knowledge.mjs';
 
-const protectedContext = /\b(?:full|complete|private|protected|internal|secret|raw|proprietary|source|implementation|operator|algorithm|construction|unredacted)\b/i;
-const protectedTarget = /\b(?:kernel|urk|new\s*k|math(?:ematics)?|layer|logic|code|blueprint|formula|mechanism|derivation|operator|architecture)\b/i;
+const controlledMaterial = /\b(?:kernel|urk|new\s*k|math(?:ematics)?|layer|logic|code|blueprint|formula|mechanism|derivation|operator|architecture|pilot|originals?)\b/i;
+const restrictedDetail = /\b(?:full|complete|private|protected|internal|secret|raw|proprietary|unredacted|underlying)\b/i;
+const operativeRequest = /\b(?:show|give|send|download|copy|build|reconstruct|implement|write|reveal|provide)\b/i;
+const operativeDetail = /\b(?:formula|algorithm|operator|source\s+code|implementation|construction|internal\s+logic|build\s+steps)\b/i;
+const underlyingConstruction = /\bunderlying\s+(?:construction|implementation|mechanism|math(?:ematics)?|kernel)\b/i;
 const publicRoot = 'https://deagletwc.github.io/va-proof-estate/';
 
 export function publicHref(href) {
@@ -16,7 +19,8 @@ export function publicHref(href) {
 
 export function teach(input, selectedTopicId) {
   const question = String(input ?? '').trim().slice(0,800);
-  if (question && protectedContext.test(question) && protectedTarget.test(question)) {
+  if (question && ((restrictedDetail.test(question) && controlledMaterial.test(question)) ||
+      (operativeRequest.test(question) && operativeDetail.test(question)) || underlyingConstruction.test(question))) {
     return {kind:'access',href:'access.html'};
   }
   if (selectedTopicId) {
@@ -32,5 +36,6 @@ export function teach(input, selectedTopicId) {
     return score+(new RegExp(`(?:^|\\s)${escaped}(?:$|\\s)`,'i').test(words) ? (term.includes(' ')?5:2) : 0);
   },0)})).sort((a,b)=>b.score-a.score);
   if (!scored[0]?.score) return {kind:'map'};
+  if(scored[1]?.score===scored[0].score) return {kind:'map',options:scored.filter(item=>item.score===scored[0].score).map(item=>item.topic.id)};
   return {kind:'lesson',topic:scored[0].topic};
 }
