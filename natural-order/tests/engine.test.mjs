@@ -46,6 +46,22 @@ test('takes a public request for pilot evidence to the pilot records', () => {
   }
 });
 
+test('routes withdrawn authority to pre-consequence custody', () => {
+  const result=teach('What if authority is withdrawn after an approval?');
+  assert.equal(result.kind,'lesson');
+  assert.equal(result.topic.id,'consequence');
+  assert.ok(result.topic.sources.some(source=>source.href==='../proofs/EXAMINATION-STANDARD.md'));
+});
+
+test('points plural positive and negative control questions to the public proof standard', () => {
+  for (const question of ['Where are the negative controls?', 'How do positive and negative controls differ?']) {
+    const result=teach(question);
+    assert.equal(result.kind,'lesson',question);
+    assert.equal(result.topic.id,'proof',question);
+    assert.ok(result.topic.sources.some(source=>source.href==='../proofs/EXAMINATION-STANDARD.md'));
+  }
+});
+
 test('introduces V.A. itself with source-linked, before-power engineering context', () => {
   for (const question of ['What is V.A.?', 'What is VA?', 'What is The Shift?', 'What does V.A. do?']) {
     const result=teach(question);
