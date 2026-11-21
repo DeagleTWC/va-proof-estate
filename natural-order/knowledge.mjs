@@ -77,7 +77,7 @@ export const TOPICS = Object.freeze([
     summary:'The V.A. public design examines whether a candidate movement can acquire lawful standing to become consequence at all. A permission check, approval log, pre-tool check, or REFUSE message alone cannot establish that a prohibited effect never formed by another route.',
     connection:'Take your example. What real-world effect would count as the consequence, and which routes can cause it?',
     question:'If authority is withdrawn or a condition changes, what independent observation would show the effect did not form?',
-    grade:'REVIEW STANDARD', keywords:['payment','bank','settlement','consent','revocation','before power','consequence','custody','pre-tool','pre tool','execution','agent','fraud'],
+    grade:'REVIEW STANDARD', keywords:['payment','bank','settlement','consent','revocation','revoked','withdrawn','before power','consequence','custody','pre-tool','pre tool','execution','agent','fraud'],
     sources:[source('Public consequence examination standard','../proofs/EXAMINATION-STANDARD.md'),source('Try the consequence aperture','../consequence-aperture.html')],
   },
   {
@@ -85,7 +85,7 @@ export const TOPICS = Object.freeze([
     summary:'The published seven-part review separates a declared claim, the original carrier, governing conditions, positive and negative controls, change/replay, and alternate routes with witness identity. A synthetic fixture proves its own bounded scope; a claimed native result requires its own native carrier.',
     connection:'What does your discipline consider an original observable result—not an illustration or slide?',
     question:'Can you change one load-bearing condition, replay, and show independently what did and did not happen?',
-    grade:'REVIEW STANDARD', keywords:['test','prove','proof','witness','negative control','positive control','replay','challenge','verification','evidence','receipt','audit'],
+    grade:'REVIEW STANDARD', keywords:['test','prove','proof','witness','negative control','negative controls','positive control','positive controls','replay','challenge','verification','evidence','receipt','audit'],
     sources:[source('Seven-part public review standard','../proofs/EXAMINATION-STANDARD.md'),source('Evidence hall with claim ceilings','../evidence-hall.html')],
   },
   {
