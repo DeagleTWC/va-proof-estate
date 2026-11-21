@@ -18,19 +18,42 @@ h1,h2{font-family:Georgia,serif;font-weight:400;line-height:1.12;letter-spacing:
 <h1>An exact unit-fraction child witness</h1>
 <p>Public mathematical demonstration. The protected True Zero, corrected NEW K and URK parent construction are not disclosed or claimed to have executed here.</p></div>
 <section class="panel"><span class="badge">KNOWN CASE · EXACT VERIFIED</span><p class="math">4/5 = 1/2 + 1/4 + 1/20</p><p class="status">Verified by integer identity: 4·2·4·20 = 5·(4·20 + 2·20 + 2·4) = 640.</p></section>
-<h2>A proved infinite family</h2>
-<p>For every integer k ≥ 0, put n = 8k + 5, x = 2(k + 1), y = n(k + 1), z = 2n(k + 1). These are positive integers and satisfy:</p>
-<section class="panel"><p class="math">1/x + 1/y + 1/z = (n + 3)/(2n(k + 1)) = 4/n</p><p>Since n + 3 = 8(k + 1), the last equality is exact for every k ≥ 0. This proves one infinite congruence class, not the unrestricted conjecture.</p></section>
-<h2>Run a candidate</h2>
-<p>This browser demonstration generates a witness for the proved family. It independently verifies the result by exact integer arithmetic.</p>
-<div class="run-form"><div class="input-group"><label for="n">Positive integer n (n ≡ 5 mod 8)</label><input id="n" type="number" min="5" max="100000" step="1" value="5"></div><button type="button" id="run">Generate witness</button></div><output id="result" aria-live="polite"></output>
+<h2>Six proved infinite corridors</h2>
+<p>The following exact formulas construct witnesses for every integer <strong>n ≥ 2</strong> except the three residue classes <strong>n ≡ 1, 49 or 73 (mod 120)</strong>. These are standard elementary identities, not a universal conjecture proof or an authenticated protected URK derivation.</p>
+<section class="panel"><span class="badge">DIRECT FORMULAS · EXACT INTEGER PROOF</span>
+<ol class="scope-list">
+<li>n even: <code>(x,y,z)=(n/2, n, n)</code></li>
+<li>n ≡ 3 (mod 4): <code>((n+1)/4, n(n+1)/2, n(n+1)/2)</code></li>
+<li>n ≡ 5 (mod 8): <code>((n+3)/4, n(n+3)/4, n(n+3)/8)</code></li>
+<li>n ≡ 0 (mod 3): <code>(n/3, 2n, 2n)</code></li>
+<li>n ≡ 2 (mod 3): <code>((n+1)/3, n, n(n+1)/3)</code></li>
+<li>Remaining n ≡ 1 (mod 24), if 5 divides n(n+3): <code>((n+3)/4, n(n+3)/2, n(n+3)/10)</code></li>
+</ol><p>Each corridor has a short exact algebraic proof in the <a href="PROOF.md">public proof plate</a>. These conditions cover 117 of 120 residue classes; the other three remain open in this construction.</p></section>
+<h2>Generate an exact witness</h2>
+<p>Run the applicable direct formula, without a denominator search. The output is independently checked using the integer identity <code>4xyz = n(xy+xz+yz)</code>.</p>
+<div class="run-form"><div class="input-group"><label for="n">Integer n (2–100,000)</label><input id="n" type="number" min="2" max="100000" step="1" value="25"></div><button type="button" id="run">Generate witness</button></div><output id="result" aria-live="polite"></output>
 <h2>Evidence boundary</h2>
-<ul class="scope-list"><li><strong>PROVED:</strong> the displayed algebraic family and the known n = 5 witness.</li><li><strong>OBSERVED:</strong> an exact-integer browser implementation replaying generated witnesses.</li><li><strong>NOT ESTABLISHED:</strong> unrestricted Erdős–Straus resolution or native URK parent-to-child mathematical authentication.</li></ul>
-<p>The native source remains private. Public examples cannot substitute for the universal quantifier or for preserved parent invariants.</p>
-<p><a href="egyptian_child_candidate.py" download>Download the public-safe bounded candidate generator (Python)</a>. Its finite search can generate additional witnesses, but budget exhaustion never proves nonexistence.</p>
+<ul class="scope-list"><li><strong>PROVED:</strong> six elementary formula families, covering all but three residue classes modulo 120.</li><li><strong>OBSERVED:</strong> 9,750 exact replay witnesses among 2 ≤ n ≤ 10,000; 249 deliberate PAUSE results; negative controls rejected.</li><li><strong>NOT ESTABLISHED:</strong> full Erdős–Straus conjecture or a native URK parent-to-child formula authentication.</li></ul>
+<p>The native source remains protected. An external exact arithmetic formula and a reproducible browser witness cannot substitute for authenticated native generation.</p>
+<p><a href="PROOF.md">Read all six derivations</a> · <a href="child_formula.mjs" download>Download the no-search formula module</a> · <a href="test_child_formula.mjs" download>Download the independent exact tests</a>.</p>
+<p class="muted"><small>The earlier <a href="egyptian_child_candidate.py">finite-search candidate</a> is retained as historical auxiliary work, not as this direct formula's method or evidence of nonexistence.</small></p>
 <footer>V.A. · Mathematical examination surface · Public-safe only · <a href="../../mathematics.html">Mathematics archive</a> · <a href="../../index.html">Proof Estate home</a></footer>
-</main><script>
-const input=document.getElementById('n'),output=document.getElementById('result');
-function run(){const raw=input.value; if(!/^\d+$/.test(raw)){output.textContent='REFUSED: enter a positive integer.';return}const n=BigInt(raw);if(n<5n||n>100000n||n%8n!==5n){output.textContent='PAUSE: this proved child family only accepts n = 8k + 5, 5 ≤ n ≤ 100000. No inference about other n.';return}const k=(n-5n)/8n,x=2n*(k+1n),y=n*(k+1n),z=2n*n*(k+1n);const left=4n*x*y*z,right=n*(y*z+x*z+x*y);output.textContent=`GENERATED: n=${n}, (x,y,z)=(${x}, ${y}, ${z})\nEXACT CHECK: ${left} = ${right} · ${left===right?'PASS':'REFUSE'}\nScope: proved family only; native URK execution not claimed.`}
-document.getElementById('run').addEventListener('click',run);run();
+</main><script type="module">
+import { deriveChild, verifyExact } from './child_formula.mjs';
+const input=document.getElementById('n'), output=document.getElementById('result');
+function run(){
+  const raw=input.value;
+  if(!/^\d+$/.test(raw)){ output.textContent='REFUSED: enter a positive whole number.'; return; }
+  const n=BigInt(raw);
+  if(n<2n || n>100000n){ output.textContent='REFUSED: public demonstration accepts 2 ≤ n ≤ 100000.'; return; }
+  const result=deriveChild(n);
+  if(result.status==='PAUSE'){
+    output.textContent='PAUSE: n='+n+' belongs to an unresolved corridor of this six-formula construction. This does not mean no witness exists.';
+    return;
+  }
+  const {x,y,z,corridor}=result;
+  const lhs=4n*x*y*z, rhs=n*(x*y+x*z+y*z), pass=verifyExact(n,x,y,z);
+  output.textContent='GENERATED: n='+n+', (x,y,z)=('+x+', '+y+', '+z+')\nCORRIDOR: '+corridor+'\nEXACT CHECK: '+lhs+' = '+rhs+' · '+(pass?'PASS':'REFUSE')+'\nScope: external exact formula; native NEW K / URK generation not claimed.';
+}
+document.getElementById('run').addEventListener('click',run); run();
 </script></body></html>
