@@ -1,10 +1,11 @@
-import {TOPICS,NATURAL_ORDER,VA_IDENTITY,TEACHER_PURPOSE} from './knowledge.mjs?v=20261121-natural-order-6';
+import {TOPICS,NATURAL_ORDER,VA_IDENTITY,TEACHER_PURPOSE} from './knowledge.mjs?v=20261121-natural-order-7';
 
 const controlledMaterial = /\b(?:kernel|urk|new\s*k|math(?:ematics)?|layer|logic|code|blueprint|formula|mechanism|derivation|operator|architecture|pilot|originals?)\b/i;
 const restrictedDetail = /\b(?:full|complete|private|protected|internal|secret|raw|proprietary|unredacted|underlying)\b/i;
 const operativeRequest = /\b(?:show|give|send|download|copy|build|reconstruct|implement|write|reveal|provide)\b/i;
 const operativeDetail = /\b(?:formula|algorithm|operator|source\s+code|implementation|construction|internal\s+logic|build\s+steps)\b/i;
 const underlyingConstruction = /\bunderlying\s+(?:construction|implementation|mechanism|math(?:ematics)?|kernel)\b/i;
+const privateReviewInquiry = /\b(?:nda|non-disclosure|non disclosure|private review|private examination|personal walkthrough|protected access)\b/i;
 const publicRoot = 'https://deagletwc.github.io/va-proof-estate/';
 
 export function publicHref(href) {
@@ -19,7 +20,7 @@ export function publicHref(href) {
 
 export function teach(input, selectedTopicId) {
   const question = String(input ?? '').trim().slice(0,800);
-  if (question && ((restrictedDetail.test(question) && controlledMaterial.test(question)) ||
+  if (question && (privateReviewInquiry.test(question) || (restrictedDetail.test(question) && controlledMaterial.test(question)) ||
       (operativeRequest.test(question) && operativeDetail.test(question)) || underlyingConstruction.test(question))) {
     return {kind:'access',href:'access.html'};
   }
