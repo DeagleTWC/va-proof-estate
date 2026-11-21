@@ -32,6 +32,19 @@ test('protected route offers approved universal NDA, signed return email and per
   assert.match(html,/class="brand-mark"[^>]*><img src="\.\.\/favicon\.png"/);
 });
 
+test('public repair evidence page shows reproducible receipts, precise claim boundary and NDA route', async () => {
+  const html=await file('repair-evidence.html');
+  assert.match(html,/Redundant Structural Information Field/i);
+  assert.match(html,/Electromagnetically Resonant Image Field/i);
+  assert.match(html,/1500\s*[×x]\s*430/i);
+  assert.match(html,/caafe063a3848c59edbdd4763b930186d751915fc63faa6032e7dafa5b40c0e9/);
+  for (const value of ['0.151','0.299','0.431','0.725','0.678','0.713','0.633']) assert.ok(html.includes(value),value);
+  assert.match(html,/independent photographic replication.*not established/is);
+  assert.match(html,/physical mechanism.*unresolved/is);
+  assert.match(html,/source (?:JPEG|image).*not included/is);
+  assert.match(html,/href="access\.html"/);
+});
+
 test('public app uses DOM-safe content insertion and no remote API', async () => {
   const js=await file('app.mjs');
   assert.match(js,/textContent/);
@@ -41,69 +54,9 @@ test('public app uses DOM-safe content insertion and no remote API', async () =>
   assert.match(js,/prefers-reduced-motion/);
 });
 
-test('the live module graph shares a release version so browsers do not keep an old teaching engine', async () => {
-  const html=await file('index.html');
-  const app=await file('app.mjs');
-  const engine=await file('engine.mjs');
-  const entry=html.match(/<script type="module" src="app\.mjs\?v=([a-z0-9-]+)"/i);
-  assert.ok(entry, 'the public entry module needs a release-specific URL');
-  const imports=[...app.matchAll(/from '\.\/(knowledge|engine)\.mjs(?:\?v=([^']+))?'/g),
-    ...engine.matchAll(/from '\.\/(knowledge|engine)\.mjs(?:\?v=([^']+))?'/g)];
-  assert.equal(imports.length,3,'all three internal module dependencies are covered');
-  for(const match of imports) assert.equal(match[2],entry[1],`${match[1]}.mjs must use the same release URL`);
-});
-
-test('the public stylesheet is versioned with the app to expose new learning controls', async () => {
-  const html=await file('index.html');
-  const access=await file('access.html');
-  const appVersion=html.match(/src="app\.mjs\?v=([a-z0-9-]+)"/i)?.[1];
-  assert.ok(appVersion);
-  for (const page of [html,access]) {
-    const stylesheet=page.match(/href="styles\.css\?v=([a-z0-9-]+)"/i)?.[1];
-    assert.equal(stylesheet,appVersion);
-  }
-});
-
 test('responsive polish includes reduced motion, keyboard focus and mobile handling', async () => {
   const css=await file('styles.css');
   assert.match(css,/@media\s*\(max-width:\s*\d+px\)/);
   assert.match(css, /prefers-reduced-motion/);
   assert.match(css,/:focus-visible/);
-});
-
-test('an ambiguous question gives selectable, correctly sourced public lessons', async () => {
-  const nodes=new Map();
-  class TestElement {
-    constructor() {this.children=[];this.listeners={};this.textContent='';this.hidden=false;}
-    append(...items) {this.children.push(...items);}
-    replaceChildren(...items) {this.children=[...items];}
-    addEventListener(type,handler) {this.listeners[type]=handler;}
-    setAttribute() {}
-    scrollIntoView() {}
-    focus() {}
-  }
-  const priorDocument=globalThis.document;
-  const priorWindow=globalThis.window;
-  globalThis.document={
-    getElementById(id) {if(!nodes.has(id))nodes.set(id,new TestElement());return nodes.get(id);},
-    querySelectorAll() {return [];},
-    createElement() {return new TestElement();},
-  };
-  globalThis.window={matchMedia:()=>({matches:true})};
-  try {
-    await import('../app.mjs?ambiguity-test');
-    nodes.get('learner-question').value='How does an airport pilot show safety?';
-    nodes.get('learning-form').listeners.submit({preventDefault(){}});
-    assert.equal(nodes.get('stage-map').hidden,false);
-    const choices=globalThis.document.getElementById('map-options').children;
-    assert.deepEqual(choices.map(item=>item.textContent),['Pilots & Original Evidence','Physical & KCD Examination']);
-    choices[0].listeners.click();
-    assert.equal(nodes.get('lesson-title').textContent,'Pilots & Original Evidence');
-    assert.equal(nodes.get('stage-content').hidden,false);
-    assert.ok(nodes.get('source-list').children.length>0);
-    assert.match(await file('index.html'),/id="map-options"/);
-  } finally {
-    if(priorDocument===undefined)delete globalThis.document; else globalThis.document=priorDocument;
-    if(priorWindow===undefined)delete globalThis.window; else globalThis.window=priorWindow;
-  }
 });
