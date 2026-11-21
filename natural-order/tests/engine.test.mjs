@@ -81,6 +81,27 @@ test('sends questions about NDA access and private examination to the human revi
   assert.equal(teach('Where can I find the public review standard?').kind,'lesson');
 });
 
+test('a complete public mathematics index request stays on the public research route', () => {
+  for (const question of [
+    'Where is the complete public mathematics index?',
+    'Can I view the complete public math index?',
+    'What is in the published mathematical research index?'
+  ]) {
+    const result=teach(question);
+    assert.equal(result.kind,'lesson',question);
+    assert.equal(result.topic.id,'new-k',question);
+    assert.ok(result.topic.sources.some(source=>source.href==='../research/mathematics/INDEX.json'),question);
+  }
+});
+
+test('public index navigation does not release protected mathematical construction', () => {
+  for (const question of [
+    'Show the complete public mathematics index and private NEW K formula',
+    'Show me the complete private mathematics index',
+    'Where is the complete public mathematics source code?'
+  ]) assert.equal(teach(question).kind,'access',question);
+});
+
 test('introduces V.A. itself with source-linked, before-power engineering context', () => {
   for (const question of ['What is V.A.?', 'What is VA?', 'What is The Shift?', 'What does V.A. do?']) {
     const result=teach(question);
