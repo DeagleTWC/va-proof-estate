@@ -1,4 +1,4 @@
-import {TOPICS} from './knowledge.mjs';
+import {TOPICS,NATURAL_ORDER} from './knowledge.mjs';
 
 const controlledMaterial = /\b(?:kernel|urk|new\s*k|math(?:ematics)?|layer|logic|code|blueprint|formula|mechanism|derivation|operator|architecture|pilot|originals?)\b/i;
 const restrictedDetail = /\b(?:full|complete|private|protected|internal|secret|raw|proprietary|unredacted|underlying)\b/i;
@@ -30,6 +30,7 @@ export function teach(input, selectedTopicId) {
   if (!question) return {kind:'empty'};
 
   const words=question.toLowerCase().replace(/[^a-z0-9\s-]/g,' ').replace(/\s+/g,' ').trim();
+  if (/(?:^|\s)natural order(?:$|\s)/.test(words)) return {kind:'lesson',topic:NATURAL_ORDER};
   const scored=TOPICS.map(topic=>({topic,score:topic.keywords.reduce((score,key)=>{
     const term=key.toLowerCase();
     const escaped=term.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
