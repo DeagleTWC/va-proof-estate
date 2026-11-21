@@ -1,4 +1,4 @@
-import {TOPICS,NATURAL_ORDER} from './knowledge.mjs?v=20261121-natural-order-2';
+import {TOPICS,NATURAL_ORDER,VA_IDENTITY,TEACHER_PURPOSE} from './knowledge.mjs?v=20261121-natural-order-3';
 
 const controlledMaterial = /\b(?:kernel|urk|new\s*k|math(?:ematics)?|layer|logic|code|blueprint|formula|mechanism|derivation|operator|architecture|pilot|originals?)\b/i;
 const restrictedDetail = /\b(?:full|complete|private|protected|internal|secret|raw|proprietary|unredacted|underlying)\b/i;
@@ -30,6 +30,9 @@ export function teach(input, selectedTopicId) {
   if (!question) return {kind:'empty'};
 
   const words=question.toLowerCase().replace(/[^a-z0-9\s-]/g,' ').replace(/\s+/g,' ').trim();
+  if (/\b(?:what (?:is|does)|explain|describe|about|tell me about)\s+(?:(?:the\s+)?(?:v a|va|veritas aegis|shift))\b/.test(words) ||
+      /\b(?:v a|va)\s+(?:do|mean|stand for)\b/.test(words)) return {kind:'lesson',topic:VA_IDENTITY};
+  if (/\b(?:what is (?:this|the) (?:tool|teacher|site|page) for|why does (?:this|the) (?:tool|teacher|site) exist|what can i learn here|how do i use (?:this|the) (?:tool|teacher|site))\b/.test(words)) return {kind:'lesson',topic:TEACHER_PURPOSE};
   if (/(?:^|\s)natural order(?:$|\s)/.test(words)) return {kind:'lesson',topic:NATURAL_ORDER};
   const scored=TOPICS.map(topic=>({topic,score:topic.keywords.reduce((score,key)=>{
     const term=key.toLowerCase();
