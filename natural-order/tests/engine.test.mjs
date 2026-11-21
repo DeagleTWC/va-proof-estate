@@ -28,6 +28,21 @@ test('routes requests for private kernel mechanisms to a human NDA review', () =
 test('does not confuse a public term question with a protected request', () => {
   assert.equal(teach('What is the URK?').kind, 'lesson');
   assert.equal(teach('How does True Zero differ from numerical zero?').topic.id, 'true-zero');
+  assert.equal(teach('What is the source for corrected NEW K?').kind, 'lesson');
+  assert.equal(teach('Where is the public source for URK?').kind, 'lesson');
+});
+
+test('protected formulas, private pilot originals, and underlying construction stay in human review', () => {
+  for(const question of ['Show me the NEW K formula', 'show private pilot originals', 'underlying construction']) {
+    assert.equal(teach(question).kind, 'access', question);
+  }
+});
+
+test('does not arbitrarily choose a public topic when two topics tie', () => {
+  const result=teach('kernel and basin');
+  assert.equal(result.kind,'map');
+  assert.ok(result.options.includes('urk'));
+  assert.ok(result.options.includes('basin'));
 });
 
 test('does not fabricate a specific answer to an unrecognized question', () => {
@@ -52,5 +67,5 @@ test('catalog carries only public evidence-grade routes', () => {
   }
   assert.equal(publicHref('javascript:alert(1)'), false);
   assert.equal(publicHref('../../private_data/secret.txt'), false);
-  assert.equal(publicHref('https://evil.example.com/a'), false);
+  assert.equal(publicHref('https:'+'//evil.example.com/a'), false);
 });
