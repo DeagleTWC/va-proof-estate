@@ -13,6 +13,24 @@ export const NATURAL_ORDER = Object.freeze({
   sources:[source('The Natural Order foundation','../foundation.html'),source('Public mathematical research route','../mathematics.html'),source('What counts as proof','../proofs/EXAMINATION-STANDARD.md')],
 });
 
+export const VA_IDENTITY = Object.freeze({
+  id:'va-identity', number:'00', title:'V.A. — The Shift', kicker:'Native consequence custody before power',
+  summary:'V.A. — The Shift is the engineering system presented in the public Proof Estate. Its foundation starts at True Zero and relates the Elements Basin, corrected NEW K, the Universal Resolving Kernel, lawful continuance, and consequence custody. Its governing aim is to establish whether movement has lawful standing to become consequence before formation or power—not merely to check an AI tool call, score an LLM response, or record an action afterward. The public site provides engineering descriptions, bounded tests, evidence routes, pilot records, and examination conditions. Each demonstrated result must be read within its documented scope; the public map is an entry point for examining the work, not a claim of independent verification of every possible application.',
+  connection:'Choose something you already know well: what real effect must never be allowed to form unless its governing conditions hold?',
+  question:'Which public artifact, original witness, or changed-condition test would let you examine that boundary for yourself?',
+  grade:'PUBLIC MAP',
+  sources:[source('Foundation and system identity','../foundation.html'),source('End-to-end engineering route','../end-to-end.html'),source('Evidence Hall','../evidence-hall.html')],
+});
+
+export const TEACHER_PURPOSE = Object.freeze({
+  id:'teacher-purpose', number:'00', title:'What this teacher is for', kicker:'Learn, connect, inspect',
+  summary:'This public Natural Order teacher helps a visitor begin with a question from their own experience, connect it to a V.A. subject, and follow the public source documents. Ask what the Natural Order or V.A. is, choose one of the ten learning routes, or bring a question about safety, mathematics, movement, pilots, or evidence. Each answer offers a source and a question you can examine rather than an invented certainty. This is a public learning and examination navigator, not an unrestricted conversational model. Do not enter personal or confidential information. Protected mathematical construction, private originals, and deeper implementation review are handled separately through the NDA and a personal walkthrough.',
+  connection:'Start with what you know: which field, physical effect, or organizational problem would you like to compare to the Natural Order account?',
+  question:'Which public source would you inspect first, and what observation would help you test the connection?',
+  grade:'PUBLIC MAP',
+  sources:[source('Public Proof Estate','../index.html'),source('Foundation reading path','../foundation.html'),source('Independent examination route','../reviewer-route.html')],
+});
+
 export const TOPICS = Object.freeze([
   {
     id:'true-zero', number:'01', title:'True Zero', kicker:'The ground before standing',
