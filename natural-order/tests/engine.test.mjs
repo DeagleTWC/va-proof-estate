@@ -132,6 +132,30 @@ test('a visitor can find the published safety examination standard', () => {
   }
 });
 
+test('public questions about the names of native terms do not require a private NDA', () => {
+  const examples=[
+    ['What is the full name of URK?','urk'],
+    ['What is the full name of the Universal Resolving Kernel?','urk'],
+    ['What is the complete public name of the kernel?','urk'],
+    ['What is the full title of NEW K?','new-k'],
+    ['What is the original name of AHMR?','ahmr'],
+  ];
+  for(const [question,topicId] of examples){
+    const result=teach(question);
+    assert.equal(result.kind,'lesson',question);
+    assert.equal(result.topic.id,topicId,question);
+    assert.ok(result.topic.sources.length>0,question);
+  }
+});
+
+test('a terminology question combined with a protected construction request still needs NDA review', () => {
+  for(const question of [
+    'What is the full name of the private URK formula?',
+    'Show the full kernel source code and its name',
+    'What is the complete internal NEW K operator title?'
+  ]) assert.equal(teach(question).kind,'access',question);
+});
+
 test('introduces V.A. itself with source-linked, before-power engineering context', () => {
   for (const question of ['What is V.A.?', 'What is VA?', 'What is The Shift?', 'What does V.A. do?']) {
     const result=teach(question);
