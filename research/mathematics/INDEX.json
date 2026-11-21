@@ -1,6 +1,6 @@
 {
   "schema": "deagle-mathematics-index/v1",
-  "updated": "2026-11-14",
+  "updated": "2026-11-21",
   "owner": "Terry Allen Snyder",
   "entries": [
     {
@@ -122,6 +122,30 @@
       "status": "Original source-preserving mathematical formalization: consequence signature, model-defined admissibility and binding, breach and restart classification. Independent external review and claims of physical universality are not included.",
       "catalog_number": "005",
       "index_kind": "published_mathematical_research"
+    },
+    {
+      "id": "egyptian-unit-fractions-child-2026-11-21",
+      "title": "Egyptian Unit Fractions — Six Direct Constructive Witness Corridors",
+      "record": "math/egyptian-child/index.html",
+      "proof": "math/egyptian-child/PROOF.md",
+      "source_module": "math/egyptian-child/child_formula.mjs",
+      "test_module": "math/egyptian-child/test_child_formula.mjs",
+      "date": "2026-11-21",
+      "status": "Public-safe six elementary direct construction formulas provide exact positive integer witnesses for all n >= 2 outside residues 1,49,73 mod 120. Exact finite replay 9,750 witnesses and 249 PAUSE outcomes for n=2..10000. Unrestricted Erdős–Straus conjecture and protected NEW K/URK native parent-child authentication not established.",
+      "replay_witnesses": 9750,
+      "replay_pauses": 249,
+      "replay_lower_bound": 2,
+      "replay_upper_bound": 10000,
+      "unresolved_modulus": 120,
+      "unresolved_residues": [
+        1,
+        49,
+        73
+      ],
+      "private_native_urk_excluded": true,
+      "classification": "EXTERNAL_CONSTRUCTIVE_CANDIDATE_NOT_NATIVE_URK_AUTHENTICATED",
+      "catalog_number": "006",
+      "index_kind": "published_bounded_mathematical_exhibit"
     }
   ],
   "release_correction": "Prior 28-page draft record superseded before public PDF upload; that draft contained native mathematical sections and was not published on Deagle.",
