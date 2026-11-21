@@ -12,6 +12,9 @@ test('main public teaching page has a complete accessible learning route', async
   assert.match(html,/Do not enter personal or confidential information/i);
   assert.match(html,/Proof Before Power/);
   assert.match(html,/app\.mjs/);
+  assert.match(html, /id="lesson-stage"[^>]*tabindex="-1"/);
+  assert.match(html, /id="teach-submit"[^>]*disabled/);
+  assert.doesNotMatch(html, /name="question"/);
 });
 
 test('protected route states manual signed NDA email and personal walkthrough without inventing address', async () => {
@@ -30,6 +33,8 @@ test('public app uses DOM-safe content insertion and no remote API', async () =>
   assert.match(js,/textContent/);
   assert.doesNotMatch(js,/innerHTML\s*=/);
   assert.doesNotMatch(js,/fetch\s*\(|localStorage|sessionStorage|XMLHttpRequest/i);
+  assert.match(js,/teach-submit.*disabled\s*=\s*false/);
+  assert.match(js,/prefers-reduced-motion/);
 });
 
 test('responsive polish includes reduced motion, keyboard focus and mobile handling', async () => {
