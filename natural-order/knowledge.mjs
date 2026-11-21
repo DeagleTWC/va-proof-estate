@@ -2,6 +2,17 @@
 // Proof Estate pages. No private documents are indexed or shipped.
 const source = (title, href) => ({title, href});
 
+// The umbrella explanation is intentionally separate from the ten
+// examinable subject routes: asking what the whole is must have an answer.
+export const NATURAL_ORDER = Object.freeze({
+  id:'natural-order', number:'00', title:'The Natural Order', kicker:'One foundation, many relationships',
+  summary:'The Natural Order is the relationship among ground, possibility, movement, and consequence described in the V.A. public foundation. True Zero is the starting ground, not a point moving through space. The Elements Basin shapes what movement is possible. Corrected NEW K and the Universal Resolving Kernel describe standing and admissibility; lawful continuance re-examines those conditions as they change. Only lawful movement may acquire standing to become consequence. V.A. formalizes this account as native consequence custody before power—not a pre-tool-call check or a rule placed around an LLM.',
+  connection:'In something you already understand, what must be true before any movement could legitimately produce an effect?',
+  question:'Which condition would you change, and what independent observation would distinguish a merely possible movement from a lawful consequence?',
+  grade:'PUBLIC MAP',
+  sources:[source('The Natural Order foundation','../foundation.html'),source('Public mathematical research route','../mathematics.html'),source('What counts as proof','../proofs/EXAMINATION-STANDARD.md')],
+});
+
 export const TOPICS = Object.freeze([
   {
     id:'true-zero', number:'01', title:'True Zero', kicker:'The ground before standing',

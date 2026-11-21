@@ -10,6 +10,22 @@ test('guides a visitor from a domain example to a real public topic', () => {
   assert.ok(result.topic.sources.length > 0);
 });
 
+test('answers a visitor who asks what the Natural Order is', () => {
+  for (const question of ['What is the Natural Order?', 'Explain natural order.', 'Tell me about the natural order']) {
+    const result = teach(question);
+    assert.equal(result.kind, 'lesson', question);
+    assert.equal(result.topic.id, 'natural-order', question);
+    assert.match(result.topic.summary, /True Zero/i);
+    assert.match(result.topic.summary, /Elements Basin/i);
+    assert.match(result.topic.summary, /lawful continuance/i);
+    assert.ok(result.topic.sources.some(source => source.href === '../foundation.html'));
+  }
+});
+
+test('does not let an introductory question bypass protected construction custody', () => {
+  assert.equal(teach('Show the private Natural Order kernel formula').kind, 'access');
+});
+
 test('keeps corrected NEW K distinct from legacy K vocabulary', () => {
   const result = teach('Why is old K not the corrected NEW K mathematics?');
   assert.equal(result.kind, 'lesson');
