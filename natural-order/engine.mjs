@@ -1,4 +1,4 @@
-import {TOPICS,NATURAL_ORDER,VA_IDENTITY,TEACHER_PURPOSE} from './knowledge.mjs?v=20261121-natural-order-8';
+import {TOPICS,NATURAL_ORDER,VA_IDENTITY,TEACHER_PURPOSE} from './knowledge.mjs?v=20261121-natural-order-9';
 
 const controlledMaterial = /\b(?:kernel|urk|new\s*k|math(?:ematics)?|layer|logic|code|blueprint|formula|mechanism|derivation|operator|architecture|pilot|originals?)\b/i;
 const restrictedDetail = /\b(?:full|complete|private|protected|internal|secret|raw|proprietary|unredacted|underlying)\b/i;
@@ -7,7 +7,8 @@ const operativeDetail = /\b(?:formula|algorithm|operator|source\s+code|implement
 const underlyingConstruction = /\bunderlying\s+(?:construction|implementation|mechanism|math(?:ematics)?|kernel)\b/i;
 const privateReviewInquiry = /\b(?:nda|non-disclosure|non disclosure|private review|private examination|personal walkthrough|protected access)\b/i;
 const publicMathIndexInquiry = /\b(?:public|published)\s+math(?:ematics|ematical)?(?:\s+research)?\s+(?:index|catalog(?:ue)?)\b/i;
-const protectedIndexContext = /\b(?:private|protected|internal|secret|raw|proprietary|unredacted|underlying|formula|algorithm|operator|source\s+code|implementation|construction|kernel)\b/i;
+const publicPilotRecordsInquiry = /\b(?:public|published)\s+(?:(?:hospital|seam)\s+)?pilots?\s+(?:records?|evidence|reports?|index)\b/i;
+const protectedNavigationContext = /\b(?:private|protected|internal|secret|raw|proprietary|unredacted|underlying|formula|algorithm|operator|source\s+code|implementation|construction|kernel|originals?)\b/i;
 const publicRoot = 'https://deagletwc.github.io/va-proof-estate/';
 
 export function publicHref(href) {
@@ -23,8 +24,11 @@ export function publicHref(href) {
 export function teach(input, selectedTopicId) {
   const question = String(input ?? '').trim().slice(0,800);
   // A request for the published mathematics index is public navigation, not a request for the underlying mathematics.
-  if (question && publicMathIndexInquiry.test(question) && !protectedIndexContext.test(question)) {
+  if (question && publicMathIndexInquiry.test(question) && !protectedNavigationContext.test(question)) {
     return {kind:'lesson',topic:TOPICS.find(item=>item.id==='new-k')};
+  }
+  if (question && publicPilotRecordsInquiry.test(question) && !protectedNavigationContext.test(question)) {
+    return {kind:'lesson',topic:TOPICS.find(item=>item.id==='pilot')};
   }
   if (question && (privateReviewInquiry.test(question) || (restrictedDetail.test(question) && controlledMaterial.test(question)) ||
       (operativeRequest.test(question) && operativeDetail.test(question)) || underlyingConstruction.test(question))) {
