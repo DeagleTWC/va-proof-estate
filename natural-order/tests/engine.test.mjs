@@ -62,6 +62,25 @@ test('points plural positive and negative control questions to the public proof 
   }
 });
 
+test('recognizes Proof Before Power as its own public examination subject', () => {
+  for (const question of ['What is Proof Before Power?', 'Why do we need Proof Before Power?']) {
+    const result=teach(question);
+    assert.equal(result.kind,'lesson',question);
+    assert.equal(result.topic.id,'proof',question);
+    assert.ok(result.topic.sources.some(source=>source.href==='../proofs/EXAMINATION-STANDARD.md'));
+  }
+  assert.equal(teach('How is consequence custody established before power?').topic.id,'consequence');
+});
+
+test('sends questions about NDA access and private examination to the human review corridor', () => {
+  for (const question of ['Where is the NDA?', 'How do I request a private review?', 'How do I arrange a personal walkthrough?']) {
+    const result=teach(question);
+    assert.equal(result.kind,'access',question);
+    assert.equal(result.href,'access.html',question);
+  }
+  assert.equal(teach('Where can I find the public review standard?').kind,'lesson');
+});
+
 test('introduces V.A. itself with source-linked, before-power engineering context', () => {
   for (const question of ['What is V.A.?', 'What is VA?', 'What is The Shift?', 'What does V.A. do?']) {
     const result=teach(question);
