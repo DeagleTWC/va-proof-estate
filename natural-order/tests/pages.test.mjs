@@ -32,6 +32,19 @@ test('protected route offers approved universal NDA, signed return email and per
   assert.match(html,/class="brand-mark"[^>]*><img src="\.\.\/favicon\.png"/);
 });
 
+test('public repair evidence page shows receipts, precise claim boundary and controlled review', async () => {
+  const html=await file('repair-evidence.html');
+  assert.match(html,/Redundant Structural Information Field/i);
+  assert.match(html,/Electromagnetically Resonant Image Field/i);
+  assert.match(html,/1500\s*[×x]\s*430/i);
+  assert.match(html,/caafe063a3848c59edbdd4763b930186d751915fc63faa6032e7dafa5b40c0e9/);
+  for (const value of ['0.151','0.299','0.431','0.725','0.678','0.713','0.633']) assert.ok(html.includes(value),value);
+  assert.match(html,/independent photographic replication.*not established/is);
+  assert.match(html,/physical mechanism.*unresolved/is);
+  assert.match(html,/source (?:JPEG|image).*not included/is);
+  assert.match(html,/href="access\.html"/);
+});
+
 test('public app uses DOM-safe content insertion and no remote API', async () => {
   const js=await file('app.mjs');
   assert.match(js,/textContent/);

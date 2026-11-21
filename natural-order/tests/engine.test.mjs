@@ -22,6 +22,19 @@ test('answers a visitor who asks what the Natural Order is', () => {
   }
 });
 
+test('distinguishes the Natural Order repair evidence from the general umbrella explanation', () => {
+  for (const question of ['What is the Natural Order repair?', 'How does the Shroud synthesis show preservation through transformation?']) {
+    const result = teach(question);
+    assert.equal(result.kind, 'lesson', question);
+    assert.equal(result.topic.id, 'repair-evidence', question);
+    assert.match(result.topic.summary, /release.*holding.*convergence.*re-entry/i);
+    assert.match(result.topic.summary, /single.source/i);
+    assert.match(result.topic.summary, /unresolved/i);
+    assert.ok(result.topic.sources.some(source => source.href === '../natural-order/repair-evidence.html'));
+  }
+  assert.equal(teach('What is the Natural Order?').topic.id,'natural-order');
+});
+
 test('answers a relationship question across foundational subjects instead of losing it to a score tie', () => {
   const result=teach('How do True Zero and the Elements Basin relate?');
   assert.equal(result.kind,'lesson');

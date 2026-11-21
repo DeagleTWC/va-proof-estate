@@ -24,7 +24,7 @@ export const VA_IDENTITY = Object.freeze({
 
 export const TEACHER_PURPOSE = Object.freeze({
   id:'teacher-purpose', number:'00', title:'What this teacher is for', kicker:'Learn, connect, inspect',
-  summary:'This public Natural Order teacher helps a visitor begin with a question from their own experience, connect it to a V.A. subject, and follow the public source documents. Ask what the Natural Order or V.A. is, choose one of the ten learning routes, or bring a question about safety, mathematics, movement, pilots, or evidence. Each answer offers a source and a question you can examine rather than an invented certainty. This is a public learning and examination navigator, not an unrestricted conversational model. Do not enter personal or confidential information. Protected mathematical construction, private originals, and deeper implementation review are handled separately through the NDA and a personal walkthrough.',
+  summary:'This public Natural Order teacher helps a visitor begin with a question from their own experience, connect it to a V.A. subject, and follow the public source documents. Ask what the Natural Order or V.A. is, choose one of the eleven learning routes, or bring a question about safety, mathematics, movement, pilots, repair evidence, or proof. Each answer offers a source and a question you can examine rather than an invented certainty. This is a public learning and examination navigator, not an unrestricted conversational model. Do not enter personal or confidential information. Protected mathematical construction, private originals, and deeper implementation review are handled separately through the NDA and a personal walkthrough.',
   connection:'Start with what you know: which field, physical effect, or organizational problem would you like to compare to the Natural Order account?',
   question:'Which public source would you inspect first, and what observation would help you test the connection?',
   grade:'PUBLIC MAP',
@@ -111,5 +111,13 @@ export const TOPICS = Object.freeze([
     question:'Which private information must stay withheld even while an examiner receives enough evidence to assess protection?',
     grade:'PUBLIC MAP', keywords:['child','children','safeguarding','privacy','human oversight','human','appeal','intervention','education'],
     sources:[source('Child safeguarding public route','../child-safeguarding.html'),source('Public examination standard','../proofs/EXAMINATION-STANDARD.md')],
+  },
+  {
+    id:'repair-evidence', number:'11', title:'Natural Order Repair Evidence', kicker:'Preservation through transformation',
+    summary:'The Shroud image-field examination records a specific structural sequence: release → holding/compression → convergence/transfer → re-entry/continuation. It finds recurring relation after correcting dependent image witnesses, with a central transfer crest at 0.431 of the normalized field. This is measured single-source structural evidence relevant to the Natural Order repair account; the historical physical mechanism and semantic meaning remain unresolved.',
+    connection:'When something changes form in your field, what measurable relation survives the change, and what would distinguish real continuity from a repeated rendering?',
+    question:'Can a second independent source reproduce this structural sequence under declared null controls, without inferring an unmeasured physical cause?',
+    grade:'PUBLIC MAP', keywords:['natural order repair','repair','restoration','shroud','shroud synthesis','image field','rsif','electromagnetically resonant','resonant image','preservation through transformation','re-entry','reentry','transfer crest','structural information'],
+    sources:[source('Repair evidence: measured witness and claim limits','../natural-order/repair-evidence.html'),source('Private examination and source replay route','../natural-order/access.html')],
   },
 ]);
