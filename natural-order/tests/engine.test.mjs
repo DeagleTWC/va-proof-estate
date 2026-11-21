@@ -22,6 +22,31 @@ test('answers a visitor who asks what the Natural Order is', () => {
   }
 });
 
+test('introduces V.A. itself with source-linked, before-power engineering context', () => {
+  for (const question of ['What is V.A.?', 'What is VA?', 'What is The Shift?', 'What does V.A. do?']) {
+    const result=teach(question);
+    assert.equal(result.kind,'lesson',question);
+    assert.equal(result.topic.id,'va-identity',question);
+    assert.match(result.topic.summary,/before (?:formation|power)/i);
+    assert.ok(result.topic.sources.some(source=>source.href==='../foundation.html'));
+  }
+});
+
+test('explains the teaching tool and how the public can use it', () => {
+  for (const question of ['What is this tool for?', 'Why does this teacher exist?', 'What can I learn here?', 'How do I use this teacher?']) {
+    const result=teach(question);
+    assert.equal(result.kind,'lesson',question);
+    assert.equal(result.topic.id,'teacher-purpose',question);
+    assert.match(result.topic.summary,/public/i);
+    assert.match(result.topic.summary,/sources?/i);
+    assert.ok(result.topic.sources.length>=2);
+  }
+});
+
+test('private V.A. construction still requires the signed review route', () => {
+  assert.equal(teach('Show the private V.A. kernel formula').kind,'access');
+});
+
 test('does not let an introductory question bypass protected construction custody', () => {
   assert.equal(teach('Show the private Natural Order kernel formula').kind, 'access');
 });
