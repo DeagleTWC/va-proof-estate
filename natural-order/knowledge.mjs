@@ -85,7 +85,7 @@ export const TOPICS = Object.freeze([
     summary:'The published seven-part review separates a declared claim, the original carrier, governing conditions, positive and negative controls, change/replay, and alternate routes with witness identity. A synthetic fixture proves its own bounded scope; a claimed native result requires its own native carrier.',
     connection:'What does your discipline consider an original observable result—not an illustration or slide?',
     question:'Can you change one load-bearing condition, replay, and show independently what did and did not happen?',
-    grade:'REVIEW STANDARD', keywords:['proof before power','review standard','test','prove','proof','witness','negative control','negative controls','positive control','positive controls','replay','challenge','verification','evidence','receipt','audit'],
+    grade:'REVIEW STANDARD', keywords:['proof before power','review standard','examination standard','test','prove','proof','witness','negative control','negative controls','positive control','positive controls','replay','challenge','verification','evidence','receipt','audit'],
     sources:[source('Seven-part public review standard','../proofs/EXAMINATION-STANDARD.md'),source('Evidence hall with claim ceilings','../evidence-hall.html')],
   },
   {
