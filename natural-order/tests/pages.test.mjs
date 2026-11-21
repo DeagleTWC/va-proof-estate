@@ -41,6 +41,18 @@ test('public app uses DOM-safe content insertion and no remote API', async () =>
   assert.match(js,/prefers-reduced-motion/);
 });
 
+test('the live module graph shares a release version so browsers do not keep an old teaching engine', async () => {
+  const html=await file('index.html');
+  const app=await file('app.mjs');
+  const engine=await file('engine.mjs');
+  const entry=html.match(/<script type="module" src="app\.mjs\?v=([a-z0-9-]+)"/i);
+  assert.ok(entry, 'the public entry module needs a release-specific URL');
+  const imports=[...app.matchAll(/from '\.\/(knowledge|engine)\.mjs(?:\?v=([^']+))?'/g),
+    ...engine.matchAll(/from '\.\/(knowledge|engine)\.mjs(?:\?v=([^']+))?'/g)];
+  assert.equal(imports.length,3,'all three internal module dependencies are covered');
+  for(const match of imports) assert.equal(match[2],entry[1],`${match[1]}.mjs must use the same release URL`);
+});
+
 test('responsive polish includes reduced motion, keyboard focus and mobile handling', async () => {
   const css=await file('styles.css');
   assert.match(css,/@media\s*\(max-width:\s*\d+px\)/);
