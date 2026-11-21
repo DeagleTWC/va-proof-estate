@@ -30,6 +30,22 @@ test('answers a relationship question across foundational subjects instead of lo
   assert.equal(teach('kernel and basin').kind,'map');
 });
 
+test('explains lawful continuance when governing conditions change before action', () => {
+  const result=teach('What happens if conditions change before an action?');
+  assert.equal(result.kind,'lesson');
+  assert.equal(result.topic.id,'ahmr');
+  assert.ok(result.topic.sources.some(source=>source.href==='../foundation.html'));
+});
+
+test('takes a public request for pilot evidence to the pilot records', () => {
+  for (const question of ['Where is the pilot evidence?', 'How do I see pilot evidence?', 'Where is evidence of a hospital pilot?']) {
+    const result=teach(question);
+    assert.equal(result.kind,'lesson',question);
+    assert.equal(result.topic.id,'pilot',question);
+    assert.ok(result.topic.sources.some(source=>source.href==='../proofs/PILOT-EVIDENCE-RELEASE.md'));
+  }
+});
+
 test('introduces V.A. itself with source-linked, before-power engineering context', () => {
   for (const question of ['What is V.A.?', 'What is VA?', 'What is The Shift?', 'What does V.A. do?']) {
     const result=teach(question);
