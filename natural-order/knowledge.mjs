@@ -1,0 +1,86 @@
+// Public teaching descriptions only. Sources resolve to existing public
+// Proof Estate pages. No private documents are indexed or shipped.
+const source = (title, href) => ({title, href});
+
+export const TOPICS = Object.freeze([
+  {
+    id:'true-zero', number:'01', title:'True Zero', kicker:'The ground before standing',
+    summary:'The public V.A. account identifies True Zero as the foundational condition before candidate movement acquires standing. It is not simply the numeral 0, an empty register, a reset, or borrowed permission.',
+    connection:'In your own field, what assumption is already present before a process says it has begun?',
+    question:'What would the starting condition have to establish without importing an earlier permission?',
+    grade:'DECLARED', keywords:['true zero','zero','origin','starting condition','ground','first condition'],
+    sources:[source('The foundation, explained','../foundation.html'),source('Original public science record','../proofs/sources/true-zero-consequence-systems-science-v1.2.3-extracted.md')],
+  },
+  {
+    id:'basin', number:'02', title:'Elements Basin', kicker:'The shape of lawful possibility',
+    summary:'In the public foundational description, the Elements Basin is a shaped region of possibility. Capacity, geometry, compatibility, and invariant conditions bear on what may remain, move, transfer, or cease. Possibility itself is not a receipt of lawful consequence.',
+    connection:'What capacity, geometry, or fixed physical conditions shape movement in the system you already understand?',
+    question:'If one constraint changes, which movements remain possible, and which consequences still require proof?',
+    grade:'DECLARED', keywords:['elements basin','basin','capacity','geometry','dark matter','space','physical constraint'],
+    sources:[source('Foundational terms and distinctions','../foundation.html'),source('Mathematics publication route','../mathematics.html')],
+  },
+  {
+    id:'new-k', number:'03', title:'Corrected NEW K', kicker:'The current mathematical floor',
+    summary:'Corrected NEW K is the current resolving mathematics described publicly for V.A., grounded at True Zero. Its operative construction is protected. Older K expressions are historical records and are not interchangeable with the current corrected NEW K.',
+    connection:'When a system changes its mathematical foundation, how do you keep legacy versions from silently defining current behavior?',
+    question:'What exact version and source identity must be fixed before an examiner compares outcomes?',
+    grade:'PUBLIC MAP', keywords:['corrected new k','new k','old k','legacy k','coefficient','math','mathematics','mathematical floor'],
+    sources:[source('NEW K explained in public','../foundation.html'),source('Current mathematical release index','../research/mathematics/INDEX.json')],
+  },
+  {
+    id:'urk', number:'04', title:'Universal Resolving Kernel', kicker:'Standing, admission, continuation',
+    summary:'URK is the public formal account of lawful states and transitions, including standing, admissibility, maintained invariants, refusal, halt, and continuation. Its broad scope is a proposition of the formal account, distinct from a claim that every physical application has already been independently reproduced.',
+    connection:'In your engineering discipline, where is the difference between a requested action and an action that may legitimately acquire effect?',
+    question:'How would you observe an inadmissible candidate failing to form a protected effect?',
+    grade:'DECLARED', keywords:['urk','universal resolving kernel','kernel','lawful state','admissibility','standing','invariant'],
+    sources:[source('Foundation and URK description','../foundation.html'),source('Consequence signature calculus','../consequence-signature-calculus.html')],
+  },
+  {
+    id:'ahmr', number:'05', title:'AHMR & Continuance', kicker:'When conditions change',
+    summary:'The public AHMR description distinguishes durable ascent, threshold-preserved continuance, review-gated states, and stop-domain states. The declared closure is bounded by its stated invariants. Continuance includes refusal and stop where standing fails.',
+    connection:'Where does your field distinguish lawful continuation from merely allowing a process to keep running?',
+    question:'After a material condition changes, which earlier standing must be reconsidered?',
+    grade:'DECLARED', keywords:['ahmr','continuance','continuation','threshold','renewal','stop domain','harmonic'],
+    sources:[source('AHMR in the foundation','../foundation.html'),source('Continuance source checkpoint','../proofs/CONTINUATION-CHECKPOINT-2026-10-26.md')],
+  },
+  {
+    id:'consequence', number:'06', title:'Consequence Custody', kicker:'Before formation, not a late gate',
+    summary:'The V.A. public design examines whether a candidate movement can acquire lawful standing to become consequence at all. A permission check, approval log, pre-tool check, or REFUSE message alone cannot establish that a prohibited effect never formed by another route.',
+    connection:'Take your example. What real-world effect would count as the consequence, and which routes can cause it?',
+    question:'If authority is withdrawn or a condition changes, what independent observation would show the effect did not form?',
+    grade:'REVIEW STANDARD', keywords:['payment','bank','settlement','consent','revocation','before power','consequence','custody','pre-tool','pre tool','execution','agent','fraud'],
+    sources:[source('Public consequence examination standard','../proofs/EXAMINATION-STANDARD.md'),source('Try the consequence aperture','../consequence-aperture.html')],
+  },
+  {
+    id:'proof', number:'07', title:'Proof Before Power', kicker:'What an examiner should demand',
+    summary:'The published seven-part review separates a declared claim, the original carrier, governing conditions, positive and negative controls, change/replay, and alternate routes with witness identity. A synthetic fixture proves its own bounded scope; a claimed native result requires its own native carrier.',
+    connection:'What does your discipline consider an original observable result—not an illustration or slide?',
+    question:'Can you change one load-bearing condition, replay, and show independently what did and did not happen?',
+    grade:'REVIEW STANDARD', keywords:['test','prove','proof','witness','negative control','positive control','replay','challenge','verification','evidence','receipt','audit'],
+    sources:[source('Seven-part public review standard','../proofs/EXAMINATION-STANDARD.md'),source('Evidence hall with claim ceilings','../evidence-hall.html')],
+  },
+  {
+    id:'pilot', number:'08', title:'Pilots & Original Evidence', kicker:'Evidence has an exact scope',
+    summary:'The public estate preserves historical engineering and pilot source paths, separates recorded observations from declarations, and identifies native original packets that are not attached to this particular public release. Neither a missing public attachment nor a synthetic run settles a broader claim.',
+    connection:'In your field, how do you identify the exact operating conditions, original run, and independent examiner for a pilot?',
+    question:'What one bounded observation could an outsider reproduce without needing access to a private build?',
+    grade:'HISTORICAL', keywords:['pilot','piloted','historical','original','record','deployment','production','real world','real-world','release'],
+    sources:[source('Historical evidence index','../proofs/HISTORICAL-EVIDENCE-INDEX.md'),source('Public pilot evidence release route','../proofs/PILOT-EVIDENCE-RELEASE.md')],
+  },
+  {
+    id:'physical', number:'09', title:'Physical & KCD Examination', kicker:'Measure the world, not only a log',
+    summary:'The KCD public series defines a separate physical examination program and its evidence requirements. A software decision log is not an independent physical effect witness. The public KCD route does not attach a completed instrumented native physical run.',
+    connection:'What instrument could measure the actual protected outcome independently of the control software?',
+    question:'If an alternate physical path exists, how would your test detect a bypass?',
+    grade:'PUBLIC MAP', keywords:['kcd','physical','hardware','aircraft','airport','safety critical','instrument','gravity','wave'],
+    sources:[source('KCD public examination program','../kcd/README.md'),source('Physical witness requirements','../examiner/PHYSICAL-WITNESS.md')],
+  },
+  {
+    id:'safeguarding', number:'10', title:'Safeguarding & Human Oversight', kicker:'Protecting the person affected',
+    summary:'Public safeguarding work asks for measurable intervention, privacy, valid human authority, changed-condition behavior, and a challenge or appeal path. A named human reviewer without usable power and evidence is not itself proof of a protected outcome.',
+    connection:'Who can actually intervene, what may they see, and how can the affected person challenge the result?',
+    question:'Which private information must stay withheld even while an examiner receives enough evidence to assess protection?',
+    grade:'PUBLIC MAP', keywords:['child','children','safeguarding','privacy','human oversight','human','appeal','intervention','education'],
+    sources:[source('Child safeguarding public route','../child-safeguarding.html'),source('Public examination standard','../proofs/EXAMINATION-STANDARD.md')],
+  },
+]);
