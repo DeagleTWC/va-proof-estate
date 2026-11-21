@@ -18,3 +18,4 @@
 @media(max-width:370px){.topic-grid{grid-template-columns:1fr}.topic-card{min-height:185px}.hero h1{font-size:62px}.header-nav a{font-size:8px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button,.topic-card,.quick-buttons button{transition:none}}
 .brand-mark img{display:block;width:100%;height:100%;object-fit:cover;border-radius:50%}
+.map-options{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 6px}.map-choice{border:1px solid #a57b47;background:#271a0d;color:#f2d6a6;border-radius:3px;padding:13px 17px;font-size:13px;font-weight:650;cursor:pointer}.map-choice:hover,.map-choice:focus-visible{background:#443018;border-color:var(--gold);color:#ffe2b1}
