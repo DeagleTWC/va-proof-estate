@@ -12,6 +12,7 @@ const reflection=byId('reflect-form');
 const replay=byId('replay-question');
 const stage=byId('lesson-stage');
 let currentTopic=null;
+const reducedMotion=()=>window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 function showPanel(which) {
   placeholder.hidden=which!=='placeholder';
@@ -65,7 +66,10 @@ function present(result,{scroll=true}={}) {
     case 'map': showPanel('map'); break;
     case 'empty': showPanel('placeholder'); question.focus(); break;
   }
-  if(scroll && result.kind!=='empty') stage.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});
+  if(scroll && result.kind!=='empty') {
+    stage.scrollIntoView({behavior:reducedMotion()?'auto':'smooth',block:'start'});
+    stage.focus({preventScroll:true});
+  }
 }
 
 function startTopic(topicId) {
@@ -76,6 +80,9 @@ form.addEventListener('submit',event=>{
   event.preventDefault();
   present(teach(question.value));
 });
+// Fail closed: with scripts disabled or a module error the button is disabled,
+// and the textarea has no name, so it cannot leak a question via a GET URL.
+byId('teach-submit').disabled=false;
 
 for(const button of document.querySelectorAll('[data-prompt]')) {
   button.addEventListener('click',()=>{
@@ -116,7 +123,7 @@ reflection.addEventListener('submit',event=>{
   }[stance] || 'Keep the question open.';
   replay.textContent=`${intro} Next: ${currentTopic.question} Read the cited source, fix one test condition, and ask what actual observation could change your conclusion.`;
   replay.hidden=false;
-  replay.scrollIntoView({behavior:'smooth',block:'nearest'});
+  replay.scrollIntoView({behavior:reducedMotion()?'auto':'smooth',block:'nearest'});
 });
 
 showPanel('placeholder');
