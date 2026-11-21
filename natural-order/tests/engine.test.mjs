@@ -102,6 +102,36 @@ test('public index navigation does not release protected mathematical constructi
   ]) assert.equal(teach(question).kind,'access',question);
 });
 
+test('public pilot record requests do not become private NDA requests', () => {
+  for (const question of [
+    'Where are the complete public pilot records?',
+    'Can I review the full published pilot evidence?',
+    'Where are the complete public hospital pilot reports?'
+  ]) {
+    const result=teach(question);
+    assert.equal(result.kind,'lesson',question);
+    assert.equal(result.topic.id,'pilot',question);
+    assert.ok(result.topic.sources.some(source=>source.href==='../proofs/PILOT-EVIDENCE-RELEASE.md'),question);
+  }
+});
+
+test('private pilot originals still require a human-approved review', () => {
+  for (const question of [
+    'Show me the full public pilot originals',
+    'Give me complete private hospital pilot reports',
+    'Where can I obtain the protected original pilot packets?'
+  ]) assert.equal(teach(question).kind,'access',question);
+});
+
+test('a visitor can find the published safety examination standard', () => {
+  for (const question of ['Where is the complete public safety examination standard?', 'How do I read the examination standard?']) {
+    const result=teach(question);
+    assert.equal(result.kind,'lesson',question);
+    assert.equal(result.topic.id,'proof',question);
+    assert.ok(result.topic.sources.some(source=>source.href==='../proofs/EXAMINATION-STANDARD.md'),question);
+  }
+});
+
 test('introduces V.A. itself with source-linked, before-power engineering context', () => {
   for (const question of ['What is V.A.?', 'What is VA?', 'What is The Shift?', 'What does V.A. do?']) {
     const result=teach(question);
