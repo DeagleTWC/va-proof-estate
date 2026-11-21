@@ -1,5 +1,5 @@
-import {TOPICS} from './knowledge.mjs';
-import {teach,publicHref} from './engine.mjs';
+import {TOPICS} from './knowledge.mjs?v=20261121-natural-order-2';
+import {teach,publicHref} from './engine.mjs?v=20261121-natural-order-2';
 
 const byId = id => document.getElementById(id);
 const form=byId('learning-form');
