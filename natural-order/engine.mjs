@@ -1,4 +1,4 @@
-import {TOPICS,NATURAL_ORDER,VA_IDENTITY,TEACHER_PURPOSE} from './knowledge.mjs?v=20261121-natural-order-9';
+import {TOPICS,NATURAL_ORDER,VA_IDENTITY,TEACHER_PURPOSE} from './knowledge.mjs?v=20261121-natural-order-10';
 
 const controlledMaterial = /\b(?:kernel|urk|new\s*k|math(?:ematics)?|layer|logic|code|blueprint|formula|mechanism|derivation|operator|architecture|pilot|originals?)\b/i;
 const restrictedDetail = /\b(?:full|complete|private|protected|internal|secret|raw|proprietary|unredacted|underlying)\b/i;
@@ -9,6 +9,8 @@ const privateReviewInquiry = /\b(?:nda|non-disclosure|non disclosure|private rev
 const publicMathIndexInquiry = /\b(?:public|published)\s+math(?:ematics|ematical)?(?:\s+research)?\s+(?:index|catalog(?:ue)?)\b/i;
 const publicPilotRecordsInquiry = /\b(?:public|published)\s+(?:(?:hospital|seam)\s+)?pilots?\s+(?:records?|evidence|reports?|index)\b/i;
 const protectedNavigationContext = /\b(?:private|protected|internal|secret|raw|proprietary|unredacted|underlying|formula|algorithm|operator|source\s+code|implementation|construction|kernel|originals?)\b/i;
+const publicTermNameInquiry = /\b(?:full|complete|original)\s+(?:(?:public|official)\s+)?(?:name|title)\b/i;
+const protectedTermDetail = /\b(?:private|protected|internal|secret|raw|proprietary|unredacted|underlying|formula|algorithm|operator|source\s+code|implementation|construction|mechanism|build\s+steps)\b/i;
 const publicRoot = 'https://deagletwc.github.io/va-proof-estate/';
 
 export function publicHref(href) {
@@ -29,6 +31,12 @@ export function teach(input, selectedTopicId) {
   }
   if (question && publicPilotRecordsInquiry.test(question) && !protectedNavigationContext.test(question)) {
     return {kind:'lesson',topic:TOPICS.find(item=>item.id==='pilot')};
+  }
+  if (question && publicTermNameInquiry.test(question) && !protectedTermDetail.test(question)) {
+    const id=/\b(?:corrected\s+)?new\s+k\b/i.test(question) ? 'new-k' :
+      /\bahmr\b/i.test(question) ? 'ahmr' :
+      /\b(?:urk|universal resolving kernel|kernel)\b/i.test(question) ? 'urk' : null;
+    if (id) return {kind:'lesson',topic:TOPICS.find(item=>item.id===id)};
   }
   if (question && (privateReviewInquiry.test(question) || (restrictedDetail.test(question) && controlledMaterial.test(question)) ||
       (operativeRequest.test(question) && operativeDetail.test(question)) || underlyingConstruction.test(question))) {
