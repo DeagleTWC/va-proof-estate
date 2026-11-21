@@ -22,6 +22,14 @@ test('answers a visitor who asks what the Natural Order is', () => {
   }
 });
 
+test('answers a relationship question across foundational subjects instead of losing it to a score tie', () => {
+  const result=teach('How do True Zero and the Elements Basin relate?');
+  assert.equal(result.kind,'lesson');
+  assert.equal(result.topic.id,'natural-order');
+  assert.ok(result.topic.sources.some(source=>source.href==='../foundation.html'));
+  assert.equal(teach('kernel and basin').kind,'map');
+});
+
 test('introduces V.A. itself with source-linked, before-power engineering context', () => {
   for (const question of ['What is V.A.?', 'What is VA?', 'What is The Shift?', 'What does V.A. do?']) {
     const result=teach(question);
