@@ -31,6 +31,6 @@ node --test natural-order/tests/*.test.mjs
 node natural-order/release-audit.mjs
 ```
 
-Only `index.html`, `access.html`, `styles.css`, `app.mjs`, `engine.mjs`, `knowledge.mjs`, `release-audit.mjs`, and `README.md` need to ship. Test files are development records and not part of the deploy directory.
+Only `index.html`, `access.html`, `styles.css`, `app.mjs`, `engine.mjs`, and `knowledge.mjs` are used by visitors at runtime. `release-audit.mjs`, `README.md`, and the `tests/` directory are published transparency and review resources; GitHub Pages serves all tracked files, including tests, and none of them contains protected construction.
 
 **Proof Before Power. Open Evidence. Protected Construction.**
