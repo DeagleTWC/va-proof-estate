@@ -6,7 +6,7 @@ import {createHash} from 'node:crypto';
 // Every file in a public GitHub Pages repository is downloadable, including
 // developer tests. A fixed manifest is therefore the release boundary.
 export const PUBLIC_FILES=Object.freeze([
-  'README.md','VA_Universal_Bounded_Review_MNDA.pdf','access.html','app.mjs','engine.mjs','index.html',
+  'README.md','VA_Universal_Bounded_Review_MNDA.pdf','access.html','app.mjs','engine.mjs','index.html','repair-evidence.html',
   'knowledge.mjs','release-audit.mjs','styles.css',
   'tests/engine.test.mjs','tests/pages.test.mjs','tests/release.test.mjs',
 ]);
