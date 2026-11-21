@@ -4,6 +4,8 @@ on:
     branches: [main]
     paths:
       - "proofs/**"
+      - "*.py"
+      - "**/*.py"
       - "reflexsigma-rc4/**"
       - "scripts/**"
       - "examiner/**"
@@ -50,6 +52,8 @@ on:
   pull_request:
     paths:
       - "proofs/**"
+      - "*.py"
+      - "**/*.py"
       - "reflexsigma-rc4/**"
       - "scripts/**"
       - "examiner/**"
@@ -165,6 +169,10 @@ jobs:
         run: |
           python scripts/validate_end_to_end_atlas.py
           python scripts/test_end_to_end_atlas.py
+      - name: Enforce corrected NEW K native-source lineage and reject known reference-byte substitution
+        run: |
+          python scripts/validate_native_source_lineage.py
+          python -m unittest discover -s scripts -p 'test_validate_native_source_lineage.py' -v
       - name: Verify controlling publication charter, TMU review boundaries, and original/extract release controls
         run: |
           python scripts/validate_public_interest_evidence_policy.py
@@ -179,7 +187,7 @@ jobs:
           test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
           printf 'checked_out_commit=%s\nrun_id=%s\nrun_attempt=%s\n' "$GITHUB_SHA" "$GITHUB_RUN_ID" "$GITHUB_RUN_ATTEMPT" > "$RUNNER_TEMP/va-public-proof-integrity/run-identity.txt"
           python --version > "$RUNNER_TEMP/va-public-proof-integrity/python-version.txt" 2>&1
-          sha256sum scripts/preflight_m27_target_readback.py scripts/test_preflight_m27_target_readback.py scripts/verify_va_original_capability_recovery.mjs scripts/test_va_original_capability_recovery.mjs proofs/VA-ORIGINAL-CAPABILITY-RECOVERY.json proofs/END-TO-END-ESTATE-REGISTER.json > "$RUNNER_TEMP/va-public-proof-integrity/public-source-sha256.txt"
+          sha256sum scripts/preflight_m27_target_readback.py scripts/test_preflight_m27_target_readback.py scripts/verify_va_original_capability_recovery.mjs scripts/test_va_original_capability_recovery.mjs scripts/validate_native_source_lineage.py scripts/test_validate_native_source_lineage.py proofs/VA-ORIGINAL-CAPABILITY-RECOVERY.json proofs/END-TO-END-ESTATE-REGISTER.json > "$RUNNER_TEMP/va-public-proof-integrity/public-source-sha256.txt"
           printf '{"schema":"va-public-ci-observation/1.1","recordType":"PUBLIC_CI_OBSERVATION_NOT_SCIENTIFIC_CYCLE_CONTROL","nativeVAEvidence":false,"externalEffectsQualified":false,"independentWitnessQualified":false,"M27CompletedByThisCI":false,"M28AuthorizedByThisCI":false,"datedOperationalCycleSource":"proofs/SCIENTIFIC-CYCLE-CURRENT.json","M28OpenedForResearchInDatedRecord":true,"publicationAuthorized":false}\n' > "$RUNNER_TEMP/va-public-proof-integrity/standing-ceiling.json"
       - name: Enforce M27 v1.2 original-readback evidence consistency (synthetic checks only)
         run: |
