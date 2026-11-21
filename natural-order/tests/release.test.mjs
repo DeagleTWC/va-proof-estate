@@ -12,6 +12,16 @@ test('actual deploy contents are limited to the reviewed public files', async ()
   assert.deepEqual(result.errors,[]);
   assert.ok(result.files.includes('index.html'));
   assert.ok(result.files.includes('knowledge.mjs'));
+  assert.ok(result.files.includes('VA_Universal_Bounded_Review_MNDA.pdf'));
+});
+
+test('a modified or substituted public NDA PDF fails the pinned release boundary', async () => {
+  const dir=await mkdtemp(join(tmpdir(),'va-public-audit-'));
+  try {
+    await writeFile(join(dir,'VA_Universal_Bounded_Review_MNDA.pdf'),'%PDF-1.7\nsubstituted');
+    const result=await auditRelease(dir,{allowPartial:true});
+    assert.ok(result.errors.some(e=>e.includes('VA_Universal_Bounded_Review_MNDA.pdf')&&e.includes('SHA-256')));
+  } finally { await rm(dir,{recursive:true}); }
 });
 
 test('rejects a private or binary file accidentally added to a site directory', async () => {

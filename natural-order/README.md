@@ -16,7 +16,7 @@ The routing logic is deterministic, not an LLM. It does not silently invent open
 
 **All files inside this directory are public once pushed to GitHub.** `knowledge.mjs` contains only hand-curated public-facing summaries and links. There is no public import path to internal kernels or private data.
 
-The public access page requests nonconfidential inquiries via an existing GitHub issues route. Terry has not yet supplied a general-public NDA or a designated email address for signed agreements; the app does not invent either. When both are approved, the correct NDA download and email handoff can be added following review. Existing signed bilateral NDAs must not be used as a public template.
+The public access page provides the approved, blank `VA_Universal_Bounded_Review_MNDA.pdf` and directs signed returns to `canarybird0618@gmail.com`. It is a reusable mutual review form, based on a newly generalized agreement rather than an existing signed bilateral NDA. The PDF alone grants no access to protected material: Terry must countersign and approve a specifically bounded Exhibit A. The PDF is pinned by SHA-256 in `release-audit.mjs` so an unexpected substitution fails the audit.
 
 ## Preview locally
 
@@ -31,6 +31,6 @@ node --test natural-order/tests/*.test.mjs
 node natural-order/release-audit.mjs
 ```
 
-Only `index.html`, `access.html`, `styles.css`, `app.mjs`, `engine.mjs`, and `knowledge.mjs` are used by visitors at runtime. `release-audit.mjs`, `README.md`, and the `tests/` directory are published transparency and review resources; GitHub Pages serves all tracked files, including tests, and none of them contains protected construction.
+Only `index.html`, `access.html`, `styles.css`, `app.mjs`, `engine.mjs`, and `knowledge.mjs` are used by the teacher at runtime. The public PDF is a downloadable review template. `release-audit.mjs`, `README.md`, and the `tests/` directory are published transparency and review resources; GitHub Pages serves all tracked files, including tests, and none of them contains protected construction.
 
 **Proof Before Power. Open Evidence. Protected Construction.**

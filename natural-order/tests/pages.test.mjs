@@ -15,17 +15,21 @@ test('main public teaching page has a complete accessible learning route', async
   assert.match(html, /id="lesson-stage"[^>]*tabindex="-1"/);
   assert.match(html, /id="teach-submit"[^>]*disabled/);
   assert.doesNotMatch(html, /name="question"/);
+  assert.match(html, /class="brand-mark"[^>]*><img src="\.\.\/favicon\.png"/);
 });
 
-test('protected route states manual signed NDA email and personal walkthrough without inventing address', async () => {
+test('protected route offers approved universal NDA, signed return email and personal walkthrough', async () => {
   const html=await file('access.html');
   assert.match(html,/NDA/);
   assert.match(html,/sign/i);
   assert.match(html,/email/i);
   assert.match(html,/Terry/);
   assert.match(html,/personal walkthrough/i);
-  assert.doesNotMatch(html,/mailto:undefined|mailto:YOUR_EMAIL|download.*\.pdf/i);
+  assert.match(html,/href="VA_Universal_Bounded_Review_MNDA\.pdf"/);
+  assert.match(html,/mailto:canarybird0618@gmail\.com/);
+  assert.doesNotMatch(html,/mailto:undefined|mailto:YOUR_EMAIL|github\.com\/DeagleTWC\/va-proof-estate\/issues\/new/i);
   assert.match(html,/do not post (confidential|protected)/i);
+  assert.match(html,/class="brand-mark"[^>]*><img src="\.\.\/favicon\.png"/);
 });
 
 test('public app uses DOM-safe content insertion and no remote API', async () => {

@@ -1,16 +1,19 @@
 import {readdir,readFile,lstat,access} from 'node:fs/promises';
 import {join,relative,resolve,dirname,sep,extname} from 'node:path';
 import {fileURLToPath} from 'node:url';
+import {createHash} from 'node:crypto';
 
 // Every file in a public GitHub Pages repository is downloadable, including
 // developer tests. A fixed manifest is therefore the release boundary.
 export const PUBLIC_FILES=Object.freeze([
-  'README.md','access.html','app.mjs','engine.mjs','index.html',
+  'README.md','VA_Universal_Bounded_Review_MNDA.pdf','access.html','app.mjs','engine.mjs','index.html',
   'knowledge.mjs','release-audit.mjs','styles.css',
   'tests/engine.test.mjs','tests/pages.test.mjs','tests/release.test.mjs',
 ]);
 const manifest=new Set(PUBLIC_FILES);
 const allowedExtensions=new Set(['.html','.css','.mjs','.md']);
+const publicNda='VA_Universal_Bounded_Review_MNDA.pdf';
+const publicNdaSha256='8a4993180ad411920c15d79ad3ffea7f06dab469ae6bf4b5f1810df0c23bb056';
 const secretPattern=/-----BEGIN\s+(?:RSA |EC |OPENSSH )?PRIVATE KEY-----|(?:ghp_|github_pat_)[A-Za-z0-9_]{20,}/;
 const networkCalls=/\b(?:fetch|XMLHttpRequest|sendBeacon|WebSocket|EventSource)\s*\(/;
 const urls=/https?:\/\/[^\s"'<>`]+/g;
@@ -41,6 +44,7 @@ export async function auditRelease(root,{allowPartial=false,siteRoot}={}) {
       if(!permitted) errors.push(`${from.rel}: unapproved external endpoint ${href}`);
       return;
     }
+    if(from.rel==='access.html' && href==='mailto:canarybird0618@gmail.com?subject=V.A.%20Bounded%20Review%20NDA')return;
     if(/^[a-z]+:/i.test(href) || href.startsWith('//')) {errors.push(`${from.rel}: unapproved link scheme ${href}`);return;}
     const path=href.split(/[?#]/,1)[0];
     const local=path.startsWith('../') ? resolve(siteBase,path.slice(3)) : resolve(dirname(join(base,from.rel)),path);
@@ -56,6 +60,14 @@ export async function auditRelease(root,{allowPartial=false,siteRoot}={}) {
       if(item.isDirectory()){await inspect(absolute);continue;}
       if(!item.isFile()){errors.push(`${rel}: unexpected file type`);continue;}
       files.push(rel);
+      if(rel===publicNda) {
+        const bytes=await readFile(absolute);
+        if(bytes.length>1500000 || bytes.subarray(0,5).toString()!=='%PDF-' ||
+          createHash('sha256').update(bytes).digest('hex')!==publicNdaSha256) {
+          errors.push(`${rel}: public NDA PDF SHA-256 or format mismatch`);
+        }
+        continue;
+      }
       if(!manifest.has(rel) || item.name.startsWith('.') || !allowedExtensions.has(extname(rel))) {
         errors.push(`${rel}: file not on public release manifest`);continue;
       }
