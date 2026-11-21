@@ -1,4 +1,4 @@
-import {TOPICS,NATURAL_ORDER,VA_IDENTITY,TEACHER_PURPOSE} from './knowledge.mjs?v=20261121-natural-order-3';
+import {TOPICS,NATURAL_ORDER,VA_IDENTITY,TEACHER_PURPOSE} from './knowledge.mjs?v=20261121-natural-order-4';
 
 const controlledMaterial = /\b(?:kernel|urk|new\s*k|math(?:ematics)?|layer|logic|code|blueprint|formula|mechanism|derivation|operator|architecture|pilot|originals?)\b/i;
 const restrictedDetail = /\b(?:full|complete|private|protected|internal|secret|raw|proprietary|unredacted|underlying)\b/i;
@@ -34,6 +34,12 @@ export function teach(input, selectedTopicId) {
       /\b(?:v a|va)\s+(?:do|mean|stand for)\b/.test(words)) return {kind:'lesson',topic:VA_IDENTITY};
   if (/\b(?:what is (?:this|the) (?:tool|teacher|site|page) for|why does (?:this|the) (?:tool|teacher|site) exist|what can i learn here|how do i use (?:this|the) (?:tool|teacher|site))\b/.test(words)) return {kind:'lesson',topic:TEACHER_PURPOSE};
   if (/(?:^|\s)natural order(?:$|\s)/.test(words)) return {kind:'lesson',topic:NATURAL_ORDER};
+  const asksForRelationship=/\b(?:relat(?:e|ed|es|ion|ionship)|connect(?:s|ed|ion)?|between|together)\b/.test(words);
+  const foundationalConcepts=[/\btrue zero\b/,/\belements basin\b/,/\b(?:corrected new k|new k)\b/,
+    /\b(?:urk|universal resolving kernel)\b/,/\b(?:ahmr|lawful continuance)\b/,/\bconsequence custody\b/];
+  if (asksForRelationship && foundationalConcepts.filter(term=>term.test(words)).length>1) {
+    return {kind:'lesson',topic:NATURAL_ORDER};
+  }
   const scored=TOPICS.map(topic=>({topic,score:topic.keywords.reduce((score,key)=>{
     const term=key.toLowerCase();
     const escaped=term.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
