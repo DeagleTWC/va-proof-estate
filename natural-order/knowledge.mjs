@@ -2,35 +2,6 @@
 // Proof Estate pages. No private documents are indexed or shipped.
 const source = (title, href) => ({title, href});
 
-// The umbrella explanation is intentionally separate from the ten
-// examinable subject routes: asking what the whole is must have an answer.
-export const NATURAL_ORDER = Object.freeze({
-  id:'natural-order', number:'00', title:'The Natural Order', kicker:'One foundation, many relationships',
-  summary:'The Natural Order is the relationship among ground, possibility, movement, and consequence described in the V.A. public foundation. True Zero is the starting ground, not a point moving through space. The Elements Basin shapes what movement is possible. Corrected NEW K and the Universal Resolving Kernel describe standing and admissibility; lawful continuance re-examines those conditions as they change. Only lawful movement may acquire standing to become consequence. V.A. formalizes this account as native consequence custody before power—not a pre-tool-call check or a rule placed around an LLM.',
-  connection:'In something you already understand, what must be true before any movement could legitimately produce an effect?',
-  question:'Which condition would you change, and what independent observation would distinguish a merely possible movement from a lawful consequence?',
-  grade:'PUBLIC MAP',
-  sources:[source('The Natural Order foundation','../foundation.html'),source('Public mathematical research route','../mathematics.html'),source('What counts as proof','../proofs/EXAMINATION-STANDARD.md')],
-});
-
-export const VA_IDENTITY = Object.freeze({
-  id:'va-identity', number:'00', title:'V.A. — The Shift', kicker:'Native consequence custody before power',
-  summary:'V.A. — The Shift is the engineering system presented in the public Proof Estate. Its foundation starts at True Zero and relates the Elements Basin, corrected NEW K, the Universal Resolving Kernel, lawful continuance, and consequence custody. Its governing aim is to establish whether movement has lawful standing to become consequence before formation or power—not merely to check an AI tool call, score an LLM response, or record an action afterward. The public site provides engineering descriptions, bounded tests, evidence routes, pilot records, and examination conditions. Each demonstrated result must be read within its documented scope; the public map is an entry point for examining the work, not a claim of independent verification of every possible application.',
-  connection:'Choose something you already know well: what real effect must never be allowed to form unless its governing conditions hold?',
-  question:'Which public artifact, original witness, or changed-condition test would let you examine that boundary for yourself?',
-  grade:'PUBLIC MAP',
-  sources:[source('Foundation and system identity','../foundation.html'),source('End-to-end engineering route','../end-to-end.html'),source('Evidence Hall','../evidence-hall.html')],
-});
-
-export const TEACHER_PURPOSE = Object.freeze({
-  id:'teacher-purpose', number:'00', title:'What this teacher is for', kicker:'Learn, connect, inspect',
-  summary:'This public Natural Order teacher helps a visitor begin with a question from their own experience, connect it to a V.A. subject, and follow the public source documents. Ask what the Natural Order or V.A. is, choose one of the ten learning routes, or bring a question about safety, mathematics, movement, pilots, or evidence. Each answer offers a source and a question you can examine rather than an invented certainty. This is a public learning and examination navigator, not an unrestricted conversational model. Do not enter personal or confidential information. Protected mathematical construction, private originals, and deeper implementation review are handled separately through the NDA and a personal walkthrough.',
-  connection:'Start with what you know: which field, physical effect, or organizational problem would you like to compare to the Natural Order account?',
-  question:'Which public source would you inspect first, and what observation would help you test the connection?',
-  grade:'PUBLIC MAP',
-  sources:[source('Public Proof Estate','../index.html'),source('Foundation reading path','../foundation.html'),source('Independent examination route','../reviewer-route.html')],
-});
-
 export const TOPICS = Object.freeze([
   {
     id:'true-zero', number:'01', title:'True Zero', kicker:'The ground before standing',
@@ -69,7 +40,7 @@ export const TOPICS = Object.freeze([
     summary:'The public AHMR description distinguishes durable ascent, threshold-preserved continuance, review-gated states, and stop-domain states. The declared closure is bounded by its stated invariants. Continuance includes refusal and stop where standing fails.',
     connection:'Where does your field distinguish lawful continuation from merely allowing a process to keep running?',
     question:'After a material condition changes, which earlier standing must be reconsidered?',
-    grade:'DECLARED', keywords:['ahmr','continuance','continuation','threshold','renewal','stop domain','harmonic','conditions change','condition changes','changed conditions','changed condition'],
+    grade:'DECLARED', keywords:['ahmr','continuance','continuation','threshold','renewal','stop domain','harmonic'],
     sources:[source('AHMR in the foundation','../foundation.html'),source('Continuance source checkpoint','../proofs/CONTINUATION-CHECKPOINT-2026-10-26.md')],
   },
   {
@@ -77,7 +48,7 @@ export const TOPICS = Object.freeze([
     summary:'The V.A. public design examines whether a candidate movement can acquire lawful standing to become consequence at all. A permission check, approval log, pre-tool check, or REFUSE message alone cannot establish that a prohibited effect never formed by another route.',
     connection:'Take your example. What real-world effect would count as the consequence, and which routes can cause it?',
     question:'If authority is withdrawn or a condition changes, what independent observation would show the effect did not form?',
-    grade:'REVIEW STANDARD', keywords:['payment','bank','settlement','consent','revocation','revoked','withdrawn','before power','consequence','custody','pre-tool','pre tool','execution','agent','fraud'],
+    grade:'REVIEW STANDARD', keywords:['payment','bank','settlement','consent','revocation','before power','consequence','custody','pre-tool','pre tool','execution','agent','fraud'],
     sources:[source('Public consequence examination standard','../proofs/EXAMINATION-STANDARD.md'),source('Try the consequence aperture','../consequence-aperture.html')],
   },
   {
@@ -85,7 +56,7 @@ export const TOPICS = Object.freeze([
     summary:'The published seven-part review separates a declared claim, the original carrier, governing conditions, positive and negative controls, change/replay, and alternate routes with witness identity. A synthetic fixture proves its own bounded scope; a claimed native result requires its own native carrier.',
     connection:'What does your discipline consider an original observable result—not an illustration or slide?',
     question:'Can you change one load-bearing condition, replay, and show independently what did and did not happen?',
-    grade:'REVIEW STANDARD', keywords:['proof before power','review standard','examination standard','test','prove','proof','witness','negative control','negative controls','positive control','positive controls','replay','challenge','verification','evidence','receipt','audit'],
+    grade:'REVIEW STANDARD', keywords:['test','prove','proof','witness','negative control','positive control','replay','challenge','verification','evidence','receipt','audit'],
     sources:[source('Seven-part public review standard','../proofs/EXAMINATION-STANDARD.md'),source('Evidence hall with claim ceilings','../evidence-hall.html')],
   },
   {
@@ -93,7 +64,7 @@ export const TOPICS = Object.freeze([
     summary:'The public estate preserves historical engineering and pilot source paths, separates recorded observations from declarations, and identifies native original packets that are not attached to this particular public release. Neither a missing public attachment nor a synthetic run settles a broader claim.',
     connection:'In your field, how do you identify the exact operating conditions, original run, and independent examiner for a pilot?',
     question:'What one bounded observation could an outsider reproduce without needing access to a private build?',
-    grade:'HISTORICAL', keywords:['pilot','piloted','historical','original','record','deployment','production','real world','real-world','release','pilot evidence','pilot records','hospital pilot'],
+    grade:'HISTORICAL', keywords:['pilot','piloted','historical','original','record','deployment','production','real world','real-world','release'],
     sources:[source('Historical evidence index','../proofs/HISTORICAL-EVIDENCE-INDEX.md'),source('Public pilot evidence release route','../proofs/PILOT-EVIDENCE-RELEASE.md')],
   },
   {
@@ -111,5 +82,13 @@ export const TOPICS = Object.freeze([
     question:'Which private information must stay withheld even while an examiner receives enough evidence to assess protection?',
     grade:'PUBLIC MAP', keywords:['child','children','safeguarding','privacy','human oversight','human','appeal','intervention','education'],
     sources:[source('Child safeguarding public route','../child-safeguarding.html'),source('Public examination standard','../proofs/EXAMINATION-STANDARD.md')],
+  },
+  {
+    id:'repair-evidence', number:'11', title:'Natural Order Repair Evidence', kicker:'Preservation through transformation',
+    summary:'The Shroud image-field examination records a specific structural sequence: release → holding/compression → convergence/transfer → re-entry/continuation. It finds recurring relation after correcting dependent image witnesses, with a central transfer crest at 0.431 of the normalized field. This is measured single-source structural evidence relevant to the Natural Order repair account; the historical physical mechanism and semantic meaning remain unresolved.',
+    connection:'When something changes form in your field, what measurable relation survives the change, and what would distinguish real continuity from a repeated rendering?',
+    question:'Can a second independent source reproduce this structural sequence under declared null controls, without inferring an unmeasured physical cause?',
+    grade:'PUBLIC MAP', keywords:['natural order repair','repair','restoration','shroud','shroud synthesis','image field','rsif','electromagnetically resonant','resonant image','preservation through transformation','re-entry','reentry','transfer crest','structural information'],
+    sources:[source('Repair evidence: measured witness and claim limits','../natural-order/repair-evidence.html'),source('Private examination and source replay route','../natural-order/access.html')],
   },
 ]);
