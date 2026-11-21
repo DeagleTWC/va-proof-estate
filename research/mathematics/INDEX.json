@@ -34,7 +34,21 @@
         "private_native_urk_excluded": true
       },
       "catalog_number": "001",
-      "index_kind": "published_mathematical_research"
+      "index_kind": "published_mathematical_research",
+      "step5_public_scope_supplement": {
+        "date": "2026-11-21",
+        "crosswalk": "research/navier-stokes/STEP5_PUBLIC_SOURCE_SCOPE_CROSSWALK.md",
+        "exact_abstract_checker": "research/navier-stokes/refinement_countermodel.py",
+        "tests": "research/navier-stokes/test_refinement_countermodel.py",
+        "member_hashes_matched": 6,
+        "member_hashes_total": 6,
+        "verified_public_tests": 4,
+        "public_tests_total": 4,
+        "source_body_rewritten": false,
+        "private_native_material_published": false,
+        "source_scope": "Refinement identity proved; cutoff-uniform integrated maximum-gradient bound is source-stated and not established for every smooth initial datum. Exact basin model is not a fluid solution.",
+        "unrestricted_3d_regularities_proved": false
+      }
     },
     {
       "id": "yang-mills-2026-11-11",
