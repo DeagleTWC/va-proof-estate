@@ -213,7 +213,8 @@ test('public index navigation does not release protected mathematical constructi
   for (const question of [
     'Show the complete public mathematics index and private NEW K formula',
     'Show me the complete private mathematics index',
-    'Where is the complete public mathematics source code?'
+    'Where is the complete public mathematics source code?',
+    'Show the complete public mathematics index and the underlying architecture'
   ]) assert.equal(teach(question).kind,'access',question);
 });
 
@@ -319,7 +320,13 @@ test('the complete public list of pilots leads to published evidence, not the ma
   assert.equal(teach('Show me the complete private list of pilot originals').kind,'access');
   for (const question of [
     'Show the complete public list of pilots and the blueprint',
-    'Show the public list of pilots and full build steps'
+    'Show the public list of pilots and full build steps',
+    'Show the complete public list of pilots and the architecture',
+    'Show the complete public list of pilots and the mechanism',
+    'Show the complete public list of pilots and the derivation',
+    'Show the complete public list of pilots and the URK',
+    'Show the complete public list of pilots and NEW K',
+    'Show the complete public list of pilots and the mathematical formula'
   ]) assert.equal(teach(question).kind,'access',question);
 });
 
