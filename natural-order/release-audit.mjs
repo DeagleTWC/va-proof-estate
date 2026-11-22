@@ -2,13 +2,16 @@ import {readdir,readFile,lstat,access} from 'node:fs/promises';
 import {join,relative,resolve,dirname,sep,extname} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
+import {DEFINITIONS} from './definition-kernel.mjs';
+import {TEACHING_KERNELS,auditTeachingKernelBank} from './teaching-kernels.mjs';
 
 // Every file in a public GitHub Pages repository is downloadable, including
 // developer tests. A fixed manifest is therefore the release boundary.
 export const PUBLIC_FILES=Object.freeze([
   'README.md','VA_Universal_Bounded_Review_MNDA.pdf','access.html','app.mjs','engine.mjs','index.html','repair-evidence.html',
-  'knowledge.mjs','frankie-client.mjs','release-audit.mjs','styles.css',
-  'tests/app-interaction.test.mjs','tests/engine.test.mjs','tests/frankie-client.test.mjs','tests/pages.test.mjs','tests/release.test.mjs',
+  'knowledge.mjs','definition-kernel.mjs','teaching-kernels.mjs','frankie-client.mjs','release-audit.mjs','styles.css',
+  'tests/app-interaction.test.mjs','tests/definition-kernel.test.mjs','tests/teaching-kernels.test.mjs',
+  'tests/engine.test.mjs','tests/frankie-client.test.mjs','tests/pages.test.mjs','tests/release.test.mjs',
 ]);
 const manifest=new Set(PUBLIC_FILES);
 const allowedExtensions=new Set(['.html','.css','.mjs','.md']);
@@ -50,6 +53,7 @@ export async function auditRelease(root,{allowPartial=false,siteRoot}={}) {
       return;
     }
     if(from.rel==='access.html' && href==='mailto:canarybird0618@gmail.com?subject=V.A.%20Bounded%20Review%20NDA')return;
+    if(from.rel==='index.html' && href==='mailto:canarybird0618@gmail.com?subject=Natural%20Order%20Teaching%20Example')return;
     if(/^[a-z]+:/i.test(href) || href.startsWith('//')) {errors.push(`${from.rel}: unapproved link scheme ${href}`);return;}
     const path=href.split(/[?#]/,1)[0];
     const local=path.startsWith('../') ? resolve(siteBase,path.slice(3)) : resolve(dirname(join(base,from.rel)),path);
@@ -99,6 +103,10 @@ export async function auditRelease(root,{allowPartial=false,siteRoot}={}) {
     }
   }
   await inspect(base);
+  for(const issue of auditTeachingKernelBank(TEACHING_KERNELS))errors.push(`teaching bank: ${issue}`);
+  for(const definition of DEFINITIONS){
+    await checkLink(definition.source.href,{rel:'definition-kernel.mjs',data:''});
+  }
   if(!allowPartial)for(const name of manifest)if(!files.includes(name))errors.push(`${name}: missing from public release`);
   return {files:files.sort(),errors};
 }

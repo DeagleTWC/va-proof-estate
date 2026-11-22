@@ -1,6 +1,8 @@
-import {TOPICS} from './knowledge.mjs?v=20261122-natural-order-13';
-import {teach,publicHref} from './engine.mjs?v=20261122-natural-order-13';
-import {initFrankie,FRANKIE_GATEWAY_URL} from './frankie-client.mjs?v=20261122-natural-order-13';
+import {TOPICS} from './knowledge.mjs?v=20261122-natural-order-14';
+import {teach,publicHref} from './engine.mjs?v=20261122-natural-order-14';
+import {initFrankie,FRANKIE_GATEWAY_URL} from './frankie-client.mjs?v=20261122-natural-order-14';
+import {kernelForTopic,assessTeachingKernel,nextTeachingKernel} from './teaching-kernels.mjs?v=20261122-natural-order-14';
+import {definitionsForLesson,convertTermDefinitions} from './definition-kernel.mjs?v=20261122-natural-order-14';
 
 const byId = id => document.getElementById(id);
 const form=byId('learning-form');
@@ -15,6 +17,7 @@ const stage=byId('lesson-stage');
 let currentTopic=null;
 let currentInquiryQuestion='';
 let mapInquiryQuestion='';
+let currentKernel=null;
 const reducedMotion=()=>window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 function showPanel(which) {
@@ -65,6 +68,67 @@ function showMapOptions(result) {
   }
 }
 
+function showKernelForTopic(topicId){
+  const panel=byId('kernel-panel');
+  currentKernel=kernelForTopic(topicId);
+  panel.hidden=!currentKernel;
+  if(!currentKernel)return;
+  byId('kernel-index').textContent=`${currentKernel.id} / 11`;
+  byId('kernel-scenario').textContent=currentKernel.scenario;
+  byId('kernel-change').textContent=currentKernel.change;
+  byId('kernel-feedback').hidden=true;
+  const options=byId('kernel-options');
+  options.replaceChildren();
+  for(const option of currentKernel.options){
+    const button=document.createElement('button');
+    button.type='button';
+    button.className='kernel-choice';
+    button.textContent=option.label;
+    button.addEventListener('click',()=>{
+      const answer=assessTeachingKernel(currentKernel.id,option.id);
+      if(answer.status!=='assessed')return;
+      for(const node of options.children){
+        node.setAttribute('aria-pressed',String(node===button));
+      }
+      const prefix=answer.isWitness?'STRONGER WITNESS':'INSUFFICIENT WITNESS';
+      byId('kernel-feedback').textContent=`${prefix} — ${answer.feedback} ${answer.isWitness?'':'A stronger examination: '+answer.witness}`;
+      byId('kernel-feedback').hidden=false;
+    });
+    button.setAttribute('aria-pressed','false');
+    options.append(button);
+  }
+}
+
+function showTermDefinitions(topic,connection,question){
+  const definitions=definitionsForLesson([topic.title,topic.summary,connection,question].join(' '));
+  const panel=byId('term-definitions');
+  const list=byId('term-definitions-list');
+  list.replaceChildren();
+  for(const item of definitions){
+    const details=document.createElement('details');
+    details.className='term-detail';
+    const heading=document.createElement('summary');
+    const term=document.createElement('strong');
+    term.textContent=item.term;
+    const short=document.createElement('span');
+    short.textContent=item.short;
+    heading.append(term,short);
+    const explanation=document.createElement('p');
+    explanation.textContent=item.explanation;
+    details.append(heading,explanation);
+    if(publicHref(item.source.href)){
+      const link=document.createElement('a');
+      link.href=item.source.href;
+      link.textContent=`Read the public source: ${item.source.title} ↗`;
+      link.target='_blank';
+      link.rel='noopener noreferrer';
+      details.append(link);
+    }
+    list.append(details);
+  }
+  panel.hidden=definitions.length===0;
+}
+
 function present(result,{scroll=true,originQuestion=''}={}) {
   currentTopic=null;
   currentInquiryQuestion='';
@@ -74,21 +138,32 @@ function present(result,{scroll=true,originQuestion=''}={}) {
       const topic=result.topic;
       currentTopic=topic;
       currentInquiryQuestion=result.bridge?.question || topic.question;
+      const connection=result.bridge?.connection || topic.connection;
       byId('lesson-kicker').textContent=`PUBLIC PATH / ${topic.number} · ${topic.kicker}`;
       byId('lesson-grade').textContent=topic.grade;
       byId('lesson-title').textContent=topic.title;
-      byId('lesson-summary').textContent=topic.summary;
-      byId('lesson-connection').textContent=result.bridge?.connection || topic.connection;
-      byId('lesson-question').textContent=currentInquiryQuestion;
+      const explained=new Set();
+      const titleTerms=definitionsForLesson(topic.title);
+      const termLead=byId('term-lead');
+      termLead.hidden=titleTerms.length===0;
+      if(titleTerms.length){
+        termLead.textContent=`${titleTerms[0].term} — ${titleTerms[0].short}.`;
+        explained.add(titleTerms[0].term);
+      }
+      byId('lesson-summary').textContent=convertTermDefinitions(topic.summary,{explained});
+      byId('lesson-connection').textContent=convertTermDefinitions(connection,{explained});
+      byId('lesson-question').textContent=convertTermDefinitions(currentInquiryQuestion,{explained});
+      showTermDefinitions(topic,connection,currentInquiryQuestion);
       byId('reflect-prompt').textContent=currentInquiryQuestion;
       sourceList(topic.sources);
+      showKernelForTopic(topic.id);
       byId('reflection-choice').value='align';
       showPanel('lesson');
       break;
     }
-    case 'access': showPanel('access'); break;
-    case 'map': showMapOptions(result); showPanel('map'); break;
-    case 'empty': showPanel('placeholder'); question.focus(); break;
+    case 'access': currentKernel=null;byId('kernel-panel').hidden=true;showPanel('access'); break;
+    case 'map': currentKernel=null;byId('kernel-panel').hidden=true;showMapOptions(result); showPanel('map'); break;
+    case 'empty': currentKernel=null;byId('kernel-panel').hidden=true;showPanel('placeholder'); question.focus(); break;
   }
   if(scroll && result.kind!=='empty') {
     stage.scrollIntoView({behavior:reducedMotion()?'auto':'smooth',block:'start'});
@@ -96,9 +171,21 @@ function present(result,{scroll=true,originQuestion=''}={}) {
   }
 }
 
-function startTopic(topicId,fieldQuestion='') {
-  present(teach(fieldQuestion,topicId));
+function startTopic(topicId,fieldQuestion='',{focusKernel=false}={}) {
+  present(teach(fieldQuestion,topicId),{scroll:!focusKernel});
+  if(focusKernel&&currentKernel){
+    const panel=byId('kernel-panel');
+    panel.scrollIntoView({behavior:reducedMotion()?'auto':'smooth',block:'start'});
+    panel.focus({preventScroll:true});
+  }
 }
+
+byId('start-kernel-bank').addEventListener('click',()=>startTopic('true-zero'));
+byId('kernel-next').addEventListener('click',()=>{
+  if(!currentKernel)return;
+  const next=nextTeachingKernel(currentKernel.id);
+  if(next)startTopic(next.topicId,'',{focusKernel:true});
+});
 
 form.addEventListener('submit',event=>{
   event.preventDefault();
