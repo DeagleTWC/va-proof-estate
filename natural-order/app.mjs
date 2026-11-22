@@ -1,9 +1,9 @@
-import {TOPICS} from './knowledge.mjs?v=20261122-natural-order-21';
-import {teach,publicHref} from './engine.mjs?v=20261122-natural-order-21';
-import {createOpenConversationKernel} from './open-conversation-kernel.mjs?v=20261122-natural-order-21';
-import {initFrankie,FRANKIE_GATEWAY_URL} from './frankie-client.mjs?v=20261122-natural-order-21';
-import {kernelForTopic,assessTeachingKernel,nextTeachingKernel} from './teaching-kernels.mjs?v=20261122-natural-order-21';
-import {definitionsForLesson,convertTermDefinitions} from './definition-kernel.mjs?v=20261122-natural-order-21';
+import {TOPICS} from './knowledge.mjs?v=20261122-natural-order-22';
+import {teach,publicHref} from './engine.mjs?v=20261122-natural-order-22';
+import {createOpenConversationKernel} from './open-conversation-kernel.mjs?v=20261122-natural-order-22';
+import {initFrankie,FRANKIE_GATEWAY_URL} from './frankie-client.mjs?v=20261122-natural-order-22';
+import {kernelForTopic,assessTeachingKernel,nextTeachingKernel} from './teaching-kernels.mjs?v=20261122-natural-order-22';
+import {definitionsForLesson,convertTermDefinitions} from './definition-kernel.mjs?v=20261122-natural-order-22';
 
 const byId = id => document.getElementById(id);
 const form=byId('learning-form');

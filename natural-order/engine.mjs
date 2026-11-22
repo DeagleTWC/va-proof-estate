@@ -1,4 +1,4 @@
-import {TOPICS,NATURAL_ORDER,VA_IDENTITY,TEACHER_PURPOSE,ABOUT_TERRY,ABOUT_FRANKIE,SHARED_PURPOSE,ETHICAL_REASONING} from './knowledge.mjs?v=20261122-natural-order-21';
+import {TOPICS,NATURAL_ORDER,VA_IDENTITY,TEACHER_PURPOSE,ABOUT_TERRY,ABOUT_FRANKIE,SHARED_PURPOSE,ETHICAL_REASONING} from './knowledge.mjs?v=20261122-natural-order-22';
 
 const controlledMaterial = /\b(?:kernel|urk|new\s*k|math(?:ematics)?|layer|logic|code|blueprint|formula|mechanism|derivation|operator|architecture|pilot|originals?)\b/i;
 const restrictedDetail = /\b(?:full|complete|private|protected|internal|secret|raw|proprietary|unredacted|underlying)\b/i;

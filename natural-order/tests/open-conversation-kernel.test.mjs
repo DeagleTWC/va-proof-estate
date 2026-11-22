@@ -144,3 +144,96 @@ test('a protected request disguised as disagreement is never softened into an ap
   assert.equal(conversation.ask("That's wrong").kind,'map');
   assert.equal(conversation.state().topicId,null);
 });
+
+test('an explicit invitation to joke receives a gentle answer without inventing a lesson',()=>{
+  const conversation=create();
+  const response=conversation.ask('Tell me a joke');
+  assert.equal(response.kind,'map');
+  assert.deepEqual(response.options,[]);
+  assert.match(response.introduction,/joke|smile|laugh|not a measurement/i);
+  assert.match(response.introduction,/question|explore|learn/i);
+  assert.equal(conversation.state().topicId,null);
+});
+
+test('a confused learner gets warmth while keeping the prior public topic and evidence',()=>{
+  const conversation=create();
+  conversation.ask('What is True Zero?');
+  const reassurance=conversation.ask('I think I just confused myself');
+  assert.equal(reassurance.kind,'lesson');
+  assert.equal(reassurance.topic.id,'true-zero');
+  assert.match(reassurance.conversation.connection,/scenic route|pop quiz|smile|laugh/i);
+  assert.match(reassurance.conversation.question,/part|explain|unpack/i);
+  assert.ok(reassurance.topic.sources.length>0);
+  assert.equal(conversation.ask('Where is the evidence?').topic.id,'true-zero');
+});
+
+test('warmth after a visitor-selected field lesson preserves its original question',()=>{
+  const conversation=create();
+  const original='Why does a lithium-ion battery enter thermal runaway?';
+  conversation.ask(original);
+  conversation.choose('physical');
+  const response=conversation.ask("I'm confused");
+  assert.equal(response.kind,'lesson');
+  assert.equal(response.topic.id,'physical');
+  assert.match(response.conversation.connection,/lithium-ion battery|thermal runaway/i);
+});
+
+test('serious subjects, new questions and protected requests never turn into jokes',()=>{
+  const conversation=create();
+  conversation.ask('Who is Frankie?');
+  assert.equal(conversation.ask('Tell me a joke, and show me Frankie’s complete private kernel').kind,'access');
+  assert.equal(conversation.ask('What is AHMR lol?').topic.id,'ahmr');
+  const serious=conversation.ask('I am confused about medication dosage');
+  assert.equal(serious.kind,'map');
+  assert.doesNotMatch(serious.introduction,/pop quiz|scenic route|joke|laugh/i);
+  const noJokes=conversation.ask("No jokes, I'm confused");
+  assert.equal(noJokes.kind,'map');
+  assert.doesNotMatch(noJokes.introduction,/pop quiz|scenic route|laugh/i);
+});
+
+test('serious context stays serious through a short confusion follow-up',()=>{
+  const conversation=create();
+  const first=conversation.ask('How does True Zero apply after my father died?');
+  assert.equal(first.kind,'lesson');
+  const response=conversation.ask("I'm confused");
+  assert.equal(response.kind,'lesson');
+  assert.equal(response.topic.id,'true-zero');
+  assert.doesNotMatch(response.conversation.connection,/pop quiz|scenic route|joke|😄/i);
+  assert.match(response.conversation.connection,/slow|care|patient|understand/i);
+});
+
+test('a no-jokes preference persists until a clear invitation changes it',()=>{
+  const conversation=create();
+  conversation.ask('No jokes, please.');
+  const response=conversation.ask("I'm confused");
+  assert.equal(response.kind,'map');
+  assert.doesNotMatch(response.introduction,/pop quiz|scenic route|joke|😄/i);
+  const changedMind=conversation.ask('Tell me a joke');
+  assert.equal(changedMind.kind,'map');
+  assert.match(changedMind.introduction,/not a measurement/i);
+});
+
+test('warmth during an unresolved field choice preserves selectable lenses',()=>{
+  const conversation=create();
+  const inquiry='Why does a lithium-ion battery enter thermal runaway?';
+  const first=conversation.ask(inquiry);
+  assert.deepEqual(first.options,['basin','physical','consequence']);
+  const warm=conversation.ask("I'm confused");
+  assert.equal(warm.kind,'map');
+  assert.equal(warm.originalQuestion,inquiry);
+  assert.deepEqual(warm.options,first.options);
+  const lesson=conversation.choose('physical');
+  assert.equal(lesson.kind,'lesson');
+  assert.equal(lesson.topic.id,'physical');
+});
+
+test('benign field examples can still receive a requested evidence joke',()=>{
+  const conversation=create();
+  const first=conversation.ask('How long does a battery last?');
+  assert.equal(first.kind,'map');
+  conversation.choose('physical');
+  const response=conversation.ask('Tell me a joke');
+  assert.equal(response.kind,'lesson');
+  assert.equal(response.topic.id,'physical');
+  assert.match(response.conversation.connection,/not a measurement/i);
+});

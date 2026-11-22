@@ -1,5 +1,5 @@
-import {createHumanInteractionKernel} from './human-interaction-kernel.mjs?v=20261122-natural-order-21';
-import {reviewCognitiveTurn} from './cognitive-reasoning-kernel.mjs?v=20261122-natural-order-21';
+import {createHumanInteractionKernel} from './human-interaction-kernel.mjs?v=20261122-natural-order-22';
+import {reviewCognitiveTurn} from './cognitive-reasoning-kernel.mjs?v=20261122-natural-order-22';
 
 // A bounded, in-page conversational layer. It is deliberately not a general
 // language model: only clear, short anaphoric follow-ups reuse a prior lesson.
@@ -12,6 +12,36 @@ const followups=Object.freeze([
   {mode:'why',pattern:/^(?:(?:okay|ok|so)\s+)?(?:why|why\s+does\s+(?:that|it)\s+matter|how\s+does\s+(?:that|it)\s+work)[?.! ]*$/i},
   {mode:'continue',pattern:/^(?:(?:tell\s+me|explain)\s+more(?:\s+about\s+(?:that|it))?|go\s+on|keep\s+going|and\s+then\s+what)[?.! ]*$/i},
 ]);
+
+// Gentle warmth is offered only when invited or when a visitor plainly asks
+// for patience. It does not reinterpret a substantive question as a joke.
+const confusedTurn=/^(?:i\s+think\s+i\s+just\s+confused\s+myself|i(?:'m| am)\s+(?:confused|lost|a\s+little\s+confused)|you\s+lost\s+me|can\s+we\s+slow\s+down)[.!?\s]*$/i;
+const invitedJoke=/^(?:please\s+)?(?:tell\s+me\s+(?:a\s+|one\s+)?joke|can\s+you\s+(?:tell\s+me\s+(?:a\s+)?joke|make\s+me\s+laugh|be\s+funny)|say\s+something\s+funny|make\s+me\s+(?:laugh|smile))[.!?\s]*$/i;
+const seriousTurn=/\b(?:patient|medication|medicine|dosage|dose|clinical|cancer|terminal|illness|suicide|suicidal|kill|death|dead|died|injury|injured|abuse|assault|weapon|emergency|accident|crash|unsafe|trauma|private|secret|confidential)\b/i;
+const rejectedJoke=/\b(?:no\s+jokes?|stop\s+joking|not\s+funny)\b/i;
+const evidenceJoke='A little evidence joke: Why did the claim bring a notebook? Because “trust me” is not a measurement. 😄 A smile is welcome; proof still needs evidence.';
+
+function warmthForTurn(question,priorLesson,priorMap,{allowJokes}){
+  if(seriousTurn.test(question)||rejectedJoke.test(question))return null;
+  const mode=confusedTurn.test(question)?'reassure':invitedJoke.test(question)?'smile':null;
+  if(!mode)return null;
+  if(!priorLesson)return {mode,response:{kind:'map',
+    originalQuestion:priorMap?.originalQuestion||'',options:priorMap?.options||[],
+    introduction:mode==='smile'&&allowJokes
+      ? `${evidenceJoke} What would you like to explore or ask next?`
+      : allowJokes
+        ? 'We may have taken the scenic route. Fortunately, there is no pop quiz. 😄 We can slow down together. What part would you like to understand?'
+        : 'Of course. Let’s take this slowly and carefully. Which part would you like help understanding?'}};
+  const {topic,bridge,originalQuestion}=priorLesson;
+  const field=bridge&&originalQuestion?` You originally asked: “${originalQuestion}”` : '';
+  return {mode,response:{kind:'lesson',topic,conversation:{
+    summary:mode==='reassure'?(plain[topic.id]||topic.summary):topic.summary,
+    connection:mode==='smile'&&allowJokes
+      ? `${evidenceJoke} ${topic.title} still has to be examined through its public sources.${field}`
+      : `${allowJokes?'We may have taken the scenic route. No pop quiz, I promise. 😄 Let’s slow down.':'Let’s slow down and give your question the care it deserves.'}${field} We can take the explanation one step at a time.`,
+    question:'Which part would you like me to unpack or explain differently?',
+  }}};
+}
 
 const plain=Object.freeze({
   'true-zero':'The account begins with a starting ground. An action does not gain permission merely because someone wants it to happen.',
@@ -86,6 +116,8 @@ export function createOpenConversationKernel({resolve,topics}) {
   const intent=createHumanInteractionKernel({resolve,topics});
   const validIds=new Set(topics.map(topic=>topic.id));
   let lastLesson=null;
+  let lastMap=null;
+  let jokesOptedOut=false;
   let turnCount=0;
   let latestIntent=null;
 
@@ -95,8 +127,10 @@ export function createOpenConversationKernel({resolve,topics}) {
     if(result.kind==='lesson'){
       if(!retain)lastLesson={topic:result.topic,bridge:result.bridge||null,
         originalQuestion:result.originalQuestion||inquiry||result.topic.title};
+      lastMap=null;
     }else{
       lastLesson=null;
+      lastMap=result.kind==='map'?{originalQuestion:result.originalQuestion||'',options:result.options||[]}:null;
     }
     return result;
   }
@@ -116,6 +150,19 @@ export function createOpenConversationKernel({resolve,topics}) {
       intent.reset();
       return record(review.response,'reconsideration');
     }
+    if(rejectedJoke.test(question))jokesOptedOut=true;
+    else if(invitedJoke.test(question))jokesOptedOut=false;
+    if(!review.routeQuestion){
+      const seriousContext=seriousTurn.test(question)||seriousTurn.test(lastLesson?.originalQuestion||'')||
+        seriousTurn.test(lastMap?.originalQuestion||'');
+      const warmth=warmthForTurn(question,lastLesson,lastMap,{allowJokes:!jokesOptedOut&&!seriousContext});
+      if(warmth){
+        // Keep a pending selectable map intact when the visitor asks for
+        // patience, so reassurance does not consume their actual choices.
+        if(lastLesson||!lastMap?.options.length)intent.reset();
+        return record(warmth.response,warmth.mode,{retain:!!lastLesson});
+      }
+    }
     // Inferred routes stay with the human-intent kernel for clarification.
     const follow=lastLesson&&followups.find(item=>item.pattern.test(question));
     if(follow){
@@ -130,7 +177,7 @@ export function createOpenConversationKernel({resolve,topics}) {
   }
 
   function choose(topicId){return record(intent.choose(topicId),'chosen-lesson');}
-  function reset(){intent.reset();lastLesson=null;turnCount=0;latestIntent=null;}
+  function reset(){intent.reset();lastLesson=null;lastMap=null;jokesOptedOut=false;turnCount=0;latestIntent=null;}
   function startTopic(topicId,fieldQuestion=''){
     reset();
     if(!validIds.has(topicId))return {kind:'empty'};
