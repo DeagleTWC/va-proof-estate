@@ -8,7 +8,7 @@ import {createHash} from 'node:crypto';
 export const PUBLIC_FILES=Object.freeze([
   'README.md','VA_Universal_Bounded_Review_MNDA.pdf','access.html','app.mjs','engine.mjs','index.html','repair-evidence.html',
   'knowledge.mjs','release-audit.mjs','styles.css',
-  'tests/engine.test.mjs','tests/pages.test.mjs','tests/release.test.mjs',
+  'tests/app-interaction.test.mjs','tests/engine.test.mjs','tests/pages.test.mjs','tests/release.test.mjs',
 ]);
 const manifest=new Set(PUBLIC_FILES);
 const allowedExtensions=new Set(['.html','.css','.mjs','.md']);

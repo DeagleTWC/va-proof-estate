@@ -4,7 +4,8 @@ This is a **static, dependency-free, public-source teaching experience** for the
 
 ## What visitors can do
 
-- Ask a question or choose one of ten public subject routes.
+- Ask a question or choose one of eleven public subject routes.
+- Bring an example from energy storage, health care, water engineering, transportation, automation, or finance; choose among bounded examination paths that keep the original question in view.
 - Read an accurate, brief public explanation with an evidence-class label.
 - Follow direct links to the published source material.
 - Examine the relationship in both directions, then vary one test condition.
