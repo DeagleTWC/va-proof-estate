@@ -190,6 +190,7 @@ test('a visitor can move from an unfamiliar field question to sourced learning a
     submit();
     assert.equal(get('lesson-title').textContent,'Physical & KCD Examination');
     assert.match(get('lesson-summary').textContent,/not been independently demonstrated/i);
+    assert.equal(get('kernel-panel').hidden,true,'a machinery-cutoff exercise does not verify the gravity interpretation');
     get('learner-question').value='Is the Elements Basin the same as dark matter?';
     submit();
     get('learner-question').value="I don't believe that. Your explanation is wrong.";

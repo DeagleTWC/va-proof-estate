@@ -54,7 +54,7 @@ export function reviewConversationCompatibility(input,candidate,{topics,priorLes
       summary:'Gravity as a “wave array” has not been independently demonstrated by the public evidence linked from this Teacher. The public KCD physical examination program describes evidence requirements, but does not attach a completed instrumented demonstration of that physical identification.',
       connection:'A proposed physical interpretation must be distinguished from a measured, independently reproduced result. The public sources explain the examination route; they do not establish the claimed identification.',
       question:'What independent observation would distinguish the proposed wave-array explanation from other possible accounts?',
-    })||candidate;
+    },{fieldBound:true})||candidate;
   }
   return candidate;
 }

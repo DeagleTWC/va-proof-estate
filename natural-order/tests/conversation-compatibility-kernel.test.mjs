@@ -46,6 +46,7 @@ test('a claimed gravity wave array receives an explicit public evidence ceiling'
   assert.match(result.conversation.summary,/gravity.*wave array/is);
   assert.match(result.conversation.summary,/not (?:been )?independently (?:demonstrated|established)/i);
   assert.ok(result.topic.sources.length>0);
+  assert.equal(exerciseFitsConversation(result),false,'a machinery-cutoff exercise cannot test a gravity wave-array claim');
 });
 
 test('a protected request, a named mathematical status and an unrelated question are never commandeered',()=>{

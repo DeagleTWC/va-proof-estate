@@ -358,7 +358,10 @@ test('skepticism and contested physical identification get direct, source-bound 
   assert.equal(answer.topic.id,'physical');
   assert.equal(answer.originalQuestion,gravity);
   assert.match(answer.conversation.summary,/not been independently demonstrated/i);
-  assert.match(conversation.ask('Explain simply').conversation.summary,/gravity.*wave array/is);
+  assert.equal(answer.compatibility?.fieldBound,true);
+  const simple=conversation.ask('Explain simply');
+  assert.match(simple.conversation.summary,/gravity.*wave array/is);
+  assert.equal(simple.compatibility?.fieldBound,true);
 });
 
 test('compatibility never weakens protected access or rewrites a named public mathematical answer',()=>{
