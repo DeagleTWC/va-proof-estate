@@ -2,7 +2,7 @@
 // Proof Estate pages. No private documents are indexed or shipped.
 const source = (title, href) => ({title, href});
 
-// The umbrella explanation is intentionally separate from the ten
+// The umbrella explanation is intentionally separate from the eleven
 // examinable subject routes: asking what the whole is must have an answer.
 export const NATURAL_ORDER = Object.freeze({
   id:'natural-order', number:'00', title:'The Natural Order', kicker:'One foundation, many relationships',

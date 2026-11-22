@@ -1,0 +1,31 @@
+name: Natural Order Teacher Public Release Checks
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'natural-order/**'
+      - '.github/workflows/natural-order-teacher.yml'
+  pull_request:
+    paths:
+      - 'natural-order/**'
+      - '.github/workflows/natural-order-teacher.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-teacher:
+    name: Test Teacher and audit public release
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run all Natural Order Teacher tests
+        run: node --test natural-order/tests/*.test.mjs
+      - name: Audit the exact public release surface
+        run: node natural-order/release-audit.mjs
