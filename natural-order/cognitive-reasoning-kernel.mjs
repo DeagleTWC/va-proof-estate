@@ -3,6 +3,8 @@
 // The Teacher can recognize an explicit correction or weak inferred route;
 // it cannot independently settle unfamiliar claims from this lexical check.
 const correctionOnly=/^(?:no[, ]+)?(?:wrong|you(?:'re| are)\s+wrong|(?:that(?:'s| is)|this(?:'s| is)|it(?:'s| is))\s+(?:wrong|incorrect|not\s+(?:right|correct|what\s+i\s+meant)|backwards|the\s+opposite)|you\s+(?:misunderstood\s+me|did(?:n't| not)\s+understand\s+me|got\s+(?:that|it)\s+wrong)|(?:i\s+)?disagree(?:\s+with\s+(?:that|you))?|i\s+(?:don't|do not)\s+agree|(?:that's|that is)\s+not\s+what\s+i\s+asked)[.!?\s]*$/i;
+const naturalDisagreement=/^(?:i\s+(?:don't|do not)\s+believe\s+(?:that|it)[.!?\s]+)?(?:your|the)\s+(?:answer|explanation)\s+(?:is|was)\s+(?:wrong|incorrect)[.!?\s]*$/i;
+const directDisbelief=/^i\s+(?:don't|do not)\s+believe\s+(?:this|that|it)[.!?\s]*$/i;
 // A full explicit replacement question may follow a correction. Only a
 // recognizable interrogative clause is extracted; context alone stays open.
 const replacementQuestion=/^(?:i\s+disagree\b|(?:that's|that is)\s+(?:wrong|incorrect)\b|you\s+(?:misunderstood\s+me|got\s+(?:that|it)\s+wrong)\b)[^?]*?[.!;:,]\s*((?:what|why|how|who|which|where|when|can|could|is|are|does|do|did)\b[^?]*\?)$/i;
@@ -18,7 +20,7 @@ export function reviewCognitiveTurn(input,{admission,priorQuestion}={}){
   if(replacement)return {mode:'continue',routeQuestion:replacement[1]};
   // The phrase must be the entire correction, so a revised actual question
   // still reaches the ordinary human-intent router.
-  if(priorQuestion&&correctionOnly.test(canonical))return {
+  if(priorQuestion&&(correctionOnly.test(canonical)||naturalDisagreement.test(canonical)||directDisbelief.test(canonical)))return {
     mode:'repair',
     response:{kind:'map',originalQuestion:priorQuestion,options:[],introduction:repairIntroduction},
   };

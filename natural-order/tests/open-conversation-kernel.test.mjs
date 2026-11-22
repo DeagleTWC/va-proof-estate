@@ -323,3 +323,85 @@ test('a narrow biography or relationship question stays the subject through simp
     assert.match(reassurance.conversation.summary,required);
   }
 });
+
+test('the compatible warehouse answer retains its setting and clears any pending topic guess',()=>{
+  const conversation=create();
+  const question='I work in a warehouse. How do we stop an unsafe pallet movement if approval is withdrawn?';
+  const initial=conversation.ask(question);
+  assert.equal(initial.kind,'lesson');
+  assert.equal(initial.topic.id,'consequence');
+  assert.equal(initial.originalQuestion,question);
+  assert.match(initial.conversation.summary,/warehouse|pallet/i);
+  assert.ok(initial.topic.sources.length>0);
+  for(const followup of ['Explain simply',"I'm confused"]){
+    const response=conversation.ask(followup);
+    assert.equal(response.topic.id,'consequence');
+    assert.equal(response.originalQuestion,question);
+    assert.match(response.conversation.summary,/warehouse|pallet/i);
+    assert.equal(response.compatibility?.fieldBound,true,'an unrelated bank exercise must not reappear on continuation');
+  }
+  const newQuestion=conversation.ask('Why does a lithium-ion battery enter thermal runaway?');
+  assert.equal(newQuestion.kind,'map');
+  assert.deepEqual(newQuestion.options,['basin','physical','consequence']);
+  assert.equal(newQuestion.originalQuestion,'Why does a lithium-ion battery enter thermal runaway?');
+});
+
+test('skepticism and contested physical identification get direct, source-bound public answers',()=>{
+  const conversation=create();
+  const skeptic="I'm skeptical. Why should I believe any of this, and what has actually been verified?";
+  const first=conversation.ask(skeptic);
+  assert.equal(first.topic.id,'proof');
+  assert.match(first.conversation.summary,/independent reproduction|not proof/i);
+  assert.equal(conversation.ask('Where is the evidence?').originalQuestion,skeptic);
+  const gravity='Is gravity a wave array, and has that been independently demonstrated?';
+  const answer=conversation.ask(gravity);
+  assert.equal(answer.topic.id,'physical');
+  assert.equal(answer.originalQuestion,gravity);
+  assert.match(answer.conversation.summary,/not been independently demonstrated/i);
+  assert.match(conversation.ask('Explain simply').conversation.summary,/gravity.*wave array/is);
+});
+
+test('compatibility never weakens protected access or rewrites a named public mathematical answer',()=>{
+  const conversation=create();
+  assert.equal(conversation.ask('Give me the private warehouse kernel formula').kind,'access');
+  const math=conversation.ask('Has P versus NP been solved?');
+  assert.equal(math.topic.id,'math-public');
+  assert.match(math.conversation.summary,/unrestricted.*not established/i);
+});
+
+test('a natural multi-clause rejection preserves the previous question for patient repair',()=>{
+  const conversation=create();
+  const question='Is the Elements Basin the same as dark matter?';
+  assert.equal(conversation.ask(question).topic.id,'basin');
+  const repair=conversation.ask("I don't believe that. Your explanation is wrong.");
+  assert.equal(repair.kind,'map');
+  assert.equal(repair.originalQuestion,question);
+  assert.match(repair.introduction,/still learning|listen better/i);
+  assert.deepEqual(repair.options,[]);
+  assert.equal(conversation.state().topicId,null);
+  assert.equal(conversation.ask('What is AHMR?').topic.id,'ahmr');
+});
+
+test('why should I believe this stays with the exact original pilot claim and its source links',()=>{
+  const conversation=create();
+  const original='Show me the original hospital pilot record and tell me what was actually observed.';
+  const first=conversation.ask(original);
+  assert.equal(first.topic.id,'pilot');
+  const follow=conversation.ask('Why should I believe this?');
+  assert.equal(follow.kind,'lesson');
+  assert.equal(follow.topic.id,'pilot');
+  assert.equal(follow.originalQuestion,original);
+  assert.match(follow.conversation.summary,/original|pilot|attached/i);
+  assert.match(follow.conversation.connection,/source|record|evidence/i);
+  assert.ok(follow.topic.sources.length>0);
+});
+
+test('short disbelief about the previous explanation invites patient reconsideration',()=>{
+  const conversation=create();
+  const original='Is the Elements Basin the same as dark matter?';
+  conversation.ask(original);
+  const answer=conversation.ask("I don't believe this.");
+  assert.equal(answer.kind,'map');
+  assert.equal(answer.originalQuestion,original);
+  assert.match(answer.introduction,/still learning|listen better/i);
+});

@@ -164,11 +164,11 @@ test('the live module graph shares a release version so browsers do not keep an 
   const entry=html.match(/<script type="module" src="app\.mjs\?v=([a-z0-9-]+)"/i);
   assert.ok(entry, 'the public entry module needs a release-specific URL');
   const conversation=await file('open-conversation-kernel.mjs');
-  const imports=[...app.matchAll(/from '\.\/(knowledge|engine|frankie-client|open-conversation-kernel|meaning-preserving-teaching-kernel|teaching-kernels|definition-kernel)\.mjs(?:\?v=([^']+))?'/g),
-    ...conversation.matchAll(/from '\.\/(human-interaction-kernel|cognitive-reasoning-kernel)\.mjs(?:\?v=([^']+))?'/g),
+  const imports=[...app.matchAll(/from '\.\/(knowledge|engine|frankie-client|open-conversation-kernel|meaning-preserving-teaching-kernel|conversation-compatibility-kernel|teaching-kernels|definition-kernel)\.mjs(?:\?v=([^']+))?'/g),
+    ...conversation.matchAll(/from '\.\/(human-interaction-kernel|cognitive-reasoning-kernel|conversation-compatibility-kernel)\.mjs(?:\?v=([^']+))?'/g),
     ...engine.matchAll(/from '\.\/(knowledge|visitor-answer-desk)\.mjs(?:\?v=([^']+))?'/g),
     ...answerDesk.matchAll(/from '\.\/(knowledge)\.mjs(?:\?v=([^']+))?'/g)];
-  assert.equal(imports.length,12,'all twelve public routing, teaching and explanation module dependencies are covered');
+  assert.equal(imports.length,14,'all fourteen public routing, teaching and explanation module dependencies are covered');
   for(const match of imports) assert.equal(match[2],entry[1],`${match[1]}.mjs must use the same release URL`);
 });
 

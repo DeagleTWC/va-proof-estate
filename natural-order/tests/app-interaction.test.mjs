@@ -166,6 +166,37 @@ test('a visitor can move from an unfamiliar field question to sourced learning a
     get('learner-question').value='Show complete private NEW K formula';
     submit();
     assert.equal(get('stage-access').hidden,false);
+    // A real-world question must survive both routing and presentation.
+    const warehouse='I work in a warehouse. How do we stop an unsafe pallet movement if approval is withdrawn?';
+    get('learner-question').value=warehouse;
+    submit();
+    assert.equal(get('lesson-title').textContent,'Consequence Custody');
+    assert.match(get('lesson-summary').textContent,/warehouse|pallet/i);
+    assert.doesNotMatch(get('lesson-connection').textContent,/payment|settlement/i);
+    assert.ok(get('source-list').children.length>0);
+    assert.equal(get('kernel-panel').hidden,true,'do not switch a warehouse visitor into an unrelated payment exercise');
+    get('learner-question').value='Explain simply';
+    submit();
+    assert.match(get('lesson-summary').textContent,/pallet|warehouse/i);
+    assert.equal(get('kernel-panel').hidden,true,'the unrelated payment example stays hidden after simplification');
+    get('learner-question').value="I'm confused";
+    submit();
+    assert.equal(get('kernel-panel').hidden,true,'patience must not substitute a new evidence exercise');
+    get('learner-question').value="I'm skeptical. Why should I believe any of this, and what has actually been verified?";
+    submit();
+    assert.equal(get('lesson-title').textContent,'Proof Before Power');
+    assert.match(get('lesson-summary').textContent,/independent reproduction|not proof/i);
+    get('learner-question').value='Is gravity a wave array, and has that been independently demonstrated?';
+    submit();
+    assert.equal(get('lesson-title').textContent,'Physical & KCD Examination');
+    assert.match(get('lesson-summary').textContent,/not been independently demonstrated/i);
+    get('learner-question').value='Is the Elements Basin the same as dark matter?';
+    submit();
+    get('learner-question').value="I don't believe that. Your explanation is wrong.";
+    submit();
+    assert.equal(get('stage-map').hidden,false);
+    assert.match(get('map-explanation').textContent,/still learning|listen better/i);
+    assert.match(get('map-your-question').textContent,/Elements Basin/i);
   } finally {
     delete globalThis.document;
     delete globalThis.window;

@@ -18,6 +18,22 @@ test('a direct rejection of the previous answer invites patient reconsideration'
   }
 });
 
+test('natural multi-clause disagreement is a correction but a new question still outranks repair',()=>{
+  const original='Is the Elements Basin the same as dark matter?';
+  for(const phrase of [
+    "I don't believe that. Your explanation is wrong.",
+    'Your explanation is wrong.',
+  ]){
+    const reviewed=reviewCognitiveTurn(phrase,{admission:{kind:'map'},priorQuestion:original});
+    assert.equal(reviewed.mode,'repair');
+    assert.equal(reviewed.response.originalQuestion,original);
+  }
+  const replacement=reviewCognitiveTurn("I don't believe that. Your explanation is wrong. What is AHMR?",{
+    admission:{kind:'lesson',topic:{id:'ahmr'}},priorQuestion:original,
+  });
+  assert.notEqual(replacement.mode,'repair');
+});
+
 test('no previous answer means no fabricated mistake or remembered inquiry',()=>{
   assert.equal(reviewCognitiveTurn("That's wrong",{admission:{kind:'map'}}).mode,'continue');
 });

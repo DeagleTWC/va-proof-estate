@@ -1,5 +1,6 @@
-import {createHumanInteractionKernel} from './human-interaction-kernel.mjs?v=20261122-natural-order-25';
-import {reviewCognitiveTurn} from './cognitive-reasoning-kernel.mjs?v=20261122-natural-order-25';
+import {createHumanInteractionKernel} from './human-interaction-kernel.mjs?v=20261122-natural-order-26';
+import {reviewCognitiveTurn} from './cognitive-reasoning-kernel.mjs?v=20261122-natural-order-26';
+import {reviewConversationCompatibility} from './conversation-compatibility-kernel.mjs?v=20261122-natural-order-26';
 
 // A bounded, in-page conversational layer. It is deliberately not a general
 // language model: only clear, short anaphoric follow-ups reuse a prior lesson.
@@ -37,7 +38,8 @@ function warmthForTurn(question,priorLesson,priorMap,{allowJokes}){
   const reassuranceSummary=priorLesson.sourceSpecific||priorLesson.sources?.length
     ? priorLesson.conversation?.summary||topic.summary
     : plain[topic.id]||priorLesson.conversation?.summary||topic.summary;
-  return {mode,response:{kind:'lesson',topic,originalQuestion,sources:priorLesson.sources||undefined,conversation:{
+  return {mode,response:{kind:'lesson',topic,originalQuestion,sources:priorLesson.sources||undefined,
+    compatibility:priorLesson.compatibility||undefined,conversation:{
     summary:mode==='reassure'?reassuranceSummary:priorLesson.conversation?.summary||topic.summary,
     connection:mode==='smile'&&allowJokes
       ? `${evidenceJoke} ${topic.title} still has to be examined through its public sources.${field}`
@@ -138,6 +140,7 @@ export function createOpenConversationKernel({resolve,topics}) {
     if(result.kind==='lesson'){
       if(!retain)lastLesson={topic:result.topic,bridge:result.bridge||null,sources:result.sources||null,
         conversation:result.conversation||null,
+        compatibility:result.compatibility||null,
         sourceSpecific:Boolean(result.originalQuestion),
         originalQuestion:result.originalQuestion||inquiry||result.topic.title};
       lastMap=null;
@@ -181,6 +184,7 @@ export function createOpenConversationKernel({resolve,topics}) {
     if(follow){
       intent.reset();
       return record({kind:'lesson',topic:lastLesson.topic,sources:lastLesson.sources||undefined,
+        compatibility:lastLesson.compatibility||undefined,
         originalQuestion:lastLesson.originalQuestion,
         conversation:continuation(lastLesson,follow.mode)},
         follow.mode,{retain:true});
@@ -188,7 +192,12 @@ export function createOpenConversationKernel({resolve,topics}) {
     // Full-text admission above was already checked for protected material.
     // The visitor's explicit replacement question can now be routed alone.
     const routeQuestion=review.routeQuestion||question;
-    return record(intent.ask(routeQuestion),'question',{inquiry:routeQuestion});
+    const routed=intent.ask(routeQuestion);
+    const compatible=reviewConversationCompatibility(routeQuestion,routed,{topics,priorLesson:lastLesson});
+    // A well-founded public answer must not leave a stale guess behind in the
+    // human-intent kernel. The next actual question gets a clean examination.
+    if(compatible!==routed)intent.reset();
+    return record(compatible,'question',{inquiry:routeQuestion});
   }
 
   function choose(topicId){return record(intent.choose(topicId),'chosen-lesson');}
