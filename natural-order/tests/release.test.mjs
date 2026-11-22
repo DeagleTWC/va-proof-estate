@@ -62,3 +62,12 @@ test('release audit rejects a missing local link and an unauthorized external en
     assert.ok(result.errors.some(e=>e.includes('endpoint')));
   } finally { await rm(dir,{recursive:true}); }
 });
+
+test('release audit refuses a configured Frankie endpoint without separate authorization',async()=>{
+  const dir=await mkdtemp(join(tmpdir(),'va-frankie-audit-'));
+  try{
+    await writeFile(join(dir,'frankie-client.mjs'),"export const FRANKIE_GATEWAY_URL='https://unapproved-gateway.example';");
+    const result=await auditRelease(dir,{allowPartial:true});
+    assert.ok(result.errors.some(e=>e.includes('frankie-client')&&e.includes('pinned')),result.errors.join('\n'));
+  }finally{await rm(dir,{recursive:true});}
+});

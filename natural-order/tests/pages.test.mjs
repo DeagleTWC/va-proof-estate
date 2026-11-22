@@ -18,6 +18,18 @@ test('main public teaching page has a complete accessible learning route', async
   assert.match(html, /class="brand-mark"[^>]*><img src="\.\.\/favicon\.png"/);
 });
 
+test('the optional Frankie request is a separate, initially hidden teaching action',async()=>{
+  const html=await file('index.html');
+  const client=await file('frankie-client.mjs');
+  for(const id of ['frankie-panel','frankie-toggle','frankie-form','frankie-question','frankie-send','frankie-answer','frankie-notice','frankie-receipt']){
+    assert.match(html,new RegExp(`id="${id}"`));
+  }
+  assert.match(html,/id="frankie-panel"[^>]*hidden/);
+  assert.match(html,/your question (?:will be|is) sent to a separate/i);
+  assert.match(client,/FRANKIE_GATEWAY_URL=''/);
+  assert.doesNotMatch(html,/Bearer|BRIDGE_SECRET|http:\/\/127\.0\.0\.1/);
+});
+
 test('protected route offers approved universal NDA, signed return email and personal walkthrough', async () => {
   const html=await file('access.html');
   assert.match(html,/NDA/);
@@ -60,9 +72,9 @@ test('the live module graph shares a release version so browsers do not keep an 
   const engine=await file('engine.mjs');
   const entry=html.match(/<script type="module" src="app\.mjs\?v=([a-z0-9-]+)"/i);
   assert.ok(entry, 'the public entry module needs a release-specific URL');
-  const imports=[...app.matchAll(/from '\.\/(knowledge|engine)\.mjs(?:\?v=([^']+))?'/g),
+  const imports=[...app.matchAll(/from '\.\/(knowledge|engine|frankie-client)\.mjs(?:\?v=([^']+))?'/g),
     ...engine.matchAll(/from '\.\/(knowledge|engine)\.mjs(?:\?v=([^']+))?'/g)];
-  assert.equal(imports.length,3,'all three internal module dependencies are covered');
+  assert.equal(imports.length,4,'all four internal module dependencies are covered');
   for(const match of imports) assert.equal(match[2],entry[1],`${match[1]}.mjs must use the same release URL`);
 });
 

@@ -17,5 +17,21 @@
 @media(max-width:620px){.header-inner{flex-wrap:wrap;gap:8px;padding-top:14px;padding-bottom:12px}.brand{min-width:0}.brand-mark{width:38px;height:38px}.brand-copy strong{font-size:10px}.brand-copy small{font-size:8px}.header-nav{width:100%;justify-content:space-between;gap:9px}.header-nav a{font-size:9px}.header-nav .nav-access{padding:8px 11px}.header-nav a:nth-child(2){display:none}.hero-layout{padding-top:60px;padding-bottom:65px}.hero h1{font-size:clamp(65px,14.4vw,94px);white-space:normal}.hero-subhead{font-size:25px}.hero-description{font-size:13px}.hero-footline{gap:8px;font-size:8px;margin-top:36px}.diagram-card{height:370px;min-height:unset;padding:17px}.diagram-top,.diagram-bottom{font-size:7px}.diagram-well{min-height:285px}.diagram-center{width:96px;height:96px}.diagram-center strong{font-size:21px}.diagram-point{font-size:6px;padding:5px}.point-one{top:15%;left:0}.point-two{right:0;top:32%}.point-three{bottom:14%;left:0}.marquee-items{font-size:8px;justify-content:center;text-align:center;flex-wrap:wrap;padding-top:18px;padding-bottom:18px}.marquee-items span:first-child{display:none}.learning-section,.atlas-section{padding:78px 0}.section-intro h2{font-size:50px}.learning-main{padding:24px}.form-topline h3{font-size:28px}.form-foot .button{width:100%}.learning-aside{display:block}.learning-aside h3{margin:16px 0}.stage-placeholder{padding:32px 25px;gap:13px}.stage-orbit{font-size:55px}.stage-placeholder h3{font-size:23px}.stage-head{align-items:flex-start;flex-direction:column}.two-way{grid-template-columns:1fr}.two-way p{font-size:19px}.source-head{align-items:flex-start;flex-direction:column}.topic-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.topic-card{min-height:230px;padding:18px}.topic-card h3{font-size:22px}.topic-card p{font-size:10px}.private-band{padding:70px 0}.private-layout h2{font-size:48px}.handoff-steps>div{font-size:19px}.footer-main{display:block}.footer-links{margin-top:26px}.footer-bottom{flex-direction:column}.access-hero-inner{padding-top:75px;padding-bottom:75px}.access-hero h1{font-size:62px}}
 @media(max-width:370px){.topic-grid{grid-template-columns:1fr}.topic-card{min-height:185px}.hero h1{font-size:62px}.header-nav a{font-size:8px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button,.topic-card,.quick-buttons button{transition:none}}
+
+/* Optional, separately hosted teacher companion. Hidden unless a reviewed
+   HTTPS endpoint is explicitly configured; never carries native secrets. */
+.frankie-panel[hidden],.frankie-panel form[hidden]{display:none!important}
+.frankie-panel{margin-top:22px;padding:clamp(26px,4vw,48px);border:1px solid #73512c;background:radial-gradient(circle at 100% 0,#3b291458,transparent 44%),#17110c}
+.frankie-panel .eyebrow{color:#d8ac68}
+.frankie-panel h3{font:400 clamp(32px,3.5vw,52px)/1.15 var(--serif);letter-spacing:-.04em;margin:13px 0 14px}
+.frankie-panel h3 em{color:var(--gold)}
+.frankie-panel>p:not(.eyebrow){color:#d4c2a6;font-size:13px;line-height:1.8;max-width:760px}
+.frankie-panel form{margin-top:28px;padding:23px 0 0;border-top:1px solid #624626}
+.frankie-panel textarea{display:block;width:100%;max-width:780px;min-height:110px;background:#090807;border:1px solid #725230;color:var(--ink);border-radius:4px;resize:vertical;padding:16px 18px;line-height:1.65;margin-bottom:18px}
+.frankie-panel textarea:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.frankie-disclosure{color:#d9c8aa;font-size:12px;line-height:1.7;max-width:760px;margin:0 0 22px}
+.frankie-answer{white-space:pre-wrap;color:#f0dec0;line-height:1.8;font-size:15px;max-width:800px;margin-top:14px}
+.frankie-receipt{display:block;overflow-wrap:anywhere;color:#bca47e;font-size:10px;margin-top:11px}
+@media(max-width:620px){.frankie-panel{padding:25px}.frankie-panel .button{width:100%}}
 .brand-mark img{display:block;width:100%;height:100%;object-fit:cover;border-radius:50%}
 .map-options{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 6px}.map-choice{border:1px solid #a57b47;background:#271a0d;color:#f2d6a6;border-radius:3px;padding:13px 17px;font-size:13px;font-weight:650;cursor:pointer}.map-choice:hover,.map-choice:focus-visible{background:#443018;border-color:var(--gold);color:#ffe2b1}
