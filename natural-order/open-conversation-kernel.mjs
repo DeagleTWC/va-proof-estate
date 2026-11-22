@@ -1,4 +1,5 @@
-import {createHumanInteractionKernel} from './human-interaction-kernel.mjs?v=20261122-natural-order-20';
+import {createHumanInteractionKernel} from './human-interaction-kernel.mjs?v=20261122-natural-order-21';
+import {reviewCognitiveTurn} from './cognitive-reasoning-kernel.mjs?v=20261122-natural-order-21';
 
 // A bounded, in-page conversational layer. It is deliberately not a general
 // language model: only clear, short anaphoric follow-ups reuse a prior lesson.
@@ -105,17 +106,27 @@ export function createOpenConversationKernel({resolve,topics}) {
     // Every message is checked against the access boundary before a previous
     // lesson can be brought into the reply. No lexical "continue" bypasses it.
     const admission=resolve(question);
-    if(admission.kind==='access'){
+    const review=reviewCognitiveTurn(question,{admission,priorQuestion:lastLesson?.originalQuestion});
+    if(review.mode==='protected'){
       intent.reset();
       return record(admission,'protected-review');
     }
+    if(review.mode==='repair'){
+      // A rejected explanation must not silently become the next answer.
+      intent.reset();
+      return record(review.response,'reconsideration');
+    }
+    // Inferred routes stay with the human-intent kernel for clarification.
     const follow=lastLesson&&followups.find(item=>item.pattern.test(question));
     if(follow){
       intent.reset();
       return record({kind:'lesson',topic:lastLesson.topic,conversation:continuation(lastLesson,follow.mode)},
         follow.mode,{retain:true});
     }
-    return record(intent.ask(question),'question',{inquiry:question});
+    // Full-text admission above was already checked for protected material.
+    // The visitor's explicit replacement question can now be routed alone.
+    const routeQuestion=review.routeQuestion||question;
+    return record(intent.ask(routeQuestion),'question',{inquiry:routeQuestion});
   }
 
   function choose(topicId){return record(intent.choose(topicId),'chosen-lesson');}

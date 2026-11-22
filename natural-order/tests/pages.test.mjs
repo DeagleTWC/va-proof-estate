@@ -154,9 +154,9 @@ test('the live module graph shares a release version so browsers do not keep an 
   assert.ok(entry, 'the public entry module needs a release-specific URL');
   const conversation=await file('open-conversation-kernel.mjs');
   const imports=[...app.matchAll(/from '\.\/(knowledge|engine|frankie-client|open-conversation-kernel)\.mjs(?:\?v=([^']+))?'/g),
-    ...conversation.matchAll(/from '\.\/(human-interaction-kernel)\.mjs(?:\?v=([^']+))?'/g),
+    ...conversation.matchAll(/from '\.\/(human-interaction-kernel|cognitive-reasoning-kernel)\.mjs(?:\?v=([^']+))?'/g),
     ...engine.matchAll(/from '\.\/(knowledge|engine)\.mjs(?:\?v=([^']+))?'/g)];
-  assert.equal(imports.length,6,'all six internal module dependencies are covered');
+  assert.equal(imports.length,7,'all seven internal module dependencies are covered');
   for(const match of imports) assert.equal(match[2],entry[1],`${match[1]}.mjs must use the same release URL`);
 });
 

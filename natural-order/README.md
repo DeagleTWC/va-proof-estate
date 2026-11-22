@@ -18,6 +18,7 @@ This is a **static, dependency-free, public-source teaching experience** for the
 - Read Terry's **Shared Purpose** charter exactly as supplied: equal opportunity to understand, examine evidence, explain plainly, keep the person's choice theirs. Ask the Teacher about this mission independently of the eleven teaching subjects.
 - Examine Terry's **ERK-X1** ethical principles—honesty, non-harm, fairness, consent, dignity and transparency—with an explicit warning that the supplied Python sketch uses placeholder favorable judgments and is not ethical approval or decision authority.
 - Stay with a recent lesson using short follow-ups such as “Why?”, “Can you explain that simply?”, or “Where is the evidence?”. A genuinely new question is considered afresh.
+- Correct a previous explanation. The bounded Cognitive Reasoning Kernel acknowledges the possibility of misunderstanding, invites a clearer question, and does not treat an apparently reversed interpretation as established evidence.
 
 The routing logic is deterministic, not an LLM. It does not silently invent open-world answers or send the visitor's input to a remote service. The conversation remembers only its bounded, temporary state in the page; no input is persisted in browser storage or transmitted by this public source finder.
 

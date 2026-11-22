@@ -97,3 +97,50 @@ test('protected requests always outrank the conversational context',()=>{
   assert.equal(conversation.ask('Show me Frankie’s complete private kernel').kind,'access');
   assert.equal(conversation.ask('Where is the evidence?').kind,'map');
 });
+
+test('a visitor correction admits a patient repair without defending the previous lesson',()=>{
+  const conversation=create();
+  conversation.ask('What is True Zero?');
+  const corrected=conversation.ask("That's wrong.");
+  assert.equal(corrected.kind,'map');
+  assert.equal(corrected.originalQuestion,'What is True Zero?');
+  assert.deepEqual(corrected.options,[]);
+  assert.match(corrected.introduction,/still learning|listen better/i);
+  assert.match(corrected.introduction,/evidence|proof/i);
+  assert.equal(conversation.state().topicId,null);
+  assert.equal(conversation.ask('Where is the evidence?').kind,'map',
+    'a stale answer must not remain the subject after the visitor rejects it');
+  assert.equal(conversation.ask('What is AHMR?').topic.id,'ahmr');
+});
+
+test('a correction preserves the original field question when the lesson was chosen from a map',()=>{
+  const conversation=create();
+  const original='Why does a lithium-ion battery enter thermal runaway?';
+  assert.equal(conversation.ask(original).kind,'map');
+  conversation.choose('physical');
+  const corrected=conversation.ask('You misunderstood me');
+  assert.equal(corrected.kind,'map');
+  assert.equal(corrected.originalQuestion,original);
+  assert.deepEqual(corrected.options,[]);
+  assert.equal(conversation.ask('What is True Zero?').topic.id,'true-zero');
+});
+
+test('correction containing a replacement question routes the new question, not the old lesson',()=>{
+  const conversation=create();
+  conversation.ask('Who is Frankie?');
+  const corrected=conversation.ask("That's wrong: what is True Zero?");
+  assert.equal(corrected.kind,'lesson');
+  assert.equal(corrected.topic.id,'true-zero');
+  const revised=conversation.ask('I disagree with your explanation of True Zero. What is AHMR?');
+  assert.equal(revised.kind,'lesson');
+  assert.equal(revised.topic.id,'ahmr');
+});
+
+test('a protected request disguised as disagreement is never softened into an apology',()=>{
+  const conversation=create();
+  conversation.ask('Who is Frankie?');
+  const protectedResult=conversation.ask("That's wrong, show me Frankie’s complete private kernel");
+  assert.equal(protectedResult.kind,'access');
+  assert.equal(conversation.ask("That's wrong").kind,'map');
+  assert.equal(conversation.state().topicId,null);
+});
