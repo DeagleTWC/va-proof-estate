@@ -7,13 +7,18 @@ import {createHash} from 'node:crypto';
 // developer tests. A fixed manifest is therefore the release boundary.
 export const PUBLIC_FILES=Object.freeze([
   'README.md','VA_Universal_Bounded_Review_MNDA.pdf','access.html','app.mjs','engine.mjs','index.html','repair-evidence.html',
-  'knowledge.mjs','release-audit.mjs','styles.css',
-  'tests/app-interaction.test.mjs','tests/engine.test.mjs','tests/pages.test.mjs','tests/release.test.mjs',
+  'knowledge.mjs','frankie-client.mjs','release-audit.mjs','styles.css',
+  'tests/app-interaction.test.mjs','tests/engine.test.mjs','tests/frankie-client.test.mjs','tests/pages.test.mjs','tests/release.test.mjs',
 ]);
 const manifest=new Set(PUBLIC_FILES);
 const allowedExtensions=new Set(['.html','.css','.mjs','.md']);
 const publicNda='VA_Universal_Bounded_Review_MNDA.pdf';
 const publicNdaSha256='8a4993180ad411920c15d79ad3ffea7f06dab469ae6bf4b5f1810df0c23bb056';
+// Unlike the original offline lesson finder, the optional companion has a
+// network-capable code path. Pin its exact public-safe bytes AND its disabled
+// endpoint configuration until a new reviewed release explicitly changes both.
+const frankieClientSha256='7517d7e2c7875e051358e690c182cd3262d461b2881137e2940e5cc1984dfa93';
+const offlineCsp='Content-Security-Policy" content="default-src \'self\'; script-src \'self\'; style-src \'self\'; img-src \'self\'; connect-src \'none\'; object-src \'none\'; base-uri \'none\'; form-action \'none\'';
 const secretPattern=/-----BEGIN\s+(?:RSA |EC |OPENSSH )?PRIVATE KEY-----|(?:ghp_|github_pat_)[A-Za-z0-9_]{20,}/;
 const networkCalls=/\b(?:fetch|XMLHttpRequest|sendBeacon|WebSocket|EventSource)\s*\(/;
 const urls=/https?:\/\/[^\s"'<>`]+/g;
@@ -78,6 +83,15 @@ export async function auditRelease(root,{allowPartial=false,siteRoot}={}) {
       // Published tests contain malicious examples, but their type, size,
       // path and real secret-key bytes remain checked.
       if(rel.startsWith('tests/'))continue;
+      if(rel==='frankie-client.mjs'){
+        const hash=createHash('sha256').update(data).digest('hex');
+        if(hash!==frankieClientSha256||!data.includes("export const FRANKIE_GATEWAY_URL='';")){
+          errors.push(`${rel}: pinned inactive client boundary changed without release review`);
+        }
+      }
+      if(rel==='index.html'&&!data.includes(offlineCsp)){
+        errors.push(`${rel}: disabled Frankie release lacks a no-connect CSP`);
+      }
       if(networkCalls.test(data))errors.push(`${rel}: unapproved runtime network endpoint`);
       for(const url of data.match(urls)||[])await checkLink(url.replace(/[),.;]+$/,''),{rel,data});
       if(rel.endsWith('.html'))for(const match of data.matchAll(attributes))await checkLink(match[1],{rel,data});

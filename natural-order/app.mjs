@@ -1,5 +1,6 @@
-import {TOPICS} from './knowledge.mjs?v=20261122-natural-order-12';
-import {teach,publicHref} from './engine.mjs?v=20261122-natural-order-12';
+import {TOPICS} from './knowledge.mjs?v=20261122-natural-order-13';
+import {teach,publicHref} from './engine.mjs?v=20261122-natural-order-13';
+import {initFrankie,FRANKIE_GATEWAY_URL} from './frankie-client.mjs?v=20261122-natural-order-13';
 
 const byId = id => document.getElementById(id);
 const form=byId('learning-form');
@@ -151,3 +152,20 @@ reflection.addEventListener('submit',event=>{
 });
 
 showPanel('placeholder');
+
+// This control stays hidden until a reviewed public HTTPS gateway exists.
+// The local source guide never transmits its own question or lesson documents.
+initFrankie({
+  gatewayUrl:FRANKIE_GATEWAY_URL,
+  elements:{
+    panel:byId('frankie-panel'),toggle:byId('frankie-toggle'),
+    form:byId('frankie-form'),question:byId('frankie-question'),
+    send:byId('frankie-send'),answer:byId('frankie-answer'),
+    notice:byId('frankie-notice'),receipt:byId('frankie-receipt'),
+  },
+  getSuggestedQuestion:()=>currentTopic?.title==='True Zero'
+    ? 'Teach me about True Zero'
+    : currentTopic?.title==='Corrected NEW K'
+      ? 'What is corrected NEW K?'
+      : 'Teach me about True Zero',
+});

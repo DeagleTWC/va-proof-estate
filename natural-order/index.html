@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#090807">
   <meta name="color-scheme" content="dark">
@@ -12,7 +13,7 @@
   <meta property="og:image" content="https://deagletwc.github.io/va-proof-estate/social-card-1200x630.jpg">
   <title>The Natural Order — Learn from the Foundation · V.A.</title>
   <link rel="icon" href="../favicon.png" type="image/png">
-  <link rel="stylesheet" href="styles.css?v=20261122-natural-order-12">
+  <link rel="stylesheet" href="styles.css?v=20261122-natural-order-13">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to the learning experience</a>
@@ -99,6 +100,22 @@
           <button class="button button-outline" type="submit">Continue the inquiry <span aria-hidden="true">↗</span></button>
           <div class="replay-question" id="replay-question" role="status" hidden></div>
         </form>
+
+        <section class="frankie-panel" id="frankie-panel" aria-labelledby="frankie-title" hidden>
+          <p class="eyebrow">OPTIONAL COMPANION / SEPARATE TEACHING SERVICE</p>
+          <h3 id="frankie-title">A question for <em>Frankie?</em></h3>
+          <p>Frankie can help explore an admitted public lesson. The original teacher and its evidence links remain available whether or not Frankie answers.</p>
+          <button class="button button-outline" id="frankie-toggle" type="button">Ask Frankie <span aria-hidden="true">↗</span></button>
+          <form id="frankie-form" hidden>
+            <p class="frankie-disclosure">When you choose <strong>Send to Frankie</strong>, your question is sent to a separate teaching service with a pseudonymous student session token. Do not enter personal or confidential information. The public source finder above does not transmit its questions.</p>
+            <label class="input-label" for="frankie-question">Your public-safe teaching question</label>
+            <textarea id="frankie-question" rows="3" maxlength="300" placeholder="Teach me about True Zero"></textarea>
+            <button class="button button-gold" type="submit" id="frankie-send">Send to Frankie <span aria-hidden="true">↗</span></button>
+          </form>
+          <p id="frankie-notice" role="status" aria-live="polite"></p>
+          <div id="frankie-answer" class="frankie-answer" aria-live="polite"></div>
+          <code id="frankie-receipt" class="frankie-receipt"></code>
+        </section>
       </div>
     </section>
 
@@ -108,6 +125,6 @@
   </main>
 
   <footer class="site-footer"><div class="container footer-main"><div><div class="footer-brand">V.A. <span>—</span> THE SHIFT</div><p>THE NATURAL ORDER / PUBLIC TEACHING EXPERIENCE</p></div><div class="footer-links"><a href="../index.html">Proof Estate</a><a href="../foundation.html">Foundation</a><a href="../reviewer-route.html">Reviewer route</a><a href="../proofs/EXAMINATION-STANDARD.md">Proof standard</a></div></div><div class="container footer-bottom"><span>OPEN EVIDENCE. PROTECTED CONSTRUCTION.</span><strong>PROOF BEFORE POWER.</strong></div></footer>
-  <script type="module" src="app.mjs?v=20261122-natural-order-12"></script>
+  <script type="module" src="app.mjs?v=20261122-natural-order-13"></script>
 </body>
 </html>
