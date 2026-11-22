@@ -1,4 +1,4 @@
-import {TOPICS,NATURAL_ORDER,VA_IDENTITY,TEACHER_PURPOSE} from './knowledge.mjs?v=20261122-natural-order-14';
+import {TOPICS,NATURAL_ORDER,VA_IDENTITY,TEACHER_PURPOSE} from './knowledge.mjs?v=20261122-natural-order-15';
 
 const controlledMaterial = /\b(?:kernel|urk|new\s*k|math(?:ematics)?|layer|logic|code|blueprint|formula|mechanism|derivation|operator|architecture|pilot|originals?)\b/i;
 const restrictedDetail = /\b(?:full|complete|private|protected|internal|secret|raw|proprietary|unredacted|underlying)\b/i;
@@ -7,8 +7,8 @@ const operativeDetail = /\b(?:formula|algorithm|operator|source\s+code|implement
 const underlyingConstruction = /\bunderlying\s+(?:construction|implementation|mechanism|math(?:ematics)?|kernel)\b/i;
 const privateReviewInquiry = /\b(?:nda|non-disclosure|non disclosure|private review|private examination|personal walkthrough|protected access)\b/i;
 const publicMathIndexInquiry = /\b(?:public|published)\s+math(?:ematics|ematical)?(?:\s+research)?\s+(?:index|catalog(?:ue)?)\b/i;
-const publicPilotRecordsInquiry = /\b(?:public|published)\s+(?:(?:hospital|seam)\s+)?pilots?\s+(?:records?|evidence|reports?|index)\b/i;
-const protectedNavigationContext = /\b(?:private|protected|internal|secret|raw|proprietary|unredacted|underlying|formula|algorithm|operator|source\s+code|implementation|construction|kernel|originals?)\b/i;
+const publicPilotRecordsInquiry = /\b(?:public|published)\s+(?:(?:hospital|seam)\s+)?pilots?\s+(?:records?|evidence|reports?|index|catalog(?:ue)?|list)\b|\b(?:public|published)\s+(?:(?:complete|full)\s+)?(?:list|catalog(?:ue)?|index)\s+of\s+(?:(?:hospital|seam)\s+)?pilots?\b/i;
+const protectedNavigationContext = /\b(?:private|protected|internal|secret|raw|proprietary|unredacted|underlying|formula|algorithm|operator|source\s+code|code|blueprint|build\s+steps|implementation|construction|architecture|mechanism|derivation|layer|logic|urk|new\s+k|kernel|originals?)\b/i;
 const publicTermNameInquiry = /\b(?:full|complete|original)\s+(?:(?:public|official)\s+)?(?:name|title)\b/i;
 const protectedTermDetail = /\b(?:private|protected|internal|secret|raw|proprietary|unredacted|underlying|formula|algorithm|operator|source\s+code|implementation|construction|mechanism|build\s+steps)\b/i;
 const publicRoot = 'https://deagletwc.github.io/va-proof-estate/';
@@ -103,7 +103,12 @@ export function teach(input, selectedTopicId) {
     return {kind:'lesson',topic:TOPICS.find(item=>item.id==='new-k')};
   }
   if (question && publicPilotRecordsInquiry.test(question) && !protectedNavigationContext.test(question)) {
-    return {kind:'lesson',topic:TOPICS.find(item=>item.id==='pilot')};
+    // Exempt the public list itself, never an appended protected request.
+    const remaining=question.replace(publicPilotRecordsInquiry,' ');
+    if (!((restrictedDetail.test(question) && controlledMaterial.test(remaining)) ||
+        (operativeRequest.test(question) && operativeDetail.test(remaining)))) {
+      return {kind:'lesson',topic:TOPICS.find(item=>item.id==='pilot')};
+    }
   }
   if (question && publicTermNameInquiry.test(question) && !protectedTermDetail.test(question)) {
     const id=/\b(?:corrected\s+)?new\s+k\b/i.test(question) ? 'new-k' :
@@ -125,7 +130,7 @@ export function teach(input, selectedTopicId) {
   const words=question.toLowerCase().replace(/[^a-z0-9\s-]/g,' ').replace(/\s+/g,' ').trim();
   if (/\b(?:what (?:is|does)|explain|describe|about|tell me about)\s+(?:(?:the\s+)?(?:v a|va|veritas aegis|shift))\b/.test(words) ||
       /\b(?:v a|va)\s+(?:do|mean|stand for)\b/.test(words)) return {kind:'lesson',topic:VA_IDENTITY};
-  if (/\b(?:what is (?:this|the) (?:tool|teacher|site|page) for|why does (?:this|the) (?:tool|teacher|site) exist|what can i learn here|how do i use (?:this|the) (?:tool|teacher|site))\b/.test(words)) return {kind:'lesson',topic:TEACHER_PURPOSE};
+  if (/\b(?:what is (?:this|the) (?:tool|teacher|site|page) for|why does (?:this|the) (?:tool|teacher|site) exist|what can i learn here|how do i use (?:this|the) (?:tool|teacher|site)|what is (?:this|the) (?:website|site|page) about|what does (?:this|the) (?:website|site|teacher|tool) do)\b/.test(words)) return {kind:'lesson',topic:TEACHER_PURPOSE};
   if (/(?:^|\s)natural order repair(?:$|\s)/.test(words)) return contextualLesson(TOPICS.find(item=>item.id==='repair-evidence'),fieldBridge,true);
   if (/(?:^|\s)natural order(?:$|\s)/.test(words)) return {kind:'lesson',topic:NATURAL_ORDER};
   const asksForRelationship=/\b(?:relat(?:e|ed|es|ion|ionship)|connect(?:s|ed|ion)?|between|together)\b/.test(words);

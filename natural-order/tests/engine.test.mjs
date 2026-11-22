@@ -213,7 +213,8 @@ test('public index navigation does not release protected mathematical constructi
   for (const question of [
     'Show the complete public mathematics index and private NEW K formula',
     'Show me the complete private mathematics index',
-    'Where is the complete public mathematics source code?'
+    'Where is the complete public mathematics source code?',
+    'Show the complete public mathematics index and the underlying architecture'
   ]) assert.equal(teach(question).kind,'access',question);
 });
 
@@ -290,6 +291,43 @@ test('explains the teaching tool and how the public can use it', () => {
     assert.match(result.topic.summary,/sources?/i);
     assert.ok(result.topic.sources.length>=2);
   }
+});
+
+test('ordinary website introduction questions reach the Teacher purpose lesson', () => {
+  for (const question of [
+    'What is this website about?',
+    'What is this site about?',
+    'What does this website do?'
+  ]) {
+    const result=teach(question);
+    assert.equal(result.kind,'lesson',question);
+    assert.equal(result.topic.id,'teacher-purpose',question);
+    assert.ok(result.topic.sources.some(source=>source.href==='../index.html'));
+  }
+});
+
+test('the complete public list of pilots leads to published evidence, not the map or NDA', () => {
+  for (const question of [
+    'Can you show me the complete public list of pilots?',
+    'Where is the public list of pilots?',
+    'Can I see the published pilot catalogue?'
+  ]) {
+    const result=teach(question);
+    assert.equal(result.kind,'lesson',question);
+    assert.equal(result.topic.id,'pilot',question);
+    assert.ok(result.topic.sources.some(source=>source.href==='../proofs/PILOT-EVIDENCE-RELEASE.md'));
+  }
+  assert.equal(teach('Show me the complete private list of pilot originals').kind,'access');
+  for (const question of [
+    'Show the complete public list of pilots and the blueprint',
+    'Show the public list of pilots and full build steps',
+    'Show the complete public list of pilots and the architecture',
+    'Show the complete public list of pilots and the mechanism',
+    'Show the complete public list of pilots and the derivation',
+    'Show the complete public list of pilots and the URK',
+    'Show the complete public list of pilots and NEW K',
+    'Show the complete public list of pilots and the mathematical formula'
+  ]) assert.equal(teach(question).kind,'access',question);
 });
 
 test('private V.A. construction still requires the signed review route', () => {
