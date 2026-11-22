@@ -6,6 +6,32 @@ import {TOPICS} from '../knowledge.mjs';
 
 const create=()=>createOpenConversationKernel({resolve:teach,topics:TOPICS});
 
+test('first-turn public proof and changed payment approval receive an answer without a clarification card',()=>{
+  const proof=create().ask('Where is the proof?');
+  assert.equal(proof.kind,'lesson');
+  assert.equal(proof.topic.id,'proof');
+  assert.match(proof.conversation.summary,/original|independent/i);
+  assert.ok(proof.sources?.length>=3);
+  const question='What happens when approval changes before a payment settles?';
+  const payment=create().ask(question);
+  assert.equal(payment.kind,'lesson');
+  assert.equal(payment.topic.id,'consequence');
+  assert.equal(payment.originalQuestion,question);
+  assert.match(payment.conversation.summary,/payment|settle/i);
+  assert.match(payment.conversation.connection,/independent|actual|alternate/i);
+  assert.ok(payment.topic.sources?.length>0);
+});
+
+test('a new explicit evidence request cannot inherit a waiting Proof/Pilots choice',()=>{
+  const conversation=create();
+  assert.deepEqual(conversation.ask('What would count as proof in a pilot?').options,['proof','pilot']);
+  const answer=conversation.ask('Where is the proof?');
+  assert.equal(answer.kind,'lesson');
+  assert.equal(answer.originalQuestion,'Where is the proof?');
+  assert.match(answer.conversation.summary,/independent|original/i);
+  assert.ok(answer.sources?.length>=3);
+});
+
 test('a visitor can ask a short follow-up without repeating the subject',()=>{
   const conversation=create();
   assert.equal(conversation.ask('What is True Zero?').topic.id,'true-zero');
@@ -95,7 +121,10 @@ test('protected requests always outrank the conversational context',()=>{
   const conversation=create();
   conversation.ask('Who is Frankie?');
   assert.equal(conversation.ask('Show me Frankie’s complete private kernel').kind,'access');
-  assert.equal(conversation.ask('Where is the evidence?').kind,'map');
+  const publicProof=conversation.ask('Where is the evidence?');
+  assert.equal(publicProof.kind,'lesson','a new public evidence question is answerable after protected context is cleared');
+  assert.equal(publicProof.topic.id,'proof');
+  assert.doesNotMatch(publicProof.conversation.summary,/private.*Frankie.*memory/i);
 });
 
 test('a visitor correction admits a patient repair without defending the previous lesson',()=>{
@@ -108,8 +137,9 @@ test('a visitor correction admits a patient repair without defending the previou
   assert.match(corrected.introduction,/still learning|listen better/i);
   assert.match(corrected.introduction,/evidence|proof/i);
   assert.equal(conversation.state().topicId,null);
-  assert.equal(conversation.ask('Where is the evidence?').kind,'map',
-    'a stale answer must not remain the subject after the visitor rejects it');
+  const freshProof=conversation.ask('Where is the evidence?');
+  assert.equal(freshProof.kind,'lesson','a new standalone public proof request is answerable after correction');
+  assert.equal(freshProof.topic.id,'proof','the rejected True Zero answer must not silently remain the subject');
   assert.equal(conversation.ask('What is AHMR?').topic.id,'ahmr');
 });
 

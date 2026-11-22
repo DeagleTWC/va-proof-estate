@@ -2,6 +2,7 @@
 // visitor-intention failures, not a general language model or new evidence.
 // The human-interaction and protected-access checks must still run first.
 const warehouse=/\b(?:warehouse|pallet|forklift|loading\s+dock)\b/i;
+const financeMovement=/\b(?:payments?|transfers?|settlements?|settle[sd]?)\b/i;
 const changedAuthority=/\b(?:approv(?:al|ed)|authori[sz](?:ation|ed)?|authority|revok(?:e|ed|ation)|withdraw(?:n|al)?)\b/i;
 const skepticism=/\b(?:skeptic(?:al|ism)?|sceptic(?:al|ism)?|why\s+should\s+(?:i|we)\s+believe)\b/i;
 const publicReference=/\b(?:any\s+of\s+this|natural\s+order|proof\s+estate|this\s+(?:system|page|site|teacher|work|account)|v\.?a\.?)\b/i;
@@ -41,6 +42,13 @@ export function reviewConversationCompatibility(input,candidate,{topics,priorLes
       connection:'Keep your warehouse example in view: an approval record or stop message alone cannot show that the pallet stayed still. The public examination would need independent observation of the actual movement and of any alternate route.',
       question:'What independent motion observation would show whether the pallet or forklift stayed stopped after approval was withdrawn?',
     },{fieldBound:true})||candidate;
+  }
+  if(candidate.kind==='lesson'&&candidate.topic?.id==='consequence'&&financeMovement.test(question)&&changedAuthority.test(question)){
+    return publicLesson(question,topics,'consequence',{
+      summary:'For a payment awaiting settlement, changed or withdrawn approval requires its authority and standing to be examined again before a consequence can form. A refusal message or software record alone does not establish that no payment actually settled. This public V.A. account does not certify any particular bank or payment system.',
+      connection:'Keep the payment itself in view: independent evidence must show what actually settled or failed to settle, including a check for any alternate transfer route after approval changed. The public sources define the examination, not an independently witnessed result for your transaction.',
+      question:'Which independent settlement record and changed-authority replay would show whether any payment bound after approval changed?',
+    })||candidate;
   }
   if(skepticism.test(question)&&publicReference.test(question)){
     return publicLesson(question,topics,'proof',{

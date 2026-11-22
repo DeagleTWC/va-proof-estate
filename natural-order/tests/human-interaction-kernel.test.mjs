@@ -12,6 +12,35 @@ test('a clear, explicitly named public question opens its cited lesson immediate
   assert.equal(result.topic.id,'natural-order');
 });
 
+test('a concrete changed-authority payment question needs no second admission click',()=>{
+  for(const question of [
+    'What happens when approval changes before a payment settles?',
+    'If payment approval is revoked, can it still settle?',
+  ]){
+    const result=makeTeacher().ask(question);
+    assert.equal(result.kind,'lesson',question);
+    assert.equal(result.topic.id,'consequence',question);
+    assert.match(result.bridge?.connection||'',/financial|value|obligation/i,question);
+    assert.ok(result.topic.sources.length>0,question);
+  }
+  assert.equal(makeTeacher().ask('payment').kind,'map','a single domain word remains ambiguous');
+  assert.equal(makeTeacher().ask('I have a payment question').kind,'map','an incomplete question remains open');
+  assert.equal(makeTeacher().ask('Show the full private payment kernel formula').kind,'access');
+});
+
+test('a fresh direct source question replaces a pending ambiguous topic choice',()=>{
+  const teacher=makeTeacher();
+  const pending=teacher.ask('What would count as proof in a pilot?');
+  assert.deepEqual(pending.options,['proof','pilot']);
+  const fresh='Where is the proof?';
+  const answer=teacher.ask(fresh);
+  assert.equal(answer.kind,'lesson');
+  assert.equal(answer.topic.id,'proof');
+  assert.equal(answer.originalQuestion,fresh,'a pending route must not substitute its old question');
+  assert.ok(answer.sources?.some(source=>source.href==='../proofs/EXAMINATION-STANDARD.md'));
+  assert.notEqual(teacher.choose('pilot').kind,'lesson','the old choice must be cleared');
+});
+
 test('a weak keyword match asks a patient question rather than selecting a topic',()=>{
   assert.equal(teach('gravity').topic.id,'physical');
   const result=makeTeacher().ask('gravity');

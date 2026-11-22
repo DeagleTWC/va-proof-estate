@@ -1,11 +1,11 @@
-import {TOPICS} from './knowledge.mjs?v=20261122-natural-order-27';
-import {teach,publicHref} from './engine.mjs?v=20261122-natural-order-27';
-import {createOpenConversationKernel} from './open-conversation-kernel.mjs?v=20261122-natural-order-27';
-import {initFrankie,FRANKIE_GATEWAY_URL} from './frankie-client.mjs?v=20261122-natural-order-27';
-import {kernelForTopic,assessTeachingKernel,nextTeachingKernel} from './teaching-kernels.mjs?v=20261122-natural-order-27';
-import {definitionsForLesson,convertTermDefinitions} from './definition-kernel.mjs?v=20261122-natural-order-27';
-import {publicPlainLead} from './meaning-preserving-teaching-kernel.mjs?v=20261122-natural-order-27';
-import {exerciseFitsConversation} from './conversation-compatibility-kernel.mjs?v=20261122-natural-order-27';
+import {TOPICS} from './knowledge.mjs?v=20261122-natural-order-28';
+import {teach,publicHref} from './engine.mjs?v=20261122-natural-order-28';
+import {createOpenConversationKernel} from './open-conversation-kernel.mjs?v=20261122-natural-order-28';
+import {initFrankie,FRANKIE_GATEWAY_URL} from './frankie-client.mjs?v=20261122-natural-order-28';
+import {kernelForTopic,assessTeachingKernel,nextTeachingKernel} from './teaching-kernels.mjs?v=20261122-natural-order-28';
+import {definitionsForLesson,convertTermDefinitions} from './definition-kernel.mjs?v=20261122-natural-order-28';
+import {publicPlainLead} from './meaning-preserving-teaching-kernel.mjs?v=20261122-natural-order-28';
+import {exerciseFitsConversation} from './conversation-compatibility-kernel.mjs?v=20261122-natural-order-28';
 
 const byId = id => document.getElementById(id);
 const form=byId('learning-form');

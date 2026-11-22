@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
 
 test('a visitor can move from an unfamiliar field question to sourced learning and changed-condition inquiry',async()=>{
   // Exercise the real shipped module with a minimal DOM boundary, not a
@@ -18,15 +19,32 @@ test('a visitor can move from an unfamiliar field question to sourced learning a
     if(!elements.has(id))elements.set(id,new Element());
     return elements.get(id);
   };
+  const html=await readFile(new URL('../index.html',import.meta.url),'utf8');
+  const proofMarkup=html.match(/<button[^>]*data-prompt="([^"]+)"[^>]*>Where is the proof\?<\/button>/);
+  assert.ok(proofMarkup,'the Proof shortcut must carry a real submitted question');
+  const proofButton=new Element();
+  proofButton.dataset.prompt=proofMarkup[1];
   globalThis.document={
     getElementById:get,
     createElement:()=>new Element(),
-    querySelectorAll:()=>[],
+    querySelectorAll:selector=>selector==='[data-prompt]'?[proofButton]:[],
   };
   globalThis.window={matchMedia:()=>({matches:true})};
   try {
     await import('../app.mjs?bounded-browserless-interaction');
     const submit=()=>get('learning-form').listeners.submit({preventDefault(){}});
+    get('learning-form').requestSubmit=submit;
+    proofButton.listeners.click();
+    assert.equal(get('stage-content').hidden,false,'the visible Proof shortcut must answer on the first click');
+    assert.equal(get('lesson-title').textContent,'Proof Before Power');
+    assert.match(get('lesson-summary').textContent,/original|independent|changed.condition/i);
+    assert.ok(get('source-list').children.length>=3);
+    get('learner-question').value='What happens when approval changes before a payment settles?';
+    submit();
+    assert.equal(get('stage-content').hidden,false,'a clear payment question must answer without another choice');
+    assert.equal(get('lesson-title').textContent,'Consequence Custody');
+    assert.match(get('lesson-summary').textContent,/payment|settle/i);
+    assert.match(get('lesson-summary').textContent,/does not certify/i);
     get('learner-question').value='Why does a lithium-ion battery enter thermal runaway?';
     submit();
     assert.equal(get('stage-map').hidden,false);

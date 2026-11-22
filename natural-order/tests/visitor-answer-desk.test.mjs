@@ -27,6 +27,17 @@ test('a proof question points to actual pilots, review requirements and reposito
     '../proofs/CLAIM-TO-CARRIER.json'])assert.ok(includesSource(answer,href),href);
 });
 
+test('a standalone plain-language proof request leads directly to the public evidence carriers',()=>{
+  for(const question of ['Where is the proof?','Where is the evidence?']){
+    const answer=publicVisitorAnswer(question);
+    assert.equal(answer?.kind,'lesson',question);
+    assert.equal(answer.topic.id,'proof',question);
+    assert.equal(answer.originalQuestion,question);
+    assert.match(answer.conversation.summary,/independent|original|changed.condition/i);
+    assert.ok(includesSource(answer,'../proofs/EXAMINATION-STANDARD.md'));
+  }
+});
+
 test('a hospital pilot verification request leads to the actual pilot source and witness route',()=>{
   const answer=publicVisitorAnswer('How can I verify your hospital pilot?');
   assert.equal(answer.kind,'lesson');

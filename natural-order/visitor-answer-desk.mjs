@@ -1,4 +1,4 @@
-import {TOPICS} from './knowledge.mjs?v=20261122-natural-order-27';
+import {TOPICS} from './knowledge.mjs?v=20261122-natural-order-28';
 
 // Finite answers about the *public* record. This is a source navigator, not a
 // general mathematical solver, proof validator, or private source index.
@@ -94,7 +94,6 @@ const pilotQuestion=question=>!/\b(?:airport|aircraft|airplane|airline|aviation|
   (/\b(?:v\.?\s*a\.?|natural order|proof estate|historical|hospital|seam|your)\b/i.test(question) ||
     /\bpilots?\s+(?:records?|reports?|evidence|tests?|runs?|carriers?)\b/i.test(question));
 const evidenceQuestion=question=>!/^\s*what\s+is\s+proof\s+before\s+power\b/i.test(question) &&
-  !/^(?:where\s+is\s+the\s+evidence|where(?:'s| is)\s+the\s+proof)[?.!\s]*$/i.test(question) &&
   (/\b(?:where|show|find|inspect|verify|reproduce|independent(?:ly)?)\b.{0,130}\b(?:proof|evidence|claim|reproducible|reproduced|source|sources)\b/i.test(question) ||
     /\b(?:what|where)(?:'s| is)\s+the\s+(?:independent\s+|reproducible\s+)?(?:proof|evidence)\b/i.test(question));
 const generalMathQuestion=question=>/\b(?:math(?:ematics|ematical)?|theorem|conjecture|equation|number theory|whole numbers?|integers?|prime numbers?|mathematical answer|solved problem)\b/i.test(question);

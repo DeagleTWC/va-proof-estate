@@ -25,6 +25,18 @@ test('withdrawn warehouse authority gets a source-bound warehouse answer, not a 
   }
 });
 
+test('changed payment authority keeps the real settlement and evidence question in view',()=>{
+  const question='What happens when approval changes before a payment settles?';
+  const result=review(question);
+  assert.equal(result.kind,'lesson');
+  assert.equal(result.topic.id,'consequence');
+  assert.equal(result.originalQuestion,question);
+  assert.match(result.conversation.summary,/payment|settle/i);
+  assert.match(result.conversation.summary,/not.*(?:certif|establish)|does not.*(?:certif|establish)/i);
+  assert.match(result.conversation.connection,/independent|actual|alternate/i);
+  assert.ok(result.topic.sources.length>0);
+});
+
 test('a skeptical newcomer gets the public evidence status and a path to inspect it',()=>{
   const question="I'm skeptical. Why should I believe any of this, and what has actually been verified?";
   const result=review(question);

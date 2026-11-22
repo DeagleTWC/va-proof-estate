@@ -11,6 +11,15 @@ function correctedRoute(question){
 }
 const sameQuestion=(a,b)=>a.toLowerCase().replace(/[^\p{L}\p{N}]+/gu,' ').trim()===
   b.toLowerCase().replace(/[^\p{L}\p{N}]+/gu,' ').trim();
+// A complete changed-authority question in a known public field has enough
+// grounding to enter its cited route. A single field noun or weak keyword
+// still needs clarification. Protected admission always runs first.
+const realQuestion=/^(?:what|how|why|when|if|can|could|will|would|does|do|is|are)\b/i;
+const changedApproval=/\b(?:approv(?:al|ed)|authori[sz](?:ation|ed)?|authority|revok(?:e|ed|ation)|withdraw(?:n|al)?|changes?|changed|expires?|expired)\b/i;
+const paymentEffect=/\b(?:payment|transfer|settlement|settle[sd]?)\b/i;
+const strongChangedCondition=(question,result)=>result.kind==='lesson'&&result.selection==='inferred'&&
+  result.topic?.id==='consequence'&&result.bridge?.domain==='financial operations'&&
+  realQuestion.test(question)&&changedApproval.test(question)&&paymentEffect.test(question);
 
 export function createHumanInteractionKernel({resolve,topics}) {
   if(typeof resolve!=='function'||!Array.isArray(topics))throw new TypeError('public lesson router and topics required');
@@ -41,13 +50,19 @@ export function createHumanInteractionKernel({resolve,topics}) {
       return result;
     }
     if(result.kind==='lesson') {
+      // A newly supplied exact, source-specific public question outranks a
+      // previous guessed choice, even when both mention the same subject.
+      if(result.originalQuestion&&result.sources?.length){
+        pending=null;
+        return result;
+      }
       if(pending?.options.includes(result.topic.id)) {
         const answer=resolve(pending.routeQuestion,result.topic.id);
         const originalQuestion=pending.originalQuestion;
         pending=null;
         return answer.kind==='lesson'?{...answer,originalQuestion}:answer;
       }
-      if(result.selection!=='inferred') {
+      if(result.selection!=='inferred'||strongChangedCondition(routeQuestion,result)) {
         pending=null;
         return result;
       }
