@@ -1,12 +1,12 @@
-import {createHumanInteractionKernel} from './human-interaction-kernel.mjs?v=20261122-natural-order-24';
-import {reviewCognitiveTurn} from './cognitive-reasoning-kernel.mjs?v=20261122-natural-order-24';
+import {createHumanInteractionKernel} from './human-interaction-kernel.mjs?v=20261122-natural-order-25';
+import {reviewCognitiveTurn} from './cognitive-reasoning-kernel.mjs?v=20261122-natural-order-25';
 
 // A bounded, in-page conversational layer. It is deliberately not a general
 // language model: only clear, short anaphoric follow-ups reuse a prior lesson.
 // All new questions still go through the human-intent and protected-access
 // routing kernel. Nothing is sent or persisted outside this browser session.
 const followups=Object.freeze([
-  {mode:'simplify',pattern:/^(?:simplify|(?:please\s+)?(?:explain|say|put)\s+(?:that|it)\s+(?:more\s+)?(?:simply|in\s+plain\s+(?:language|words))|can\s+you\s+explain\s+(?:that|it)(?:\s+(?:more\s+)?simply|\s+in\s+plain\s+(?:words|language))?|what\s+does\s+that\s+mean|i\s+(?:do\s+not|don't|didn't)\s+understand(?:\s+that)?)[?.! ]*$/i},
+  {mode:'simplify',pattern:/^(?:simplify|(?:please\s+)?(?:can\s+you\s+)?(?:explain|say|put)\s+(?:(?:that|it)\s+)?(?:more\s+)?(?:simply|in\s+plain\s+(?:language|words))|can\s+you\s+explain\s+(?:that|it)(?:\s+(?:more\s+)?simply|\s+in\s+plain\s+(?:words|language))?|what\s+does\s+that\s+mean|i\s+(?:do\s+not|don't|didn't)\s+understand(?:\s+that)?)[?.! ]*$/i},
   {mode:'evidence',pattern:/^(?:evidence|(?:(?:where\s+is|what\s+is|show\s+me)\s+the\s+(?:evidence|proof|source|sources)|how\s+(?:can\s+i|do\s+we)\s+(?:check|verify|examine)\s+that))[?.! ]*$/i},
   {mode:'example',pattern:/^(?:example|(?:can\s+you\s+)?(?:give|show)(?:\s+me)?\s+(?:an?\s+)?example|what\s+would\s+(?:that|it)\s+look\s+like\s+in\s+practice)[?.! ]*$/i},
   {mode:'why',pattern:/^(?:(?:okay|ok|so)\s+)?(?:why|why\s+does\s+(?:that|it)\s+matter|how\s+does\s+(?:that|it)\s+work)[?.! ]*$/i},
@@ -34,8 +34,11 @@ function warmthForTurn(question,priorLesson,priorMap,{allowJokes}){
         : 'Of course. Let’s take this slowly and carefully. Which part would you like help understanding?'}};
   const {topic,bridge,originalQuestion}=priorLesson;
   const field=bridge&&originalQuestion?` You originally asked: “${originalQuestion}”` : '';
+  const reassuranceSummary=priorLesson.sourceSpecific||priorLesson.sources?.length
+    ? priorLesson.conversation?.summary||topic.summary
+    : plain[topic.id]||priorLesson.conversation?.summary||topic.summary;
   return {mode,response:{kind:'lesson',topic,originalQuestion,sources:priorLesson.sources||undefined,conversation:{
-    summary:mode==='reassure'?(priorLesson.sources?.length?priorLesson.conversation?.summary:plain[topic.id])||priorLesson.conversation?.summary||topic.summary:priorLesson.conversation?.summary||topic.summary,
+    summary:mode==='reassure'?reassuranceSummary:priorLesson.conversation?.summary||topic.summary,
     connection:mode==='smile'&&allowJokes
       ? `${evidenceJoke} ${topic.title} still has to be examined through its public sources.${field}`
       : `${allowJokes?'We may have taken the scenic route. No pop quiz, I promise. 😄 Let’s slow down.':'Let’s slow down and give your question the care it deserves.'}${field} We can take the explanation one step at a time.`,
@@ -92,7 +95,7 @@ function continuation(context,mode) {
   const specificSummary=context.conversation?.summary||topic.summary;
   // Source-bound direct answers retain their question-specific caveats when
   // visitors ask for simpler words or an example.
-  const explainedSummary=context.sources?.length?specificSummary:plain[topic.id]||specificSummary;
+  const explainedSummary=context.sourceSpecific||context.sources?.length?specificSummary:plain[topic.id]||specificSummary;
   const field=bridge?.domain?` For your ${bridge.domain} example,` : '';
   const original=bridge&&originalQuestion?` You originally asked: “${originalQuestion}”` : '';
   const common='Would you like to examine a public source, explore a different example, or ask another question?';
@@ -135,6 +138,7 @@ export function createOpenConversationKernel({resolve,topics}) {
     if(result.kind==='lesson'){
       if(!retain)lastLesson={topic:result.topic,bridge:result.bridge||null,sources:result.sources||null,
         conversation:result.conversation||null,
+        sourceSpecific:Boolean(result.originalQuestion),
         originalQuestion:result.originalQuestion||inquiry||result.topic.title};
       lastMap=null;
     }else{

@@ -283,3 +283,43 @@ test('a moving Elements Basin answer stays attributed and source-bound through p
   assert.ok(concern.sources.some(source=>source.href==='../kcd/README.md'));
   assert.equal(conversation.ask('Show the full private Elements Basin gravity wave formula').kind,'access');
 });
+
+test('Explain simply preserves each exact public answer and evidence instead of losing the conversation',()=>{
+  for(const question of [
+    'Where can I find the hospital pilot reports?',
+    'What is the Natural Order field in Yang-Mills theory?',
+    'What happens to Natural Order water beyond the Elements Basin horizon?',
+    'Does Earth move through the Elements Basin or is the field in motion?',
+  ]){
+    const conversation=create();
+    const first=conversation.ask(question);
+    assert.equal(first.kind,'lesson',question);
+    const follow=conversation.ask('Explain simply');
+    assert.equal(follow.kind,'lesson',question);
+    assert.equal(follow.topic.id,first.topic.id,question);
+    assert.equal(follow.originalQuestion,question);
+    assert.deepEqual(follow.sources?.map(item=>item.href),first.sources?.map(item=>item.href),question);
+    assert.equal(follow.conversation.summary,first.conversation.summary,question);
+  }
+});
+
+test('a narrow biography or relationship question stays the subject through simplification',()=>{
+  for(const [question,required] of [
+    ['What does Terry Snyder believe about mercy?',/mercy/i],
+    ["What are Frankie's tested capabilities?",/typed teaching|session memory/i],
+    ['How do True Zero and the Elements Basin relate?',/True Zero.*Elements Basin/is],
+  ]){
+    const conversation=create();
+    const first=conversation.ask(question);
+    assert.equal(first.kind,'lesson');
+    const follow=conversation.ask('Explain simply');
+    assert.equal(follow.kind,'lesson');
+    assert.equal(follow.originalQuestion,question);
+    assert.equal(follow.topic.id,first.topic.id);
+    assert.match(follow.conversation.summary,required);
+    const reassurance=conversation.ask("I'm confused");
+    assert.equal(reassurance.kind,'lesson');
+    assert.equal(reassurance.originalQuestion,question);
+    assert.match(reassurance.conversation.summary,required);
+  }
+});

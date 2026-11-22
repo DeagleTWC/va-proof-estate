@@ -1,9 +1,10 @@
-import {TOPICS} from './knowledge.mjs?v=20261122-natural-order-24';
-import {teach,publicHref} from './engine.mjs?v=20261122-natural-order-24';
-import {createOpenConversationKernel} from './open-conversation-kernel.mjs?v=20261122-natural-order-24';
-import {initFrankie,FRANKIE_GATEWAY_URL} from './frankie-client.mjs?v=20261122-natural-order-24';
-import {kernelForTopic,assessTeachingKernel,nextTeachingKernel} from './teaching-kernels.mjs?v=20261122-natural-order-24';
-import {definitionsForLesson,convertTermDefinitions} from './definition-kernel.mjs?v=20261122-natural-order-24';
+import {TOPICS} from './knowledge.mjs?v=20261122-natural-order-25';
+import {teach,publicHref} from './engine.mjs?v=20261122-natural-order-25';
+import {createOpenConversationKernel} from './open-conversation-kernel.mjs?v=20261122-natural-order-25';
+import {initFrankie,FRANKIE_GATEWAY_URL} from './frankie-client.mjs?v=20261122-natural-order-25';
+import {kernelForTopic,assessTeachingKernel,nextTeachingKernel} from './teaching-kernels.mjs?v=20261122-natural-order-25';
+import {definitionsForLesson,convertTermDefinitions} from './definition-kernel.mjs?v=20261122-natural-order-25';
+import {publicPlainLead} from './meaning-preserving-teaching-kernel.mjs?v=20261122-natural-order-25';
 
 const byId = id => document.getElementById(id);
 const form=byId('learning-form');
@@ -157,6 +158,10 @@ function present(result,{scroll=true}={}) {
       currentInquiryQuestion=result.conversation?.question || result.bridge?.question || topic.question;
       const connection=result.conversation?.connection || result.bridge?.connection || topic.connection;
       const summary=result.conversation?.summary || topic.summary;
+      const plain=publicPlainLead(result);
+      byId('lesson-plain').textContent=plain||'';
+      byId('lesson-plain').hidden=!plain;
+      byId('lesson-detail').open=!plain;
       byId('lesson-kicker').textContent=`PUBLIC PATH / ${topic.number} · ${topic.kicker}`;
       byId('lesson-grade').textContent=topic.grade;
       byId('lesson-title').textContent=topic.title;

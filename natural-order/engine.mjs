@@ -1,5 +1,5 @@
-import {TOPICS,NATURAL_ORDER,VA_IDENTITY,TEACHER_PURPOSE,ABOUT_TERRY,ABOUT_FRANKIE,SHARED_PURPOSE,ETHICAL_REASONING} from './knowledge.mjs?v=20261122-natural-order-24';
-import {publicVisitorAnswer,hasNamedPublicMathematics} from './visitor-answer-desk.mjs?v=20261122-natural-order-24';
+import {TOPICS,NATURAL_ORDER,VA_IDENTITY,TEACHER_PURPOSE,ABOUT_TERRY,ABOUT_FRANKIE,SHARED_PURPOSE,ETHICAL_REASONING} from './knowledge.mjs?v=20261122-natural-order-25';
+import {publicVisitorAnswer,hasNamedPublicMathematics} from './visitor-answer-desk.mjs?v=20261122-natural-order-25';
 
 const controlledMaterial = /\b(?:kernel|urk|new\s*k|math(?:ematics)?|layer|logic|code|blueprint|formula|equations?|mechanism|derivation|operator|architecture|pilot|originals?|source\s+archives?|archives?)\b/i;
 const restrictedDetail = /\b(?:full|complete|private|protected|controlled|internal|secret|raw|proprietary|unredacted|underlying)\b/i;
@@ -156,13 +156,17 @@ export function teach(input, selectedTopicId) {
   const aboutTerry=/\b(?:who\s+is|tell\s+me\s+about|learn\s+about)\s+terry(?:\s+snyder)?\b/i.test(question) ||
     /\bterry(?:\s+snyder)?\b.{0,120}\b(?:believ(?:e|es)|mercy|principles?|values?|creat(?:e|ed)|discover(?:ed)?|steward|natural order|teach(?:es|ing)?)\b/i.test(question);
   if (aboutTerry) {
-    return {kind:'lesson',topic:ABOUT_TERRY};
+    const broad=/^(?:who\s+is|tell\s+me\s+about|learn\s+about)\s+terry(?:\s+snyder)?[?.!\s]*$/i.test(question);
+    return {kind:'lesson',topic:ABOUT_TERRY,...(!broad?{originalQuestion:question}:{})};
   }
   const aboutFrankie=/\b(?:who\s+is|tell\s+me\s+about|learn\s+about|what\s+(?:is|can|does)\s+|how\s+is\s+|can\s+i\s+(?:talk|chat)\s+(?:to|with)\s+|is\s+)frankie\b/i.test(question) ||
     /\bfrankie\b.{0,120}\b(?:purpose|role|teacher|terry|companion|connected|connection|available|online|public|private|protected|privacy|chat|memory|memories|remember|work|built|do|capab(?:ility|ilities))\b/i.test(question);
   // Unknown biographical details cannot be manufactured from a project profile.
   const unestablishedFrankieFact=/\b(?:how\s+old|birthday|date\s+of\s+birth|where\s+(?:does|is)\s+frankie\s+live)\b/i.test(question);
-  if(aboutFrankie&&!unestablishedFrankieFact)return {kind:'lesson',topic:ABOUT_FRANKIE};
+  if(aboutFrankie&&!unestablishedFrankieFact){
+    const broad=/^(?:who\s+is|what\s+is|tell\s+me\s+about|learn\s+about)\s+frankie[?.!\s]*$/i.test(question);
+    return {kind:'lesson',topic:ABOUT_FRANKIE,...(!broad?{originalQuestion:question}:{})};
+  }
   const fieldBridge=fieldBridgeFor(question);
   if (selectedTopicId) {
     const topic=TOPICS.find(item=>item.id===selectedTopicId);
@@ -180,12 +184,15 @@ export function teach(input, selectedTopicId) {
       /\b(?:v a|va)\s+(?:do|mean|stand for)\b/.test(words)) return {kind:'lesson',topic:VA_IDENTITY};
   if (/\b(?:what is (?:this|the) (?:tool|teacher|site|page) for|why does (?:this|the) (?:tool|teacher|site) exist|what can i learn here|how do i use (?:this|the) (?:tool|teacher|site)|what is (?:this|the) (?:website|site|page) about|what does (?:this|the) (?:website|site|teacher|tool) do)\b/.test(words)) return {kind:'lesson',topic:TEACHER_PURPOSE};
   if (/(?:^|\s)natural order repair(?:$|\s)/.test(words)) return contextualLesson(TOPICS.find(item=>item.id==='repair-evidence'),fieldBridge,true);
-  if (/(?:^|\s)natural order(?:$|\s)/.test(words)) return {kind:'lesson',topic:NATURAL_ORDER};
+  if (/(?:^|\s)natural order(?:$|\s)/.test(words)) {
+    const broad=/^(?:(?:what\s+is|explain|describe|tell\s+me\s+about)\s+(?:the\s+)?natural\s+order(?:\s+in\s+(?:simple|plain)\s+(?:terms|words|language))?|(?:can\s+you\s+)?explain\s+(?:the\s+)?natural\s+order(?:\s+to\s+me)?\s+in\s+(?:simple|plain)\s+(?:terms|words|language))[?.!\s]*$/i.test(question);
+    return {kind:'lesson',topic:NATURAL_ORDER,...(!broad?{originalQuestion:question}:{})};
+  }
   const asksForRelationship=/\b(?:relat(?:e|ed|es|ion|ionship)|connect(?:s|ed|ion)?|between|together)\b/.test(words);
   const foundationalConcepts=[/\btrue zero\b/,/\belements basin\b/,/\b(?:corrected new k|new k)\b/,
     /\b(?:urk|universal resolving kernel)\b/,/\b(?:ahmr|lawful continuance)\b/,/\bconsequence custody\b/];
   if (asksForRelationship && foundationalConcepts.filter(term=>term.test(words)).length>1) {
-    return {kind:'lesson',topic:NATURAL_ORDER};
+    return {kind:'lesson',topic:NATURAL_ORDER,originalQuestion:question};
   }
   // Preserve every published title as a navigable proper name, including
   // additions to the catalog. A few documented short names remain aliases.

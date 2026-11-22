@@ -90,6 +90,16 @@ test('the definition conversion kernel is versioned, public-safe, and attached t
   assert.doesNotMatch(app,/innerHTML\s*=/);
 });
 
+test('meaning-preserving teaching shows a short first answer while leaving the original explanation accessible',async()=>{
+  const html=await file('index.html');
+  const app=await file('app.mjs');
+  assert.match(html,/<p id="lesson-plain"[^>]*>/);
+  assert.match(html,/<details id="lesson-detail"[^>]*>[\s\S]*?<summary[^>]*>[^<]*[Dd]etail/);
+  assert.match(app,/from '\.\/meaning-preserving-teaching-kernel\.mjs\?v=/);
+  assert.match(app,/publicPlainLead\(result\)/);
+  assert.doesNotMatch(app,/innerHTML\s*=/);
+});
+
 test('educational kernels explain their limits and offer voluntary feedback without transmitting learner text',async()=>{
   const html=await file('index.html');
   assert.match(html,/PUBLIC TEACHING KERNEL/i);
@@ -154,11 +164,11 @@ test('the live module graph shares a release version so browsers do not keep an 
   const entry=html.match(/<script type="module" src="app\.mjs\?v=([a-z0-9-]+)"/i);
   assert.ok(entry, 'the public entry module needs a release-specific URL');
   const conversation=await file('open-conversation-kernel.mjs');
-  const imports=[...app.matchAll(/from '\.\/(knowledge|engine|frankie-client|open-conversation-kernel)\.mjs(?:\?v=([^']+))?'/g),
+  const imports=[...app.matchAll(/from '\.\/(knowledge|engine|frankie-client|open-conversation-kernel|meaning-preserving-teaching-kernel|teaching-kernels|definition-kernel)\.mjs(?:\?v=([^']+))?'/g),
     ...conversation.matchAll(/from '\.\/(human-interaction-kernel|cognitive-reasoning-kernel)\.mjs(?:\?v=([^']+))?'/g),
     ...engine.matchAll(/from '\.\/(knowledge|visitor-answer-desk)\.mjs(?:\?v=([^']+))?'/g),
     ...answerDesk.matchAll(/from '\.\/(knowledge)\.mjs(?:\?v=([^']+))?'/g)];
-  assert.equal(imports.length,9,'all nine public routing module dependencies are covered');
+  assert.equal(imports.length,12,'all twelve public routing, teaching and explanation module dependencies are covered');
   for(const match of imports) assert.equal(match[2],entry[1],`${match[1]}.mjs must use the same release URL`);
 });
 
