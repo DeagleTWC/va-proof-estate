@@ -87,11 +87,11 @@ export const TOPICS = Object.freeze([
   },
   {
     id:'basin', number:'02', title:'Elements Basin', kicker:'The shape of lawful possibility',
-    summary:'In the public foundational description, the Elements Basin is a shaped region of possibility. Capacity, geometry, compatibility, and invariant conditions bear on what may remain, move, transfer, or cease. Possibility itself is not a receipt of lawful consequence.',
-    connection:'What capacity, geometry, or fixed physical conditions shape movement in the system you already understand?',
-    question:'If one constraint changes, which movements remain possible, and which consequences still require proof?',
+    summary:'In the Natural Order account, Terry Snyder identifies the Elements Basin with what conventional physics calls dark matter. The Basin itself is described as in motion, not as a stationary background through which Earth is simply driven. Capacity, geometry and invariant conditions shape possible movement. That physical identification and its gravitational interpretation are not independently established by the public KCD evidence.',
+    connection:'The KCD design holds a protected interior while surrounding field relations move and are resolved; this does not mean Earth is motionless. In your example, which surrounding relation changes while the protected interior retains its declared conditions?',
+    question:'Which independent measurement could distinguish this moving-Basin account from other explanations and test preserved invariants after a changed condition?',
     grade:'DECLARED', keywords:['elements basin','basin','capacity','geometry','dark matter','space','physical constraint'],
-    sources:[source('Foundational terms and distinctions','../foundation.html'),source('Mathematics publication route','../mathematics.html')],
+    sources:[source('Terry Snyder’s attributed teaching note and its evidence limits','../natural-order/README.md'),source('Foundational terms and distinctions','../foundation.html'),source('KCD protected-interior and moving-surroundings examination','../kcd/README.md'),source('Mathematics publication route','../mathematics.html')],
   },
   {
     id:'new-k', number:'03', title:'Corrected NEW K', kicker:'The current mathematical floor',

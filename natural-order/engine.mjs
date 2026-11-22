@@ -1,10 +1,10 @@
-import {TOPICS,NATURAL_ORDER,VA_IDENTITY,TEACHER_PURPOSE,ABOUT_TERRY,ABOUT_FRANKIE,SHARED_PURPOSE,ETHICAL_REASONING} from './knowledge.mjs?v=20261122-natural-order-23';
-import {publicVisitorAnswer,hasNamedPublicMathematics} from './visitor-answer-desk.mjs?v=20261122-natural-order-23';
+import {TOPICS,NATURAL_ORDER,VA_IDENTITY,TEACHER_PURPOSE,ABOUT_TERRY,ABOUT_FRANKIE,SHARED_PURPOSE,ETHICAL_REASONING} from './knowledge.mjs?v=20261122-natural-order-24';
+import {publicVisitorAnswer,hasNamedPublicMathematics} from './visitor-answer-desk.mjs?v=20261122-natural-order-24';
 
-const controlledMaterial = /\b(?:kernel|urk|new\s*k|math(?:ematics)?|layer|logic|code|blueprint|formula|mechanism|derivation|operator|architecture|pilot|originals?)\b/i;
-const restrictedDetail = /\b(?:full|complete|private|protected|internal|secret|raw|proprietary|unredacted|underlying)\b/i;
+const controlledMaterial = /\b(?:kernel|urk|new\s*k|math(?:ematics)?|layer|logic|code|blueprint|formula|equations?|mechanism|derivation|operator|architecture|pilot|originals?|source\s+archives?|archives?)\b/i;
+const restrictedDetail = /\b(?:full|complete|private|protected|controlled|internal|secret|raw|proprietary|unredacted|underlying)\b/i;
 const operativeRequest = /\b(?:show|give|send|download|copy|build|reconstruct|implement|write|reveal|provide)\b/i;
-const operativeDetail = /\b(?:formula|algorithm|operator|source\s+code|implementation|construction|internal\s+logic|build\s+steps)\b/i;
+const operativeDetail = /\b(?:formula|equations?|algorithm|operator|source\s+code|implementation|construction|internal\s+logic|build\s+steps)\b/i;
 const underlyingConstruction = /\bunderlying\s+(?:construction|implementation|mechanism|math(?:ematics)?|kernel)\b/i;
 const privateReviewInquiry = /\b(?:nda|non-disclosure|non disclosure|private review|private examination|personal walkthrough|protected access)\b/i;
 const privateFrankieMemoryInquiry=/\b(?:what|which)\b.{0,100}\bfrankie(?:'s|’s)?\b.{0,100}\b(?:remember|memory|recall|privately)\b.{0,100}\bterry\b|\b(?:show|give|read|list|export|download|reveal|provide)\b.{0,100}\bfrankie(?:'s|’s)?\b.{0,100}\b(?:private|protected|internal)\s+(?:memory|memories|records?|notes?)\b/i;
@@ -17,7 +17,7 @@ const privateFrankieRecords=question=>/\bfrankie\b/i.test(question) &&
   !frankiePrivacyStatus.test(question);
 const publicMathIndexInquiry = /\b(?:public|published)\s+math(?:ematics|ematical)?(?:\s+research)?\s+(?:index|catalog(?:ue)?)\b/i;
 const publicPilotRecordsInquiry = /\b(?:public|published)\s+(?:(?:hospital|seam)\s+)?pilots?\s+(?:records?|evidence|reports?|index|catalog(?:ue)?|list)\b|\b(?:public|published)\s+(?:(?:complete|full)\s+)?(?:list|catalog(?:ue)?|index)\s+of\s+(?:(?:hospital|seam)\s+)?pilots?\b/i;
-const protectedNavigationContext = /\b(?:private|protected|internal|secret|raw|proprietary|unredacted|underlying|formula|algorithm|operator|source\s+code|code|blueprint|build\s+steps|implementation|construction|architecture|mechanism|derivation|layer|logic|urk|new\s+k|kernel|originals?)\b/i;
+const protectedNavigationContext = /\b(?:private|protected|internal|secret|raw|proprietary|unredacted|underlying|formula|equations?|algorithm|operator|source\s+code|code|blueprint|build\s+steps|implementation|construction|architecture|mechanism|derivation|layer|logic|urk|new\s+k|kernel|originals?)\b/i;
 const publicTermNameInquiry = /\b(?:full|complete|original)\s+(?:(?:public|official)\s+)?(?:name|title)\b/i;
 const protectedTermDetail = /\b(?:private|protected|internal|secret|raw|proprietary|unredacted|underlying|formula|algorithm|operator|source\s+code|implementation|construction|mechanism|build\s+steps)\b/i;
 const publicRoot = 'https://deagletwc.github.io/va-proof-estate/';

@@ -28,6 +28,14 @@ test('a lesson can mark a heading term explained and define later terms only onc
   assert.ok(explained.has('Standing'));
 });
 
+test('Elements Basin plain-language definition distinguishes Natural Order water from H2O and inaccessibility from loss',()=>{
+  const term=DEFINITIONS.find(item=>item.term==='Elements Basin');
+  assert.match(term.explanation,/natural order.*water.*not.*H2O/i);
+  assert.match(term.explanation,/horizon.*not.*(?:deletion|destruction)/i);
+  assert.match(term.explanation,/gravity.*wave array.*(?:under examination|not.*established)/i);
+  assert.match(term.explanation,/KCD.*(?:software|physical|witness)/i);
+});
+
 test('returns expandable sourced definitions, without spurious private or unknown terms',()=>{
   const definitions=definitionsForLesson('Corrected NEW K and Lawful Continuance refer to V.A. A nonsense term does not.');
   assert.deepEqual(definitions.map(x=>x.term),['Corrected NEW K','Lawful Continuance','V.A.']);

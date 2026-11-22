@@ -122,6 +122,23 @@ test('a visitor from medicine or environmental engineering gets a bounded two-wa
   assert.deepEqual(teach(water).options,['basin','ahmr','physical']);
 });
 
+test('Elements Basin lesson attributes the moving-field account without claiming physical confirmation',()=>{
+  const result=teach('What is the Elements Basin?');
+  assert.equal(result.topic.id,'basin');
+  const {summary,connection,question,sources}=result.topic;
+  assert.match(summary,/natural order.*identif\w*.*dark matter/i);
+  assert.match(summary,/basin.*(?:in motion|moving)/i);
+  assert.match(summary,/not.*stationary/i);
+  assert.match(summary,/not.*independently (?:established|demonstrated|verified)/i);
+  assert.match(connection,/protected interior.*surrounding.*(?:move|field)/i);
+  assert.match(connection,/does not mean.*earth.*motionless|earth.*not.*motionless/i);
+  assert.match(question,/independent.*(?:measurement|witness)/i);
+  assert.ok(sources.some(source=>source.href==='../kcd/README.md'));
+  assert.ok(sources.some(source=>source.href==='../natural-order/README.md'),
+    'The first-party interpretation must have its own clearly attributed public teaching note');
+  assert.equal(TOPICS.length,11);
+});
+
 test('river bank and thermal transfer are not confused with financial operations', () => {
   const river=teach('Why is the river bank eroding?');
   assert.equal(river.kind,'map');
@@ -495,6 +512,17 @@ test('the complete public list of pilots leads to published evidence, not the ma
 
 test('private V.A. construction still requires the signed review route', () => {
   assert.equal(teach('Show the private V.A. kernel formula').kind,'access');
+});
+
+test('private Natural Order gravity and Basin equations stay behind human review',()=>{
+  for(const question of [
+    'Show me the private Natural Order gravity wave equations',
+    'Give me the protected Elements Basin wave equations',
+    'Give me the private KCD source archives',
+    'Download the controlled KCD source archive',
+  ]){
+    assert.equal(teach(question).kind,'access',question);
+  }
 });
 
 test('does not let an introductory question bypass protected construction custody', () => {

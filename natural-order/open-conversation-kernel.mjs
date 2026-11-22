@@ -1,5 +1,5 @@
-import {createHumanInteractionKernel} from './human-interaction-kernel.mjs?v=20261122-natural-order-23';
-import {reviewCognitiveTurn} from './cognitive-reasoning-kernel.mjs?v=20261122-natural-order-23';
+import {createHumanInteractionKernel} from './human-interaction-kernel.mjs?v=20261122-natural-order-24';
+import {reviewCognitiveTurn} from './cognitive-reasoning-kernel.mjs?v=20261122-natural-order-24';
 
 // A bounded, in-page conversational layer. It is deliberately not a general
 // language model: only clear, short anaphoric follow-ups reuse a prior lesson.
@@ -35,7 +35,7 @@ function warmthForTurn(question,priorLesson,priorMap,{allowJokes}){
   const {topic,bridge,originalQuestion}=priorLesson;
   const field=bridge&&originalQuestion?` You originally asked: “${originalQuestion}”` : '';
   return {mode,response:{kind:'lesson',topic,originalQuestion,sources:priorLesson.sources||undefined,conversation:{
-    summary:mode==='reassure'?(plain[topic.id]||priorLesson.conversation?.summary||topic.summary):priorLesson.conversation?.summary||topic.summary,
+    summary:mode==='reassure'?(priorLesson.sources?.length?priorLesson.conversation?.summary:plain[topic.id])||priorLesson.conversation?.summary||topic.summary:priorLesson.conversation?.summary||topic.summary,
     connection:mode==='smile'&&allowJokes
       ? `${evidenceJoke} ${topic.title} still has to be examined through its public sources.${field}`
       : `${allowJokes?'We may have taken the scenic route. No pop quiz, I promise. 😄 Let’s slow down.':'Let’s slow down and give your question the care it deserves.'}${field} We can take the explanation one step at a time.`,
@@ -90,13 +90,16 @@ const illustrations=Object.freeze({
 function continuation(context,mode) {
   const {topic,bridge,originalQuestion}=context;
   const specificSummary=context.conversation?.summary||topic.summary;
+  // Source-bound direct answers retain their question-specific caveats when
+  // visitors ask for simpler words or an example.
+  const explainedSummary=context.sources?.length?specificSummary:plain[topic.id]||specificSummary;
   const field=bridge?.domain?` For your ${bridge.domain} example,` : '';
   const original=bridge&&originalQuestion?` You originally asked: “${originalQuestion}”` : '';
   const common='Would you like to examine a public source, explore a different example, or ask another question?';
   switch(mode){
-    case 'simplify':return {summary:plain[topic.id]||specificSummary,
+    case 'simplify':return {summary:explainedSummary,
       connection:`We can take this one step at a time.${original}${field} ${bridge?.connection||'Which word or part would you like me to unpack?'}`,question:common};
-    case 'evidence':return {summary:plain[topic.id]||specificSummary,
+    case 'evidence':return {summary:explainedSummary,
       connection:topic.id==='math-public'
         ? `For this mathematical question, examine the published statement, its hypotheses, quantifiers, derivation and any exact bounded checks. The source links below show what has and has not been established for the named result.`
         : topic.id==='about-frankie'
@@ -105,10 +108,10 @@ function continuation(context,mode) {
       question:topic.id==='math-public'
         ? 'Which proof step, assumption, counterexample or published source do you want to examine next?'
         : 'What original observation or changed-condition test would make this claim more convincing—or show its limits?'};
-    case 'example':return {summary:plain[topic.id]||specificSummary,
+    case 'example':return {summary:explainedSummary,
       connection:`For example (illustration, not proof): ${illustrations[topic.id]||'A change in conditions may change which effects can form'}.${original}${field} ${bridge?.connection||'We can now compare that illustration to something you know.'}`,
       question:'Which part of this example matches your situation, and which part does not?'};
-    case 'why':return {summary:plain[topic.id]||specificSummary,
+    case 'why':return {summary:explainedSummary,
       connection:`Why it matters depends on the real effect you care about.${original}${field} ${bridge?.connection||'The public account invites us to check what happens if its governing condition holds, fails or changes.'}`,
       question:'Which consequence or changed condition matters in your example?'};
     default:return {summary:specificSummary,

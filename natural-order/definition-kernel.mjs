@@ -12,7 +12,7 @@ export const DEFINITIONS=Object.freeze([
     'In V.A. terminology, True Zero is the starting condition rather than an ordinary numeral, an empty register, or a point already moving. Its mathematical construction is not disclosed in this public teacher.',
     '../foundation.html','True Zero foundation'),
   define('Elements Basin','the conditions shaping which movements are possible',
-    'The public account uses this name for capacity, geometry and compatibility conditions that shape possible movement. Being possible is not yet proof that a consequence is admissible.',
+    'In the Natural Order account, the Elements Basin is identified with what people call dark matter and is itself described as moving, not as a stationary background. Natural Order water refers to a named element, not H2O. A horizon limits local access or observation; that is not evidence of deletion or destruction. Gravity as a wave array is under examination. The public KCD design holds a protected interior while surrounding field relations change, but its software receipts do not prove that physical or astrophysical interpretation.',
     '../foundation.html','Elements Basin explanation'),
   define('Corrected NEW K','the current resolving mathematics identified in V.A.',
     'The public mathematical index distinguishes corrected NEW K from earlier K expressions. Historical equations are not assumed equivalent to the operative protected construction.',

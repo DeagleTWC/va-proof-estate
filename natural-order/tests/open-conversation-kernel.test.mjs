@@ -266,3 +266,20 @@ test('a pilot source answer keeps its specific carrier path on a short follow-up
   assert.equal(follow.topic.id,'pilot');
   assert.ok(follow.sources.some(source=>source.href==='../proofs/HISTORICAL-PILOT-CARRIER-CROSSWALK.md'));
 });
+
+test('a moving Elements Basin answer stays attributed and source-bound through patient follow-ups',()=>{
+  const conversation=create();
+  const question='Does Earth move through the Elements Basin or is the field in motion?';
+  const answer=conversation.ask(question);
+  assert.equal(answer.topic.id,'basin');
+  const follow=conversation.ask('Explain that simply');
+  assert.equal(follow.kind,'lesson');
+  assert.equal(follow.originalQuestion,question);
+  assert.match(follow.conversation.summary,/dark matter/i);
+  assert.ok(follow.sources.some(source=>source.href==='../kcd/README.md'));
+  const concern=conversation.ask("I'm confused");
+  assert.equal(concern.originalQuestion,question);
+  assert.match(concern.conversation.summary,/not.*independently/i);
+  assert.ok(concern.sources.some(source=>source.href==='../kcd/README.md'));
+  assert.equal(conversation.ask('Show the full private Elements Basin gravity wave formula').kind,'access');
+});

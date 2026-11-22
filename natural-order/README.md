@@ -12,6 +12,7 @@ This is a **static, dependency-free, public-source teaching experience** for the
 - Ask for independently reproducible proof or pilot records, then inspect the original public pilot release, examination standard, claim-to-carrier register and historical source crosswalk. An index or link is not itself independent physical reproduction.
 - Ask about named mathematical research (including P versus NP, Navier–Stokes, Yang–Mills, the Riemann Hypothesis or Egyptian fractions) to see the specific published work and its bounded status. For an unindexed question, follow the mathematics register and optionally open a prefilled email to ask where an answer or ongoing work can be found. Nothing is sent unless the visitor chooses to send it; no unrestricted solution is asserted.
 - See a short everyday-language definition when V.A. terminology first appears in a lesson, and open deeper source-linked definitions.
+- Ask how Terry's Natural Order account relates the Elements Basin to conventional dark-matter terminology, what a moving Basin means for the protected-interior KCD design, or how it uses the words "water" and "horizon". The Teacher attributes these interpretations and labels their evidentiary limits: Natural Order water is not H2O, a horizon is not proof of destruction, and public KCD software receipts are not independent measurements of gravity or cosmology. Unanchored astronomy and chemistry questions are not converted into Natural Order claims.
 - Examine the relationship in both directions, then vary one test condition.
 - Try eleven finite changed-condition teaching-kernel exercises. Each presents a scenario, three proposed witnesses, and an explanation of what the selected witness does or does not establish.
 - Voluntarily suggest a missing example through an email link; no learner text is sent by the teacher.
@@ -25,6 +26,12 @@ This is a **static, dependency-free, public-source teaching experience** for the
 - Invite a little gentle humor, or admit confusion without embarrassment. The Teacher can offer a small evidence-themed joke or a patient clarification while preserving the prior public lesson, sources, and pending subject choices. Serious context remains serious across follow-ups; an explicit “no jokes” preference is respected until the visitor invites humor again or starts over. Humor is never a substitute for proof or a response to suffering or protected requests.
 
 The routing logic is deterministic, not an LLM. It does not silently invent open-world answers or send the visitor's input to a remote service. The conversation remembers only its bounded, temporary state in the page; no input is persisted in browser storage or transmitted by this public source finder.
+
+## Terry Snyder's attributed Elements Basin interpretation
+
+For this teaching update, Terry Snyder described the **Elements Basin** as his Natural Order account of what conventional physics calls **dark matter**, and described the Basin or field itself as **in motion**. This does not assert that Earth is motionless. He distinguished the named **Natural Order water** element from ordinary chemical H2O, described a **horizon** as a limit of access or observation rather than evidence of destruction, and proposed gravity as a **wave array**. The KCD public account separately describes the design inversion: a protected interior is held within its declared envelope while external surrounding relations are resolved.
+
+These are **author-provided interpretations and formal design statements**, not independently measured equivalences to dark matter, proof of wave-array gravity, or evidence of what happens to physical contents beyond a black-hole horizon. Conservation, transfer and non-destruction claims require independently inspectable physical measurements and accountable witness records. The [public KCD category declaration](../kcd/README.md) supports the design description and explicitly states its physical validation limits; it does not verify Terry's broader cosmological claims. Controlled KCD construction and original private archives are not published here.
 
 ## Public teaching kernels and definition conversion
 

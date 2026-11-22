@@ -1,4 +1,4 @@
-import {TOPICS} from './knowledge.mjs?v=20261122-natural-order-23';
+import {TOPICS} from './knowledge.mjs?v=20261122-natural-order-24';
 
 // Finite answers about the *public* record. This is a source navigator, not a
 // general mathematical solver, proof validator, or private source index.
@@ -98,6 +98,15 @@ const evidenceQuestion=question=>!/^\s*what\s+is\s+proof\s+before\s+power\b/i.te
   (/\b(?:where|show|find|inspect|verify|reproduce|independent(?:ly)?)\b.{0,130}\b(?:proof|evidence|claim|reproducible|reproduced|source|sources)\b/i.test(question) ||
     /\b(?:what|where)(?:'s| is)\s+the\s+(?:independent\s+|reproducible\s+)?(?:proof|evidence)\b/i.test(question));
 const generalMathQuestion=question=>/\b(?:math(?:ematics|ematical)?|theorem|conjecture|equation|number theory|whole numbers?|integers?|prime numbers?|mathematical answer|solved problem)\b/i.test(question);
+// Only route a physical-science question here when the visitor anchors it to
+// the Natural Order account. Generic cosmology belongs to ordinary enquiry.
+const basinQuestion=question=>(/\belements\s+basin\b/i.test(question) &&
+    /\b(?:dark matter|field|earth|gravity|wave array|horizon|water)\b/i.test(question)) ||
+  // "natural order of ..." is ordinary descriptive English, not a claim
+  // that the visitor is asking about Terry's named Natural Order project.
+  (/\bnatural\s+order\b(?!\s+of\b)/i.test(question) &&
+    (/\b(?:dark matter|horizon|gravity.{0,35}wave array)\b/i.test(question) ||
+      /\bnatural\s+order\s+water\b/i.test(question)));
 
 function lesson(topic,question,{summary=topic.summary,connection=topic.connection,sources=topic.sources}={}){
   return {kind:'lesson',topic,originalQuestion:question,sources,
@@ -112,6 +121,13 @@ export function publicVisitorAnswer(input){
   if(named)return lesson(mathTopic,question,{summary:named.summary,
     connection:'The links identify the published result and its current scope. Check the original hypotheses and source before treating a proposed or bounded result as a general theorem.',
     sources:[...named.sources,...mathSources]});
+  if(basinQuestion(question)){
+    const basin=TOPICS.find(item=>item.id==='basin');
+    const waterOrHorizon=/\b(?:water|horizon)\b/i.test(question);
+    return lesson(basin,question,{summary:waterOrHorizon
+      ? `${basin.summary} Natural Order water names a Basin element, not H2O. A horizon is an access or observation boundary, not evidence of deletion or destruction. Claims of transfer, re-encoding or conservation need explicit accounting and independent physical measurement; the public KCD software does not establish a black-hole or cosmological consequence.`
+      : basin.summary});
+  }
   const proof=TOPICS.find(item=>item.id==='proof');
   const pilot=TOPICS.find(item=>item.id==='pilot');
   if(pilotQuestion(question))return lesson(pilot,question,{
