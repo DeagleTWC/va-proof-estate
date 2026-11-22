@@ -1,6 +1,6 @@
-import {createHumanInteractionKernel} from './human-interaction-kernel.mjs?v=20261122-natural-order-28';
-import {reviewCognitiveTurn} from './cognitive-reasoning-kernel.mjs?v=20261122-natural-order-28';
-import {reviewConversationCompatibility} from './conversation-compatibility-kernel.mjs?v=20261122-natural-order-28';
+import {createHumanInteractionKernel} from './human-interaction-kernel.mjs?v=20261122-natural-order-29';
+import {reviewCognitiveTurn} from './cognitive-reasoning-kernel.mjs?v=20261122-natural-order-29';
+import {reviewConversationCompatibility} from './conversation-compatibility-kernel.mjs?v=20261122-natural-order-29';
 
 // A bounded, in-page conversational layer. It is deliberately not a general
 // language model: only clear, short anaphoric follow-ups reuse a prior lesson.

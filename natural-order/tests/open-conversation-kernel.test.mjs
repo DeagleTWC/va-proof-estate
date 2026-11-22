@@ -22,6 +22,19 @@ test('first-turn public proof and changed payment approval receive an answer wit
   assert.ok(payment.topic.sources?.length>0);
 });
 
+test('a declarative changed-payment account is explained directly, without pretending to verify a transaction',()=>{
+  const account='A payment was approved, then authorization was withdrawn before it settled.';
+  const answer=create().ask(account);
+  assert.equal(answer.kind,'lesson');
+  assert.equal(answer.topic.id,'consequence');
+  assert.equal(answer.originalQuestion,account);
+  assert.match(answer.conversation.summary,/payment|settlement/i);
+  assert.match(answer.conversation.summary,/does not certify/i);
+  assert.match(answer.conversation.connection,/independent evidence/i);
+  assert.ok(answer.topic.sources.length>0);
+  assert.equal(create().ask('A payment was approved...').kind,'map');
+});
+
 test('a new explicit evidence request cannot inherit a waiting Proof/Pilots choice',()=>{
   const conversation=create();
   assert.deepEqual(conversation.ask('What would count as proof in a pilot?').options,['proof','pilot']);

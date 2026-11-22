@@ -11,15 +11,28 @@ function correctedRoute(question){
 }
 const sameQuestion=(a,b)=>a.toLowerCase().replace(/[^\p{L}\p{N}]+/gu,' ').trim()===
   b.toLowerCase().replace(/[^\p{L}\p{N}]+/gu,' ').trim();
-// A complete changed-authority question in a known public field has enough
-// grounding to enter its cited route. A single field noun or weak keyword
-// still needs clarification. Protected admission always runs first.
+// A complete changed-authority question or narrated payment event in a known
+// public field has enough grounding to enter its cited route. A single field
+// noun or unfinished event still needs clarification. Protected admission
+// always runs first.
 const realQuestion=/^(?:what|how|why|when|if|can|could|will|would|does|do|is|are)\b/i;
 const changedApproval=/\b(?:approv(?:al|ed)|authori[sz](?:ation|ed)?|authority|revok(?:e|ed|ation)|withdraw(?:n|al)?|changes?|changed|expires?|expired)\b/i;
 const paymentEffect=/\b(?:payment|transfer|settlement|settle[sd]?)\b/i;
+// A declarative event is sufficient only when it includes the payment, an
+// initial grant, a later change, and the settlement it might affect. Neither
+// "A payment was approved..." nor "A payment was approved and settled" says
+// enough to justify a changed-authority lesson without asking the visitor.
+const paymentNarrative=/^(?:(?:a|the|our|my)\s+)?(?:payment|transfer)\b/i;
+const initialAuthority=/\b(?:approv(?:ed|al)|authori[sz](?:ed|ation))\b/i;
+const alteredAuthority=/\b(?:revok(?:e|ed|ation)|withdraw(?:n|al)?|expir(?:ed|es?)|(?:approval|authorization|authority)\s+(?:changed|changes))\b/i;
+const sequence=/\b(?:then|but|before|after|once|later|subsequently)\b/i;
+const settlement=/\b(?:settle[sd]?|settlement)\b/i;
+const completePaymentNarrative=question=>paymentNarrative.test(question)&&initialAuthority.test(question)&&
+  alteredAuthority.test(question)&&sequence.test(question)&&settlement.test(question);
 const strongChangedCondition=(question,result)=>result.kind==='lesson'&&result.selection==='inferred'&&
   result.topic?.id==='consequence'&&result.bridge?.domain==='financial operations'&&
-  realQuestion.test(question)&&changedApproval.test(question)&&paymentEffect.test(question);
+  (realQuestion.test(question)||completePaymentNarrative(question))&&
+  changedApproval.test(question)&&paymentEffect.test(question);
 
 export function createHumanInteractionKernel({resolve,topics}) {
   if(typeof resolve!=='function'||!Array.isArray(topics))throw new TypeError('public lesson router and topics required');
@@ -62,9 +75,10 @@ export function createHumanInteractionKernel({resolve,topics}) {
         pending=null;
         return answer.kind==='lesson'?{...answer,originalQuestion}:answer;
       }
-      if(result.selection!=='inferred'||strongChangedCondition(routeQuestion,result)) {
+      const directlyAdmitted=strongChangedCondition(routeQuestion,result);
+      if(result.selection!=='inferred'||directlyAdmitted) {
         pending=null;
-        return result;
+        return directlyAdmitted?{...result,originalQuestion:result.originalQuestion||routeQuestion}:result;
       }
     }
     const options=result.kind==='map' ? result.options||[] : [result.topic.id];

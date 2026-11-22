@@ -1,4 +1,4 @@
-import {TOPICS} from './knowledge.mjs?v=20261122-natural-order-28';
+import {TOPICS} from './knowledge.mjs?v=20261122-natural-order-29';
 
 // Finite answers about the *public* record. This is a source navigator, not a
 // general mathematical solver, proof validator, or private source index.

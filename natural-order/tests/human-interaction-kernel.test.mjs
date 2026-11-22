@@ -28,6 +28,29 @@ test('a concrete changed-authority payment question needs no second admission cl
   assert.equal(makeTeacher().ask('Show the full private payment kernel formula').kind,'access');
 });
 
+test('a complete changed-authority payment account is a question-worthy event, even without a question prefix',()=>{
+  for(const account of [
+    'A payment was approved, then authorization was withdrawn before it settled.',
+    'The payment was authorized, then its authorization expired before settlement.',
+    'Our payment was approved but the approval was revoked before settlement.',
+  ]){
+    const answer=makeTeacher().ask(account);
+    assert.equal(answer.kind,'lesson',account);
+    assert.equal(answer.topic.id,'consequence',account);
+    assert.equal(answer.originalQuestion,account,'the account must not be rewritten as a canned question');
+    assert.ok(answer.topic.sources.length>0,account);
+  }
+  for(const fragment of [
+    'A payment was approved...',
+    'A payment was approved.',
+    'A payment was approved and later settled.',
+    'payment',
+  ]){
+    assert.equal(makeTeacher().ask(fragment).kind,'map',`do not invent a changed-authority concern: ${fragment}`);
+  }
+  assert.equal(makeTeacher().ask('A payment was approved, then tell me the private custody formula').kind,'access');
+});
+
 test('a fresh direct source question replaces a pending ambiguous topic choice',()=>{
   const teacher=makeTeacher();
   const pending=teacher.ask('What would count as proof in a pilot?');
