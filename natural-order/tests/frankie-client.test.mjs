@@ -152,7 +152,17 @@ test('an unresponsive gateway cannot leave the student send button stuck',async(
   initFrankie({gatewayUrl:gateway,elements:nodes,storage,requestTimeoutMs:60,fetchImpl:async(_url,init)=>
     new Promise((_,reject)=>init.signal.addEventListener('abort',()=>reject(new Error('timeout')),{once:true}))});
   nodes.question.value='Teach me about True Zero';
-  await nodes.form.listeners.submit({preventDefault(){}});
+  // AbortSignal.timeout() uses an unref'd timer in Node. Keep this test alive
+  // with a bounded, referenced deadline while the simulated gateway stalls.
+  let deadline;
+  try {
+    await Promise.race([
+      nodes.form.listeners.submit({preventDefault(){}}),
+      new Promise((_,reject)=>{deadline=setTimeout(()=>reject(new Error('gateway timeout did not settle')),1000);}),
+    ]);
+  } finally {
+    clearTimeout(deadline);
+  }
   assert.equal(nodes.send.disabled,false);
   assert.match(nodes.notice.textContent,/public teacher/i);
 });
