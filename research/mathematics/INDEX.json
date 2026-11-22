@@ -1,6 +1,6 @@
 {
   "schema": "deagle-mathematics-index/v1",
-  "updated": "2026-11-21",
+  "updated": "2026-11-22",
   "owner": "Terry Allen Snyder",
   "entries": [
     {
@@ -159,6 +159,19 @@
       "private_native_urk_excluded": true,
       "classification": "EXTERNAL_CONSTRUCTIVE_CANDIDATE_NOT_NATIVE_URK_AUTHENTICATED",
       "catalog_number": "006",
+      "index_kind": "published_bounded_mathematical_exhibit"
+    },
+    {
+      "id": "question-formation-domain-standing-2026-11-22",
+      "title": "Question Formation — Domain Before Answer",
+      "record": "math/question-formation/index.html",
+      "proof": "math/question-formation/PROOF.md",
+      "date": "2026-11-22",
+      "author": "Terry Allen Snyder / DeagleTWC",
+      "status": "Classical proof: ab=0 implies a=0 or b=0 in integers. Exact counterexample: [2][3]=[0] in Z/6Z while both factors are nonzero. Demonstrates domain-dependent truth and underdetermination of an unstated domain. No native NEW K/URK execution or novel theorem claimed.",
+      "classification": "CLASSICAL_EDUCATIONAL_DOMAIN_DISAMBIGUATION",
+      "private_native_urk_excluded": true,
+      "catalog_number": "007",
       "index_kind": "published_bounded_mathematical_exhibit"
     }
   ],
