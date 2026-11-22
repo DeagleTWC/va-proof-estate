@@ -8,10 +8,21 @@ This is a **static, dependency-free, public-source teaching experience** for the
 - Bring an example from energy storage, health care, water engineering, transportation, automation, or finance; choose among bounded examination paths that keep the original question in view.
 - Read an accurate, brief public explanation with an evidence-class label.
 - Follow direct links to the published source material.
+- See a short everyday-language definition when V.A. terminology first appears in a lesson, and open deeper source-linked definitions.
 - Examine the relationship in both directions, then vary one test condition.
+- Try eleven finite changed-condition teaching-kernel exercises. Each presents a scenario, three proposed witnesses, and an explanation of what the selected witness does or does not establish.
+- Voluntarily suggest a missing example through an email link; no learner text is sent by the teacher.
 - Learn the human-mediated process for seeking protected examination under an appropriate NDA.
 
 The routing logic is deterministic, not an LLM. It does not silently invent open-world answers or send the visitor's input to a remote service. No input is stored locally or transmitted by this public source finder.
+
+## Public teaching kernels and definition conversion
+
+`teaching-kernels.mjs` contains reviewed **educational blueprints**, not private resolving kernels or operative V.A. mathematics. They follow the publicly explainable distinction *generation is not promotion*: selecting an answer produces feedback, never authorization or an external effect. Eleven exercises cover the public subjects and require source identity, changed conditions, and an observable negative or alternate-route witness. The bank can grow through versioned, tested releases, not hidden runtime changes.
+
+The design was informed by the **Universal Resolving Kernel Generator v0.1** and Frankie's later Cycle 049 native child-generator behavior, inspected privately. In an isolated test the Cycle 049 generator formed a local data-only candidate with replay-valid receipts while leaving it `activated=false` and `external_effect=false`. **Neither the private generator nor the corrected NEW K construction is present in this public bank.** The supplied UMK-Σ mega file was idea material, not an executable generator.
+
+`definition-kernel.mjs` is a separate, public **Definition Conversion Kernel** for plain-language teaching. It retains technical names, expands their first occurrence, and displays optional deeper definitions with source links. It does not translate, reconstruct, or replace the mathematics.
 
 ## Frankie Cycle 081 — prepared optional companion
 
@@ -40,6 +51,6 @@ node --test natural-order/tests/*.test.mjs
 node natural-order/release-audit.mjs
 ```
 
-The teacher's runtime modules are `index.html`, `styles.css`, `app.mjs`, `engine.mjs`, `knowledge.mjs` and the gated `frankie-client.mjs`. The public PDF is a downloadable review template. `release-audit.mjs`, `README.md`, and the `tests/` directory are published transparency and review resources; GitHub Pages serves all tracked files, including tests, and none of them contains protected construction.
+The teacher's runtime modules are `index.html`, `styles.css`, `app.mjs`, `engine.mjs`, `knowledge.mjs`, `definition-kernel.mjs`, `teaching-kernels.mjs`, and the gated `frankie-client.mjs`. The public PDF is a downloadable review template. `release-audit.mjs`, `README.md`, and the `tests/` directory are published transparency and review resources; GitHub Pages serves all tracked files, including tests, and none of them contains protected construction.
 
 **Proof Before Power. Open Evidence. Protected Construction.**
