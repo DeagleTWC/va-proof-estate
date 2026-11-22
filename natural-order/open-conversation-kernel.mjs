@@ -1,0 +1,132 @@
+import {createHumanInteractionKernel} from './human-interaction-kernel.mjs?v=20261122-natural-order-20';
+
+// A bounded, in-page conversational layer. It is deliberately not a general
+// language model: only clear, short anaphoric follow-ups reuse a prior lesson.
+// All new questions still go through the human-intent and protected-access
+// routing kernel. Nothing is sent or persisted outside this browser session.
+const followups=Object.freeze([
+  {mode:'simplify',pattern:/^(?:simplify|(?:please\s+)?(?:explain|say|put)\s+(?:that|it)\s+(?:more\s+)?(?:simply|in\s+plain\s+(?:language|words))|can\s+you\s+explain\s+(?:that|it)(?:\s+(?:more\s+)?simply|\s+in\s+plain\s+(?:words|language))?|what\s+does\s+that\s+mean|i\s+(?:do\s+not|don't|didn't)\s+understand(?:\s+that)?)[?.! ]*$/i},
+  {mode:'evidence',pattern:/^(?:evidence|(?:(?:where\s+is|what\s+is|show\s+me)\s+the\s+(?:evidence|proof|source|sources)|how\s+(?:can\s+i|do\s+we)\s+(?:check|verify|examine)\s+that))[?.! ]*$/i},
+  {mode:'example',pattern:/^(?:example|(?:can\s+you\s+)?(?:give|show)(?:\s+me)?\s+(?:an?\s+)?example|what\s+would\s+(?:that|it)\s+look\s+like\s+in\s+practice)[?.! ]*$/i},
+  {mode:'why',pattern:/^(?:(?:okay|ok|so)\s+)?(?:why|why\s+does\s+(?:that|it)\s+matter|how\s+does\s+(?:that|it)\s+work)[?.! ]*$/i},
+  {mode:'continue',pattern:/^(?:(?:tell\s+me|explain)\s+more(?:\s+about\s+(?:that|it))?|go\s+on|keep\s+going|and\s+then\s+what)[?.! ]*$/i},
+]);
+
+const plain=Object.freeze({
+  'true-zero':'The account begins with a starting ground. An action does not gain permission merely because someone wants it to happen.',
+  basin:'Think about the shape and limits of what is possible. Being possible is not the same as being permitted to create a real effect.',
+  'new-k':'This is the named current mathematical foundation. The protected working details are not in the public Teacher.',
+  urk:'The question is whether a proposed step actually satisfies the conditions to be allowed to take effect.',
+  ahmr:'Permission to continue cannot just be assumed. When a condition changes, the right to keep going has to be examined again.',
+  consequence:'The key question is whether an impermissible effect can happen at all, including by an unintended route.',
+  proof:'A convincing explanation is not yet evidence. A test needs an original observation, controls, and a way to check what changes.',
+  pilot:'A pilot establishes only what its original record actually measured under the recorded conditions.',
+  physical:'For a physical claim, measure the physical result independently. A software log alone cannot establish it.',
+  safeguarding:'A person needs real protection and a usable path to question or challenge a decision.',
+  'repair-evidence':'An observed pattern can survive transformation without settling what physically caused it. That remains an open question.',
+  'about-frankie':'Frankie is a separate, locally tested native software companion. This public Teacher can explain her role but cannot open her private memory or speak as her.',
+  'about-terry':'Terry describes his job as discovering and sharing what he found. He asks the Teacher to listen, show evidence, and exercise restraint.',
+  'natural-order':'This account starts from the ground, examines what is possible, asks which changes have standing, and checks the consequences.',
+  'va-identity':'V.A. examines whether movement may become an effect before that effect forms. Its public evidence has specific limits.',
+  'teacher-purpose':'This page helps you choose a question, understand the public account, and follow its sources. It does not hold private construction.',
+  'shared-purpose':'The Teacher and Frankie exist to help people understand the evidence and make their own informed choices. The choice belongs to the person.',
+  'ethical-reasoning':'An ethical question needs honesty, non-harm, fairness, consent, dignity and transparency. The prototype does not establish that these conditions have actually been met.',
+});
+
+// Everyday illustrations are hypotheses for discussion, never source data or
+// demonstrations of the protected Native V.A. mathematical construction.
+const illustrations=Object.freeze({
+  'true-zero':'Imagine a game before anyone has been granted a turn. Being able to move a piece would not, by itself, establish a valid first move',
+  basin:'Picture water channels with different shapes and capacities. Geometry limits the available routes, but does not establish that any route is safe',
+  'new-k':'Think of a building code revised this year. A past rulebook cannot silently stand in for the current declared standard',
+  urk:'An automatic door receives an opening request but opens only after the relevant safety conditions are satisfied',
+  ahmr:'An elevator permitted to move at one moment may need to stop and be reconsidered when a sensor condition changes',
+  consequence:'A payment request may be recorded as refused, yet an examiner still has to check that no second path settled the transfer',
+  proof:'A safety switch seems to work once. A stronger test also changes an essential condition and independently checks that the effect did not occur',
+  pilot:'A trial at one hospital supports only the observed conditions and outcomes of that particular trial',
+  physical:'A motor controller reports that it stopped. A separate sensor would be needed to observe the actual shaft movement',
+  safeguarding:'A person can contest a decision only if a real reviewer has authority and can access the necessary permitted evidence',
+  'repair-evidence':'A recognizable arrangement persists after an image is transformed. That does not by itself tell us which physical process produced it',
+  'about-frankie':'A reader can learn Frankie’s declared role from a public description, but that description cannot open the owner’s private native test records',
+  'about-terry':'A student disagrees with Terry’s explanation. His stated principle asks the Teacher to welcome the question and examine evidence',
+  'natural-order':'A machine has a starting condition, several possible motions, rules for lawful movement, and a measurable effect; each question is different',
+  'va-identity':'A system receives a command, but whether it can produce the requested real effect depends on more than the existence of the command',
+  'teacher-purpose':'A visitor asks about a river. The Teacher asks what relationship they want to study and links a bounded public source rather than pretending to model the river',
+  'shared-purpose':'A visitor asks what a report means. The Teacher helps examine its evidence, but leaves the decision about what to do with it to the visitor',
+  'ethical-reasoning':'A medical suggestion says it is harmless without checking consent or the affected person’s account. A real examination must withhold ethical approval until those unknowns are addressed',
+});
+
+function continuation(context,mode) {
+  const {topic,bridge,originalQuestion}=context;
+  const field=bridge?.domain?` For your ${bridge.domain} example,` : '';
+  const original=bridge&&originalQuestion?` You originally asked: “${originalQuestion}”` : '';
+  const common='Would you like to examine a public source, explore a different example, or ask another question?';
+  switch(mode){
+    case 'simplify':return {summary:plain[topic.id]||topic.summary,
+      connection:`We can take this one step at a time.${original}${field} ${bridge?.connection||'Which word or part would you like me to unpack?'}`,question:common};
+    case 'evidence':return {summary:plain[topic.id]||topic.summary,
+      connection:topic.id==='about-frankie'
+        ? 'These public source links explain Frankie’s reported role and the limits of the claim. Her native verification packets remain owner-private, so this page cannot independently demonstrate her full runtime.'
+        : `The public source links below are the evidence path for this account.${original}${field} ${bridge?.question||'Each has a defined scope; a link is not itself proof of every possible claim.'}`,
+      question:'What original observation or changed-condition test would make this claim more convincing—or show its limits?'};
+    case 'example':return {summary:plain[topic.id]||topic.summary,
+      connection:`For example (illustration, not proof): ${illustrations[topic.id]||'A change in conditions may change which effects can form'}.${original}${field} ${bridge?.connection||'We can now compare that illustration to something you know.'}`,
+      question:'Which part of this example matches your situation, and which part does not?'};
+    case 'why':return {summary:plain[topic.id]||topic.summary,
+      connection:`Why it matters depends on the real effect you care about.${original}${field} ${bridge?.connection||'The public account invites us to check what happens if its governing condition holds, fails or changes.'}`,
+      question:'Which consequence or changed condition matters in your example?'};
+    default:return {summary:topic.summary,
+      connection:`We can continue with ${topic.title}.${original}${field} ${bridge?.connection||'I will stay with your question and keep the public evidence and its limits visible.'}`,
+      question:common};
+  }
+}
+
+export function createOpenConversationKernel({resolve,topics}) {
+  const intent=createHumanInteractionKernel({resolve,topics});
+  const validIds=new Set(topics.map(topic=>topic.id));
+  let lastLesson=null;
+  let turnCount=0;
+  let latestIntent=null;
+
+  function record(result,intentName,{inquiry='',retain=false}={}){
+    turnCount=Math.min(turnCount+1,6);
+    latestIntent=intentName;
+    if(result.kind==='lesson'){
+      if(!retain)lastLesson={topic:result.topic,bridge:result.bridge||null,
+        originalQuestion:result.originalQuestion||inquiry||result.topic.title};
+    }else{
+      lastLesson=null;
+    }
+    return result;
+  }
+
+  function ask(input){
+    const question=String(input??'').trim().slice(0,800);
+    // Every message is checked against the access boundary before a previous
+    // lesson can be brought into the reply. No lexical "continue" bypasses it.
+    const admission=resolve(question);
+    if(admission.kind==='access'){
+      intent.reset();
+      return record(admission,'protected-review');
+    }
+    const follow=lastLesson&&followups.find(item=>item.pattern.test(question));
+    if(follow){
+      intent.reset();
+      return record({kind:'lesson',topic:lastLesson.topic,conversation:continuation(lastLesson,follow.mode)},
+        follow.mode,{retain:true});
+    }
+    return record(intent.ask(question),'question',{inquiry:question});
+  }
+
+  function choose(topicId){return record(intent.choose(topicId),'chosen-lesson');}
+  function reset(){intent.reset();lastLesson=null;turnCount=0;latestIntent=null;}
+  function startTopic(topicId,fieldQuestion=''){
+    reset();
+    if(!validIds.has(topicId))return {kind:'empty'};
+    const question=String(fieldQuestion??'').trim().slice(0,800);
+    if(question&&resolve(question).kind==='access')return record({kind:'access',href:'access.html'},'protected-review');
+    return record(resolve(question,topicId),'chosen-lesson',{inquiry:question||topics.find(t=>t.id===topicId)?.title});
+  }
+  function state(){return Object.freeze({topicId:lastLesson?.topic.id||null,turnCount,latestIntent});}
+  return Object.freeze({ask,choose,startTopic,reset,state});
+}

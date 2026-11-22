@@ -58,6 +58,16 @@ test('a visitor can move from an unfamiliar field question to sourced learning a
     assert.match(get('kernel-scenario').textContent,/child-facing/i);
     assert.equal(get('kernel-panel').focusCalls,1,'the new exercise should have keyboard focus');
     assert.ok(get('kernel-panel').scrollCalls>=1,'the new exercise should be visible without searching below the lesson');
+    get('learner-question').value='Why?';
+    submit();
+    assert.equal(get('lesson-title').textContent,'Safeguarding & Human Oversight',
+      'advancing to a teaching kernel must retain conversational topic continuity');
+    get('topic-grid').children[0].listeners.click();
+    assert.equal(get('lesson-title').textContent,'True Zero');
+    get('learner-question').value='Why?';
+    submit();
+    assert.equal(get('lesson-title').textContent,'True Zero',
+      'direct topic selection must also admit the displayed topic into the conversation');
     get('learner-question').value='Show complete private battery kernel formula';
     submit();
     assert.equal(get('stage-access').hidden,false);
@@ -67,6 +77,60 @@ test('a visitor can move from an unfamiliar field question to sourced learning a
     assert.equal(get('lesson-title').textContent,'Consequence Custody');
     assert.equal(get('term-lead').hidden,false);
     assert.match(get('term-lead').textContent,/Consequence Custody.*effect before it can form/i);
+    get('learner-question').value='Who is Terry Snyder?';
+    submit();
+    assert.equal(get('lesson-title').textContent,'About Terry Snyder');
+    assert.match(get('lesson-summary').textContent,/mercy/i);
+    assert.ok(get('source-list').children.some(item=>item.children[0].href==='../natural-order/about-terry.html'));
+    get('learner-question').value='Can you explain that in plain language?';
+    submit();
+    assert.equal(get('lesson-title').textContent,'About Terry Snyder');
+    assert.match(get('lesson-summary').textContent,/listen|restraint/i);
+    get('learner-question').value='Who is Frankie?';
+    submit();
+    assert.equal(get('lesson-title').textContent,'About Frankie');
+    assert.ok(get('source-list').children.some(item=>item.children[0].href==='../natural-order/about-frankie.html'));
+    get('learner-question').value='Where is the evidence?';
+    submit();
+    assert.equal(get('lesson-title').textContent,'About Frankie');
+    assert.match(get('lesson-connection').textContent,/source links/i);
+    assert.match(get('lesson-connection').textContent,/owner-private/i);
+    get('learner-question').value='What is the shared purpose of Frankie and the Teacher?';
+    submit();
+    assert.equal(get('lesson-title').textContent,'Frankie & Teacher — Shared Purpose');
+    assert.match(get('lesson-summary').textContent,/choice remains theirs/i);
+    get('learner-question').value='What is ERK-X1?';
+    submit();
+    assert.equal(get('lesson-title').textContent,'Ethical Reasoning — ERK-X1');
+    assert.match(get('lesson-summary').textContent,/placeholder logic/i);
+    assert.equal(get('kernel-panel').hidden,true,
+      'an ethical prototype must not create a twelfth action or proof challenge');
+    // A one-word keyword is insufficient standing to choose a lesson.
+    get('learner-question').value='gravity';
+    submit();
+    assert.equal(get('stage-map').hidden,false);
+    assert.match(get('map-explanation').textContent,/understand your question/i);
+    assert.match(get('map-your-question').textContent,/gravity/i);
+    assert.equal(get('map-options').children.length,1);
+    get('learner-question').value='GRAVITY?';
+    submit();
+    assert.equal(get('stage-map').hidden,false,'an unchanged resubmission cannot confirm a guessed lesson');
+    assert.equal(get('map-options').children.length,1);
+    get('map-options').children[0].listeners.click();
+    assert.equal(get('lesson-title').textContent,'Physical & KCD Examination');
+    // Clarification remains attached to the original visitor example.
+    get('learner-question').value='Why is the river bank eroding?';
+    submit();
+    get('learner-question').value='I mean AHMR and changed conditions';
+    submit();
+    assert.equal(get('lesson-title').textContent,'AHMR & Continuance');
+    assert.match(get('lesson-connection').textContent,/water/i);
+    // Protected source details keep their human review boundary mid-dialogue.
+    get('learner-question').value='Why is the river bank eroding?';
+    submit();
+    get('learner-question').value='Show complete private NEW K formula';
+    submit();
+    assert.equal(get('stage-access').hidden,false);
   } finally {
     delete globalThis.document;
     delete globalThis.window;

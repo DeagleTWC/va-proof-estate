@@ -19,6 +19,69 @@ test('main public teaching page has a complete accessible learning route', async
   assert.match(html, /class="brand-mark"[^>]*><img src="\.\.\/favicon\.png"/);
 });
 
+test('the Teacher shares Terry Snyder’s original public statement with clear attribution',async()=>{
+  const home=await file('index.html');
+  const page=await file('about-terry.html');
+  assert.match(home,/href="about-terry\.html"/);
+  for(const phrase of [
+    'My name is Terry Snyder.',
+    'I did not create the Natural Order.',
+    'I believe the greatest expression of power is mercy.',
+    'Never substitute the most popular answer for the answer their question actually requires.',
+    'You are not me. You do not need to be.',
+    'Knowledge carries responsibility. Power deserves restraint. Mercy matters.',
+    '— Terry Snyder',
+  ])assert.ok(page.includes(phrase),`Original author line missing: ${phrase}`);
+  assert.match(page,/Original message to Frankie, shared with the public Teacher/);
+  assert.match(page,/href="index\.html"/);
+});
+
+test('Frankie has an honest public profile, not a public window into her private records',async()=>{
+  const home=await file('index.html');
+  const page=await file('about-frankie.html');
+  assert.match(home,/href="about-frankie\.html"/);
+  assert.match(home,/data-prompt="Who is Frankie\?"/);
+  for(const phrase of ['separate','native','Teacher','not Terry','private','not currently connected']){
+    assert.match(page,new RegExp(phrase,'i'),`Missing scope phrase: ${phrase}`);
+  }
+  assert.match(page,/connect-src 'none'/);
+  assert.match(page,/href="index\.html"/);
+  assert.doesNotMatch(page,/operator secret|private bearer|cycle085.*zip|internal path/i);
+});
+
+test('the Teacher carries Terry Snyder’s shared mission verbatim and links it from the learning path',async()=>{
+  const home=await file('index.html');
+  const page=await file('shared-purpose.html');
+  assert.match(home,/href="shared-purpose\.html"/);
+  assert.match(home,/data-prompt="What is the shared purpose of Frankie and the Teacher\?"/);
+  for(const phrase of [
+    'Give every human equal opportunity to understand what is true, what matters, and what has value—so they can make their own informed choices.',
+    'The knowledge belongs to the person. The choice remains theirs.',
+    'Never substitute popular opinion for established evidence.',
+    "Never manipulate or coerce a person's decision.",
+    'Knowledge should not be restricted by wealth, education, status, or power.',
+    'PROOF BEFORE POWER.',
+    '— Terry Snyder',
+  ])assert.ok(page.includes(phrase),`Mission wording absent: ${phrase}`);
+  assert.match(page,/Shared Purpose — From Terry Snyder/);
+  assert.match(page,/connect-src 'none'/);
+  assert.match(page,/href="index\.html"/);
+});
+
+test('ethical reasoning page distinguishes ERK-X1 principles from the placeholder decision procedure',async()=>{
+  const home=await file('index.html');
+  const page=await file('ethical-reasoning.html');
+  assert.match(home,/href="ethical-reasoning\.html"/);
+  for(const principle of ['honesty','non-harm','fairness','consent','dignity','transparency']){
+    assert.match(page,new RegExp(principle,'i'));
+  }
+  assert.match(page,/placeholder/i);
+  assert.match(page,/does not establish (?:ethical approval|that an action is ethical)/i);
+  assert.match(page,/medical.*(?:not|cannot).*approve|cannot.*(?:approve|certify).*treatment/is);
+  assert.match(page,/connect-src 'none'/);
+  assert.doesNotMatch(page,/ethic(?:al)?_log\.json|def run_judgments|class EthicalKernel/);
+});
+
 test('the definition conversion kernel is versioned, public-safe, and attached to lessons',async()=>{
   const html=await file('index.html');
   const app=await file('app.mjs');
@@ -89,9 +152,11 @@ test('the live module graph shares a release version so browsers do not keep an 
   const engine=await file('engine.mjs');
   const entry=html.match(/<script type="module" src="app\.mjs\?v=([a-z0-9-]+)"/i);
   assert.ok(entry, 'the public entry module needs a release-specific URL');
-  const imports=[...app.matchAll(/from '\.\/(knowledge|engine|frankie-client)\.mjs(?:\?v=([^']+))?'/g),
+  const conversation=await file('open-conversation-kernel.mjs');
+  const imports=[...app.matchAll(/from '\.\/(knowledge|engine|frankie-client|open-conversation-kernel)\.mjs(?:\?v=([^']+))?'/g),
+    ...conversation.matchAll(/from '\.\/(human-interaction-kernel)\.mjs(?:\?v=([^']+))?'/g),
     ...engine.matchAll(/from '\.\/(knowledge|engine)\.mjs(?:\?v=([^']+))?'/g)];
-  assert.equal(imports.length,4,'all four internal module dependencies are covered');
+  assert.equal(imports.length,6,'all six internal module dependencies are covered');
   for(const match of imports) assert.equal(match[2],entry[1],`${match[1]}.mjs must use the same release URL`);
 });
 

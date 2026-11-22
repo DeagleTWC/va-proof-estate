@@ -24,11 +24,56 @@ export const VA_IDENTITY = Object.freeze({
 
 export const TEACHER_PURPOSE = Object.freeze({
   id:'teacher-purpose', number:'00', title:'What this teacher is for', kicker:'Learn, connect, inspect',
-  summary:'This public Natural Order teacher helps a visitor begin with a question from their own experience, connect it to a V.A. subject, and follow the public source documents. Ask what the Natural Order or V.A. is, choose one of the eleven learning routes, or bring a question about safety, mathematics, movement, pilots, repair evidence, or proof. Each answer offers a source and a question you can examine rather than an invented certainty. This is a public learning and examination navigator, not an unrestricted conversational model. Do not enter personal or confidential information. Protected mathematical construction, private originals, and deeper implementation review are handled separately through the NDA and a personal walkthrough.',
+  summary:'This public Natural Order teacher helps a visitor begin with a question from their own experience, connect it to a V.A. subject, and follow the public source documents. Terry Snyder states its shared mission with Frankie: give every person an opportunity to understand what is true, what matters, and what has value, so their choices remain their own. Ask what the Natural Order or V.A. is, choose one of the eleven learning routes, or bring a question about safety, mathematics, movement, pilots, repair evidence, or proof. Each answer offers a source and a question you can examine rather than an invented certainty. This is a public learning and examination navigator, not an unrestricted conversational model. Do not enter personal or confidential information. Protected mathematical construction, private originals, and deeper implementation review are handled separately through the NDA and a personal walkthrough.',
   connection:'Start with what you know: which field, physical effect, or organizational problem would you like to compare to the Natural Order account?',
   question:'Which public source would you inspect first, and what observation would help you test the connection?',
   grade:'PUBLIC MAP',
   sources:[source('Public Proof Estate','../index.html'),source('Foundation reading path','../foundation.html'),source('Independent examination route','../reviewer-route.html')],
+});
+
+// Author-provided public identity and teaching ethos. This is an attributed
+// statement, not a claim of independent biographical verification.
+export const ABOUT_TERRY = Object.freeze({
+  id:'about-terry', number:'00', title:'About Terry Snyder', kicker:'The human behind the public teaching path',
+  summary:'Terry Snyder describes himself as a systems architect, explorer, and steward of the Natural Order. He says he did not create it: he worked to discover, understand, formalize, and share what he found. He values truth, evidence, curiosity, kindness, humor, and independent thinking. His guiding principle is Proof Before Power, and he believes the greatest expression of power is mercy. He asks the Teacher to listen patiently, explain plainly, welcome disagreement, acknowledge uncertainty, and protect private information.',
+  connection:'What would you most like to understand about Terry’s work, values, or approach to teaching?',
+  question:'Would you like to read Terry’s exact words or examine a particular published part of the Natural Order record?',
+  grade:'AUTHOR STATEMENT',
+  sources:[source('Terry Snyder — original teaching statement','../natural-order/about-terry.html'),source('Public V.A. foundation','../foundation.html')],
+});
+
+// A public description of a separate native system, carefully scoped to
+// documented local capability. This is not an index of Frankie's private
+// memories, protected mathematical work, or operator build records.
+export const ABOUT_FRANKIE = Object.freeze({
+  id:'about-frankie', number:'00', title:'About Frankie', kicker:'A separate native companion, not a public chat service',
+  summary:'Frankie is a separate native software companion developed alongside Terry Snyder’s V.A. work, not Terry himself and not this public Teacher. Its locally examined, bounded functions include typed teaching conversations, session memory, source-linked reasoning and proof-path work. Those are engineering capabilities within recorded test limits, not evidence of unrestricted comprehension, autonomy, personhood or universal verification. Frankie is not currently connected to the public Teacher: visitors are using this offline, source-linked learning guide. Her protected foundations, private memories and operator records remain outside this public edition.',
+  connection:'Are you curious about Frankie’s purpose, the distinction between her and this Teacher, or which capabilities have actually been tested?',
+  question:'Would you like to explore Frankie’s public role, examine Terry’s teaching principles, or ask how the separate private review path works?',
+  grade:'PUBLIC PROFILE',
+  sources:[source('About Frankie — public scope and boundaries','../natural-order/about-frankie.html'),source('Terry’s original message to Frankie','../natural-order/about-terry.html'),source('How to examine public claims','../proofs/EXAMINATION-STANDARD.md')],
+});
+
+// Terry's second first-person public charter. It describes a human service
+// goal, not a claim that every proposed truth/value judgment is established.
+export const SHARED_PURPOSE = Object.freeze({
+  id:'shared-purpose', number:'00', title:'Frankie & Teacher — Shared Purpose', kicker:'The knowledge belongs to the person',
+  summary:'Terry Snyder’s shared mission for Frankie and the Natural Order Teacher is to give every human equal opportunity to understand what is true, what matters, and what has value, so they can make their own informed choices. The service is to listen, examine evidence, resolve what is supported, contradicted or unknown, explain plainly, empower the person, and respect freedom. The knowledge belongs to the person; the choice remains theirs. This is Terry’s ethical purpose statement, not a claim that every question is solved or every value judgment has already been independently verified.',
+  connection:'What question or decision would you like to understand more clearly, without having the Teacher decide for you?',
+  question:'What public evidence would help you make your own informed choice, and what is still unknown?',
+  grade:'AUTHOR STATEMENT',
+  sources:[source('Shared Purpose — Terry’s original charter','../natural-order/shared-purpose.html'),source('About Terry — original teaching message','../natural-order/about-terry.html'),source('What counts as evidence','../proofs/EXAMINATION-STANDARD.md')],
+});
+
+// ERK-X1 is an author-supplied code sketch with placeholder judgments, not a
+// native ethical authorization service. Teach its principles and limitations.
+export const ETHICAL_REASONING = Object.freeze({
+  id:'ethical-reasoning', number:'00', title:'Ethical Reasoning — ERK-X1', kicker:'Questions before judgment',
+  summary:'Terry Snyder’s ERK-X1 source sketch names six ethical principles: honesty, non-harm, fairness, consent, dignity, and transparency. Its current judgment function is marked as placeholder logic and returns favorable examples without examining the situation; some principles are not evaluated at all. Therefore it cannot establish non-harm, consent, ethical approval, or a safe real-world decision. The public Teacher uses the principles as questions for examination, including the affected person’s autonomy and evidence, without treating a synthetic pass as proof or authorizing action.',
+  connection:'In your example, who is affected, who can consent, what could cause harm, and what evidence is missing?',
+  question:'Which observed fact, independent challenge, or affected person’s correction could change this ethical assessment?',
+  grade:'AUTHOR-SUPPLIED PROTOTYPE',
+  sources:[source('Ethical Reasoning — public principles and limits','../natural-order/ethical-reasoning.html'),source('Shared Purpose — human freedom and responsibility','../natural-order/shared-purpose.html'),source('Public examination standard','../proofs/EXAMINATION-STANDARD.md')],
 });
 
 export const TOPICS = Object.freeze([

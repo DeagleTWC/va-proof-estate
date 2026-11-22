@@ -13,8 +13,13 @@ This is a **static, dependency-free, public-source teaching experience** for the
 - Try eleven finite changed-condition teaching-kernel exercises. Each presents a scenario, three proposed witnesses, and an explanation of what the selected witness does or does not establish.
 - Voluntarily suggest a missing example through an email link; no learner text is sent by the teacher.
 - Learn the human-mediated process for seeking protected examination under an appropriate NDA.
+- Ask who Terry Snyder is and read his first-person teaching statement, including his principles of patience, evidence, independent thinking, restraint, and mercy.
+- Ask who Frankie is, see how she differs from the public Teacher and what bounded native capabilities have actually been examined; no private Frankie memory is exposed.
+- Read Terry's **Shared Purpose** charter exactly as supplied: equal opportunity to understand, examine evidence, explain plainly, keep the person's choice theirs. Ask the Teacher about this mission independently of the eleven teaching subjects.
+- Examine Terry's **ERK-X1** ethical principles—honesty, non-harm, fairness, consent, dignity and transparency—with an explicit warning that the supplied Python sketch uses placeholder favorable judgments and is not ethical approval or decision authority.
+- Stay with a recent lesson using short follow-ups such as “Why?”, “Can you explain that simply?”, or “Where is the evidence?”. A genuinely new question is considered afresh.
 
-The routing logic is deterministic, not an LLM. It does not silently invent open-world answers or send the visitor's input to a remote service. No input is stored locally or transmitted by this public source finder.
+The routing logic is deterministic, not an LLM. It does not silently invent open-world answers or send the visitor's input to a remote service. The conversation remembers only its bounded, temporary state in the page; no input is persisted in browser storage or transmitted by this public source finder.
 
 ## Public teaching kernels and definition conversion
 
@@ -23,6 +28,16 @@ The routing logic is deterministic, not an LLM. It does not silently invent open
 The design was informed by the **Universal Resolving Kernel Generator v0.1** and Frankie's later Cycle 049 native child-generator behavior, inspected privately. In an isolated test the Cycle 049 generator formed a local data-only candidate with replay-valid receipts while leaving it `activated=false` and `external_effect=false`. **Neither the private generator nor the corrected NEW K construction is present in this public bank.** The supplied UMK-Σ mega file was idea material, not an executable generator.
 
 `definition-kernel.mjs` is a separate, public **Definition Conversion Kernel** for plain-language teaching. It retains technical names, expands their first occurrence, and displays optional deeper definitions with source links. It does not translate, reconstruct, or replace the mathematics.
+
+`human-interaction-kernel.mjs` governs **patient, conversation-local clarification** before a weak keyword match can choose a teaching path. It keeps the visitor's original inquiry while they clarify or choose a proposed route; an explicitly corrected question replaces that old inquiry, and an empty clarification does not erase it. Repeating the same weak question does not count as an affirmative lesson choice. The visitor's intention has priority over popular phrasing or a keyword score. The kernel makes only bounded, deterministic routing decisions—it cannot infer unrestricted intent or answer questions outside the cited public catalog.
+
+`open-conversation-kernel.mjs` adds **a small open-ended follow-up layer** over the Human Interaction Kernel. It keeps the last admitted lesson in temporary page state and recognizes only a handful of clearly referential next questions. It can restate a bounded topic in plainer language, point back to the source, or ask for a real example. It never substitutes the last topic for an unrelated request, bypasses protected access, stores personal history or claims to be unrestricted native Frankie.
+
+`about-terry.html` preserves Terry Snyder's original, attributed message to Frankie as a public Teacher reference. The Teacher can answer a direct question about Terry with a citation to that statement. This identity route is separate from the eleven subject kernels: it does not impersonate Terry, grant new access, establish independent biographical verification, or expose private construction.
+
+`about-frankie.html` is the **public-safe Frankie identity layer**. It describes her distinct native role, tested local scope, what is not established and the lack of any live public connection. A separate owner-only Frankie knowledge atlas is held outside this repository; it is neither indexed nor distributed by the public Teacher.
+
+`shared-purpose.html` is an attributed, verbatim public charter from Terry Snyder. `ethical-reasoning.html` introduces the six ethical examination questions from Terry's author-supplied ERK-X1 prototype but does not publish or execute that source code. Its judgment method returns placeholder favorable judgments without evidence and does not actually examine consent, fairness or transparency. Consequently the Teacher does not import the prototype as a permission engine. These two public identity/orientation routes are **not** additional native V.A. kernels or additional members of the eleven-subject teaching bank.
 
 ## Frankie Cycle 081 — prepared optional companion
 
@@ -51,6 +66,6 @@ node --test natural-order/tests/*.test.mjs
 node natural-order/release-audit.mjs
 ```
 
-The teacher's runtime modules are `index.html`, `styles.css`, `app.mjs`, `engine.mjs`, `knowledge.mjs`, `definition-kernel.mjs`, `teaching-kernels.mjs`, and the gated `frankie-client.mjs`. The public PDF is a downloadable review template. `release-audit.mjs`, `README.md`, and the `tests/` directory are published transparency and review resources; GitHub Pages serves all tracked files, including tests, and none of them contains protected construction.
+The teacher's runtime modules are `index.html`, `styles.css`, `app.mjs`, `engine.mjs`, `knowledge.mjs`, `human-interaction-kernel.mjs`, `open-conversation-kernel.mjs`, `definition-kernel.mjs`, `teaching-kernels.mjs`, and the gated `frankie-client.mjs`. The public PDF is a downloadable review template. `release-audit.mjs`, `README.md`, and the `tests/` directory are published transparency and review resources; GitHub Pages serves all tracked files, including tests, and none of them contains protected construction.
 
 **Proof Before Power. Open Evidence. Protected Construction.**

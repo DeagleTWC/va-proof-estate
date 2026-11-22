@@ -1,8 +1,9 @@
-import {TOPICS} from './knowledge.mjs?v=20261122-natural-order-15';
-import {teach,publicHref} from './engine.mjs?v=20261122-natural-order-15';
-import {initFrankie,FRANKIE_GATEWAY_URL} from './frankie-client.mjs?v=20261122-natural-order-15';
-import {kernelForTopic,assessTeachingKernel,nextTeachingKernel} from './teaching-kernels.mjs?v=20261122-natural-order-15';
-import {definitionsForLesson,convertTermDefinitions} from './definition-kernel.mjs?v=20261122-natural-order-15';
+import {TOPICS} from './knowledge.mjs?v=20261122-natural-order-20';
+import {teach,publicHref} from './engine.mjs?v=20261122-natural-order-20';
+import {createOpenConversationKernel} from './open-conversation-kernel.mjs?v=20261122-natural-order-20';
+import {initFrankie,FRANKIE_GATEWAY_URL} from './frankie-client.mjs?v=20261122-natural-order-20';
+import {kernelForTopic,assessTeachingKernel,nextTeachingKernel} from './teaching-kernels.mjs?v=20261122-natural-order-20';
+import {definitionsForLesson,convertTermDefinitions} from './definition-kernel.mjs?v=20261122-natural-order-20';
 
 const byId = id => document.getElementById(id);
 const form=byId('learning-form');
@@ -14,9 +15,9 @@ const map=byId('stage-map');
 const reflection=byId('reflect-form');
 const replay=byId('replay-question');
 const stage=byId('lesson-stage');
+const interaction=createOpenConversationKernel({resolve:teach,topics:TOPICS});
 let currentTopic=null;
 let currentInquiryQuestion='';
-let mapInquiryQuestion='';
 let currentKernel=null;
 const reducedMotion=()=>window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -53,17 +54,19 @@ function sourceList(sources) {
 function showMapOptions(result) {
   const options=byId('map-options');
   options.replaceChildren();
-  const originalQuestion=mapInquiryQuestion;
+  const original=byId('map-your-question');
+  original.textContent=result.originalQuestion ? `You asked: ${result.originalQuestion}` : '';
+  original.hidden=!result.originalQuestion;
   const choices=Array.isArray(result.options) ? result.options.map(id=>TOPICS.find(topic=>topic.id===id)).filter(Boolean) : [];
   byId('map-explanation').textContent=result.introduction || (choices.length
-    ? 'Your question connects to more than one public subject. Choose which one you want to examine first.'
-    : 'The public catalog has no direct answer for those words. Pick a subject below, or narrow your question. We will not invent a result.');
+    ? 'I want to understand which relationship you mean. These are possible starting points, not an answer chosen for you.'
+    : 'I want to understand your question before choosing a lesson. Could you tell me a little more?');
   for (const topic of choices) {
     const button=document.createElement('button');
     button.type='button';
     button.className='map-choice';
     button.textContent=topic.title;
-    button.addEventListener('click',()=>startTopic(topic.id,originalQuestion));
+    button.addEventListener('click',()=>present(interaction.choose(topic.id)));
     options.append(button);
   }
 }
@@ -129,16 +132,16 @@ function showTermDefinitions(topic,connection,question){
   panel.hidden=definitions.length===0;
 }
 
-function present(result,{scroll=true,originQuestion=''}={}) {
+function present(result,{scroll=true}={}) {
   currentTopic=null;
   currentInquiryQuestion='';
-  mapInquiryQuestion=result.kind==='map'?originQuestion:'';
   switch(result.kind){
     case 'lesson': {
       const topic=result.topic;
       currentTopic=topic;
-      currentInquiryQuestion=result.bridge?.question || topic.question;
-      const connection=result.bridge?.connection || topic.connection;
+      currentInquiryQuestion=result.conversation?.question || result.bridge?.question || topic.question;
+      const connection=result.conversation?.connection || result.bridge?.connection || topic.connection;
+      const summary=result.conversation?.summary || topic.summary;
       byId('lesson-kicker').textContent=`PUBLIC PATH / ${topic.number} · ${topic.kicker}`;
       byId('lesson-grade').textContent=topic.grade;
       byId('lesson-title').textContent=topic.title;
@@ -150,7 +153,7 @@ function present(result,{scroll=true,originQuestion=''}={}) {
         termLead.textContent=`${titleTerms[0].term} — ${titleTerms[0].short}.`;
         explained.add(titleTerms[0].term);
       }
-      byId('lesson-summary').textContent=convertTermDefinitions(topic.summary,{explained});
+      byId('lesson-summary').textContent=convertTermDefinitions(summary,{explained});
       byId('lesson-connection').textContent=convertTermDefinitions(connection,{explained});
       byId('lesson-question').textContent=convertTermDefinitions(currentInquiryQuestion,{explained});
       showTermDefinitions(topic,connection,currentInquiryQuestion);
@@ -172,7 +175,7 @@ function present(result,{scroll=true,originQuestion=''}={}) {
 }
 
 function startTopic(topicId,fieldQuestion='',{focusKernel=false}={}) {
-  present(teach(fieldQuestion,topicId),{scroll:!focusKernel});
+  present(interaction.startTopic(topicId,fieldQuestion),{scroll:!focusKernel});
   if(focusKernel&&currentKernel){
     const panel=byId('kernel-panel');
     panel.scrollIntoView({behavior:reducedMotion()?'auto':'smooth',block:'start'});
@@ -190,7 +193,7 @@ byId('kernel-next').addEventListener('click',()=>{
 form.addEventListener('submit',event=>{
   event.preventDefault();
   const submittedQuestion=question.value;
-  present(teach(submittedQuestion),{originQuestion:submittedQuestion});
+  present(interaction.ask(submittedQuestion));
 });
 // Fail closed: with scripts disabled or a module error the button is disabled,
 // and the textarea has no name, so it cannot leak a question via a GET URL.

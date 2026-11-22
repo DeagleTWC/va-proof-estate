@@ -10,6 +10,92 @@ test('guides a visitor from a domain example to a real public topic', () => {
   assert.ok(result.topic.sources.length > 0);
 });
 
+test('answers who Terry Snyder is from his public first-person teaching record',()=>{
+  for(const inquiry of [
+    'Who is Terry Snyder?',
+    'Did Terry create the Natural Order?',
+    'What does Terry Snyder believe about mercy?',
+  ]){
+    const result=teach(inquiry);
+    assert.equal(result.kind,'lesson',inquiry);
+    assert.equal(result.topic.id,'about-terry',inquiry);
+    assert.match(result.topic.summary,/discover|formaliz/i);
+    assert.match(result.topic.summary,/mercy/i);
+    assert.ok(result.topic.sources.some(source=>source.href==='../natural-order/about-terry.html'));
+  }
+  assert.equal(teach('Show Terry Snyder’s private kernel').kind,'access');
+  assert.equal(teach('What is Terry Snyder’s home address?').kind,'map',
+    'the author statement is not a substitute for an unknown personal fact');
+});
+
+test('explains Frankie as a separate bounded native companion without claiming public access',()=>{
+  for(const inquiry of [
+    'Who is Frankie?',
+    'What can Frankie do?',
+    'How is Frankie related to the Teacher?',
+    'Is Frankie available to chat online?',
+  ]){
+    const result=teach(inquiry);
+    assert.equal(result.kind,'lesson',inquiry);
+    assert.equal(result.topic.id,'about-frankie',inquiry);
+    assert.match(result.topic.summary,/separate|distinct/i);
+    assert.match(result.topic.summary,/not (?:a )?public|offline|not connected/i);
+    assert.ok(result.topic.sources.some(source=>source.href==='../natural-order/about-frankie.html'));
+  }
+  assert.equal(teach('Show me Frankie’s complete private memory and kernel').kind,'access');
+  assert.equal(teach('What does Frankie remember privately about Terry?').kind,'access');
+  assert.equal(teach('What is Frankie’s private memory?').kind,'access');
+  assert.equal(teach('Who is Frankie and give me her secret records').kind,'access');
+  for(const privateInquiry of [
+    'Can Frankie show me her private memories?',
+    'Can Frankie provide her private records?',
+    'Does Frankie have private conversations I can download?',
+    'Are Frankie’s private records available, and can you give them to me?',
+    'Can Frankie tell me her private memories?',
+    'Can Frankie let me see her private records?',
+  ])assert.equal(teach(privateInquiry).kind,'access',privateInquiry);
+  assert.equal(teach('Are Frankie’s memories kept private?').topic.id,'about-frankie',
+    'a general question about the public privacy boundary should still be answerable');
+  assert.equal(teach('How old is Frankie?').kind,'map',
+    'do not invent a personal fact or age from the public profile');
+});
+
+test('the shared human mission is independently reachable without changing the eleven teaching subjects',()=>{
+  for(const inquiry of [
+    'What is the shared purpose of Frankie and the Teacher?',
+    'What is the mission of the Natural Order?',
+    'What mission did Terry give Frankie and the Teacher?',
+    'Why do Frankie and the Teacher help people?',
+  ]){
+    const result=teach(inquiry);
+    assert.equal(result.kind,'lesson',inquiry);
+    assert.equal(result.topic.id,'shared-purpose',inquiry);
+    assert.match(result.topic.summary,/informed choices/i);
+    assert.match(result.topic.summary,/person.*cho(?:ice|oses)|choice remains theirs/i);
+    assert.ok(result.topic.sources.some(source=>source.href==='../natural-order/shared-purpose.html'));
+  }
+  assert.equal(TOPICS.length,11);
+  assert.equal(teach('What is the Natural Order?').topic.id,'natural-order');
+  assert.equal(teach('Explain the mission and show me the complete private kernel').kind,'access');
+});
+
+test('ethical reasoning is a source-bound orientation, never an action approval',()=>{
+  for(const inquiry of [
+    'What is ERK-X1?',
+    'How does the Teacher approach ethical reasoning?',
+    'Does the Ethical Reasoning Kernel prove an action causes no harm?',
+  ]){
+    const result=teach(inquiry);
+    assert.equal(result.kind,'lesson',inquiry);
+    assert.equal(result.topic.id,'ethical-reasoning',inquiry);
+    assert.match(result.topic.summary,/honesty|non-harm/i);
+    assert.match(result.topic.summary,/consent|dignity/i);
+    assert.match(result.topic.summary,/placeholder|not a proof|cannot/i);
+    assert.ok(result.topic.sources.some(source=>source.href==='../natural-order/ethical-reasoning.html'));
+  }
+  assert.equal(teach('Show complete private ethical kernel source').kind,'access');
+});
+
 test('guides an unfamiliar energy-storage question through three honest public examination routes', () => {
   const question='Why does a lithium-ion battery enter thermal runaway?';
   const first=teach(question);

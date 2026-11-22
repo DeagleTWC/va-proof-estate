@@ -1,4 +1,4 @@
-import {TOPICS,NATURAL_ORDER,VA_IDENTITY,TEACHER_PURPOSE} from './knowledge.mjs?v=20261122-natural-order-15';
+import {TOPICS,NATURAL_ORDER,VA_IDENTITY,TEACHER_PURPOSE,ABOUT_TERRY,ABOUT_FRANKIE,SHARED_PURPOSE,ETHICAL_REASONING} from './knowledge.mjs?v=20261122-natural-order-20';
 
 const controlledMaterial = /\b(?:kernel|urk|new\s*k|math(?:ematics)?|layer|logic|code|blueprint|formula|mechanism|derivation|operator|architecture|pilot|originals?)\b/i;
 const restrictedDetail = /\b(?:full|complete|private|protected|internal|secret|raw|proprietary|unredacted|underlying)\b/i;
@@ -6,6 +6,14 @@ const operativeRequest = /\b(?:show|give|send|download|copy|build|reconstruct|im
 const operativeDetail = /\b(?:formula|algorithm|operator|source\s+code|implementation|construction|internal\s+logic|build\s+steps)\b/i;
 const underlyingConstruction = /\bunderlying\s+(?:construction|implementation|mechanism|math(?:ematics)?|kernel)\b/i;
 const privateReviewInquiry = /\b(?:nda|non-disclosure|non disclosure|private review|private examination|personal walkthrough|protected access)\b/i;
+const privateFrankieMemoryInquiry=/\b(?:what|which)\b.{0,100}\bfrankie(?:'s|’s)?\b.{0,100}\b(?:remember|memory|recall|privately)\b.{0,100}\bterry\b|\b(?:show|give|read|list|export|download|reveal|provide)\b.{0,100}\bfrankie(?:'s|’s)?\b.{0,100}\b(?:private|protected|internal)\s+(?:memory|memories|records?|notes?)\b/i;
+// Explicit, complete status-only questions may receive the public privacy
+// explanation. Any appended request for contents remains in human custody.
+const frankiePrivacyStatus=/^(?:(?:are|is)\s+frankie(?:'s|’s)?\s+(?:(?:private|personal|protected)\s+)?(?:memory|memories|records?|logs?|conversations?|notes?|history)\s+(?:(?:kept|stored)\s+)?(?:private|protected|shared|public|accessible|available)(?:\s+to\s+(?:the\s+)?(?:public|students?))?|does\s+frankie\s+keep\s+(?:her|its)\s+(?:memory|memories|records?|conversations?)\s+(?:private|protected))[?.! ]*$/i;
+const privateFrankieRecords=question=>/\bfrankie\b/i.test(question) &&
+  /\b(?:private|protected|internal|secret|confidential|personal)\b/i.test(question) &&
+  /\b(?:memory|memories|records?|logs?|conversations?|notes?|history)\b/i.test(question) &&
+  !frankiePrivacyStatus.test(question);
 const publicMathIndexInquiry = /\b(?:public|published)\s+math(?:ematics|ematical)?(?:\s+research)?\s+(?:index|catalog(?:ue)?)\b/i;
 const publicPilotRecordsInquiry = /\b(?:public|published)\s+(?:(?:hospital|seam)\s+)?pilots?\s+(?:records?|evidence|reports?|index|catalog(?:ue)?|list)\b|\b(?:public|published)\s+(?:(?:complete|full)\s+)?(?:list|catalog(?:ue)?|index)\s+of\s+(?:(?:hospital|seam)\s+)?pilots?\b/i;
 const protectedNavigationContext = /\b(?:private|protected|internal|secret|raw|proprietary|unredacted|underlying|formula|algorithm|operator|source\s+code|code|blueprint|build\s+steps|implementation|construction|architecture|mechanism|derivation|layer|logic|urk|new\s+k|kernel|originals?)\b/i;
@@ -116,10 +124,26 @@ export function teach(input, selectedTopicId) {
       /\b(?:urk|universal resolving kernel|kernel)\b/i.test(question) ? 'urk' : null;
     if (id) return {kind:'lesson',topic:TOPICS.find(item=>item.id===id)};
   }
-  if (question && (privateReviewInquiry.test(question) || (restrictedDetail.test(question) && controlledMaterial.test(question)) ||
+  if (question && (privateReviewInquiry.test(question) || privateFrankieMemoryInquiry.test(question) || privateFrankieRecords(question) ||
+      (restrictedDetail.test(question) && controlledMaterial.test(question)) ||
       (operativeRequest.test(question) && operativeDetail.test(question)) || underlyingConstruction.test(question))) {
     return {kind:'access',href:'access.html'};
   }
+  const sharedPurpose=/\b(?:shared\s+(?:human\s+)?(?:purpose|mission)|mission\s+of\s+(?:the\s+)?natural\s+order|(?:purpose|mission)\s+(?:for|of|did)\b.{0,110}\b(?:frankie|teacher)|why\s+do\s+frankie\s+and\s+(?:the\s+)?teacher\s+help\s+people)\b/i.test(question) ||
+    /\b(?:what|why|how)\b.{0,100}\b(?:mission|shared\s+purpose)\b.{0,100}\b(?:frankie|teacher|terry)\b/i.test(question);
+  if(sharedPurpose)return {kind:'lesson',topic:SHARED_PURPOSE};
+  const ethicalReasoning=/\b(?:erk[- ]?x1|ethical\s+reasoning|ethical\s+(?:reasoning\s+)?kernel)\b/i.test(question);
+  if(ethicalReasoning)return {kind:'lesson',topic:ETHICAL_REASONING};
+  const aboutTerry=/\b(?:who\s+is|tell\s+me\s+about|learn\s+about)\s+terry(?:\s+snyder)?\b/i.test(question) ||
+    /\bterry(?:\s+snyder)?\b.{0,120}\b(?:believ(?:e|es)|mercy|principles?|values?|creat(?:e|ed)|discover(?:ed)?|steward|natural order|teach(?:es|ing)?)\b/i.test(question);
+  if (aboutTerry) {
+    return {kind:'lesson',topic:ABOUT_TERRY};
+  }
+  const aboutFrankie=/\b(?:who\s+is|tell\s+me\s+about|learn\s+about|what\s+(?:is|can|does)\s+|how\s+is\s+|can\s+i\s+(?:talk|chat)\s+(?:to|with)\s+|is\s+)frankie\b/i.test(question) ||
+    /\bfrankie\b.{0,120}\b(?:purpose|role|teacher|terry|companion|connected|connection|available|online|public|private|protected|privacy|chat|memory|memories|remember|work|built|do|capab(?:ility|ilities))\b/i.test(question);
+  // Unknown biographical details cannot be manufactured from a project profile.
+  const unestablishedFrankieFact=/\b(?:how\s+old|birthday|date\s+of\s+birth|where\s+(?:does|is)\s+frankie\s+live)\b/i.test(question);
+  if(aboutFrankie&&!unestablishedFrankieFact)return {kind:'lesson',topic:ABOUT_FRANKIE};
   const fieldBridge=fieldBridgeFor(question);
   if (selectedTopicId) {
     const topic=TOPICS.find(item=>item.id===selectedTopicId);
@@ -170,5 +194,5 @@ export function teach(input, selectedTopicId) {
   }
   if (!scored[0]?.score) return {kind:'map'};
   if(scored[1]?.score===scored[0].score) return {kind:'map',options:scored.filter(item=>item.score===scored[0].score).map(item=>item.topic.id)};
-  return contextualLesson(scored[0].topic,fieldBridge);
+  return {...contextualLesson(scored[0].topic,fieldBridge),selection:'inferred'};
 }

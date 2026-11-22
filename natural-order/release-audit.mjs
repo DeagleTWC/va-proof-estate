@@ -8,10 +8,10 @@ import {TEACHING_KERNELS,auditTeachingKernelBank} from './teaching-kernels.mjs';
 // Every file in a public GitHub Pages repository is downloadable, including
 // developer tests. A fixed manifest is therefore the release boundary.
 export const PUBLIC_FILES=Object.freeze([
-  'README.md','VA_Universal_Bounded_Review_MNDA.pdf','access.html','app.mjs','engine.mjs','index.html','repair-evidence.html',
-  'knowledge.mjs','definition-kernel.mjs','teaching-kernels.mjs','frankie-client.mjs','release-audit.mjs','styles.css',
+  'README.md','VA_Universal_Bounded_Review_MNDA.pdf','access.html','about-terry.html','about-frankie.html','shared-purpose.html','ethical-reasoning.html','app.mjs','engine.mjs','index.html','repair-evidence.html',
+  'knowledge.mjs','definition-kernel.mjs','teaching-kernels.mjs','human-interaction-kernel.mjs','open-conversation-kernel.mjs','frankie-client.mjs','release-audit.mjs','styles.css',
   'tests/app-interaction.test.mjs','tests/definition-kernel.test.mjs','tests/teaching-kernels.test.mjs',
-  'tests/engine.test.mjs','tests/frankie-client.test.mjs','tests/pages.test.mjs','tests/release.test.mjs',
+  'tests/engine.test.mjs','tests/human-interaction-kernel.test.mjs','tests/open-conversation-kernel.test.mjs','tests/frankie-client.test.mjs','tests/pages.test.mjs','tests/release.test.mjs',
 ]);
 const manifest=new Set(PUBLIC_FILES);
 const allowedExtensions=new Set(['.html','.css','.mjs','.md']);
