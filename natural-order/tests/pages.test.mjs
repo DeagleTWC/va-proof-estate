@@ -150,13 +150,15 @@ test('the live module graph shares a release version so browsers do not keep an 
   const html=await file('index.html');
   const app=await file('app.mjs');
   const engine=await file('engine.mjs');
+  const answerDesk=await file('visitor-answer-desk.mjs');
   const entry=html.match(/<script type="module" src="app\.mjs\?v=([a-z0-9-]+)"/i);
   assert.ok(entry, 'the public entry module needs a release-specific URL');
   const conversation=await file('open-conversation-kernel.mjs');
   const imports=[...app.matchAll(/from '\.\/(knowledge|engine|frankie-client|open-conversation-kernel)\.mjs(?:\?v=([^']+))?'/g),
     ...conversation.matchAll(/from '\.\/(human-interaction-kernel|cognitive-reasoning-kernel)\.mjs(?:\?v=([^']+))?'/g),
-    ...engine.matchAll(/from '\.\/(knowledge|engine)\.mjs(?:\?v=([^']+))?'/g)];
-  assert.equal(imports.length,7,'all seven internal module dependencies are covered');
+    ...engine.matchAll(/from '\.\/(knowledge|visitor-answer-desk)\.mjs(?:\?v=([^']+))?'/g),
+    ...answerDesk.matchAll(/from '\.\/(knowledge)\.mjs(?:\?v=([^']+))?'/g)];
+  assert.equal(imports.length,9,'all nine public routing module dependencies are covered');
   for(const match of imports) assert.equal(match[2],entry[1],`${match[1]}.mjs must use the same release URL`);
 });
 
@@ -212,5 +214,71 @@ test('an ambiguous question gives selectable, correctly sourced public lessons',
   } finally {
     if(priorDocument===undefined)delete globalThis.document; else globalThis.document=priorDocument;
     if(priorWindow===undefined)delete globalThis.window; else globalThis.window=priorWindow;
+  }
+});
+
+test('specific evidence sources and a voluntary mathematics inquiry are displayed without automatic sending',async()=>{
+  const html=await file('index.html');
+  assert.match(html,/id="math-inquiry-link"[^>]*hidden/);
+  assert.match(html,/id="math-inquiry-help"[^>]*hidden/);
+  const nodes=new Map();
+  class TestElement {
+    constructor(){this.children=[];this.listeners={};this.textContent='';this.hidden=false;this.href='';}
+    append(...items){this.children.push(...items);}
+    replaceChildren(...items){this.children=[...items];}
+    addEventListener(type,handler){this.listeners[type]=handler;}
+    setAttribute(){}
+    scrollIntoView(){}
+    focus(){}
+  }
+  const priorDocument=globalThis.document;
+  const priorWindow=globalThis.window;
+  globalThis.document={
+    getElementById(id){if(!nodes.has(id))nodes.set(id,new TestElement());return nodes.get(id);},
+    querySelectorAll(){return [];},
+    createElement(){return new TestElement();},
+  };
+  globalThis.window={matchMedia:()=>({matches:true})};
+  try {
+    await import('../app.mjs?visitor-desk-ui-test');
+    const submit=value=>{
+      nodes.get('learner-question').value=value;
+      nodes.get('learning-form').listeners.submit({preventDefault(){}});
+    };
+    submit('How can I verify your hospital pilot?');
+    assert.equal(nodes.get('lesson-title').textContent,'Pilots & Original Evidence');
+    let links=nodes.get('source-list').children.map(li=>li.children[0].href);
+    assert.ok(links.includes('../proofs/HISTORICAL-PILOT-CARRIER-CROSSWALK.md'));
+    assert.equal(nodes.get('math-inquiry-link').hidden,true);
+
+    const mathQuestion='Where is the answer to the Goldbach conjecture?';
+    submit(mathQuestion);
+    assert.match(nodes.get('lesson-title').textContent,/Mathematics/);
+    links=nodes.get('source-list').children.map(li=>li.children[0].href);
+    assert.ok(links.includes('../research/mathematics/PUBLICATION-STATUS.md'));
+    assert.equal(nodes.get('math-inquiry-link').hidden,false);
+    assert.equal(nodes.get('math-inquiry-help').hidden,false);
+    assert.match(nodes.get('math-inquiry-link').href,/^mailto:canarybird0618@gmail\.com\?/);
+    assert.ok(nodes.get('math-inquiry-link').href.includes(encodeURIComponent(mathQuestion)));
+    assert.doesNotMatch(await file('app.mjs'),/\bfetch\s*\(|sendBeacon\s*\(/);
+    submit('Where is the evidence?');
+    assert.equal(nodes.get('math-inquiry-link').hidden,false);
+    assert.ok(nodes.get('math-inquiry-link').href.includes(encodeURIComponent(mathQuestion)),
+      'a short follow-up must not erase the original mathematics inquiry from the draft');
+    submit("I'm confused");
+    assert.equal(nodes.get('math-inquiry-link').hidden,false);
+    assert.ok(nodes.get('math-inquiry-link').href.includes(encodeURIComponent(mathQuestion)));
+    submit('Explain that simply');
+    assert.ok(nodes.get('math-inquiry-link').href.includes(encodeURIComponent(mathQuestion)));
+
+    submit('Who is Frankie?');
+    assert.equal(nodes.get('math-inquiry-link').hidden,true);
+    assert.equal(nodes.get('math-inquiry-link').href,'');
+    submit('Show the private V.A. kernel formula');
+    assert.equal(nodes.get('stage-access').hidden,false);
+    assert.equal(nodes.get('math-inquiry-link').hidden,true);
+  } finally {
+    if(priorDocument===undefined)delete globalThis.document;else globalThis.document=priorDocument;
+    if(priorWindow===undefined)delete globalThis.window;else globalThis.window=priorWindow;
   }
 });

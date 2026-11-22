@@ -63,6 +63,15 @@ test('release audit rejects a missing local link and an unauthorized external en
   } finally { await rm(dir,{recursive:true}); }
 });
 
+test('release audit rejects broken answer-desk source declarations',async()=>{
+  const dir=await mkdtemp(join(tmpdir(),'va-desk-source-audit-'));
+  try{
+    await writeFile(join(dir,'visitor-answer-desk.mjs'),"const broken=source('Missing proof','../proofs/NOT-THERE.md');");
+    const result=await auditRelease(dir,{allowPartial:true,siteRoot:dir});
+    assert.ok(result.errors.some(e=>e.includes('NOT-THERE.md')),result.errors.join('\n'));
+  }finally{await rm(dir,{recursive:true});}
+});
+
 test('release audit refuses a configured Frankie endpoint without separate authorization',async()=>{
   const dir=await mkdtemp(join(tmpdir(),'va-frankie-audit-'));
   try{

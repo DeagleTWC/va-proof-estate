@@ -237,3 +237,32 @@ test('benign field examples can still receive a requested evidence joke',()=>{
   assert.equal(response.topic.id,'physical');
   assert.match(response.conversation.connection,/not a measurement/i);
 });
+
+test('a new mathematical question outranks prior context and retains its evidence after follow-up',()=>{
+  const conversation=create();
+  conversation.ask('What is the Natural Order?');
+  const answer=conversation.ask('Has the Natural Order solved P versus NP?');
+  assert.equal(answer.topic.id,'math-public');
+  assert.match(answer.conversation.summary,/unrestricted.*not established/i);
+  const sources=answer.sources.map(item=>item.href);
+  const follow=conversation.ask('Where is the evidence?');
+  assert.equal(follow.topic.id,'math-public');
+  assert.deepEqual(follow.sources.map(item=>item.href),sources);
+  assert.equal(follow.originalQuestion,'Has the Natural Order solved P versus NP?');
+  assert.match(follow.conversation.summary,/unrestricted.*not established/i);
+  assert.match(follow.conversation.question,/hypothes|proof|source|witness|scope/i);
+  const patience=conversation.ask("I'm confused");
+  assert.equal(patience.topic.id,'math-public');
+  assert.equal(patience.originalQuestion,'Has the Natural Order solved P versus NP?');
+  assert.ok(patience.sources.some(item=>item.href==='../p-versus-np.html'));
+  assert.match(patience.conversation.summary,/unrestricted.*not established/i);
+});
+
+test('a pilot source answer keeps its specific carrier path on a short follow-up',()=>{
+  const conversation=create();
+  const answer=conversation.ask('How can I verify your hospital pilot?');
+  assert.equal(answer.kind,'lesson');
+  const follow=conversation.ask('Explain that simply');
+  assert.equal(follow.topic.id,'pilot');
+  assert.ok(follow.sources.some(source=>source.href==='../proofs/HISTORICAL-PILOT-CARRIER-CROSSWALK.md'));
+});

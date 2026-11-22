@@ -8,6 +8,9 @@ This is a **static, dependency-free, public-source teaching experience** for the
 - Bring an example from energy storage, health care, water engineering, transportation, automation, or finance; choose among bounded examination paths that keep the original question in view.
 - Read an accurate, brief public explanation with an evidence-class label.
 - Follow direct links to the published source material.
+- Ask how native consequence custody differs from post-event compliance and why Terry describes custody as the proposed underwritable system. This is an engineering claim to examine, not an insurer approval or a real-world insurance guarantee.
+- Ask for independently reproducible proof or pilot records, then inspect the original public pilot release, examination standard, claim-to-carrier register and historical source crosswalk. An index or link is not itself independent physical reproduction.
+- Ask about named mathematical research (including P versus NP, Navier–Stokes, Yang–Mills, the Riemann Hypothesis or Egyptian fractions) to see the specific published work and its bounded status. For an unindexed question, follow the mathematics register and optionally open a prefilled email to ask where an answer or ongoing work can be found. Nothing is sent unless the visitor chooses to send it; no unrestricted solution is asserted.
 - See a short everyday-language definition when V.A. terminology first appears in a lesson, and open deeper source-linked definitions.
 - Examine the relationship in both directions, then vary one test condition.
 - Try eleven finite changed-condition teaching-kernel exercises. Each presents a scenario, three proposed witnesses, and an explanation of what the selected witness does or does not establish.
@@ -34,6 +37,8 @@ The design was informed by the **Universal Resolving Kernel Generator v0.1** and
 `human-interaction-kernel.mjs` governs **patient, conversation-local clarification** before a weak keyword match can choose a teaching path. It keeps the visitor's original inquiry while they clarify or choose a proposed route; an explicitly corrected question replaces that old inquiry, and an empty clarification does not erase it. Repeating the same weak question does not count as an affirmative lesson choice. The visitor's intention has priority over popular phrasing or a keyword score. The kernel makes only bounded, deterministic routing decisions—it cannot infer unrestricted intent or answer questions outside the cited public catalog.
 
 `open-conversation-kernel.mjs` adds **a small open-ended follow-up layer** over the Human Interaction Kernel. It keeps the last admitted lesson in temporary page state and recognizes only a handful of clearly referential next questions. It can restate a bounded topic in plainer language, point back to the source, or ask for a real example. It never substitutes the last topic for an unrelated request, bypasses protected access, stores personal history or claims to be unrestricted native Frankie.
+
+`visitor-answer-desk.mjs` is a separate **public evidence and mathematics navigation desk**, not a twelfth native kernel or a general theorem solver. After the access gate, it directly answers explicit compliance-versus-custody, pilot, independent-proof and mathematical research inquiries using verified public source routes. It keeps the exact source list across a short continuation. The optional mathematics email inquiry is a client-side `mailto:` draft made only by visitor click, with the original question quoted and no automatic send. Missing or unlinked public mathematics does not imply that no answer or active work exists elsewhere.
 
 `about-terry.html` preserves Terry Snyder's original, attributed message to Frankie as a public Teacher reference. The Teacher can answer a direct question about Terry with a citation to that statement. This identity route is separate from the eleven subject kernels: it does not impersonate Terry, grant new access, establish independent biographical verification, or expose private construction.
 
@@ -68,6 +73,6 @@ node --test natural-order/tests/*.test.mjs
 node natural-order/release-audit.mjs
 ```
 
-The teacher's runtime modules are `index.html`, `styles.css`, `app.mjs`, `engine.mjs`, `knowledge.mjs`, `human-interaction-kernel.mjs`, `open-conversation-kernel.mjs`, `definition-kernel.mjs`, `teaching-kernels.mjs`, and the gated `frankie-client.mjs`. The public PDF is a downloadable review template. `release-audit.mjs`, `README.md`, and the `tests/` directory are published transparency and review resources; GitHub Pages serves all tracked files, including tests, and none of them contains protected construction.
+The teacher's runtime modules are `index.html`, `styles.css`, `app.mjs`, `engine.mjs`, `knowledge.mjs`, `visitor-answer-desk.mjs`, `human-interaction-kernel.mjs`, `open-conversation-kernel.mjs`, `definition-kernel.mjs`, `teaching-kernels.mjs`, and the gated `frankie-client.mjs`. The public PDF is a downloadable review template. `release-audit.mjs`, `README.md`, and the `tests/` directory are published transparency and review resources; GitHub Pages serves all tracked files, including tests, and none of them contains protected construction.
 
 **Proof Before Power. Open Evidence. Protected Construction.**

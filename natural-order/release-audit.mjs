@@ -9,9 +9,9 @@ import {TEACHING_KERNELS,auditTeachingKernelBank} from './teaching-kernels.mjs';
 // developer tests. A fixed manifest is therefore the release boundary.
 export const PUBLIC_FILES=Object.freeze([
   'README.md','VA_Universal_Bounded_Review_MNDA.pdf','access.html','about-terry.html','about-frankie.html','shared-purpose.html','ethical-reasoning.html','app.mjs','engine.mjs','index.html','repair-evidence.html',
-  'knowledge.mjs','definition-kernel.mjs','teaching-kernels.mjs','human-interaction-kernel.mjs','open-conversation-kernel.mjs','cognitive-reasoning-kernel.mjs','frankie-client.mjs','release-audit.mjs','styles.css',
+  'knowledge.mjs','definition-kernel.mjs','teaching-kernels.mjs','human-interaction-kernel.mjs','open-conversation-kernel.mjs','cognitive-reasoning-kernel.mjs','visitor-answer-desk.mjs','frankie-client.mjs','release-audit.mjs','styles.css',
   'tests/app-interaction.test.mjs','tests/definition-kernel.test.mjs','tests/teaching-kernels.test.mjs',
-  'tests/engine.test.mjs','tests/human-interaction-kernel.test.mjs','tests/open-conversation-kernel.test.mjs','tests/cognitive-reasoning-kernel.test.mjs','tests/frankie-client.test.mjs','tests/pages.test.mjs','tests/release.test.mjs',
+  'tests/engine.test.mjs','tests/human-interaction-kernel.test.mjs','tests/open-conversation-kernel.test.mjs','tests/cognitive-reasoning-kernel.test.mjs','tests/visitor-answer-desk.test.mjs','tests/frankie-client.test.mjs','tests/pages.test.mjs','tests/release.test.mjs',
 ]);
 const manifest=new Set(PUBLIC_FILES);
 const allowedExtensions=new Set(['.html','.css','.mjs','.md']);
@@ -99,7 +99,9 @@ export async function auditRelease(root,{allowPartial=false,siteRoot}={}) {
       if(networkCalls.test(data))errors.push(`${rel}: unapproved runtime network endpoint`);
       for(const url of data.match(urls)||[])await checkLink(url.replace(/[),.;]+$/,''),{rel,data});
       if(rel.endsWith('.html'))for(const match of data.matchAll(attributes))await checkLink(match[1],{rel,data});
-      if(rel==='knowledge.mjs')for(const match of data.matchAll(catalogSources))await checkLink(match[1],{rel,data});
+      if(rel==='knowledge.mjs'||rel==='visitor-answer-desk.mjs'){
+        for(const match of data.matchAll(catalogSources))await checkLink(match[1],{rel,data});
+      }
     }
   }
   await inspect(base);

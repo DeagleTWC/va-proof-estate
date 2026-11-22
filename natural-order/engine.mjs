@@ -1,4 +1,5 @@
-import {TOPICS,NATURAL_ORDER,VA_IDENTITY,TEACHER_PURPOSE,ABOUT_TERRY,ABOUT_FRANKIE,SHARED_PURPOSE,ETHICAL_REASONING} from './knowledge.mjs?v=20261122-natural-order-22';
+import {TOPICS,NATURAL_ORDER,VA_IDENTITY,TEACHER_PURPOSE,ABOUT_TERRY,ABOUT_FRANKIE,SHARED_PURPOSE,ETHICAL_REASONING} from './knowledge.mjs?v=20261122-natural-order-23';
+import {publicVisitorAnswer,hasNamedPublicMathematics} from './visitor-answer-desk.mjs?v=20261122-natural-order-23';
 
 const controlledMaterial = /\b(?:kernel|urk|new\s*k|math(?:ematics)?|layer|logic|code|blueprint|formula|mechanism|derivation|operator|architecture|pilot|originals?)\b/i;
 const restrictedDetail = /\b(?:full|complete|private|protected|internal|secret|raw|proprietary|unredacted|underlying)\b/i;
@@ -53,7 +54,7 @@ const fieldBridges = [
     question:'Which independent temperature or heat-flow observation would distinguish the proposed relation from a model assumption?',
   },
   {
-    terms:/\b(?:airplane|aircraft|airline|flight|runway|icing|automobile|vehicle|brakes?|collision)\b/i,
+    terms:/\b(?:airplane|aircraft|airline|flight|runway|icing|automobile|vehicles?|brakes?|collision)\b/i,
     domain:'transportation safety', options:['basin','physical','consequence'],
     introduction:'Your transportation example opens questions about constrained movement, physical witnesses, and effect prevention. This teacher does not determine the cause of any accident or certify a vehicle.',
     connection:'In the vehicle or aircraft example, which operating condition defines a permissible movement before a hazardous effect could form?',
@@ -106,8 +107,15 @@ export function publicHref(href) {
 
 export function teach(input, selectedTopicId) {
   const question = String(input ?? '').trim().slice(0,800);
+  // Access requests take precedence even over narrow public-index navigation
+  // exemptions. A mathematical problem name does not release private proof.
+  const protectedNamedMath=hasNamedPublicMathematics(question) && restrictedDetail.test(question) &&
+    /\b(?:proof|solution|formula|derivation|construction|implementation|steps|method)\b/i.test(question);
+  if(question&&(privateReviewInquiry.test(question)||privateFrankieMemoryInquiry.test(question)||
+      privateFrankieRecords(question)||protectedNamedMath))return {kind:'access',href:'access.html'};
   // A request for the published mathematics index is public navigation, not a request for the underlying mathematics.
-  if (question && publicMathIndexInquiry.test(question) && !protectedNavigationContext.test(question)) {
+  if (question && publicMathIndexInquiry.test(question) && !hasNamedPublicMathematics(question) &&
+      !protectedNavigationContext.test(question)) {
     return {kind:'lesson',topic:TOPICS.find(item=>item.id==='new-k')};
   }
   if (question && publicPilotRecordsInquiry.test(question) && !protectedNavigationContext.test(question)) {
@@ -128,6 +136,17 @@ export function teach(input, selectedTopicId) {
       (restrictedDetail.test(question) && controlledMaterial.test(question)) ||
       (operativeRequest.test(question) && operativeDetail.test(question)) || underlyingConstruction.test(question))) {
     return {kind:'access',href:'access.html'};
+  }
+  // Specific public questions deserve their own evidence route. The full
+  // protected-access check above must always run first; a deliberate lesson
+  // selection below remains the visitor's choice.
+  if (!selectedTopicId) {
+    const direct=publicVisitorAnswer(question);
+    // A question grounded in a battery, patient or vehicle is not evidence
+    // about this project unless the visitor explicitly asks about V.A.
+    const visitorField=fieldBridgeFor(question);
+    const projectAnchor=/\b(?:natural order|proof estate|your\s+(?:hospital|seam)\s+pilot|native custody)\b|(?:^|\W)v\.?\s*a\.?(?=$|\W)/i.test(question);
+    if(direct&&(!visitorField||projectAnchor))return direct;
   }
   const sharedPurpose=/\b(?:shared\s+(?:human\s+)?(?:purpose|mission)|mission\s+of\s+(?:the\s+)?natural\s+order|(?:purpose|mission)\s+(?:for|of|did)\b.{0,110}\b(?:frankie|teacher)|why\s+do\s+frankie\s+and\s+(?:the\s+)?teacher\s+help\s+people)\b/i.test(question) ||
     /\b(?:what|why|how)\b.{0,100}\b(?:mission|shared\s+purpose)\b.{0,100}\b(?:frankie|teacher|terry)\b/i.test(question);
@@ -150,6 +169,11 @@ export function teach(input, selectedTopicId) {
     if (topic) return contextualLesson(topic,fieldBridge);
   }
   if (!question) return {kind:'empty'};
+
+  if(/\bpilot\s+(?:lights?|holes?)\b/i.test(question))return {
+    kind:'map',originalQuestion:question,options:[],
+    introduction:'I want to understand the appliance or woodworking question you mean. This public Teacher cannot inspect or certify a real device. Could you tell me which fact or safety concern you want help examining?',
+  };
 
   const words=question.toLowerCase().replace(/[^a-z0-9\s-]/g,' ').replace(/\s+/g,' ').trim();
   if (/\b(?:what (?:is|does)|explain|describe|about|tell me about)\s+(?:(?:the\s+)?(?:v a|va|veritas aegis|shift))\b/.test(words) ||

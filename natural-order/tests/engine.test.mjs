@@ -368,6 +368,83 @@ test('introduces V.A. itself with source-linked, before-power engineering contex
   }
 });
 
+test('directly explains native consequence custody versus compliance and underwriting',()=>{
+  const result=teach('How is V.A. different from compliance?');
+  assert.equal(result.kind,'lesson');
+  assert.equal(result.topic.id,'custody-compliance');
+  assert.match(result.conversation.summary,/before power|native.*consequence/i);
+  assert.match(result.conversation.connection,/underwrit|insur/i);
+  assert.ok(result.sources.some(source=>source.href==='../proofs/EXAMINATION-STANDARD.md'));
+});
+
+test('routes independent proof and hospital pilot checks to their actual evidence carriers',()=>{
+  for(const [question,id,source] of [
+    ['Where is the independently reproducible proof?','proof','../proofs/CLAIM-TO-CARRIER.json'],
+    ['How can I verify your hospital pilot?','pilot','../proofs/HISTORICAL-PILOT-CARRIER-CROSSWALK.md'],
+  ]){
+    const answer=teach(question);
+    assert.equal(answer.kind,'lesson',question);
+    assert.equal(answer.topic.id,id,question);
+    assert.ok(answer.sources.some(item=>item.href===source),question);
+    for(const link of answer.sources)assert.equal(publicHref(link.href),true,link.href);
+  }
+});
+
+test('answers indexed mathematics at its stated scope and invites missing public answers',()=>{
+  const answer=teach('Has the Natural Order solved P versus NP?');
+  assert.equal(answer.kind,'lesson');
+  assert.equal(answer.topic.id,'math-public');
+  assert.match(answer.conversation.summary,/unrestricted.*not established/i);
+  assert.ok(answer.sources.some(item=>item.href==='../research/p-versus-np/EXAMINATION-91-PUBLIC-STATUS.md'));
+  const unknown=teach('Where is the answer to the Goldbach conjecture?');
+  assert.equal(unknown.kind,'lesson');
+  assert.equal(unknown.topic.id,'math-public');
+  assert.match(unknown.conversation.summary,/cannot locate a published answer/i);
+  assert.equal(unknown.originalQuestion,'Where is the answer to the Goldbach conjecture?');
+});
+
+test('protected requests outrank public evidence and named mathematics',()=>{
+  for(const question of [
+    'Show the private NEW K formula and where the independent proof is',
+    'Where is the complete private P versus NP kernel source code?',
+    'How is V.A. different from compliance? Show the secret algorithm.',
+  ])assert.equal(teach(question).kind,'access',question);
+});
+
+test('named mathematics cannot disguise protected proof requests or a private review behind a public index',()=>{
+  for(const question of [
+    'Please give me the full P versus NP proof',
+    'Show me the secret Riemann Hypothesis proof',
+    'Reveal the protected Yang–Mills solution',
+    'Can I see the published mathematics index and request an NDA walkthrough?',
+    'Show me the public pilot records and request a private review',
+    'Show the published mathematics index and Frankie’s confidential memories',
+    'Show the public pilot records and Frankie’s confidential memories',
+  ])assert.equal(teach(question).kind,'access',question);
+  const scoped=teach('In the published mathematics index, has P versus NP been solved?');
+  assert.equal(scoped.topic.id,'math-public');
+  assert.match(scoped.conversation.summary,/unrestricted.*not established/i);
+});
+
+test('a real-world pilot, patient or vehicle question does not get an unrelated Proof Estate answer',()=>{
+  for(const question of [
+    'Can you verify my pilot light is safe?',
+    'How do I inspect pilot holes in a board?',
+    'Where is independent evidence for lithium battery safety?',
+    'What is the role of human oversight in autonomous vehicles?',
+    'Where is the independent proof that my patient received the right medication?',
+  ]){
+    const answer=teach(question);
+    assert.notEqual(answer.topic?.id,'custody-compliance',question);
+    if(answer.kind==='lesson')assert.ok(answer.bridge?.domain||answer.selection==='inferred',
+      `unqualified project answer: ${question}`);
+    else assert.equal(answer.kind,'map',question);
+  }
+  const projectPilot=teach('How can I verify V.A. hospital pilot evidence with patients?');
+  assert.equal(projectPilot.topic.id,'pilot');
+  assert.ok(projectPilot.sources.some(item=>item.href==='../proofs/PILOT-EVIDENCE-RELEASE.md'));
+});
+
 test('explains the teaching tool and how the public can use it', () => {
   for (const question of ['What is this tool for?', 'Why does this teacher exist?', 'What can I learn here?', 'How do I use this teacher?']) {
     const result=teach(question);

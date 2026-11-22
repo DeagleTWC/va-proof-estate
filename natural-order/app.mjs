@@ -1,9 +1,9 @@
-import {TOPICS} from './knowledge.mjs?v=20261122-natural-order-22';
-import {teach,publicHref} from './engine.mjs?v=20261122-natural-order-22';
-import {createOpenConversationKernel} from './open-conversation-kernel.mjs?v=20261122-natural-order-22';
-import {initFrankie,FRANKIE_GATEWAY_URL} from './frankie-client.mjs?v=20261122-natural-order-22';
-import {kernelForTopic,assessTeachingKernel,nextTeachingKernel} from './teaching-kernels.mjs?v=20261122-natural-order-22';
-import {definitionsForLesson,convertTermDefinitions} from './definition-kernel.mjs?v=20261122-natural-order-22';
+import {TOPICS} from './knowledge.mjs?v=20261122-natural-order-23';
+import {teach,publicHref} from './engine.mjs?v=20261122-natural-order-23';
+import {createOpenConversationKernel} from './open-conversation-kernel.mjs?v=20261122-natural-order-23';
+import {initFrankie,FRANKIE_GATEWAY_URL} from './frankie-client.mjs?v=20261122-natural-order-23';
+import {kernelForTopic,assessTeachingKernel,nextTeachingKernel} from './teaching-kernels.mjs?v=20261122-natural-order-23';
+import {definitionsForLesson,convertTermDefinitions} from './definition-kernel.mjs?v=20261122-natural-order-23';
 
 const byId = id => document.getElementById(id);
 const form=byId('learning-form');
@@ -49,6 +49,20 @@ function sourceList(sources) {
     li.append(link);
     list.append(li);
   }
+}
+
+function showMathInquiry(result){
+  const link=byId('math-inquiry-link');
+  const help=byId('math-inquiry-help');
+  const isMath=result.kind==='lesson'&&result.topic.id==='math-public';
+  link.hidden=!isMath;
+  help.hidden=!isMath;
+  // A mailto link drafts an email only when the visitor chooses to open it.
+  // The Teacher does not send the question, store it, or call a network API.
+  const original=String(result.originalQuestion||'').slice(0,500);
+  link.href=isMath
+    ? `mailto:canarybird0618@gmail.com?subject=${encodeURIComponent('Natural Order mathematics answer inquiry')}&body=${encodeURIComponent(`Where can I find the answer or ongoing work for this question?\n\n${original}`)}`
+    : '';
 }
 
 function showMapOptions(result) {
@@ -135,6 +149,7 @@ function showTermDefinitions(topic,connection,question){
 function present(result,{scroll=true}={}) {
   currentTopic=null;
   currentInquiryQuestion='';
+  showMathInquiry(result);
   switch(result.kind){
     case 'lesson': {
       const topic=result.topic;
@@ -158,7 +173,7 @@ function present(result,{scroll=true}={}) {
       byId('lesson-question').textContent=convertTermDefinitions(currentInquiryQuestion,{explained});
       showTermDefinitions(topic,connection,currentInquiryQuestion);
       byId('reflect-prompt').textContent=currentInquiryQuestion;
-      sourceList(topic.sources);
+      sourceList(result.sources||topic.sources);
       showKernelForTopic(topic.id);
       byId('reflection-choice').value='align';
       showPanel('lesson');
