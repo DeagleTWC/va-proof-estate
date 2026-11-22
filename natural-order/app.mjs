@@ -1,5 +1,5 @@
-import {TOPICS} from './knowledge.mjs?v=20261121-natural-order-11';
-import {teach,publicHref} from './engine.mjs?v=20261121-natural-order-11';
+import {TOPICS} from './knowledge.mjs?v=20261122-natural-order-12';
+import {teach,publicHref} from './engine.mjs?v=20261122-natural-order-12';
 
 const byId = id => document.getElementById(id);
 const form=byId('learning-form');
@@ -12,6 +12,8 @@ const reflection=byId('reflect-form');
 const replay=byId('replay-question');
 const stage=byId('lesson-stage');
 let currentTopic=null;
+let currentInquiryQuestion='';
+let mapInquiryQuestion='';
 const reducedMotion=()=>window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 function showPanel(which) {
@@ -44,43 +46,47 @@ function sourceList(sources) {
   }
 }
 
-function showMapOptions(ids) {
+function showMapOptions(result) {
   const options=byId('map-options');
   options.replaceChildren();
-  const choices=Array.isArray(ids) ? ids.map(id=>TOPICS.find(topic=>topic.id===id)).filter(Boolean) : [];
-  byId('map-explanation').textContent=choices.length
+  const originalQuestion=mapInquiryQuestion;
+  const choices=Array.isArray(result.options) ? result.options.map(id=>TOPICS.find(topic=>topic.id===id)).filter(Boolean) : [];
+  byId('map-explanation').textContent=result.introduction || (choices.length
     ? 'Your question connects to more than one public subject. Choose which one you want to examine first.'
-    : 'The public catalog has no direct answer for those words. Pick a subject below, or narrow your question. We will not invent a result.';
+    : 'The public catalog has no direct answer for those words. Pick a subject below, or narrow your question. We will not invent a result.');
   for (const topic of choices) {
     const button=document.createElement('button');
     button.type='button';
     button.className='map-choice';
     button.textContent=topic.title;
-    button.addEventListener('click',()=>startTopic(topic.id));
+    button.addEventListener('click',()=>startTopic(topic.id,originalQuestion));
     options.append(button);
   }
 }
 
-function present(result,{scroll=true}={}) {
+function present(result,{scroll=true,originQuestion=''}={}) {
   currentTopic=null;
+  currentInquiryQuestion='';
+  mapInquiryQuestion=result.kind==='map'?originQuestion:'';
   switch(result.kind){
     case 'lesson': {
       const topic=result.topic;
       currentTopic=topic;
+      currentInquiryQuestion=result.bridge?.question || topic.question;
       byId('lesson-kicker').textContent=`PUBLIC PATH / ${topic.number} · ${topic.kicker}`;
       byId('lesson-grade').textContent=topic.grade;
       byId('lesson-title').textContent=topic.title;
       byId('lesson-summary').textContent=topic.summary;
-      byId('lesson-connection').textContent=topic.connection;
-      byId('lesson-question').textContent=topic.question;
-      byId('reflect-prompt').textContent=topic.question;
+      byId('lesson-connection').textContent=result.bridge?.connection || topic.connection;
+      byId('lesson-question').textContent=currentInquiryQuestion;
+      byId('reflect-prompt').textContent=currentInquiryQuestion;
       sourceList(topic.sources);
       byId('reflection-choice').value='align';
       showPanel('lesson');
       break;
     }
     case 'access': showPanel('access'); break;
-    case 'map': showMapOptions(result.options); showPanel('map'); break;
+    case 'map': showMapOptions(result); showPanel('map'); break;
     case 'empty': showPanel('placeholder'); question.focus(); break;
   }
   if(scroll && result.kind!=='empty') {
@@ -89,13 +95,14 @@ function present(result,{scroll=true}={}) {
   }
 }
 
-function startTopic(topicId) {
-  present(teach('',topicId));
+function startTopic(topicId,fieldQuestion='') {
+  present(teach(fieldQuestion,topicId));
 }
 
 form.addEventListener('submit',event=>{
   event.preventDefault();
-  present(teach(question.value));
+  const submittedQuestion=question.value;
+  present(teach(submittedQuestion),{originQuestion:submittedQuestion});
 });
 // Fail closed: with scripts disabled or a module error the button is disabled,
 // and the textarea has no name, so it cannot leak a question via a GET URL.
@@ -138,7 +145,7 @@ reflection.addEventListener('submit',event=>{
     different:'A difference is valuable: it tells us which condition or definition to compare.',
     unknown:'An unresolved question has no invented answer here.'
   }[stance] || 'Keep the question open.';
-  replay.textContent=`${intro} Next: ${currentTopic.question} Read the cited source, fix one test condition, and ask what actual observation could change your conclusion.`;
+  replay.textContent=`${intro} Next: ${currentInquiryQuestion} Read the cited source, fix one test condition, and ask what actual observation could change your conclusion.`;
   replay.hidden=false;
   replay.scrollIntoView({behavior:reducedMotion()?'auto':'smooth',block:'nearest'});
 });

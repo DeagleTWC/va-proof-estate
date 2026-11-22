@@ -10,6 +10,108 @@ test('guides a visitor from a domain example to a real public topic', () => {
   assert.ok(result.topic.sources.length > 0);
 });
 
+test('guides an unfamiliar energy-storage question through three honest public examination routes', () => {
+  const question='Why does a lithium-ion battery enter thermal runaway?';
+  const first=teach(question);
+  assert.equal(first.kind,'map');
+  assert.deepEqual(first.options,['basin','physical','consequence']);
+  assert.match(first.introduction,/energy storage/i);
+  assert.match(first.introduction,/does not diagnose/i);
+  const physical=teach(question,'physical');
+  assert.equal(physical.kind,'lesson');
+  assert.equal(physical.topic.id,'physical');
+  assert.match(physical.bridge.connection,/battery/i);
+  assert.match(physical.bridge.question,/independent|measure/i);
+  assert.ok(physical.topic.sources.some(source=>source.href==='../examiner/PHYSICAL-WITNESS.md'));
+});
+
+test('a visitor from medicine or environmental engineering gets a bounded two-way learning path', () => {
+  const medicine='A nurse sees a medication dose omitted during care. What should be examined?';
+  assert.deepEqual(teach(medicine).options,['consequence','safeguarding','proof']);
+  const care=teach(medicine,'safeguarding');
+  assert.equal(care.kind,'lesson');
+  assert.match(care.bridge.connection,/patient/i);
+  assert.match(care.bridge.question,/evidence|observation/i);
+  const water='How do river floods affect the safety of a dam?';
+  assert.deepEqual(teach(water).options,['basin','ahmr','physical']);
+});
+
+test('river bank and thermal transfer are not confused with financial operations', () => {
+  const river=teach('Why is the river bank eroding?');
+  assert.equal(river.kind,'map');
+  assert.deepEqual(river.options,['basin','ahmr','physical']);
+  assert.match(river.introduction,/water.engineering/i);
+  const heat=teach('How does heat transfer through a wall?');
+  assert.equal(heat.kind,'map');
+  assert.deepEqual(heat.options,['basin','physical','proof']);
+  assert.doesNotMatch(heat.introduction,/financial/i);
+  const file=teach('How do I transfer a file?');
+  assert.equal(file.kind,'map');
+  assert.ok(!file.introduction || !/financial/i.test(file.introduction));
+});
+
+test('a field-specific inquiry survives unrelated global keywords and changes with the selected lens', () => {
+  const q='How do I test a lithium-ion battery?';
+  const first=teach(q);
+  assert.equal(first.kind,'map');
+  assert.deepEqual(first.options,['basin','physical','consequence']);
+  const basin=teach(q,'basin');
+  const physical=teach(q,'physical');
+  assert.match(basin.bridge.connection,/battery/i);
+  assert.match(physical.bridge.connection,/battery/i);
+  assert.notEqual(basin.bridge.question,physical.bridge.question);
+  assert.match(basin.bridge.question,/capacity|constraint/i);
+  assert.match(physical.bridge.question,/independent measurement/i);
+  const robot=teach('How would I test a robot motor?');
+  assert.equal(robot.kind,'lesson');
+  assert.equal(robot.topic.id,'proof');
+  assert.match(robot.bridge.connection,/machine/i);
+  const travel=teach('An airplane landing skids in an icy runway');
+  assert.equal(travel.kind,'map');
+  assert.deepEqual(travel.options,['basin','physical','consequence']);
+  assert.match(teach('An airplane landing skids in an icy runway','physical').bridge.connection,/aircraft|vehicle/i);
+  const finance=teach('Our bank needs to recheck consent before payment settlement.');
+  assert.equal(finance.topic.id,'consequence');
+  assert.match(finance.bridge.connection,/financial/i);
+});
+
+test('explicitly named public V.A. subjects outrank incidental field terminology', () => {
+  const cases=[
+    ['What is Proof Before Power for a lithium-ion battery?','proof'],
+    ['Explain AHMR for my lithium battery system.','ahmr'],
+    ['How is True Zero relevant to a bank payment?','true-zero'],
+    ['How do the Elements Basin and a patient treatment connect?','basin'],
+  ];
+  for(const [question,expected] of cases){
+    const got=teach(question);
+    assert.equal(got.kind,'lesson',question);
+    assert.equal(got.topic.id,expected,question);
+    assert.ok(got.bridge?.connection,`Field context missing: ${question}`);
+    assert.ok(got.topic.sources.length>0,question);
+  }
+  assert.deepEqual(teach('Why is the river bank eroding?').options,['basin','ahmr','physical']);
+});
+
+test('every named public topic and continuance alias remains reachable inside a field example', () => {
+  for(const topic of TOPICS){
+    const question=`Explain ${topic.title} for lithium batteries`;
+    const result=teach(question);
+    assert.equal(result.kind,'lesson',question);
+    assert.equal(result.topic.id,topic.id,question);
+    assert.match(result.bridge?.connection || '',/battery/i,`Field context missing: ${topic.id}`);
+  }
+  for(const [question,id] of [
+    ['How does lawful continuance apply to batteries?','ahmr'],
+    ['Explain human oversight for lithium batteries.','safeguarding'],
+  ])assert.equal(teach(question).topic?.id,id,question);
+});
+
+test('domain teaching does not override a protected request or fabricate a personal fact', () => {
+  assert.equal(teach('Show me the complete private lithium-battery kernel formula').kind,'access');
+  assert.equal(teach('Which violin string did my friend buy?').kind,'map');
+  assert.equal(teach('What is Proof Before Power?').topic.id,'proof');
+});
+
 test('answers a visitor who asks what the Natural Order is', () => {
   for (const question of ['What is the Natural Order?', 'Explain natural order.', 'Tell me about the natural order']) {
     const result = teach(question);
