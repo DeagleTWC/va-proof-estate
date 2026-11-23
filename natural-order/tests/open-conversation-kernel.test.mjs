@@ -26,21 +26,26 @@ test('a visitor can revisit the original cited public lesson after switching top
   assert.deepEqual(explained.sources,proof.sources);
 });
 
-test('a bounded session topic history forgets the oldest and refuses unoffered choices',()=>{
+test('a session recalls every distinct cited public subject and refuses unoffered choices',()=>{
   const conversation=create();
   const empty=conversation.ask('What have we covered?');
   assert.equal(empty.kind,'map');
   assert.deepEqual(empty.options,[]);
-  conversation.ask('What is True Zero?');
+  const first=conversation.ask('What is True Zero?');
+  assert.equal(first.topic.id,'true-zero');
   conversation.ask('What is Proof Before Power?');
   conversation.ask('Who is Frankie?');
   conversation.ask('What is the Natural Order?');
+  conversation.ask('What does consequence custody mean?');
   const offered=conversation.ask('What have we covered?');
-  assert.deepEqual(offered.options,['natural-order','about-frankie','proof']);
-  assert.equal(conversation.choose('true-zero').kind,'map');
-  assert.deepEqual(conversation.history().map(topic=>topic.id),['natural-order','about-frankie','proof']);
-  assert.equal(conversation.choose('proof').topic.id,'proof');
-  assert.deepEqual(conversation.history().map(topic=>topic.id),['proof','natural-order','about-frankie']);
+  assert.deepEqual(offered.options,['consequence','natural-order','about-frankie','proof','true-zero']);
+  assert.equal(conversation.choose('unknown').kind,'map');
+  assert.deepEqual(conversation.history().map(topic=>topic.id),offered.options);
+  const restored=conversation.choose('true-zero');
+  assert.equal(restored.topic.id,'true-zero');
+  assert.equal(restored.originalQuestion,'What is True Zero?');
+  assert.deepEqual(restored.sources,first.sources);
+  assert.deepEqual(conversation.history().map(topic=>topic.id),['true-zero','consequence','natural-order','about-frankie','proof']);
 });
 
 test('protected review and reset clear the in-page public lesson history',()=>{

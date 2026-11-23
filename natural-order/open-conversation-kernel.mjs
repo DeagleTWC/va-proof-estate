@@ -1,6 +1,6 @@
-import {createHumanInteractionKernel} from './human-interaction-kernel.mjs?v=20261122-natural-order-30a';
-import {reviewCognitiveTurn} from './cognitive-reasoning-kernel.mjs?v=20261122-natural-order-30a';
-import {reviewConversationCompatibility} from './conversation-compatibility-kernel.mjs?v=20261122-natural-order-30a';
+import {createHumanInteractionKernel} from './human-interaction-kernel.mjs?v=20261122-natural-order-31';
+import {reviewCognitiveTurn} from './cognitive-reasoning-kernel.mjs?v=20261122-natural-order-31';
+import {reviewConversationCompatibility} from './conversation-compatibility-kernel.mjs?v=20261122-natural-order-31';
 
 // A bounded, in-page conversational layer. It is deliberately not a general
 // language model: only clear, short anaphoric follow-ups reuse a prior lesson.
@@ -160,7 +160,7 @@ export function createOpenConversationKernel({resolve,topics}) {
           originalQuestion:result.originalQuestion||inquiry||result.topic.title};
         if(result.topic?.sources?.length||result.sources?.length){
           const saved={...result,originalQuestion:lastLesson.originalQuestion};
-          recentLessons=[saved,...recentLessons.filter(earlier=>earlier.topic.id!==result.topic.id)].slice(0,3);
+          recentLessons=[saved,...recentLessons.filter(earlier=>earlier.topic.id!==result.topic.id)];
         }
       }
       lastMap=null;

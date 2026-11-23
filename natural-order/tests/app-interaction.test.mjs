@@ -63,6 +63,16 @@ test('a visitor can move from an unfamiliar field question to sourced learning a
     get('map-options').children[0].listeners.click();
     assert.equal(get('lesson-title').textContent,'About Frankie');
     assert.ok(get('source-list').children.length>=2,'profile history preserves its public evidence links');
+    get('learner-question').value='What is True Zero?';
+    submit();
+    get('learner-question').value='What is the Natural Order?';
+    submit();
+    get('history-button').listeners.click();
+    assert.equal(get('map-options').children.length,5,'the visible menu offers every visited public subject');
+    assert.equal(get('map-options').children[4].textContent,'Consequence Custody');
+    get('map-options').children[4].listeners.click();
+    assert.equal(get('lesson-title').textContent,'Consequence Custody');
+    assert.ok(get('source-list').children.length>=2,'oldest visited subject remains source-linked');
     get('learner-question').value='Why does a lithium-ion battery enter thermal runaway?';
     submit();
     assert.equal(get('stage-map').hidden,false);
