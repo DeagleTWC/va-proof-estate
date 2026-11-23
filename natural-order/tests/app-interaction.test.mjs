@@ -54,6 +54,15 @@ test('a visitor can move from an unfamiliar field question to sourced learning a
     get('map-options').children[1].listeners.click();
     assert.equal(get('lesson-title').textContent,'Proof Before Power');
     assert.ok(get('source-list').children.length>=3,'restored lesson retains its evidence links');
+    get('learner-question').value='Who is Frankie?';
+    submit();
+    assert.equal(get('lesson-title').textContent,'About Frankie');
+    get('history-button').listeners.click();
+    assert.equal(get('map-options').children.length,3,'history includes public profiles beyond the eleven core subjects');
+    assert.equal(get('map-options').children[0].textContent,'About Frankie');
+    get('map-options').children[0].listeners.click();
+    assert.equal(get('lesson-title').textContent,'About Frankie');
+    assert.ok(get('source-list').children.length>=2,'profile history preserves its public evidence links');
     get('learner-question').value='Why does a lithium-ion battery enter thermal runaway?';
     submit();
     assert.equal(get('stage-map').hidden,false);

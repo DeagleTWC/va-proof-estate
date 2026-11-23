@@ -1,11 +1,11 @@
-import {TOPICS} from './knowledge.mjs?v=20261122-natural-order-30';
-import {teach,publicHref} from './engine.mjs?v=20261122-natural-order-30';
-import {createOpenConversationKernel} from './open-conversation-kernel.mjs?v=20261122-natural-order-30';
-import {initFrankie,FRANKIE_GATEWAY_URL} from './frankie-client.mjs?v=20261122-natural-order-30';
-import {kernelForTopic,assessTeachingKernel,nextTeachingKernel} from './teaching-kernels.mjs?v=20261122-natural-order-30';
-import {definitionsForLesson,convertTermDefinitions} from './definition-kernel.mjs?v=20261122-natural-order-30';
-import {publicPlainLead} from './meaning-preserving-teaching-kernel.mjs?v=20261122-natural-order-30';
-import {exerciseFitsConversation} from './conversation-compatibility-kernel.mjs?v=20261122-natural-order-30';
+import {TOPICS} from './knowledge.mjs?v=20261122-natural-order-30a';
+import {teach,publicHref} from './engine.mjs?v=20261122-natural-order-30a';
+import {createOpenConversationKernel} from './open-conversation-kernel.mjs?v=20261122-natural-order-30a';
+import {initFrankie,FRANKIE_GATEWAY_URL} from './frankie-client.mjs?v=20261122-natural-order-30a';
+import {kernelForTopic,assessTeachingKernel,nextTeachingKernel} from './teaching-kernels.mjs?v=20261122-natural-order-30a';
+import {definitionsForLesson,convertTermDefinitions} from './definition-kernel.mjs?v=20261122-natural-order-30a';
+import {publicPlainLead} from './meaning-preserving-teaching-kernel.mjs?v=20261122-natural-order-30a';
+import {exerciseFitsConversation} from './conversation-compatibility-kernel.mjs?v=20261122-natural-order-30a';
 
 const byId = id => document.getElementById(id);
 const form=byId('learning-form');
@@ -73,7 +73,8 @@ function showMapOptions(result) {
   const original=byId('map-your-question');
   original.textContent=result.originalQuestion ? `You asked: ${result.originalQuestion}` : '';
   original.hidden=!result.originalQuestion;
-  const choices=Array.isArray(result.options) ? result.options.map(id=>TOPICS.find(topic=>topic.id===id)).filter(Boolean) : [];
+  const available=result.historyOnly?interaction.history():TOPICS;
+  const choices=Array.isArray(result.options) ? result.options.map(id=>available.find(topic=>topic.id===id)).filter(Boolean) : [];
   byId('map-explanation').textContent=result.introduction || (choices.length
     ? 'I want to understand which relationship you mean. These are possible starting points, not an answer chosen for you.'
     : 'I want to understand your question before choosing a lesson. Could you tell me a little more?');

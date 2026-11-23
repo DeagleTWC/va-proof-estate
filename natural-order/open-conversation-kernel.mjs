@@ -1,6 +1,6 @@
-import {createHumanInteractionKernel} from './human-interaction-kernel.mjs?v=20261122-natural-order-30';
-import {reviewCognitiveTurn} from './cognitive-reasoning-kernel.mjs?v=20261122-natural-order-30';
-import {reviewConversationCompatibility} from './conversation-compatibility-kernel.mjs?v=20261122-natural-order-30';
+import {createHumanInteractionKernel} from './human-interaction-kernel.mjs?v=20261122-natural-order-30a';
+import {reviewCognitiveTurn} from './cognitive-reasoning-kernel.mjs?v=20261122-natural-order-30a';
+import {reviewConversationCompatibility} from './conversation-compatibility-kernel.mjs?v=20261122-natural-order-30a';
 
 // A bounded, in-page conversational layer. It is deliberately not a general
 // language model: only clear, short anaphoric follow-ups reuse a prior lesson.
@@ -142,7 +142,7 @@ export function createOpenConversationKernel({resolve,topics}) {
   }
   function historyMap(question){
     const topics=history();
-    return {kind:'map',originalQuestion:question,options:topics.map(topic=>topic.id),
+    return {kind:'map',historyOnly:true,originalQuestion:question,options:topics.map(topic=>topic.id),
       introduction:topics.length
         ? `Here are the public subjects we explored: ${topics.map(topic=>topic.title).join('; ')}. Choose one to return to its explanation and sources.`
         : 'We have not explored a public subject together yet. Ask a question or choose a topic to begin.'};
