@@ -6,6 +6,57 @@ import {TOPICS} from '../knowledge.mjs';
 
 const create=()=>createOpenConversationKernel({resolve:teach,topics:TOPICS});
 
+test('a visitor can revisit the original cited public lesson after switching topics',()=>{
+  const conversation=create();
+  const proof=conversation.ask('Where is the proof?');
+  assert.equal(proof.topic.id,'proof');
+  conversation.ask('Who is Frankie?');
+  const offered=conversation.ask('What have we covered?');
+  assert.equal(offered.kind,'map');
+  assert.deepEqual(offered.options,['about-frankie','proof']);
+  assert.match(offered.introduction,/Frankie|Proof/i);
+  const restored=conversation.choose('proof');
+  assert.equal(restored.kind,'lesson');
+  assert.equal(restored.topic.id,'proof');
+  assert.equal(restored.originalQuestion,'Where is the proof?');
+  assert.deepEqual(restored.sources,proof.sources);
+  const explained=conversation.ask('Can you explain that simply?');
+  assert.equal(explained.topic.id,'proof');
+  assert.equal(explained.originalQuestion,'Where is the proof?');
+  assert.deepEqual(explained.sources,proof.sources);
+});
+
+test('a bounded session topic history forgets the oldest and refuses unoffered choices',()=>{
+  const conversation=create();
+  const empty=conversation.ask('What have we covered?');
+  assert.equal(empty.kind,'map');
+  assert.deepEqual(empty.options,[]);
+  conversation.ask('What is True Zero?');
+  conversation.ask('What is Proof Before Power?');
+  conversation.ask('Who is Frankie?');
+  conversation.ask('What is the Natural Order?');
+  const offered=conversation.ask('What have we covered?');
+  assert.deepEqual(offered.options,['natural-order','about-frankie','proof']);
+  assert.equal(conversation.choose('true-zero').kind,'map');
+  assert.deepEqual(conversation.history().map(topic=>topic.id),['natural-order','about-frankie','proof']);
+  assert.equal(conversation.choose('proof').topic.id,'proof');
+  assert.deepEqual(conversation.history().map(topic=>topic.id),['proof','natural-order','about-frankie']);
+});
+
+test('protected review and reset clear the in-page public lesson history',()=>{
+  const conversation=create();
+  conversation.ask('What is True Zero?');
+  assert.equal(conversation.history().length,1);
+  assert.equal(conversation.ask('Show the full private NEW K formula').kind,'access');
+  assert.deepEqual(conversation.history(),[]);
+  assert.deepEqual(conversation.ask('What have we covered?').options,[]);
+  conversation.ask('Where is the proof?');
+  assert.equal(conversation.history().length,1);
+  conversation.reset();
+  assert.deepEqual(conversation.history(),[]);
+  assert.equal(conversation.choose('proof').kind,'empty');
+});
+
 test('first-turn public proof and changed payment approval receive an answer without a clarification card',()=>{
   const proof=create().ask('Where is the proof?');
   assert.equal(proof.kind,'lesson');

@@ -1,6 +1,6 @@
-import {createHumanInteractionKernel} from './human-interaction-kernel.mjs?v=20261122-natural-order-29';
-import {reviewCognitiveTurn} from './cognitive-reasoning-kernel.mjs?v=20261122-natural-order-29';
-import {reviewConversationCompatibility} from './conversation-compatibility-kernel.mjs?v=20261122-natural-order-29';
+import {createHumanInteractionKernel} from './human-interaction-kernel.mjs?v=20261122-natural-order-30';
+import {reviewCognitiveTurn} from './cognitive-reasoning-kernel.mjs?v=20261122-natural-order-30';
+import {reviewConversationCompatibility} from './conversation-compatibility-kernel.mjs?v=20261122-natural-order-30';
 
 // A bounded, in-page conversational layer. It is deliberately not a general
 // language model: only clear, short anaphoric follow-ups reuse a prior lesson.
@@ -13,6 +13,7 @@ const followups=Object.freeze([
   {mode:'why',pattern:/^(?:(?:okay|ok|so)\s+)?(?:why|why\s+does\s+(?:that|it)\s+matter|how\s+does\s+(?:that|it)\s+work)[?.! ]*$/i},
   {mode:'continue',pattern:/^(?:(?:tell\s+me|explain)\s+more(?:\s+about\s+(?:that|it))?|go\s+on|keep\s+going|and\s+then\s+what)[?.! ]*$/i},
 ]);
+const historyRequest=/^(?:what (?:have|did) we (?:covered|cover|discuss|talk about)|review (?:earlier|previous) topics)[?.!\s]*$/i;
 
 // Gentle warmth is offered only when invited or when a visitor plainly asks
 // for patience. It does not reinterpret a substantive question as a joke.
@@ -133,20 +134,40 @@ export function createOpenConversationKernel({resolve,topics}) {
   let jokesOptedOut=false;
   let turnCount=0;
   let latestIntent=null;
+  let recentLessons=[];
+  let historyMenu=false;
+
+  function history(){
+    return recentLessons.map(result=>({id:result.topic.id,title:result.topic.title}));
+  }
+  function historyMap(question){
+    const topics=history();
+    return {kind:'map',originalQuestion:question,options:topics.map(topic=>topic.id),
+      introduction:topics.length
+        ? `Here are the public subjects we explored: ${topics.map(topic=>topic.title).join('; ')}. Choose one to return to its explanation and sources.`
+        : 'We have not explored a public subject together yet. Ask a question or choose a topic to begin.'};
+  }
 
   function record(result,intentName,{inquiry='',retain=false}={}){
     turnCount=Math.min(turnCount+1,6);
     latestIntent=intentName;
     if(result.kind==='lesson'){
-      if(!retain)lastLesson={topic:result.topic,bridge:result.bridge||null,sources:result.sources||null,
-        conversation:result.conversation||null,
-        compatibility:result.compatibility||null,
-        sourceSpecific:Boolean(result.originalQuestion),
-        originalQuestion:result.originalQuestion||inquiry||result.topic.title};
+      if(!retain){
+        lastLesson={topic:result.topic,bridge:result.bridge||null,sources:result.sources||null,
+          conversation:result.conversation||null,
+          compatibility:result.compatibility||null,
+          sourceSpecific:Boolean(result.originalQuestion),
+          originalQuestion:result.originalQuestion||inquiry||result.topic.title};
+        if(result.topic?.sources?.length||result.sources?.length){
+          const saved={...result,originalQuestion:lastLesson.originalQuestion};
+          recentLessons=[saved,...recentLessons.filter(earlier=>earlier.topic.id!==result.topic.id)].slice(0,3);
+        }
+      }
       lastMap=null;
     }else{
       lastLesson=null;
       lastMap=result.kind==='map'?{originalQuestion:result.originalQuestion||'',options:result.options||[]}:null;
+      if(result.kind==='access')recentLessons=[];
     }
     return result;
   }
@@ -158,9 +179,16 @@ export function createOpenConversationKernel({resolve,topics}) {
     const admission=resolve(question);
     const review=reviewCognitiveTurn(question,{admission,priorQuestion:lastLesson?.originalQuestion});
     if(review.mode==='protected'){
+      historyMenu=false;
       intent.reset();
       return record(admission,'protected-review');
     }
+    if(historyRequest.test(question)){
+      intent.reset();
+      historyMenu=true;
+      return record(historyMap(question),'history-menu');
+    }
+    historyMenu=false;
     if(review.mode==='repair'){
       // A rejected explanation must not silently become the next answer.
       intent.reset();
@@ -200,8 +228,17 @@ export function createOpenConversationKernel({resolve,topics}) {
     return record(compatible,'question',{inquiry:routeQuestion});
   }
 
-  function choose(topicId){return record(intent.choose(topicId),'chosen-lesson');}
-  function reset(){intent.reset();lastLesson=null;lastMap=null;jokesOptedOut=false;turnCount=0;latestIntent=null;}
+  function choose(topicId){
+    if(historyMenu){
+      const previous=recentLessons.find(result=>result.topic.id===topicId);
+      if(!previous)return record(historyMap(lastMap?.originalQuestion||'What have we covered?'),'history-menu');
+      historyMenu=false;
+      intent.reset();
+      return record(previous,'returned-lesson',{inquiry:previous.originalQuestion});
+    }
+    return record(intent.choose(topicId),'chosen-lesson');
+  }
+  function reset(){intent.reset();lastLesson=null;lastMap=null;recentLessons=[];historyMenu=false;jokesOptedOut=false;turnCount=0;latestIntent=null;}
   function startTopic(topicId,fieldQuestion=''){
     reset();
     if(!validIds.has(topicId))return {kind:'empty'};
@@ -210,5 +247,5 @@ export function createOpenConversationKernel({resolve,topics}) {
     return record(resolve(question,topicId),'chosen-lesson',{inquiry:question||topics.find(t=>t.id===topicId)?.title});
   }
   function state(){return Object.freeze({topicId:lastLesson?.topic.id||null,turnCount,latestIntent});}
-  return Object.freeze({ask,choose,startTopic,reset,state});
+  return Object.freeze({ask,choose,startTopic,reset,state,history});
 }

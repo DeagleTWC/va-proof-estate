@@ -34,6 +34,8 @@ test('a visitor can move from an unfamiliar field question to sourced learning a
     await import('../app.mjs?bounded-browserless-interaction');
     const submit=()=>get('learning-form').listeners.submit({preventDefault(){}});
     get('learning-form').requestSubmit=submit;
+    assert.match(html,/id="history-button"[^>]*>Review earlier topics/);
+    assert.equal(get('history-button').disabled,true,'no history before any public lesson');
     proofButton.listeners.click();
     assert.equal(get('stage-content').hidden,false,'the visible Proof shortcut must answer on the first click');
     assert.equal(get('lesson-title').textContent,'Proof Before Power');
@@ -45,6 +47,13 @@ test('a visitor can move from an unfamiliar field question to sourced learning a
     assert.equal(get('lesson-title').textContent,'Consequence Custody');
     assert.match(get('lesson-summary').textContent,/payment|settle/i);
     assert.match(get('lesson-summary').textContent,/does not certify/i);
+    assert.equal(get('history-button').disabled,false,'a prior public lesson enables review');
+    get('history-button').listeners.click();
+    assert.equal(get('stage-map').hidden,false,'reviewing topics offers a real selectable map');
+    assert.equal(get('map-options').children.length,2);
+    get('map-options').children[1].listeners.click();
+    assert.equal(get('lesson-title').textContent,'Proof Before Power');
+    assert.ok(get('source-list').children.length>=3,'restored lesson retains its evidence links');
     get('learner-question').value='Why does a lithium-ion battery enter thermal runaway?';
     submit();
     assert.equal(get('stage-map').hidden,false);
@@ -92,6 +101,7 @@ test('a visitor can move from an unfamiliar field question to sourced learning a
     get('learner-question').value='Show complete private battery kernel formula';
     submit();
     assert.equal(get('stage-access').hidden,false);
+    assert.equal(get('history-button').disabled,true,'protected inquiry clears and disables topic recall');
     assert.equal(get('kernel-panel').hidden,true);
     get('learner-question').value='What does consequence custody mean?';
     submit();

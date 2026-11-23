@@ -1,11 +1,11 @@
-import {TOPICS} from './knowledge.mjs?v=20261122-natural-order-29';
-import {teach,publicHref} from './engine.mjs?v=20261122-natural-order-29';
-import {createOpenConversationKernel} from './open-conversation-kernel.mjs?v=20261122-natural-order-29';
-import {initFrankie,FRANKIE_GATEWAY_URL} from './frankie-client.mjs?v=20261122-natural-order-29';
-import {kernelForTopic,assessTeachingKernel,nextTeachingKernel} from './teaching-kernels.mjs?v=20261122-natural-order-29';
-import {definitionsForLesson,convertTermDefinitions} from './definition-kernel.mjs?v=20261122-natural-order-29';
-import {publicPlainLead} from './meaning-preserving-teaching-kernel.mjs?v=20261122-natural-order-29';
-import {exerciseFitsConversation} from './conversation-compatibility-kernel.mjs?v=20261122-natural-order-29';
+import {TOPICS} from './knowledge.mjs?v=20261122-natural-order-30';
+import {teach,publicHref} from './engine.mjs?v=20261122-natural-order-30';
+import {createOpenConversationKernel} from './open-conversation-kernel.mjs?v=20261122-natural-order-30';
+import {initFrankie,FRANKIE_GATEWAY_URL} from './frankie-client.mjs?v=20261122-natural-order-30';
+import {kernelForTopic,assessTeachingKernel,nextTeachingKernel} from './teaching-kernels.mjs?v=20261122-natural-order-30';
+import {definitionsForLesson,convertTermDefinitions} from './definition-kernel.mjs?v=20261122-natural-order-30';
+import {publicPlainLead} from './meaning-preserving-teaching-kernel.mjs?v=20261122-natural-order-30';
+import {exerciseFitsConversation} from './conversation-compatibility-kernel.mjs?v=20261122-natural-order-30';
 
 const byId = id => document.getElementById(id);
 const form=byId('learning-form');
@@ -189,6 +189,7 @@ function present(result,{scroll=true}={}) {
     case 'map': currentKernel=null;byId('kernel-panel').hidden=true;showMapOptions(result); showPanel('map'); break;
     case 'empty': currentKernel=null;byId('kernel-panel').hidden=true;showPanel('placeholder'); question.focus(); break;
   }
+  byId('history-button').disabled=interaction.history().length===0;
   if(scroll && result.kind!=='empty') {
     stage.scrollIntoView({behavior:reducedMotion()?'auto':'smooth',block:'start'});
     stage.focus({preventScroll:true});
@@ -205,6 +206,7 @@ function startTopic(topicId,fieldQuestion='',{focusKernel=false}={}) {
 }
 
 byId('start-kernel-bank').addEventListener('click',()=>startTopic('true-zero'));
+byId('history-button').addEventListener('click',()=>present(interaction.ask('What have we covered?')));
 byId('kernel-next').addEventListener('click',()=>{
   if(!currentKernel)return;
   const next=nextTeachingKernel(currentKernel.id);
@@ -219,6 +221,7 @@ form.addEventListener('submit',event=>{
 // Fail closed: with scripts disabled or a module error the button is disabled,
 // and the textarea has no name, so it cannot leak a question via a GET URL.
 byId('teach-submit').disabled=false;
+byId('history-button').disabled=true;
 
 for(const button of document.querySelectorAll('[data-prompt]')) {
   button.addEventListener('click',()=>{
