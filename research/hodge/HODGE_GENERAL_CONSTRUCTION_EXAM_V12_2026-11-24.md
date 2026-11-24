@@ -82,7 +82,10 @@ mathematical proof before it can extend this theorem inventory.
    complex projective X at all middle codimensions.
 5. **No falsehood inferred:** a submitted native/GEN source rule without
    machine-checkable class-map proof receives `SOURCE_RULE_NOT_FORMALLY_CHECKABLE`,
-   not `HODGE_FALSE` or an automatic `GAP`.
+   not `HODGE_FALSE` or an automatic `GAP`. The child independently
+   regenerates the **disclosed** GEN v1 rule manifest under its frozen
+   source hash and records that this version exports no explicit Hodge
+   cycle-class rule. This does not inspect the protected 1056 generator.
 
 The kernel audit has been **repaired**. The unrestricted Hodge theorem
 has **not** been established by this repair. Proof Before Power.
