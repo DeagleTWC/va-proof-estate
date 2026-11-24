@@ -28,7 +28,7 @@ More concretely, every rational class of type `(2,2)` is a rational linear combi
 
    `[0,1,2,9,10,11,12,13,14,15,16,19,20,21,22,27,28,29,30,31,34,35,38,39,42,43,44,45,48,49,63,64,73,74,80,81]`
 
-   form a `36 × 36` matrix with exact determinant **`−1`** in the computed rational Hodge basis. In particular the matrix is invertible over `Q`. For every `b in B`, the rational vector `M_basis^{-1} b` gives coefficients of an **actual rational algebraic cycle** formed from those thirty-six divisor intersections. The reconstruction residual is identically zero. This proves the stated surjectivity for `X=E_i^4`, `p=2`. QED.
+   select a `70 × 36` ambient matrix `W` of concrete cycle-class columns. Let `H` be the `70 × 36` matrix whose columns are the ordered rational Hodge basis returned by the frozen script's `operator.nullspace()`. The unique coordinate matrix `C` satisfying `H*C=W` has exact determinant **`1`** in that basis and column order. Reorienting the Hodge basis can change the determinant's sign, not its nonvanishing. In particular `C` is invertible over `Q`. For every rational Hodge target with basis coordinates `b`, the rational vector `C^{-1} b` gives coefficients of an **actual rational algebraic cycle** formed from those thirty-six divisor intersections. The reconstruction residual is identically zero. This proves the stated surjectivity for `X=E_i^4`, `p=2`. QED.
 
 No calibrated coefficient, floating tolerance, score, or post-hoc target substitution participates in the cycle-generation or spanning checks. Rational coordinates express the Hodge classes themselves; they are not fitted physical parameters.
 
@@ -52,7 +52,7 @@ These are proof-instrumentation findings. The 36/36 mathematical result was alre
 | Rational Hodge `(2,2)` dimension | 36 by two independent computations |
 | Algebraic divisors / intersections | 16 / 136 |
 | Final intersection-class rank | 36 |
-| Selected `36 × 36` determinant | `−1` (exact) |
+| Selected `36 × 36` coordinate determinant (`H*C=W`, frozen nullspace basis order) | `1` (exact); sign is basis-orientation-dependent |
 | Question-child fresh-extraction tests | 9/9 passed |
 | Archived receipt replay | 2/2 passed |
 | Changed-condition and knockout controls | Both passed |
