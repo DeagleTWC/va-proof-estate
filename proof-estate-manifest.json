@@ -413,7 +413,7 @@
     "preservedOriginalReleaseIdentity": "2.7 / edition 09 — prior release hash preserved above, extended site surface identified as an addendum.",
     "verificationMethod": "Historical pinned release 2.7 digest remains sealed in mainFileSHA256; mutable deployed-site index is verified independently via currentSiteIndexSHA256."
   },
-  "currentSiteIndexSHA256": "358be69d430f04b532dd9bcb09ee43114f6bdf780c9bbd2b4e6a0b8efbd2e327",
+  "currentSiteIndexSHA256": "1a4daa3f8517dd8309cf37a7202342115e1cca6bc593264656555076f5bcda6e",
   "sourceOriginalPdfPublicManifest": "proofs/sources/ORIGINAL-PUBLIC-PDF-MANIFEST.json",
   "additionalPublicOriginalPdfManifest": "proofs/sources/ADDITIONAL-PUBLIC-PDF-MANIFEST-2026-11-16.json",
   "additionalPublicOriginalPdfCount": 5,
