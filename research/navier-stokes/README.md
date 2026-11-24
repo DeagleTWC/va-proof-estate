@@ -29,3 +29,12 @@ The saved comparisons and six-mode seed are included verbatim from the November 
 Review the complete stated hypotheses, definitions, equations, and proofs against the original mathematical manuscript. Reviewers should cite the specific theorem or equation and provide derivations or counterexamples when reporting an alleged defect. This is an author-produced open artifact, with an independent-review invitation; neither Clay recognition nor journal acceptance nor third-party certification is claimed.
 
 Hashes in `SHA256SUMS.txt` cover the exact released files. Bibliographic DOI: **not assigned**.
+
+## New public-safe movement-generation companion (2026-11-24)
+
+[`URK_MOVEMENT_KERNEL_V1.md`](URK_MOVEMENT_KERNEL_V1.md) documents an executable
+upstream Fourier-triad candidate generator with five exact invariant checks,
+one classification gate, negative controls, deterministic receipts, and source
+replay. It specializes the disclosed URK generate/check/classify principle but
+is **not** an authenticated native generator or an unrestricted proof. It does
+not modify or re-label the historical source archive.
