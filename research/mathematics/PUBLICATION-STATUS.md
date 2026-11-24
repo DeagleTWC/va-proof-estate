@@ -1,6 +1,6 @@
 # Mathematics publication coverage — V.A. Proof Estate
 
-**Public navigation record · updated 14 November 2026**
+**Public navigation record · updated 24 November 2026**
 
 This file tracks **what has been indexed for public reading in this repository**. It is not an examination of the private scientific estate, a regrading of an existing mathematical result, or a new prerequisite for completed research.
 
@@ -13,6 +13,7 @@ This file tracks **what has been indexed for public reading in this repository**
 | Admissibility–Debt Geometry | [Mathematical examination](../../admissibility-debt-geometry.html) | Dated v1.0 PDF, exact rational witnesses, source preservation and tamper negative control; [Zenodo DOI](https://doi.org/10.5281/zenodo.24194875) | Conditional model theorem scope per [public release manifest](../admissibility-debt-geometry/PUBLIC_RELEASE_MANIFEST.json); third-party review not claimed |
 | GRID-K1: Infrastructure Continuity Geometry | [Mathematical examination](../../grid-k1-infrastructure-continuity.html) | [v1.0 manuscript](../grid-k1/Snyder_GRID_K1_Infrastructure_Continuity_Formal_Proofs_2026-11-11.pdf), [release manifest](../grid-k1/PUBLIC_RELEASE_MANIFEST.json), seven synthetic proof receipts; [Zenodo DOI](https://doi.org/10.5281/zenodo.24194644) | Finite single-commodity network and conditional model theorems only; no physical grid deployment, cascade prevention certification, or third-party review claimed |
 | Consequence Signature Calculus v1 | [Original mathematical formalization](../../consequence-signature-calculus.html) | [Six-page original PDF](../consequence-signature-calculus/Universal_Resolving_Structure_Consequence_Signature_Calculus_v1_2026-04-30.pdf); [manifest](../consequence-signature-calculus/PUBLIC_RELEASE_MANIFEST.json) and SHA-256 source custody | Formal consequence-signature and binding criteria as a model; no independently claimed universal physical theorem |
+| Hodge - Exact Bounded Answer (2026-11-24) | [Hodge mathematical record](../../hodge.html) | [Three-page formal PDF](../hodge/Hodge_Bounded_Formalization_2026-11-24.pdf), [source statement](../hodge/HODGE_BOUNDED_FORMAL_STATEMENT_2026-11-24.md), [manifest](../hodge/PUBLIC_RELEASE_MANIFEST.json) | Explicit classical toric/quadric cycles, correspondence nonuniqueness and a restricted ring-map no-go; 40/40 local tests, unrestricted Hodge not established |
 
 ## Additional research lines: published examination status or pending original carriers
 

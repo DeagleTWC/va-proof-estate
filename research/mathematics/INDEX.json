@@ -1,6 +1,6 @@
 {
   "schema": "deagle-mathematics-index/v1",
-  "updated": "2026-11-22",
+  "updated": "2026-11-24",
   "owner": "Terry Allen Snyder",
   "entries": [
     {
@@ -173,6 +173,24 @@
       "private_native_urk_excluded": true,
       "catalog_number": "007",
       "index_kind": "published_bounded_mathematical_exhibit"
+    },
+    {
+      "id": "hodge-bounded-2026-11-24",
+      "title": "Hodge - Exact Bounded Answer and Correspondence Disposition",
+      "record": "hodge.html",
+      "formal_statement": "research/hodge/HODGE_BOUNDED_FORMAL_STATEMENT_2026-11-24.md",
+      "pdf_filename": "Hodge_Bounded_Formalization_2026-11-24.pdf",
+      "pdf_url": "research/hodge/Hodge_Bounded_Formalization_2026-11-24.pdf",
+      "pdf_sha256": "3e1b8b6924dd9c95611144debafbffb3f2843867af5c40d426ed420c9f11b13e",
+      "pdf_hosted": true,
+      "manifest": "research/hodge/PUBLIC_RELEASE_MANIFEST.json",
+      "bounded_checks_passed": 40,
+      "bounded_checks_total": 40,
+      "source_archive_sha256": "b443beb977bfc227cf58c28485221f17c5bb55a5287512f4aee195ed8216a023",
+      "archive_publicly_mirrored": false,
+      "status": "Exact cycle classes proved within (P1)^3 and a smooth Q4; two valid correspondences act differently; any unital graded rational Chow-ring homomorphism from the toric model to Q4 is trivial in positive degree. No native Basin map or unrestricted Hodge proof authenticated.",
+      "scope_note": "Classical algebraic geometry in declared models; local tests and receipt replay are not independent theorem review or native generator authentication.",
+      "index_kind": "bounded_mathematical_formalization"
     }
   ],
   "release_correction": "Prior 28-page draft record superseded before public PDF upload; that draft contained native mathematical sections and was not published on Deagle.",

@@ -1,0 +1,35 @@
+{
+  "schema": "deagle-mathematics-public-release/v1",
+  "title": "Hodge - Exact Bounded Answer and Correspondence Disposition",
+  "author": "Terry Allen Snyder",
+  "formalization_date": "2026-11-24",
+  "edition": "1.0",
+  "public_carrier": "hodge.html",
+  "formal_source": "research/hodge/HODGE_BOUNDED_FORMAL_STATEMENT_2026-11-24.md",
+  "pdf": "research/hodge/Hodge_Bounded_Formalization_2026-11-24.pdf",
+  "pdf_sha256": "3e1b8b6924dd9c95611144debafbffb3f2843867af5c40d426ed420c9f11b13e",
+  "companion_source_zip": "HODGE_CHOW_RING_BRIDGE_V6_2026-11-24.zip",
+  "companion_source_zip_sha256": "b443beb977bfc227cf58c28485221f17c5bb55a5287512f4aee195ed8216a023",
+  "companion_archive_publicly_mirrored": false,
+  "local_tests": {
+    "passed": 40,
+    "total": 40,
+    "fresh_extraction": true,
+    "independently_reproduced": false
+  },
+  "accepted_scope": [
+    "explicit toric rational cycle on (P1)^3",
+    "explicit quadric plane classes on Q4",
+    "nonuniqueness of proposed algebraic correspondences",
+    "obstruction for nonzero unital graded rational Chow-ring map X-to-Q4"
+  ],
+  "unresolved": [
+    "native Elements Basin to declared projective model correspondence",
+    "source selection of an algebraic correspondence",
+    "unrestricted Hodge Conjecture"
+  ],
+  "native_new_k_authenticated": false,
+  "external_referee_disposition": "not attached",
+  "publication_not_proof_certification": true,
+  "protected_mechanism_disclosed": false
+}
