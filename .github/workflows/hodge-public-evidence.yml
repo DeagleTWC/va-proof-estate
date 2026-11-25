@@ -1,0 +1,41 @@
+name: Hodge Public Lattice Evidence Integrity
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "research/hodge/**"
+      - "research/mathematics/INDEX.json"
+      - "hodge.html"
+      - "mathematics.html"
+      - "scripts/verify_hodge_public_release.py"
+      - "scripts/test_verify_hodge_public_release.py"
+      - ".github/workflows/hodge-public-evidence.yml"
+  pull_request:
+    paths:
+      - "research/hodge/**"
+      - "research/mathematics/INDEX.json"
+      - "hodge.html"
+      - "mathematics.html"
+      - "scripts/verify_hodge_public_release.py"
+      - "scripts/test_verify_hodge_public_release.py"
+      - ".github/workflows/hodge-public-evidence.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-hodge-public-evidence:
+    name: Rebuild frozen Hodge lattice and reject forged witnesses
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Verify public ZIP SHA, 39 tests, three gates, and all receipts
+        run: python scripts/verify_hodge_public_release.py
+      - name: Verify archive tamper and missing-source refusals
+        run: python -m unittest discover -s scripts -p test_verify_hodge_public_release.py -v

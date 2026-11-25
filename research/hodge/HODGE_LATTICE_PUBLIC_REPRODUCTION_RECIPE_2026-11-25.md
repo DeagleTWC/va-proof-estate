@@ -12,6 +12,18 @@
 - Check the downloaded ZIP bytes with `sha256sum NEWK_HODGE_LATTICE_CLOSURE_CHILD_V1_2026-11-25.zip` (or your platform's equivalent) **before** extraction.
 - Extract the archive, then enter the `HISTORY_KERNEL_V1` directory. The following commands use Python 3 and only the frozen files in that directory.
 
+## One-command audit from the GitHub repository
+
+The [exact SHA-pinned ZIP](NEWK_HODGE_LATTICE_CLOSURE_CHILD_V1_2026-11-25.zip) is mirrored here in the public repository. From the repository root, execute:
+
+```bash
+python scripts/verify_hodge_public_release.py
+```
+
+This checks the archive SHA-256, extracts it into a temporary directory, runs all 39 tests, reissues the three gate outcomes and replays them, then compares each regenerated receipt and exact evidence object with its frozen counterpart. It also checks the repository's machine manifest. The same command runs in [Hodge Public Lattice Evidence Integrity](https://github.com/DeagleTWC/va-proof-estate/actions/workflows/hodge-public-evidence.yml) on qualifying pushes and pull requests.
+
+**This is an automated software witness, not an independent theorem referee or a disclosure of protected GEN.**
+
 ## Test the full child
 
 ```bash
