@@ -1,6 +1,5 @@
 """Exact source-bound model-gate, changed-condition, and replay tests."""
 
-import copy
 from pathlib import Path
 import subprocess
 import sys
@@ -10,7 +9,9 @@ import unittest
 from consequence_signature_child_v1 import generate, verify_receipt, example_candidates
 
 
-PDF = Path(__file__).resolve().parents[1] / "csc-original.pdf"
+PDF = Path(__file__).with_name(
+    "Universal_Resolving_Structure_Consequence_Signature_Calculus_v1_2026-04-30.pdf"
+)
 
 
 def candidate():
