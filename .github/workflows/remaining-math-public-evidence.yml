@@ -1,0 +1,61 @@
+name: Remaining Public Mathematics Evidence Integrity
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "research/yang-mills/**"
+      - "research/admissibility-debt-geometry/**"
+      - "research/p-versus-np/**"
+      - "math/egyptian-child/**"
+      - "mathematics.html"
+      - "yang-mills.html"
+      - "admissibility-debt-geometry.html"
+      - "p-versus-np.html"
+      - "scripts/verify_other_math_public.py"
+      - "scripts/test_verify_other_math_public.py"
+      - ".github/workflows/remaining-math-public-evidence.yml"
+  pull_request:
+    paths:
+      - "research/yang-mills/**"
+      - "research/admissibility-debt-geometry/**"
+      - "research/p-versus-np/**"
+      - "math/egyptian-child/**"
+      - "mathematics.html"
+      - "yang-mills.html"
+      - "admissibility-debt-geometry.html"
+      - "p-versus-np.html"
+      - "scripts/verify_other_math_public.py"
+      - "scripts/test_verify_other_math_public.py"
+      - ".github/workflows/remaining-math-public-evidence.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-remaining-public-mathematics:
+    name: Bind original source and re-run four public mathematical examinations
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install fixed spectral countermodel dependency
+        run: python -m pip install numpy==2.3.5
+      - name: Prove source-lineage, missing-check and altered-witness refusal
+        run: python -m unittest discover -s scripts -p 'test_verify_other_math_public.py' -v
+      - name: Replay 400 bounded public observations with fresh receipts
+        run: python scripts/verify_other_math_public.py --receipt-dir "$RUNNER_TEMP/remaining-math-receipts"
+      - name: Preserve seven source-bound mathematical review files
+        uses: actions/upload-artifact@v4
+        with:
+          name: remaining-mathematics-public-receipts
+          path: ${{ runner.temp }}/remaining-math-receipts/
+          if-no-files-found: error
+          retention-days: 90
