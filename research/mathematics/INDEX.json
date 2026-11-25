@@ -234,7 +234,14 @@
         "public_reproduction_recipe": "research/hodge/HODGE_LATTICE_PUBLIC_REPRODUCTION_RECIPE_2026-11-25.md",
         "audit_commands_verified": true,
         "changed_condition_exit": 2,
-        "wrong_anchor_exit": 3
+        "wrong_anchor_exit": 3,
+        "archive_publicly_mirrored": true,
+        "archive_repo_path": "research/hodge/NEWK_HODGE_LATTICE_CLOSURE_CHILD_V1_2026-11-25.zip",
+        "github_actions_workflow": ".github/workflows/hodge-public-evidence.yml",
+        "public_verifier": "scripts/verify_hodge_public_release.py",
+        "public_verifier_tests": "scripts/test_verify_hodge_public_release.py",
+        "automated_audit_scope": "39 tests, CARRY/REEXAMINE/REFUSE exact receipt replay and tamper refusal",
+        "independent_mathematical_referee_attached": false
       }
     }
   ],

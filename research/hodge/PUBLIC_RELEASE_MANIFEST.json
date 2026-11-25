@@ -65,6 +65,12 @@
       "reexamine_exit": 2,
       "refuse_exit": 3,
       "replay_exit": 0
-    }
+    },
+    "archive_publicly_mirrored": true,
+    "public_repository_archive": "research/hodge/NEWK_HODGE_LATTICE_CLOSURE_CHILD_V1_2026-11-25.zip",
+    "public_verifier": "scripts/verify_hodge_public_release.py",
+    "public_verifier_tests": "scripts/test_verify_hodge_public_release.py",
+    "github_actions_workflow": ".github/workflows/hodge-public-evidence.yml",
+    "ci_scope": "SHA-pinned frozen child; 39 tests; three exact gate receipts and evidence comparison; no independent theorem review"
   }
 }
