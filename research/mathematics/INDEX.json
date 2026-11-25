@@ -230,7 +230,11 @@
         "archive_sha256": "ee0d52bbe2cb5498c2aafc1e578e266dec5f4d72d614f05f2fe753bf320cb1e4",
         "archive_url": "https://drive.google.com/file/d/1m69eLgms780kuyok4y1eyAsTyh9MDxPJ/view?usp=drivesdk",
         "unrestricted_hodge_proved_by_child": false,
-        "native_GEN_1056_authenticated": false
+        "native_GEN_1056_authenticated": false,
+        "public_reproduction_recipe": "research/hodge/HODGE_LATTICE_PUBLIC_REPRODUCTION_RECIPE_2026-11-25.md",
+        "audit_commands_verified": true,
+        "changed_condition_exit": 2,
+        "wrong_anchor_exit": 3
       }
     }
   ],

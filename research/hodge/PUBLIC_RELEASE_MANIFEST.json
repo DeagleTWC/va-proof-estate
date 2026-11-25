@@ -58,6 +58,13 @@
     "archive_sha256": "ee0d52bbe2cb5498c2aafc1e578e266dec5f4d72d614f05f2fe753bf320cb1e4",
     "unrestricted_hodge_proved_by_this_child": false,
     "native_new_k_authenticated": false,
-    "independent_referee_decision_attached": false
+    "independent_referee_decision_attached": false,
+    "reproduction_recipe": "research/hodge/HODGE_LATTICE_PUBLIC_REPRODUCTION_RECIPE_2026-11-25.md",
+    "audit_gates": {
+      "carry_exit": 0,
+      "reexamine_exit": 2,
+      "refuse_exit": 3,
+      "replay_exit": 0
+    }
   }
 }
