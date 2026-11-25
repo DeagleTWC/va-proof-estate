@@ -20,9 +20,27 @@ The [exact SHA-pinned ZIP](NEWK_HODGE_LATTICE_CLOSURE_CHILD_V1_2026-11-25.zip) i
 python scripts/verify_hodge_public_release.py
 ```
 
-This checks the archive SHA-256, extracts it into a temporary directory, runs all 39 tests, reissues the three gate outcomes and replays them, then compares each regenerated receipt and exact evidence object with its frozen counterpart. It also checks the repository's machine manifest. The same command runs in [Hodge Public Lattice Evidence Integrity](https://github.com/DeagleTWC/va-proof-estate/actions/workflows/hodge-public-evidence.yml) on qualifying pushes and pull requests.
+This checks the archive SHA-256, extracts it into a temporary directory, runs all 39 tests, reissues the three gate outcomes and replays them, then compares each regenerated receipt and exact evidence object with its frozen counterpart. It also checks the repository's machine manifest. The same verifier, with an output directory, runs in [Hodge Public Lattice Evidence Integrity](https://github.com/DeagleTWC/va-proof-estate/actions/workflows/hodge-public-evidence.yml) on qualifying pushes and pull requests.
 
 **This is an automated software witness, not an independent theorem referee or a disclosure of protected GEN.**
+
+## Download the newly generated GitHub runner receipts
+
+Each successful [Hodge CI workflow run](https://github.com/DeagleTWC/va-proof-estate/actions/workflows/hodge-public-evidence.yml) includes an **Artifacts** entry named `hodge-exact-replay-receipts`. Download it to examine seven files:
+
+- `carry_receipt.json`, `reexamine_receipt.json`, `refuse_receipt.json` — the three reissued gate decisions.
+- `carry_exact_evidence.json`, `reexamine_exact_evidence.json`, `refuse_exact_evidence.json` — corresponding regenerated structural evidence.
+- `audit_summary.json` — the archive SHA-256, source/ledger commitments, test count, each gate's intended exit code, and SHA-256 of every regenerated file.
+
+These artifacts expire after **90 days**; the original ZIP, verifier, and frozen machine manifest remain in the public repository. Artifacts are uploaded only after the 39 software tests, all exact evidence comparisons, all three replays, and tamper-refusal tests succeed.
+
+To create the same seven-file bundle locally from the repository root, use an empty output directory:
+
+```bash
+python scripts/verify_hodge_public_release.py --receipt-dir local-hodge-ci-receipts
+```
+
+The bundle records what the software reissued; it does not claim an independently reviewed unrestricted Hodge proof.
 
 ## Test the full child
 
