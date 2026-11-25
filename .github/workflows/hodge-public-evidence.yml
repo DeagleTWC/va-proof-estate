@@ -8,8 +8,12 @@ on:
       - "research/mathematics/INDEX.json"
       - "hodge.html"
       - "mathematics.html"
+      - "research-publication.html"
+      - "research/mathematics/REVIEW-CROSSWALK.md"
+      - "research/mathematics/PUBLICATION-STATUS.md"
       - "scripts/verify_hodge_public_release.py"
       - "scripts/test_verify_hodge_public_release.py"
+      - "scripts/test_math_publication_navigation.py"
       - ".github/workflows/hodge-public-evidence.yml"
   pull_request:
     paths:
@@ -17,8 +21,12 @@ on:
       - "research/mathematics/INDEX.json"
       - "hodge.html"
       - "mathematics.html"
+      - "research-publication.html"
+      - "research/mathematics/REVIEW-CROSSWALK.md"
+      - "research/mathematics/PUBLICATION-STATUS.md"
       - "scripts/verify_hodge_public_release.py"
       - "scripts/test_verify_hodge_public_release.py"
+      - "scripts/test_math_publication_navigation.py"
       - ".github/workflows/hodge-public-evidence.yml"
   workflow_dispatch:
 
@@ -39,6 +47,8 @@ jobs:
         run: python scripts/verify_hodge_public_release.py --receipt-dir "$RUNNER_TEMP/hodge-ci-receipts"
       - name: Verify archive tamper and missing-source refusals
         run: python -m unittest discover -s scripts -p test_verify_hodge_public_release.py -v
+      - name: Verify current Hodge publication routes and frozen source custody
+        run: python -m unittest discover -s scripts -p test_math_publication_navigation.py -v
       - name: Publish seven exact replay evidence files
         uses: actions/upload-artifact@v4
         with:
