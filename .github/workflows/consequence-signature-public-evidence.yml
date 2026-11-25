@@ -1,0 +1,45 @@
+name: Consequence Signature Calculus Public Evidence Integrity
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "research/consequence-signature-calculus/**"
+      - "consequence-signature-calculus.html"
+      - ".github/workflows/consequence-signature-public-evidence.yml"
+  pull_request:
+    paths:
+      - "research/consequence-signature-calculus/**"
+      - "consequence-signature-calculus.html"
+      - ".github/workflows/consequence-signature-public-evidence.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-consequence-signature-child:
+    name: Exact five-invariant gate, 15 tests and source-bound receipt replay
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run exact-rational and forgery-refusal regression tests
+        run: python -m unittest discover -s research/consequence-signature-calculus -p 'test_consequence_signature_child_v1.py' -v
+      - name: Regenerate three declared-model receipts under original PDF custody
+        run: python research/consequence-signature-calculus/consequence_signature_child_v1.py --demo --receipt-dir "$RUNNER_TEMP/consequence-signature-receipts"
+      - name: Replay BIND, REFUSE and PAUSE independently
+        run: |
+          for label in bind refuse pause; do
+            python research/consequence-signature-calculus/consequence_signature_child_v1.py --verify "$RUNNER_TEMP/consequence-signature-receipts/$label-receipt.json"
+          done
+      - name: Upload three source-bound mathematical review files
+        uses: actions/upload-artifact@v4
+        with:
+          name: consequence-signature-model-receipts
+          path: ${{ runner.temp }}/consequence-signature-receipts/
+          if-no-files-found: error
+          retention-days: 90

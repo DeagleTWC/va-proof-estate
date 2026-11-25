@@ -133,7 +133,21 @@
       "pages": 6,
       "pdf_hosted": true,
       "source_unchanged": true,
-      "status": "Original source-preserving mathematical formalization: consequence signature, model-defined admissibility and binding, breach and restart classification. Independent external review and claims of physical universality are not included.",
+      "status": "Original source-preserving mathematical formalization: consequence signature, model-defined admissibility and binding, breach and restart classification. An executable public child adds 15 exact conditional-model challenge tests, one five-invariant gate, a distinct derivative-warning pause and three source-bound replay receipts. Independent external review and claims of physical universality are not included.",
+      "public_child_v1": {
+        "date": "2026-11-25",
+        "formalization": "research/consequence-signature-calculus/CONSEQUENCE_SIGNATURE_CHILD_V1.md",
+        "module": "research/consequence-signature-calculus/consequence_signature_child_v1.py",
+        "tests": "research/consequence-signature-calculus/test_consequence_signature_child_v1.py",
+        "verified_local_tests": 15,
+        "expected_ci_receipts": ["bind-receipt.json", "refuse-receipt.json", "pause-receipt.json"],
+        "ci": ".github/workflows/consequence-signature-public-evidence.yml",
+        "original_pdf_sha256_required": "e17250eca29c37e708b131795f43431510e4ae8e49dafcaaa6fc92f48a766e61",
+        "original_source_unchanged": true,
+        "native_generator_authenticated": false,
+        "viability_and_derivatives_externally_declared": true,
+        "claims_physical_universality": false
+      },
       "catalog_number": "005",
       "index_kind": "published_mathematical_research"
     },
