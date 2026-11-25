@@ -1,0 +1,46 @@
+name: Navier-Stokes Public Evidence Integrity
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "research/navier-stokes/**"
+      - "navier-stokes.html"
+      - "scripts/verify_navier_public_evidence.py"
+      - "scripts/test_verify_navier_public_evidence.py"
+      - ".github/workflows/navier-public-evidence.yml"
+  pull_request:
+    paths:
+      - "research/navier-stokes/**"
+      - "navier-stokes.html"
+      - "scripts/verify_navier_public_evidence.py"
+      - "scripts/test_verify_navier_public_evidence.py"
+      - ".github/workflows/navier-public-evidence.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-navier-public-evidence:
+    name: Replay 51 finite checks and refuse source tampering
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install pinned numerical comparator dependency
+        run: python -m pip install numpy==2.3.5
+      - name: Verify runner rejects missing, tampered, and falsely promoted evidence
+        run: python -m unittest discover -s scripts -p 'test_verify_navier_public_evidence.py' -v
+      - name: Regenerate four evidence groups and source-bound receipts
+        run: python scripts/verify_navier_public_evidence.py --receipt-dir "$RUNNER_TEMP/navier-ci-receipts"
+      - name: Upload seven public finite-evidence review files
+        uses: actions/upload-artifact@v4
+        with:
+          name: navier-finite-evidence-receipts
+          path: ${{ runner.temp }}/navier-ci-receipts/
+          if-no-files-found: error
+          retention-days: 90
