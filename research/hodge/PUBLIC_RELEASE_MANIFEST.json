@@ -44,5 +44,20 @@
     "missing_identity_gate": "REFUSE",
     "native_new_k_authenticated": false,
     "independently_refereed": false
+  },
+  "newk_lattice_closure_child_v1": {
+    "date": "2026-11-25",
+    "formal_record": "research/hodge/NEWK_LATTICE_CLOSURE_FORMAL_2026-11-25.md",
+    "machine_manifest": "research/hodge/NEWK_LATTICE_CLOSURE_MANIFEST.json",
+    "galois_orbits": 480,
+    "selected_algebraic_cycles": 401,
+    "exact_gram_determinant_mod_1009": 437,
+    "tests": "39/39",
+    "fresh_extraction": true,
+    "gates_replayed": 3,
+    "archive_sha256": "ee0d52bbe2cb5498c2aafc1e578e266dec5f4d72d614f05f2fe753bf320cb1e4",
+    "unrestricted_hodge_proved_by_this_child": false,
+    "native_new_k_authenticated": false,
+    "independent_referee_decision_attached": false
   }
 }

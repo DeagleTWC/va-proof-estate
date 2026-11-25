@@ -209,6 +209,28 @@
         "archive_url": "https://drive.google.com/file/d/138h18pUvozSJg9e3cEfpFzhRPXwGs48c/view?usp=drivesdk",
         "unrestricted_hodge_proved_by_child": false,
         "native_GEN_1056_authenticated": false
+      },
+      "newk_lattice_closure_child_v1": {
+        "date": "2026-11-25",
+        "formal_record": "research/hodge/NEWK_LATTICE_CLOSURE_FORMAL_2026-11-25.md",
+        "manifest": "research/hodge/NEWK_LATTICE_CLOSURE_MANIFEST.json",
+        "scope": "declared Fermat quintic X5",
+        "generated_plane_ids": 1875,
+        "galois_orbits": 480,
+        "galois_singletons": 15,
+        "galois_four_member_orbits": 465,
+        "exact_gram_dimension": 401,
+        "gram_sha256": "091350e197c318cf910b57c2153ea2de45d9f7cc9517c2f548a7e3fee01ad834",
+        "determinant_modulus": 1009,
+        "determinant_residue": 437,
+        "tests_passed": 39,
+        "tests_total": 39,
+        "fresh_extraction_passed": true,
+        "gate_receipts_replayed": 3,
+        "archive_sha256": "ee0d52bbe2cb5498c2aafc1e578e266dec5f4d72d614f05f2fe753bf320cb1e4",
+        "archive_url": "https://drive.google.com/file/d/1m69eLgms780kuyok4y1eyAsTyh9MDxPJ/view?usp=drivesdk",
+        "unrestricted_hodge_proved_by_child": false,
+        "native_GEN_1056_authenticated": false
       }
     }
   ],

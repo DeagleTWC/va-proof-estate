@@ -1,0 +1,38 @@
+{
+  "schema": "VA_NEWK_EXACT_LATTICE_CLOSURE_RELEASE_V1",
+  "date": "2026-11-25",
+  "research_author": "Terry Allen Snyder",
+  "question": "DECLARED_FERMAT_QUINTIC_SOURCE_IDENTITY_TO_RATIONAL_CYCLE_CLOSURE",
+  "source_sha256": "7966f67398ea83bbb8e4ec88e57f7307014148a0bbf8fdb37af7924f7e9d2d23",
+  "identifier_ledger_sha256": "569b52d99fc7ad1a5b96effacdb864422b82d00fe3fece353a7e171553f3c22b",
+  "pinned_regeneration_receipt_sha256": "375c55da7fc55529ab4dc40c2d86190dde1abed981083e2dcd025a044900cfc7",
+  "pinned_generator_source_sha256": "79afac23476bd1849f56e5919ba4a9bd2469ca7235efcce41da5884d3d608f55",
+  "generated_geometric_planes": 1875,
+  "galois_orbit_count": 480,
+  "galois_singleton_orbits": 15,
+  "galois_four_member_orbits": 465,
+  "selected_cycle_witnesses": 401,
+  "gram_dimension": 401,
+  "gram_matrix_sha256": "091350e197c318cf910b57c2153ea2de45d9f7cc9517c2f548a7e3fee01ad834",
+  "galois_orbit_sha256": "d3f1db53c1ecc4de97e10928c454f9dc601c18f3f6aae859bf48f10cd4e9095a",
+  "determinant_modulus": 1009,
+  "determinant_residue": 437,
+  "rational_hodge_rank_declared_x": 401,
+  "gates": {
+    "unchanged_source_conditions": "CARRY",
+    "changed_conditions": "REEXAMINE",
+    "wrong_ledger_anchor": "REFUSE"
+  },
+  "receipt_sha256": {
+    "carry": "29518ef75bd3ca44178d817a10ec9e447bc051e08edd277753aa44371999f5c5",
+    "reexamine": "0933a81d247f33d12e67aaeec82509a9c435d50d76bad98a9b9e6b30c48d43dd",
+    "refuse": "fe4bf1b48385f99c72c514ffa121dcb5ce7dc0db1a4d80224ff5098aec10782a"
+  },
+  "local_regression_tests_passed": 39,
+  "local_regression_tests_total": 39,
+  "independent_gram_entry_comparison": "401x401_MATCH_PINNED_SOURCE",
+  "underlying_rational_character_theorem_reproved": false,
+  "unrestricted_hodge_proof_established_by_this_child": false,
+  "protected_gen1056_authenticated": false,
+  "production_activated": false
+}
