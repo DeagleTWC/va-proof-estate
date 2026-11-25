@@ -1,6 +1,7 @@
 """Adversarial checks for the remaining public mathematics CI gate."""
 
 import json
+import os
 from pathlib import Path
 from tempfile import TemporaryDirectory
 import unittest
@@ -14,7 +15,7 @@ from verify_other_math_public import (
 )
 
 
-ROOT = Path(__file__).resolve().parents[1] / "remainder"
+ROOT = Path(os.environ.get("MATH_PUBLIC_REPO_ROOT", Path(__file__).resolve().parents[1])).resolve()
 
 
 class OtherMathPublicTests(unittest.TestCase):
