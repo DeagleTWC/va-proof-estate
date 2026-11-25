@@ -1,6 +1,6 @@
 {
   "schema": "deagle-mathematics-index/v1",
-  "updated": "2026-11-24",
+  "updated": "2026-11-25",
   "owner": "Terry Allen Snyder",
   "entries": [
     {
@@ -190,7 +190,26 @@
       "archive_publicly_mirrored": false,
       "status": "Exact cycle classes proved within (P1)^3 and a smooth Q4; two valid correspondences act differently; any unital graded rational Chow-ring homomorphism from the toric model to Q4 is trivial in positive degree. No native Basin map or unrestricted Hodge proof authenticated.",
       "scope_note": "Classical algebraic geometry in declared models; local tests and receipt replay are not independent theorem review or native generator authentication.",
-      "index_kind": "bounded_mathematical_formalization"
+      "index_kind": "bounded_mathematical_formalization",
+      "identifier_history_child_v1": {
+        "date": "2026-11-25",
+        "formal_record": "research/hodge/HODGE_HISTORY_IDENTIFIER_CHILD_V1_2026-11-25.md",
+        "manifest": "research/hodge/HISTORY_IDENTIFIER_CHILD_V1_MANIFEST.json",
+        "scope": "declared Fermat quintic X5",
+        "generated_plane_ids": 1875,
+        "source_basis_records": 10,
+        "geometric_id_overlaps": 9,
+        "distinct_object_or_class_ids": 1876,
+        "source_records": 1885,
+        "tests_passed": 31,
+        "tests_total": 31,
+        "fresh_extraction_passed": true,
+        "history_complete_gate": "CARRY",
+        "history_missing_identifier_gate": "REFUSE",
+        "archive_url": "https://drive.google.com/file/d/138h18pUvozSJg9e3cEfpFzhRPXwGs48c/view?usp=drivesdk",
+        "unrestricted_hodge_proved_by_child": false,
+        "native_GEN_1056_authenticated": false
+      }
     }
   ],
   "release_correction": "Prior 28-page draft record superseded before public PDF upload; that draft contained native mathematical sections and was not published on Deagle.",

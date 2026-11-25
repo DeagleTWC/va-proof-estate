@@ -1,0 +1,47 @@
+{
+  "schema": "va-hodge-identifier-history-public/v1",
+  "date": "2026-11-25",
+  "author": "Terry Allen Snyder",
+  "scope": "DECLARED_FERMAT_QUINTIC_X5",
+  "parent_formal": "research/hodge/HODGE_NEWK_EDGE_GATE_REPAIR_V3_2026-11-25.md",
+  "formal_record": "research/hodge/HODGE_HISTORY_IDENTIFIER_CHILD_V1_2026-11-25.md",
+  "source_receipt_sha256": "7966f67398ea83bbb8e4ec88e57f7307014148a0bbf8fdb37af7924f7e9d2d23",
+  "generator_source_sha256": "79afac23476bd1849f56e5919ba4a9bd2469ca7235efcce41da5884d3d608f55",
+  "ordered_plane_descriptors_sha256": "4ef4093b9dc3ed436985419ca642cb9359cddf78c5d78d99673709a938adcf20",
+  "measurements": {
+    "original_basis_records": 10,
+    "source_listed_rational_planes": 9,
+    "generated_plane_records": 1875,
+    "generated_plane_ids": 1875,
+    "overlapping_geometric_plane_ids": 9,
+    "distinct_object_or_class_ids": 1876,
+    "total_source_records": 1885
+  },
+  "identifier_gate": "ISSUE",
+  "history_complete_gate": "CARRY",
+  "history_missing_identifier_gate": "REFUSE",
+  "verification": {
+    "local_tests_passed": 31,
+    "local_tests_total": 31,
+    "fresh_extraction_tests_passed": 31,
+    "fresh_extraction_tests_total": 31,
+    "source_generator_sequence_matched": 1875,
+    "source_generator_sequence_total": 1875,
+    "complete_receipt_replay": "REPLAY_OK",
+    "missing_identifier_refusal_receipt_replay": "REPLAY_OK",
+    "independently_refereed": false
+  },
+  "archive": {
+    "filename": "HISTORY_IDENTIFIER_CHILD_V1_2026-11-25.zip",
+    "sha256": "813ca9524b362e24e779b218f9fc34b024a85f73802ff2020bd494b188dd446f",
+    "url": "https://drive.google.com/file/d/138h18pUvozSJg9e3cEfpFzhRPXwGs48c/view?usp=drivesdk",
+    "public_access_independently_verified": false
+  },
+  "boundaries": {
+    "native_gen1056_authenticated": false,
+    "unrestricted_hodge_proof_established_by_this_child": false,
+    "underlying_geometry_proved_by_identifier_hashes": false,
+    "mathematical_truth_inferred_from_history_gate": false,
+    "protected_native_urk_included": false
+  }
+}

@@ -31,5 +31,18 @@
   "native_new_k_authenticated": false,
   "external_referee_disposition": "not attached",
   "publication_not_proof_certification": true,
-  "protected_mechanism_disclosed": false
+  "protected_mechanism_disclosed": false,
+  "identifier_history_child_v1": {
+    "date": "2026-11-25",
+    "scope": "Fermat quintic X5 only",
+    "formal_record": "research/hodge/HODGE_HISTORY_IDENTIFIER_CHILD_V1_2026-11-25.md",
+    "identity_manifest": "research/hodge/HISTORY_IDENTIFIER_CHILD_V1_MANIFEST.json",
+    "generated_plane_ids": 1875,
+    "verified_tests": "31/31",
+    "fresh_extraction": true,
+    "complete_history_gate": "CARRY",
+    "missing_identity_gate": "REFUSE",
+    "native_new_k_authenticated": false,
+    "independently_refereed": false
+  }
 }
