@@ -10,6 +10,7 @@ import hashlib
 import json
 from pathlib import Path, PurePosixPath
 import re
+import shutil
 import stat
 import subprocess
 import sys
@@ -74,9 +75,12 @@ def run(command: list[str], cwd: Path, expected_exit: int, label: str) -> str:
     return result.stdout + result.stderr
 
 
-def verify(archive: Path) -> None:
+def verify(archive: Path, receipt_dir: Path | None = None) -> None:
     require(archive.is_file(), "archive not found: " + str(archive))
     require(sha256_file(archive) == ARCHIVE_SHA256, "archive SHA-256 mismatch")
+    if receipt_dir is not None and receipt_dir.exists():
+        require(receipt_dir.is_dir() and not any(receipt_dir.iterdir()),
+                "receipt directory must be empty")
 
     with TemporaryDirectory(prefix="hodge-public-proof-") as temp:
         temporary = Path(temp)
@@ -107,6 +111,7 @@ def verify(archive: Path) -> None:
 
         source_sha = manifest["source_sha256"]
         ledger_sha = manifest["identifier_ledger_sha256"]
+        generated = {}
         for case, (frozen_name, gate, exit_code) in FROZEN_RECEIPTS.items():
             prefix = temporary / ("replayed_" + case)
             trusted_ledger = "0" * 64 if case == "refuse" else ledger_sha
@@ -139,6 +144,45 @@ def verify(archive: Path) -> None:
                 child, 0, case + " replay",
             )
             require("LATTICE_REPLAY_OK" in replay_output, case + " replay failed")
+            generated[case] = (gate, exit_code, Path(str(prefix) + "_receipt.json"),
+                               Path(str(prefix) + "_exact_evidence.json"))
+
+        if receipt_dir is not None:
+            receipt_dir.mkdir(parents=True, exist_ok=True)
+            cases = {}
+            for case, (gate, exit_code, issued_receipt, issued_exact) in generated.items():
+                receipt_name = case + "_receipt.json"
+                exact_name = case + "_exact_evidence.json"
+                receipt_target = receipt_dir / receipt_name
+                exact_target = receipt_dir / exact_name
+                shutil.copyfile(issued_receipt, receipt_target)
+                shutil.copyfile(issued_exact, exact_target)
+                cases[case] = {
+                    "gate": gate,
+                    "run_exit_code": exit_code,
+                    "replay_exit_code": 0,
+                    "receipt_file": receipt_name,
+                    "receipt_file_sha256": sha256_file(receipt_target),
+                    "exact_evidence_file": exact_name,
+                    "exact_evidence_file_sha256": sha256_file(exact_target),
+                    "frozen_receipt_commitment": manifest["receipt_sha256"][case],
+                }
+            summary = {
+                "schema": "VA_HODGE_PUBLIC_CI_EVIDENCE_V1",
+                "archive_sha256": ARCHIVE_SHA256,
+                "source_sha256": source_sha,
+                "identifier_ledger_sha256": ledger_sha,
+                "tests_passed": EXPECTED_TESTS,
+                "tests_total": EXPECTED_TESTS,
+                "cases": cases,
+                "rational_character_theorem_independently_reproved": False,
+                "unrestricted_hodge_proved_by_child": False,
+                "protected_gen1056_authenticated": False,
+                "independent_mathematical_referee_attached": False,
+            }
+            (receipt_dir / "audit_summary.json").write_text(
+                json.dumps(summary, sort_keys=True, indent=2) + "\n", encoding="utf-8"
+            )
 
         print("HODGE_PUBLIC_AUDIT PASS 39/39 CARRY=0 REEXAMINE=2 REFUSE=3 REPLAYS=3/3")
 
@@ -146,9 +190,11 @@ def verify(archive: Path) -> None:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--archive", type=Path, default=DEFAULT_ARCHIVE)
+    parser.add_argument("--receipt-dir", type=Path,
+                        help="Write seven checked public evidence files after all gates pass")
     args = parser.parse_args()
     try:
-        verify(args.archive)
+        verify(args.archive, args.receipt_dir)
     except (VerificationError, OSError, ValueError, KeyError, RuntimeError) as exc:
         print("HODGE_PUBLIC_AUDIT REFUSE: " + str(exc), file=sys.stderr)
         return 3

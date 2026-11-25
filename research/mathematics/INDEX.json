@@ -241,7 +241,13 @@
         "public_verifier": "scripts/verify_hodge_public_release.py",
         "public_verifier_tests": "scripts/test_verify_hodge_public_release.py",
         "automated_audit_scope": "39 tests, CARRY/REEXAMINE/REFUSE exact receipt replay and tamper refusal",
-        "independent_mathematical_referee_attached": false
+        "independent_mathematical_referee_attached": false,
+        "ci_artifact": {
+          "name": "hodge-exact-replay-receipts",
+          "files": 7,
+          "retention_days": 90,
+          "scope": "newly reissued exact software receipts/evidence and digest index; not theorem certification"
+        }
       }
     }
   ],

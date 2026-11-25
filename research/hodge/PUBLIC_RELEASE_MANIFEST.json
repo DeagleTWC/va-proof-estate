@@ -71,6 +71,22 @@
     "public_verifier": "scripts/verify_hodge_public_release.py",
     "public_verifier_tests": "scripts/test_verify_hodge_public_release.py",
     "github_actions_workflow": ".github/workflows/hodge-public-evidence.yml",
-    "ci_scope": "SHA-pinned frozen child; 39 tests; three exact gate receipts and evidence comparison; no independent theorem review"
+    "ci_scope": "SHA-pinned frozen child; 39 tests; three exact gate receipts and evidence comparison; no independent theorem review",
+    "ci_reissued_artifact": {
+      "name": "hodge-exact-replay-receipts",
+      "file_count": 7,
+      "retention_days": 90,
+      "contents": [
+        "carry_receipt.json",
+        "reexamine_receipt.json",
+        "refuse_receipt.json",
+        "carry_exact_evidence.json",
+        "reexamine_exact_evidence.json",
+        "refuse_exact_evidence.json",
+        "audit_summary.json"
+      ],
+      "only_uploaded_on_full_pass": true,
+      "independent_theorem_review": false
+    }
   }
 }
