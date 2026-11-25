@@ -8,18 +8,18 @@
 
 For the smooth Fermat quintic fourfold
 
-[
-X_5={x_0^5+x_1^5+x_2^5+x_3^5+x_4^5+x_5^5=0}subsetmathbb{P}^5_mathbb{C},
-]
+\[
+X_5=\{x_0^5+x_1^5+x_2^5+x_3^5+x_4^5+x_5^5=0\}\subset\mathbb{P}^5_{\mathbb{C}}.
+\]
 
 the recorded exact rational Hodge and algebraic-cycle ranks agree:
 
-[
-dim_{mathbb Q}operatorname{Hdg}^4(X_5)
+\[
+\dim_{\mathbb{Q}}\operatorname{Hdg}^{4}(X_5)
 =401
-=operatorname{rank}_{mathbb Q}
-langle[Pi]midPi	ext{ is a generated algebraic plane in }X_5angle.
-]
+=\operatorname{rank}_{\mathbb{Q}}
+\langle[\Pi]:\Pi\text{ is a generated algebraic plane in }X_5\rangle.
+\]
 
 The source-derived construction enumerates **1,875** planes. A **401 × 401** integral intersection Gram minor satisfies **det ≡ 437 (mod 1009)**, proving the chosen 401 classes are independent over the rationals. The rational rank 401 comes from the Fermat cyclotomic-character/Galois census, a mathematical theorem dependency explicitly identified by the package. Consequently these cycle classes span the rational Hodge space **for this specified fourfold**. This is an exact bounded theorem statement; it does not claim priority or universal Hodge resolution.
 
