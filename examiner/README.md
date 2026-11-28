@@ -32,6 +32,8 @@ For an allowed attempt, return `"decision":"EXECUTE"` and an `"effect_request":{
 
 ## Fixed examiner cases
 
+**Synthetic cases only.** These are local examiner results with simulated effects, not real-world operations.
+
 | Case | Examination | Expected |
 | --- | --- | --- |
 | EXEC-001 | Exact authorized candidate | EXECUTE and simulated effect |
@@ -40,6 +42,10 @@ For an allowed attempt, return `"decision":"EXECUTE"` and an `"effect_request":{
 | STALE-004 | Evidence becomes stale | REFUSE; no simulated effect |
 | ROUTE-005 | Substitution attempted on secondary route | REFUSE; no simulated effect |
 | PATH-006 | Same valid candidate on secondary route | EXECUTE and simulated effect |
+
+**Why the two secondary-route results differ:** ROUTE-005 attempts `vendor-B` when `vendor-A` is authorized, so the target substitution is refused and no simulated effect is recorded. PATH-006 uses the same secondary route but keeps the authorized `vendor-A` target, with authority active and evidence current, so the examiner allows the simulated effect. **Using a secondary route is not, by itself, grounds for refusal.**
+
+**Reader check:** What was refused in ROUTE-005, and what remains possible in PATH-006?
 
 A receipt is generated for every case using canonical JSON and SHA-256, and the suite fingerprint identifies the fixed fixtures. Preserve an untouched report and rerun on the same machine for basic repeatability. If source changes, record the new version separately. Re-running the reference adapter does not confer independent witness status.
 
